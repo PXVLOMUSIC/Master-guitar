@@ -3,7 +3,8 @@ import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
 import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples } from "./audio.js";
 import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider } from "./backend.js";
-import { renderPracticeHub, openToolWindow, CATEGORIES } from "./practice-hub.js";
+import { renderPracticeHub, openFromHash, closeSection } from "./practice-hub.js";
+import { icon } from "./icons.js";
 
 // Lazy loaders for heavy modules (loaded on demand).
 const loadPracticeAdvanced = () => import("./practice-advanced.js");
@@ -69,6 +70,7 @@ function showNav(show) {
 let currentRoute = "home";
 async function navigate(route, params={}) {
   currentRoute = route;
+  closeSection({ fromHistory: true });
   try { $$("#bottomnav button").forEach(b => b.classList.toggle("active", b.dataset.route === route)); } catch(e){}
   await render(route, params);
 }
@@ -1153,35 +1155,29 @@ const PRACTICE_TOOLS = [
   { id: "transposition", cat: "theory", icon: "🔄", title: "Transposición", desc: "Transporta cualquier progresión a otra tonalidad.", tags: ["Transporte"], keywords: "cambiar tono", mount: async (el) => { const m = await loadImprovisation(); m.renderTranspositionTool(el); } },
 ];
 
-function toolColor(catId) {
-  const c = CATEGORIES.find((x) => x.id === catId);
-  return c ? c.color : "#58cc02";
+// Al cambiar de herramienta o cerrar una sección se para todo lo que suene.
+function stopPracticeAudio() {
+  if (isMetronomeRunning()) stopMetronome();
+  if (isRunning()) stopMic();
+  loadBacking().then((m) => { if (m.isBackingRunning()) m.stopBackingTrack(); }).catch(() => {});
 }
 
 function renderPractice(v) {
   showNav(true);
-  renderPracticeHub(v, PRACTICE_TOOLS, (tool) => {
-    openToolWindow({
-      id: tool.id,
-      title: tool.title,
-      subtitle: tool.tags && tool.tags[0] ? tool.tags[0] : "Herramienta",
-      icon: tool.icon,
-      color: toolColor(tool.cat),
-      mount: tool.mount,
-    });
-  });
+  renderPracticeHub(v, PRACTICE_TOOLS, stopPracticeAudio);
+  openFromHash(PRACTICE_TOOLS, stopPracticeAudio);
 }
 
 function renderChordLibrary(area) {
   const ins = state.settings.instrument === "ukulele" ? "ukulele" : "guitar";
   const chords = CHORDS[ins];
-  area.innerHTML = `<div class="section-title" style="margin-left:0">Acordes de ${ins}</div>
+  area.innerHTML = `<div class="section-title" style="margin-left:0">Acordes de ${ins === "ukulele" ? "ukelele" : "guitarra"}</div>
     <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px" id="chordChips"></div>
     <div id="chordView"></div>`;
   const chips = $("#chordChips", area);
   Object.keys(chords).forEach(name => {
     const c = document.createElement("button");
-    c.className = "btn btn-secondary"; c.style.padding = "8px 12px"; c.textContent = name;
+    c.className = "btn btn-secondary chord-chip"; c.style.padding = "8px 12px"; c.textContent = name;
     c.onclick = () => showChord(area, name, chords[name]);
     chips.appendChild(c);
   });
@@ -1683,10 +1679,15 @@ async function boot() {
   } else {
     updateStreak();
     showNav(true);
-    await navigate("home");
+    await navigate(location.hash.startsWith("#practicar/") ? "practice" : "home");
   }
-  // bottom nav
-  $$("#bottomnav button").forEach(b => b.onclick = () => navigate(b.dataset.route));
+  // bottom nav (iconos SVG en lugar de emojis)
+  const NAV_ICONS = { home: "home", learn: "book", tuner: "tuner", practice: "guitar", profile: "user" };
+  $$("#bottomnav button").forEach(b => {
+    const label = b.textContent.replace(/^[^A-Za-zÁÉÍÓÚáéíóúÑñ]+/, "").trim();
+    b.innerHTML = `${icon(NAV_ICONS[b.dataset.route] || "guitar", 22)}<span>${label}</span>`;
+    b.onclick = () => navigate(b.dataset.route);
+  });
 
   // PWA install prompt handling
   setupInstallPrompt();

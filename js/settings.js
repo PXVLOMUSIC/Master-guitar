@@ -10,6 +10,11 @@ function ensureDefaults() {
   const d = defaultState();
   if (!state.settings) state.settings = {};
   state.settings = { ...d.settings, ...state.settings };
+  // v2: el tema oscuro pasa a ser el predeterminado (antes "auto").
+  if (!state.settings.themeV2) {
+    if (state.settings.theme === "auto") state.settings.theme = "dark";
+    state.settings.themeV2 = true;
+  }
   if (!state.stats) state.stats = {};
   state.stats = { ...d.stats, ...state.stats };
   if (!Array.isArray(state.stats.chordsLearned)) {

@@ -11,7 +11,7 @@ const defaultState = () => ({
   completed: {},   // lessonId -> true
   achievements: {}, // achievementId -> true
   dailyChallengeDone: null,
-  settings: { theme: "auto", sound: true, metronomeSound: true, haptic: true, dailyGoal: 10, notifications: false, reminderHour: 19, language: "es", instrument: "guitar", tunerPitch: 440 },
+  settings: { theme: "dark", sound: true, metronomeSound: true, haptic: true, dailyGoal: 10, notifications: false, reminderHour: 19, language: "es", instrument: "guitar", tunerPitch: 440 },
   stats: { lessonsCompleted: 0, minutesPracticed: 0, tunings: 0, accuracy: 0, chordsLearned: [], scalesLearned: [], bestChordChanges: 0, totalPracticeTime: 0 },
   tunerHistory: {},
   dailyLog: {},
