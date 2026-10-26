@@ -83,19 +83,62 @@ export function toggleTheme() {
 }
 
 // ---------- Notification scheduler ----------
+// En la app nativa (Capacitor) el aviso lo programa el sistema y llega aunque
+// la app esté cerrada. En el navegador solo podemos avisar mientras la app
+// está abierta, y al abrirla si ya pasó la hora y aún no has practicado.
+const REMINDER_ID = 1901;
+const REMINDER_TEXTS = [
+  "Hora de practicar. ¡Quince minutos y listo! 🎸",
+  "Tu rutina de hoy te espera 🔥",
+  "Un poco cada día: así se aprende de verdad 🎶",
+  "¿Unos acordes antes de cenar? 🎸",
+];
+
+function nativeNotifications() {
+  const cap = window.Capacitor;
+  if (!cap || !cap.isNativePlatform || !cap.isNativePlatform()) return null;
+  return (cap.Plugins && cap.Plugins.LocalNotifications) || null;
+}
+
+export function notificationsSupported() {
+  return !!nativeNotifications() || "Notification" in window;
+}
+
+function notificationsGranted() {
+  if (nativeNotifications()) return !!state.settings.notifications;
+  return "Notification" in window && Notification.permission === "granted";
+}
+
 export async function requestNotificationPermission() {
-  if (!("Notification" in window)) return false;
+  ensureDefaults();
+  let granted = false;
+  const ln = nativeNotifications();
   try {
-    const perm = await Notification.requestPermission();
-    const granted = perm === "granted";
-    ensureDefaults();
-    state.settings.notifications = granted;
-    saveState(state);
-    if (granted) haptic(15);
-    return granted;
-  } catch (e) {
-    return false;
-  }
+    if (ln) {
+      const res = await ln.requestPermissions();
+      granted = res && res.display === "granted";
+    } else if ("Notification" in window) {
+      granted = (await Notification.requestPermission()) === "granted";
+    }
+  } catch (e) { granted = false; }
+  state.settings.notifications = granted;
+  saveState(state);
+  if (granted) haptic(15);
+  return granted;
+}
+
+async function showWebNotification(body) {
+  const opts = { body, icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: "strumio-reminder" };
+  try {
+    const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration();
+    if (reg && reg.showNotification) { await reg.showNotification("Strumio", opts); return; }
+  } catch (e) {}
+  try { new Notification("Strumio", opts); } catch (e) {}
+}
+
+function practicedToday() {
+  const log = state.practiceLog && state.practiceLog[new Date().toDateString()];
+  return !!(log && log.minutes > 0);
 }
 
 let reminderTimer = null;
@@ -105,30 +148,52 @@ export function scheduleReminder(hour) {
   if (!isNaN(h)) state.settings.reminderHour = h;
   state.settings.notifications = true;
   saveState(state);
-  if (!("Notification" in window) || Notification.permission !== "granted") {
-    return false;
+  const at = state.settings.reminderHour ?? 19;
+  const text = () => REMINDER_TEXTS[new Date().getDate() % REMINDER_TEXTS.length];
+
+  const ln = nativeNotifications();
+  if (ln) {
+    (async () => {
+      try {
+        await ln.cancel({ notifications: [{ id: REMINDER_ID }] });
+        await ln.schedule({ notifications: [{
+          id: REMINDER_ID, title: "Strumio", body: text(),
+          schedule: { on: { hour: at, minute: 0 }, repeats: true, allowWhileIdle: true },
+        }] });
+      } catch (e) {}
+    })();
+    haptic(10);
+    return true;
   }
+
+  if (!notificationsGranted()) return false;
   if (reminderTimer) { clearTimeout(reminderTimer); reminderTimer = null; }
   const scheduleNext = () => {
     const now = new Date();
     const next = new Date();
-    next.setHours(state.settings.reminderHour || 19, 0, 0, 0);
+    next.setHours(at, 0, 0, 0);
     if (next <= now) next.setDate(next.getDate() + 1);
-    const delay = next.getTime() - now.getTime();
     reminderTimer = setTimeout(() => {
-      try {
-        new Notification("Strumio 🎸", {
-          body: "Hora de practicar guitarra. ¡Vamos!",
-          icon: "./icons/icon-192.png",
-          tag: "strumio-reminder"
-        });
-      } catch (e) {}
+      if (!practicedToday()) showWebNotification(text());
       scheduleNext();
-    }, delay);
+    }, next.getTime() - now.getTime());
   };
   scheduleNext();
+  // Al abrir la app después de la hora sin haber practicado: un aviso al día.
+  const today = new Date().toDateString();
+  if (new Date().getHours() >= at && !practicedToday() && state.lastReminderShown !== today) {
+    state.lastReminderShown = today;
+    saveState(state);
+    setTimeout(() => showWebNotification(text()), 4000);
+  }
   haptic(10);
   return true;
+}
+
+export async function cancelReminder() {
+  if (reminderTimer) { clearTimeout(reminderTimer); reminderTimer = null; }
+  const ln = nativeNotifications();
+  if (ln) { try { await ln.cancel({ notifications: [{ id: REMINDER_ID }] }); } catch (e) {} }
 }
 
 // ---------- Date helpers ----------
@@ -333,6 +398,8 @@ export function renderSettings(container) {
       }
       scheduleReminder(state.settings.reminderHour);
       toast("Recordatorio programado");
+    } else {
+      cancelReminder();
     }
   });
 
@@ -371,7 +438,7 @@ export function renderSettings(container) {
   container.querySelector("#reminderHourSel").onchange = (e) => {
     state.settings.reminderHour = parseInt(e.target.value);
     saveState(state);
-    if (state.settings.notifications && Notification.permission === "granted") {
+    if (state.settings.notifications && notificationsGranted()) {
       scheduleReminder(state.settings.reminderHour);
     }
     haptic(10);
@@ -717,7 +784,7 @@ try { ensureDefaults(); applyTheme(); } catch (e) {}
 // Auto-schedule reminder if enabled
 try {
   ensureDefaults();
-  if (state.settings.notifications && "Notification" in window && Notification.permission === "granted") {
+  if (state.settings.notifications && notificationsGranted()) {
     scheduleReminder(state.settings.reminderHour);
   }
 } catch (e) {}

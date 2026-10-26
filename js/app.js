@@ -309,7 +309,8 @@ function renderPlacementResult(result) {
 function renderWelcomeSetup() {
   const v = view();
   showNav(false);
-  const supported = "Notification" in window;
+  const cap = window.Capacitor;
+  const supported = "Notification" in window || !!(cap && cap.isNativePlatform && cap.isNativePlatform());
   const hour = state.settings.reminderHour ?? 19;
   v.innerHTML = `
     <div class="onboard">${skipButton()}
