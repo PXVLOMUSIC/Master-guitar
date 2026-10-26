@@ -1,5 +1,5 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
-import { initI18n, applyDocumentLanguage, t } from "./i18n.js";
+import { initI18n, applyDocumentLanguage, t, getCurrentLanguage } from "./i18n.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
 import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments, setGuitarTone, setEarInstrument, earInstrument } from "./audio.js";
@@ -27,10 +27,27 @@ let LESSONS = { units: [], ukulele: [] };
 let CHORDS = { guitar: {}, ukulele: {} };
 let SONGS = [];
 
+async function localizedDataPath(base, ext) {
+  const lang = getCurrentLanguage();
+  if (lang && lang !== "es") {
+    return `data/${base}.${lang}.${ext}`;
+  }
+  return `data/${base}.${ext}`;
+}
+
+async function fetchJsonWithFallback(primary, fallback) {
+  try {
+    const r = await fetch(primary, { cache: "no-cache" });
+    if (r.ok) return await r.json();
+  } catch (e) {}
+  const r2 = await fetch(fallback, { cache: "no-cache" });
+  return await r2.json();
+}
+
 async function loadContent() {
   try {
-    const r1 = await fetch("data/lessons.json");
-    LESSONS = await r1.json();
+    const lessonsPath = await localizedDataPath("lessons", "json");
+    LESSONS = await fetchJsonWithFallback(lessonsPath, "data/lessons.json");
     const r2 = await fetch("data/chords.json");
     CHORDS = await r2.json();
   } catch (e) {
@@ -1502,7 +1519,10 @@ function escapeHtml(v) {
 async function loadSongs() {
   if (!SONGS.length) {
     try {
-      const r = await fetch("data/songs.json");
+      const lang = getCurrentLanguage();
+      const primary = (lang && lang !== "es") ? `data/songs.${lang}.json` : "data/songs.json";
+      let r = await fetch(primary, { cache: "no-cache" });
+      if (!r.ok) r = await fetch("data/songs.json", { cache: "no-cache" });
       const data = await r.json();
       SONGS = Array.isArray(data) ? data : (data.songs || data.items || []);
     } catch (e) { SONGS = []; }
