@@ -538,8 +538,8 @@ function renderLearn(v) {
   showNav(true);
   const isUk = state.settings.instrument === "ukulele";
   const units = isUk ? (LESSONS.ukulele || []) : (LESSONS.units || []);
-  v.innerHTML = `<div class="path"><h2 style="margin:0 0 8px">📚 Ruta de aprendizaje</h2>
-    <p style="color:var(--muted);font-size:13px;margin:0 0 12px">Instrumento: ${INSTRUMENTS[state.user.instrument].name}</p></div>`;
+  v.innerHTML = `<div class="path"><h2 style="margin:0 0 8px">${t("learn.title")}</h2>
+    <p style="color:var(--muted);font-size:13px;margin:0 0 12px">${t("learn.instrument", {name: INSTRUMENTS[state.user.instrument].name})}</p></div>`;
   const path = $(".path", v);
   units.forEach((u, ui) => {
     const header = document.createElement("div");
@@ -580,7 +580,7 @@ function renderLearn(v) {
   // ukulele toggle
   const toggle = document.createElement("div");
   toggle.style.cssText = "padding:16px;text-align:center";
-  toggle.innerHTML = `<button class="btn btn-ghost" id="switchIns">${isUk ? "🎸 Cambiar a guitarra" : "🪕 Cambiar a ukelele"}</button>`;
+  toggle.innerHTML = `<button class="btn btn-ghost" id="switchIns">${isUk ? t("learn.switchToGuitar") : t("learn.switchToUkulele")}</button>`;
   path.appendChild(toggle);
   $("#switchIns").onclick = async () => {
     const newIns = isUk ? "guitar" : "ukulele";
@@ -589,7 +589,7 @@ function renderLearn(v) {
     saveState(state);
     try { await loadInstrumentSamples(newIns); setSoundBank("samples"); } catch (e) {}
     renderLearn(v);
-    toast("Instrumento: " + INSTRUMENTS[newIns].name);
+    toast(t("learn.instrumentChanged", {name: INSTRUMENTS[newIns].name}));
   };
 }
 

@@ -119,5 +119,10 @@
   "settings.import": "⬆️ Importar progresso",
   "settings.reset": "🗑️ Restaurar este dispositivo",
   "settings.noPasswords": "O arquivo não contém senhas. Se você tem conta, a nuvem pode restaurar seu progresso ao entrar.",
-  "settings.accountSocial": "Conta e funções sociais"
+  "settings.accountSocial": "Conta e funções sociais",
+  "learn.title": "📚 Rota de aprendizado",
+  "learn.instrument": "Instrumento: {name}",
+  "learn.switchToGuitar": "🎸 Mudar para violão",
+  "learn.switchToUkulele": "🪕 Mudar para ukelele",
+  "learn.instrumentChanged": "Instrumento: {name}"
 }

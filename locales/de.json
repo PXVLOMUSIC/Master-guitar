@@ -119,5 +119,10 @@
   "settings.import": "⬆️ Fortschritt importieren",
   "settings.reset": "🗑️ Dieses Gerät zurücksetzen",
   "settings.noPasswords": "Die Datei enthält keine Passwörter. Mit Konto kann die Cloud deinen Fortschritt bei der Anmeldung wiederherstellen.",
-  "settings.accountSocial": "Konto und soziale Funktionen"
+  "settings.accountSocial": "Konto und soziale Funktionen",
+  "learn.title": "📚 Lernpfad",
+  "learn.instrument": "Instrument: {name}",
+  "learn.switchToGuitar": "🎸 Zur Gitarre wechseln",
+  "learn.switchToUkulele": "🪕 Zum Ukulele wechseln",
+  "learn.instrumentChanged": "Instrument: {name}"
 }

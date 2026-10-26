@@ -119,5 +119,10 @@
   "settings.import": "⬆️ Importer la progression",
   "settings.reset": "🗑️ Réinitialiser cet appareil",
   "settings.noPasswords": "Le fichier ne contient aucun mot de passe. Si vous avez un compte, le cloud peut restaurer votre progression à la connexion.",
-  "settings.accountSocial": "Compte et fonctions sociales"
+  "settings.accountSocial": "Compte et fonctions sociales",
+  "learn.title": "📚 Parcours d'apprentissage",
+  "learn.instrument": "Instrument : {name}",
+  "learn.switchToGuitar": "🎸 Passer à la guitare",
+  "learn.switchToUkulele": "🪕 Passer au ukulélé",
+  "learn.instrumentChanged": "Instrument : {name}"
 }
