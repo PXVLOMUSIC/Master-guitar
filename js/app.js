@@ -5,6 +5,7 @@ import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stop
 import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider } from "./backend.js";
 import { renderPracticeHub, openFromHash, closeSection } from "./practice-hub.js";
 import { icon } from "./icons.js";
+import { mascot, unitCover } from "./art.js";
 
 // Lazy loaders for heavy modules (loaded on demand).
 const loadPracticeAdvanced = () => import("./practice-advanced.js");
@@ -103,7 +104,7 @@ function renderOnboard(v) {
   const steps = [
     () => `
       <div class="onboard">${skipButton()}
-        <div class="emoji">🎸</div>
+        <div class="onboard-mascot">${mascot("wave", 128)}</div>
         <h1>¡Bienvenido a Strumio!</h1>
         <p class="sub">Aprende guitarra paso a paso, como un juego.</p>
         <input id="nameInput" placeholder="Tu nombre" style="width:100%;padding:14px;border-radius:12px;border:2px solid var(--border);background:var(--card2);color:var(--text);font-size:16px;font-weight:700;margin-top:16px">
@@ -296,8 +297,8 @@ function renderPlacementResult(result) {
   }).join("");
   v.innerHTML = `
     <div class="onboard">${skipButton()}
-      <div class="emoji">${LV.ico}</div>
-      <h1>Nivel ${LV.name}</h1>
+      <div class="onboard-mascot">${mascot("cheer", 128)}</div>
+      <h1>${LV.ico} Nivel ${LV.name}</h1>
       <p class="sub">${LV.txt}</p>
       <div class="card" style="text-align:left;margin:16px 0 0">${rows}</div>
       <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
@@ -315,7 +316,7 @@ function renderWelcomeSetup() {
   const hour = state.settings.reminderHour ?? 19;
   v.innerHTML = `
     <div class="onboard">${skipButton()}
-      <div class="emoji">🔔</div>
+      <div class="onboard-mascot">${mascot("think", 120)}</div>
       <h1>¿Te recordamos practicar?</h1>
       <p class="sub">Quince minutos al día valen más que dos horas el domingo. Te avisamos una vez al día, a la hora que elijas.</p>
       ${supported ? `
@@ -373,7 +374,7 @@ function renderHome(v) {
   const dailyDone = state.dailyChallengeDone === new Date().toDateString();
   v.innerHTML = `
     <div class="card" style="text-align:center">
-      <div style="font-size:40px">${ins.emoji}</div>
+      <div class="home-mascot">${mascot(state.streak > 2 ? "cheer" : "wave", 84)}</div>
       <h2>Hola, ${state.user.name}</h2>
       <p>Nivel ${state.level} · ${levelTitle(state.level)} · ${state.xp}/${state.level*100} XP</p>
       <button class="btn btn-primary btn-block" id="continueBtn">Continuar aprendiendo</button>
@@ -528,10 +529,10 @@ function renderLearn(v) {
   v.innerHTML = `<div class="path"><h2 style="margin:0 0 8px">📚 Ruta de aprendizaje</h2>
     <p style="color:var(--muted);font-size:13px;margin:0 0 12px">Instrumento: ${INSTRUMENTS[state.user.instrument].name}</p></div>`;
   const path = $(".path", v);
-  for (const u of units) {
+  units.forEach((u, ui) => {
     const header = document.createElement("div");
-    header.className = "unit-header";
-    header.textContent = u.title;
+    header.className = "unit-header unit-header--cover";
+    header.innerHTML = unitCover(u, ui, u.lessons.filter(l => state.completed[l.id]).length, u.lessons.length);
     path.appendChild(header);
     const nodes = document.createElement("div");
     nodes.className = "nodes";
@@ -563,7 +564,7 @@ function renderLearn(v) {
       nodes.appendChild(wrap);
     });
     path.appendChild(nodes);
-  }
+  });
   // ukulele toggle
   const toggle = document.createElement("div");
   toggle.style.cssText = "padding:16px;text-align:center";

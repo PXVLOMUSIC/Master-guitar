@@ -2371,3 +2371,18 @@ body.section-open { overflow: hidden; }
 .sp-toggle { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-2); color: var(--muted); font: inherit; font-size: 13px; font-weight: var(--weight-bold); cursor: pointer; }
 .sp-toggle.on { border-color: var(--green); color: var(--text); background: var(--green-soft); }
 .sp-hint { margin: 0; color: var(--muted); font-size: 12px; }
+
+/* ---------- Arte: mascota y portadas ---------- */
+.onboard-mascot, .home-mascot { display: flex; justify-content: center; margin: var(--space-2) 0; }
+.mascot .pua-body { animation: puaFloat 3.2s ease-in-out infinite; transform-origin: 60px 100px; }
+.mascot .pua-wave { animation: puaWave 1.2s ease-in-out infinite; transform-origin: 98px 62px; }
+.mascot .pua-spark { animation: puaSpark 1.6s ease-in-out infinite; }
+.pua-arm { stroke: #3fa000; }
+@keyframes puaFloat { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
+@keyframes puaWave { 0%, 100% { transform: rotate(0) } 50% { transform: rotate(-14deg) } }
+@keyframes puaSpark { 0%, 100% { opacity: .3 } 50% { opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .mascot * { animation: none !important; } }
+
+.unit-header--cover { padding: 0; background: none; box-shadow: var(--shadow-md); overflow: hidden; line-height: 0; }
+.unit-header--cover::before, .unit-header--cover::after { display: none; }
+.unit-cover { display: block; width: 100%; height: auto; }
