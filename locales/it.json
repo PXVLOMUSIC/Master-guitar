@@ -195,5 +195,9 @@
   "dashboard.chordsLearned": "🎸 Accordi imparati",
   "dashboard.scalesLearned": "🎼 Scale imparate",
   "dashboard.bestChanges": "⚡ Record cambi",
-  "dashboard.achievements": "Traguardi"
+  "dashboard.achievements": "Traguardi",
+  "lesson.continue": "Continua",
+  "lesson.listen": "🔊 Ascolta",
+  "lesson.listenChord": "🔊 Ascolta accordo",
+  "lesson.demo": "Demo"
 }

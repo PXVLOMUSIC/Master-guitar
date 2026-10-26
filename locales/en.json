@@ -195,5 +195,9 @@
   "dashboard.chordsLearned": "🎸 Chords learned",
   "dashboard.scalesLearned": "🎼 Scales learned",
   "dashboard.bestChanges": "⚡ Best changes",
-  "dashboard.achievements": "Achievements"
+  "dashboard.achievements": "Achievements",
+  "lesson.continue": "Continue",
+  "lesson.listen": "🔊 Listen",
+  "lesson.listenChord": "🔊 Listen chord",
+  "lesson.demo": "Demo"
 }

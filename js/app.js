@@ -659,7 +659,7 @@ function renderInfo(qc, ctrl, step) {
   qc.innerHTML = `
     <div class="prompt">${step.title || ""}</div>
     <div class="sub">${step.text || ""}</div>`;
-  ctrl.innerHTML = `<button class="btn btn-primary btn-block" id="contBtn">Continuar</button>`;
+  ctrl.innerHTML = `<button class="btn btn-primary btn-block" id="contBtn">${t("lesson.continue")}</button>`;
   $("#contBtn").onclick = () => nextStep(view());
 }
 
@@ -668,16 +668,16 @@ function renderDemo(qc, ctrl, step) {
   let chordHtml = "";
   if (chord) chordHtml = renderChordDiagram(chord);
   qc.innerHTML = `
-    <div class="prompt">${step.title || "Demo"}</div>
+    <div class="prompt">${step.title || t("lesson.demo")}</div>
     <div class="sub">${step.text || ""}</div>
     ${chordHtml}
-    ${step.freq ? `<div style="margin-top:12px"><button class="btn btn-secondary" id="playBtn">🔊 Escuchar</button></div>` : ""}
+    ${step.freq ? `<div style="margin-top:12px"><button class="btn btn-secondary" id="playBtn">${t("lesson.listen")}</button></div>` : ""}
   `;
   if (step.freq) $("#playBtn").onclick = () => playTone(step.freq);
   if (step.chord) {
     const btn = document.createElement("button");
     btn.className = "btn btn-secondary btn-block"; btn.style.marginTop = "10px";
-    btn.textContent = "🔊 Escuchar acorde";
+    btn.textContent = t("lesson.listenChord");
     btn.onclick = () => {
       const notes = CHORD_NOTES[step.chord];
       if (notes) playChord(notes, 1.4, { arpeggiate: true, stagger: 0.08 });
@@ -687,7 +687,7 @@ function renderDemo(qc, ctrl, step) {
   }
   const cont = document.createElement("button");
   cont.className = "btn btn-primary btn-block"; cont.style.marginTop = "10px";
-  cont.textContent = "Continuar";
+  cont.textContent = t("lesson.continue");
   cont.id = "contBtn";
   cont.onclick = () => nextStep(view());
   ctrl.appendChild(cont);
@@ -915,7 +915,7 @@ function renderVideoStep(qc, ctrl, step) {
     host.innerHTML = `<div style="color:var(--muted);padding:12px">No se pudo cargar el reproductor de video.</div>`;
     console.warn("video player load error", e);
   });
-  ctrl.innerHTML = `<button class="btn btn-primary btn-block" id="contBtn">Continuar</button>`;
+  ctrl.innerHTML = `<button class="btn btn-primary btn-block" id="contBtn">${t("lesson.continue")}</button>`;
   const btn = document.getElementById("contBtn");
   if (btn) btn.onclick = () => nextStep(view());
 }
