@@ -2314,3 +2314,10 @@ body.section-open { overflow: hidden; }
 }
 .onboard-skip:hover { color: var(--text); background: var(--card-2); }
 .placement .placement-top { margin-top: 28px; }
+
+/* ---------- Selector de sonido (Ajustes) ---------- */
+.sound-pick { display: flex; flex-direction: column; gap: 8px; padding: 12px 0; border-top: 1px solid var(--border); }
+.sound-pick p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+.seg { display: flex; gap: 4px; padding: 4px; border-radius: var(--r-md); background: var(--card-2); }
+.seg-btn { flex: 1; padding: 8px 6px; border: 0; border-radius: calc(var(--r-md) - 4px); background: none; color: var(--muted); font: inherit; font-weight: var(--weight-bold); font-size: 14px; cursor: pointer; }
+.seg-btn.on { background: var(--green); color: #fff; }

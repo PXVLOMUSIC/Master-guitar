@@ -731,7 +731,26 @@ function playBufferSource(ctx, buffer, start, dur, gainLevel, pan, playbackRate)
 /* Muestras reales para guitarra y bajo                                */
 /* ------------------------------------------------------------------ */
 // Instrumento de la app -> grupo de muestras reales.
-const REAL_GROUP = { guitar: "guitar", acoustic: "guitar", electric: "guitar", classical: "guitar", bass: "bass" };
+const REAL_GROUP = { guitar: "guitar", acoustic: "guitar", electric: "electric", classical: "nylon", nylon: "nylon", piano: "piano", bass: "bass" };
+// Grupo concreto -> ajuste de volumen para igualar las librerías entre sí.
+const GROUP_GAIN = { guitar: 1, electric: 1.3, nylon: 0.95, piano: 0.75, bass: 1 };
+// "guitar" suena con el timbre elegido en Ajustes (acústica, eléctrica o nylon).
+let guitarTone = "guitar";
+let earInstrumentId = "guitar";
+
+/** Timbre de guitarra: "acoustic" | "electric" | "nylon". */
+export function setGuitarTone(tone) {
+  guitarTone = { electric: "electric", nylon: "nylon" }[tone] || "guitar";
+  try { preloadGroup(guitarTone, getAudioContext()); } catch (e) {}
+}
+/** Instrumento de los ejercicios de oído y teoría: "guitar" | "piano". */
+export function setEarInstrument(id) { earInstrumentId = id === "piano" ? "piano" : "guitar"; }
+export function earInstrument() { return earInstrumentId; }
+
+function groupFor(instrument) {
+  if (instrument === "guitar" || instrument === "acoustic") return guitarTone;
+  return REAL_GROUP[instrument];
+}
 // Iguala el volumen de las muestras con el de la síntesis anterior.
 const REAL_GAIN = 0.45;
 
@@ -753,7 +772,7 @@ function getRealBus(ctx) {
 
 /** Empieza a descargar las muestras reales (se puede llamar muchas veces). */
 export function warmRealInstruments(instrument = "guitar") {
-  const group = REAL_GROUP[instrument] || "guitar";
+  const group = groupFor(instrument) || "guitar";
   const ctx = getAudioContext();
   preloadGroup(group, ctx);
   preloadIds("hand", ["woodblock"], ctx).then((ok) => { metroClickReady = ok; });
@@ -767,12 +786,12 @@ function freqToMidi(freq) {
 function playReal(freq, start, dur, gainLevel, opts) {
   if (opts && (opts.waveform || opts.synth)) return false;
   const instrument = (opts && opts.instrument) || "guitar";
-  const group = REAL_GROUP[instrument];
+  const group = groupFor(instrument);
   if (!group) return false;
   const ctx = getAudioContext();
   if (!isGroupReady(group)) { warmRealInstruments(instrument); return false; }
   return playPitched(group, freqToMidi(freq), start, getRealBus(ctx), {
-    gain: gainLevel * REAL_GAIN,
+    gain: gainLevel * REAL_GAIN * (GROUP_GAIN[group] || 1),
     velocity: (opts && opts.velocity != null) ? opts.velocity : 0.75,
     duration: dur + 0.35,
   });

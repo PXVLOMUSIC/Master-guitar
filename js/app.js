@@ -1,7 +1,7 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
-import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments } from "./audio.js";
+import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments, setGuitarTone, setEarInstrument, earInstrument } from "./audio.js";
 import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider } from "./backend.js";
 import { renderPracticeHub, openFromHash, closeSection } from "./practice-hub.js";
 import { icon } from "./icons.js";
@@ -1526,8 +1526,8 @@ function renderEarTrainer(area) {
   }
   newPair();
   $("#playPair", area).onclick = () => {
-    playTone(notes[n1], 0.6);
-    setTimeout(() => playTone(notes[n2], 0.6), 700);
+    playTone(notes[n1], 0.6, { instrument: earInstrument() });
+    setTimeout(() => playTone(notes[n2], 0.6, { instrument: earInstrument() }), 700);
   };
   function answer(same) {
     total++;
@@ -1892,7 +1892,11 @@ async function boot() {
   const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
   idle(() => {
     // Descarga en segundo plano la guitarra real y el click del metrónomo.
-    try { warmRealInstruments(state.settings.instrument === "bass" ? "bass" : "guitar"); } catch (e) {}
+    try {
+      setGuitarTone(state.settings.guitarTone || "acoustic");
+      setEarInstrument(state.settings.earInstrument || "guitar");
+      warmRealInstruments(state.settings.instrument === "bass" ? "bass" : "guitar");
+    } catch (e) {}
   }, { timeout: 3000 });
 }
 

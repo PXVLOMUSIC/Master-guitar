@@ -4,6 +4,7 @@ import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
 import { renderBackendSettings, getStatus, setRealtimeEnabled, isRealtimeEnabled, syncProgress } from "./backend.js";
 import { clearQueue } from "./sync.js";
+import { setGuitarTone, setEarInstrument, playChord, earInstrument } from "./audio.js";
 
 // ---------- helpers ----------
 function ensureDefaults() {
@@ -250,6 +251,18 @@ export function renderSettings(container) {
       ${renderToggle("soundToggle", "Sonido", "Efectos de sonido en la app", s.sound)}
       ${renderToggle("metroSoundToggle", "Sonido del metrónomo", "Click del metrónomo", s.metronomeSound)}
       ${renderToggle("hapticToggle", "Feedback háptico", "Vibración en interacciones", s.haptic)}
+      <div class="sound-pick">
+        <div><b>Sonido de guitarra</b><p>Acordes, canciones y tablaturas</p></div>
+        <div class="seg" role="radiogroup" aria-label="Sonido de guitarra">
+          ${[["acoustic","Acústica"],["electric","Eléctrica"],["nylon","Nylon"]].map(([k,l]) => `<button class="seg-btn ${ (s.guitarTone||"acoustic")===k ? "on" : ""}" data-tone="${k}" role="radio" aria-checked="${(s.guitarTone||"acoustic")===k}">${l}</button>`).join("")}
+        </div>
+      </div>
+      <div class="sound-pick">
+        <div><b>Oído y teoría</b><p>Instrumento de los ejercicios de oído</p></div>
+        <div class="seg" role="radiogroup" aria-label="Instrumento de oído">
+          ${[["guitar","Guitarra"],["piano","Piano"]].map(([k,l]) => `<button class="seg-btn ${(s.earInstrument||"guitar")===k ? "on" : ""}" data-ear="${k}" role="radio" aria-checked="${(s.earInstrument||"guitar")===k}">${l}</button>`).join("")}
+        </div>
+      </div>
     </div>
 
     <div class="section-title">Práctica</div>
@@ -401,6 +414,29 @@ export function renderSettings(container) {
     } else {
       cancelReminder();
     }
+  });
+
+  // timbre de guitarra e instrumento de oído (con prueba al elegir)
+  const demo = [130.81, 164.81, 196, 261.63, 329.63];
+  container.querySelectorAll("[data-tone]").forEach(b => {
+    b.onclick = () => {
+      state.settings.guitarTone = b.dataset.tone;
+      saveState(state);
+      setGuitarTone(b.dataset.tone);
+      container.querySelectorAll("[data-tone]").forEach(x => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", x === b); });
+      setTimeout(() => playChord(demo, 1.8, { instrument: "guitar", stagger: 0.03 }), 250);
+      haptic(10);
+    };
+  });
+  container.querySelectorAll("[data-ear]").forEach(b => {
+    b.onclick = () => {
+      state.settings.earInstrument = b.dataset.ear;
+      saveState(state);
+      setEarInstrument(b.dataset.ear);
+      container.querySelectorAll("[data-ear]").forEach(x => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", x === b); });
+      setTimeout(() => playChord(demo, 1.8, { instrument: earInstrument(), arpeggiate: true, stagger: 0.12 }), 250);
+      haptic(10);
+    };
   });
 
   // daily goal

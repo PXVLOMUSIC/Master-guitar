@@ -2,7 +2,7 @@
 // Exports: renderTheory, renderCircleOfFifths, renderProgressionBuilder,
 //          renderScaleExplorer, generateTheoryQuiz
 
-import { playTone, playChord, startMetronome, stopMetronome } from "./audio.js";
+import { playTone, playChord, startMetronome, stopMetronome, earInstrument } from "./audio.js";
 import { midiToFreq, NOTE_NAMES } from "./instruments.js";
 
 const $ = (sel, root = document) => (root || document).querySelector(sel);
@@ -154,8 +154,8 @@ function renderIntervals(area) {
     b.onclick = () => {
       const iv = INTERVALS.find(x => x.name === b.dataset.iv);
       const root = 60;
-      playTone(midiToFreq(root), 0.6);
-      setTimeout(() => playTone(midiToFreq(root + iv.semis), 0.6), 700);
+      playTone(midiToFreq(root), 0.6, { instrument: earInstrument() });
+      setTimeout(() => playTone(midiToFreq(root + iv.semis), 0.6, { instrument: earInstrument() }), 700);
     };
   });
   const sel = $("#intSel", area);
@@ -163,8 +163,8 @@ function renderIntervals(area) {
   $("#playInt", area).onclick = () => {
     const iv = INTERVALS.find(x => x.name === sel.value);
     const root = 60 + Math.floor(Math.random() * 6);
-    playTone(midiToFreq(root), 0.6);
-    setTimeout(() => playTone(midiToFreq(root + iv.semis), 0.6), 700);
+    playTone(midiToFreq(root), 0.6, { instrument: earInstrument() });
+    setTimeout(() => playTone(midiToFreq(root + iv.semis), 0.6, { instrument: earInstrument() }), 700);
   };
 }
 
@@ -201,10 +201,10 @@ function renderScalesSection(area) {
     const ri = noteIndex(root);
     const base = 60 + ri;
     let t = 0;
-    scale.forEach(s => { setTimeout(() => playTone(midiToFreq(base + s), 0.35), t); t += 320; });
+    scale.forEach(s => { setTimeout(() => playTone(midiToFreq(base + s), 0.35, { instrument: earInstrument() }), t); t += 320; });
     // descend
     const desc = [...scale].reverse();
-    desc.forEach(s => { setTimeout(() => playTone(midiToFreq(base + s), 0.35), t); t += 320; });
+    desc.forEach(s => { setTimeout(() => playTone(midiToFreq(base + s), 0.35, { instrument: earInstrument() }), t); t += 320; });
   };
   $("#showFb", area).onclick = async () => {
     const fb = await import("./fretboard.js");

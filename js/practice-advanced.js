@@ -2,7 +2,7 @@
 // Interval ear training, chord-type ear training, technique library,
 // practice mode (loop & speed) with mic accuracy, rhythm trainer.
 
-import { playTone, playChord, startMetronome, stopMetronome, startMic, stopMic } from "./audio.js";
+import { playTone, playChord, startMetronome, stopMetronome, startMic, stopMic, earInstrument } from "./audio.js";
 import { midiToFreq, midiToNote, NOTE_NAMES } from "./instruments.js";
 
 const $ = (sel, root = document) => (root || document).querySelector(sel);
@@ -46,8 +46,8 @@ export function renderIntervalTrainer(container) {
     const second = rootMidi + iv.semis;
     state.current = { rootMidi, iv, second };
     state.answered = false;
-    playTone(midiToFreq(rootMidi), 0.6);
-    setTimeout(() => playTone(midiToFreq(second), 0.6), 700);
+    playTone(midiToFreq(rootMidi), 0.6, { instrument: earInstrument() });
+    setTimeout(() => playTone(midiToFreq(second), 0.6, { instrument: earInstrument() }), 700);
     draw();
   }
 
@@ -82,8 +82,8 @@ export function renderIntervalTrainer(container) {
     const replay = $("#replayBtn", container);
     if (replay) replay.onclick = () => {
       if (!state.current) return;
-      playTone(midiToFreq(state.current.rootMidi), 0.6);
-      setTimeout(() => playTone(midiToFreq(state.current.second), 0.6), 700);
+      playTone(midiToFreq(state.current.rootMidi), 0.6, { instrument: earInstrument() });
+      setTimeout(() => playTone(midiToFreq(state.current.second), 0.6, { instrument: earInstrument() }), 700);
     };
     $$(".ivBtn", container).forEach(b => {
       b.onclick = () => answer(b.dataset.name);
@@ -121,7 +121,7 @@ export function renderChordTypeTrainer(container) {
     const root = 48 + Math.floor(Math.random() * 12);
     state.current = { type, rootMidi: root };
     state.answered = false;
-    playChord(chordFreqs(root, type), 1.6);
+    playChord(chordFreqs(root, type), 1.6, { instrument: earInstrument() });
     draw();
   }
 
@@ -155,7 +155,7 @@ export function renderChordTypeTrainer(container) {
           <button class="btn btn-secondary btn-block btn-sm" id="replayChord2">🔊 Volver a escuchar</button>
         </div>
       </div>`;
-    const replay = () => { if (state.current) playChord(chordFreqs(state.current.rootMidi, state.current.type), 1.6); };
+    const replay = () => { if (state.current) playChord(chordFreqs(state.current.rootMidi, state.current.type), 1.6, { instrument: earInstrument() }); };
     $("#replayChord", container).onclick = replay;
     $("#replayChord2", container).onclick = replay;
     $$(".ctBtn", container).forEach(b => b.onclick = () => answer(b.dataset.type));
