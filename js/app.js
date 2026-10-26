@@ -1,4 +1,5 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
+import { initI18n, applyDocumentLanguage, t } from "./i18n.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
 import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments, setGuitarTone, setEarInstrument, earInstrument } from "./audio.js";
@@ -1837,19 +1838,19 @@ function renderProfile(v) {
     <input type="file" id="avatarInput" accept="image/*" hidden>
     <div class="card" style="text-align:center">
       <div class="profile-avatar-wrap">
-        <button class="profile-avatar" id="avatarBtn" type="button" aria-label="${avatar ? "Cambiar foto de perfil" : "Añadir foto de perfil"}">
+        <button class="profile-avatar" id="avatarBtn" type="button" aria-label="${avatar ? t("profile.changePhoto") : t("profile.addPhoto")}">
           ${avatar ? `<img src="${avatar}" alt="Foto de perfil">` : `<span class="profile-avatar__fallback" aria-hidden="true">👤</span>`}
           <span class="profile-avatar__edit" aria-hidden="true">✎</span>
         </button>
         <div class="profile-avatar-actions">
-          <button class="btn btn-secondary btn-sm" id="avatarChange" type="button">${avatar ? "Cambiar foto" : "Añadir foto"}</button>
-          ${avatar ? `<button class="btn btn-secondary btn-sm" id="avatarRemove" type="button">Quitar</button>` : ""}
+          <button class="btn btn-secondary btn-sm" id="avatarChange" type="button">${avatar ? t("profile.changePhoto") : t("profile.addPhoto")}</button>
+          ${avatar ? `<button class="btn btn-secondary btn-sm" id="avatarRemove" type="button">${t("profile.removePhoto")}</button>` : ""}
         </div>
       </div>
       <h2>${escapeHtml(state.user.name)}</h2>
       <p>Nivel ${state.level} · ${levelTitle(state.level)}</p>
       <p>Instrumento: ${INSTRUMENTS[state.user.instrument].name}</p>
-      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">La foto se guarda en este dispositivo.</p>
+      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">${t("profile.photoLocal")}</p>
     </div>
     <div class="section-title">Logros</div>
     <div style="padding:0 16px">
@@ -1950,6 +1951,7 @@ async function boot() {
     const sm = await loadSettings();
     try { sm.applyTheme(); } catch (e) {}
   } catch (e) {}
+  try { await initI18n(); applyDocumentLanguage(); } catch (e) { console.warn("i18n", e); }
   await loadContent();
   // Try to load real instrument samples
   // Skip sample loading on boot (requires user gesture for AudioContext)
@@ -1963,6 +1965,7 @@ async function boot() {
     showNav(true);
     await navigate(location.hash.startsWith("#practicar/") ? "practice" : "home");
   }
+  try { applyDocumentLanguage(); } catch (e) {}
   // bottom nav (iconos SVG en lugar de emojis)
   const NAV_ICONS = { home: "home", learn: "book", tuner: "tuner", practice: "guitar", profile: "user" };
   $$("#bottomnav button").forEach(b => {

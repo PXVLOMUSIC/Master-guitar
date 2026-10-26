@@ -240,8 +240,13 @@ export function renderSettings(container) {
           <div style="color:var(--muted);font-size:12px">Interfaz</div>
         </div>
         <select id="langSel" style="padding:8px 10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);font-weight:700">
+          <option value="auto" ${(!s.language || s.language === "auto") ? "selected" : ""}>Automático (sistema)</option>
           <option value="es" ${s.language === "es" ? "selected" : ""}>Español</option>
           <option value="en" ${s.language === "en" ? "selected" : ""}>English</option>
+          <option value="pt-BR" ${s.language === "pt-BR" ? "selected" : ""}>Português (Brasil)</option>
+          <option value="fr" ${s.language === "fr" ? "selected" : ""}>Français</option>
+          <option value="de" ${s.language === "de" ? "selected" : ""}>Deutsch</option>
+          <option value="it" ${s.language === "it" ? "selected" : ""}>Italiano</option>
         </select>
       </div>
     </div>
@@ -313,7 +318,7 @@ export function renderSettings(container) {
       <p style="color:var(--muted);font-size:11px;margin:10px 0 0">El archivo no contiene contraseñas. Si tienes cuenta, la nube puede restaurar tu progreso al iniciar sesión.</p>
     </div>
 
-    <div class="section-title">Conexión / Backend</div>
+    <div class="section-title">Cuenta y funciones sociales</div>
     <div class="card" id="connectionStatusCard">
       <div id="connStatusText" style="font-size:13px;margin-bottom:8px">Cargando estado…</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
@@ -389,11 +394,12 @@ export function renderSettings(container) {
     haptic(10);
     toast("Tema actualizado");
   };
-  container.querySelector("#langSel").onchange = (e) => {
-    state.settings.language = e.target.value;
-    saveState(state);
+  container.querySelector("#langSel").onchange = async (e) => {
+    const { setLanguage } = await import("./i18n.js");
+    await setLanguage(e.target.value);
     haptic(10);
     toast("Idioma actualizado");
+    window.location.reload();
   };
 
   // toggles

@@ -1487,44 +1487,10 @@ export async function renderBackendSettings(container) {
   const status = getStatus();
 
   container.innerHTML = `
-    <div class="card">
-      <h2>Backend / Cuenta</h2>
-      <p style="color:var(--muted);font-size:13px">Configura Supabase para sincronizar progreso, leaderboards y funciones sociales. Sin configurar, la app funciona 100% local.</p>
-      <div style="margin-top:10px">
-        <label style="font-weight:800;font-size:13px">Supabase URL</label>
-        <input id="sbUrl" type="text" placeholder="https://xxxx.supabase.co" value="${escapeHtml(cfg.url)}" style="width:100%;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);margin-top:4px">
-      </div>
-      <div style="margin-top:10px">
-        <label style="font-weight:800;font-size:13px">Anon key</label>
-        <input id="sbKey" type="password" placeholder="eyJ..." value="${escapeHtml(cfg.anonKey)}" style="width:100%;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);margin-top:4px">
-      </div>
-      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-        <button class="btn btn-primary" id="sbSaveCfg">Guardar y conectar</button>
-        <button class="btn btn-secondary" id="sbClearCfg">Desconectar</button>
-      </div>
-      <div id="sbStatus" style="margin-top:10px;font-size:13px;color:var(--muted)"></div>
-    </div>
-
-    <div class="card" id="connectionCard">
-      <h3>Estado de conexión</h3>
-      <div id="connStatus" style="font-size:13px;margin-bottom:8px"></div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <button class="btn btn-secondary btn-sm" id="syncNowBtn">Sincronizar ahora</button>
-        <button class="btn btn-secondary btn-sm" id="pullNowBtn">Descargar progreso</button>
-        <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700">
-          <input type="checkbox" id="realtimeToggle" ${isRealtimeEnabled() ? "checked" : ""}> Tiempo real
-        </label>
-      </div>
-    </div>
-
     <div class="card" id="authCard">
       <h3>Cuenta</h3>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 10px">Inicia sesión para sincronizar progreso, leaderboards y funciones sociales. La app también funciona 100% local sin cuenta.</p>
       <div id="authArea"></div>
-    </div>
-
-    <div class="card">
-      <h3>Sincronización</h3>
-      <div id="syncArea"></div>
     </div>
 
     <div class="card">
