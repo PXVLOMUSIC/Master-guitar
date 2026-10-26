@@ -1,0 +1,664 @@
+{
+  "version": 1,
+  "sampleRate": 44100,
+  "license": "CC0-1.0",
+  "engine": "Strumio real samples",
+  "sources": [
+    {
+      "name": "Big Rusty Drums",
+      "author": "Karoryfer Samples",
+      "license": "CC0-1.0",
+      "url": "https://github.com/sfzinstruments/karoryfer.big-rusty-drums"
+    },
+    {
+      "name": "Pastabass",
+      "author": "Karoryfer Samples",
+      "license": "CC0-1.0",
+      "url": "https://github.com/sfzinstruments/karoryfer.pastabass"
+    },
+    {
+      "name": "Emilyguitar",
+      "author": "Karoryfer Samples",
+      "license": "CC0-1.0",
+      "url": "https://github.com/sfzinstruments/karoryfer.emilyguitar"
+    },
+    {
+      "name": "Body Percussion",
+      "author": "Karoryfer Samples",
+      "license": "CC0-1.0",
+      "url": "https://github.com/sfzinstruments/body_percussion"
+    }
+  ],
+  "drums": {
+    "kick": [
+      [
+        "drums/kick_v0_r1.flac"
+      ],
+      [
+        "drums/kick_v1_r1.flac",
+        "drums/kick_v1_r2.flac"
+      ],
+      [
+        "drums/kick_v2_r1.flac",
+        "drums/kick_v2_r2.flac"
+      ],
+      [
+        "drums/kick_v3_r1.flac",
+        "drums/kick_v3_r2.flac"
+      ]
+    ],
+    "snare": [
+      [
+        "drums/snare_v0_r1.flac"
+      ],
+      [
+        "drums/snare_v1_r1.flac",
+        "drums/snare_v1_r2.flac"
+      ],
+      [
+        "drums/snare_v2_r1.flac",
+        "drums/snare_v2_r2.flac"
+      ],
+      [
+        "drums/snare_v3_r1.flac",
+        "drums/snare_v3_r2.flac"
+      ]
+    ],
+    "snare_rim": [
+      [
+        "drums/snare_rim_v0_r1.flac"
+      ],
+      [
+        "drums/snare_rim_v1_r1.flac",
+        "drums/snare_rim_v1_r2.flac"
+      ],
+      [
+        "drums/snare_rim_v2_r1.flac",
+        "drums/snare_rim_v2_r2.flac"
+      ],
+      [
+        "drums/snare_rim_v3_r1.flac",
+        "drums/snare_rim_v3_r2.flac"
+      ]
+    ],
+    "hihat": [
+      [
+        "drums/hihat_v0_r1.flac"
+      ],
+      [
+        "drums/hihat_v1_r1.flac",
+        "drums/hihat_v1_r2.flac"
+      ],
+      [
+        "drums/hihat_v2_r1.flac",
+        "drums/hihat_v2_r2.flac"
+      ],
+      [
+        "drums/hihat_v3_r1.flac",
+        "drums/hihat_v3_r2.flac"
+      ]
+    ],
+    "hihat_open": [
+      [
+        "drums/hihat_open_v0_r1.flac"
+      ],
+      [
+        "drums/hihat_open_v1_r1.flac",
+        "drums/hihat_open_v1_r2.flac"
+      ],
+      [
+        "drums/hihat_open_v2_r1.flac",
+        "drums/hihat_open_v2_r2.flac"
+      ],
+      [
+        "drums/hihat_open_v3_r1.flac",
+        "drums/hihat_open_v3_r2.flac"
+      ]
+    ],
+    "hihat_pedal": [
+      [
+        "drums/hihat_pedal_v0_r1.flac"
+      ],
+      [
+        "drums/hihat_pedal_v1_r1.flac",
+        "drums/hihat_pedal_v1_r2.flac"
+      ],
+      [
+        "drums/hihat_pedal_v2_r1.flac",
+        "drums/hihat_pedal_v2_r2.flac"
+      ],
+      [
+        "drums/hihat_pedal_v3_r1.flac",
+        "drums/hihat_pedal_v3_r2.flac"
+      ]
+    ],
+    "ride": [
+      [
+        "drums/ride_v0_r1.flac"
+      ],
+      [
+        "drums/ride_v1_r1.flac",
+        "drums/ride_v1_r2.flac"
+      ],
+      [
+        "drums/ride_v2_r1.flac",
+        "drums/ride_v2_r2.flac"
+      ],
+      [
+        "drums/ride_v3_r1.flac",
+        "drums/ride_v3_r2.flac"
+      ]
+    ],
+    "ride_bell": [
+      [
+        "drums/ride_bell_v0_r1.flac"
+      ],
+      [
+        "drums/ride_bell_v1_r1.flac",
+        "drums/ride_bell_v1_r2.flac"
+      ],
+      [
+        "drums/ride_bell_v2_r1.flac",
+        "drums/ride_bell_v2_r2.flac"
+      ],
+      [
+        "drums/ride_bell_v3_r1.flac",
+        "drums/ride_bell_v3_r2.flac"
+      ]
+    ],
+    "crash": [
+      [
+        "drums/crash_v0_r1.flac"
+      ],
+      [
+        "drums/crash_v1_r1.flac",
+        "drums/crash_v1_r2.flac"
+      ],
+      [
+        "drums/crash_v2_r1.flac",
+        "drums/crash_v2_r2.flac"
+      ],
+      [
+        "drums/crash_v3_r1.flac",
+        "drums/crash_v3_r2.flac"
+      ]
+    ],
+    "tom_high": [
+      [
+        "drums/tom_high_v0_r1.flac"
+      ],
+      [
+        "drums/tom_high_v1_r1.flac",
+        "drums/tom_high_v1_r2.flac"
+      ],
+      [
+        "drums/tom_high_v2_r1.flac",
+        "drums/tom_high_v2_r2.flac"
+      ],
+      [
+        "drums/tom_high_v3_r1.flac",
+        "drums/tom_high_v3_r2.flac"
+      ]
+    ],
+    "tom_mid": [
+      [
+        "drums/tom_mid_v0_r1.flac"
+      ],
+      [
+        "drums/tom_mid_v1_r1.flac",
+        "drums/tom_mid_v1_r2.flac"
+      ],
+      [
+        "drums/tom_mid_v2_r1.flac",
+        "drums/tom_mid_v2_r2.flac"
+      ],
+      [
+        "drums/tom_mid_v3_r1.flac",
+        "drums/tom_mid_v3_r2.flac"
+      ]
+    ],
+    "tom_low": [
+      [
+        "drums/tom_low_v0_r1.flac"
+      ],
+      [
+        "drums/tom_low_v1_r1.flac",
+        "drums/tom_low_v1_r2.flac"
+      ],
+      [
+        "drums/tom_low_v2_r1.flac",
+        "drums/tom_low_v2_r2.flac"
+      ],
+      [
+        "drums/tom_low_v3_r1.flac",
+        "drums/tom_low_v3_r2.flac"
+      ]
+    ]
+  },
+  "bass": [
+    {
+      "note": "bb2",
+      "midi": 46,
+      "vel": "vl3",
+      "file": "bass/bb2_vl3_r1.flac"
+    },
+    {
+      "note": "bb2",
+      "midi": 46,
+      "vel": "vl3",
+      "file": "bass/bb2_vl3_r2.flac"
+    },
+    {
+      "note": "bb3",
+      "midi": 58,
+      "vel": "vl3",
+      "file": "bass/bb3_vl3_r1.flac"
+    },
+    {
+      "note": "bb3",
+      "midi": 58,
+      "vel": "vl3",
+      "file": "bass/bb3_vl3_r2.flac"
+    },
+    {
+      "note": "bb4",
+      "midi": 70,
+      "vel": "vl3",
+      "file": "bass/bb4_vl3_r1.flac"
+    },
+    {
+      "note": "bb4",
+      "midi": 70,
+      "vel": "vl3",
+      "file": "bass/bb4_vl3_r2.flac"
+    },
+    {
+      "note": "bb5",
+      "midi": 82,
+      "vel": "vl3",
+      "file": "bass/bb5_vl3_r1.flac"
+    },
+    {
+      "note": "bb5",
+      "midi": 82,
+      "vel": "vl3",
+      "file": "bass/bb5_vl3_r2.flac"
+    },
+    {
+      "note": "db3",
+      "midi": 49,
+      "vel": "vl3",
+      "file": "bass/db3_vl3_r1.flac"
+    },
+    {
+      "note": "db3",
+      "midi": 49,
+      "vel": "vl3",
+      "file": "bass/db3_vl3_r2.flac"
+    },
+    {
+      "note": "db4",
+      "midi": 61,
+      "vel": "vl3",
+      "file": "bass/db4_vl3_r1.flac"
+    },
+    {
+      "note": "db4",
+      "midi": 61,
+      "vel": "vl3",
+      "file": "bass/db4_vl3_r2.flac"
+    },
+    {
+      "note": "db5",
+      "midi": 73,
+      "vel": "vl3",
+      "file": "bass/db5_vl3_r1.flac"
+    },
+    {
+      "note": "db5",
+      "midi": 73,
+      "vel": "vl3",
+      "file": "bass/db5_vl3_r2.flac"
+    },
+    {
+      "note": "db6",
+      "midi": 85,
+      "vel": "vl3",
+      "file": "bass/db6_vl3_r1.flac"
+    },
+    {
+      "note": "db6",
+      "midi": 85,
+      "vel": "vl3",
+      "file": "bass/db6_vl3_r2.flac"
+    },
+    {
+      "note": "e2",
+      "midi": 40,
+      "vel": "vl3",
+      "file": "bass/e2_vl3_r1.flac"
+    },
+    {
+      "note": "e2",
+      "midi": 40,
+      "vel": "vl3",
+      "file": "bass/e2_vl3_r2.flac"
+    },
+    {
+      "note": "e3",
+      "midi": 52,
+      "vel": "vl3",
+      "file": "bass/e3_vl3_r1.flac"
+    },
+    {
+      "note": "e3",
+      "midi": 52,
+      "vel": "vl3",
+      "file": "bass/e3_vl3_r2.flac"
+    },
+    {
+      "note": "e4",
+      "midi": 64,
+      "vel": "vl3",
+      "file": "bass/e4_vl3_r1.flac"
+    },
+    {
+      "note": "e4",
+      "midi": 64,
+      "vel": "vl3",
+      "file": "bass/e4_vl3_r2.flac"
+    },
+    {
+      "note": "e5",
+      "midi": 76,
+      "vel": "vl3",
+      "file": "bass/e5_vl3_r1.flac"
+    },
+    {
+      "note": "e5",
+      "midi": 76,
+      "vel": "vl3",
+      "file": "bass/e5_vl3_r2.flac"
+    },
+    {
+      "note": "g2",
+      "midi": 43,
+      "vel": "vl3",
+      "file": "bass/g2_vl3_r1.flac"
+    },
+    {
+      "note": "g2",
+      "midi": 43,
+      "vel": "vl3",
+      "file": "bass/g2_vl3_r2.flac"
+    },
+    {
+      "note": "g3",
+      "midi": 55,
+      "vel": "vl3",
+      "file": "bass/g3_vl3_r1.flac"
+    },
+    {
+      "note": "g3",
+      "midi": 55,
+      "vel": "vl3",
+      "file": "bass/g3_vl3_r2.flac"
+    },
+    {
+      "note": "g4",
+      "midi": 67,
+      "vel": "vl3",
+      "file": "bass/g4_vl3_r1.flac"
+    },
+    {
+      "note": "g4",
+      "midi": 67,
+      "vel": "vl3",
+      "file": "bass/g4_vl3_r2.flac"
+    },
+    {
+      "note": "g5",
+      "midi": 79,
+      "vel": "vl3",
+      "file": "bass/g5_vl3_r1.flac"
+    },
+    {
+      "note": "g5",
+      "midi": 79,
+      "vel": "vl3",
+      "file": "bass/g5_vl3_r2.flac"
+    }
+  ],
+  "guitar": [
+    {
+      "note": "a2",
+      "midi": 45,
+      "vel": "mf",
+      "file": "guitar/a2_mf_r1.flac"
+    },
+    {
+      "note": "a2",
+      "midi": 45,
+      "vel": "mf",
+      "file": "guitar/a2_mf_r2.flac"
+    },
+    {
+      "note": "a3",
+      "midi": 57,
+      "vel": "mf",
+      "file": "guitar/a3_mf_r1.flac"
+    },
+    {
+      "note": "a3",
+      "midi": 57,
+      "vel": "mf",
+      "file": "guitar/a3_mf_r2.flac"
+    },
+    {
+      "note": "a4",
+      "midi": 69,
+      "vel": "mf",
+      "file": "guitar/a4_mf_r1.flac"
+    },
+    {
+      "note": "a4",
+      "midi": 69,
+      "vel": "mf",
+      "file": "guitar/a4_mf_r2.flac"
+    },
+    {
+      "note": "a5",
+      "midi": 81,
+      "vel": "mf",
+      "file": "guitar/a5_mf_r1.flac"
+    },
+    {
+      "note": "a5",
+      "midi": 81,
+      "vel": "mf",
+      "file": "guitar/a5_mf_r2.flac"
+    },
+    {
+      "note": "c3",
+      "midi": 48,
+      "vel": "mf",
+      "file": "guitar/c3_mf_r1.flac"
+    },
+    {
+      "note": "c3",
+      "midi": 48,
+      "vel": "mf",
+      "file": "guitar/c3_mf_r2.flac"
+    },
+    {
+      "note": "c4",
+      "midi": 60,
+      "vel": "mf",
+      "file": "guitar/c4_mf_r1.flac"
+    },
+    {
+      "note": "c4",
+      "midi": 60,
+      "vel": "mf",
+      "file": "guitar/c4_mf_r2.flac"
+    },
+    {
+      "note": "c5",
+      "midi": 72,
+      "vel": "mf",
+      "file": "guitar/c5_mf_r1.flac"
+    },
+    {
+      "note": "c5",
+      "midi": 72,
+      "vel": "mf",
+      "file": "guitar/c5_mf_r2.flac"
+    },
+    {
+      "note": "c6",
+      "midi": 84,
+      "vel": "mf",
+      "file": "guitar/c6_mf_r1.flac"
+    },
+    {
+      "note": "c6",
+      "midi": 84,
+      "vel": "mf",
+      "file": "guitar/c6_mf_r2.flac"
+    },
+    {
+      "note": "d6",
+      "midi": 86,
+      "vel": "mf",
+      "file": "guitar/d6_mf_r1.flac"
+    },
+    {
+      "note": "d6",
+      "midi": 86,
+      "vel": "mf",
+      "file": "guitar/d6_mf_r2.flac"
+    },
+    {
+      "note": "db2",
+      "midi": 37,
+      "vel": "mf",
+      "file": "guitar/db2_mf_r1.flac"
+    },
+    {
+      "note": "db2",
+      "midi": 37,
+      "vel": "mf",
+      "file": "guitar/db2_mf_r2.flac"
+    },
+    {
+      "note": "e2",
+      "midi": 40,
+      "vel": "mf",
+      "file": "guitar/e2_mf_r1.flac"
+    },
+    {
+      "note": "e2",
+      "midi": 40,
+      "vel": "mf",
+      "file": "guitar/e2_mf_r2.flac"
+    },
+    {
+      "note": "eb3",
+      "midi": 51,
+      "vel": "mf",
+      "file": "guitar/eb3_mf_r1.flac"
+    },
+    {
+      "note": "eb3",
+      "midi": 51,
+      "vel": "mf",
+      "file": "guitar/eb3_mf_r2.flac"
+    },
+    {
+      "note": "eb4",
+      "midi": 63,
+      "vel": "mf",
+      "file": "guitar/eb4_mf_r1.flac"
+    },
+    {
+      "note": "eb4",
+      "midi": 63,
+      "vel": "mf",
+      "file": "guitar/eb4_mf_r2.flac"
+    },
+    {
+      "note": "eb5",
+      "midi": 75,
+      "vel": "mf",
+      "file": "guitar/eb5_mf_r1.flac"
+    },
+    {
+      "note": "eb5",
+      "midi": 75,
+      "vel": "mf",
+      "file": "guitar/eb5_mf_r2.flac"
+    },
+    {
+      "note": "gb2",
+      "midi": 42,
+      "vel": "mf",
+      "file": "guitar/gb2_mf_r1.flac"
+    },
+    {
+      "note": "gb2",
+      "midi": 42,
+      "vel": "mf",
+      "file": "guitar/gb2_mf_r2.flac"
+    },
+    {
+      "note": "gb3",
+      "midi": 54,
+      "vel": "mf",
+      "file": "guitar/gb3_mf_r1.flac"
+    },
+    {
+      "note": "gb3",
+      "midi": 54,
+      "vel": "mf",
+      "file": "guitar/gb3_mf_r2.flac"
+    },
+    {
+      "note": "gb4",
+      "midi": 66,
+      "vel": "mf",
+      "file": "guitar/gb4_mf_r1.flac"
+    },
+    {
+      "note": "gb4",
+      "midi": 66,
+      "vel": "mf",
+      "file": "guitar/gb4_mf_r2.flac"
+    },
+    {
+      "note": "gb5",
+      "midi": 78,
+      "vel": "mf",
+      "file": "guitar/gb5_mf_r1.flac"
+    },
+    {
+      "note": "gb5",
+      "midi": 78,
+      "vel": "mf",
+      "file": "guitar/gb5_mf_r2.flac"
+    }
+  ],
+  "perc": {
+    "clap": [
+      "perc/clap_r1.flac",
+      "perc/clap_r2.flac"
+    ],
+    "finger_snap": [
+      "perc/finger_snap_r1.flac",
+      "perc/finger_snap_r2.flac"
+    ],
+    "stomp": [
+      "perc/stomp_r1.flac",
+      "perc/stomp_r2.flac"
+    ]
+  }
+}

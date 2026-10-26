@@ -1,0 +1,112 @@
+{
+  "videos": [
+    {
+      "id": "v1",
+      "title": "Anatomía de la guitarra",
+      "url": "assets/videos/anatomy.mp4",
+      "duration": 45,
+      "lesson": "l1",
+      "description": "Conoce las partes de la guitarra: cuerpo, mástil, trastes y cuerdas.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v2",
+      "title": "Postura correcta",
+      "url": "assets/videos/posture.mp4",
+      "duration": 60,
+      "lesson": "l2",
+      "description": "Postura sentada y de pie para tocar sin tensión.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v3",
+      "title": "Afinación estándar EADGBE",
+      "url": "assets/videos/tuning.mp4",
+      "duration": 55,
+      "lesson": "l3",
+      "description": "Cómo afinar tu guitarra cuerda por cuerda.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v4",
+      "title": "Primer acorde: Em",
+      "url": "assets/videos/em-chord.mp4",
+      "duration": 70,
+      "lesson": "l4",
+      "description": "Formación y sonido del acorde de Mi menor.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v5",
+      "title": "Acorde de Am",
+      "url": "assets/videos/am-chord.mp4",
+      "duration": 65,
+      "lesson": "l5",
+      "description": "Posición y práctica del acorde de La menor.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v6",
+      "title": "Cambio de acordes Em-Am",
+      "url": "assets/videos/change-em-am.mp4",
+      "duration": 80,
+      "lesson": "l6",
+      "description": "Transición suave entre Em y Am.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v7",
+      "title": "Rasgueo básico",
+      "url": "assets/videos/strumming-basic.mp4",
+      "duration": 90,
+      "lesson": "l7",
+      "description": "Patrón de rasgueo D-DU-UDU para principiantes.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v8",
+      "title": "Escala pentatónica menor",
+      "url": "assets/videos/pentatonic.mp4",
+      "duration": 100,
+      "lesson": "l8",
+      "description": "Posición 1 de la pentatónica menor en La.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v9",
+      "title": "Hammer-on y pull-off",
+      "url": "assets/videos/hammer-pull.mp4",
+      "duration": 75,
+      "lesson": "l9",
+      "description": "Técnicas de ligado: hammer-on y pull-off.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v10",
+      "title": "Bend y vibrato",
+      "url": "assets/videos/bend-vibrato.mp4",
+      "duration": 85,
+      "lesson": "l10",
+      "description": "Expresión: bends y vibrato controlados.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v11",
+      "title": "Acorde de C",
+      "url": "assets/videos/c-chord.mp4",
+      "duration": 60,
+      "lesson": "l11",
+      "description": "Formación del acorde de Do mayor.",
+      "thumbnail": ""
+    },
+    {
+      "id": "v12",
+      "title": "Acorde de G",
+      "url": "assets/videos/g-chord.mp4",
+      "duration": 60,
+      "lesson": "l12",
+      "description": "Formación del acorde de Sol mayor.",
+      "thumbnail": ""
+    }
+  ]
+}

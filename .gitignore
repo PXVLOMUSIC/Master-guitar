@@ -1,0 +1,27 @@
+# Caché local de muestras (98 MB) y librerías de desarrollo
+tools/.sample_cache/
+tools/_pylibs/
+tools/.fetch_log.txt
+
+# Copias de seguridad locales
+_copia_seguridad_*/
+
+# Archivos de depuración
+debug.html
+test-app.html
+minimal.html
+index2.html
+strumio.html
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+
+# Secretos y entorno
+.env
+.env.*

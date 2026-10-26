@@ -1,0 +1,29 @@
+{
+  "guitar": {
+    "Em": { "name": "Mi menor", "frets": [-1,0,2,2,0,0], "fingers": [0,0,2,3,0,0], "barre": null },
+    "Am": { "name": "La menor", "frets": [-1,0,2,2,1,0], "fingers": [0,0,2,3,1,0], "barre": null },
+    "C":  { "name": "Do mayor", "frets": [-1,3,2,0,1,0], "fingers": [0,3,2,0,1,0], "barre": null },
+    "G":  { "name": "Sol mayor", "frets": [3,2,0,0,0,3], "fingers": [2,1,0,0,0,3], "barre": null },
+    "D":  { "name": "Re mayor", "frets": [-1,-1,0,2,3,2], "fingers": [0,0,0,1,3,2], "barre": null },
+    "F":  { "name": "Fa mayor", "frets": [1,3,3,2,1,1], "fingers": [1,3,4,2,1,1], "barre": 1 },
+    "A":  { "name": "La mayor", "frets": [-1,0,2,2,2,0], "fingers": [0,0,1,2,3,0], "barre": null },
+    "E":  { "name": "Mi mayor", "frets": [0,2,2,1,0,0], "fingers": [0,2,3,1,0,0], "barre": null },
+    "Dm": { "name": "Re menor", "frets": [-1,-1,0,2,3,1], "fingers": [0,0,0,2,3,1], "barre": null },
+    "Bm": { "name": "Si menor", "frets": [2,2,4,4,3,2], "fingers": [1,1,3,4,2,1], "barre": 2 },
+    "Asus2": { "name": "La suspendido 2", "frets": [-1,0,2,2,0,0], "fingers": [0,0,1,2,0,0], "barre": null },
+    "Dsus2": { "name": "Re suspendido 2", "frets": [-1,-1,0,2,3,0], "fingers": [0,0,0,1,3,0], "barre": null },
+    "G7": { "name": "Sol séptima", "frets": [3,2,0,0,0,1], "fingers": [2,1,0,0,0,4], "barre": null },
+    "Cadd9": { "name": "Do add9", "frets": [-1,3,2,0,3,3], "fingers": [0,3,2,0,4,4], "barre": null },
+    "E5": { "name": "Mi power chord", "frets": [0,2,2,-1,-1,-1], "fingers": [0,1,3,0,0,0], "barre": null },
+    "A5": { "name": "La power chord", "frets": [-1,0,2,2,-1,-1], "fingers": [0,0,1,2,0,0], "barre": null }
+  },
+  "ukulele": {
+    "C":  { "name": "Do mayor", "frets": [0,0,0,3], "fingers": [0,0,0,3] },
+    "G":  { "name": "Sol mayor", "frets": [0,2,3,2], "fingers": [0,1,3,2] },
+    "Am": { "name": "La menor", "frets": [2,0,0,0], "fingers": [2,0,0,0] },
+    "F":  { "name": "Fa mayor", "frets": [2,0,1,0], "fingers": [2,0,1,0] },
+    "D":  { "name": "Re mayor", "frets": [2,2,2,0], "fingers": [1,2,3,0] },
+    "E":  { "name": "Mi mayor", "frets": [4,4,4,2], "fingers": [2,3,4,1] },
+    "G7": { "name": "Sol séptima", "frets": [0,2,1,2], "fingers": [0,2,1,3] }
+  }
+}

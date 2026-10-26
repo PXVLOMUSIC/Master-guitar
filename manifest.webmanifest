@@ -1,0 +1,32 @@
+{
+  "name": "Strumio — Aprende guitarra",
+  "short_name": "Strumio",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#131f24",
+  "theme_color": "#131f24",
+  "lang": "es",
+  "description": "Aprende guitarra paso a paso, estilo Duolingo. Incluye afinador para guitarra, ukelele y bajo.",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
