@@ -17,7 +17,10 @@ JavaScript moderno, Web Audio y Supabase.
 - **Canciones**, backing tracks, secuenciador de 16 pasos, mezclador y exportación WAV.
 - **Cuenta y sincronización** con Supabase: email/contraseña, enlace mágico y
   Google OAuth. Ranking, retos y progreso en la nube.
-- **PWA instalable** con iconos y manifest (offline pendiente).
+- **PWA instalable y offline**: shell precacheado, audio cacheado al reproducir,
+  aviso de nueva versión y modo sin conexión.
+- **Respaldo del progreso**: exportar/importar JSON y restablecer el dispositivo
+  desde Ajustes → Datos y respaldo.
 
 ## Ejecutar en local
 
@@ -46,7 +49,7 @@ en [`DEPLOY.md`](DEPLOY.md).
 - `js/backend.js` + `js/supabase-config.js` — auth y sincronización
 - `data/` — currículo, acordes, canciones y vídeos
 - `assets/audio/` — muestras FLAC y `manifest.json` con licencias
-- `sw.js` — service worker (paso; offline pendiente)
+- `sw.js` — service worker: shell + media cache y actualizaciones
 - `backend/schema.sql` — tablas, RLS y triggers de Supabase
 
 ## Documentación

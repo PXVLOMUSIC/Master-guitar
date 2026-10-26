@@ -1,8 +1,9 @@
 // settings.js — settings panel, progress dashboard, theme manager, notifications
-import { state, saveState, defaultState } from "./storage.js";
+import { state, saveState, defaultState, resetState } from "./storage.js";
 import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
 import { renderBackendSettings, getStatus, setRealtimeEnabled, isRealtimeEnabled, syncProgress } from "./backend.js";
+import { clearQueue } from "./sync.js";
 
 // ---------- helpers ----------
 function ensureDefaults() {
@@ -218,6 +219,16 @@ export function renderSettings(container) {
       <button class="btn btn-secondary btn-block" id="permBtn" style="margin-top:8px">🔔 Solicitar permiso de notificaciones</button>
     </div>
 
+    <div class="section-title">Datos y respaldo</div>
+    <div class="card">
+      <p style="color:var(--muted);font-size:12px;margin:0 0 10px">Tu progreso vive en este dispositivo. Exporta una copia antes de cambiar de móvil, borrar datos o reinstalar.</p>
+      <button class="btn btn-secondary btn-block" id="exportProgressBtn">⬇️ Exportar progreso</button>
+      <button class="btn btn-secondary btn-block" id="importProgressBtn" style="margin-top:8px">⬆️ Importar progreso</button>
+      <input type="file" id="importProgressFile" accept="application/json,.json" hidden>
+      <button class="btn btn-danger btn-block" id="resetProgressBtn" style="margin-top:8px">🗑️ Restablecer este dispositivo</button>
+      <p style="color:var(--muted);font-size:11px;margin:10px 0 0">El archivo no contiene contraseñas. Si tienes cuenta, la nube puede restaurar tu progreso al iniciar sesión.</p>
+    </div>
+
     <div class="section-title">Conexión / Backend</div>
     <div class="card" id="connectionStatusCard">
       <div id="connStatusText" style="font-size:13px;margin-bottom:8px">Cargando estado…</div>
@@ -356,7 +367,135 @@ export function renderSettings(container) {
     }
   };
 
+  // backup / restore
+  const exportBtn = container.querySelector("#exportProgressBtn");
+  if (exportBtn) exportBtn.onclick = exportProgress;
+  const importBtn = container.querySelector("#importProgressBtn");
+  const importFile = container.querySelector("#importProgressFile");
+  if (importBtn && importFile) {
+    importBtn.onclick = () => importFile.click();
+    importFile.onchange = async () => {
+      const file = importFile.files && importFile.files[0];
+      importFile.value = "";
+      if (file) await importProgressFile(file);
+    };
+  }
+  const resetBtn = container.querySelector("#resetProgressBtn");
+  if (resetBtn) resetBtn.onclick = resetLocalProgress;
+
   applyTheme();
+}
+
+// ---------- Backup / restore ----------
+function exportProgress() {
+  try {
+    // Copia portátil: sin configuración de backend ni marcas de sincronización.
+    const snapshot = JSON.parse(JSON.stringify(state));
+    delete snapshot.sync;
+    if (snapshot.settings) delete snapshot.settings.backend;
+    const payload = {
+      app: "strumio",
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      state: snapshot,
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `strumio-progreso-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    toast("Progreso exportado");
+  } catch (e) {
+    console.warn("export", e);
+    toast("No se pudo exportar");
+  }
+}
+
+function normalizeImportedState(raw) {
+  const source = raw && raw.state && typeof raw.state === "object" ? raw.state : raw;
+  if (!source || typeof source !== "object" || Array.isArray(source)) {
+    throw new Error("Formato no válido");
+  }
+
+  // Copia segura: evita claves de prototipo en un JSON manipulado.
+  const incoming = {};
+  for (const [key, value] of Object.entries(source)) {
+    if (key === "__proto__" || key === "constructor" || key === "prototype") continue;
+    incoming[key] = value;
+  }
+
+  const d = defaultState();
+  const objectOr = (value, fallback) =>
+    value && typeof value === "object" && !Array.isArray(value) ? value : fallback;
+
+  const merged = {
+    ...d,
+    ...incoming,
+    settings: { ...d.settings, ...objectOr(incoming.settings, {}) },
+    stats: { ...d.stats, ...objectOr(incoming.stats, {}) },
+    completed: objectOr(incoming.completed, {}),
+    achievements: objectOr(incoming.achievements, {}),
+    tunerHistory: objectOr(incoming.tunerHistory, {}),
+    dailyLog: objectOr(incoming.dailyLog, {}),
+    practiceDays: Array.isArray(incoming.practiceDays) ? incoming.practiceDays : [],
+  };
+
+  // El perfil de la cuenta actual manda si ya hay sesión local.
+  if (state.user) merged.user = state.user;
+  // La configuración de backend no se importa: evita redirigir la sesión a otro servidor.
+  if (state.settings && state.settings.backend) {
+    merged.settings.backend = state.settings.backend;
+  } else {
+    delete merged.settings.backend;
+  }
+  // No arrastrar marcas de sincronización antiguas: la nube debe comparar de nuevo.
+  delete merged.sync;
+
+  if (!Array.isArray(merged.stats.chordsLearned)) {
+    merged.stats.chordsLearned = merged.stats.chordsLearned ? [merged.stats.chordsLearned] : [];
+  }
+  if (!Array.isArray(merged.stats.scalesLearned)) {
+    merged.stats.scalesLearned = merged.stats.scalesLearned ? [merged.stats.scalesLearned] : [];
+  }
+
+  return merged;
+}
+
+async function importProgressFile(file) {
+  if (!file) return;
+  if (file.size > 2 * 1024 * 1024) {
+    toast("Archivo demasiado grande");
+    return;
+  }
+  try {
+    const parsed = JSON.parse(await file.text());
+    const merged = normalizeImportedState(parsed);
+    for (const key of Object.keys(state)) delete state[key];
+    Object.assign(state, merged);
+    saveState(state);
+    toast("Progreso importado. Recargando…");
+    setTimeout(() => location.reload(), 800);
+  } catch (e) {
+    console.warn("import", e);
+    toast("Archivo no válido");
+  }
+}
+
+function resetLocalProgress() {
+  const ok = window.confirm(
+    "¿Restablecer el progreso de este dispositivo?\n\nSe borrarán XP, lecciones, racha y ajustes locales. Si tienes cuenta, la nube puede restaurarlo al volver a iniciar sesión."
+  );
+  if (!ok) return;
+  for (const key of ["bestChanges", "strumio_tools_v1", "strumio_video_progress", "strumio_video_watched"]) {
+    try { localStorage.removeItem(key); } catch (e) {}
+  }
+  try { clearQueue(); } catch (e) {}
+  resetState();
+  location.reload();
 }
 
 function renderToggle(id, label, desc, checked) {
