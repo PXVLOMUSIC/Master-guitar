@@ -43,7 +43,8 @@ function recordPractice(entry) {
     Object.entries(entry.blocks).forEach(([k, v]) => { prev.blocks[k] = (prev.blocks[k] || 0) + (v || 0); });
   }
   if (entry.cpm != null) { prev.cpm = prev.cpm || []; prev.cpm.push(entry.cpm); }
-  if (entry.exercise) { prev.exercises = prev.exercises || []; prev.exercises.push(entry.exercise); }
+  const ex = [].concat(entry.exercise || [], entry.exercises || []);
+  if (ex.length) { prev.exercises = (prev.exercises || []).concat(ex); }
   state.practiceLog[key] = prev;
   if (!state.practiceDays.includes(key)) state.practiceDays.push(key);
   state.stats.minutesPracticed = (state.stats.minutesPracticed || 0) + (entry.minutes || 0);
@@ -94,6 +95,15 @@ function generateRoutine(levelKey) {
     { id: "cooldown", name: "Enfriamiento (oído)", icon: "👂", duration: 2, tasks: tasks.cooldown }
   ];
   return { level: levelKey, total: 15, blocks };
+}
+
+// Rutina de hoy para la pantalla de Inicio.
+export function getTodayRoutine() {
+  ensureLog();
+  const routine = generateRoutine(userLevelKey());
+  const log = state.practiceLog[todayKey()] || {};
+  const done = (log.exercises || []).some((e) => e.startsWith("daily-routine-") && e !== "daily-routine-partial");
+  return { ...routine, done, minutesToday: log.minutes || 0 };
 }
 
 /* ============================================================

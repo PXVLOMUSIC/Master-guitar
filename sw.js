@@ -3,7 +3,7 @@
 // - Audio e imágenes: stale-while-revalidate (instantáneo y se actualiza en segundo plano).
 // - El shell se precarga para que la app abra sin conexión desde la primera visita.
 
-const SHELL_CACHE = "strumio-shell-v4";
+const SHELL_CACHE = "strumio-shell-v5";
 const MEDIA_CACHE = "strumio-media-v1";
 
 const CORE = [
