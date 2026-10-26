@@ -153,5 +153,15 @@
   "achievement.tuner_pro.name": "Feines Gehör",
   "achievement.tuner_pro.desc": "Benutze das Stimmgerät 10 Mal",
   "achievement.gems_50.name": "Sparer",
-  "achievement.gems_50.desc": "Sammle 50 Edelsteine"
+  "achievement.gems_50.desc": "Sammle 50 Edelsteine",
+  "profile.level": "Level {level} · {title}",
+  "profile.instrument": "Instrument: {name}",
+  "profile.achievements": "Erfolge",
+  "profile.panel": "Dashboard und Einstellungen",
+  "profile.dashboard": "📊 Fortschritts-Dashboard",
+  "profile.settings": "⚙️ Einstellungen",
+  "profile.refill": "❤️ Herzen auffüllen (50 💎)",
+  "profile.freeze": "🧊 Serien-Einfrierer (30 💎)",
+  "profile.record": "🎙️ Fortschritt aufzeichnen (Tag 1 vs 30)",
+  "profile.reset": "🔄 Fortschritt zurücksetzen"
 }

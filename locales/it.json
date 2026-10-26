@@ -153,5 +153,15 @@
   "achievement.tuner_pro.name": "Orecchio fino",
   "achievement.tuner_pro.desc": "Usa l'accordatore 10 volte",
   "achievement.gems_50.name": "Risparmiatore",
-  "achievement.gems_50.desc": "Accumula 50 gemme"
+  "achievement.gems_50.desc": "Accumula 50 gemme",
+  "profile.level": "Livello {level} · {title}",
+  "profile.instrument": "Strumento: {name}",
+  "profile.achievements": "Traguardi",
+  "profile.panel": "Pannello e impostazioni",
+  "profile.dashboard": "📊 Pannello progressi",
+  "profile.settings": "⚙️ Impostazioni",
+  "profile.refill": "❤️ Ricarica cuori (50 💎)",
+  "profile.freeze": "🧊 Congela serie (30 💎)",
+  "profile.record": "🎙️ Registra progresso (giorno 1 vs 30)",
+  "profile.reset": "🔄 Reimposta progresso"
 }

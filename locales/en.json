@@ -153,5 +153,15 @@
   "achievement.tuner_pro.name": "Fine ear",
   "achievement.tuner_pro.desc": "Use the tuner 10 times",
   "achievement.gems_50.name": "Saver",
-  "achievement.gems_50.desc": "Accumulate 50 gems"
+  "achievement.gems_50.desc": "Accumulate 50 gems",
+  "profile.level": "Level {level} · {title}",
+  "profile.instrument": "Instrument: {name}",
+  "profile.achievements": "Achievements",
+  "profile.panel": "Dashboard and settings",
+  "profile.dashboard": "📊 Progress dashboard",
+  "profile.settings": "⚙️ Settings",
+  "profile.refill": "❤️ Refill hearts (50 💎)",
+  "profile.freeze": "🧊 Streak freeze (30 💎)",
+  "profile.record": "🎙️ Record progress (day 1 vs 30)",
+  "profile.reset": "🔄 Reset progress"
 }

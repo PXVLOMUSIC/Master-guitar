@@ -153,5 +153,15 @@
   "achievement.tuner_pro.name": "Oreille fine",
   "achievement.tuner_pro.desc": "Utilisez l'accordeur 10 fois",
   "achievement.gems_50.name": "Économe",
-  "achievement.gems_50.desc": "Accumulez 50 gemmes"
+  "achievement.gems_50.desc": "Accumulez 50 gemmes",
+  "profile.level": "Niveau {level} · {title}",
+  "profile.instrument": "Instrument : {name}",
+  "profile.achievements": "Succès",
+  "profile.panel": "Tableau de bord et réglages",
+  "profile.dashboard": "📊 Tableau de progression",
+  "profile.settings": "⚙️ Réglages",
+  "profile.refill": "❤️ Recharger les cœurs (50 💎)",
+  "profile.freeze": "🧊 Gel de série (30 💎)",
+  "profile.record": "🎙️ Enregistrer la progression (jour 1 vs 30)",
+  "profile.reset": "🔄 Réinitialiser la progression"
 }

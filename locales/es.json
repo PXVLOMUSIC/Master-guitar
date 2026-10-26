@@ -153,5 +153,15 @@
   "achievement.tuner_pro.name": "Oído fino",
   "achievement.tuner_pro.desc": "Usa el afinador 10 veces",
   "achievement.gems_50.name": "Ahorrador",
-  "achievement.gems_50.desc": "Acumula 50 gemas"
+  "achievement.gems_50.desc": "Acumula 50 gemas",
+  "profile.level": "Nivel {level} · {title}",
+  "profile.instrument": "Instrumento: {name}",
+  "profile.achievements": "Logros",
+  "profile.panel": "Panel y ajustes",
+  "profile.dashboard": "📊 Panel de progreso",
+  "profile.settings": "⚙️ Ajustes",
+  "profile.refill": "❤️ Rellenar corazones (50 💎)",
+  "profile.freeze": "🧊 Congelador de racha (30 💎)",
+  "profile.record": "🎙️ Grabar progreso (día 1 vs 30)",
+  "profile.reset": "🔄 Reiniciar progreso"
 }

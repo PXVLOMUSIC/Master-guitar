@@ -1903,11 +1903,11 @@ function renderProfile(v) {
         </div>
       </div>
       <h2>${escapeHtml(state.user.name)}</h2>
-      <p>Nivel ${state.level} · ${levelTitle(state.level)}</p>
-      <p>Instrumento: ${INSTRUMENTS[state.user.instrument].name}</p>
+      <p>${t("profile.level", {level: state.level, title: levelTitle(state.level)})}</p>
+      <p>${t("profile.instrument", {name: INSTRUMENTS[state.user.instrument].name})}</p>
       <p style="color:var(--muted);font-size:12px;margin:8px 0 0">${t("profile.photoLocal")}</p>
     </div>
-    <div class="section-title">Logros</div>
+    <div class="section-title">${t("profile.achievements")}</div>
     <div style="padding:0 16px">
       ${ACHIEVEMENTS.map(a => {
         const unlocked = !!state.achievements[a.id];
@@ -1918,14 +1918,14 @@ function renderProfile(v) {
         </div>`;
       }).join("")}
     </div>
-    <div class="section-title">Panel y ajustes</div>
+    <div class="section-title">${t("profile.panel")}</div>
     <div style="padding:0 16px;display:grid;gap:8px">
-      <button class="btn btn-secondary btn-block" id="dashboardBtn">📊 Panel de progreso</button>
-      <button class="btn btn-secondary btn-block" id="settingsBtn">⚙️ Ajustes</button>
-      <button class="btn btn-secondary btn-block" id="refillBtn">❤️ Rellenar corazones (50 💎)</button>
-      <button class="btn btn-secondary btn-block" id="freezeBtn">🧊 Congelador de racha (30 💎)</button>
-      <button class="btn btn-secondary btn-block" id="recordBtn">🎙️ Grabar progreso (día 1 vs 30)</button>
-      <button class="btn btn-danger btn-block" id="resetBtn">🔄 Reiniciar progreso</button>
+      <button class="btn btn-secondary btn-block" id="dashboardBtn">${t("profile.dashboard")}</button>
+      <button class="btn btn-secondary btn-block" id="settingsBtn">${t("profile.settings")}</button>
+      <button class="btn btn-secondary btn-block" id="refillBtn">${t("profile.refill")}</button>
+      <button class="btn btn-secondary btn-block" id="freezeBtn">${t("profile.freeze")}</button>
+      <button class="btn btn-secondary btn-block" id="recordBtn">${t("profile.record")}</button>
+      <button class="btn btn-danger btn-block" id="resetBtn">${t("profile.reset")}</button>
     </div>
   `;
   const avatarInput = $("#avatarInput");
