@@ -3,7 +3,7 @@
 // - Audio e imágenes: stale-while-revalidate (instantáneo y se actualiza en segundo plano).
 // - El shell se precarga para que la app abra sin conexión desde la primera visita.
 
-const SHELL_CACHE = "strumio-shell-v5";
+const SHELL_CACHE = "strumio-shell-v7";
 const MEDIA_CACHE = "strumio-media-v1";
 
 const CORE = [
@@ -39,7 +39,7 @@ const CORE = [
   "./js/pitch-worker.js",
   "./js/practice-advanced.js",
   "./js/practice-hub.js",
-  "./js/icons.js",
+  "./js/icons.js", "./js/song-player.js", "./js/art.js",
   "./js/practice-routines.js",
   "./js/sample-engine.js",
   "./js/sample-manager.js",

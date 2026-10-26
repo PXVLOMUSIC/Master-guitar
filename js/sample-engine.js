@@ -19,6 +19,9 @@ const groupState = {
   guitar: { ready: false, loading: null, total: 0, loaded: 0 },
   perc: { ready: false, loading: null, total: 0, loaded: 0 },
   hand: { ready: false, loading: null, total: 0, loaded: 0 },
+  electric: { ready: false, loading: null, total: 0, loaded: 0 },
+  nylon: { ready: false, loading: null, total: 0, loaded: 0 },
+  piano: { ready: false, loading: null, total: 0, loaded: 0 },
 };
 
 const nearestCache = new Map();

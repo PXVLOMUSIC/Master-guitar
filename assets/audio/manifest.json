@@ -33,6 +33,12 @@
       "author": "Versilian Studios",
       "license": "CC0-1.0",
       "url": "https://github.com/sgossner/VCSL"
+    },
+    {
+      "name": "tonejs-instruments (guitarra eléctrica, nylon y piano)",
+      "author": "Nicholaus Brosowsky",
+      "license": "CC-BY-3.0",
+      "url": "https://github.com/nbrosowsky/tonejs-instruments"
     }
   ],
   "drums": {
@@ -790,5 +796,305 @@
         "hand/woodblock_v1_r2.flac"
       ]
     ]
-  }
+  },
+  "electric": [
+    {
+      "note": "e2",
+      "midi": 40,
+      "vel": "mf",
+      "file": "electric/e2.mp3"
+    },
+    {
+      "note": "fs2",
+      "midi": 42,
+      "vel": "mf",
+      "file": "electric/fs2.mp3"
+    },
+    {
+      "note": "a2",
+      "midi": 45,
+      "vel": "mf",
+      "file": "electric/a2.mp3"
+    },
+    {
+      "note": "c3",
+      "midi": 48,
+      "vel": "mf",
+      "file": "electric/c3.mp3"
+    },
+    {
+      "note": "ds3",
+      "midi": 51,
+      "vel": "mf",
+      "file": "electric/ds3.mp3"
+    },
+    {
+      "note": "fs3",
+      "midi": 54,
+      "vel": "mf",
+      "file": "electric/fs3.mp3"
+    },
+    {
+      "note": "a3",
+      "midi": 57,
+      "vel": "mf",
+      "file": "electric/a3.mp3"
+    },
+    {
+      "note": "c4",
+      "midi": 60,
+      "vel": "mf",
+      "file": "electric/c4.mp3"
+    },
+    {
+      "note": "ds4",
+      "midi": 63,
+      "vel": "mf",
+      "file": "electric/ds4.mp3"
+    },
+    {
+      "note": "fs4",
+      "midi": 66,
+      "vel": "mf",
+      "file": "electric/fs4.mp3"
+    },
+    {
+      "note": "a4",
+      "midi": 69,
+      "vel": "mf",
+      "file": "electric/a4.mp3"
+    },
+    {
+      "note": "c5",
+      "midi": 72,
+      "vel": "mf",
+      "file": "electric/c5.mp3"
+    },
+    {
+      "note": "ds5",
+      "midi": 75,
+      "vel": "mf",
+      "file": "electric/ds5.mp3"
+    },
+    {
+      "note": "fs5",
+      "midi": 78,
+      "vel": "mf",
+      "file": "electric/fs5.mp3"
+    },
+    {
+      "note": "a5",
+      "midi": 81,
+      "vel": "mf",
+      "file": "electric/a5.mp3"
+    },
+    {
+      "note": "c6",
+      "midi": 84,
+      "vel": "mf",
+      "file": "electric/c6.mp3"
+    }
+  ],
+  "nylon": [
+    {
+      "note": "e2",
+      "midi": 40,
+      "vel": "mf",
+      "file": "nylon/e2.mp3"
+    },
+    {
+      "note": "gs2",
+      "midi": 44,
+      "vel": "mf",
+      "file": "nylon/gs2.mp3"
+    },
+    {
+      "note": "b2",
+      "midi": 47,
+      "vel": "mf",
+      "file": "nylon/b2.mp3"
+    },
+    {
+      "note": "d3",
+      "midi": 50,
+      "vel": "mf",
+      "file": "nylon/d3.mp3"
+    },
+    {
+      "note": "fs3",
+      "midi": 54,
+      "vel": "mf",
+      "file": "nylon/fs3.mp3"
+    },
+    {
+      "note": "a3",
+      "midi": 57,
+      "vel": "mf",
+      "file": "nylon/a3.mp3"
+    },
+    {
+      "note": "cs4",
+      "midi": 61,
+      "vel": "mf",
+      "file": "nylon/cs4.mp3"
+    },
+    {
+      "note": "fs4",
+      "midi": 66,
+      "vel": "mf",
+      "file": "nylon/fs4.mp3"
+    },
+    {
+      "note": "a4",
+      "midi": 69,
+      "vel": "mf",
+      "file": "nylon/a4.mp3"
+    },
+    {
+      "note": "cs5",
+      "midi": 73,
+      "vel": "mf",
+      "file": "nylon/cs5.mp3"
+    },
+    {
+      "note": "fs5",
+      "midi": 78,
+      "vel": "mf",
+      "file": "nylon/fs5.mp3"
+    },
+    {
+      "note": "a5",
+      "midi": 81,
+      "vel": "mf",
+      "file": "nylon/a5.mp3"
+    }
+  ],
+  "piano": [
+    {
+      "note": "c2",
+      "midi": 36,
+      "vel": "mf",
+      "file": "piano/c2.mp3"
+    },
+    {
+      "note": "ds2",
+      "midi": 39,
+      "vel": "mf",
+      "file": "piano/ds2.mp3"
+    },
+    {
+      "note": "fs2",
+      "midi": 42,
+      "vel": "mf",
+      "file": "piano/fs2.mp3"
+    },
+    {
+      "note": "a2",
+      "midi": 45,
+      "vel": "mf",
+      "file": "piano/a2.mp3"
+    },
+    {
+      "note": "c3",
+      "midi": 48,
+      "vel": "mf",
+      "file": "piano/c3.mp3"
+    },
+    {
+      "note": "ds3",
+      "midi": 51,
+      "vel": "mf",
+      "file": "piano/ds3.mp3"
+    },
+    {
+      "note": "fs3",
+      "midi": 54,
+      "vel": "mf",
+      "file": "piano/fs3.mp3"
+    },
+    {
+      "note": "a3",
+      "midi": 57,
+      "vel": "mf",
+      "file": "piano/a3.mp3"
+    },
+    {
+      "note": "c4",
+      "midi": 60,
+      "vel": "mf",
+      "file": "piano/c4.mp3"
+    },
+    {
+      "note": "ds4",
+      "midi": 63,
+      "vel": "mf",
+      "file": "piano/ds4.mp3"
+    },
+    {
+      "note": "fs4",
+      "midi": 66,
+      "vel": "mf",
+      "file": "piano/fs4.mp3"
+    },
+    {
+      "note": "a4",
+      "midi": 69,
+      "vel": "mf",
+      "file": "piano/a4.mp3"
+    },
+    {
+      "note": "c5",
+      "midi": 72,
+      "vel": "mf",
+      "file": "piano/c5.mp3"
+    },
+    {
+      "note": "ds5",
+      "midi": 75,
+      "vel": "mf",
+      "file": "piano/ds5.mp3"
+    },
+    {
+      "note": "fs5",
+      "midi": 78,
+      "vel": "mf",
+      "file": "piano/fs5.mp3"
+    },
+    {
+      "note": "a5",
+      "midi": 81,
+      "vel": "mf",
+      "file": "piano/a5.mp3"
+    },
+    {
+      "note": "c6",
+      "midi": 84,
+      "vel": "mf",
+      "file": "piano/c6.mp3"
+    },
+    {
+      "note": "ds6",
+      "midi": 87,
+      "vel": "mf",
+      "file": "piano/ds6.mp3"
+    },
+    {
+      "note": "fs6",
+      "midi": 90,
+      "vel": "mf",
+      "file": "piano/fs6.mp3"
+    },
+    {
+      "note": "a6",
+      "midi": 93,
+      "vel": "mf",
+      "file": "piano/a6.mp3"
+    },
+    {
+      "note": "c7",
+      "midi": 96,
+      "vel": "mf",
+      "file": "piano/c7.mp3"
+    }
+  ]
 }

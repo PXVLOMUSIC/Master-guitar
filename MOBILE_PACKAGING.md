@@ -40,6 +40,19 @@ npx cap open ios
    - Android: Build > Generate Signed Bundle/APK
    - iOS: Product > Archive
 
+## Recordatorios diarios (ya integrados)
+La app usa `@capacitor/local-notifications` si está instalado: el aviso diario lo programa
+Android/iOS y llega aunque la app esté cerrada. Para activarlo en el build nativo:
+
+```
+npm install @capacitor/local-notifications
+npx cap sync
+```
+
+En Android 13+ el permiso se pide desde la propia app (pantalla de bienvenida o Ajustes).
+Sin el plugin (o en el navegador) la app avisa mientras está abierta y, al abrirla después
+de la hora elegida sin haber practicado, muestra un aviso una vez al día.
+
 ## Plugins recomendados
 - @capacitor/push-notifications (notificaciones push)
 - @capacitor/local-notifications (recordatorios diarios)
