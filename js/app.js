@@ -1322,7 +1322,7 @@ const PRACTICE_TOOLS = [
   { id: "routines", cat: "technique", icon: "📅", title: "Rutina diaria", desc: "Sesión guiada de 15 minutos adaptada a tu nivel.", tags: ["15 min"], keywords: "plan practica diaria", mount: async (el) => { const m = await loadPracticeRoutines(); m.renderPracticeRoutines(el); } },
 
   // --- Repertorio ---
-  { id: "songs", cat: "songs", icon: "🎵", title: "Tocar con banda", desc: "50 canciones con batería, bajo y guitarra reales y los acordes en pantalla.", tags: ["50 canciones"], keywords: "cancion tocar banda play along acordes", mount: (el) => renderSongs(el) },
+  { id: "songs", cat: "songs", icon: "🎵", title: "Progresiones con banda", desc: "50 progresiones con batería, bajo y guitarra reales. Base rítmica 4/4 simplificada.", tags: ["50 progresiones"], keywords: "cancion tocar banda play along acordes", mount: (el) => renderSongs(el) },
   { id: "songLibrary", cat: "songs", icon: "📚", title: "Biblioteca de canciones", desc: "Filtra por estilo, dificultad y tonalidad.", tags: ["Filtros"], keywords: "buscar cancion estilo", mount: (el) => renderSongLibrary(el) },
   { id: "tabs", cat: "songs", icon: "🎼", title: "Tablaturas de riffs", desc: "Riffs clásicos en tablatura interactiva.", tags: ["Riffs"], keywords: "tab riff", mount: (el) => renderTabs(el) },
   { id: "tabPlayer", cat: "songs", icon: "▶️", title: "Tab Player con audio", desc: "Reproduce tablaturas con audio, bucle y control de velocidad.", tags: ["Audio"], keywords: "reproducir tab", mount: async (el) => { const m = await loadTabPlayer(); m.renderTabPlayer(el); } },
@@ -1480,14 +1480,15 @@ async function renderSongs(area) {
   let diff = "";
   area.innerHTML = `
     <div class="song-pick">
+      <p class="song-pick__intro">Progresiones simplificadas en 4/4 para practicar con banda; no son transcripciones completas.</p>
       <div class="song-pick__filters" role="tablist">
-        ${[["", "Todas"], ["1", "Muy fácil"], ["2", "Fácil"], ["3", "Media"], ["4", "Difícil"]].map(([k, l]) => `<button class="seg-btn ${k === "" ? "on" : ""}" data-diff="${k}">${l}</button>`).join("")}
+        ${[["", "Todas"], ["1", "Muy fácil"], ["2", "Fácil"], ["3", "Media"], ["4", "Difícil"], ["5", "Experta"]].map(([k, l]) => `<button class="seg-btn ${k === "" ? "on" : ""}" data-diff="${k}">${l}</button>`).join("")}
       </div>
       <div class="song-pick__list" id="songPickList"></div>
     </div>`;
   const list = $("#songPickList", area);
   function draw() {
-    const items = songs.map((s, i) => [s, i]).filter(([s]) => !diff || String(Math.min(4, s.difficulty)) === diff);
+    const items = songs.map((s, i) => [s, i]).filter(([s]) => !diff || String(s.difficulty) === diff);
     list.innerHTML = items.map(([s, i]) => `
       <button class="song-row" data-i="${i}">
         <span class="song-row__badge" data-style="${s.style}">${escapeHtml(s.key)}</span>
@@ -1675,64 +1676,6 @@ async function renderFretboardView(area) {
   draw();
   $("#fbScale", area).onchange = draw;
   $("#fbRoot", area).onchange = draw;
-}
-
-function renderSongPlayer(area) {
-  const songs = [
-    { name: "Wonderwall", progression: ["Em","G","D","A7sus4"], bpm: 87, strum: "D DU UDU" },
-    { name: "Knockin' on Heaven's Door", progression: ["G","D","Am","G","D","C"], bpm: 76, strum: "D D U U D U" },
-    { name: "Let It Be", progression: ["C","G","Am","F"], bpm: 72, strum: "D D D D" },
-    { name: "Horse with No Name", progression: ["Em","D6"], bpm: 120, strum: "D DU" }
-  ];
-  area.innerHTML = `
-    <div class="card">
-      <h2>🎵 Reproductor de canciones</h2>
-      <p>Selecciona una canción y toca junto al metrónomo.</p>
-      <select id="songSel" style="width:100%;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card2);color:var(--text);font-weight:700;margin:8px 0">
-        ${songs.map((s,i)=>`<option value="${i}">${s.name} (${s.bpm} BPM)</option>`).join("")}
-      </select>
-      <div id="songInfo" style="margin:8px 0;color:var(--muted);font-size:13px"></div>
-      <div id="songChord" style="font-size:48px;font-weight:900;text-align:center;margin:16px 0">—</div>
-      <div class="progress"><div id="songProgress" style="width:0%"></div></div>
-      <div style="display:flex;gap:8px;margin-top:12px">
-        <button class="btn btn-primary btn-block" id="playSong">▶ Reproducir</button>
-        <button class="btn btn-secondary" id="stopSong">⏹</button>
-      </div>
-    </div>`;
-  let playing = false, timer = null, idx = 0;
-  function updateInfo() {
-    const s = songs[parseInt($("#songSel", area).value)];
-    $("#songInfo", area).textContent = `Progresión: ${s.progression.join(" - ")} · Rasgueo: ${s.strum}`;
-  }
-  updateInfo();
-  $("#songSel", area).onchange = updateInfo;
-  $("#playSong", area).onclick = () => {
-    if (playing) return;
-    playing = true;
-    const s = songs[parseInt($("#songSel", area).value)];
-    const msPerChord = (60000 / s.bpm) * 4;
-    idx = 0;
-    $("#songChord", area).textContent = s.progression[0];
-    const notes = CHORD_NOTES[s.progression[0]];
-    if (notes) playChord(notes, 1.0, { arpeggiate: true, stagger: 0.05 });
-    startMetronome(s.bpm, 4, () => {});
-    timer = setInterval(() => {
-      idx = (idx + 1) % s.progression.length;
-      const ch = s.progression[idx];
-      $("#songChord", area).textContent = ch;
-      $("#songProgress", area).style.width = ((idx + 1) / s.progression.length * 100) + "%";
-      const n = CHORD_NOTES[ch];
-      if (n) playChord(n, 1.0, { arpeggiate: true, stagger: 0.05 });
-    }, msPerChord);
-  };
-  $("#stopSong", area).onclick = () => {
-    playing = false;
-    if (timer) clearInterval(timer);
-    timer = null;
-    stopMetronome();
-    $("#songChord", area).textContent = "—";
-    $("#songProgress", area).style.width = "0%";
-  };
 }
 
 async function renderSongLibrary(area) {

@@ -129,7 +129,7 @@ export async function requestNotificationPermission() {
 }
 
 async function showWebNotification(body) {
-  const opts = { body, icon: "./icons/icon-192.png", badge: "./icons/icon-192.png", tag: "strumio-reminder" };
+  const opts = { body, icon: "./assets/icons/icon-192.png", badge: "./assets/icons/icon-192.png", tag: "strumio-reminder" };
   try {
     const reg = navigator.serviceWorker && await navigator.serviceWorker.getRegistration();
     if (reg && reg.showNotification) { await reg.showNotification("Strumio", opts); return; }
@@ -300,6 +300,7 @@ export function renderSettings(container) {
         </select>
       </div>
       <button class="btn btn-secondary btn-block" id="permBtn" style="margin-top:8px">🔔 Solicitar permiso de notificaciones</button>
+      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">En el navegador, el aviso solo llega con la app abierta. En la app nativa, aunque esté cerrada.</p>
     </div>
 
     <div class="section-title">Datos y respaldo</div>
@@ -340,10 +341,11 @@ export function renderSettings(container) {
       if (!card) return;
       const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
       card.innerHTML = `
-        <p style="margin:0 0 10px;font-size:13px;color:var(--muted)">Guitarra, bajo, batería y percusión son grabaciones reales con licencia libre (el ukelele aún es sintetizado).</p>
+        <p style="margin:0 0 10px;font-size:13px;color:var(--muted)">Guitarra, bajo, batería y percusión son grabaciones reales con licencias CC0 y CC-BY-3.0 (el ukelele aún es sintetizado). Las muestras CC-BY requieren atribución, no pago.</p>
         <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7">
-          ${(m.sources || []).map((src) => `<li><a href="${esc(src.url)}" target="_blank" rel="noopener" style="color:var(--blue)">${esc(src.name)}</a> · ${esc(src.author)} · ${esc(src.license)}</li>`).join("")}
-        </ul>`;
+          ${(m.sources || []).map((src) => `<li><a href="${esc(src.url)}" target="_blank" rel="noopener" style="color:var(--blue)">${esc(src.name)}</a> · ${esc(src.author)} · ${esc(src.license)}${src.details ? `<br><span style="color:var(--muted);font-size:12px">${esc(src.details)}</span>` : ""}</li>`).join("")}
+        </ul>
+        <p style="margin:10px 0 0;font-size:12px"><a href="licenses.html" target="_blank" rel="noopener" style="color:var(--blue)">Licencias y atribuciones completas</a></p>`;
     })
     .catch(() => {});
 

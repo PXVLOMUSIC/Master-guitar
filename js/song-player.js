@@ -81,8 +81,11 @@ function startEngine(song, opts, onStep) {
   function schedule(step, t) {
     const s16 = step % 16;
     if (step < countIn) {
-      if (s16 % 4 === 0) playHand("woodblock", t, out, { velocity: s16 === 0 ? 1 : 0.3, gain: 0.8 });
-      e.uiTimers.push(setTimeout(() => onStep({ countIn: true, beat: s16 / 4, bar: -1 }), (t - ctx.currentTime) * 1000));
+      // Solo actualizamos la interfaz en cada pulso, no en cada semicorchea.
+      if (s16 % 4 === 0) {
+        playHand("woodblock", t, out, { velocity: s16 === 0 ? 1 : 0.3, gain: 0.8 });
+        e.uiTimers.push(setTimeout(() => onStep({ countIn: true, beat: s16 / 4, bar: -1 }), (t - ctx.currentTime) * 1000));
+      }
       return;
     }
     const k = step - countIn;
@@ -155,14 +158,14 @@ export function renderSongPlayer(area, song, helpers = {}) {
       </div>
       <div class="sp-beats" id="spBeats">${[0, 1, 2, 3].map((i) => `<span data-b="${i}"></span>`).join("")}</div>
       <div class="sp-strip" id="spStrip">${chords.map((c, i) => `<span data-bar="${i}">${c}</span>`).join("")}</div>
-      <p class="sp-strum">Rasgueo: <b>${song.strumming}</b></p>
+      <p class="sp-strum">Rasgueo orientativo: <b>${song.strumming}</b> · Base 4/4</p>
       <button class="btn btn-primary btn-block" id="spPlay">▶ Tocar con la banda</button>
       <div class="sp-controls">
         <label>Tempo <input type="range" id="spTempo" min="50" max="120" step="5" value="100"><span id="spTempoV">100%</span></label>
         <div class="sp-toggles">
           ${[["drums", "🥁 Batería"], ["bass", "🎸 Bajo"], ["guitar", "🎶 Guitarra"], ["countIn", "⏱ Cuenta"], ["loop", "🔁 Repetir"]].map(([k, l]) => `<button class="sp-toggle on" data-opt="${k}" aria-pressed="true">${l}</button>`).join("")}
         </div>
-        <p class="sp-hint" id="spHint">Quita la guitarra para tocar tú encima de la banda.</p>
+        <p class="sp-hint" id="spHint">Base rítmica simplificada en 4/4. Quita la guitarra para tocar tú encima de la banda.</p>
       </div>
     </div>`;
 

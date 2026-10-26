@@ -1,7 +1,8 @@
 {
   "version": 1,
   "sampleRate": 44100,
-  "license": "CC0-1.0",
+  "license": "CC0-1.0 / CC-BY-3.0 (por fuente)",
+  "licenseDetails": "licenses.html",
   "engine": "Strumio real samples",
   "sources": [
     {
@@ -38,7 +39,8 @@
       "name": "tonejs-instruments (guitarra eléctrica, nylon y piano)",
       "author": "Nicholaus Brosowsky",
       "license": "CC-BY-3.0",
-      "url": "https://github.com/nbrosowsky/tonejs-instruments"
+      "url": "https://github.com/nbrosowsky/tonejs-instruments",
+      "details": "Fuentes originales: Karoryfer (guitarra eléctrica), quartertone/Freesound 11573 (guitarra de nylon) y Versilian VSO2 (piano). Atribución obligatoria; ver licenses.html."
     }
   ],
   "drums": {

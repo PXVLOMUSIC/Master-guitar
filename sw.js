@@ -3,7 +3,7 @@
 // - Audio e imágenes: stale-while-revalidate (instantáneo y se actualiza en segundo plano).
 // - El shell se precarga para que la app abra sin conexión desde la primera visita.
 
-const SHELL_CACHE = "strumio-shell-v7";
+const SHELL_CACHE = "strumio-shell-v8";
 const MEDIA_CACHE = "strumio-media-v1";
 
 const CORE = [
@@ -18,6 +18,8 @@ const CORE = [
   "./data/videos.json",
 
   "./assets/audio/manifest.json",
+  "./LICENSES.md",
+  "./licenses.html",
   "./assets/icons/apple-touch-icon.png",
   "./assets/icons/favicon-16.png",
   "./assets/icons/favicon-32.png",

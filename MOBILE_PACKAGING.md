@@ -1,8 +1,9 @@
 # Empaquetado móvil (Capacitor)
 
 ## Prerrequisitos
-- Node.js 18+ y npm
-- Android Studio (para Android) / Xcode (para iOS, solo macOS)
+- Node.js 20+ y npm
+- JDK 17+ (Android Studio incluye uno compatible)
+- Android Studio + Android SDK (para Android) / Xcode (para iOS, solo macOS)
 
 ## Pasos
 
@@ -62,8 +63,8 @@ de la hora elegida sin haber practicado, muestra un aviso una vez al día.
 
 ## Notas
 - El afinador requiere HTTPS o contexto seguro. Capacitor usa https:// por defecto.
-- Las muestras de audio se cargan desde assets/samples/ - asegúrate de incluirlas en el build.
-- El Service Worker funciona en Capacitor WebView.
+- Las muestras de audio se cargan desde `assets/audio/`; asegúrate de incluirlas en el build.
+- El soporte de Service Worker en la WebView nativa varía según plataforma y configuración. Verifica el modo offline en el APK/IPA antes de publicar; la app debe funcionar también sin él.
 
 ## Alternativa: Flutter
 Si se prefiere Flutter, la app web actual sirve como prototipo de UX. La migración a Flutter requeriría reescribir la UI pero reutilizaría la lógica de audio (via FFI a C++/Rust para YIN) y el contenido JSON.

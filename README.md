@@ -12,8 +12,9 @@ JavaScript moderno, Web Audio y Supabase.
 - **Afinador** con micrófono (YIN + autocorrelación), modo cromático y por cuerda.
 - **Metrónomo**, detector de acordes, entrenadores de oído y ritmo.
 - **Practicar**: 29 herramientas en un hub con buscador, favoritos y ventanas modales.
-- **Audio real CC0**: batería, bajo, guitarra y percusión (Karoryfer Samples),
-  con capas de velocidad y round-robin.
+- **Audio real**: batería, bajo, guitarra y percusión (Karoryfer Samples y VCSL,
+  CC0); guitarra eléctrica, guitarra de nylon y piano (tonejs-instruments,
+  CC BY 3.0), con capas de velocidad y round-robin.
 - **Canciones**, backing tracks, secuenciador de 16 pasos, mezclador y exportación WAV.
 - **Cuenta y sincronización** con Supabase: email/contraseña, enlace mágico y
   Google OAuth. Ranking, retos y progreso en la nube.
@@ -44,7 +45,7 @@ en [`DEPLOY.md`](DEPLOY.md).
 - `css/styles.css` — sistema de diseño
 - `js/app.js` — router y vistas
 - `js/audio.js` — Web Audio, pitch y metrónomo
-- `js/sample-engine.js` — muestras reales CC0
+- `js/sample-engine.js` — muestras reales y carga por grupos
 - `js/backing-pro.js` — mezclador y secuenciador
 - `js/backend.js` + `js/supabase-config.js` — auth y sincronización
 - `data/` — currículo, acordes, canciones y vídeos
@@ -58,8 +59,12 @@ en [`DEPLOY.md`](DEPLOY.md).
 - [`SOCIAL_LOGIN.md`](SOCIAL_LOGIN.md) — activar Google/GitHub/Discord
 - [`SUPABASE_SETUP.md`](SUPABASE_SETUP.md) — base de datos y RLS
 - [`MOBILE_PACKAGING.md`](MOBILE_PACKAGING.md) — Capacitor y tiendas
+- [`LICENSES.md`](LICENSES.md) — licencias y atribuciones del audio
+- [`licenses.html`](licenses.html) — página de licencias para usuarios
 
 ## Créditos
 
-Muestras de audio: **Karoryfer Samples** (CC0). Los detalles y licencias están
-en `assets/audio/manifest.json`.
+Muestras de audio: **Karoryfer Samples**, **VCSL** (CC0) y
+**tonejs-instruments** de Nicholaus Brosowsky (CC BY 3.0; fuentes originales:
+Karoryfer, quartertone/Freesound y Versilian VSO2). Los detalles están en
+[`LICENSES.md`](LICENSES.md) y en `assets/audio/manifest.json`.

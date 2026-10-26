@@ -1099,7 +1099,7 @@ function warmRealSamples(container) {
       const total = g.drums.total + g.bass.total + g.guitar.total + g.hand.total;
       const loaded = g.drums.loaded + g.bass.loaded + g.guitar.loaded + g.hand.loaded;
       if (g.drums.ready && g.bass.ready && g.guitar.ready && g.hand.ready) {
-        badge.textContent = "● Sonido real CC0";
+        badge.textContent = "● Muestras reales";
         badge.classList.add("ready");
       } else {
         badge.textContent = `Cargando sonidos ${total ? Math.round((loaded / total) * 100) : 0}%`;

@@ -1,7 +1,7 @@
 // audio.js - upgraded audio engine for Strumio
 // Provides mic capture + YIN pitch detection, chord detection, tone/chord playback,
 // a Web-Audio lookahead metronome, note helpers, and recording helpers.
-// Las notas de guitarra y bajo suenan con muestras reales (CC0, sample-engine.js);
+// Las notas de guitarra y bajo suenan con muestras reales (CC0 y CC BY 3.0, sample-engine.js);
 // mientras cargan, o para ukelele, se usa síntesis Karplus-Strong.
 
 import { midiToNote, midiToFreq, NOTE_NAMES } from "./instruments.js";
@@ -824,7 +824,7 @@ export function playTone(freq, duration = 1.2, options = {}) {
   const start = ctx.currentTime;
   const pan = (opts && opts.pan != null) ? opts.pan : 0;
 
-  // Muestras reales CC0 (guitarra y bajo).
+  // Muestras reales (guitarra y bajo; CC0 y CC BY 3.0).
   if (playReal(freq, start, dur, gainLevel, opts)) return;
 
   // Individual note samples path (real recorded notes).
