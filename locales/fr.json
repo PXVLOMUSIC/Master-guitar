@@ -163,5 +163,22 @@
   "profile.refill": "❤️ Recharger les cœurs (50 💎)",
   "profile.freeze": "🧊 Gel de série (30 💎)",
   "profile.record": "🎙️ Enregistrer la progression (jour 1 vs 30)",
-  "profile.reset": "🔄 Réinitialiser la progression"
+  "profile.reset": "🔄 Réinitialiser la progression",
+  "practice.title": "Pratiquer",
+  "practice.whatToday": "Que joue-t-on aujourd'hui ?",
+  "practice.todayRoutine": "Routine du jour",
+  "practice.warmup": "Échauffement, accords, rythme et une chanson",
+  "practice.minutes15": "15 min",
+  "practice.continue": "Continuer",
+  "practice.searchPlaceholder": "Rechercher : accord, métronome, gamme…",
+  "practice.searchAria": "Rechercher un outil",
+  "practice.favorites": "Favoris",
+  "practice.sections": "Sections",
+  "practice.tool": "outil",
+  "practice.tools": "outils",
+  "practice.noResults": "Aucun résultat. Essayez “accords”, “rythme” ou “gammes”.",
+  "practice.loading": "Chargement…",
+  "practice.errorOpen": "Impossible d'ouvrir cet outil",
+  "practice.errorUnexpected": "Erreur inattendue",
+  "practice.back": "Retour"
 }

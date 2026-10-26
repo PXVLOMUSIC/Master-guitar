@@ -163,5 +163,22 @@
   "profile.refill": "❤️ Ricarica cuori (50 💎)",
   "profile.freeze": "🧊 Congela serie (30 💎)",
   "profile.record": "🎙️ Registra progresso (giorno 1 vs 30)",
-  "profile.reset": "🔄 Reimposta progresso"
+  "profile.reset": "🔄 Reimposta progresso",
+  "practice.title": "Pratica",
+  "practice.whatToday": "Cosa suoniamo oggi?",
+  "practice.todayRoutine": "Routine di oggi",
+  "practice.warmup": "Riscaldamento, accordi, ritmo e una canzone",
+  "practice.minutes15": "15 min",
+  "practice.continue": "Continua",
+  "practice.searchPlaceholder": "Cerca: accordo, metronomo, scala…",
+  "practice.searchAria": "Cerca strumento",
+  "practice.favorites": "Preferiti",
+  "practice.sections": "Sezioni",
+  "practice.tool": "strumento",
+  "practice.tools": "strumenti",
+  "practice.noResults": "Nessun risultato. Prova “accordi”, “ritmo” o “scale”.",
+  "practice.loading": "Caricamento…",
+  "practice.errorOpen": "Impossibile aprire questo strumento",
+  "practice.errorUnexpected": "Errore inatteso",
+  "practice.back": "Indietro"
 }

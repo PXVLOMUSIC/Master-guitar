@@ -163,5 +163,22 @@
   "profile.refill": "❤️ Herzen auffüllen (50 💎)",
   "profile.freeze": "🧊 Serien-Einfrierer (30 💎)",
   "profile.record": "🎙️ Fortschritt aufzeichnen (Tag 1 vs 30)",
-  "profile.reset": "🔄 Fortschritt zurücksetzen"
+  "profile.reset": "🔄 Fortschritt zurücksetzen",
+  "practice.title": "Üben",
+  "practice.whatToday": "Was spielen wir heute?",
+  "practice.todayRoutine": "Heutige Routine",
+  "practice.warmup": "Aufwärmen, Akkorde, Rhythmus und ein Song",
+  "practice.minutes15": "15 Min",
+  "practice.continue": "Weiter",
+  "practice.searchPlaceholder": "Suchen: Akkord, Metronom, Skala…",
+  "practice.searchAria": "Werkzeug suchen",
+  "practice.favorites": "Favoriten",
+  "practice.sections": "Abschnitte",
+  "practice.tool": "Werkzeug",
+  "practice.tools": "Werkzeuge",
+  "practice.noResults": "Keine Ergebnisse. Versuche “Akkorde”, “Rhythmus” oder “Skalen”.",
+  "practice.loading": "Laden…",
+  "practice.errorOpen": "Dieses Werkzeug konnte nicht geöffnet werden",
+  "practice.errorUnexpected": "Unerwarteter Fehler",
+  "practice.back": "Zurück"
 }

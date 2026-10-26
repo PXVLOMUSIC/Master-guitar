@@ -4,6 +4,7 @@
    completa, con pestañas para sus herramientas.
    ============================================================ */
 import { icon } from "./icons.js";
+import { t } from "./i18n.js";
 
 const META_KEY = "strumio_tools_v1";
 
@@ -91,7 +92,7 @@ export function openSection(section, tools, toolId, onLeave) {
   el.innerHTML = `
     <header class="section-page__head">
       <div class="section-page__bar">
-        <button class="icon-btn" data-back aria-label="Volver">${icon("back")}</button>
+        <button class="icon-btn" data-back aria-label="${t("practice.back")}">${icon("back")}</button>
         <div class="section-page__title">
           <span class="section-page__icon">${icon(section.icon, 20)}</span>
           <h2>${escapeHtml(section.name)}</h2>
@@ -141,13 +142,13 @@ export function openSection(section, tools, toolId, onLeave) {
     scroller.scrollTop = 0;
     history.replaceState({ strumioSection: section.id }, "", `#practicar/${section.id}/${tool.id}`);
     const token = ++mountToken;
-    body.innerHTML = `<div class="tool-loading"><span class="spinner"></span><span>Cargando…</span></div>`;
+    body.innerHTML = `<div class="tool-loading"><span class="spinner"></span><span>${t("practice.loading")}</span></div>`;
     Promise.resolve()
       .then(() => { if (token === mountToken) { body.innerHTML = ""; return tool.mount(body); } })
       .catch((err) => {
         console.error("Tool error", err);
         if (token !== mountToken) return;
-        body.innerHTML = `<div class="tool-error"><h3>No se pudo abrir esta herramienta</h3><p>${escapeHtml(err && err.message ? err.message : "Error inesperado")}</p></div>`;
+        body.innerHTML = `<div class="tool-error"><h3>${t("practice.errorOpen")}</h3><p>${escapeHtml(err && err.message ? err.message : "${t("practice.errorUnexpected")}")}</p></div>`;
       });
   }
 
@@ -197,47 +198,47 @@ export function renderPracticeHub(root, tools, onLeave) {
   root.innerHTML = `
     <section class="practice">
       <header class="practice__head">
-        <span class="kicker">Practicar</span>
-        <h1>¿Qué toca hoy?</h1>
+        <span class="kicker">${t("practice.title")}</span>
+        <h1>${t("practice.whatToday")}</h1>
       </header>
 
       <button class="today-card" data-section="${today.id}">
         <span class="today-card__icon">${icon("today", 28)}</span>
         <span class="today-card__text">
           <strong>${today.name}</strong>
-          <span>Calentamiento, acordes, ritmo y una canción</span>
+          <span>${t("practice.warmup")}</span>
         </span>
-        <span class="today-card__cta">${icon("play", 16)}<span>15 min</span></span>
+        <span class="today-card__cta">${icon("play", 16)}<span>${t("practice.minutes15")}</span></span>
       </button>
 
       ${last ? `<button class="continue-row" data-tool="${last.id}">
-        <span class="continue-row__label">Continuar</span>
+        <span class="continue-row__label">${t("practice.continue")}</span>
         <span class="continue-row__name">${escapeHtml(last.title)}</span>
         ${icon("arrow", 18)}
       </button>` : ""}
 
       <label class="search-field">
         ${icon("search", 18)}
-        <input id="toolSearch" type="search" placeholder="Buscar: acorde, metrónomo, escala…" autocomplete="off" aria-label="Buscar herramienta">
+        <input id="toolSearch" type="search" placeholder="${t("practice.searchPlaceholder")}" autocomplete="off" aria-label="${t("practice.searchAria")}">
       </label>
       <div id="searchResults" class="search-results" hidden></div>
 
       <div id="hubMain">
         ${favTools.length ? `
-          <h2 class="hub-title">Favoritos</h2>
+          <h2 class="hub-title">${t("practice.favorites")}</h2>
           <div class="fav-row">${favTools.map((t) => {
             const s = sectionOf(t.id);
             return `<button class="fav-chip" data-tool="${t.id}" style="--sec:${s ? s.color : "#58cc02"}">${icon(s ? s.icon : "guitar", 16)}<span>${escapeHtml(t.title)}</span></button>`;
           }).join("")}</div>` : ""}
 
-        <h2 class="hub-title">Secciones</h2>
+        <h2 class="hub-title">${t("practice.sections")}</h2>
         <div class="section-grid">
           ${grid.map((s) => `
             <button class="section-card" data-section="${s.id}" style="--sec:${s.color}">
               <span class="section-card__icon">${icon(s.icon, 26)}</span>
               <strong>${escapeHtml(s.name)}</strong>
               <span class="section-card__desc">${escapeHtml(s.desc)}</span>
-              <span class="section-card__count">${s.tools.length} ${s.tools.length === 1 ? "herramienta" : "herramientas"}</span>
+              <span class="section-card__count">${s.tools.length} ${s.tools.length === 1 ? t("practice.tool") : t("practice.tools")}</span>
             </button>`).join("")}
         </div>
       </div>
@@ -262,7 +263,7 @@ export function renderPracticeHub(root, tools, onLeave) {
             ${icon("arrow", 18)}
           </button>`;
         }).join("")
-      : `<p class="hub-empty">Sin resultados. Prueba con “acordes”, “ritmo” o “escalas”.</p>`;
+      : `<p class="hub-empty">${t("practice.noResults")}</p>`;
   });
 
   root.addEventListener("click", (e) => {

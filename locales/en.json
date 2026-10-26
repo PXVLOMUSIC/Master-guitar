@@ -163,5 +163,22 @@
   "profile.refill": "❤️ Refill hearts (50 💎)",
   "profile.freeze": "🧊 Streak freeze (30 💎)",
   "profile.record": "🎙️ Record progress (day 1 vs 30)",
-  "profile.reset": "🔄 Reset progress"
+  "profile.reset": "🔄 Reset progress",
+  "practice.title": "Practice",
+  "practice.whatToday": "What are we playing today?",
+  "practice.todayRoutine": "Today's routine",
+  "practice.warmup": "Warm-up, chords, rhythm and a song",
+  "practice.minutes15": "15 min",
+  "practice.continue": "Continue",
+  "practice.searchPlaceholder": "Search: chord, metronome, scale…",
+  "practice.searchAria": "Search tool",
+  "practice.favorites": "Favorites",
+  "practice.sections": "Sections",
+  "practice.tool": "tool",
+  "practice.tools": "tools",
+  "practice.noResults": "No results. Try “chords”, “rhythm” or “scales”.",
+  "practice.loading": "Loading…",
+  "practice.errorOpen": "Could not open this tool",
+  "practice.errorUnexpected": "Unexpected error",
+  "practice.back": "Back"
 }
