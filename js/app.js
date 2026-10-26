@@ -372,6 +372,16 @@ function renderHome(v) {
   if (!state.user) { navigate("onboard"); return; }
   const ins = INSTRUMENTS[state.user.instrument];
   const dailyDone = state.dailyChallengeDone === new Date().toDateString();
+  const todayKey = new Date().toDateString();
+  const planDays = new Set([
+    ...(state.practiceDays || []),
+    ...Object.keys(state.dailyLog || {}),
+    ...Object.keys(state.practiceLog || {})
+  ]);
+  const planCount = Math.min(30, planDays.size);
+  const planPct = Math.round((planCount / 30) * 100);
+  const planDone = planCount >= 30;
+  const practicedToday = planDays.has(todayKey);
   v.innerHTML = `
     <div class="card" style="text-align:center">
       <div class="home-mascot">${mascot(state.streak > 2 ? "cheer" : "wave", 84)}</div>
@@ -408,8 +418,9 @@ function renderHome(v) {
     </div>
     <div class="card">
       <h2>📅 Plan de 30 días</h2>
-      <p>Día ${Math.min(30, state.stats.lessonsCompleted + 1)} de 30 · ${Math.round((state.stats.lessonsCompleted/30)*100)}% completado</p>
-      <div class="progress"><div style="width:${Math.min(100, (state.stats.lessonsCompleted/30)*100)}%"></div></div>
+      <p>${planDone ? "¡Completado! 30 de 30 días." : `${planCount} de 30 días practicados · ${planPct}% completado`}</p>
+      <p style="color:var(--muted);font-size:13px;margin:4px 0 0">${planDone ? "Has completado el plan; mantén la rutina diaria." : practicedToday ? "Hoy ya cuenta como día de práctica. Vuelve mañana para sumar otro." : "Completa una lección o la rutina de hoy para sumar un día."}</p>
+      <div class="progress"><div style="width:${planPct}%"></div></div>
     </div>
     <div class="section-title">Accesos rápidos</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px">
