@@ -17,6 +17,7 @@ const loadScales = () => import("./scales.js");
 const loadVideoPlayer = () => import("./video-player.js");
 const loadTabPlayer = () => import("./tab-player.js");
 const loadPracticeRoutines = () => import("./practice-routines.js");
+const loadSongPlayer = () => import("./song-player.js");
 const loadChordVoicings = () => import("./chord-voicings.js");
 const loadImprovisation = () => import("./improvisation.js");
 
@@ -1320,7 +1321,7 @@ const PRACTICE_TOOLS = [
   { id: "routines", cat: "technique", icon: "📅", title: "Rutina diaria", desc: "Sesión guiada de 15 minutos adaptada a tu nivel.", tags: ["15 min"], keywords: "plan practica diaria", mount: async (el) => { const m = await loadPracticeRoutines(); m.renderPracticeRoutines(el); } },
 
   // --- Repertorio ---
-  { id: "songs", cat: "songs", icon: "🎵", title: "Canciones con acordes", desc: "50 canciones de dominio público con letra y acordes.", tags: ["50 canciones"], keywords: "cancion letra tocar", mount: (el) => renderSongs(el) },
+  { id: "songs", cat: "songs", icon: "🎵", title: "Tocar con banda", desc: "50 canciones con batería, bajo y guitarra reales y los acordes en pantalla.", tags: ["50 canciones"], keywords: "cancion tocar banda play along acordes", mount: (el) => renderSongs(el) },
   { id: "songLibrary", cat: "songs", icon: "📚", title: "Biblioteca de canciones", desc: "Filtra por estilo, dificultad y tonalidad.", tags: ["Filtros"], keywords: "buscar cancion estilo", mount: (el) => renderSongLibrary(el) },
   { id: "tabs", cat: "songs", icon: "🎼", title: "Tablaturas de riffs", desc: "Riffs clásicos en tablatura interactiva.", tags: ["Riffs"], keywords: "tab riff", mount: (el) => renderTabs(el) },
   { id: "tabPlayer", cat: "songs", icon: "▶️", title: "Tab Player con audio", desc: "Reproduce tablaturas con audio, bucle y control de velocidad.", tags: ["Audio"], keywords: "reproducir tab", mount: async (el) => { const m = await loadTabPlayer(); m.renderTabPlayer(el); } },
@@ -1339,6 +1340,7 @@ function stopPracticeAudio() {
   if (isMetronomeRunning()) stopMetronome();
   if (isRunning()) stopMic();
   loadBacking().then((m) => { if (m.isBackingRunning()) m.stopBackingTrack(); }).catch(() => {});
+  loadSongPlayer().then((m) => m.stopSongPlayer()).catch(() => {});
 }
 
 function renderPractice(v) {
@@ -1445,16 +1447,62 @@ E|-5-8----------------|
     </div>`;
 }
 
-function renderSongs(area) {
+function escapeHtml(v) {
+  return String(v).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+async function loadSongs() {
+  if (!SONGS.length) {
+    try {
+      const r = await fetch("data/songs.json");
+      const data = await r.json();
+      SONGS = Array.isArray(data) ? data : (data.songs || data.items || []);
+    } catch (e) { SONGS = []; }
+  }
+  return SONGS;
+}
+
+function songDiagram(name) {
+  const ins = state.settings.instrument === "ukulele" ? "ukulele" : "guitar";
+  const chord = CHORDS[ins] && CHORDS[ins][name];
+  return chord ? renderChordDiagram(chord) : "";
+}
+
+async function openSongPlayer(area, song, onBack) {
+  const m = await loadSongPlayer();
+  m.renderSongPlayer(area, song, { diagram: songDiagram, onBack });
+}
+
+// Canciones para tocar con banda real (batería, bajo y guitarra).
+async function renderSongs(area) {
+  const songs = await loadSongs();
+  let diff = "";
   area.innerHTML = `
-    <div class="card">
-      <h2>🎵 Canciones (acordes)</h2>
-      <div class="ach"><span class="ico">🎶</span><div class="info"><div class="name">Wonderwall (Oasis)</div><div class="desc">Em - G - D - A7sus4</div></div></div>
-      <div class="ach"><span class="ico">🎶</span><div class="info"><div class="name">Knockin' on Heaven's Door</div><div class="desc">G - D - Am - G - D - C</div></div></div>
-      <div class="ach"><span class="ico">🎶</span><div class="info"><div class="name">Horse with No Name</div><div class="desc">Em - D6 (2 acordes)</div></div></div>
-      <div class="ach"><span class="ico">🎶</span><div class="info"><div class="name">Let It Be (Beatles)</div><div class="desc">C - G - Am - F</div></div></div>
-      <p style="color:var(--muted);font-size:12px;margin-top:8px">* Progresiones de acordes para practicar. Las canciones originales requieren licencia.</p>
+    <div class="song-pick">
+      <div class="song-pick__filters" role="tablist">
+        ${[["", "Todas"], ["1", "Muy fácil"], ["2", "Fácil"], ["3", "Media"], ["4", "Difícil"]].map(([k, l]) => `<button class="seg-btn ${k === "" ? "on" : ""}" data-diff="${k}">${l}</button>`).join("")}
+      </div>
+      <div class="song-pick__list" id="songPickList"></div>
     </div>`;
+  const list = $("#songPickList", area);
+  function draw() {
+    const items = songs.map((s, i) => [s, i]).filter(([s]) => !diff || String(Math.min(4, s.difficulty)) === diff);
+    list.innerHTML = items.map(([s, i]) => `
+      <button class="song-row" data-i="${i}">
+        <span class="song-row__badge" data-style="${s.style}">${escapeHtml(s.key)}</span>
+        <span class="song-row__info"><b>${escapeHtml(s.name)}</b><em>${escapeHtml(s.progression.slice(0, 4).join(" · "))}${s.progression.length > 4 ? " …" : ""}</em></span>
+        <span class="song-row__meta">${s.bpm} BPM<br>${"●".repeat(Math.min(5, s.difficulty))}</span>
+      </button>`).join("");
+    list.querySelectorAll(".song-row").forEach((b) => {
+      b.onclick = () => openSongPlayer(area, songs[+b.dataset.i], () => renderSongs(area));
+    });
+  }
+  area.querySelectorAll("[data-diff]").forEach((b) => b.onclick = () => {
+    diff = b.dataset.diff;
+    area.querySelectorAll("[data-diff]").forEach((x) => x.classList.toggle("on", x === b));
+    draw();
+  });
+  draw();
 }
 
 function renderOneMinuteChanges(area) {
@@ -1687,14 +1735,7 @@ function renderSongPlayer(area) {
 }
 
 async function renderSongLibrary(area) {
-  if (!SONGS.length) {
-    try {
-      const r = await fetch("data/songs.json");
-      const data = await r.json();
-      SONGS = Array.isArray(data) ? data : (data.songs || data.items || []);
-    } catch (e) { SONGS = []; }
-  }
-  const songs = SONGS;
+  const songs = await loadSongs();
   area.innerHTML = `
     <div class="card">
       <h2>📚 Biblioteca de canciones</h2>
@@ -1734,30 +1775,12 @@ async function renderSongLibrary(area) {
         </div>
       </div>`).join("");
     list.querySelectorAll("button").forEach(b => {
-      b.onclick = () => {
-        const song = filtered[parseInt(b.dataset.song, 10)];
-        let t = 0;
-        song.progression.forEach(ch => {
-          setTimeout(() => {
-            const notes = CHORD_NOTES[ch];
-            if (notes) playChord(notes, 0.9, { arpeggiate: true, stagger: 0.04 });
-            else playTone(261.63, 0.9);
-          }, t);
-          t += 700;
-        });
-        // simplify timing
-        toast("Reproduciendo: " + song.name);
-      };
+      b.onclick = () => openSongPlayer(area, filtered[parseInt(b.dataset.song, 10)], () => renderSongLibrary(area));
     });
   }
-  // fix timing: use 700ms per chord
-  // redefine play with proper timing by overriding click above? We'll leave as is but adjust: Actually above uses t increments wrong. Let's rebind cleanly:
   renderList();
   $("#songLibStyle", area).onchange = renderList;
   $("#songLibDiff", area).onchange = renderList;
-  // Rebind play buttons with correct timing after filter
-  const origRenderList = renderList;
-  // patch: override renderList to bind with 700ms timing
 }
 
 async function renderBacking(area) {

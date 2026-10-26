@@ -746,6 +746,8 @@ export function setGuitarTone(tone) {
 /** Instrumento de los ejercicios de oído y teoría: "guitar" | "piano". */
 export function setEarInstrument(id) { earInstrumentId = id === "piano" ? "piano" : "guitar"; }
 export function earInstrument() { return earInstrumentId; }
+/** Grupo de muestras que usa ahora la guitarra ("guitar" | "electric" | "nylon"). */
+export function guitarGroup() { return guitarTone; }
 
 function groupFor(instrument) {
   if (instrument === "guitar" || instrument === "acoustic") return guitarTone;

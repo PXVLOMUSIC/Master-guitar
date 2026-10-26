@@ -2321,3 +2321,53 @@ body.section-open { overflow: hidden; }
 .seg { display: flex; gap: 4px; padding: 4px; border-radius: var(--r-md); background: var(--card-2); }
 .seg-btn { flex: 1; padding: 8px 6px; border: 0; border-radius: calc(var(--r-md) - 4px); background: none; color: var(--muted); font: inherit; font-weight: var(--weight-bold); font-size: 14px; cursor: pointer; }
 .seg-btn.on { background: var(--green); color: #fff; }
+
+/* ---------- Tocar con banda ---------- */
+.song-pick__intro { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.song-pick__filters { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 12px; }
+.song-pick__filters .seg-btn { flex: none; background: var(--card-2); }
+.song-pick__filters .seg-btn.on { background: var(--green); }
+.song-pick__list { display: grid; gap: 8px; }
+.song-row {
+  display: grid; grid-template-columns: 44px 1fr auto; gap: 12px; align-items: center; text-align: left;
+  padding: 10px 12px; border-radius: var(--r-md); border: 1px solid var(--border); background: var(--card);
+  color: var(--text); font: inherit; cursor: pointer; transition: transform var(--dur-fast) var(--ease-out), border-color var(--dur-fast);
+}
+.song-row:hover { border-color: var(--green); transform: translateY(-1px); }
+.song-row__badge { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-weight: var(--weight-black); background: var(--green-soft); color: var(--green); }
+.song-row__badge[data-style="blues"], .song-row__badge[data-style="jazz"] { background: rgba(28, 176, 246, .15); color: var(--blue); }
+.song-row__badge[data-style="flamenco"], .song-row__badge[data-style="rumba"], .song-row__badge[data-style="latin"] { background: rgba(255, 150, 0, .15); color: var(--orange); }
+.song-row__badge[data-style="classical"], .song-row__badge[data-style="bossa nova"] { background: var(--purple-soft); color: var(--purple); }
+.song-row__info { min-width: 0; }
+.song-row__info b { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.song-row__info em { font-style: normal; color: var(--muted); font-size: 13px; }
+.song-row__meta { color: var(--muted); font-size: 12px; text-align: right; line-height: 1.5; }
+
+.song-player { display: grid; gap: 14px; }
+.sp-back { justify-self: start; }
+.sp-head h2 { margin: 0; }
+.sp-head p { margin: 2px 0 0; color: var(--muted); font-size: 14px; text-transform: capitalize; }
+.sp-stage { display: grid; grid-template-columns: 1.6fr 1fr; gap: 10px; }
+.sp-now, .sp-next { border-radius: var(--r-lg); padding: 14px; background: var(--card); border: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.sp-now { border-color: var(--green); background: linear-gradient(160deg, var(--green-soft), var(--card) 70%); }
+.sp-now b { font-size: 56px; line-height: 1; font-weight: var(--weight-black); }
+.sp-next { justify-content: center; opacity: .75; }
+.sp-next b { font-size: 34px; font-weight: var(--weight-black); }
+.sp-label { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: var(--weight-extrabold); }
+.sp-diagram { transform: scale(.85); transform-origin: top center; min-height: 20px; }
+.sp-beats { display: flex; justify-content: center; gap: 12px; }
+.sp-beats span { width: 14px; height: 14px; border-radius: 50%; background: var(--card-2); transition: transform 80ms, background 80ms; }
+.sp-beats span.on { background: var(--green); transform: scale(1.35); }
+.sp-beats span[data-b="0"].on { background: var(--orange); }
+.sp-beats.count span.on { background: var(--blue); }
+.sp-strip { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.sp-strip span { padding: 6px 10px; border-radius: 10px; background: var(--card-2); font-weight: var(--weight-bold); font-size: 14px; color: var(--muted); transition: all 120ms; }
+.sp-strip span.on { background: var(--green); color: #fff; }
+.sp-strum { text-align: center; margin: 0; color: var(--muted); font-size: 14px; }
+.sp-controls { display: grid; gap: 10px; }
+.sp-controls label { display: grid; grid-template-columns: auto 1fr 48px; gap: 10px; align-items: center; font-weight: var(--weight-bold); font-size: 14px; }
+.sp-controls input[type=range] { width: 100%; accent-color: var(--green); }
+.sp-toggles { display: flex; flex-wrap: wrap; gap: 6px; }
+.sp-toggle { padding: 8px 12px; border-radius: 999px; border: 1px solid var(--border); background: var(--card-2); color: var(--muted); font: inherit; font-size: 13px; font-weight: var(--weight-bold); cursor: pointer; }
+.sp-toggle.on { border-color: var(--green); color: var(--text); background: var(--green-soft); }
+.sp-hint { margin: 0; color: var(--muted); font-size: 12px; }
