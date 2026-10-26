@@ -326,7 +326,7 @@ function renderWelcomeSetup() {
         </label>
         <button class="btn btn-primary btn-block" style="margin-top:12px" id="notifYes">Activar recordatorios</button>`
       : `<p class="sub">Este navegador no permite notificaciones.</p>`}
-      <button class="auth-link" id="notifNo" style="margin-top:8px">Ahora no</button>
+      <button class="auth-link" id="notifNo" style="margin-top:8px">${t("home.cloudLater")}</button>
     </div>`;
   bindSkip();
   const next = () => renderSettingsTip();
@@ -386,47 +386,47 @@ function renderHome(v) {
   v.innerHTML = `
     <div class="card" style="text-align:center">
       <div class="home-mascot">${mascot(state.streak > 2 ? "cheer" : "wave", 84)}</div>
-      <h2>Hola, ${state.user.name}</h2>
-      <p>Nivel ${state.level} · ${levelTitle(state.level)} · ${state.xp}/${state.level*100} XP</p>
-      <button class="btn btn-primary btn-block" id="continueBtn">Continuar aprendiendo</button>
+      <h2>${t("home.welcome", {name: state.user.name})}</h2>
+      <p>${t("home.level", {level: state.level, title: levelTitle(state.level), xp: state.xp, next: state.level*100})}</p>
+      <button class="btn btn-primary btn-block" id="continueBtn">${t("home.continue")}</button>
     </div>
     <div id="routineCard"></div>
     ${!state.settingsVisited ? `<div class="card setup-card" id="setupCard">
-      <div><b>⚙️ Configura tu app</b><p>Objetivo diario, sonido, recordatorios y afinación de referencia.</p></div>
-      <div class="setup-card__actions"><button class="btn btn-secondary" id="setupGo">Ir a Ajustes</button><button class="auth-link" id="setupLater" aria-label="Ocultar">Ocultar</button></div>
+      <div><b>${t("home.setupTitle")}</b><p>${t("home.setupDesc")}</p></div>
+      <div class="setup-card__actions"><button class="btn btn-secondary" id="setupGo">${t("home.setupGo")}</button><button class="auth-link" id="setupLater" aria-label="${t("home.setupHide")}">${t("home.setupHide")}</button></div>
     </div>` : ""}
     ${!getSession().user ? `<div id="cloudCard"></div>` : ""}
     ${state.stats.lessonsCompleted < 10 ? `<div class="card" style="border-color:var(--orange);background:#2a2218">
-      <p style="margin:0;font-weight:800;color:var(--orange)">💡 Consejo de la semana</p>
-      <p style="margin:4px 0 0">Es normal que te duelan las yemas los primeros días. En 1–2 semanas se forman callos y deja de doler. ¡No abandones!</p>
+      <p style="margin:0;font-weight:800;color:var(--orange)">${t("home.tipTitle")}</p>
+      <p style="margin:4px 0 0">${t("home.tipBody")}</p>
     </div>` : ""}
     ${getReviewLessons().length ? `<div class="card">
-      <h2>🔁 Repaso del día</h2>
-      <p>Refuerza lo aprendido (repetición espaciada).</p>
+      <h2>${t("home.reviewTitle")}</h2>
+      <p>${t("home.reviewDesc")}</p>
       ${getReviewLessons().map(l=>`<button class="btn btn-secondary btn-block" style="margin-top:6px" data-rev="${l.id}">📖 ${l.title}</button>`).join("")}
     </div>` : ""}
     <div class="challenge-card">
-      <h3>⚡ Desafío diario</h3>
-      <p style="color:var(--muted);font-size:14px;margin:0 0 10px">${dailyDone ? "¡Ya completado hoy! Vuelve mañana." : "Completa una lección especial para ganar el doble de XP."}</p>
-      <button class="btn btn-secondary btn-block" id="dailyBtn" ${dailyDone?"disabled":""}>${dailyDone?"Completado ✓":"Empezar desafío"}</button>
+      <h3>${t("home.challengeTitle")}</h3>
+      <p style="color:var(--muted);font-size:14px;margin:0 0 10px">${dailyDone ? t("home.challengeDone") : t("home.challengeDesc")}</p>
+      <button class="btn btn-secondary btn-block" id="dailyBtn" ${dailyDone?"disabled":""}>${dailyDone?t("home.challengeCompleted"):t("home.challengeStart")}</button>
     </div>
-    <div class="section-title">Tu progreso</div>
+    <div class="section-title">${t("home.progressTitle")}</div>
     <div class="card">
-      <p>📚 Lecciones completadas: <b>${state.stats.lessonsCompleted}</b></p>
-      <p>🔥 Racha: <b>${state.streak} días</b></p>
-      <p>🎯 Afinaciones: <b>${state.stats.tunings}</b></p>
-      <p>💎 Gemas: <b>${state.gems}</b></p>
+      <p>${t("home.lessonsCompleted", {count: state.stats.lessonsCompleted})}</p>
+      <p>${t("home.streak", {count: state.streak})}</p>
+      <p>${t("home.tunings", {count: state.stats.tunings})}</p>
+      <p>${t("home.gems", {count: state.gems})}</p>
     </div>
     <div class="card">
-      <h2>📅 Plan de 30 días</h2>
-      <p>${planDone ? "¡Completado! 30 de 30 días." : `${planCount} de 30 días practicados · ${planPct}% completado`}</p>
-      <p style="color:var(--muted);font-size:13px;margin:4px 0 0">${planDone ? "Has completado el plan; mantén la rutina diaria." : practicedToday ? "Hoy ya cuenta como día de práctica. Vuelve mañana para sumar otro." : "Completa una lección o la rutina de hoy para sumar un día."}</p>
+      <h2>${t("home.planTitle")}</h2>
+      <p>${planDone ? t("home.planDone") : t("home.planProgress", {count: planCount, pct: planPct})}</p>
+      <p style="color:var(--muted);font-size:13px;margin:4px 0 0">${planDone ? t("home.planDoneHint") : practicedToday ? t("home.planTodayHint") : t("home.planStartHint")}</p>
       <div class="progress"><div style="width:${planPct}%"></div></div>
     </div>
-    <div class="section-title">Accesos rápidos</div>
+    <div class="section-title">${t("home.quickAccess")}</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 16px">
-      <button class="btn btn-secondary" id="quickTuner">🎯 Afinador</button>
-      <button class="btn btn-secondary" id="quickPractice">🎸 Practicar</button>
+      <button class="btn btn-secondary" id="quickTuner">${t("home.tuner")}</button>
+      <button class="btn btn-secondary" id="quickPractice">${t("home.practice")}</button>
     </div>
   `;
   $("#continueBtn").onclick = () => navigate("learn");
@@ -457,16 +457,16 @@ async function hydrateRoutineCard() {
     <div class="card routine-card ${r.done ? "is-done" : ""}">
       <div class="routine-card__head">
         <div>
-          <span class="routine-card__kicker">Rutina de hoy</span>
-          <h2>${r.done ? "¡Hecha! Vuelve mañana" : r.total + " minutos de práctica"}</h2>
-          <p>Nivel ${LV[r.level] || r.level}${r.minutesToday ? " · hoy llevas " + Math.round(r.minutesToday) + " min" : ""}</p>
+          <span class="routine-card__kicker">${t("home.routineTitle")}</span>
+          <h2>${r.done ? t("home.routineDone") : t("home.routineMinutes", {total: r.total})}</h2>
+          <p>${t("home.routineLevel", {level: LV[r.level] || r.level, today: r.minutesToday ? t("home.routineTodayMinutes", {minutes: Math.round(r.minutesToday)}) : ""})}</p>
         </div>
         <span class="routine-card__ring" style="--p:${r.done ? 100 : Math.min(100, Math.round((r.minutesToday / r.total) * 100))}">${r.done ? "✓" : r.total + "'"}</span>
       </div>
       <ol class="routine-card__blocks">
         ${r.blocks.map(b => `<li><span>${b.icon}</span><b>${b.name}</b><em>${b.duration} min</em></li>`).join("")}
       </ol>
-      <button class="btn ${r.done ? "btn-secondary" : "btn-primary"} btn-block" id="routineGo">${r.done ? "Repetir rutina" : "Empezar rutina"}</button>
+      <button class="btn ${r.done ? "btn-secondary" : "btn-primary"} btn-block" id="routineGo">${r.done ? t("home.routineRepeat") : t("home.routineStart")}</button>
     </div>`;
   box.querySelector("#routineGo").onclick = () => {
     history.replaceState(null, "", "#practicar/hoy");
@@ -493,14 +493,14 @@ async function hydrateCloudCard() {
       <div class="cloud-head">
         <span class="cloud-ico">☁️</span>
         <div>
-          <b>Guarda tu progreso</b>
-          <p>Tu cuenta se sincroniza en todos tus dispositivos.</p>
+          <b>${t("home.cloudSave")}</b>
+          <p>${t("home.cloudSync")}</p>
         </div>
       </div>
       ${google
-        ? `<button class="btn btn-primary btn-block" id="cloudGoogle" type="button">Continuar con Google</button>`
-        : `<button class="btn btn-secondary btn-block" id="cloudOpen" type="button">Iniciar sesión o crear cuenta</button>`}
-      <button class="auth-link" id="cloudLater" type="button">Ahora no</button>
+        ? `<button class="btn btn-primary btn-block" id="cloudGoogle" type="button">${t("home.cloudGoogle")}</button>`
+        : `<button class="btn btn-secondary btn-block" id="cloudOpen" type="button">${t("home.cloudOpen")}</button>`}
+      <button class="auth-link" id="cloudLater" type="button">${t("home.cloudLater")}</button>
     </div>`;
   const g = box.querySelector("#cloudGoogle");
   if (g) g.onclick = async () => {
