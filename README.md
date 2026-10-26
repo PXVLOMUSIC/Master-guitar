@@ -1,31 +1,62 @@
-# Strumio — Aprende guitarra (prototipo PWA)
+# Strumio — Aprende guitarra (PWA)
 
-Aplicación web progresiva (PWA) para aprender guitarra paso a paso, estilo Duolingo,
-con afinador en tiempo real, retos diarios, recompensas y soporte para ukelele y bajo.
+**Demo:** <https://pxvlomusic.github.io/Master-guitar/>
 
-## Cómo ejecutar
+Aplicación web progresiva para aprender guitarra, ukelele y bajo paso a paso,
+con estilo de juego (XP, rachas, corazones y logros). Sin build, sin frameworks:
+JavaScript moderno, Web Audio y Supabase.
+
+## Funciones
+
+- **125 lecciones** en 21 unidades (guitarra y ukelele).
+- **Afinador** con micrófono (YIN + autocorrelación), modo cromático y por cuerda.
+- **Metrónomo**, detector de acordes, entrenadores de oído y ritmo.
+- **Practicar**: 29 herramientas en un hub con buscador, favoritos y ventanas modales.
+- **Audio real CC0**: batería, bajo, guitarra y percusión (Karoryfer Samples),
+  con capas de velocidad y round-robin.
+- **Canciones**, backing tracks, secuenciador de 16 pasos, mezclador y exportación WAV.
+- **Cuenta y sincronización** con Supabase: email/contraseña, enlace mágico y
+  Google OAuth. Ranking, retos y progreso en la nube.
+- **PWA instalable** con iconos y manifest (offline pendiente).
+
+## Ejecutar en local
 
 ```bash
-cd guitar-app
-python -m http.server 8765
-# abrir http://127.0.0.1:8765/
+python serve.py
+# http://127.0.0.1:9999/index.html
 ```
 
-> El afinador requiere micrófono. Funciona en contextos seguros (HTTPS o localhost).
+> El micrófono del afinador necesita un contexto seguro: `localhost` o HTTPS.
+> `serve.py` envía `Cache-Control: no-store` para evitar JS antiguo en desarrollo.
+
+## Despliegue
+
+GitHub Pages publica la rama `main` en
+<https://pxvlomusic.github.io/Master-guitar/>. Pasos y configuración de Supabase
+en [`DEPLOY.md`](DEPLOY.md).
 
 ## Estructura
 
 - `index.html` — shell de la app
-- `css/styles.css` — estilos
+- `css/styles.css` — sistema de diseño
 - `js/app.js` — router y vistas
-- `js/audio.js` — Web Audio + detección de pitch (autocorrelación)
-- `js/instruments.js` — instrumentos y afinaciones
-- `js/gamification.js` — XP, rachas, corazones, logros
-- `js/storage.js` — persistencia (localStorage)
-- `data/lessons.json` — currículo
-- `data/chords.json` — diagramas de acordes
-- `sw.js` — service worker (offline)
+- `js/audio.js` — Web Audio, pitch y metrónomo
+- `js/sample-engine.js` — muestras reales CC0
+- `js/backing-pro.js` — mezclador y secuenciador
+- `js/backend.js` + `js/supabase-config.js` — auth y sincronización
+- `data/` — currículo, acordes, canciones y vídeos
+- `assets/audio/` — muestras FLAC y `manifest.json` con licencias
+- `sw.js` — service worker (paso; offline pendiente)
+- `backend/schema.sql` — tablas, RLS y triggers de Supabase
 
-## Próximos pasos
+## Documentación
 
-Ver `INVESTIGACION_Y_RECOMENDACIONES.md`.
+- [`DEPLOY.md`](DEPLOY.md) — publicar en GitHub Pages
+- [`SOCIAL_LOGIN.md`](SOCIAL_LOGIN.md) — activar Google/GitHub/Discord
+- [`SUPABASE_SETUP.md`](SUPABASE_SETUP.md) — base de datos y RLS
+- [`MOBILE_PACKAGING.md`](MOBILE_PACKAGING.md) — Capacitor y tiendas
+
+## Créditos
+
+Muestras de audio: **Karoryfer Samples** (CC0). Los detalles y licencias están
+en `assets/audio/manifest.json`.
