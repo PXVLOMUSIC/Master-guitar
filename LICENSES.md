@@ -34,7 +34,7 @@ muestras bajo **Creative Commons Attribution 3.0**:
   <https://github.com/nbrosowsky/tonejs-instruments/blob/master/sample-source-info.txt>
   - Guitarra eléctrica: Karoryfer Samples
   - Guitarra de nylon: `quartertone` en Freesound
-    (`classicalguitar-multisampled`)
+    (`classicalguitar-multisampled`) · <https://freesound.org/people/quartertone/>
   - Piano: Versilian Studios VSO2
     <https://vis.versilstudios.net/vsco-community.html>
 
