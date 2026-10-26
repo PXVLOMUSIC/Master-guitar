@@ -954,7 +954,7 @@ function finishLesson(v) {
       <p class="xp-pop">+${totalXp} XP ${dailyBonus>1?"(x2 desafío diario)":""}</p>
       ${res.leveled ? `<p style="color:var(--gold);font-weight:800">¡Subiste a nivel ${res.level}!</p>` : ""}
       <p style="color:var(--muted)">Racha: ${state.streak} días 🔥</p>
-      ${newAch.length ? `<div style="margin-top:10px">${newAch.map(a=>`<div class="ach"><span class="ico">${a.icon}</span><div class="info"><div class="name">${a.name}</div><div class="desc">${a.desc}</div></div></div>`).join("")}</div>` : ""}
+      ${newAch.length ? `<div style="margin-top:10px">${newAch.map(a=>`<div class="ach"><span class="ico">${a.icon}</span><div class="info"><div class="name">${t(a.name)}</div><div class="desc">${t(a.desc)}</div></div></div>`).join("")}</div>` : ""}
       <button class="btn btn-primary btn-block" style="margin-top:16px" id="backBtn">Volver a la ruta</button>
     </div>`;
   $("#backBtn").onclick = () => navigate("learn");
@@ -1913,7 +1913,7 @@ function renderProfile(v) {
         const unlocked = !!state.achievements[a.id];
         return `<div class="ach ${unlocked?'':'locked'}">
           <span class="ico">${a.icon}</span>
-          <div class="info"><div class="name">${a.name}</div><div class="desc">${a.desc}</div></div>
+          <div class="info"><div class="name">${t(a.name)}</div><div class="desc">${t(a.desc)}</div></div>
           <span>${unlocked?'✅':'🔒'}</span>
         </div>`;
       }).join("")}
