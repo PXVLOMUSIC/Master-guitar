@@ -1763,14 +1763,93 @@ async function renderTabs(area) {
 }
 
 // ---- profile ----
+function getProfileAvatar() {
+  const src = state.user && state.user.avatar;
+  return typeof src === "string" &&
+    src.length <= 900000 &&
+    /^data:image\/(?:jpeg|png|webp|gif);base64,/i.test(src) ? src : "";
+}
+
+async function loadAvatarImage(file) {
+  if (typeof createImageBitmap === "function") {
+    try {
+      return await createImageBitmap(file, { imageOrientation: "from-image" });
+    } catch (e) {
+      // Safari antiguo o formatos sin soporte: probamos con <img>.
+    }
+  }
+  const url = URL.createObjectURL(file);
+  try {
+    return await new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => reject(new Error("No se pudo leer la imagen"));
+      img.src = url;
+    });
+  } finally {
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+}
+
+async function makeAvatarDataUrl(file) {
+  if (!file || !file.type || !file.type.startsWith("image/")) {
+    throw new Error("Selecciona un archivo de imagen");
+  }
+  if (file.size > 10 * 1024 * 1024) {
+    throw new Error("La imagen es demasiado grande (máximo 10 MB)");
+  }
+  const img = await loadAvatarImage(file);
+  const width = img.width || img.naturalWidth;
+  const height = img.height || img.naturalHeight;
+  if (!width || !height) throw new Error("La imagen no es válida");
+
+  const side = Math.min(width, height);
+  const canvas = document.createElement("canvas");
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw new Error("No se pudo procesar la imagen");
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+  ctx.drawImage(
+    img,
+    Math.max(0, (width - side) / 2),
+    Math.max(0, (height - side) / 2),
+    side, side,
+    0, 0, 512, 512
+  );
+  if (typeof img.close === "function") img.close();
+
+  let quality = 0.86;
+  let data = canvas.toDataURL("image/jpeg", quality);
+  while (data.length > 700000 && quality > 0.5) {
+    quality -= 0.08;
+    data = canvas.toDataURL("image/jpeg", quality);
+  }
+  if (data.length > 900000) throw new Error("La foto es demasiado grande");
+  return data;
+}
+
 function renderProfile(v) {
   showNav(true);
+  const avatar = getProfileAvatar();
   v.innerHTML = `
+    <input type="file" id="avatarInput" accept="image/*" hidden>
     <div class="card" style="text-align:center">
-      <div style="font-size:48px">👤</div>
-      <h2>${state.user.name}</h2>
+      <div class="profile-avatar-wrap">
+        <button class="profile-avatar" id="avatarBtn" type="button" aria-label="${avatar ? "Cambiar foto de perfil" : "Añadir foto de perfil"}">
+          ${avatar ? `<img src="${avatar}" alt="Foto de perfil">` : `<span class="profile-avatar__fallback" aria-hidden="true">👤</span>`}
+          <span class="profile-avatar__edit" aria-hidden="true">✎</span>
+        </button>
+        <div class="profile-avatar-actions">
+          <button class="btn btn-secondary btn-sm" id="avatarChange" type="button">${avatar ? "Cambiar foto" : "Añadir foto"}</button>
+          ${avatar ? `<button class="btn btn-secondary btn-sm" id="avatarRemove" type="button">Quitar</button>` : ""}
+        </div>
+      </div>
+      <h2>${escapeHtml(state.user.name)}</h2>
       <p>Nivel ${state.level} · ${levelTitle(state.level)}</p>
       <p>Instrumento: ${INSTRUMENTS[state.user.instrument].name}</p>
+      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">La foto se guarda en este dispositivo.</p>
     </div>
     <div class="section-title">Logros</div>
     <div style="padding:0 16px">
@@ -1793,6 +1872,38 @@ function renderProfile(v) {
       <button class="btn btn-danger btn-block" id="resetBtn">🔄 Reiniciar progreso</button>
     </div>
   `;
+  const avatarInput = $("#avatarInput");
+  const openAvatarPicker = () => avatarInput && avatarInput.click();
+  $("#avatarBtn").onclick = openAvatarPicker;
+  $("#avatarChange").onclick = openAvatarPicker;
+  const avatarRemove = $("#avatarRemove");
+  if (avatarRemove) avatarRemove.onclick = () => {
+    delete state.user.avatar;
+    saveState(state);
+    toast("Foto eliminada");
+    renderProfile(view());
+  };
+  if (avatarInput) avatarInput.onchange = async () => {
+    const file = avatarInput.files && avatarInput.files[0];
+    avatarInput.value = "";
+    if (!file) return;
+    const changeBtn = $("#avatarChange");
+    if (changeBtn) { changeBtn.disabled = true; changeBtn.textContent = "Procesando…"; }
+    try {
+      state.user.avatar = await makeAvatarDataUrl(file);
+      saveState(state);
+      toast("Foto actualizada");
+      renderProfile(view());
+    } catch (e) {
+      console.warn("avatar", e);
+      toast(e.message || "No se pudo usar la foto");
+      if (changeBtn) {
+        changeBtn.disabled = false;
+        changeBtn.textContent = getProfileAvatar() ? "Cambiar foto" : "Añadir foto";
+      }
+    }
+  };
+
   $("#dashboardBtn").onclick = () => navigate("dashboard");
   $("#settingsBtn").onclick = () => navigate("settings");
   $("#refillBtn").onclick = () => {
