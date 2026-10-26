@@ -101,7 +101,7 @@ function renderOnboard(v) {
   const data = { name: "", instrument: "guitar", level: "beginner" };
   const steps = [
     () => `
-      <div class="onboard">
+      <div class="onboard">${skipButton()}
         <div class="emoji">🎸</div>
         <h1>¡Bienvenido a Strumio!</h1>
         <p class="sub">Aprende guitarra paso a paso, como un juego.</p>
@@ -109,7 +109,7 @@ function renderOnboard(v) {
         <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
       </div>`,
     () => `
-      <div class="onboard">
+      <div class="onboard">${skipButton()}
         <h1>Elige tu instrumento</h1>
         <div class="choices">
           ${Object.entries(INSTRUMENTS).map(([k,ins]) => `
@@ -121,7 +121,7 @@ function renderOnboard(v) {
         <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
       </div>`,
     () => `
-      <div class="onboard">
+      <div class="onboard">${skipButton()}
         <h1>¿Cómo quieres empezar?</h1>
         <p class="sub">El test adapta las lecciones y la rutina diaria a lo que ya sabes.</p>
         <div class="choices">
@@ -133,6 +133,7 @@ function renderOnboard(v) {
 
   function draw() {
     v.innerHTML = steps[step]();
+    bindSkip(data);
     if (step === 0) {
       const go = () => { data.name = $("#nameInput").value.trim() || "Guitarrista"; step = 1; draw(); };
       $("#nextBtn").onclick = go;
@@ -149,6 +150,28 @@ function renderOnboard(v) {
     }
   }
   draw();
+}
+
+// "Omitir" en cualquier paso: guarda lo que haya y va directo a Inicio.
+function skipButton() {
+  return `<button class="onboard-skip" id="skipOnboard" type="button">Omitir</button>`;
+}
+function bindSkip(data) {
+  const b = document.getElementById("skipOnboard");
+  if (!b) return;
+  b.onclick = () => {
+    if (!state.user) {
+      const input = document.getElementById("nameInput");
+      const name = (input && input.value.trim()) || (data && data.name) || "Guitarrista";
+      state.user = { name, instrument: (data && data.instrument) || "guitar", level: "beginner" };
+      state.settings.instrument = state.user.instrument;
+      state.level = state.level || 1;
+      updateStreak();
+    }
+    state.setupDone = true;
+    saveState(state);
+    navigate("home");
+  };
 }
 
 // ---- placement test ----
@@ -194,7 +217,7 @@ function startPlacement(data) {
     const q = questions[qi];
     const pct = Math.round((qi / questions.length) * 100);
     v.innerHTML = `
-      <div class="onboard placement">
+      <div class="onboard placement">${skipButton()}
         <div class="placement-top">
           <span class="placement-area">${PLACEMENT_AREAS[q.area]}</span>
           <span style="color:var(--muted);font-size:13px">${qi + 1} / ${questions.length}</span>
@@ -210,6 +233,7 @@ function startPlacement(data) {
           ${q.area !== "exp" ? `<button class="auth-link" data-i="-1" style="margin-top:4px">No lo sé</button>` : ""}
         </div>
       </div>`;
+    bindSkip(data);
     if (q.play) { $("#playQ").onclick = q.play; setTimeout(q.play, 300); }
     $$("[data-i]", v).forEach(o => o.onclick = () => {
       const i = parseInt(o.dataset.i);
@@ -270,13 +294,14 @@ function renderPlacementResult(result) {
     return `<div class="placement-row"><span>${PLACEMENT_AREAS[k]}</span><div class="progress"><div style="width:${p}%"></div></div><b>${p}%</b></div>`;
   }).join("");
   v.innerHTML = `
-    <div class="onboard">
+    <div class="onboard">${skipButton()}
       <div class="emoji">${LV.ico}</div>
       <h1>Nivel ${LV.name}</h1>
       <p class="sub">${LV.txt}</p>
       <div class="card" style="text-align:left;margin:16px 0 0">${rows}</div>
       <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
     </div>`;
+  bindSkip();
   $("#nextBtn").onclick = renderWelcomeSetup;
 }
 
@@ -287,7 +312,7 @@ function renderWelcomeSetup() {
   const supported = "Notification" in window;
   const hour = state.settings.reminderHour ?? 19;
   v.innerHTML = `
-    <div class="onboard">
+    <div class="onboard">${skipButton()}
       <div class="emoji">🔔</div>
       <h1>¿Te recordamos practicar?</h1>
       <p class="sub">Quince minutos al día valen más que dos horas el domingo. Te avisamos una vez al día, a la hora que elijas.</p>
@@ -299,6 +324,7 @@ function renderWelcomeSetup() {
       : `<p class="sub">Este navegador no permite notificaciones.</p>`}
       <button class="auth-link" id="notifNo" style="margin-top:8px">Ahora no</button>
     </div>`;
+  bindSkip();
   const next = () => renderSettingsTip();
   if (supported) $("#notifYes").onclick = async () => {
     const btn = $("#notifYes"); btn.disabled = true;
@@ -314,7 +340,7 @@ function renderWelcomeSetup() {
 function renderSettingsTip() {
   const v = view();
   v.innerHTML = `
-    <div class="onboard">
+    <div class="onboard">${skipButton()}
       <div class="emoji">⚙️</div>
       <h1>Un último paso</h1>
       <p class="sub">Te recomendamos pasar por Ajustes para dejar la app a tu gusto:</p>
@@ -327,6 +353,7 @@ function renderSettingsTip() {
       <button class="btn btn-primary btn-block" style="margin-top:16px" id="goSettings">Ir a Ajustes</button>
       <button class="auth-link" id="goHome" style="margin-top:8px">Más tarde</button>
     </div>`;
+  bindSkip();
   const done = (route) => {
     state.setupDone = true; saveState(state);
     toast("¡Bienvenido, " + state.user.name + "! 🎸");

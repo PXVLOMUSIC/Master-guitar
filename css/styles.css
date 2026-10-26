@@ -2306,3 +2306,11 @@ body.section-open { overflow: hidden; }
 .placement-row b { text-align: right; }
 .setup-hour { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 16px; font-weight: var(--weight-bold); }
 .setup-hour select { padding: 8px 10px; border-radius: var(--r-md); border: 2px solid var(--border); background: var(--card-2); color: var(--text); font: inherit; }
+.onboard { position: relative; }
+.onboard-skip {
+  position: absolute; top: var(--space-3); right: var(--space-3);
+  background: none; border: 0; color: var(--muted); font: inherit; font-weight: var(--weight-bold);
+  font-size: 14px; padding: 6px 10px; border-radius: var(--r-md); cursor: pointer;
+}
+.onboard-skip:hover { color: var(--text); background: var(--card-2); }
+.placement .placement-top { margin-top: 28px; }
