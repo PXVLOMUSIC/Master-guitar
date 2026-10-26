@@ -246,8 +246,28 @@ export function renderSettings(container) {
     </div>
     <div id="backendSettings"></div>
 
+    <div class="section-title">Créditos de sonido</div>
+    <div class="card" id="soundCredits">
+      <p style="margin:0;color:var(--muted);font-size:13px">Cargando…</p>
+    </div>
+
     <div style="height:20px"></div>
   `;
+
+  // Créditos de las muestras de audio (desde assets/audio/manifest.json)
+  fetch("assets/audio/manifest.json")
+    .then((r) => r.json())
+    .then((m) => {
+      const card = container.querySelector("#soundCredits");
+      if (!card) return;
+      const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+      card.innerHTML = `
+        <p style="margin:0 0 10px;font-size:13px;color:var(--muted)">Guitarra, bajo, batería y percusión son grabaciones reales con licencia libre (el ukelele aún es sintetizado).</p>
+        <ul style="margin:0;padding-left:18px;font-size:13px;line-height:1.7">
+          ${(m.sources || []).map((src) => `<li><a href="${esc(src.url)}" target="_blank" rel="noopener" style="color:var(--blue)">${esc(src.name)}</a> · ${esc(src.author)} · ${esc(src.license)}</li>`).join("")}
+        </ul>`;
+    })
+    .catch(() => {});
 
   // wire theme
   try { renderBackendSettings(container.querySelector("#backendSettings")); } catch (e) { console.warn(e); }

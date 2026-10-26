@@ -1,7 +1,7 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
-import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples } from "./audio.js";
+import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments } from "./audio.js";
 import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider } from "./backend.js";
 import { renderPracticeHub, openFromHash, closeSection } from "./practice-hub.js";
 import { icon } from "./icons.js";
@@ -1189,11 +1189,25 @@ function showChord(area, name, chord) {
     <div class="card" style="text-align:center">
       <h2>${name} — ${chord.name}</h2>
       ${renderChordDiagram(chord)}
-      <div style="margin-top:12px">
-        <button class="btn btn-secondary" id="playChord">🔊 Referencia</button>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" id="strumChord">Rasguear</button>
+        <button class="btn btn-secondary" id="arpChord">Arpegio</button>
       </div>
     </div>`;
-  $("#playChord").onclick = () => playTone(CHORD_FREQS[name] || 261.63);
+  const ins = state.settings.instrument === "ukulele" ? "ukulele" : "guitar";
+  const freqs = chordShapeFreqs(chord, ins) || CHORD_NOTES[name] || [CHORD_FREQS[name] || 261.63];
+  $("#strumChord").onclick = () => playChord(freqs, 2.2, { instrument: ins, stagger: 0.022 });
+  $("#arpChord").onclick = () => playChord(freqs, 2.4, { instrument: ins, arpeggiate: true, stagger: 0.2 });
+}
+
+// Frecuencias reales de un diagrama (trastes por cuerda, -1 = no se toca).
+function chordShapeFreqs(chord, ins) {
+  const open = INSTRUMENTS[ins] && INSTRUMENTS[ins].tunings.standard;
+  if (!chord || !Array.isArray(chord.frets) || !open || chord.frets.length !== open.length) return null;
+  const freqs = chord.frets
+    .map((fret, i) => (fret >= 0 ? open[i] * Math.pow(2, fret / 12) : null))
+    .filter((f) => f != null);
+  return freqs.length ? freqs : null;
 }
 
 function renderMetronome(area) {
@@ -1698,7 +1712,8 @@ async function boot() {
   preloadAssets();
   const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
   idle(() => {
-    try { /* warm caches */ } catch (e) {}
+    // Descarga en segundo plano la guitarra real y el click del metrónomo.
+    try { warmRealInstruments(state.settings.instrument === "bass" ? "bass" : "guitar"); } catch (e) {}
   }, { timeout: 3000 });
 }
 
