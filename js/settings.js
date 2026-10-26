@@ -3,6 +3,7 @@ import { state, saveState, defaultState, resetState } from "./storage.js";
 import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
 import { renderBackendSettings, getStatus, setRealtimeEnabled, isRealtimeEnabled, syncProgress } from "./backend.js";
+import { t } from "./i18n.js";
 import { clearQueue } from "./sync.js";
 import { setGuitarTone, setEarInstrument, playChord, earInstrument } from "./audio.js";
 
@@ -217,27 +218,27 @@ export function renderSettings(container) {
   container.innerHTML = `
     <div class="card" style="text-align:center">
       <div style="font-size:40px">⚙️</div>
-      <h2>Ajustes</h2>
-      <p>Personaliza tu experiencia</p>
+      <h2>${t("settings.title")}</h2>
+      <p>${t("settings.subtitle")}</p>
     </div>
 
-    <div class="section-title">Apariencia</div>
+    <div class="section-title">${t("settings.appearance")}</div>
     <div class="card">
       <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border)">
         <div>
-          <div style="font-weight:800">Tema</div>
-          <div style="color:var(--muted);font-size:12px">Oscuro, claro o automático</div>
+          <div style="font-weight:800">${t("settings.theme")}</div>
+          <div style="color:var(--muted);font-size:12px">${t("settings.themeHint")}</div>
         </div>
         <select id="themeSel" style="padding:8px 10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);font-weight:700">
-          <option value="dark" ${s.theme === "dark" ? "selected" : ""}>Oscuro</option>
-          <option value="light" ${s.theme === "light" ? "selected" : ""}>Claro</option>
-          <option value="auto" ${s.theme === "auto" ? "selected" : ""}>Auto</option>
+          <option value="dark" ${s.theme === "dark" ? "selected" : ""}>${t("settings.themeDark")}</option>
+          <option value="light" ${s.theme === "light" ? "selected" : ""}>${t("settings.themeLight")}</option>
+          <option value="auto" ${s.theme === "auto" ? "selected" : ""}>${t("settings.themeAuto")}</option>
         </select>
       </div>
       <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0">
         <div>
-          <div style="font-weight:800">Idioma</div>
-          <div style="color:var(--muted);font-size:12px">Interfaz</div>
+          <div style="font-weight:800">${t("settings.language")}</div>
+          <div style="color:var(--muted);font-size:12px">${t("settings.languageHint")}</div>
         </div>
         <select id="langSel" style="padding:8px 10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);font-weight:700">
           <option value="auto" ${(!s.language || s.language === "auto") ? "selected" : ""}>Automático (sistema)</option>
@@ -251,74 +252,74 @@ export function renderSettings(container) {
       </div>
     </div>
 
-    <div class="section-title">Sonido y feedback</div>
+    <div class="section-title">${t("settings.sound")}</div>
     <div class="card">
-      ${renderToggle("soundToggle", "Sonido", "Efectos de sonido en la app", s.sound)}
-      ${renderToggle("metroSoundToggle", "Sonido del metrónomo", "Click del metrónomo", s.metronomeSound)}
-      ${renderToggle("hapticToggle", "Feedback háptico", "Vibración en interacciones", s.haptic)}
+      ${renderToggle("soundToggle", t("settings.soundToggle"), t("settings.soundHint"), s.sound)}
+      ${renderToggle("metroSoundToggle", t("settings.metroSound"), t("settings.metroSoundHint"), s.metronomeSound)}
+      ${renderToggle("hapticToggle", t("settings.haptic"), t("settings.hapticHint"), s.haptic)}
       <div class="sound-pick">
-        <div><b>Sonido de guitarra</b><p>Acordes, canciones y tablaturas</p></div>
-        <div class="seg" role="radiogroup" aria-label="Sonido de guitarra">
-          ${[["acoustic","Acústica"],["electric","Eléctrica"],["nylon","Nylon"]].map(([k,l]) => `<button class="seg-btn ${ (s.guitarTone||"acoustic")===k ? "on" : ""}" data-tone="${k}" role="radio" aria-checked="${(s.guitarTone||"acoustic")===k}">${l}</button>`).join("")}
+        <div><b>${t("settings.guitarTone")}</b><p>${t("settings.guitarToneDesc")}</p></div>
+        <div class="seg" role="radiogroup" aria-label="${t("settings.guitarTone")}">
+          ${[["acoustic",t("settings.acoustic")],["electric",t("settings.electric")],["nylon",t("settings.nylon")]].map(([k,l]) => `<button class="seg-btn ${ (s.guitarTone||"acoustic")===k ? "on" : ""}" data-tone="${k}" role="radio" aria-checked="${(s.guitarTone||"acoustic")===k}">${l}</button>`).join("")}
         </div>
       </div>
       <div class="sound-pick">
-        <div><b>Oído y teoría</b><p>Instrumento de los ejercicios de oído</p></div>
-        <div class="seg" role="radiogroup" aria-label="Instrumento de oído">
-          ${[["guitar","Guitarra"],["piano","Piano"]].map(([k,l]) => `<button class="seg-btn ${(s.earInstrument||"guitar")===k ? "on" : ""}" data-ear="${k}" role="radio" aria-checked="${(s.earInstrument||"guitar")===k}">${l}</button>`).join("")}
+        <div><b>${t("settings.earInstrument")}</b><p>${t("settings.earInstrumentDesc")}</p></div>
+        <div class="seg" role="radiogroup" aria-label="${t("settings.earInstrument")}">
+          ${[["guitar",t("settings.guitar")],["piano",t("settings.piano")]].map(([k,l]) => `<button class="seg-btn ${(s.earInstrument||"guitar")===k ? "on" : ""}" data-ear="${k}" role="radio" aria-checked="${(s.earInstrument||"guitar")===k}">${l}</button>`).join("")}
         </div>
       </div>
     </div>
 
-    <div class="section-title">Práctica</div>
+    <div class="section-title">${t("settings.practice")}</div>
     <div class="card">
       <div style="padding:8px 0;border-bottom:1px solid var(--border)">
-        <div style="font-weight:800;margin-bottom:8px">Meta diaria (minutos)</div>
+        <div style="font-weight:800;margin-bottom:8px">${t("settings.dailyGoal")}</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           ${[5, 10, 15, 20].map(m => `<button class="btn ${s.dailyGoal === m ? "btn-primary" : "btn-secondary"} btn-sm dailyGoalBtn" data-min="${m}">${m} min</button>`).join("")}
         </div>
       </div>
       <div style="padding:8px 0;border-bottom:1px solid var(--border)">
-        <div style="font-weight:800;margin-bottom:8px">Instrumento por defecto</div>
+        <div style="font-weight:800;margin-bottom:8px">${t("settings.defaultInstrument")}</div>
         <select id="insSel" style="width:100%;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);font-weight:700">
           ${instruments.map(([k, ins]) => `<option value="${k}" ${s.instrument === k ? "selected" : ""}>${ins.emoji} ${ins.name}</option>`).join("")}
         </select>
       </div>
       <div style="padding:8px 0">
-        <div style="font-weight:800;margin-bottom:8px">Referencia del afinador (Hz)</div>
+        <div style="font-weight:800;margin-bottom:8px">${t("settings.tunerRef")}</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
           ${[432, 440, 442].map(p => `<button class="btn ${s.tunerPitch === p ? "btn-primary" : "btn-secondary"} btn-sm tunerPitchBtn" data-pitch="${p}">${p} Hz</button>`).join("")}
         </div>
       </div>
     </div>
 
-    <div class="section-title">Notificaciones</div>
+    <div class="section-title">${t("settings.notifications")}</div>
     <div class="card">
-      ${renderToggle("notifToggle", "Recordatorios", "Notificación diaria para practicar", s.notifications)}
+      ${renderToggle("notifToggle", t("settings.reminders"), t("settings.reminderHint"), s.notifications)}
       <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0">
         <div>
-          <div style="font-weight:800">Hora del recordatorio</div>
+          <div style="font-weight:800">${t("settings.reminderHour")}</div>
           <div style="color:var(--muted);font-size:12px">24 h</div>
         </div>
         <select id="reminderHourSel" style="padding:8px 10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);font-weight:700">
           ${Array.from({ length: 24 }, (_, i) => `<option value="${i}" ${s.reminderHour === i ? "selected" : ""}>${String(i).padStart(2, "0")}:00</option>`).join("")}
         </select>
       </div>
-      <button class="btn btn-secondary btn-block" id="permBtn" style="margin-top:8px">🔔 Solicitar permiso de notificaciones</button>
-      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">En el navegador, el aviso solo llega con la app abierta. En la app nativa, aunque esté cerrada.</p>
+      <button class="btn btn-secondary btn-block" id="permBtn" style="margin-top:8px">${t("settings.permBtn")}</button>
+      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">${t("settings.permHint")}</p>
     </div>
 
-    <div class="section-title">Datos y respaldo</div>
+    <div class="section-title">${t("settings.data")}</div>
     <div class="card">
-      <p style="color:var(--muted);font-size:12px;margin:0 0 10px">Tu progreso vive en este dispositivo. Exporta una copia antes de cambiar de móvil, borrar datos o reinstalar.</p>
-      <button class="btn btn-secondary btn-block" id="exportProgressBtn">⬇️ Exportar progreso</button>
-      <button class="btn btn-secondary btn-block" id="importProgressBtn" style="margin-top:8px">⬆️ Importar progreso</button>
+      <p style="color:var(--muted);font-size:12px;margin:0 0 10px">${t("settings.dataHint")}</p>
+      <button class="btn btn-secondary btn-block" id="exportProgressBtn">${t("settings.export")}</button>
+      <button class="btn btn-secondary btn-block" id="importProgressBtn" style="margin-top:8px">${t("settings.import")}</button>
       <input type="file" id="importProgressFile" accept="application/json,.json" hidden>
-      <button class="btn btn-danger btn-block" id="resetProgressBtn" style="margin-top:8px">🗑️ Restablecer este dispositivo</button>
-      <p style="color:var(--muted);font-size:11px;margin:10px 0 0">El archivo no contiene contraseñas. Si tienes cuenta, la nube puede restaurar tu progreso al iniciar sesión.</p>
+      <button class="btn btn-danger btn-block" id="resetProgressBtn" style="margin-top:8px">${t("settings.reset")}</button>
+      <p style="color:var(--muted);font-size:11px;margin:10px 0 0">${t("settings.noPasswords")}</p>
     </div>
 
-    <div class="section-title">Cuenta y funciones sociales</div>
+    <div class="section-title">${t("settings.accountSocial")}</div>
     <div class="card" id="connectionStatusCard">
       <div id="connStatusText" style="font-size:13px;margin-bottom:8px">Cargando estado…</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
