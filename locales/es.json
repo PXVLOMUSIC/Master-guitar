@@ -124,5 +124,16 @@
   "learn.instrument": "Instrumento: {name}",
   "learn.switchToGuitar": "🎸 Cambiar a guitarra",
   "learn.switchToUkulele": "🪕 Cambiar a ukelele",
-  "learn.instrumentChanged": "Instrumento: {name}"
+  "learn.instrumentChanged": "Instrumento: {name}",
+  "tuner.title": "🎯 Afinador",
+  "tuner.chromatic": "Cromático",
+  "tuner.byString": "Por cuerda",
+  "tuner.muted": "🔇 Silenciado",
+  "tuner.sound": "🔔 Sonido",
+  "tuner.stopTone": "⏹ Parar tono",
+  "tuner.continuousTone": "🔊 Tono continuo",
+  "tuner.tuneAll": "🎯 Afinar todas",
+  "tuner.playString": "Toca una cuerda",
+  "tuner.inTune": "✓ Afinado",
+  "tuner.low": "♭ Bajo"
 }

@@ -124,5 +124,16 @@
   "learn.instrument": "Instrument: {name}",
   "learn.switchToGuitar": "🎸 Zur Gitarre wechseln",
   "learn.switchToUkulele": "🪕 Zum Ukulele wechseln",
-  "learn.instrumentChanged": "Instrument: {name}"
+  "learn.instrumentChanged": "Instrument: {name}",
+  "tuner.title": "🎯 Stimmgerät",
+  "tuner.chromatic": "Chromatisch",
+  "tuner.byString": "Nach Saite",
+  "tuner.muted": "🔇 Stumm",
+  "tuner.sound": "🔔 Ton",
+  "tuner.stopTone": "⏹ Ton stoppen",
+  "tuner.continuousTone": "🔊 Dauerton",
+  "tuner.tuneAll": "🎯 Alle stimmen",
+  "tuner.playString": "Eine Saite spielen",
+  "tuner.inTune": "✓ Gestimmt",
+  "tuner.low": "♭ Tief"
 }

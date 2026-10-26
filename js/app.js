@@ -975,7 +975,7 @@ function renderTuner(v) {
   if (tunerState.autoTuneIdx >= numStrings) tunerState.autoTuneIdx = 0;
   v.innerHTML = `
     <div class="tuner" style="padding:16px">
-      <h2 style="margin:0 0 12px;text-align:center">🎯 Afinador</h2>
+      <h2 style="margin:0 0 12px;text-align:center">${t("tuner.title")}</h2>
       <!-- Instrument selector -->
       <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
         ${Object.keys(INSTRUMENTS).map(k => `<button class="btn btn-secondary" data-ins="${k}" style="padding:8px 14px;font-size:13px;${k===tunerState.instrument?'border-color:var(--green);background:#2d4a2d':''}">${INSTRUMENTS[k].emoji} ${k}</button>`).join("")}
@@ -986,10 +986,10 @@ function renderTuner(v) {
       </select>
       <!-- Mode toggles -->
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;justify-content:center">
-        <button class="btn btn-secondary" id="chromaticBtn" style="padding:8px 14px;font-size:13px;${tunerState.chromatic?'border-color:var(--green);background:#2d4a2d':''}">${tunerState.chromatic?'Cromático':'Por cuerda'}</button>
-        <button class="btn btn-secondary" id="muteBtn" style="padding:8px 14px;font-size:13px">${tunerState.muteChime?'🔇 Silenciado':'🔔 Sonido'}</button>
-        <button class="btn btn-secondary" id="continuousBtn" style="padding:8px 14px;font-size:13px;${tunerState.continuous?'border-color:var(--green);background:#2d4a2d':''}">${tunerState.continuous?'⏹ Parar tono':'🔊 Tono continuo'}</button>
-        <button class="btn btn-secondary" id="autoTuneBtn" style="padding:8px 14px;font-size:13px;${tunerState.autoTune?'border-color:var(--green);background:#2d4a2d':''}">🎯 Afinar todas</button>
+        <button class="btn btn-secondary" id="chromaticBtn" style="padding:8px 14px;font-size:13px;${tunerState.chromatic?'border-color:var(--green);background:#2d4a2d':''}">${tunerState.chromatic?t('tuner.chromatic'):t('tuner.byString')}</button>
+        <button class="btn btn-secondary" id="muteBtn" style="padding:8px 14px;font-size:13px">${tunerState.muteChime?t('tuner.muted'):t('tuner.sound')}</button>
+        <button class="btn btn-secondary" id="continuousBtn" style="padding:8px 14px;font-size:13px;${tunerState.continuous?'border-color:var(--green);background:#2d4a2d':''}">${tunerState.continuous?t('tuner.stopTone'):t('tuner.continuousTone')}</button>
+        <button class="btn btn-secondary" id="autoTuneBtn" style="padding:8px 14px;font-size:13px;${tunerState.autoTune?'border-color:var(--green);background:#2d4a2d':''}">${t("tuner.tuneAll")}</button>
       </div>
       <!-- Guitar visual -->
       <div id="guitarVisual" style="background:linear-gradient(180deg,#2a1f14,#1a1208);border-radius:16px;padding:20px 16px;margin-bottom:16px;position:relative;overflow:hidden;border:2px solid #3a2a1a">
@@ -1021,7 +1021,7 @@ function renderTuner(v) {
       <!-- Note display -->
       <div class="tuner-display" style="text-align:center;padding:24px;background:var(--card);border-radius:16px;margin-bottom:16px;border:2px solid var(--border)">
         <div class="note-big" id="tNote" style="font-size:80px;font-weight:900;line-height:1;transition:color 0.3s">—</div>
-        <div style="font-size:16px;color:var(--muted);margin-top:4px" id="tNoteFull">Toca una cuerda</div>
+        <div style="font-size:16px;color:var(--muted);margin-top:4px" id="tNoteFull">${t("tuner.playString")}</div>
         <div class="cents" id="tCents" style="font-size:18px;margin-top:8px;font-weight:700">—</div>
         <div id="fineTune" style="font-size:13px;color:var(--green);margin-top:4px;min-height:18px"></div>
         <!-- Meter bar -->
@@ -1031,8 +1031,8 @@ function renderTuner(v) {
             <div id="needle" style="position:absolute;top:0;width:4px;height:100%;background:var(--red);left:50%;transform:translateX(-50%);transition:left 0.1s,bbackground 0.3s;border-radius:2px"></div>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
-            <span>♭ Bajo</span>
-            <span style="color:var(--green);font-weight:800">✓ Afinado</span>
+            <span>${t("tuner.low")}</span>
+            <span style="color:var(--green);font-weight:800">${t("tuner.inTune")}</span>
             <span>♯ Alto</span>
           </div>
         </div>

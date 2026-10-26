@@ -124,5 +124,16 @@
   "learn.instrument": "Strumento: {name}",
   "learn.switchToGuitar": "🎸 Passa alla chitarra",
   "learn.switchToUkulele": "🪕 Passa all'ukulele",
-  "learn.instrumentChanged": "Strumento: {name}"
+  "learn.instrumentChanged": "Strumento: {name}",
+  "tuner.title": "🎯 Accordatore",
+  "tuner.chromatic": "Cromatico",
+  "tuner.byString": "Per corda",
+  "tuner.muted": "🔇 Silenziato",
+  "tuner.sound": "🔔 Suono",
+  "tuner.stopTone": "⏹ Ferma tono",
+  "tuner.continuousTone": "🔊 Tono continuo",
+  "tuner.tuneAll": "🎯 Accordare tutte",
+  "tuner.playString": "Suona una corda",
+  "tuner.inTune": "✓ Accordato",
+  "tuner.low": "♭ Basso"
 }
