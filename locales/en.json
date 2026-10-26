@@ -180,5 +180,20 @@
   "practice.loading": "Loading…",
   "practice.errorOpen": "Could not open this tool",
   "practice.errorUnexpected": "Unexpected error",
-  "practice.back": "Back"
+  "practice.back": "Back",
+  "dashboard.title": "Progress dashboard",
+  "dashboard.level": "Level {level} · {title} · {xp}/{next} XP",
+  "dashboard.xpLastDays": "📈 XP (last days)",
+  "dashboard.range7": "7 days",
+  "dashboard.range30": "30 days",
+  "dashboard.streakCalendar": "🗓️ Streak calendar (30 days)",
+  "dashboard.practicedDays": "Practiced days: {days} · Streak: {streak}",
+  "dashboard.stats": "Statistics",
+  "dashboard.timePracticed": "⏱️ Time practiced",
+  "dashboard.lessons": "📚 Lessons",
+  "dashboard.accuracy": "🎯 Accuracy",
+  "dashboard.chordsLearned": "🎸 Chords learned",
+  "dashboard.scalesLearned": "🎼 Scales learned",
+  "dashboard.bestChanges": "⚡ Best changes",
+  "dashboard.achievements": "Achievements"
 }

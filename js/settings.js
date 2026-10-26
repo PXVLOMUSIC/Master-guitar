@@ -689,42 +689,42 @@ export function renderDashboard(container) {
   container.innerHTML = `
     <div class="card" style="text-align:center">
       <div style="font-size:40px">📊</div>
-      <h2>Panel de progreso</h2>
-      <p>Nivel ${state.level} · ${levelTitle(state.level)} · ${state.xp}/${state.level * 100} XP</p>
+      <h2>${t("dashboard.title")}</h2>
+      <p>${t("dashboard.level", {level: state.level, title: levelTitle(state.level), xp: state.xp, next: state.level*100})}</p>
     </div>
 
     <div class="card">
-      <h2>📈 XP (últimos días)</h2>
+      <h2>${t("dashboard.xpLastDays")}</h2>
       <div style="display:flex;gap:8px;margin-bottom:8px">
-        <button class="btn btn-secondary btn-sm" id="range7">7 días</button>
-        <button class="btn btn-secondary btn-sm" id="range30">30 días</button>
+        <button class="btn btn-secondary btn-sm" id="range7">${t("dashboard.range7")}</button>
+        <button class="btn btn-secondary btn-sm" id="range30">${t("dashboard.range30")}</button>
       </div>
       <canvas id="xpChart" width="320" height="160" style="width:100%;max-width:320px;display:block;margin:0 auto"></canvas>
     </div>
 
     <div class="card">
-      <h3>🗓️ Calendario de racha (30 días)</h3>
+      <h3>${t("dashboard.streakCalendar")}</h3>
       <div id="calGrid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:8px"></div>
-      <p style="color:var(--muted);font-size:12px;margin-top:8px">Días practicados: ${practicedDays} · Racha: ${state.streak}</p>
+      <p style="color:var(--muted);font-size:12px;margin-top:8px">${t("dashboard.practicedDays", {days: practicedDays, streak: state.streak})}</p>
     </div>
 
-    <div class="section-title">Estadísticas</div>
+    <div class="section-title">${t("dashboard.stats")}</div>
     <div style="padding:0 16px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      ${statCard("⏱️", "Tiempo practicado", totalMinutes + " min")}
-      ${statCard("📚", "Lecciones", state.stats.lessonsCompleted || Object.keys(state.completed || {}).length)}
-      ${statCard("🎯", "Precisión", accuracy + "%")}
-      ${statCard("🎸", "Acordes aprendidos", chordsCount)}
-      ${statCard("🎼", "Escalas aprendidas", scalesCount)}
-      ${statCard("⚡", "Récord cambios", bestChanges)}
+      ${statCard("⏱️", t("dashboard.timePracticed"), totalMinutes + " min")}
+      ${statCard("📚", t("dashboard.lessons"), state.stats.lessonsCompleted || Object.keys(state.completed || {}).length)}
+      ${statCard("🎯", t("dashboard.accuracy"), accuracy + "%")}
+      ${statCard("🎸", t("dashboard.chordsLearned"), chordsCount)}
+      ${statCard("🎼", t("dashboard.scalesLearned"), scalesCount)}
+      ${statCard("⚡", t("dashboard.bestChanges"), bestChanges)}
     </div>
 
-    <div class="section-title">Logros</div>
+    <div class="section-title">${t("dashboard.achievements")}</div>
     <div style="padding:0 16px">
       ${ACHIEVEMENTS.map(a => {
         const unlocked = !!state.achievements[a.id];
         return `<div class="ach ${unlocked ? "" : "locked"}">
           <span class="ico">${a.icon}</span>
-          <div class="info"><div class="name">${a.name}</div><div class="desc">${a.desc}</div></div>
+          <div class="info"><div class="name">${t(a.name)}</div><div class="desc">${t(a.desc)}</div></div>
           <span>${unlocked ? "✅" : "🔒"}</span>
         </div>`;
       }).join("")}

@@ -180,5 +180,20 @@
   "practice.loading": "Laden…",
   "practice.errorOpen": "Dieses Werkzeug konnte nicht geöffnet werden",
   "practice.errorUnexpected": "Unerwarteter Fehler",
-  "practice.back": "Zurück"
+  "practice.back": "Zurück",
+  "dashboard.title": "Fortschritts-Dashboard",
+  "dashboard.level": "Level {level} · {title} · {xp}/{next} XP",
+  "dashboard.xpLastDays": "📈 XP (letzte Tage)",
+  "dashboard.range7": "7 Tage",
+  "dashboard.range30": "30 Tage",
+  "dashboard.streakCalendar": "🗓️ Serien-Kalender (30 Tage)",
+  "dashboard.practicedDays": "Geübte Tage: {days} · Serie: {streak}",
+  "dashboard.stats": "Statistiken",
+  "dashboard.timePracticed": "⏱️ Übungszeit",
+  "dashboard.lessons": "📚 Lektionen",
+  "dashboard.accuracy": "🎯 Genauigkeit",
+  "dashboard.chordsLearned": "🎸 Gelernte Akkorde",
+  "dashboard.scalesLearned": "🎼 Gelernte Skalen",
+  "dashboard.bestChanges": "⚡ Rekordwechsel",
+  "dashboard.achievements": "Erfolge"
 }

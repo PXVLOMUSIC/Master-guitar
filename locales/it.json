@@ -180,5 +180,20 @@
   "practice.loading": "Caricamento…",
   "practice.errorOpen": "Impossibile aprire questo strumento",
   "practice.errorUnexpected": "Errore inatteso",
-  "practice.back": "Indietro"
+  "practice.back": "Indietro",
+  "dashboard.title": "Pannello progressi",
+  "dashboard.level": "Livello {level} · {title} · {xp}/{next} XP",
+  "dashboard.xpLastDays": "📈 XP (ultimi giorni)",
+  "dashboard.range7": "7 giorni",
+  "dashboard.range30": "30 giorni",
+  "dashboard.streakCalendar": "🗓️ Calendario serie (30 giorni)",
+  "dashboard.practicedDays": "Giorni praticati: {days} · Serie: {streak}",
+  "dashboard.stats": "Statistiche",
+  "dashboard.timePracticed": "⏱️ Tempo praticato",
+  "dashboard.lessons": "📚 Lezioni",
+  "dashboard.accuracy": "🎯 Precisione",
+  "dashboard.chordsLearned": "🎸 Accordi imparati",
+  "dashboard.scalesLearned": "🎼 Scale imparate",
+  "dashboard.bestChanges": "⚡ Record cambi",
+  "dashboard.achievements": "Traguardi"
 }
