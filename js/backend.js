@@ -395,6 +395,13 @@ async function loadSupabaseModule() {
   return null;
 }
 
+function withTimeout(promise, ms) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), ms)),
+  ]);
+}
+
 function createClientFromConfig(cfg) {
   const mod = supabaseModule;
   const create = mod && (mod.createClient || (mod.default && mod.default.createClient));
@@ -543,9 +550,10 @@ export async function initBackend(force = false) {
   connectionStatus = "connecting";
   dispatchStatus();
 
-  const mod = await loadSupabaseModule();
+  // Sin red, el CDN de Supabase puede tardar: no bloquear el arranque offline.
+  const mod = await withTimeout(loadSupabaseModule(), 6000).catch(() => null);
   if (!mod) {
-    backendMode = "error";
+    backendMode = "local";
     connectionStatus = "offline";
     console.warn("Strumio: Supabase module could not be loaded. Running local-only.");
     startPeriodicSync();

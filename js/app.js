@@ -1690,6 +1690,8 @@ async function boot() {
 
   // PWA install prompt handling
   setupInstallPrompt();
+  setupServiceWorker();
+  setupOfflineBadge();
 
   // Performance: preload + idle tasks
   preloadAssets();
@@ -1737,6 +1739,99 @@ function showInstallButton() {
 function hideInstallButton() {
   const b = document.getElementById("installAppBtn");
   if (b) b.remove();
+}
+
+// ---- service worker: offline + aviso de actualización ----
+function setupServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  const secure =
+    location.protocol === "https:" ||
+    location.hostname === "localhost" ||
+    location.hostname === "127.0.0.1";
+  if (!secure) return;
+
+  const start = async () => {
+    try {
+      const reg = await navigator.serviceWorker.register("./sw.js", { scope: "./" });
+      const offerUpdate = () => showUpdateBanner(reg);
+
+      const watchInstalling = (sw) => {
+        if (!sw) return;
+        sw.addEventListener("statechange", () => {
+          // Si ya había un SW controlando, es una actualización (no la primera).
+          if (sw.state === "installed" && navigator.serviceWorker.controller) {
+            offerUpdate();
+          }
+        });
+      };
+
+      reg.addEventListener("updatefound", () => {
+        watchInstalling(reg.installing);
+      });
+
+      // Si la actualización ya estaba en curso o esperando, no perderla.
+      watchInstalling(reg.installing);
+      if (reg.waiting && navigator.serviceWorker.controller) offerUpdate();
+
+      reg.update().catch(() => {});
+
+      let lastCheck = 0;
+      const check = () => {
+        const now = Date.now();
+        if (now - lastCheck < 30 * 60 * 1000) return;
+        lastCheck = now;
+        reg.update().catch(() => {});
+      };
+      document.addEventListener("visibilitychange", () => {
+        if (!document.hidden) check();
+      });
+      window.addEventListener("online", check);
+    } catch (e) {
+      console.warn("SW: registro fallido", e);
+    }
+  };
+
+  if (document.readyState === "complete") start();
+  else window.addEventListener("load", start, { once: true });
+}
+
+function showUpdateBanner(reg) {
+  if (document.getElementById("swUpdate")) return;
+  const el = document.createElement("div");
+  el.id = "swUpdate";
+  el.className = "sw-update";
+  el.setAttribute("role", "status");
+  el.innerHTML = `<span>Nueva versión disponible</span><button type="button" id="swReload">Recargar</button>`;
+  document.body.appendChild(el);
+
+  const btn = el.querySelector("#swReload");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const waiting = reg.waiting;
+    if (waiting) waiting.postMessage({ type: "SKIP_WAITING" });
+    let reloaded = false;
+    const reload = () => {
+      if (reloaded) return;
+      reloaded = true;
+      location.reload();
+    };
+    navigator.serviceWorker.addEventListener("controllerchange", reload, { once: true });
+    window.setTimeout(reload, 1500);
+  });
+}
+
+// ---- indicador de modo sin conexión ----
+function setupOfflineBadge() {
+  if (document.getElementById("offlineBadge")) return;
+  const el = document.createElement("div");
+  el.id = "offlineBadge";
+  el.className = "offline-badge";
+  el.setAttribute("role", "status");
+  el.textContent = "Sin conexión · modo offline";
+  el.hidden = navigator.onLine;
+  document.body.appendChild(el);
+  window.addEventListener("online", () => { el.hidden = true; });
+  window.addEventListener("offline", () => { el.hidden = false; });
 }
 
 // ---- accessibility helpers ----
