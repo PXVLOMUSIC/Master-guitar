@@ -1404,22 +1404,54 @@ function chordShapeFreqs(chord, ins) {
   return freqs.length ? freqs : null;
 }
 
+function beatsForTimeSignature(sig) {
+  if (sig === "3/4") return 3;
+  if (sig === "6/8") return 6;
+  return 4;
+}
+
 function renderMetronome(area) {
   area.innerHTML = `
     <div class="card" style="text-align:center">
       <h2>⏱ Metrónomo</h2>
       <div style="font-size:32px;font-weight:900;margin:12px 0" id="bpm">100 BPM</div>
       <input type="range" min="40" max="220" value="100" id="bpmSlider" style="width:100%">
+      <div style="display:flex;justify-content:center;gap:8px;margin:10px 0;flex-wrap:wrap">
+        <label style="font-weight:800;font-size:13px">Compás
+          <select id="timeSigSel" style="margin-left:6px;padding:6px 8px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);font-weight:700">
+            <option value="4/4">4/4</option>
+            <option value="3/4">3/4</option>
+            <option value="6/8">6/8</option>
+          </select>
+        </label>
+      </div>
       <div class="metro" id="beats"></div>
       <button class="btn btn-primary btn-block" id="metroToggle">▶ Iniciar</button>
+      <p style="color:var(--muted);font-size:12px;margin:8px 0 0">6/8 se marca en 6 pulsos (negra con puntillo = 3 pulsos).</p>
     </div>`;
+  let beatsCount = 4;
   const beatsContainer = $("#beats", area);
-  for (let i=0;i<4;i++){const b=document.createElement("div");b.className="beat";beatsContainer.appendChild(b);}
+  function rebuildBeats() {
+    beatsContainer.innerHTML = "";
+    for (let i=0;i<beatsCount;i++){const b=document.createElement("div");b.className="beat";beatsContainer.appendChild(b);}
+  }
+  rebuildBeats();
   let running=false;
-  const beatEls = $$(".beat", area);
+  let beatEls = $$(".beat", area);
   function setBeatActive(i) {
     beatEls.forEach((b,idx) => b.classList.toggle("active", idx === (i % beatEls.length)));
   }
+  const getTimeSig = () => $("#timeSigSel", area).value;
+  $("#timeSigSel", area).onchange = () => {
+    beatsCount = beatsForTimeSignature(getTimeSig());
+    rebuildBeats();
+    beatEls = $$(".beat", area);
+    if (running) {
+      stopMetronome();
+      const bpm = parseInt($("#bpmSlider",area).value);
+      startMetronome(bpm, beatsCount, (beatIndex) => setBeatActive(beatIndex));
+    }
+  };
   $("#metroToggle",area).onclick = () => {
     if (running) {
       stopMetronome();
@@ -1430,15 +1462,18 @@ function renderMetronome(area) {
     }
     running=true;
     $("#metroToggle",area).textContent="⏹ Detener";
+    beatsCount = beatsForTimeSignature(getTimeSig());
+    rebuildBeats();
+    beatEls = $$(".beat", area);
     const bpm = parseInt($("#bpmSlider",area).value);
-    startMetronome(bpm, 4, (beatIndex) => setBeatActive(beatIndex));
+    startMetronome(bpm, beatsCount, (beatIndex) => setBeatActive(beatIndex));
   };
   $("#bpmSlider",area).oninput = () => {
     const bpm = parseInt($("#bpmSlider",area).value);
     $("#bpm",area).textContent = bpm + " BPM";
     if (running) {
       stopMetronome();
-      startMetronome(bpm, 4, (beatIndex) => setBeatActive(beatIndex));
+      startMetronome(bpm, beatsCount, (beatIndex) => setBeatActive(beatIndex));
     }
   };
 }
