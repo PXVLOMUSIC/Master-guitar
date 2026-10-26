@@ -1,7 +1,7 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
-import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples } from "./audio.js";
+import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments } from "./audio.js";
 import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider } from "./backend.js";
 import { renderPracticeHub, openFromHash, closeSection } from "./practice-hub.js";
 import { icon } from "./icons.js";
@@ -87,7 +87,7 @@ async function render(route, params={}) {
     case "tuner": renderTuner(v); break;
     case "practice": renderPractice(v); break;
     case "profile": renderProfile(v); break;
-    case "settings": { const m = await loadSettings(); m.renderSettings(v); break; }
+    case "settings": { const m = await loadSettings(); if (!state.settingsVisited) { state.settingsVisited = true; saveState(state); } m.renderSettings(v); break; }
     case "dashboard": { const m = await loadSettings(); m.renderDashboard(v); break; }
     default: renderHome(v);
   }
@@ -101,7 +101,7 @@ function renderOnboard(v) {
   const data = { name: "", instrument: "guitar", level: "beginner" };
   const steps = [
     () => `
-      <div class="onboard">
+      <div class="onboard">${skipButton()}
         <div class="emoji">🎸</div>
         <h1>¡Bienvenido a Strumio!</h1>
         <p class="sub">Aprende guitarra paso a paso, como un juego.</p>
@@ -109,7 +109,7 @@ function renderOnboard(v) {
         <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
       </div>`,
     () => `
-      <div class="onboard">
+      <div class="onboard">${skipButton()}
         <h1>Elige tu instrumento</h1>
         <div class="choices">
           ${Object.entries(INSTRUMENTS).map(([k,ins]) => `
@@ -121,105 +121,246 @@ function renderOnboard(v) {
         <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
       </div>`,
     () => `
-      <div class="onboard">
-        <h1>¿Tu nivel?</h1>
+      <div class="onboard">${skipButton()}
+        <h1>¿Cómo quieres empezar?</h1>
+        <p class="sub">El test adapta las lecciones y la rutina diaria a lo que ya sabes.</p>
         <div class="choices">
-          <div class="choice ${data.level==='beginner'?'selected':''}" data-lv="beginner" role="button" tabindex="0" aria-label="Principiante"><span class="ico">🌱</span><div><div style="font-weight:800">Principiante</div><div style="color:var(--muted);font-size:13px">Nunca he tocado</div></div></div>
-          <div class="choice ${data.level==='intermediate'?'selected':''}" data-lv="intermediate" role="button" tabindex="0" aria-label="Intermedio"><span class="ico">🌿</span><div><div style="font-weight:800">Intermedio</div><div style="color:var(--muted);font-size:13px">Ya toco algunos acordes</div></div></div>
-          <div class="choice ${data.level==='advanced'?'selected':''}" data-lv="advanced" role="button" tabindex="0" aria-label="Avanzado"><span class="ico">🌳</span><div><div style="font-weight:800">Avanzado</div><div style="color:var(--muted);font-size:13px">Quiero perfeccionar</div></div></div>
+          <div class="choice selected" data-start="test" role="button" tabindex="0"><span class="ico">🎯</span><div><div style="font-weight:800">Hacer el test de nivel <span class="pill-rec">Recomendado</span></div><div style="color:var(--muted);font-size:13px">14 preguntas · unos 3 minutos · con sonido</div></div></div>
+          <div class="choice" data-start="zero" role="button" tabindex="0"><span class="ico">🌱</span><div><div style="font-weight:800">Empezar desde cero</div><div style="color:var(--muted);font-size:13px">Nunca he tocado un instrumento</div></div></div>
         </div>
-        <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Empezar</button>
       </div>`
   ];
 
   function draw() {
     v.innerHTML = steps[step]();
+    bindSkip(data);
     if (step === 0) {
-      $("#nextBtn").onclick = () => {
-        data.name = $("#nameInput").value.trim() || "Guitarrista";
-        step = 1; draw();
-      };
+      const go = () => { data.name = $("#nameInput").value.trim() || "Guitarrista"; step = 1; draw(); };
+      $("#nextBtn").onclick = go;
+      $("#nameInput").onkeydown = (e) => { if (e.key === "Enter") go(); };
+      $("#nameInput").focus();
     } else if (step === 1) {
       $$(".choice").forEach(c => c.onclick = () => { data.instrument = c.dataset.ins; draw(); });
       $("#nextBtn").onclick = () => { step = 2; draw(); };
     } else {
-      $$(".choice").forEach(c => c.onclick = () => { data.level = c.dataset.lv; draw(); });
-      $("#nextBtn").onclick = () => {
-        if (data.level === "beginner") finish();
-        else startPlacement(data);
-      };
+      $$(".choice").forEach(c => c.onclick = () => {
+        if (c.dataset.start === "test") startPlacement(data);
+        else finishPlacement(data, null);
+      });
     }
-  }
-  function finish() {
-    state.user = { name: data.name, instrument: data.instrument, level: data.level };
-    state.settings.instrument = data.instrument;
-    updateStreak();
-    saveState(state);
-    toast("¡Bienvenido, " + data.name + "! 🎸");
-    navigate("home");
   }
   draw();
 }
 
+// "Omitir" en cualquier paso: guarda lo que haya y va directo a Inicio.
+function skipButton() {
+  return `<button class="onboard-skip" id="skipOnboard" type="button">Omitir</button>`;
+}
+function bindSkip(data) {
+  const b = document.getElementById("skipOnboard");
+  if (!b) return;
+  b.onclick = () => {
+    if (!state.user) {
+      const input = document.getElementById("nameInput");
+      const name = (input && input.value.trim()) || (data && data.name) || "Guitarrista";
+      state.user = { name, instrument: (data && data.instrument) || "guitar", level: "beginner" };
+      state.settings.instrument = state.user.instrument;
+      state.level = state.level || 1;
+      updateStreak();
+    }
+    state.setupDone = true;
+    saveState(state);
+    navigate("home");
+  };
+}
+
 // ---- placement test ----
-function startPlacement(data) {
-  const questions = [
-    { q: "¿Qué acorde es este? (diagrama con 2 dedos en traste 2)", opts: ["Em","Am","C","G"], a: 0 },
-    { q: "La afinación estándar de guitarra es:", opts: ["EADGBE","DADGAD","GCEA","CGDA"], a: 0 },
-    { q: "¿Qué cuerda se omite en el acorde D?", opts: ["6ª","5ª y 6ª","1ª","3ª"], a: 1 },
-    { q: "La escala pentatónica menor tiene:", opts: ["5 notas","7 notas","8 notas","12 notas"], a: 0 },
-    { q: "¿Qué técnica es 'hammer-on'?", opts: ["Golpear la cuerda con el dedo de la mano derecha","Pulsar un traste sin volver a tocar la cuerda","Bajar el tempo","Cambiar de acorde"], a: 1 }
+// Cada pregunta suma "w" puntos si se acierta. "No lo sé" cuenta como fallo sin penalizar.
+const PLACEMENT_AREAS = { exp: "Experiencia", acordes: "Acordes", teoria: "Teoría", oido: "Oído", ritmo: "Ritmo", tecnica: "Técnica" };
+
+function placementQuestions(ins) {
+  const chords = CHORDS[ins === "ukulele" ? "ukulele" : "guitar"] || {};
+  const diagram = (name) => (ins !== "bass" && chords[name]) ? renderChordDiagram(chords[name]) : "";
+  const triad = (root, minor) => [root, root * Math.pow(2, (minor ? 3 : 4) / 12), root * Math.pow(2, 7 / 12)];
+  const q = [
+    { area: "exp", w: 0, q: "¿Cuánto tiempo llevas tocando?", opts: ["Nada, empiezo ahora", "Menos de 6 meses", "Entre 6 meses y 2 años", "Más de 2 años"], exp: [0, 2, 5, 8] },
+    { area: "exp", w: 0, q: "¿Qué puedes tocar ya?", opts: ["Nada todavía", "Algunos acordes abiertos", "Canciones completas con cejilla", "Solos e improvisación"], exp: [0, 2, 5, 8] },
+    { area: "teoria", w: 1, q: ins === "bass" ? "La afinación estándar del bajo de 4 cuerdas es:" : ins === "ukulele" ? "La afinación estándar del ukelele es:" : "La afinación estándar de la guitarra es:",
+      opts: ins === "bass" ? ["E A D G", "G C E A", "D A D G", "C G D A"] : ins === "ukulele" ? ["G C E A", "E A D G", "D G B E", "C F A D"] : ["E A D G B E", "D A D G A D", "G C E A", "C G D A E B"], a: 0 },
+    diagram("Em")
+      ? { area: "acordes", w: 1, q: "¿Qué acorde es este?", html: diagram("Em"), opts: ["Em", "Am", "E", "C"], a: 0 }
+      : { area: "acordes", w: 1, q: "¿Qué notas forman el acorde de Do mayor?", opts: ["Do, Mi, Sol", "Do, Re, Mi", "Do, Fa, La", "Do, Mib, Sol"], a: 0 },
+    diagram("G")
+      ? { area: "acordes", w: 2, q: "¿Y este?", html: diagram("G"), opts: ["D", "G", "C", "Em"], a: 1 }
+      : { area: "acordes", w: 2, q: "¿Qué notas forman La menor?", opts: ["La, Do#, Mi", "La, Do, Mi", "La, Re, Mi", "La, Do, Fa"], a: 1 },
+    { area: "oido", w: 1, q: "Escucha: ¿el segundo sonido es más agudo o más grave?", play: () => { playTone(220, 0.6); setTimeout(() => playTone(330, 0.6), 700); }, opts: ["Más agudo", "Más grave", "Igual"], a: 0 },
+    { area: "oido", w: 2, q: "Escucha el acorde: ¿es mayor o menor?", play: () => playChord(triad(196, true), 2, { instrument: "guitar", stagger: 0.03 }), opts: ["Mayor (alegre)", "Menor (triste)"], a: 1 },
+    { area: "ritmo", w: 1, q: "En un compás de 4/4, ¿cuántas negras caben?", opts: ["2", "3", "4", "8"], a: 2 },
+    { area: "ritmo", w: 2, q: "Una corchea dura…", opts: ["El doble que una negra", "La mitad que una negra", "Lo mismo que una blanca", "Un compás entero"], a: 1 },
+    { area: "teoria", w: 2, q: "La escala pentatónica menor tiene…", opts: ["5 notas", "6 notas", "7 notas", "12 notas"], a: 0 },
+    { area: "tecnica", w: 2, q: "¿Qué es un hammer-on?", opts: ["Golpear la caja con la mano", "Hacer sonar una nota pisando el traste sin volver a pulsar la cuerda", "Tocar con púa hacia arriba", "Apagar las cuerdas con la palma"], a: 1 },
+    { area: "teoria", w: 3, q: "¿Qué acordes forman un I–IV–V en Sol mayor?", opts: ["G – C – D", "G – Am – D", "G – C – Em", "G – D – Em"], a: 0 },
+    { area: "oido", w: 3, q: "Escucha el intervalo: ¿qué distancia hay entre las dos notas?", play: () => { playTone(261.63, 0.7); setTimeout(() => playTone(392, 0.7), 800); }, opts: ["Tercera", "Quinta", "Octava"], a: 1 },
+    { area: "tecnica", w: 3, q: "Para tocar un Fa con cejilla en la guitarra, el dedo 1 pisa…", opts: ["Solo la 1ª cuerda", "Todas las cuerdas en el traste 1", "Las cuerdas 3 y 4", "Ninguna, se toca al aire"], a: 1 },
   ];
-  let qi = 0, score = 0;
+  return q;
+}
+
+function startPlacement(data) {
+  const questions = placementQuestions(data.instrument);
+  const answers = [];
+  let qi = 0;
   const v = view();
   showNav(false);
   function drawQ() {
-    if (qi >= questions.length) { finishPlacement(data, score); return; }
+    if (qi >= questions.length) { finishPlacement(data, scorePlacement(questions, answers)); return; }
     const q = questions[qi];
+    const pct = Math.round((qi / questions.length) * 100);
     v.innerHTML = `
-      <div class="onboard">
-        <h1>Prueba de nivel</h1>
-        <p style="color:var(--muted)">Pregunta ${qi+1} de ${questions.length}</p>
+      <div class="onboard placement">${skipButton()}
+        <div class="placement-top">
+          <span class="placement-area">${PLACEMENT_AREAS[q.area]}</span>
+          <span style="color:var(--muted);font-size:13px">${qi + 1} / ${questions.length}</span>
+        </div>
+        <div class="progress"><div style="width:${pct}%"></div></div>
         <div class="qcard" style="margin-top:16px">
           <div class="prompt">${q.q}</div>
+          ${q.html ? `<div style="display:flex;justify-content:center;margin-top:12px">${q.html}</div>` : ""}
+          ${q.play ? `<button class="btn btn-secondary" id="playQ" style="margin-top:12px">🔊 Escuchar</button>` : ""}
         </div>
-        <div class="options" style="margin-top:16px">
-          ${q.opts.map((o,i)=>`<div class="opt" data-i="${i}">${o}</div>`).join("")}
+        <div class="options">
+          ${q.opts.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")}
+          ${q.area !== "exp" ? `<button class="auth-link" data-i="-1" style="margin-top:4px">No lo sé</button>` : ""}
         </div>
       </div>`;
-    $$(".opt").forEach(o => o.onclick = () => {
-      if (parseInt(o.dataset.i) === q.a) { score++; toast("Correcto"); }
-      else toast("Incorrecto");
+    bindSkip(data);
+    if (q.play) { $("#playQ").onclick = q.play; setTimeout(q.play, 300); }
+    $$("[data-i]", v).forEach(o => o.onclick = () => {
+      const i = parseInt(o.dataset.i);
+      answers[qi] = i;
+      if (q.area !== "exp" && i >= 0) o.classList.add(i === q.a ? "correct" : "wrong");
       qi++;
-      setTimeout(drawQ, 600);
+      setTimeout(drawQ, q.area === "exp" ? 150 : 450);
     });
   }
   drawQ();
 }
-function finishPlacement(data, score) {
-  // score >=4 -> advanced-ish: mark units 1-2 complete; >=2 -> mark unit1; else beginner
-  state.user = { name: data.name, instrument: data.instrument, level: data.level };
+
+function scorePlacement(questions, answers) {
+  let exp = 0, got = 0, max = 0;
+  const areas = {};
+  questions.forEach((q, i) => {
+    const a = answers[i];
+    if (q.area === "exp") { exp += q.exp[a] || 0; return; }
+    const ar = areas[q.area] || (areas[q.area] = { got: 0, max: 0 });
+    ar.max += q.w; max += q.w;
+    if (a === q.a) { ar.got += q.w; got += q.w; }
+  });
+  // 70% conocimientos + 30% experiencia declarada.
+  const pct = Math.round(((got / max) * 0.7 + (exp / 16) * 0.3) * 100);
+  return { pct, areas };
+}
+
+function finishPlacement(data, result) {
+  state.user = { name: data.name, instrument: data.instrument, level: "beginner" };
   state.settings.instrument = data.instrument;
   const all = (LESSONS.units || []).flatMap(u => u.lessons);
-  if (score >= 4) {
-    // mark first 10 lessons complete
-    all.slice(0, 10).forEach(l => { state.completed[l.id] = true; });
-    state.stats.lessonsCompleted = Math.min(10, all.length);
-    state.level = 4;
-    state.xp = 0;
-    toast("Nivel avanzado detectado 🚀");
-  } else if (score >= 2) {
-    all.slice(0, 5).forEach(l => { state.completed[l.id] = true; });
-    state.stats.lessonsCompleted = Math.min(5, all.length);
-    state.level = 2;
-    toast("Nivel intermedio detectado 🌿");
+  let skip = 0;
+  if (result && result.pct >= 70) {
+    state.user.level = "advanced"; state.level = 4; skip = 10;
+  } else if (result && result.pct >= 35) {
+    state.user.level = "intermediate"; state.level = 2; skip = 5;
   } else {
     state.level = 1;
-    toast("Empezamos desde el principio 🌱");
   }
+  all.slice(0, skip).forEach(l => { state.completed[l.id] = true; });
+  state.stats.lessonsCompleted = Math.min(skip, all.length);
+  state.placement = result ? { pct: result.pct, date: new Date().toISOString() } : null;
   updateStreak();
   saveState(state);
-  navigate("home");
+  if (result) renderPlacementResult(result);
+  else renderWelcomeSetup();
+}
+
+function renderPlacementResult(result) {
+  const v = view();
+  const LV = {
+    beginner: { ico: "🌱", name: "Principiante", txt: "Empezarás por lo básico: postura, afinación y tus primeros acordes." },
+    intermediate: { ico: "🌿", name: "Intermedio", txt: "Hemos marcado como hechas las 5 primeras lecciones. Vas directo a cambios de acorde y ritmo." },
+    advanced: { ico: "🌳", name: "Avanzado", txt: "Hemos marcado como hechas las 10 primeras lecciones. Tu rutina incluye técnica y oído avanzados." }
+  }[state.user.level];
+  const rows = Object.entries(result.areas).map(([k, a]) => {
+    const p = Math.round((a.got / a.max) * 100);
+    return `<div class="placement-row"><span>${PLACEMENT_AREAS[k]}</span><div class="progress"><div style="width:${p}%"></div></div><b>${p}%</b></div>`;
+  }).join("");
+  v.innerHTML = `
+    <div class="onboard">${skipButton()}
+      <div class="emoji">${LV.ico}</div>
+      <h1>Nivel ${LV.name}</h1>
+      <p class="sub">${LV.txt}</p>
+      <div class="card" style="text-align:left;margin:16px 0 0">${rows}</div>
+      <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
+    </div>`;
+  bindSkip();
+  $("#nextBtn").onclick = renderWelcomeSetup;
+}
+
+// Último paso: recordatorios y sugerencia de pasar por Ajustes.
+function renderWelcomeSetup() {
+  const v = view();
+  showNav(false);
+  const supported = "Notification" in window;
+  const hour = state.settings.reminderHour ?? 19;
+  v.innerHTML = `
+    <div class="onboard">${skipButton()}
+      <div class="emoji">🔔</div>
+      <h1>¿Te recordamos practicar?</h1>
+      <p class="sub">Quince minutos al día valen más que dos horas el domingo. Te avisamos una vez al día, a la hora que elijas.</p>
+      ${supported ? `
+        <label class="setup-hour">Avisarme a las
+          <select id="hourSel">${Array.from({ length: 17 }, (_, i) => i + 7).map(h => `<option value="${h}" ${h === hour ? "selected" : ""}>${h}:00</option>`).join("")}</select>
+        </label>
+        <button class="btn btn-primary btn-block" style="margin-top:12px" id="notifYes">Activar recordatorios</button>`
+      : `<p class="sub">Este navegador no permite notificaciones.</p>`}
+      <button class="auth-link" id="notifNo" style="margin-top:8px">Ahora no</button>
+    </div>`;
+  bindSkip();
+  const next = () => renderSettingsTip();
+  if (supported) $("#notifYes").onclick = async () => {
+    const btn = $("#notifYes"); btn.disabled = true;
+    const m = await loadSettings();
+    const ok = await m.requestNotificationPermission();
+    if (ok) { m.scheduleReminder(parseInt($("#hourSel").value)); toast("Recordatorio activado 🔔"); }
+    else toast("Puedes activarlos luego en Ajustes");
+    next();
+  };
+  $("#notifNo").onclick = next;
+}
+
+function renderSettingsTip() {
+  const v = view();
+  v.innerHTML = `
+    <div class="onboard">${skipButton()}
+      <div class="emoji">⚙️</div>
+      <h1>Un último paso</h1>
+      <p class="sub">Te recomendamos pasar por Ajustes para dejar la app a tu gusto:</p>
+      <div class="card" style="text-align:left;margin:16px 0 0">
+        <p>🎯 <b>Objetivo diario</b> de práctica</p>
+        <p>🔊 <b>Sonido y metrónomo</b></p>
+        <p>🎼 <b>Afinación de referencia</b> (440 Hz)</p>
+        <p style="margin-bottom:0">☁️ <b>Cuenta</b> para guardar tu progreso</p>
+      </div>
+      <button class="btn btn-primary btn-block" style="margin-top:16px" id="goSettings">Ir a Ajustes</button>
+      <button class="auth-link" id="goHome" style="margin-top:8px">Más tarde</button>
+    </div>`;
+  bindSkip();
+  const done = (route) => {
+    state.setupDone = true; saveState(state);
+    toast("¡Bienvenido, " + state.user.name + "! 🎸");
+    navigate(route);
+  };
+  $("#goSettings").onclick = () => done("settings");
+  $("#goHome").onclick = () => done("home");
 }
 
 // ---- home ----
@@ -235,6 +376,11 @@ function renderHome(v) {
       <p>Nivel ${state.level} · ${levelTitle(state.level)} · ${state.xp}/${state.level*100} XP</p>
       <button class="btn btn-primary btn-block" id="continueBtn">Continuar aprendiendo</button>
     </div>
+    <div id="routineCard"></div>
+    ${!state.settingsVisited ? `<div class="card setup-card" id="setupCard">
+      <div><b>⚙️ Configura tu app</b><p>Objetivo diario, sonido, recordatorios y afinación de referencia.</p></div>
+      <div class="setup-card__actions"><button class="btn btn-secondary" id="setupGo">Ir a Ajustes</button><button class="auth-link" id="setupLater" aria-label="Ocultar">Ocultar</button></div>
+    </div>` : ""}
     ${!getSession().user ? `<div id="cloudCard"></div>` : ""}
     ${state.stats.lessonsCompleted < 10 ? `<div class="card" style="border-color:var(--orange);background:#2a2218">
       <p style="margin:0;font-weight:800;color:var(--orange)">💡 Consejo de la semana</p>
@@ -278,7 +424,39 @@ function renderHome(v) {
   $$("[data-rev]").forEach(b => b.onclick = () => navigate("lesson", { lessonId: b.dataset.rev }));
   $("#quickTuner").onclick = () => navigate("tuner");
   $("#quickPractice").onclick = () => navigate("practice");
+  const sg = $("#setupGo"); if (sg) sg.onclick = () => navigate("settings");
+  const sl = $("#setupLater"); if (sl) sl.onclick = () => { state.settingsVisited = true; saveState(state); $("#setupCard").remove(); };
+  hydrateRoutineCard();
   hydrateCloudCard();
+}
+
+// Rutina de hoy en Inicio: bloques, minutos y estado.
+async function hydrateRoutineCard() {
+  const box = document.getElementById("routineCard");
+  if (!box) return;
+  let r;
+  try { r = (await loadPracticeRoutines()).getTodayRoutine(); } catch (e) { return; }
+  if (!document.body.contains(box)) return;
+  const LV = { beginner: "principiante", intermediate: "intermedio", advanced: "avanzado" };
+  box.innerHTML = `
+    <div class="card routine-card ${r.done ? "is-done" : ""}">
+      <div class="routine-card__head">
+        <div>
+          <span class="routine-card__kicker">Rutina de hoy</span>
+          <h2>${r.done ? "¡Hecha! Vuelve mañana" : r.total + " minutos de práctica"}</h2>
+          <p>Nivel ${LV[r.level] || r.level}${r.minutesToday ? " · hoy llevas " + Math.round(r.minutesToday) + " min" : ""}</p>
+        </div>
+        <span class="routine-card__ring" style="--p:${r.done ? 100 : Math.min(100, Math.round((r.minutesToday / r.total) * 100))}">${r.done ? "✓" : r.total + "'"}</span>
+      </div>
+      <ol class="routine-card__blocks">
+        ${r.blocks.map(b => `<li><span>${b.icon}</span><b>${b.name}</b><em>${b.duration} min</em></li>`).join("")}
+      </ol>
+      <button class="btn ${r.done ? "btn-secondary" : "btn-primary"} btn-block" id="routineGo">${r.done ? "Repetir rutina" : "Empezar rutina"}</button>
+    </div>`;
+  box.querySelector("#routineGo").onclick = () => {
+    history.replaceState(null, "", "#practicar/hoy");
+    navigate("practice");
+  };
 }
 
 /**
@@ -1189,11 +1367,25 @@ function showChord(area, name, chord) {
     <div class="card" style="text-align:center">
       <h2>${name} — ${chord.name}</h2>
       ${renderChordDiagram(chord)}
-      <div style="margin-top:12px">
-        <button class="btn btn-secondary" id="playChord">🔊 Referencia</button>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" id="strumChord">Rasguear</button>
+        <button class="btn btn-secondary" id="arpChord">Arpegio</button>
       </div>
     </div>`;
-  $("#playChord").onclick = () => playTone(CHORD_FREQS[name] || 261.63);
+  const ins = state.settings.instrument === "ukulele" ? "ukulele" : "guitar";
+  const freqs = chordShapeFreqs(chord, ins) || CHORD_NOTES[name] || [CHORD_FREQS[name] || 261.63];
+  $("#strumChord").onclick = () => playChord(freqs, 2.2, { instrument: ins, stagger: 0.022 });
+  $("#arpChord").onclick = () => playChord(freqs, 2.4, { instrument: ins, arpeggiate: true, stagger: 0.2 });
+}
+
+// Frecuencias reales de un diagrama (trastes por cuerda, -1 = no se toca).
+function chordShapeFreqs(chord, ins) {
+  const open = INSTRUMENTS[ins] && INSTRUMENTS[ins].tunings.standard;
+  if (!chord || !Array.isArray(chord.frets) || !open || chord.frets.length !== open.length) return null;
+  const freqs = chord.frets
+    .map((fret, i) => (fret >= 0 ? open[i] * Math.pow(2, fret / 12) : null))
+    .filter((f) => f != null);
+  return freqs.length ? freqs : null;
 }
 
 function renderMetronome(area) {
@@ -1698,7 +1890,8 @@ async function boot() {
   preloadAssets();
   const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
   idle(() => {
-    try { /* warm caches */ } catch (e) {}
+    // Descarga en segundo plano la guitarra real y el click del metrónomo.
+    try { warmRealInstruments(state.settings.instrument === "bass" ? "bass" : "guitar"); } catch (e) {}
   }, { timeout: 3000 });
 }
 

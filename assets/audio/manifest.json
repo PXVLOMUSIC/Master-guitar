@@ -27,6 +27,12 @@
       "author": "Karoryfer Samples",
       "license": "CC0-1.0",
       "url": "https://github.com/sfzinstruments/body_percussion"
+    },
+    {
+      "name": "VCSL",
+      "author": "Versilian Studios",
+      "license": "CC0-1.0",
+      "url": "https://github.com/sgossner/VCSL"
     }
   ],
   "drums": {
@@ -659,6 +665,130 @@
     "stomp": [
       "perc/stomp_r1.flac",
       "perc/stomp_r2.flac"
+    ]
+  },
+  "hand": {
+    "cajon_bass": [
+      [
+        "hand/cajon_bass_v0_r1.flac",
+        "hand/cajon_bass_v0_r2.flac"
+      ],
+      [
+        "hand/cajon_bass_v1_r1.flac",
+        "hand/cajon_bass_v1_r2.flac"
+      ],
+      [
+        "hand/cajon_bass_v2_r1.flac",
+        "hand/cajon_bass_v2_r2.flac"
+      ]
+    ],
+    "cajon_slap": [
+      [
+        "hand/cajon_slap_v0_r1.flac",
+        "hand/cajon_slap_v0_r2.flac"
+      ],
+      [
+        "hand/cajon_slap_v1_r1.flac",
+        "hand/cajon_slap_v1_r2.flac"
+      ],
+      [
+        "hand/cajon_slap_v2_r1.flac",
+        "hand/cajon_slap_v2_r2.flac"
+      ]
+    ],
+    "shaker": [
+      [
+        "hand/shaker_v0_r1.flac",
+        "hand/shaker_v0_r2.flac"
+      ],
+      [
+        "hand/shaker_v1_r1.flac",
+        "hand/shaker_v1_r2.flac"
+      ]
+    ],
+    "tambourine": [
+      [
+        "hand/tambourine_v0_r1.flac"
+      ],
+      [
+        "hand/tambourine_v1_r1.flac"
+      ]
+    ],
+    "conga_high": [
+      [
+        "hand/conga_high_v0_r1.flac",
+        "hand/conga_high_v0_r2.flac"
+      ],
+      [
+        "hand/conga_high_v1_r1.flac",
+        "hand/conga_high_v1_r2.flac"
+      ],
+      [
+        "hand/conga_high_v2_r1.flac",
+        "hand/conga_high_v2_r2.flac"
+      ]
+    ],
+    "conga_low": [
+      [
+        "hand/conga_low_v0_r1.flac",
+        "hand/conga_low_v0_r2.flac"
+      ],
+      [
+        "hand/conga_low_v1_r1.flac",
+        "hand/conga_low_v1_r2.flac"
+      ],
+      [
+        "hand/conga_low_v2_r1.flac",
+        "hand/conga_low_v2_r2.flac"
+      ]
+    ],
+    "bongo_high": [
+      [
+        "hand/bongo_high_v0_r1.flac",
+        "hand/bongo_high_v0_r2.flac"
+      ],
+      [
+        "hand/bongo_high_v1_r1.flac",
+        "hand/bongo_high_v1_r2.flac"
+      ],
+      [
+        "hand/bongo_high_v2_r1.flac",
+        "hand/bongo_high_v2_r2.flac"
+      ]
+    ],
+    "bongo_low": [
+      [
+        "hand/bongo_low_v0_r1.flac",
+        "hand/bongo_low_v0_r2.flac"
+      ],
+      [
+        "hand/bongo_low_v1_r1.flac",
+        "hand/bongo_low_v1_r2.flac"
+      ],
+      [
+        "hand/bongo_low_v2_r1.flac",
+        "hand/bongo_low_v2_r2.flac"
+      ]
+    ],
+    "claves": [
+      [
+        "hand/claves_v0_r1.flac"
+      ],
+      [
+        "hand/claves_v1_r1.flac"
+      ],
+      [
+        "hand/claves_v2_r1.flac"
+      ]
+    ],
+    "woodblock": [
+      [
+        "hand/woodblock_v0_r1.flac"
+      ],
+      [
+        "hand/woodblock_v1_r1.flac",
+        "hand/woodblock_v1_r2.flac"
+      ]
     ]
   }
 }

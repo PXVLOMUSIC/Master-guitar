@@ -1,9 +1,11 @@
 // audio.js - upgraded audio engine for Strumio
 // Provides mic capture + YIN pitch detection, chord detection, tone/chord playback,
 // a Web-Audio lookahead metronome, note helpers, and recording helpers.
-// Playback now uses Karplus-Strong plucked-string synthesis for realistic guitar/uke/bass tone.
+// Las notas de guitarra y bajo suenan con muestras reales (CC0, sample-engine.js);
+// mientras cargan, o para ukelele, se usa síntesis Karplus-Strong.
 
 import { midiToNote, midiToFreq, NOTE_NAMES } from "./instruments.js";
+import { preloadGroup, preloadIds, isGroupReady, playPitched, playHand } from "./sample-engine.js";
 
 /* ------------------------------------------------------------------ */
 /* Shared state                                                       */
@@ -726,6 +728,57 @@ function playBufferSource(ctx, buffer, start, dur, gainLevel, pan, playbackRate)
 }
 
 /* ------------------------------------------------------------------ */
+/* Muestras reales para guitarra y bajo                                */
+/* ------------------------------------------------------------------ */
+// Instrumento de la app -> grupo de muestras reales.
+const REAL_GROUP = { guitar: "guitar", acoustic: "guitar", electric: "guitar", classical: "guitar", bass: "bass" };
+// Iguala el volumen de las muestras con el de la síntesis anterior.
+const REAL_GAIN = 0.45;
+
+let realBus = null;
+function getRealBus(ctx) {
+  if (realBus && realBus.context === ctx) return realBus.input;
+  const input = ctx.createGain();
+  const send = ctx.createGain();
+  send.gain.value = 0.22;
+  const convolver = ctx.createConvolver();
+  convolver.buffer = getReverbIR(ctx);
+  const wet = ctx.createGain();
+  wet.gain.value = 0.14;
+  input.connect(ctx.destination);
+  input.connect(send).connect(convolver).connect(wet).connect(ctx.destination);
+  realBus = { context: ctx, input };
+  return input;
+}
+
+/** Empieza a descargar las muestras reales (se puede llamar muchas veces). */
+export function warmRealInstruments(instrument = "guitar") {
+  const group = REAL_GROUP[instrument] || "guitar";
+  const ctx = getAudioContext();
+  preloadGroup(group, ctx);
+  preloadIds("hand", ["woodblock"], ctx).then((ok) => { metroClickReady = ok; });
+}
+
+function freqToMidi(freq) {
+  return 69 + 12 * Math.log2(freq / 440);
+}
+
+/** Intenta tocar la nota con una muestra real. false => usar síntesis. */
+function playReal(freq, start, dur, gainLevel, opts) {
+  if (opts && (opts.waveform || opts.synth)) return false;
+  const instrument = (opts && opts.instrument) || "guitar";
+  const group = REAL_GROUP[instrument];
+  if (!group) return false;
+  const ctx = getAudioContext();
+  if (!isGroupReady(group)) { warmRealInstruments(instrument); return false; }
+  return playPitched(group, freqToMidi(freq), start, getRealBus(ctx), {
+    gain: gainLevel * REAL_GAIN,
+    velocity: (opts && opts.velocity != null) ? opts.velocity : 0.75,
+    duration: dur + 0.35,
+  });
+}
+
+/* ------------------------------------------------------------------ */
 /* Playback: playTone / playChord                                      */
 /* ------------------------------------------------------------------ */
 function normalizePlayArgs(duration, options) {
@@ -749,6 +802,9 @@ export function playTone(freq, duration = 1.2, options = {}) {
   const gainLevel = (opts && opts.gain != null) ? opts.gain : 0.3;
   const start = ctx.currentTime;
   const pan = (opts && opts.pan != null) ? opts.pan : 0;
+
+  // Muestras reales CC0 (guitarra y bajo).
+  if (playReal(freq, start, dur, gainLevel, opts)) return;
 
   // Individual note samples path (real recorded notes).
   const noteSample = getNoteSample(freq, instrument);
@@ -791,6 +847,7 @@ export function playChord(freqsArray, duration = 1.2, options = {}) {
     const pan = (freqs.length > 1)
       ? ((i / (freqs.length - 1)) * 2 - 1) * 0.3
       : 0;
+    if (playReal(f, start, dur, stringGain, o)) return;
     if (soundBank === "samples" && sampleBankBuffer) {
       playBufferSource(ctx, sampleBankBuffer, start, dur, stringGain, pan, f / sampleBaseFreq);
       return;
@@ -814,9 +871,15 @@ function getNoiseBuffer(ctx) {
   return buf;
 }
 
+let metroClickReady = false;
+
 function scheduleMetroBeat(beatNumber, time) {
   const ctx = getAudioContext();
   const isDownbeat = (beatNumber % metroBeatsPerBar === 0);
+  if (metroClickReady && playHand("woodblock", time, ctx.destination, { velocity: isDownbeat ? 1 : 0.2, gain: isDownbeat ? 0.9 : 0.75 })) {
+    notifyMetroBeat(beatNumber, time);
+    return;
+  }
   const freq = isDownbeat ? 920 : 620;
 
   // Pitched woodblock body.
@@ -846,6 +909,11 @@ function scheduleMetroBeat(beatNumber, time) {
   noiseSrc.start(time);
   noiseSrc.stop(time + 0.025);
 
+  notifyMetroBeat(beatNumber, time);
+}
+
+function notifyMetroBeat(beatNumber, time) {
+  const ctx = getAudioContext();
   if (metroOnBeat) {
     const delay = Math.max(0, (time - ctx.currentTime) * 1000);
     setTimeout(() => {
@@ -873,6 +941,7 @@ export function startMetronome(bpm, beatsPerBar, onBeat) {
   metroOnBeat = typeof onBeat === "function" ? onBeat : null;
   const ctx = getAudioContext();
   resumeContext(ctx);
+  if (!metroClickReady) preloadIds("hand", ["woodblock"], ctx).then((ok) => { metroClickReady = ok; });
   metroRunning = true;
   metroBeat = 0;
   metroNextNoteTime = ctx.currentTime + 0.05;

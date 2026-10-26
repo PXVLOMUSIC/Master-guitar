@@ -2269,3 +2269,48 @@ body.section-open { overflow: hidden; }
 
 /* Los nombres de acorde distinguen mayúsculas (Em no es EM) */
 .btn.chord-chip { text-transform: none; }
+
+/* ---------- Rutina de hoy (Inicio) ---------- */
+.routine-card {
+  border-color: var(--green);
+  background: linear-gradient(160deg, var(--green-soft), var(--card) 55%);
+}
+.routine-card__head { display: flex; justify-content: space-between; align-items: center; gap: var(--space-3); }
+.routine-card__head h2 { margin: 2px 0; }
+.routine-card__head p { margin: 0; color: var(--muted); font-size: 13px; }
+.routine-card__kicker { font-size: 12px; font-weight: var(--weight-extrabold); letter-spacing: .08em; text-transform: uppercase; color: var(--green); }
+.routine-card__ring {
+  flex: none; width: 56px; height: 56px; border-radius: 50%;
+  display: grid; place-items: center; font-weight: var(--weight-black);
+  background:
+    radial-gradient(closest-side, var(--card) 78%, transparent 80%),
+    conic-gradient(var(--green) calc(var(--p) * 1%), var(--card-2) 0);
+}
+.routine-card__blocks { list-style: none; padding: 0; margin: var(--space-3) 0; display: grid; gap: 6px; }
+.routine-card__blocks li { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 8px; padding: 8px 10px; border-radius: var(--r-md); background: var(--card-2); font-size: 14px; }
+.routine-card__blocks em { font-style: normal; color: var(--muted); font-size: 13px; }
+.routine-card.is-done .routine-card__blocks { opacity: .6; }
+
+.setup-card { display: flex; flex-direction: column; gap: var(--space-3); }
+.setup-card p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.setup-card__actions { display: flex; align-items: center; gap: var(--space-3); }
+
+/* ---------- Test de nivel ---------- */
+.pill-rec { display: inline-block; margin-left: 6px; padding: 2px 8px; border-radius: 999px; background: var(--green-soft); color: var(--green); font-size: 11px; vertical-align: middle; }
+.placement-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.placement-area { font-size: 12px; font-weight: var(--weight-extrabold); letter-spacing: .08em; text-transform: uppercase; color: var(--blue); }
+.placement .opt { width: 100%; color: var(--text); font-family: inherit; }
+.placement .qcard .chord-diagram { margin: 0 auto; }
+.placement-row { display: grid; grid-template-columns: 90px 1fr 42px; align-items: center; gap: 10px; margin: 8px 0; font-size: 14px; }
+.placement-row .progress { margin: 0; }
+.placement-row b { text-align: right; }
+.setup-hour { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 16px; font-weight: var(--weight-bold); }
+.setup-hour select { padding: 8px 10px; border-radius: var(--r-md); border: 2px solid var(--border); background: var(--card-2); color: var(--text); font: inherit; }
+.onboard { position: relative; }
+.onboard-skip {
+  position: absolute; top: var(--space-3); right: var(--space-3);
+  background: none; border: 0; color: var(--muted); font: inherit; font-weight: var(--weight-bold);
+  font-size: 14px; padding: 6px 10px; border-radius: var(--r-md); cursor: pointer;
+}
+.onboard-skip:hover { color: var(--text); background: var(--card-2); }
+.placement .placement-top { margin-top: 28px; }

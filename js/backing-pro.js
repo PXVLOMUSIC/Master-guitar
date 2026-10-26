@@ -1,7 +1,7 @@
 // backing-pro.js - professional backing track system with mixer controls
 import { getAudioContext, resumeContext } from "./audio.js";
 import { midiToFreq } from "./instruments.js";
-import { preloadGroup, isGroupReady, getSampleState, playDrum, playPitched } from "./sample-engine.js";
+import { preloadGroup, isGroupReady, getSampleState, playDrum, playHand, playPitched } from "./sample-engine.js";
 
 /* ----------------------------- Instrument list ----------------------------- */
 const INSTRUMENTS = [
@@ -11,6 +11,8 @@ const INSTRUMENTS = [
   { id: "crash", name: "Crash", color: "#f39c12" },
   { id: "ride", name: "Ride", color: "#d35400" },
   { id: "tom", name: "Tom", color: "#c0392b" },
+  { id: "cajon", name: "Cajón", color: "#b7743b" },
+  { id: "shaker", name: "Shaker", color: "#c9a227" },
   { id: "bass", name: "Bass", color: "#2ecc71" },
   { id: "piano", name: "Piano", color: "#3498db" },
   { id: "guitar", name: "Guitar", color: "#9b59b6" },
@@ -104,6 +106,7 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 1,0,0,0],
+      shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
       bass:   [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
       piano:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
       guitar: [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
@@ -172,9 +175,48 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
       bass:   [1,0,0,0, 0,0,1,0, 0,0,1,0, 0,0,0,0],
       piano:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
       guitar: [1,0,1,0, 0,1,0,0, 1,0,1,0, 0,1,0,0],
+      strings:[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+    }
+  },
+  rumba: {
+    name: "Rumba flamenca", bpm: 104, bassType: "electric",
+    progression: [{ root: 45, q: "min" }, { root: 43, q: "maj" }, { root: 41, q: "maj" }, { root: 40, q: "maj" }],
+    steps: {
+      kick:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      snare:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      hihat:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [1,0,0,1, 1,0,1,0, 1,0,0,1, 1,0,1,1],
+      shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
+      bass:   [1,0,0,1, 0,0,0,0, 1,0,0,1, 0,0,0,0],
+      piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      guitar: [1,0,0,1, 1,0,1,0, 1,0,0,1, 1,0,1,0],
+      strings:[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+    }
+  },
+  acoustic: {
+    name: "Pop acústico", bpm: 92, bassType: "electric",
+    progression: [{ root: 48, q: "maj" }, { root: 43, q: "maj" }, { root: 45, q: "min" }, { root: 41, q: "maj" }],
+    steps: {
+      kick:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      snare:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      hihat:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [1,0,0,0, 1,0,0,1, 1,0,1,0, 1,0,0,0],
+      shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
+      bass:   [1,0,0,0, 0,0,1,0, 1,0,0,0, 0,0,1,0],
+      piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      guitar: [1,0,1,0, 0,0,1,0, 1,0,1,0, 0,0,1,0],
       strings:[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       synth:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
     }
@@ -510,6 +552,19 @@ function scheduleRide(ctx, ch, time, stepIndex = 0) {
   bell.stop(time + 0.65);
 }
 
+// Cajón: graves en los tiempos fuertes, slap en el resto (más suave a contratiempo).
+function scheduleCajon(ctx, ch, time, stepIndex = 0) {
+  const pos = stepIndex % 8;
+  const bassHit = pos === 0 || pos === 3;
+  const velocity = bassHit ? (pos === 0 ? 0.95 : 0.7) : (stepIndex % 2 ? 0.35 : 0.8);
+  playHand(bassHit ? "cajon_bass" : "cajon_slap", time, ch.gain, { velocity, gain: bassHit ? 1 : 0.8 });
+}
+
+// Shaker: acento en las corcheas, más suave en las semicorcheas.
+function scheduleShaker(ctx, ch, time, stepIndex = 0) {
+  playHand("shaker", time, ch.gain, { velocity: stepIndex % 2 ? 0.2 : 0.8, gain: stepIndex % 2 ? 0.35 : 0.5 });
+}
+
 function scheduleTom(ctx, ch, time, stepIndex = 0) {
   if (playDrum(stepIndex % 8 === 0 ? "tom_high" : "tom_mid", time, ch.gain, { velocity: 0.8, gain: 0.85 })) return;
   const osc = ctx.createOscillator();
@@ -770,6 +825,8 @@ function playInstrument(ctx, graph, id, time, barIndex, stepIndex) {
     case "crash": scheduleCrash(ctx, ch, time); break;
     case "ride": scheduleRide(ctx, ch, time, stepIndex); break;
     case "tom": scheduleTom(ctx, ch, time, stepIndex); break;
+    case "cajon": scheduleCajon(ctx, ch, time, stepIndex); break;
+    case "shaker": scheduleShaker(ctx, ch, time, stepIndex); break;
     case "bass": scheduleBass(ctx, ch, time, barIndex, stepIndex, state.bassType); break;
     case "piano": schedulePiano(ctx, ch, time, barIndex, stepIndex); break;
     case "guitar": scheduleGuitar(ctx, ch, time, barIndex, stepIndex); break;
@@ -1038,9 +1095,10 @@ function warmRealSamples(container) {
     const update = () => {
       if (!badge) return;
       const s = getSampleState();
-      const total = s.groups.drums.total + s.groups.bass.total + s.groups.guitar.total;
-      const loaded = s.groups.drums.loaded + s.groups.bass.loaded + s.groups.guitar.loaded;
-      if (s.groups.drums.ready && s.groups.bass.ready && s.groups.guitar.ready) {
+      const g = s.groups;
+      const total = g.drums.total + g.bass.total + g.guitar.total + g.hand.total;
+      const loaded = g.drums.loaded + g.bass.loaded + g.guitar.loaded + g.hand.loaded;
+      if (g.drums.ready && g.bass.ready && g.guitar.ready && g.hand.ready) {
         badge.textContent = "● Sonido real CC0";
         badge.classList.add("ready");
       } else {
@@ -1051,6 +1109,7 @@ function warmRealSamples(container) {
       preloadGroup("drums", ctx, update),
       preloadGroup("bass", ctx, update),
       preloadGroup("guitar", ctx, update),
+      preloadGroup("hand", ctx, update),
     ]).then(update);
   } catch (e) { /* se mantiene la sintesis */ }
 }

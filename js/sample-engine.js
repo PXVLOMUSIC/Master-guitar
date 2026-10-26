@@ -1,7 +1,7 @@
 ﻿/* ============================================================
-   Strumio â€” Motor de samples reales (CC0)
-   BaterÃ­a acÃºstica, bajo elÃ©ctrico, guitarra acÃºstica y
-   percusiÃ³n corporal grabados de verdad, con capas de
+   Strumio — Motor de samples reales (CC0)
+   Batería acústica, bajo eléctrico, guitarra acústica y
+   percusión corporal grabados de verdad, con capas de
    intensidad y round-robin.
    ============================================================ */
 
@@ -18,6 +18,7 @@ const groupState = {
   bass: { ready: false, loading: null, total: 0, loaded: 0 },
   guitar: { ready: false, loading: null, total: 0, loaded: 0 },
   perc: { ready: false, loading: null, total: 0, loaded: 0 },
+  hand: { ready: false, loading: null, total: 0, loaded: 0 },
 };
 
 const nearestCache = new Map();
@@ -84,8 +85,8 @@ async function loadBuffer(ctx, file) {
 function groupFiles(group) {
   if (!manifest) return [];
   const files = [];
-  if (group === "drums") {
-    Object.values(manifest.drums || {}).forEach((layers) => layers.forEach((layer) => layer.forEach((f) => files.push(f))));
+  if (group === "drums" || group === "hand") {
+    Object.values(manifest[group] || {}).forEach((layers) => layers.forEach((layer) => layer.forEach((f) => files.push(f))));
   } else if (group === "perc") {
     Object.values(manifest.perc || {}).forEach((list) => list.forEach((f) => files.push(f)));
   } else {
@@ -138,6 +139,22 @@ export function preloadGroup(group, ctx, onProgress) {
   return state.loading;
 }
 
+/**
+ * Precarga solo algunos sonidos de un grupo por capas (p. ej. el click del
+ * metrónomo), sin bajar el grupo entero. Nunca rechaza.
+ */
+export async function preloadIds(group, ids, ctx) {
+  try {
+    await loadManifest();
+    const files = [];
+    ids.forEach((id) => ((manifest[group] || {})[id] || []).forEach((layer) => layer.forEach((f) => files.push(f))));
+    await Promise.all(files.map((f) => loadBuffer(ctx, f)));
+    return files.every((f) => buffers.has(f));
+  } catch (e) {
+    return false;
+  }
+}
+
 /** Precarga todo lo necesario para las backing tracks. */
 export function preloadAll(ctx, onProgress) {
   return Promise.all([
@@ -145,6 +162,7 @@ export function preloadAll(ctx, onProgress) {
     preloadGroup("bass", ctx, onProgress),
     preloadGroup("guitar", ctx, onProgress),
     preloadGroup("perc", ctx, onProgress),
+    preloadGroup("hand", ctx, onProgress),
   ]);
 }
 
@@ -159,12 +177,13 @@ function bufferFor(file) {
 const DRUM_VEL_GAIN = 0.9;
 
 /**
- * Reproduce un golpe de baterÃ­a real.
- * @returns {boolean} true si se ha programado (false => usar sÃ­ntesis)
+ * Reproduce un sonido real por capas de intensidad ("drums" o "hand").
+ * No exige el grupo entero: basta con que estén cargadas sus muestras.
+ * @returns {boolean} true si se ha programado (false => usar síntesis)
  */
-export function playDrum(id, when, destination, opts = {}) {
-  if (!manifest || !groupState.drums.ready) return false;
-  const layers = manifest.drums && manifest.drums[id];
+export function playLayered(group, id, when, destination, opts = {}) {
+  if (!manifest) return false;
+  const layers = manifest[group] && manifest[group][id];
   if (!layers || !layers.length) return false;
   const velocity = Math.max(0, Math.min(1, opts.velocity != null ? opts.velocity : 0.9));
   let idx = Math.floor(velocity * layers.length);
@@ -173,7 +192,7 @@ export function playDrum(id, when, destination, opts = {}) {
   // intenta la capa elegida y cae a otras si faltara
   for (let i = 0; i < layers.length; i++) {
     const layer = layers[(idx - i + layers.length) % layers.length];
-    buf = bufferFor(pick(layer));
+    buf = bufferFor(pick(layer)) || layer.map(bufferFor).find(Boolean) || null;
     if (buf) break;
   }
   if (!buf) return false;
@@ -190,7 +209,18 @@ export function playDrum(id, when, destination, opts = {}) {
   return true;
 }
 
-/** PercusiÃ³n corporal (palmas, chasquidos, pisadas). */
+/** Golpe de batería real. */
+export function playDrum(id, when, destination, opts = {}) {
+  if (!groupState.drums.ready) return false;
+  return playLayered("drums", id, when, destination, opts);
+}
+
+/** Percusión de mano real (cajón, shaker, pandereta, congas, bongos…). */
+export function playHand(id, when, destination, opts = {}) {
+  return playLayered("hand", id, when, destination, opts);
+}
+
+/** Percusión corporal (palmas, chasquidos, pisadas). */
 export function playPerc(id, when, destination, opts = {}) {
   if (!manifest || !groupState.perc.ready) return false;
   const list = manifest.perc && manifest.perc[id];
@@ -226,7 +256,7 @@ function nearestEntry(instrument, midi) {
 }
 
 /**
- * Reproduce una nota real de guitarra/bajo con pitch-shift mÃ­nimo.
+ * Reproduce una nota real de guitarra/bajo con pitch-shift mínimo.
  * @returns {boolean}
  */
 export function playPitched(instrument, midi, when, destination, opts = {}) {
@@ -253,7 +283,7 @@ export function playPitched(instrument, midi, when, destination, opts = {}) {
   if (dur && dur > 0.05) {
     const stopAt = when + dur;
     try { src.stop(stopAt); } catch (e) {}
-    // pequeÃ±a cola para que no corte en seco
+    // pequeña cola para que no corte en seco
     try { gain.gain.setValueAtTime(gain.gain.value, Math.max(when, stopAt - 0.08)); gain.gain.linearRampToValueAtTime(0.0001, stopAt); } catch (e) {}
   }
   src.onended = () => { try { src.disconnect(); gain.disconnect(); } catch (e) {} };
