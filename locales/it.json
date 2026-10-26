@@ -26,5 +26,18 @@
   "auth.google": "Continua con Google",
   "auth.email": "Accedi con email",
   "auth.guest": "Prova senza account",
-  "auth.signOut": "Esci"
+  "auth.signOut": "Esci",
+  "onboard.welcome": "Benvenuto su Strumio!",
+  "onboard.subtitle": "Impara la chitarra passo dopo passo, come un gioco.",
+  "onboard.namePlaceholder": "Il tuo nome",
+  "onboard.continue": "Continua",
+  "onboard.chooseInstrument": "Scegli il tuo strumento",
+  "onboard.howStart": "Come vuoi iniziare?",
+  "onboard.adapt": "Il test adatta le lezioni e la routine giornaliera a ciò che sai già.",
+  "onboard.levelTest": "Fai il test di livello",
+  "onboard.recommended": "Consigliato",
+  "onboard.levelTestDesc": "14 domande · circa 3 minuti · con suono",
+  "onboard.startZero": "Partire da zero",
+  "onboard.startZeroDesc": "Non ho mai suonato uno strumento",
+  "onboard.skip": "Salta"
 }

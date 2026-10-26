@@ -26,5 +26,18 @@
   "auth.google": "Continue with Google",
   "auth.email": "Sign in with email",
   "auth.guest": "Try without account",
-  "auth.signOut": "Sign out"
+  "auth.signOut": "Sign out",
+  "onboard.welcome": "Welcome to Strumio!",
+  "onboard.subtitle": "Learn guitar step by step, like a game.",
+  "onboard.namePlaceholder": "Your name",
+  "onboard.continue": "Continue",
+  "onboard.chooseInstrument": "Choose your instrument",
+  "onboard.howStart": "How do you want to start?",
+  "onboard.adapt": "The test adapts lessons and your daily routine to what you already know.",
+  "onboard.levelTest": "Take the level test",
+  "onboard.recommended": "Recommended",
+  "onboard.levelTestDesc": "14 questions · about 3 minutes · with sound",
+  "onboard.startZero": "Start from scratch",
+  "onboard.startZeroDesc": "I have never played an instrument",
+  "onboard.skip": "Skip"
 }

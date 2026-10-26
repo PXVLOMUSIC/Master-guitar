@@ -26,5 +26,18 @@
   "auth.google": "Continuar com Google",
   "auth.email": "Entrar com email",
   "auth.guest": "Testar sem conta",
-  "auth.signOut": "Sair"
+  "auth.signOut": "Sair",
+  "onboard.welcome": "Bem-vindo ao Strumio!",
+  "onboard.subtitle": "Aprenda violão passo a passo, como um jogo.",
+  "onboard.namePlaceholder": "Seu nome",
+  "onboard.continue": "Continuar",
+  "onboard.chooseInstrument": "Escolha seu instrumento",
+  "onboard.howStart": "Como você quer começar?",
+  "onboard.adapt": "O teste adapta as lições e a rotina diária ao que você já sabe.",
+  "onboard.levelTest": "Fazer o teste de nível",
+  "onboard.recommended": "Recomendado",
+  "onboard.levelTestDesc": "14 perguntas · cerca de 3 minutos · com som",
+  "onboard.startZero": "Começar do zero",
+  "onboard.startZeroDesc": "Nunca toquei um instrumento",
+  "onboard.skip": "Pular"
 }

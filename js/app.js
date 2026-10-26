@@ -106,14 +106,14 @@ function renderOnboard(v) {
     () => `
       <div class="onboard">${skipButton()}
         <div class="onboard-mascot">${mascot("wave", 128)}</div>
-        <h1>¡Bienvenido a Strumio!</h1>
-        <p class="sub">Aprende guitarra paso a paso, como un juego.</p>
-        <input id="nameInput" placeholder="Tu nombre" style="width:100%;padding:14px;border-radius:12px;border:2px solid var(--border);background:var(--card2);color:var(--text);font-size:16px;font-weight:700;margin-top:16px">
-        <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
+        <h1>${t("onboard.welcome")}</h1>
+        <p class="sub">${t("onboard.subtitle")}</p>
+        <input id="nameInput" placeholder="${t("onboard.namePlaceholder")}" style="width:100%;padding:14px;border-radius:12px;border:2px solid var(--border);background:var(--card2);color:var(--text);font-size:16px;font-weight:700;margin-top:16px">
+        <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">${t("onboard.continue")}</button>
       </div>`,
     () => `
       <div class="onboard">${skipButton()}
-        <h1>Elige tu instrumento</h1>
+        <h1>${t("onboard.chooseInstrument")}</h1>
         <div class="choices">
           ${Object.entries(INSTRUMENTS).map(([k,ins]) => `
             <div class="choice ${data.instrument===k?'selected':''}" data-ins="${k}" role="button" tabindex="0" aria-label="${ins.name}">
@@ -121,15 +121,15 @@ function renderOnboard(v) {
               <div><div style="font-weight:800">${ins.name}</div></div>
             </div>`).join("")}
         </div>
-        <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
+        <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">${t("onboard.continue")}</button>
       </div>`,
     () => `
       <div class="onboard">${skipButton()}
-        <h1>¿Cómo quieres empezar?</h1>
-        <p class="sub">El test adapta las lecciones y la rutina diaria a lo que ya sabes.</p>
+        <h1>${t("onboard.howStart")}</h1>
+        <p class="sub">${t("onboard.adapt")}</p>
         <div class="choices">
-          <div class="choice selected" data-start="test" role="button" tabindex="0"><span class="ico">🎯</span><div><div style="font-weight:800">Hacer el test de nivel <span class="pill-rec">Recomendado</span></div><div style="color:var(--muted);font-size:13px">14 preguntas · unos 3 minutos · con sonido</div></div></div>
-          <div class="choice" data-start="zero" role="button" tabindex="0"><span class="ico">🌱</span><div><div style="font-weight:800">Empezar desde cero</div><div style="color:var(--muted);font-size:13px">Nunca he tocado un instrumento</div></div></div>
+          <div class="choice selected" data-start="test" role="button" tabindex="0"><span class="ico">🎯</span><div><div style="font-weight:800">${t("onboard.levelTest")} <span class="pill-rec">${t("onboard.recommended")}</span></div><div style="color:var(--muted);font-size:13px">${t("onboard.levelTestDesc")}</div></div></div>
+          <div class="choice" data-start="zero" role="button" tabindex="0"><span class="ico">🌱</span><div><div style="font-weight:800">${t("onboard.startZero")}</div><div style="color:var(--muted);font-size:13px">${t("onboard.startZeroDesc")}</div></div></div>
         </div>
       </div>`
   ];
@@ -157,7 +157,7 @@ function renderOnboard(v) {
 
 // "Omitir" en cualquier paso: guarda lo que haya y va directo a Inicio.
 function skipButton() {
-  return `<button class="onboard-skip" id="skipOnboard" type="button">Omitir</button>`;
+  return `<button class="onboard-skip" id="skipOnboard" type="button">${t("onboard.skip")}</button>`;
 }
 function bindSkip(data) {
   const b = document.getElementById("skipOnboard");
@@ -302,7 +302,7 @@ function renderPlacementResult(result) {
       <h1>${LV.ico} Nivel ${LV.name}</h1>
       <p class="sub">${LV.txt}</p>
       <div class="card" style="text-align:left;margin:16px 0 0">${rows}</div>
-      <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">Continuar</button>
+      <button class="btn btn-primary btn-block" style="margin-top:16px" id="nextBtn">${t("onboard.continue")}</button>
     </div>`;
   bindSkip();
   $("#nextBtn").onclick = renderWelcomeSetup;
