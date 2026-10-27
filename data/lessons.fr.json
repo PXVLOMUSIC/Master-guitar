@@ -32,8 +32,8 @@
               "prompt": "La corde la plus fine (1re) s'appelle :",
               "options": [
                 "Mi grave",
-                "A",
-                "D",
+                "La",
+                "Ré",
                 "Mi aigu"
               ],
               "answer": 3
