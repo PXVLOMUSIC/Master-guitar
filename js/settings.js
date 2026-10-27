@@ -392,9 +392,11 @@ export function renderSettings(container) {
     b.onclick = () => {
       state.settings.guitarTone = b.dataset.tone;
       saveState(state);
-      setGuitarTone(b.dataset.tone);
       container.querySelectorAll("[data-tone]").forEach(x => { x.classList.toggle("on", x === b); x.setAttribute("aria-checked", x === b); });
-      setTimeout(() => playChord(demo, 1.8, { instrument: "guitar", stagger: 0.03 }), 250);
+      // Espera a que carguen las muestras del timbre; si no, sonaría la síntesis genérica.
+      const tone = b.dataset.tone;
+      Promise.race([setGuitarTone(tone), new Promise(r => setTimeout(r, 4000))])
+        .then(() => { if (state.settings.guitarTone === tone) playChord(demo, 1.8, { instrument: "guitar", stagger: 0.03 }); });
       haptic(10);
     };
   });

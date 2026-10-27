@@ -246,17 +246,26 @@ const state = {
   bpm: 120,
   userGrid: null,
   mixer: {},
-  effects: { reverb: false, delay: false, eq: false },
+  fxTrack: "guitar",
   metronome: { enabled: false, volume: 0.5 },
   loopBars: 4,
   bassType: "electric",
   tapTimes: [],
-  progression: null
+  progression: null,
+  // Piano roll: notas propias por pista ({ step, midi, len } en semicorcheas).
+  roll: { track: "synth", bars: 2, len: 2, notes: {}, on: {} }
 };
 
+// Efectos por pista: envíos de reverb/delay (0-100) y EQ de 3 bandas (dB).
+const FX_DEFAULT = { reverb: 0, delay: 0, low: 0, mid: 0, high: 0 };
 INSTRUMENTS.forEach((inst) => {
-  state.mixer[inst.id] = { volume: defaultVolume(inst.id), pan: 0, muted: false, solo: false };
+  state.mixer[inst.id] = { volume: defaultVolume(inst.id), pan: 0, muted: false, solo: false, fx: { ...FX_DEFAULT } };
 });
+
+// Pistas melódicas que admiten piano roll y su rango (2 octavas).
+const ROLL_TRACKS = ["synth", "piano", "guitar", "strings", "bass"];
+const ROLL_RANGE = { bass: [36, 59], guitar: [48, 71], piano: [60, 83], strings: [60, 83], synth: [60, 83] };
+ROLL_TRACKS.forEach((id) => { state.roll.notes[id] = []; state.roll.on[id] = false; });
 
 function defaultVolume(id) {
   if (id === "kick") return 0.9;
@@ -273,9 +282,12 @@ function ensureGrid() {
       state.userGrid[inst.id] = [...(pat.steps[inst.id] || new Array(16).fill(0))];
     }
   });
-  state.progression = pat.progression;
-  state.bpm = pat.bpm;
-  state.bassType = pat.bassType;
+  // Solo la primera vez: después manda lo que elija el usuario (BPM, bajo).
+  if (!state.progression) {
+    state.progression = pat.progression;
+    state.bpm = pat.bpm;
+    state.bassType = pat.bassType;
+  }
 }
 
 ensureGrid();
@@ -311,111 +323,107 @@ function createNoiseBuffer(ctx, dur) {
   return buf;
 }
 
+function delayTimeFor(bpm) {
+  // Corchea con puntillo, sincronizada con el tempo.
+  return Math.min(1.9, (60 / bpm) * 0.75);
+}
+
 function createGraph(ctx) {
   const masterGain = ctx.createGain();
   masterGain.gain.value = 0.9;
+  masterGain.connect(ctx.destination);
 
+  // Reverb y delay compartidos; cada pista decide cuánto les envía.
+  const convolver = ctx.createConvolver();
+  convolver.buffer = makeReverbIR(ctx);
+  const reverbReturn = ctx.createGain();
+  reverbReturn.gain.value = 0.9;
+  convolver.connect(reverbReturn);
+  reverbReturn.connect(masterGain);
+
+  const delayNode = ctx.createDelay(2);
+  delayNode.delayTime.value = delayTimeFor(state.bpm);
+  const delayTone = ctx.createBiquadFilter();
+  delayTone.type = "lowpass";
+  delayTone.frequency.value = 3500;
+  const delayFeedback = ctx.createGain();
+  delayFeedback.gain.value = 0.35;
+  const delayReturn = ctx.createGain();
+  delayReturn.gain.value = 0.8;
+  delayNode.connect(delayTone);
+  delayTone.connect(delayFeedback);
+  delayFeedback.connect(delayNode);
+  delayTone.connect(delayReturn);
+  delayReturn.connect(masterGain);
+
+  // Canal: volumen -> EQ -> medidor -> panorama -> master (+ envíos post-fader)
   const channels = {};
   INSTRUMENTS.forEach((inst) => {
-    const m = state.mixer[inst.id];
     const gain = ctx.createGain();
-    gain.gain.value = m.volume;
+    const eqLow = ctx.createBiquadFilter();
+    eqLow.type = "lowshelf";
+    eqLow.frequency.value = 250;
+    const eqMid = ctx.createBiquadFilter();
+    eqMid.type = "peaking";
+    eqMid.frequency.value = 1000;
+    eqMid.Q.value = 0.9;
+    const eqHigh = ctx.createBiquadFilter();
+    eqHigh.type = "highshelf";
+    eqHigh.frequency.value = 4000;
     const analyser = ctx.createAnalyser();
     analyser.fftSize = 256;
     const panner = ctx.createStereoPanner();
-    panner.pan.value = m.pan;
-    gain.connect(analyser);
+    const reverbSend = ctx.createGain();
+    const delaySend = ctx.createGain();
+    gain.connect(eqLow);
+    eqLow.connect(eqMid);
+    eqMid.connect(eqHigh);
+    eqHigh.connect(analyser);
     analyser.connect(panner);
     panner.connect(masterGain);
-    channels[inst.id] = { gain, analyser, panner };
+    panner.connect(reverbSend);
+    reverbSend.connect(convolver);
+    panner.connect(delaySend);
+    delaySend.connect(delayNode);
+    channels[inst.id] = { gain, eqLow, eqMid, eqHigh, analyser, panner, reverbSend, delaySend };
   });
-
-  // EQ
-  const eqLow = ctx.createBiquadFilter();
-  eqLow.type = "lowshelf";
-  eqLow.frequency.value = 300;
-  const eqMid = ctx.createBiquadFilter();
-  eqMid.type = "peaking";
-  eqMid.frequency.value = 1000;
-  eqMid.Q.value = 1;
-  const eqHigh = ctx.createBiquadFilter();
-  eqHigh.type = "highshelf";
-  eqHigh.frequency.value = 3000;
-
-  masterGain.connect(eqLow);
-  eqLow.connect(eqMid);
-  eqMid.connect(eqHigh);
-
-  const dryGain = ctx.createGain();
-  dryGain.gain.value = 1;
-  eqHigh.connect(dryGain);
-  dryGain.connect(ctx.destination);
-
-  // Reverb
-  const convolver = ctx.createConvolver();
-  convolver.buffer = makeReverbIR(ctx);
-  const reverbGain = ctx.createGain();
-  reverbGain.gain.value = state.effects.reverb ? 0.25 : 0;
-  masterGain.connect(convolver);
-  convolver.connect(reverbGain);
-  reverbGain.connect(ctx.destination);
-
-  // Delay
-  const delayNode = ctx.createDelay(0.5);
-  delayNode.delayTime.value = 0.25;
-  const delayFeedback = ctx.createGain();
-  delayFeedback.gain.value = 0.3;
-  const delayGain = ctx.createGain();
-  delayGain.gain.value = state.effects.delay ? 0.2 : 0;
-  masterGain.connect(delayNode);
-  delayNode.connect(delayGain);
-  delayGain.connect(ctx.destination);
-  delayNode.connect(delayFeedback);
-  delayFeedback.connect(delayNode);
 
   // Metronome
   const metroGain = ctx.createGain();
-  metroGain.gain.value = state.metronome.enabled ? state.metronome.volume : 0;
   metroGain.connect(ctx.destination);
 
-  // EQ gains
-  applyEqGains(eqLow, eqMid, eqHigh);
-
-  const g = { masterGain, channels, eqLow, eqMid, eqHigh, dryGain, convolver, reverbGain, delayNode, delayFeedback, delayGain, metroGain };
+  const g = { masterGain, channels, convolver, reverbReturn, delayNode, delayTone, delayFeedback, delayReturn, metroGain };
+  applyMixerGains(g, true);
   return g;
 }
 
-function applyEqGains(eqLow, eqMid, eqHigh) {
-  if (state.effects.eq) {
-    eqLow.gain.value = 3;
-    eqMid.gain.value = -1;
-    eqHigh.gain.value = 2;
-  } else {
-    eqLow.gain.value = 0;
-    eqMid.gain.value = 0;
-    eqHigh.gain.value = 0;
-  }
-}
-
-function applyMixerGains() {
-  if (!graph) return;
+/** Aplica volumen, panorama y efectos de cada pista. immediate: sin rampa (exportación). */
+function applyMixerGains(g = graph, immediate = false) {
+  if (!g) return;
+  const now = g.masterGain.context.currentTime;
+  const set = (param, v) => {
+    if (immediate) { param.value = v; return; }
+    try { param.setTargetAtTime(v, now, 0.01); } catch (e) { param.value = v; }
+  };
   const anySolo = Object.values(state.mixer).some((m) => m.solo);
   INSTRUMENTS.forEach((inst) => {
     const m = state.mixer[inst.id];
-    const ch = graph.channels[inst.id];
+    const ch = g.channels[inst.id];
     if (!ch) return;
     let gain = m.volume;
     if (m.muted) gain = 0;
     if (anySolo && !m.solo) gain = 0;
-    try { ch.gain.gain.setTargetAtTime(gain, getAudioContext().currentTime, 0.01); } catch (e) { ch.gain.gain.value = gain; }
-    try { ch.panner.pan.setTargetAtTime(m.pan, getAudioContext().currentTime, 0.01); } catch (e) { ch.panner.pan.value = m.pan; }
+    const fx = m.fx || FX_DEFAULT;
+    set(ch.gain.gain, gain);
+    set(ch.panner.pan, m.pan);
+    set(ch.reverbSend.gain, fx.reverb / 100);
+    set(ch.delaySend.gain, fx.delay / 100);
+    set(ch.eqLow.gain, fx.low);
+    set(ch.eqMid.gain, fx.mid);
+    set(ch.eqHigh.gain, fx.high);
   });
-  if (graph.metroGain) {
-    graph.metroGain.gain.value = state.metronome.enabled ? state.metronome.volume : 0;
-  }
-  if (graph.reverbGain) graph.reverbGain.gain.value = state.effects.reverb ? 0.25 : 0;
-  if (graph.delayGain) graph.delayGain.gain.value = state.effects.delay ? 0.2 : 0;
-  if (graph.eqLow) applyEqGains(graph.eqLow, graph.eqMid, graph.eqHigh);
+  set(g.metroGain.gain, state.metronome.enabled ? state.metronome.volume : 0);
+  set(g.delayNode.delayTime, delayTimeFor(state.bpm));
 }
 
 /* ----------------------------- Note helpers ----------------------------- */
@@ -799,6 +807,50 @@ function scheduleSynth(ctx, ch, time, barIndex, stepIndex) {
   lfo.stop(time + dur + 0.05);
 }
 
+/** Una nota suelta del piano roll con la duración indicada (segundos). */
+function voiceNote(ctx, ch, id, time, midi, dur) {
+  if (!ch) return;
+  dur = Math.max(0.1, dur);
+  const group = { bass: "bass", guitar: "guitar", piano: "piano" }[id];
+  if (group && playPitched(group, midi, time, ch.gain, {
+    gain: id === "piano" ? 0.6 : 0.8, velocity: 0.85, duration: dur + 0.1
+  })) return;
+  const freq = midiToFreq(midi);
+  if (id === "guitar") {
+    const src = ctx.createBufferSource();
+    src.buffer = karplusBuffer(ctx, freq, dur + 0.2);
+    const gain = ctx.createGain();
+    gain.gain.value = 0.4;
+    src.connect(gain).connect(ch.gain);
+    src.start(time);
+    try { src.stop(time + dur + 0.25); } catch (e) {}
+    return;
+  }
+  const [type, cutoff, level] = {
+    bass: ["triangle", 900, 0.5],
+    piano: ["sine", 4000, 0.32],
+    strings: ["sawtooth", 1800, 0.22],
+    synth: ["sawtooth", 2500, 0.3]
+  }[id] || ["triangle", 2000, 0.3];
+  const attack = id === "strings" ? 0.08 : 0.005;
+  const release = id === "strings" ? 0.25 : 0.08;
+  const end = time + dur;
+  const osc = ctx.createOscillator();
+  osc.type = type;
+  osc.frequency.value = freq;
+  const filter = ctx.createBiquadFilter();
+  filter.type = "lowpass";
+  filter.frequency.value = cutoff;
+  const gain = ctx.createGain();
+  gain.gain.setValueAtTime(0.0001, time);
+  gain.gain.linearRampToValueAtTime(level, time + attack);
+  gain.gain.setValueAtTime(level, Math.max(time + attack, end - 0.03));
+  gain.gain.exponentialRampToValueAtTime(0.0001, end + release);
+  osc.connect(filter).connect(gain).connect(ch.gain);
+  osc.start(time);
+  osc.stop(end + release + 0.05);
+}
+
 function scheduleMetroClick(ctx, graph, time, downbeat) {
   if (!state.metronome.enabled) return;
   const freq = downbeat ? 920 : 620;
@@ -836,34 +888,50 @@ function playInstrument(ctx, graph, id, time, barIndex, stepIndex) {
 }
 
 /* ----------------------------- Scheduler ----------------------------- */
+// Un paso (semicorchea): las pistas con piano roll tocan sus notas; el resto, el secuenciador.
+function scheduleStep(ctx, g, step, time) {
+  const stepIndex = step % 16;
+  const barIndex = Math.floor(step / 16) % state.loopBars;
+  if (state.metronome.enabled && stepIndex % 4 === 0) {
+    scheduleMetroClick(ctx, g, time, stepIndex === 0);
+  }
+  const stepDur = 60.0 / (state.bpm * 4);
+  const rollStep = step % (state.roll.bars * 16);
+  INSTRUMENTS.forEach((inst) => {
+    if (state.roll.on[inst.id]) {
+      state.roll.notes[inst.id].forEach((n) => {
+        if (n.step === rollStep) voiceNote(ctx, g.channels[inst.id], inst.id, time, n.midi, n.len * stepDur);
+      });
+      return;
+    }
+    if (state.userGrid[inst.id] && state.userGrid[inst.id][stepIndex]) {
+      playInstrument(ctx, g, inst.id, time, barIndex, stepIndex);
+    }
+  });
+}
+
 function scheduleAhead() {
   if (!isPlaying) return;
   const ctx = getAudioContext();
   const horizon = ctx.currentTime + 0.15;
   while (nextStepTime < horizon) {
-    const stepIndex = stepCounter % 16;
-    const barIndex = Math.floor(stepCounter / 16) % state.loopBars;
-    if (state.metronome.enabled && stepIndex % 4 === 0) {
-      scheduleMetroClick(ctx, graph, nextStepTime, stepIndex === 0);
-    }
-    INSTRUMENTS.forEach((inst) => {
-      if (state.userGrid[inst.id] && state.userGrid[inst.id][stepIndex]) {
-        playInstrument(ctx, graph, inst.id, nextStepTime, barIndex, stepIndex);
-      }
-    });
+    scheduleStep(ctx, graph, stepCounter, nextStepTime);
     const delayMs = Math.max(0, (nextStepTime - ctx.currentTime) * 1000);
-    const si = stepIndex;
-    setTimeout(() => { highlightStep(si); }, delayMs);
+    const si = stepCounter % 16;
+    const rs = stepCounter % (state.roll.bars * 16);
+    setTimeout(() => { highlightStep(si, rs); }, delayMs);
     stepCounter++;
     nextStepTime += 60.0 / (state.bpm * 4);
   }
   schedulerTimer = setTimeout(scheduleAhead, 25);
 }
 
-function highlightStep(stepIndex) {
-  const cells = document.querySelectorAll(".seq-cell.current");
+function highlightStep(stepIndex, rollStep) {
+  const cells = document.querySelectorAll(".seq-cell.current, .pr-head.current");
   cells.forEach((c) => c.classList.remove("current"));
   document.querySelectorAll(`.seq-cell[data-step="${stepIndex}"]`).forEach((c) => c.classList.add("current"));
+  const head = document.querySelector(`.pr-head[data-step="${rollStep}"]`);
+  if (head) head.classList.add("current");
   const beatInd = document.getElementById("beatInd");
   if (beatInd) beatInd.textContent = (stepIndex % 4 === 0) ? "●" : "·";
 }
@@ -898,17 +966,11 @@ function stopVU() {
 
 function disconnectGraph(g) {
   if (!g) return;
-  try { g.masterGain.disconnect(); } catch (e) {}
-  try { g.dryGain.disconnect(); } catch (e) {}
-  try { g.convolver.disconnect(); } catch (e) {}
-  try { g.reverbGain.disconnect(); } catch (e) {}
-  try { g.delayNode.disconnect(); } catch (e) {}
-  try { g.delayGain.disconnect(); } catch (e) {}
-  try { g.metroGain.disconnect(); } catch (e) {}
+  ["masterGain", "convolver", "reverbReturn", "delayNode", "delayTone", "delayFeedback", "delayReturn", "metroGain"].forEach((k) => {
+    try { g[k].disconnect(); } catch (e) {}
+  });
   Object.values(g.channels || {}).forEach((ch) => {
-    try { ch.gain.disconnect(); } catch (e) {}
-    try { ch.analyser.disconnect(); } catch (e) {}
-    try { ch.panner.disconnect(); } catch (e) {}
+    Object.values(ch).forEach((node) => { try { node.disconnect(); } catch (e) {} });
   });
 }
 
@@ -920,7 +982,6 @@ function startBacking() {
   warmRealSamples(null);
   ensureGrid();
   graph = createGraph(ctx);
-  applyMixerGains();
   isPlaying = true;
   stepCounter = 0;
   nextStepTime = ctx.currentTime + 0.05;
@@ -935,6 +996,7 @@ function stopBacking() {
   if (schedulerTimer) { clearTimeout(schedulerTimer); schedulerTimer = null; }
   stopVU();
   if (graph) { disconnectGraph(graph); graph = null; }
+  document.querySelectorAll(".seq-cell.current, .pr-head.current").forEach((c) => c.classList.remove("current"));
   const btn = document.getElementById("backStart");
   if (btn) btn.textContent = "▶ Iniciar";
 }
@@ -984,38 +1046,13 @@ async function exportTrack() {
   const ctx = new OfflineAudioContext(2, Math.ceil(getAudioContext().sampleRate * (bars * 16 * (60 / (state.bpm * 4)))), getAudioContext().sampleRate);
   // replicate graph on offline ctx
   const offGraph = createGraph(ctx);
-  // apply mixer gains
-  const anySolo = Object.values(state.mixer).some((m) => m.solo);
-  INSTRUMENTS.forEach((inst) => {
-    const m = state.mixer[inst.id];
-    const ch = offGraph.channels[inst.id];
-    let gain = m.volume;
-    if (m.muted) gain = 0;
-    if (anySolo && !m.solo) gain = 0;
-    ch.gain.gain.value = gain;
-    ch.panner.pan.value = m.pan;
-  });
-  offGraph.metroGain.gain.value = state.metronome.enabled ? state.metronome.volume : 0;
-  offGraph.reverbGain.gain.value = state.effects.reverb ? 0.25 : 0;
-  offGraph.delayGain.gain.value = state.effects.delay ? 0.2 : 0;
-  applyEqGains(offGraph.eqLow, offGraph.eqMid, offGraph.eqHigh);
 
   const totalSteps = bars * 16;
   const stepDur = 60.0 / (state.bpm * 4);
   let t = 0.05;
   ensureGrid();
   for (let s = 0; s < totalSteps; s++) {
-    const stepIndex = s % 16;
-    const barIndex = Math.floor(s / 16) % bars;
-    const time = t;
-    if (state.metronome.enabled && stepIndex % 4 === 0) {
-      scheduleMetroClick(ctx, offGraph, time, stepIndex === 0);
-    }
-    INSTRUMENTS.forEach((inst) => {
-      if (state.userGrid[inst.id] && state.userGrid[inst.id][stepIndex]) {
-        playInstrument(ctx, offGraph, inst.id, time, barIndex, stepIndex);
-      }
-    });
+    scheduleStep(ctx, offGraph, s, t);
     t += stepDur;
   }
   const rendered = await ctx.startRendering();
@@ -1067,9 +1104,29 @@ function injectStyles() {
   .seq-cell { height: 22px; border-radius: 3px; background: #2a2a3a; cursor: pointer; border: 1px solid #333; transition: background 0.1s; }
   .seq-cell.on { background: var(--c, #58cc02); }
   .seq-cell.current { outline: 2px solid #fff; }
-  .effects-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
-  .eff-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #555; background: #333; color: #fff; cursor: pointer; font-weight: 700; font-size: 12px; }
-  .eff-btn.active { background: #3498db; }
+  .mix-btn.fx { width: 32px; }
+  .mix-btn.fx.on { background: #3498db; border-color: #3498db; }
+  .mixer-strip.sel { outline: 2px solid var(--c, #3498db); }
+  .fx-panel { margin-top: 10px; padding: 10px; border-radius: 10px; background: var(--card2,#2a2a3a); border-left: 4px solid var(--c, #3498db); }
+  .fx-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 6px; }
+  .fx-head button, .pr-tools button { padding: 5px 10px; border-radius: 8px; border: 1px solid #555; background: #333; color: #fff; cursor: pointer; font-weight: 700; font-size: 12px; }
+  .fx-panel .bp-slider-row span { min-width: 52px; text-align: right; font-size: 12px; font-variant-numeric: tabular-nums; }
+  .seq-row.roll .seq-cell { opacity: .3; pointer-events: none; }
+  .pr-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; font-size: 12px; }
+  .pr-tools select { padding: 5px; border-radius: 8px; border: 1px solid var(--border,#444); background: var(--card2,#2a2a3a); color: var(--text,#fff); }
+  .pr-wrap { overflow: auto; max-height: 440px; border-radius: 8px; border: 1px solid #333; }
+  .pr-grid { display: grid; grid-template-columns: 44px repeat(var(--steps), 22px); width: max-content; }
+  .pr-corner, .pr-head { position: sticky; top: 0; z-index: 2; height: 18px; background: #15151d; font-size: 9px; color: var(--muted,#aaa); display: flex; align-items: center; justify-content: center; }
+  .pr-corner { left: 0; z-index: 4; }
+  .pr-head.current { background: #f1c40f; color: #000; }
+  .pr-key { position: sticky; left: 0; z-index: 3; height: 18px; display: flex; align-items: center; padding-left: 4px; font-size: 10px; font-weight: 700; background: #e9e9ee; color: #111; border-bottom: 1px solid #aaa; cursor: pointer; }
+  .pr-key.blk { background: #26262f; color: #ccc; border-bottom-color: #111; }
+  .pr-cell { height: 18px; background: #22222e; border-right: 1px solid #2b2b39; border-bottom: 1px solid #2b2b39; cursor: pointer; }
+  .pr-cell.blk { background: #1b1b24; }
+  .pr-cell.beat { border-left: 1px solid #44445a; }
+  .pr-cell.bar { border-left: 2px solid #6a6a85; }
+  .pr-cell.on { background: var(--c); border-radius: 4px 0 0 4px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.35); }
+  .pr-cell.tail { background: var(--c); opacity: .65; border-right-color: transparent; }
   .beat-ind { text-align: center; font-size: 28px; margin: 8px 0; }
   `;
   document.head.appendChild(style);
@@ -1152,28 +1209,39 @@ function renderBackingMixer(container) {
           <input type="checkbox" id="metroToggle" ${state.metronome.enabled ? "checked" : ""}>
           <input type="range" id="metroVol" min="0" max="100" value="${Math.round(state.metronome.volume * 100)}">
         </div>
-        <div class="effects-row">
-          <button class="eff-btn ${state.effects.reverb ? "active" : ""}" id="effReverb">Reverb</button>
-          <button class="eff-btn ${state.effects.delay ? "active" : ""}" id="effDelay">Delay</button>
-          <button class="eff-btn ${state.effects.eq ? "active" : ""}" id="effEq">EQ</button>
-        </div>
         <div class="beat-ind" id="beatInd">—</div>
       </div>
 
       <div class="bp-card">
         <h3 style="margin:0 0 8px">🎚 Mixer</h3>
+        <p style="color:var(--muted,#aaa);font-size:12px;margin:0 0 8px">Pulsa <b>FX</b> en un canal para darle reverb, delay y ecualización solo a esa pista.</p>
         <div class="mixer-grid" id="mixerPanel"></div>
+        <div id="fxPanel"></div>
       </div>
 
       <div class="bp-card">
         <h3 style="margin:0 0 8px">🎼 Secuenciador (16 pasos)</h3>
         <div class="seq-grid" id="seqGrid"></div>
       </div>
+
+      <div class="bp-card">
+        <h3 style="margin:0 0 4px">🎹 Piano roll</h3>
+        <p style="color:var(--muted,#aaa);font-size:12px;margin:0 0 8px">Escribe tu propia melodía: toca una casilla para poner una nota y tócala otra vez para quitarla. Mientras una pista usa el piano roll, deja de seguir los acordes del secuenciador.</p>
+        <div class="pr-tools">
+          <label>Pista <select id="prTrack">${ROLL_TRACKS.map((id) => `<option value="${id}" ${id === state.roll.track ? "selected" : ""}>${INSTRUMENTS.find((i) => i.id === id).name}</option>`).join("")}</select></label>
+          <label><input type="checkbox" id="prOn"> Usar piano roll</label>
+          <label>Compases <select id="prBars">${[1, 2, 4].map((b) => `<option value="${b}" ${b === state.roll.bars ? "selected" : ""}>${b}</option>`).join("")}</select></label>
+          <label>Duración <select id="prLen">${[[1, "1/16"], [2, "1/8"], [4, "1/4"], [8, "1/2"], [16, "1 compás"]].map(([v, l]) => `<option value="${v}" ${v === state.roll.len ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+          <button id="prClear" type="button">Borrar notas</button>
+        </div>
+        <div class="pr-wrap" id="prWrap"></div>
+      </div>
     </div>
   `;
 
   renderMixerPanel(container);
   renderSequencer();
+  bindPianoRoll(container);
 
   // Bind transport
   const patSel = container.querySelector("#patSel");
@@ -1210,6 +1278,7 @@ function renderBackingMixer(container) {
   bpmSlider.oninput = () => {
     state.bpm = parseInt(bpmSlider.value, 10);
     bpmVal.textContent = state.bpm;
+    applyMixerGains();
   };
 
   container.querySelector("#tapTempo").onclick = () => {
@@ -1224,6 +1293,7 @@ function renderBackingMixer(container) {
       state.bpm = Math.max(40, Math.min(240, bpm));
       bpmSlider.value = state.bpm;
       bpmVal.textContent = state.bpm;
+      applyMixerGains();
     }
   };
 
@@ -1246,18 +1316,6 @@ function renderBackingMixer(container) {
     applyMixerGains();
   };
 
-  const bindEff = (id, key) => {
-    const btn = container.querySelector(id);
-    btn.onclick = () => {
-      state.effects[key] = !state.effects[key];
-      btn.classList.toggle("active", state.effects[key]);
-      applyMixerGains();
-    };
-  };
-  bindEff("#effReverb", "reverb");
-  bindEff("#effDelay", "delay");
-  bindEff("#effEq", "eq");
-
   container.querySelector("#exportBtn").onclick = () => exportTrack();
 
   // mixer binds
@@ -1272,13 +1330,15 @@ function renderMixerPanel(container) {
   INSTRUMENTS.forEach((inst) => {
     const m = state.mixer[inst.id];
     const strip = document.createElement("div");
-    strip.className = "mixer-strip";
+    strip.className = "mixer-strip" + (state.fxTrack === inst.id ? " sel" : "");
+    strip.style.setProperty("--c", inst.color);
     strip.innerHTML = `
       <div class="mixer-name" style="color:${inst.color}">${inst.name}</div>
       <div class="vu-wrap"><div class="vu-bar" id="vu-${inst.id}"></div></div>
       <div>
         <button class="mix-btn mute ${m.muted ? "active" : ""}" data-id="${inst.id}" data-type="mute">M</button>
         <button class="mix-btn solo ${m.solo ? "active" : ""}" data-id="${inst.id}" data-type="solo">S</button>
+        <button class="mix-btn fx ${hasFx(inst.id) ? "on" : ""}" data-id="${inst.id}" data-type="fx" title="Efectos de esta pista">FX</button>
       </div>
       <label>Vol</label>
       <input type="range" min="0" max="100" value="${Math.round(m.volume * 100)}" class="vol" data-id="${inst.id}">
@@ -1288,6 +1348,60 @@ function renderMixerPanel(container) {
     panel.appendChild(strip);
   });
   bindMixer(container);
+  renderFxPanel(container);
+}
+
+function hasFx(id) {
+  const fx = state.mixer[id].fx;
+  return Object.keys(FX_DEFAULT).some((k) => fx[k] !== FX_DEFAULT[k]);
+}
+
+const FX_CONTROLS = [
+  { key: "reverb", label: "Reverb", min: 0, max: 100, unit: "%" },
+  { key: "delay", label: "Delay", min: 0, max: 100, unit: "%" },
+  { key: "low", label: "Graves", min: -12, max: 12, unit: " dB" },
+  { key: "mid", label: "Medios", min: -12, max: 12, unit: " dB" },
+  { key: "high", label: "Agudos", min: -12, max: 12, unit: " dB" }
+];
+
+function renderFxPanel(container) {
+  const box = container.querySelector("#fxPanel");
+  if (!box) return;
+  const inst = INSTRUMENTS.find((i) => i.id === state.fxTrack) || INSTRUMENTS[0];
+  const fx = state.mixer[inst.id].fx;
+  const fmt = (c, v) => (c.unit === " dB" && v > 0 ? "+" : "") + v + c.unit;
+  box.innerHTML = `
+    <div class="fx-panel" style="--c:${inst.color}">
+      <div class="fx-head">
+        <b>Efectos · <span style="color:${inst.color}">${inst.name}</span></b>
+        <button type="button" id="fxReset">Quitar efectos</button>
+      </div>
+      ${FX_CONTROLS.map((c) => `
+        <div class="bp-slider-row">
+          <label>${c.label}</label>
+          <input type="range" min="${c.min}" max="${c.max}" step="1" value="${fx[c.key]}" data-fx="${c.key}">
+          <span id="fxv-${c.key}">${fmt(c, fx[c.key])}</span>
+        </div>`).join("")}
+    </div>`;
+  const syncFxBtn = () => {
+    const b = container.querySelector(`.mix-btn.fx[data-id="${inst.id}"]`);
+    if (b) b.classList.toggle("on", hasFx(inst.id));
+  };
+  box.querySelectorAll("[data-fx]").forEach((sl) => {
+    const c = FX_CONTROLS.find((x) => x.key === sl.dataset.fx);
+    sl.oninput = () => {
+      fx[c.key] = parseInt(sl.value, 10);
+      box.querySelector("#fxv-" + c.key).textContent = fmt(c, fx[c.key]);
+      applyMixerGains();
+      syncFxBtn();
+    };
+  });
+  box.querySelector("#fxReset").onclick = () => {
+    state.mixer[inst.id].fx = { ...FX_DEFAULT };
+    applyMixerGains();
+    renderFxPanel(container);
+    syncFxBtn();
+  };
 }
 
 function bindMixer(container) {
@@ -1295,6 +1409,14 @@ function bindMixer(container) {
     btn.onclick = () => {
       const id = btn.dataset.id;
       const type = btn.dataset.type;
+      if (type === "fx") {
+        state.fxTrack = id;
+        container.querySelectorAll(".mixer-strip").forEach((st) => {
+          st.classList.toggle("sel", !!st.querySelector(`.mix-btn[data-id="${id}"]`));
+        });
+        renderFxPanel(container);
+        return;
+      }
       if (type === "mute") state.mixer[id].muted = !state.mixer[id].muted;
       if (type === "solo") state.mixer[id].solo = !state.mixer[id].solo;
       btn.classList.toggle("active");
@@ -1327,10 +1449,12 @@ function renderSequencer() {
   grid.appendChild(header);
   INSTRUMENTS.forEach((inst) => {
     const row = document.createElement("div");
-    row.className = "seq-row";
+    const inRoll = !!state.roll.on[inst.id];
+    row.className = "seq-row" + (inRoll ? " roll" : "");
+    if (inRoll) row.title = "Esta pista toca las notas del piano roll";
     const label = document.createElement("div");
     label.className = "seq-label";
-    label.textContent = inst.name;
+    label.textContent = inRoll ? inst.name + " 🎹" : inst.name;
     label.style.color = inst.color;
     row.appendChild(label);
     for (let s = 0; s < 16; s++) {
@@ -1347,6 +1471,103 @@ function renderSequencer() {
     }
     grid.appendChild(row);
   });
+}
+
+/* ----------------------------- Piano roll ----------------------------- */
+const NOTE_NAMES = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+const isBlackKey = (midi) => [1, 3, 6, 8, 10].includes(midi % 12);
+const noteName = (midi) => NOTE_NAMES[midi % 12] + (Math.floor(midi / 12) - 1);
+
+function previewNote(id, midi) {
+  const ctx = getAudioContext();
+  resumeContext(ctx);
+  const ch = graph ? graph.channels[id] : { gain: ctx.destination };
+  voiceNote(ctx, ch, id, ctx.currentTime + 0.01, midi, 0.35);
+}
+
+function renderPianoRoll(container) {
+  const wrap = container.querySelector("#prWrap");
+  if (!wrap) return;
+  const id = state.roll.track;
+  const inst = INSTRUMENTS.find((i) => i.id === id);
+  const [lo, hi] = ROLL_RANGE[id];
+  const steps = state.roll.bars * 16;
+  const notes = state.roll.notes[id];
+  // Casillas ocupadas: inicio de nota y su continuación.
+  const occupied = new Map();
+  notes.forEach((n) => {
+    for (let k = 0; k < n.len && n.step + k < steps; k++) {
+      occupied.set(n.midi + ":" + (n.step + k), k === 0 ? "on" : "tail");
+    }
+  });
+  let html = '<div class="pr-corner"></div>';
+  for (let st = 0; st < steps; st++) {
+    html += `<div class="pr-head" data-step="${st}">${st % 4 === 0 ? (st % 16 === 0 ? (st / 16 + 1) : "·") : ""}</div>`;
+  }
+  for (let midi = hi; midi >= lo; midi--) {
+    const blk = isBlackKey(midi) ? " blk" : "";
+    html += `<div class="pr-key${blk}" data-key="${midi}">${noteName(midi)}</div>`;
+    for (let st = 0; st < steps; st++) {
+      const occ = occupied.get(midi + ":" + st);
+      const line = st % 16 === 0 ? " bar" : (st % 4 === 0 ? " beat" : "");
+      html += `<div class="pr-cell${blk}${line}${occ ? " " + occ : ""}" data-midi="${midi}" data-step="${st}"></div>`;
+    }
+  }
+  wrap.innerHTML = `<div class="pr-grid" style="--steps:${steps};--c:${inst.color}">${html}</div>`;
+  const onBox = container.querySelector("#prOn");
+  if (onBox) onBox.checked = !!state.roll.on[id];
+}
+
+function bindPianoRoll(container) {
+  const ctx = getAudioContext();
+  const refresh = () => { renderPianoRoll(container); renderSequencer(); };
+  const ensureSamples = (id) => {
+    if (id === "piano") preloadGroup("piano", ctx);
+  };
+  container.querySelector("#prTrack").onchange = (e) => {
+    state.roll.track = e.target.value;
+    ensureSamples(state.roll.track);
+    renderPianoRoll(container);
+  };
+  container.querySelector("#prOn").onchange = (e) => {
+    state.roll.on[state.roll.track] = e.target.checked;
+    ensureSamples(state.roll.track);
+    refresh();
+  };
+  container.querySelector("#prBars").onchange = (e) => {
+    state.roll.bars = parseInt(e.target.value, 10);
+    renderPianoRoll(container);
+  };
+  container.querySelector("#prLen").onchange = (e) => {
+    state.roll.len = parseInt(e.target.value, 10);
+  };
+  container.querySelector("#prClear").onclick = () => {
+    state.roll.notes[state.roll.track] = [];
+    state.roll.on[state.roll.track] = false;
+    refresh();
+  };
+  container.querySelector("#prWrap").onclick = (e) => {
+    const id = state.roll.track;
+    const key = e.target.closest(".pr-key");
+    if (key) { previewNote(id, parseInt(key.dataset.key, 10)); return; }
+    const cell = e.target.closest(".pr-cell");
+    if (!cell) return;
+    const midi = parseInt(cell.dataset.midi, 10);
+    const step = parseInt(cell.dataset.step, 10);
+    const notes = state.roll.notes[id];
+    const hit = notes.findIndex((n) => n.midi === midi && step >= n.step && step < n.step + n.len);
+    if (hit >= 0) {
+      notes.splice(hit, 1);
+    } else {
+      const len = Math.min(state.roll.len, state.roll.bars * 16 - step);
+      notes.push({ step, midi, len });
+      previewNote(id, midi);
+      // La primera nota activa el piano roll en la pista.
+      if (!state.roll.on[id]) { state.roll.on[id] = true; ensureSamples(id); renderSequencer(); }
+    }
+    renderPianoRoll(container);
+  };
+  renderPianoRoll(container);
 }
 
 /* ----------------------------- Compat API ----------------------------- */

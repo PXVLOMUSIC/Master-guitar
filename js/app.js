@@ -585,10 +585,10 @@ function renderLearn(v) {
         node.onkeydown = (ev) => { if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); node.click(); } };
       }
       const label = document.createElement("div");
-      label.style.cssText = "font-size:12px;color:var(--muted);text-align:center;max-width:120px";
+      label.className = "node-label";
       label.textContent = l.title;
       const wrap = document.createElement("div");
-      wrap.style.cssText = "display:flex;flex-direction:column;align-items:center;gap:4px";
+      wrap.className = "node-wrap";
       wrap.appendChild(node); wrap.appendChild(label);
       nodes.appendChild(wrap);
     });
@@ -1894,8 +1894,7 @@ function renderProfile(v) {
     <div class="card" style="text-align:center">
       <div class="profile-avatar-wrap">
         <button class="profile-avatar" id="avatarBtn" type="button" aria-label="${avatar ? t("profile.changePhoto") : t("profile.addPhoto")}">
-          ${avatar ? `<img src="${avatar}" alt="Foto de perfil">` : `<span class="profile-avatar__fallback" aria-hidden="true">👤</span>`}
-          <span class="profile-avatar__edit" aria-hidden="true">✎</span>
+          ${avatar ? `<img src="${avatar}" alt="Foto de perfil">` : `<span class="profile-avatar__fallback" aria-hidden="true">👤</span><span class="profile-avatar__edit" aria-hidden="true">✎</span>`}
         </button>
         <div class="profile-avatar-actions">
           <button class="btn btn-secondary btn-sm" id="avatarChange" type="button">${avatar ? t("profile.changePhoto") : t("profile.addPhoto")}</button>

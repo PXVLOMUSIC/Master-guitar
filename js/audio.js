@@ -741,13 +741,21 @@ let earInstrumentId = "guitar";
 /** Timbre de guitarra: "acoustic" | "electric" | "nylon". */
 export function setGuitarTone(tone) {
   guitarTone = { electric: "electric", nylon: "nylon" }[tone] || "guitar";
-  try { preloadGroup(guitarTone, getAudioContext()); } catch (e) {}
+  try { return preloadGroup(guitarTone, getAudioContext()); } catch (e) { return Promise.resolve(false); }
 }
 /** Instrumento de los ejercicios de oído y teoría: "guitar" | "piano". */
 export function setEarInstrument(id) { earInstrumentId = id === "piano" ? "piano" : "guitar"; }
 export function earInstrument() { return earInstrumentId; }
 /** Grupo de muestras que usa ahora la guitarra ("guitar" | "electric" | "nylon"). */
 export function guitarGroup() { return guitarTone; }
+
+// Perfil de síntesis cuando aún no hay muestras: respeta el timbre elegido.
+function synthOpts(opts) {
+  const instrument = (opts && opts.instrument) || "guitar";
+  if (instrument !== "guitar" && instrument !== "acoustic") return opts;
+  const profile = { electric: "electric", nylon: "classical" }[guitarTone];
+  return profile ? Object.assign({}, opts, { instrument: profile }) : opts;
+}
 
 function groupFor(instrument) {
   if (instrument === "guitar" || instrument === "acoustic") return guitarTone;
@@ -841,7 +849,7 @@ export function playTone(freq, duration = 1.2, options = {}) {
   }
 
   // Synth (Karplus-Strong) path.
-  const buffer = generatePluckedString(freq, dur, opts);
+  const buffer = generatePluckedString(freq, dur, synthOpts(opts));
   playBufferSource(ctx, buffer, start, dur, gainLevel, pan, 1);
 }
 
@@ -873,7 +881,7 @@ export function playChord(freqsArray, duration = 1.2, options = {}) {
       playBufferSource(ctx, sampleBankBuffer, start, dur, stringGain, pan, f / sampleBaseFreq);
       return;
     }
-    const buffer = generatePluckedString(f, dur, o);
+    const buffer = generatePluckedString(f, dur, synthOpts(o));
     playBufferSource(ctx, buffer, start, dur, stringGain, pan, 1);
   });
 }
