@@ -107,7 +107,7 @@ async function render(route, params={}) {
     case "tuner": renderTuner(v); break;
     case "practice": renderPractice(v); break;
     case "profile": renderProfile(v); break;
-    case "settings": { const m = await loadSettings(); if (!state.settingsVisited) { state.settingsVisited = true; saveState(state); } m.renderSettings(v); break; }
+    case "settings": { showNav(true); const m = await loadSettings(); if (!state.settingsVisited) { state.settingsVisited = true; saveState(state); } m.renderSettings(v); break; }
     case "dashboard": { const m = await loadSettings(); m.renderDashboard(v); break; }
     default: renderHome(v);
   }
@@ -1921,7 +1921,6 @@ function renderProfile(v) {
     <div class="section-title">${t("profile.panel")}</div>
     <div style="padding:0 16px;display:grid;gap:8px">
       <button class="btn btn-secondary btn-block" id="dashboardBtn">${t("profile.dashboard")}</button>
-      <button class="btn btn-secondary btn-block" id="settingsBtn">${t("profile.settings")}</button>
       <button class="btn btn-secondary btn-block" id="refillBtn">${t("profile.refill")}</button>
       <button class="btn btn-secondary btn-block" id="freezeBtn">${t("profile.freeze")}</button>
       <button class="btn btn-secondary btn-block" id="recordBtn">${t("profile.record")}</button>
@@ -1961,7 +1960,6 @@ function renderProfile(v) {
   };
 
   $("#dashboardBtn").onclick = () => navigate("dashboard");
-  $("#settingsBtn").onclick = () => navigate("settings");
   $("#refillBtn").onclick = () => {
     if (spendGems(50)) { refillHearts(); toast("Corazones rellenados"); renderProfile(view()); renderTopbar(); }
     else toast("Gemas insuficientes");
@@ -2022,7 +2020,7 @@ async function boot() {
   }
   try { applyDocumentLanguage(); } catch (e) {}
   // bottom nav (iconos SVG en lugar de emojis)
-  const NAV_ICONS = { home: "home", learn: "book", tuner: "tuner", practice: "guitar", profile: "user" };
+  const NAV_ICONS = { home: "home", learn: "book", tuner: "tuner", practice: "guitar", profile: "user", settings: "settings" };
   $$("#bottomnav button").forEach(b => {
     const label = b.textContent.replace(/^[^A-Za-zÁÉÍÓÚáéíóúÑñ]+/, "").trim();
     b.innerHTML = `${icon(NAV_ICONS[b.dataset.route] || "guitar", 22)}<span>${label}</span>`;

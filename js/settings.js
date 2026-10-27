@@ -2,7 +2,7 @@
 import { state, saveState, defaultState, resetState } from "./storage.js";
 import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
-import { renderBackendSettings, getStatus, setRealtimeEnabled, isRealtimeEnabled, syncProgress } from "./backend.js";
+import { renderBackendSettings } from "./backend.js";
 import { t } from "./i18n.js";
 import { clearQueue } from "./sync.js";
 import { setGuitarTone, setEarInstrument, playChord, earInstrument } from "./audio.js";
@@ -320,15 +320,6 @@ export function renderSettings(container) {
     </div>
 
     <div class="section-title">${t("settings.accountSocial")}</div>
-    <div class="card" id="connectionStatusCard">
-      <div id="connStatusText" style="font-size:13px;margin-bottom:8px">Cargando estado…</div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-        <button class="btn btn-secondary btn-sm" id="settingsSyncBtn">Sincronizar ahora</button>
-        <label style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700">
-          <input type="checkbox" id="settingsRealtimeToggle"> Tiempo real
-        </label>
-      </div>
-    </div>
     <div id="backendSettings"></div>
 
     <div class="section-title">Créditos de sonido</div>
@@ -358,36 +349,6 @@ export function renderSettings(container) {
   // wire theme
   try { renderBackendSettings(container.querySelector("#backendSettings")); } catch (e) { console.warn(e); }
 
-  // connection status / sync / realtime toggle
-  try {
-    const connText = container.querySelector("#connStatusText");
-    const updateConn = () => {
-      try {
-        const s = getStatus();
-        const label = s.connectionStatus || (s.online ? "connected" : "offline");
-        const color = label === "connected" ? "var(--green)" : (label === "connecting" ? "var(--gold)" : "var(--muted)");
-        if (connText) connText.innerHTML = `Estado: <b style="color:${color}">${label}</b> · Modo: <b>${s.mode}</b> · Cola: <b>${s.queueSize}</b> · ${s.online ? "Online" : "Offline"}`;
-      } catch (e) {}
-    };
-    updateConn();
-    const statusHandler = () => updateConn();
-    window.addEventListener("strumio:status-changed", statusHandler);
-    const syncBtn = container.querySelector("#settingsSyncBtn");
-    if (syncBtn) syncBtn.onclick = async () => {
-      await syncProgress();
-      updateConn();
-      toast("Sincronizado");
-    };
-    const rtToggle = container.querySelector("#settingsRealtimeToggle");
-    if (rtToggle) {
-      rtToggle.checked = isRealtimeEnabled();
-      rtToggle.onchange = () => {
-        setRealtimeEnabled(rtToggle.checked);
-        updateConn();
-        toast(rtToggle.checked ? "Tiempo real activado" : "Tiempo real desactivado");
-      };
-    }
-  } catch (e) { console.warn(e); }
   container.querySelector("#themeSel").onchange = (e) => {
     state.settings.theme = e.target.value;
     saveState(state);
