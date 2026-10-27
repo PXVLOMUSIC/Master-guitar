@@ -2,23 +2,23 @@
   "units": [
     {
       "id": "u1",
-      "title": "Einheit 1 – Erste Laute",
+      "title": "Einheit 1 – Erste Töne",
       "color": "green",
       "lessons": [
         {
           "id": "l1",
-          "title": "Anatomie der Gitarre",
+          "title": "Aufbau der Gitarre",
           "icon": "🎸",
           "xp": 10,
           "steps": [
             {
               "type": "info",
               "title": "Willkommen!",
-              "text": "Die Gitarre hat 6 Saiten, einen Hals mit Bünden und einen Korpus, der den Klang verstärkt. Die Saiten werden von der dünnsten (1., hohes E) bis zur dicksten (6., tiefes E) nummeriert."
+              "text": "Die Gitarre hat 6 Saiten, einen Hals mit Bünden und einen Korpus, der den Klang verstärkt. Die Saiten werden von der dünnsten (1., hohe E-Saite) bis zur dicksten (6., tiefe E-Saite) gezählt."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten hat eine Standardgitarre?",
+              "prompt": "Wie viele Saiten hat eine normale Gitarre?",
               "options": [
                 "4",
                 "5",
@@ -31,10 +31,10 @@
               "type": "quiz",
               "prompt": "Die dünnste Saite (1.) heißt:",
               "options": [
-                "Mi grave",
-                "La",
-                "Re",
-                "Mi agudo"
+                "Tiefe E-Saite",
+                "A",
+                "D",
+                "Hohe E-Saite"
               ],
               "answer": 3
             }
@@ -48,22 +48,22 @@
           "steps": [
             {
               "type": "info",
-              "title": "Sitzende Haltung",
-              "text": "Setz dich gerade hin, stütze die Gitarre auf dem rechten Bein (für Rechtshänder). Der Hals zeigt leicht nach oben. Der Daumen der linken Hand geht hinter den Hals."
+              "title": "Sitzhaltung",
+              "text": "Setz dich aufrecht hin und lege die Gitarre auf das rechte Bein (Rechtshänder). Der Hals zeigt leicht nach oben. Der linke Daumen liegt hinter dem Hals."
             },
             {
               "type": "info",
-              "title": "rechte Hand",
-              "text": "Der Daumen (p), Zeigefinger (i), Mittelfinger (m) und Ringfinger (a) berühren die Saiten. Beginne damit, eine leere Saite mit dem Daumen von oben nach unten zu spielen."
+              "title": "Rechte Hand",
+              "text": "Daumen (p), Zeigefinger (i), Mittelfinger (m) und Ringfinger (a) spielen die Saiten. Zupfe zuerst eine leere Saite mit dem Daumen von oben nach unten."
             },
             {
               "type": "quiz",
-              "prompt": "Wo kommt der Daumen der linken Hand hin?",
+              "prompt": "Wo liegt der linke Daumen?",
               "options": [
-                "Auf dem Mast",
-                "Hinter dem Mast",
-                "Über die Saiten",
-                "Es spielt keine Rolle"
+                "Über dem Hals",
+                "Hinter dem Hals",
+                "Auf den Saiten",
+                "Egal"
               ],
               "answer": 1
             }
@@ -78,14 +78,14 @@
             {
               "type": "info",
               "title": "Stimmung EADGBE",
-              "text": "Von der dicksten bis zur dünnsten Saite: Mi (E) - La (A) - Re (D) - Sol (G) - Si (B) - Mi (E). Merkhilfe: 'Mi Freund Gibt Große Zusätzliche Segnungen'."
+              "text": "Von der dicksten zur dünnsten Saite: E - A - D - G - H - E. Merksatz: 'Eine Alte Dame Geht Heute Einkaufen'."
             },
             {
               "type": "tuner",
               "string": 0,
               "note": "E2",
               "freq": 82.41,
-              "text": "Die 6. Saite stimmen (Mi grave). Spiele die Saite und drehe die Stimmmechanik, bis das Stimmgerät grün zeigt."
+              "text": "Stimme die 6. Saite (tiefes E). Zupfe die Saite und dreh am Wirbel, bis das Stimmgerät grün wird."
             },
             {
               "type": "quiz",
@@ -114,35 +114,35 @@
               "string": 5,
               "note": "E4",
               "freq": 329.63,
-              "text": "Die 1. Saite stimmen (Mi agudo)."
+              "text": "Stimme die 1. Saite (hohes E)."
             }
           ]
         },
         {
           "id": "l4",
-          "title": "Dein erster Klang",
+          "title": "Dein erster Ton",
           "icon": "🎵",
           "xp": 10,
           "steps": [
             {
               "type": "info",
-              "title": "Luft berühren",
-              "text": "Spiele die 1. Saite (die dünnste) mit dem Zeigefinger der rechten Hand. Sie sollte klar und anhaltend klingen. Si greife, drücke näher am Bund.}"
+              "title": "Leere Saiten spielen",
+              "text": "Spiele die 1. Saite (die dünnste) mit dem rechten Zeigefinger. Sie sollte klar und lang klingen. Wenn sie schnarrt, drück näher am Bundstäbchen."
             },
             {
               "type": "demo",
               "title": "Hör zu",
-              "text": "So sollte die 1. Saite im Leerlauf (Mi) klingen.",
+              "text": "So sollte die leere 1. Saite (E) klingen.",
               "freq": 329.63,
               "note": "E4"
             },
             {
               "type": "quiz",
-              "prompt": "Wenn eine Saite dumpf klingt oder schnarrt, was machst du?",
+              "prompt": "Was tust du, wenn eine Saite dumpf klingt oder schnarrt?",
               "options": [
                 "Lauter spielen",
-                "Näher am Bund drücken",
-                "Die Saite wechseln",
+                "Näher am Bundstäbchen drücken",
+                "Saite wechseln",
                 "Höher stimmen"
               ],
               "answer": 1
@@ -151,18 +151,18 @@
         },
         {
           "id": "l5",
-          "title": "Noten auf den ersten Bünden",
+          "title": "Töne in den ersten Bünden",
           "icon": "🎼",
           "xp": 12,
           "steps": [
             {
               "type": "info",
               "title": "Bünde",
-              "text": "Jeder Bund erhöht einen Halbton. Auf der 1. Saite: Bund 0 = Mi, 1 = Fa, 2 = Fa#, 3 = Sol."
+              "text": "Jeder Bund erhöht um einen Halbton. Auf der 1. Saite: Bund 0 = E, 1 = F, 2 = F#, 3 = G."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Halbtöne erhöht ein Bund?",
+              "prompt": "Um wie viele Halbtöne erhöht ein Bund?",
               "options": [
                 "1",
                 "2",
@@ -175,10 +175,10 @@
               "type": "quiz",
               "prompt": "Auf der 1. Saite ist Bund 3:",
               "options": [
-                "Fa",
-                "Fa#",
-                "Sol",
-                "La"
+                "F",
+                "F#",
+                "G",
+                "A"
               ],
               "answer": 2
             }
@@ -199,30 +199,30 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord Em (Mi Moll)",
-              "text": "Setze den Finger 2 auf die 5. Saite im 2. Bund und den Finger 3 auf die 4. Saite im 2. Bund. Schlage die 6 Saiten an.",
+              "title": "Akkord Em (E-Moll)",
+              "text": "Setze Finger 2 auf die 5. Saite, Bund 2, und Finger 3 auf die 4. Saite, Bund 2. Schlage alle 6 Saiten an.",
               "chord": "Em"
             },
             {
               "type": "playChord",
-              "title": "Berühre Em",
-              "text": "Spiele den Akkord Em. Die App erkennt ihn automatisch.",
+              "title": "Spiele Em",
+              "text": "Spiele den Em-Akkord. Die App erkennt ihn automatisch.",
               "expected": "Em"
             },
             {
               "type": "quiz",
-              "prompt": "Welche Finger werden für Em verwendet?",
+              "prompt": "Welche Finger benutzt man für Em?",
               "options": [
                 "1 und 2",
                 "2 und 3",
-                "1,2 und 3",
-                "Nur die 1"
+                "1, 2 und 3",
+                "Nur der 1."
               ],
               "answer": 1
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten werden auf Em gezupft?",
+              "prompt": "Wie viele Saiten schlägt man bei Em an?",
               "options": [
                 "4",
                 "5",
@@ -242,25 +242,25 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord Am (La Moll)",
-              "text": "Finger 1 auf der 2. Saite Bund 1, Finger 2 auf der 4. Saite Bund 2, Finger 3 auf der 3. Saite Bund 2. Schlage 5 Saiten an (nicht die 6.).",
+              "title": "Akkord Am (A-Moll)",
+              "text": "Finger 1 auf der 2. Saite, Bund 1, Finger 2 auf der 4. Saite, Bund 2, Finger 3 auf der 3. Saite, Bund 2. Schlage 5 Saiten an (ohne die 6.).",
               "chord": "Am"
             },
             {
               "type": "quiz",
-              "prompt": "Auf Am, wird die 6. Saite (Mi grave) gespielt?",
+              "prompt": "Spielt man bei Am die 6. Saite (tiefes E)?",
               "options": [
                 "Ja, immer",
-                "Nein, es wird weggelassen",
+                "Nein, sie wird ausgelassen",
                 "Nur mit Barré",
-                "Es kommt darauf an"
+                "Kommt darauf an"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Am"
@@ -274,13 +274,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord Dm (Re Moll)",
-              "text": "Finger 1: 1. Saite Bund 1. Finger 2: 3. Saite Bund 2. Finger 3: 2. Saite Bund 3. Schlage 4 Saiten an.",
+              "title": "Akkord Dm (D-Moll)",
+              "text": "Finger 1: 1. Saite, Bund 1. Finger 2: 3. Saite, Bund 2. Finger 3: 2. Saite, Bund 3. Schlage 4 Saiten an.",
               "chord": "Dm"
             },
             {
               "type": "quiz",
-              "prompt": "Dm ist ein Akkord:",
+              "prompt": "Dm ist ein Akkord in:",
               "options": [
                 "Dur",
                 "Moll",
@@ -291,8 +291,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole Dm langsam und suche nach klarem Klang."
+              "title": "Übung",
+              "text": "Wiederhole Dm langsam und achte auf einen klaren Klang."
             }
           ]
         },
@@ -304,30 +304,30 @@
           "steps": [
             {
               "type": "info",
-              "title": "Langsame Veränderung",
-              "text": "Übe, von Em zu Am und zurück zu wechseln. Bewege die Finger zusammen, nicht einzeln. Ziel: 30 Wechsel in 1 Minute ohne Fehler."
+              "title": "Langsamer Wechsel",
+              "text": "Übe den Wechsel von Em zu Am und zurück. Bewege die Finger gemeinsam, nicht einzeln. Ziel: 30 Wechsel in 1 Minute ohne Fehler."
             },
             {
               "type": "quiz",
               "prompt": "Was ist das Geheimnis schneller Akkordwechsel?",
               "options": [
                 "Lauter spielen",
-                "Die Finger zusammen bewegen",
-                "Die Saiten anschauen",
-                "Verwenden von Kapodaster"
+                "Finger gemeinsam bewegen",
+                "Auf die Saiten schauen",
+                "Barré benutzen"
               ],
               "answer": 1
             },
             {
               "type": "demo",
-              "title": "Hör zu Em",
-              "text": "Referenz: Akkord Em.",
+              "title": "Hör dir Em an",
+              "text": "Referenz: Em-Akkord.",
               "chord": "Em"
             },
             {
               "type": "demo",
-              "title": "Hör zu Am",
-              "text": "Referenz: Akkord Am.",
+              "title": "Hör dir Am an",
+              "text": "Referenz: Am-Akkord.",
               "chord": "Am"
             }
           ]
@@ -340,13 +340,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord E (Mi Dur)",
-              "text": "Finger 2 auf dem 5. Bund der 2. Saite, Finger 3 auf dem 4. Bund der 2. Saite, Finger 1 auf dem 3. Bund der 1. Saite. Schlage die 6 Saiten an.",
+              "title": "Akkord E (E-Dur)",
+              "text": "Finger 2 auf der 5. Saite, Bund 2, Finger 3 auf der 4., Bund 2, Finger 1 auf der 3., Bund 1. Schlage alle 6 Saiten an.",
               "chord": "E"
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten werden auf E gezupft?",
+              "prompt": "Wie viele Saiten schlägt man bei E an?",
               "options": [
                 "4",
                 "5",
@@ -357,8 +357,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "E"
@@ -371,13 +371,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord A (La Dur)",
-              "text": "Finger 1, 2, 3 am 2. Bund der 4., 3. und 2. Saite. Schlage 5 Saiten an (ohne die 6.).",
+              "title": "Akkord A (A-Dur)",
+              "text": "Finger 1, 2, 3 im 2. Bund auf der 4., 3. und 2. Saite. Schlage 5 Saiten an (ohne die 6.).",
               "chord": "A"
             },
             {
               "type": "quiz",
-              "prompt": "Auf A, welche Saite wird weggelassen?",
+              "prompt": "Welche Saite lässt man bei A aus?",
               "options": [
                 "1.",
                 "6.",
@@ -388,8 +388,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "A"
@@ -403,16 +403,16 @@
             {
               "type": "info",
               "title": "Wechsel E-A",
-              "text": "Verwende dieselbe Form wie Em-Am, aber mit einem Finger mehr. Versuche 20 saubere Wechsel in 1 Minute."
+              "text": "Nutze dieselbe Form wie bei Em-Am, aber mit einem Finger mehr. Versuche 20 saubere Wechsel in 1 Minute."
             },
             {
               "type": "quiz",
-              "prompt": "Was hilft, schneller zu wechseln?",
+              "prompt": "Was hilft beim schnelleren Wechseln?",
               "options": [
-                "Die Finger anschauen",
-                "Die Finger zusammen bewegen",
+                "Auf die Finger schauen",
+                "Finger gemeinsam bewegen",
                 "Lauter spielen",
-                "Die Gitarre wechseln"
+                "Gitarre wechseln"
               ],
               "answer": 1
             },
@@ -432,14 +432,14 @@
         },
         {
           "id": "l12",
-          "title": "Überprüfung offener Akkorde I",
+          "title": "Wiederholung offene Akkorde I",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Verteiltes Wiederholen",
-              "text": "Sie kommen zurück Em, Am, E, A. Berühre sie, ohne auf das Diagramm zu schauen."
+              "title": "Verteilte Wiederholung",
+              "text": "Em, Am, E und A kommen wieder. Spiele sie, ohne aufs Diagramm zu schauen."
             },
             {
               "type": "quiz",
@@ -467,14 +467,14 @@
         },
         {
           "id": "l13",
-          "title": "Erstes Lied mit 2 Akkorden",
+          "title": "Erster Song mit 2 Akkorden",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Verwende Em und Am. Schlage jeden Akkord 4 Mal an und wechsle dann. Wiederhole. Du spielst jetzt schon ein Lied!"
+              "title": "Los geht's!",
+              "text": "Nimm Em und Am. Schlage jeden Akkord 4-mal an und wechsle. Wiederhole. Du spielst schon einen Song!"
             },
             {
               "type": "quiz",
@@ -505,7 +505,7 @@
     },
     {
       "id": "u3",
-      "title": "Einheit 3 – Offene Dur-Akkorde (C, G, D)",
+      "title": "Einheit 3 – Offene Durakkorde (C, G, D)",
       "color": "orange",
       "lessons": [
         {
@@ -516,13 +516,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord C (Do Dur)",
-              "text": "Finger 1: 2. Saite Bund 1. Finger 2: 4. Saite Bund 2. Finger 3: 5. Saite Bund 3. Schlage 5 Saiten (ohne die 6.).",
+              "title": "Akkord C (C-Dur)",
+              "text": "Finger 1: 2. Saite, Bund 1. Finger 2: 4. Saite, Bund 2. Finger 3: 5. Saite, Bund 3. Schlage 5 Saiten an (ohne die 6.).",
               "chord": "C"
             },
             {
               "type": "quiz",
-              "prompt": "Auf C, welche Saite wird weggelassen?",
+              "prompt": "Welche Saite lässt man bei C aus?",
               "options": [
                 "1.",
                 "6.",
@@ -533,8 +533,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "C"
@@ -547,13 +547,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord G (Sol Dur)",
-              "text": "Finger 2 auf dem 5. Bund 2, Finger 1 auf dem 2. Bund 3, Finger 3 auf dem 6. Bund 3, Finger 4 auf dem 1. Bund 3. Schlage 6 Saiten an.",
+              "title": "Akkord G (G-Dur)",
+              "text": "Finger 2 auf der 5. Saite, Bund 2, Finger 1 auf der 2., Bund 3, Finger 3 auf der 6., Bund 3, Finger 4 auf der 1., Bund 3. Schlage 6 Saiten an.",
               "chord": "G"
             },
             {
               "type": "quiz",
-              "prompt": "G reißt sich auf mit:",
+              "prompt": "G spielt man mit:",
               "options": [
                 "4 Saiten",
                 "5 Saiten",
@@ -564,8 +564,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "G"
@@ -578,13 +578,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord D (Re Dur)",
-              "text": "Finger 1: 3. Saite Bund 2. Finger 2: 1. Saite Bund 2. Finger 3: 2. Saite Bund 3. Schlage die 4 dünnsten Saiten an.",
+              "title": "Akkord D (D-Dur)",
+              "text": "Finger 1: 3. Saite, Bund 2. Finger 2: 1. Saite, Bund 2. Finger 3: 2. Saite, Bund 3. Schlage die 4 dünnsten Saiten an.",
               "chord": "D"
             },
             {
               "type": "quiz",
-              "prompt": "Auf D, wie viele Saiten werden gezupft?",
+              "prompt": "Wie viele Saiten schlägt man bei D an?",
               "options": [
                 "6",
                 "5",
@@ -595,22 +595,22 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "D"
         },
         {
           "id": "l17",
-          "title": "Änderungen C → G → Am",
+          "title": "Wechsel C → G → Am",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Wechselkette",
-              "text": "Übe C-G-Am-C. Halte das Tempo mit einem Anschlag pro Akkord."
+              "text": "Übe C-G-Am-C. Halte den Rhythmus mit einem Anschlag pro Akkord."
             },
             {
               "type": "quiz",
@@ -645,14 +645,14 @@
         },
         {
           "id": "l18",
-          "title": "Akkordfolge I-V-vi-IV",
+          "title": "Progression I-V-vi-IV",
           "icon": "📐",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Die meistverwendete Progression",
-              "text": "C - G - Am - F. Spiele sie mit einem Akkordanschlag. Es ist die Grundlage von Tausenden von Popsongs."
+              "title": "Die meistgenutzte Progression",
+              "text": "C - G - Am - F. Spiele mit einem Anschlag pro Akkord. Das ist die Basis Tausender Popsongs."
             },
             {
               "type": "demo",
@@ -696,7 +696,7 @@
             },
             {
               "type": "demo",
-              "title": "F (Kapodaster)",
+              "title": "F (Barré)",
               "text": null,
               "chord": "F"
             }
@@ -704,14 +704,14 @@
         },
         {
           "id": "l19",
-          "title": "Dein erstes Lied mit 3 Akkorden",
+          "title": "Dein erster Song mit 3 Akkorden",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Benutze C, G und Am. Schlage jeden Akkord 4 Mal an und wechsle dann. Wiederhole."
+              "title": "Los geht's!",
+              "text": "Nimm C, G und Am. Schlage jeden Akkord 4-mal an und wechsle. Wiederhole."
             },
             {
               "type": "quiz",
@@ -726,8 +726,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -739,12 +739,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Verteiltes Wiederholen",
-              "text": "Zurückkehren Em, Am, E, A, C, G, D. Spiele sie auswendig."
+              "title": "Verteilte Wiederholung",
+              "text": "Em, Am, E, A, C, G und D kommen wieder. Spiele sie auswendig."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten werden auf D gezupft?",
+              "prompt": "Wie viele Saiten schlägt man bei D an?",
               "options": [
                 "6",
                 "5",
@@ -770,72 +770,72 @@
     },
     {
       "id": "u4",
-      "title": "Einheit 4 – F und schnelle Veränderungen",
+      "title": "Einheit 4 – F und schnelle Wechsel",
       "color": "red",
       "lessons": [
         {
           "id": "l21",
-          "title": "Akkord F (Kapodaster)",
+          "title": "Akkord F (Barré)",
           "icon": "F",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
-              "title": "Akkord F (Fa Dur)",
-              "text": "Lege den Finger 1 als Barré am Bund 1 (Saiten 1-6?) und die Finger 2, 3, 4 an den Bünden 2-3. Schlage 6 Saiten an.",
+              "title": "Akkord F (F-Dur)",
+              "text": "Lege Finger 1 als Barré über Bund 1 (Saiten 1–6) und Finger 2, 3, 4 in Bund 2–3. Schlage 6 Saiten an.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F benötigt:",
+              "prompt": "F erfordert:",
               "options": [
-                "Kapodaster",
+                "Barré",
                 "Nur 2 Finger",
-                "Eine Punkteaufzählung",
+                "Einen gezupften Ton",
                 "Stille"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Rat",
-              "text": "Es normal que F am Anfang dumpf klingt. Drücke das Kapodaster mit der Seite des Zeigefingers nahe dem Bundstab."
+              "title": "Tipp",
+              "text": "Es ist normal, dass F anfangs dumpf klingt. Drück das Barré mit der Seite des Zeigefingers, nah am Bundstäbchen."
             }
           ],
           "chord": "F"
         },
         {
           "id": "l107",
-          "title": "F vereinfacht (ohne Kapodaster)",
+          "title": "Vereinfachtes F (ohne Barré)",
           "icon": "F",
           "xp": 16,
           "chord": "F",
           "steps": [
             {
               "type": "info",
-              "title": "F vereinfacht",
-              "text": "Benutze nur die 4 höchsten Saiten: Bünde 2-1-1 (D-G-B-e) ohne komplettes Barré. Klingt ähnlich wie F."
+              "title": "Vereinfachtes F",
+              "text": "Nutze nur die 4 höchsten Saiten: Bünde 2-1-1 (D-G-H-e) ohne volles Barré. Klingt ähnlich wie F."
             },
             {
               "type": "demo",
-              "title": "F vereinfacht",
-              "text": "Tippe auf die vereinfachte Form von F.",
+              "title": "Vereinfachtes F",
+              "text": "Spiele die vereinfachte F-Form.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "Der vereinfachte F vermeidet:",
+              "prompt": "Das vereinfachte F vermeidet:",
               "options": [
-                "Vollständige Cejilla",
+                "Das volle Barré",
                 "Saiten spielen",
-                "Abstimmen",
-                "Der Rhythmus"
+                "Stimmen",
+                "Den Rhythmus"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
+              "title": "Übung",
               "text": "Übe den vereinfachten Wechsel C-F."
             }
           ]
@@ -849,16 +849,16 @@
             {
               "type": "info",
               "title": "Kette",
-              "text": "Übe C-F-G-C. Bewege die Finger zusammen."
+              "text": "Übe C-F-G-C. Bewege die Finger gemeinsam."
             },
             {
               "type": "quiz",
-              "prompt": "Welcher Akkord erfordert einen Kapodaster in dieser Progression?",
+              "prompt": "Welcher Akkord braucht in dieser Progression ein Barré?",
               "options": [
                 "C",
                 "F",
                 "G",
-                "Keine"
+                "Keiner"
               ],
               "answer": 1
             },
@@ -890,37 +890,37 @@
           "steps": [
             {
               "type": "info",
-              "title": "Die Herausforderung von JustinGuitar",
-              "text": "Zähle, wie viele saubere Wechsel Em-Am du in 60 s machst. Übertreffe jeden Tag deinen Rekord."
+              "title": "Die JustinGuitar-Challenge",
+              "text": "Zähle, wie viele saubere Em-Am-Wechsel du in 60 s schaffst. Brich jeden Tag deinen Rekord."
             },
             {
               "type": "quiz",
-              "prompt": "Mindestziel in Woche 1:",
+              "prompt": "Sinnvolles Mindestziel in Woche 1:",
               "options": [
-                "5 Änderungen",
-                "15 Änderungen",
-                "60 Änderungen",
+                "5 Wechsel",
+                "15 Wechsel",
+                "60 Wechsel",
                 "1 Wechsel"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l24",
-          "title": "Lied mit 4 Akkorden",
+          "title": "Song mit 4 Akkorden",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Benutze C-G-Am-F. Schlage jeden Akkord 4 Mal an. Wiederhole. Das ist ein Popsong!"
+              "title": "Los geht's!",
+              "text": "Nimm C-G-Am-F. Schlage jeden Akkord 4-mal an. Wiederhole. Das ist ein Popsong!"
             },
             {
               "type": "quiz",
@@ -935,8 +935,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -948,12 +948,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Verteiltes Wiederholen",
-              "text": "Zurückkehren C, G, Am, F und die Änderungen."
+              "title": "Verteilte Wiederholung",
+              "text": "C, G, Am, F und die Wechsel kommen wieder."
             },
             {
               "type": "quiz",
-              "prompt": "In welchem Akkord wird die 6. Saite weggelassen?",
+              "prompt": "Bei welchem Akkord lässt man die 6. Saite aus?",
               "options": [
                 "G",
                 "C",
@@ -964,8 +964,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -973,7 +973,7 @@
     },
     {
       "id": "u5",
-      "title": "Einheit 5 – Rhythmus und Anschlag",
+      "title": "Einheit 5 – Rhythmus und Schlagmuster",
       "color": "yellow",
       "lessons": [
         {
@@ -984,111 +984,111 @@
           "steps": [
             {
               "type": "info",
-              "title": "Abwärtsschlagen",
-              "text": "Schlage nach unten (Downstroke) mit dem Zeigefinger oder Plektrum und triff alle Saiten des Akkords. Halte den Rhythmus: 1-2-3-4."
+              "title": "Abschlag",
+              "text": "Schlage mit dem Zeigefinger oder Plektrum nach unten über alle Saiten des Akkords. Halte den Rhythmus: 1-2-3-4."
             },
             {
               "type": "quiz",
-              "prompt": "Ein 'Downstroke' ist:",
+              "prompt": "Ein 'Abschlag' ist:",
               "options": [
-                "Aufwärtsschlagen",
-                "Abwärtsschlagen",
-                "Aufzählung",
+                "Aufschlag",
+                "Abschlag",
+                "Anschlag",
                 "Stille"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l27",
-          "title": "Abwärts-Aufwärts-Streich",
+          "title": "Ab- und Aufschlag",
           "icon": "⬆️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Runter und hoch",
-              "text": "Wechsle zwischen Abschlag und Aufschlag: D U D U. Halte die Hand in Bewegung, auch wenn du nicht anschlägst."
+              "title": "Ab und auf",
+              "text": "Wechsle Ab- und Aufschläge: D U D U (D = ab, U = auf). Halte die Hand in Bewegung, auch wenn du nicht anschlägst."
             },
             {
               "type": "quiz",
-              "prompt": "In D U D U, welcher Buchstabe ist 'Aufstrich'?",
+              "prompt": "Welcher Buchstabe ist in D U D U der 'Aufschlag'?",
               "options": [
                 "D",
                 "U",
                 "Beide",
-                "Keine"
+                "Keiner"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l28",
-          "title": "Grundlegende Synkope",
+          "title": "Einfache Synkope",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Synkope",
-              "text": "Betone die schwachen Zeiten: 1 2 3 4 mit einem Aufschlag auf dem 'y' jeder Zeit."
+              "text": "Betone die schwachen Zählzeiten: 1 2 3 4 mit einem Aufschlag auf dem 'und' jeder Zählzeit."
             },
             {
               "type": "quiz",
               "prompt": "Die Synkope betont:",
               "options": [
-                "Starke Zeiten",
-                "Schwache Zeiten",
-                "Stillheiten",
-                "Nur die 1"
+                "Die starken Zählzeiten",
+                "Die schwachen Zählzeiten",
+                "Die Pausen",
+                "Nur der 1."
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l29",
-          "title": "Handdämpfung",
+          "title": "Palm Mute",
           "icon": "🤚",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Handdämpfung",
-              "text": "Stütze die Seite der rechten Hand in der Nähe des Stegs, um zu dämpfen. Es klingt perkussiv und kraftvoll."
+              "title": "Palm Mute",
+              "text": "Lege die Kante der rechten Hand nahe am Steg auf, um abzudämpfen. Klingt perkussiv und kraftvoll."
             },
             {
               "type": "quiz",
-              "prompt": "Das Palm-Muting wird gemacht mit:",
+              "prompt": "Palm Mute macht man mit:",
               "options": [
-                "Linke Hand",
-                "Seite der rechten Hand",
-                "Stachel",
-                "Kapodaster"
+                "Der linken Hand",
+                "Der Kante der rechten Hand",
+                "Dem Plektrum",
+                "Barré"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -1101,52 +1101,52 @@
             {
               "type": "info",
               "title": "Übe langsam",
-              "text": "Spiele einen Akkord pro Zeit bei 60 BPM. Erhöhe das Tempo nur, wenn du 4 Takte hintereinander richtig triffst."
+              "text": "Spiele einen Akkord pro Schlag bei 60 BPM. Erhöhe das Tempo erst, wenn dir 4 Takte am Stück gelingen."
             },
             {
               "type": "quiz",
-              "prompt": "Wann das Tempo erhöhen?",
+              "prompt": "Wann erhöht man das Tempo?",
               "options": [
                 "Wann du willst",
-                "Wenn man 4 Takte hintereinander trifft",
+                "Wenn dir 4 Takte am Stück gelingen",
                 "Nie",
-                "Erst am Ende"
+                "Nur am Ende"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l31",
-          "title": "Balladenmuster",
+          "title": "Balladen-Muster",
           "icon": "🎵",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Muster",
-              "text": "D D U U D U mit weichem Akzent. Ideal für Pop-Balladen."
+              "text": "D D U U D U mit sanfter Betonung. Ideal für Pop-Balladen."
             },
             {
               "type": "quiz",
-              "prompt": "Vorgeschlagenes Balladenmuster:",
+              "prompt": "Empfohlenes Balladen-Muster:",
               "options": [
                 "D D D D",
                 "D U D U",
                 "D D U U D U",
-                "Nur Aufwärtsschläge"
+                "Nur Aufschläge"
               ],
               "answer": 2
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -1154,18 +1154,18 @@
     },
     {
       "id": "u6",
-      "title": "Einheit 6 – Erste Lieder",
+      "title": "Einheit 6 – Erste Songs",
       "color": "pink",
       "lessons": [
         {
           "id": "l32",
-          "title": "Lied: Em und Am",
+          "title": "Song: Em und Am",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "Em-Am: 4 Anschläge pro Akkord, wiederholen."
             },
             {
@@ -1181,21 +1181,21 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l33",
-          "title": "Lied: C, G, Am, F",
+          "title": "Song: C, G, Am, F",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Popprogression C-G-Am-F, 4 Anschläge pro Akkord."
+              "title": "Los geht's!",
+              "text": "Pop-Progression C-G-Am-F, 4 Anschläge pro Akkord."
             },
             {
               "type": "quiz",
@@ -1210,20 +1210,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l34",
-          "title": "Lied: G, D, Em, C",
+          "title": "Song: G, D, Em, C",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "G-D-Em-C, 2 Anschläge pro Akkord."
             },
             {
@@ -1239,20 +1239,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l35",
-          "title": "Lied: D, A, G",
+          "title": "Song: D, A, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "D-A-G, 4 Anschläge pro Akkord."
             },
             {
@@ -1268,20 +1268,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l36",
-          "title": "Lied: Am, F, C, G",
+          "title": "Song: Am, F, C, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "Am-F-C-G, 4 Anschläge pro Akkord."
             },
             {
@@ -1297,20 +1297,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l37",
-          "title": "Lied: E, A, D, G",
+          "title": "Song: E, A, D, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "E-A-D-G, 2 Anschläge pro Akkord."
             },
             {
@@ -1326,20 +1326,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l38",
-          "title": "Lied: Em, G, D, C",
+          "title": "Song: Em, G, D, C",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "Em-G-D-C, 4 Anschläge pro Akkord."
             },
             {
@@ -1355,20 +1355,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l39",
-          "title": "Lied: C, Am, F, G",
+          "title": "Song: C, Am, F, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "C-Am-F-G, 4 Anschläge pro Akkord."
             },
             {
@@ -1384,21 +1384,21 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l40",
-          "title": "Lied: zwei Akkorde (Em-G)",
+          "title": "Song: zwei Akkorde (Em-G)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Em-G abwechselnd in jedem Takt."
+              "title": "Los geht's!",
+              "text": "Em-G, Wechsel in jedem Takt."
             },
             {
               "type": "quiz",
@@ -1413,20 +1413,20 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l41",
-          "title": "Lied: drei Akkorde (C, F, G)",
+          "title": "Song: drei Akkorde (C, F, G)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
+              "title": "Los geht's!",
               "text": "C-F-G, 4 Anschläge pro Akkord."
             },
             {
@@ -1442,8 +1442,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -1463,7 +1463,7 @@
             {
               "type": "demo",
               "title": "Asus2",
-              "text": "Asus2 klingt offen und schwebend. Form: x02200.",
+              "text": "Asus2 klingt offen und schwebend. Griff: x02200.",
               "chord": "Asus2"
             },
             {
@@ -1472,15 +1472,15 @@
               "options": [
                 "Dur",
                 "Moll",
-                "Ausgesetzt",
+                "Vorhalt (sus)",
                 "Vermindert"
               ],
               "answer": 2
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Asus2"
@@ -1494,24 +1494,24 @@
             {
               "type": "demo",
               "title": "Dsus2",
-              "text": "Dsus2 klingt offen. Form: xx0230.",
+              "text": "Dsus2 klingt offen. Griff: xx0230.",
               "chord": "Dsus2"
             },
             {
               "type": "quiz",
-              "prompt": "Dsus2 ersetzt die dritte durch:",
+              "prompt": "Dsus2 ersetzt die Terz durch die:",
               "options": [
-                "Zweite",
-                "Vierte",
-                "Finca",
-                "Siebte"
+                "Sekunde",
+                "Quarte",
+                "Quinte",
+                "Septime"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Dsus2"
@@ -1525,14 +1525,14 @@
             {
               "type": "demo",
               "title": "G7",
-              "text": "G7 fügt Spannung hinzu, um zu C zu lösen. Form: 320001.",
+              "text": "G7 erzeugt Spannung, die sich nach C auflöst. Griff: 320001.",
               "chord": "G7"
             },
             {
               "type": "quiz",
-              "prompt": "G7 ist ein Akkord von:",
+              "prompt": "G7 ist ein Akkord der:",
               "options": [
-                "Tonikum",
+                "Tonika",
                 "Dominant",
                 "Subdominante",
                 "Vermindert"
@@ -1541,8 +1541,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "G7"
@@ -1556,38 +1556,38 @@
             {
               "type": "demo",
               "title": "Cadd9",
-              "text": "Cadd9 klingt hell und modern. Form: x32033.",
+              "text": "Cadd9 klingt hell und modern. Griff: x32033.",
               "chord": "Cadd9"
             },
             {
               "type": "quiz",
-              "prompt": "Cadd9 fügt die Note hinzu:",
+              "prompt": "Cadd9 fügt den Ton hinzu:",
               "options": [
-                "9. (Re)",
-                "7.",
+                "None (D)",
+                "Septime",
                 "6.",
-                "4."
+                "Quarte"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Cadd9"
         },
         {
           "id": "l46",
-          "title": "Verlauf mit Farbe",
+          "title": "Progression mit Farbe",
           "icon": "🎨",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Progression",
-              "text": "C - G - Am - F mit Cadd9 und G7 um Farbe zu geben."
+              "text": "C - G - Am - F mit Cadd9 und G7 für mehr Farbe."
             },
             {
               "type": "demo",
@@ -1597,7 +1597,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Welche Farbakkorde hast du verwendet?",
+              "prompt": "Welche Farbakkorde hast du benutzt?",
               "options": [
                 "Cadd9 und G7",
                 "Em und Am",
@@ -1608,7 +1608,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Welche Farbakkorde hast du verwendet?",
+              "prompt": "Welche Farbakkorde hast du benutzt?",
               "options": [
                 "Cadd9 und G7",
                 "Em und Am",
@@ -1634,50 +1634,50 @@
       "lessons": [
         {
           "id": "l47",
-          "title": "Moll-Pentatonik-Skala",
+          "title": "Moll-Pentatonik",
           "icon": "🎼",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Die Rock-Skala",
-              "text": "Position 1 auf La klein: Bünde 5-8 auf den Saiten 6 bis 1. Es ist die Grundlage für Rock- und Blues-Soli."
+              "text": "Position 1 in A-Moll: Bünde 5–8 auf den Saiten 6 bis 1. Die Basis von Rock- und Blues-Soli."
             },
             {
               "type": "quiz",
               "prompt": "Die Moll-Pentatonik hat:",
               "options": [
-                "5 Noten",
-                "7 Noten",
-                "8 Noten",
-                "12 Noten"
+                "5 Töne",
+                "7 Töne",
+                "8 Töne",
+                "12 Töne"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l48",
-          "title": "Riff einer Saite",
+          "title": "Riff auf einer Saite",
           "icon": "🎸",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Rauch auf dem Wasser",
-              "text": "Spiele auf der 4. Saite: Bünde 0-3-5, 0-3-6-5. Ein ikonisches Riff auf nur einer Saite."
+              "title": "Smoke on the Water",
+              "text": "Spiele auf der 4. Saite: Bünde 0-3-5, 0-3-6-5. Ein legendäres Riff auf nur einer Saite."
             },
             {
               "type": "quiz",
-              "prompt": "Auf welcher Saite wird dieses Riff gespielt?",
+              "prompt": "Auf welcher Saite spielt man dieses Riff?",
               "options": [
                 "6.",
-                "4.",
+                "Quarte",
                 "2.",
                 "1."
               ],
@@ -1685,112 +1685,112 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l49",
-          "title": "Sieben Nationen Armee",
+          "title": "Seven Nation Army",
           "icon": "🎸",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Riff",
-              "text": "Spiele auf der 5. Saite (A): 7-7-10-7-5-3-0 (ungefähr). Ein Riff auf einer einzigen Saite."
+              "text": "Spiele auf der 5. Saite (A): 7-7-10-7-5-3-0 (ungefähr). Ein Riff auf einer Saite."
             },
             {
               "type": "quiz",
-              "prompt": "Dieses Riff wird gespielt in:",
+              "prompt": "Dieses Riff spielt man:",
               "options": [
-                "Eine einzige Saite",
-                "Sechs Saiten",
-                "Mit Kapodaster",
-                "Mit Klopfen"
+                "Auf einer Saite",
+                "Auf sechs Saiten",
+                "Mit Barré",
+                "Mit Tapping"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l50",
-          "title": "Power-Riff (Rauch)",
+          "title": "Power-Riff (Smoke)",
           "icon": "🔥",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Riff mit zwei Saiten",
-              "text": "Füge die 5. Saite hinzu, um das Riff kraftvoller zu machen."
+              "text": "Nimm die 5. Saite dazu, damit das Riff kraftvoller wird."
             },
             {
               "type": "quiz",
-              "prompt": "Ein Power-Riff verwendet:",
+              "prompt": "Ein Power-Riff nutzt:",
               "options": [
-                "Lose Noten",
-                "Wurzel und Quinte",
+                "Einzeltöne",
+                "Grundton und Quinte",
                 "Arpeggios",
-                "Stillheiten"
+                "Pausen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l51",
-          "title": "Dur-Tonleiter (C Dur)",
+          "title": "Dur-Tonleiter (C-Dur)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "C größer",
-              "text": "Do-Re-Mi-Fa-Sol-La-Si-Do. Die Grundlage der Theorie."
+              "title": "C-Dur",
+              "text": "C-D-E-F-G-A-H-C. Die Grundlage der Theorie."
             },
             {
               "type": "quiz",
               "prompt": "Die Dur-Tonleiter hat:",
               "options": [
-                "5 Noten",
-                "7 Noten",
-                "8 Noten",
-                "12 Noten"
+                "5 Töne",
+                "7 Töne",
+                "8 Töne",
+                "12 Töne"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l52",
-          "title": "Tonleitern wiederholen",
+          "title": "Wiederholung Skalen",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Die Moll-Pentatonik und C Dur kehren zurück."
+              "title": "Wiederholung",
+              "text": "Zurück zur Moll-Pentatonik und zu C-Dur."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Töne hat die pentatonische Skala?",
+              "prompt": "Wie viele Töne hat die Pentatonik?",
               "options": [
                 "5",
                 "7",
@@ -1801,8 +1801,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -1815,30 +1815,30 @@
       "lessons": [
         {
           "id": "l53",
-          "title": "Grundlegendes Arpeggio",
+          "title": "Einfaches Arpeggio",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Arpeggio",
-              "text": "Spiele die Akkordnoten eine nach der anderen: p i m a m i (6-4-3-2-3-4)."
+              "text": "Spiele die Akkordtöne einzeln: p i m a m i (6-4-3-2-3-4)."
             },
             {
               "type": "quiz",
               "prompt": "Ein Arpeggio ist:",
               "options": [
-                "Schlaggitarre",
-                "Einzeln gespielte Akkordnoten",
-                "Stille",
-                "Handdämpfung"
+                "Ein Schlagmuster",
+                "Einzeln gespielte Akkordtöne",
+                "Eine Pause",
+                "Palm Mute"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -1851,7 +1851,7 @@
             {
               "type": "demo",
               "title": "Arpeggio C",
-              "text": "Spiele C arpeggierend auf den Saiten 5-4-3-2-1.",
+              "text": "Spiele C als Arpeggio über die Saiten 5-4-3-2-1.",
               "chord": "C"
             },
             {
@@ -1867,8 +1867,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "C"
@@ -1882,7 +1882,7 @@
             {
               "type": "demo",
               "title": "Arpeggio Am",
-              "text": "Spielt Am in Arpeggien.",
+              "text": "Spiele Am als Arpeggio.",
               "chord": "Am"
             },
             {
@@ -1898,67 +1898,67 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Am"
         },
         {
           "id": "l56",
-          "title": "Fortgeschrittenes Palm-Muting",
+          "title": "Fortgeschrittenes Palm Mute",
           "icon": "🤚",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Handdämpfung",
-              "text": "Kombiniere Palm Mute mit Anschlag für Rocksound."
+              "title": "Palm Mute",
+              "text": "Kombiniere Palm Mute mit Schlagmuster für einen Rock-Sound."
             },
             {
               "type": "quiz",
-              "prompt": "Das Palm-Mute wird häufig verwendet in:",
+              "prompt": "Palm Mute wird oft genutzt in:",
               "options": [
                 "Balladen",
                 "Rock/Metal",
-                "Klassisch",
+                "Klassik",
                 "Flamenco"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l57",
-          "title": "Arpeggios wiederholen",
+          "title": "Wiederholung Arpeggios",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Es kehren Arpeggios von C und Am zurück."
+              "title": "Wiederholung",
+              "text": "Zurück zu den Arpeggios von C und Am."
             },
             {
               "type": "quiz",
-              "prompt": "Ein Arpeggio wird gespielt:",
+              "prompt": "Ein Arpeggio spielt man:",
               "options": [
-                "Alle auf einmal",
-                "Eine nach der anderen",
-                "Mit Kapodaster",
-                "Schweigend"
+                "Alles auf einmal",
+                "Ton für Ton",
+                "Mit Barré",
+                "Leise"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -1966,26 +1966,26 @@
     },
     {
       "id": "u10",
-      "title": "Einheit 10 – Akkorde der siebten",
+      "title": "Einheit 10 – Septakkorde",
       "color": "indigo",
       "lessons": [
         {
           "id": "l58",
-          "title": "Maj7-Akkord (Cmaj7)",
+          "title": "Akkord maj7 (Cmaj7)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "maj7",
-              "text": "Cmaj7 klingt jazzig und weich. Füge die große Septime zu C hinzu."
+              "text": "Cmaj7 klingt jazzig und weich. Fügt C die große Septime hinzu."
             },
             {
               "type": "quiz",
               "prompt": "maj7 klingt:",
               "options": [
-                "Spannung",
-                "Sanft/Jazz",
+                "Gespannt",
+                "Weich/jazzig",
                 "Traurig",
                 "Aggressiv"
               ],
@@ -1993,8 +1993,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -2007,42 +2007,42 @@
             {
               "type": "info",
               "title": "m7",
-              "text": "Am7 klingt sanft und traurig. Füge dem Am die kleine Septime hinzu."
+              "text": "Am7 klingt weich und traurig. Fügt Am die kleine Septime hinzu."
             },
             {
               "type": "quiz",
-              "prompt": "m7 wird verwendet in:",
+              "prompt": "m7 nutzt man im:",
               "options": [
-                "Harter Rock",
+                "Hard Rock",
                 "Jazz/Pop",
-                "Metall",
+                "Metal",
                 "Flamenco"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l60",
-          "title": "Dom7-Akkord (G7)",
+          "title": "Akkord dom7 (G7)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "dom7",
-              "text": "G7 erzeugt Spannung, um C zu lösen. Du hast es schon als G7 gesehen."
+              "text": "G7 erzeugt Spannung, die sich nach C auflöst. Du kennst ihn schon als G7."
             },
             {
               "type": "quiz",
-              "prompt": "dom7 löst sich auf zu:",
+              "prompt": "dom7 löst sich auf nach:",
               "options": [
-                "Tonikum",
+                "Tonika",
                 "Dominant",
                 "Subdominante",
                 "Nichts"
@@ -2051,28 +2051,28 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l61",
-          "title": "ii-V-I Progression",
+          "title": "Progression ii-V-I",
           "icon": "📐",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "ii-V-I",
-              "text": "Dm7 - G7 - Cmaj7. Die Jazzprogression par excellence."
+              "text": "Dm7 - G7 - Cmaj7. Die Jazz-Progression schlechthin."
             },
             {
               "type": "quiz",
               "prompt": "ii-V-I ist typisch für:",
               "options": [
                 "Jazz",
-                "Metall",
+                "Metal",
                 "Punk",
                 "Reggae"
               ],
@@ -2080,25 +2080,25 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l62",
-          "title": "Siebtes Wiederholen",
+          "title": "Wiederholung Septakkorde",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Sie kommen wieder maj7, m7, dom7."
+              "title": "Wiederholung",
+              "text": "Zurück zu maj7, m7 und dom7."
             },
             {
               "type": "quiz",
-              "prompt": "Welcher Akkord ist Dom7?",
+              "prompt": "Welcher Akkord ist dom7?",
               "options": [
                 "Cmaj7",
                 "Am7",
@@ -2109,8 +2109,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -2118,55 +2118,55 @@
     },
     {
       "id": "u11",
-      "title": "Einheit 11 – Akkorde mit Barre (F, Bm)",
+      "title": "Einheit 11 – Barré-Akkorde (F, Bm)",
       "color": "red",
       "lessons": [
         {
           "id": "l63",
-          "title": "F mit vollständigem Kapodaster",
+          "title": "F mit vollem Barré",
           "icon": "F",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
-              "title": "F fegt",
-              "text": "Kapodaster am Bund 1, Finger 2-4 auf den Bünden 2-3. Schlage 6 Saiten an.",
+              "title": "F mit Barré",
+              "text": "Barré im 1. Bund, Finger 2–4 in Bund 2–3. Schlage 6 Saiten an.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F Barre erfordert einen Kapodaster bei:",
+              "prompt": "F mit Barré braucht ein Barré im:",
               "options": [
-                "Bund 1",
-                "Bund 2",
-                "Bund 3",
-                "Bund 5"
+                "1. Bund",
+                "2. Bund",
+                "3. Bund",
+                "5. Bund"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "F"
         },
         {
           "id": "l64",
-          "title": "Bm mit Kapodaster",
+          "title": "Bm mit Barré",
           "icon": "Bm",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
               "title": "Bm",
-              "text": "Kapodaster am 2. Bund, Form von Am verschoben.",
+              "text": "Barré im 2. Bund, verschobene Am-Form.",
               "chord": "Bm"
             },
             {
               "type": "quiz",
-              "prompt": "Bm ist ein Akkord:",
+              "prompt": "Bm ist ein Akkord in:",
               "options": [
                 "Dur",
                 "Moll",
@@ -2177,80 +2177,80 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Bm"
         },
         {
           "id": "l65",
-          "title": "Änderungen F → Bm",
+          "title": "Wechsel F → Bm",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Wechsel",
-              "text": "Übe F-Bm. Bewege den Kapodaster als Einheit."
+              "text": "Übe F-Bm. Bewege das Barré als Block."
             },
             {
               "type": "quiz",
-              "prompt": "Das Geheimnis des Wechsels mit Kapodaster:",
+              "prompt": "Das Geheimnis beim Wechseln mit Barré:",
               "options": [
                 "Finger einzeln bewegen",
-                "Die Kapodaster als Block bewegen",
+                "Das Barré als Block bewegen",
                 "Lauter spielen",
-                "Schauen"
+                "Hinschauen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l66",
-          "title": "Transposition mit Kapodaster",
+          "title": "Transponieren mit Kapodaster",
           "icon": "📐",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Chef",
-              "text": "Der Kapodaster (Capo) ermöglicht es, dieselbe Form in einer anderen Tonart zu spielen."
+              "title": "Kapodaster",
+              "text": "Mit dem Kapodaster spielst du dieselbe Griffform in einer anderen Tonart."
             },
             {
               "type": "quiz",
-              "prompt": "Ein Kopf dient zu:",
+              "prompt": "Der Kapodaster dient dazu:",
               "options": [
-                "Abstimmen",
-                "Den Ton ändern, ohne die Form zu ändern",
-                "Beschleunigen",
-                "Stummschalten"
+                "Stimmen",
+                "Die Tonart zu wechseln, ohne die Griffform zu ändern",
+                "Schneller zu werden",
+                "Abzudämpfen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l67",
-          "title": "Verlängerungsklemme durchgehen",
+          "title": "Wiederholung Barré",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "F und Bm kommen zurück."
+              "title": "Wiederholung",
+              "text": "F und Bm kommen wieder."
             },
             {
               "type": "quiz",
@@ -2265,8 +2265,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -2274,55 +2274,55 @@
     },
     {
       "id": "u12",
-      "title": "Einheit 12 – Power-Akkorde",
+      "title": "Einheit 12 – Powerchords",
       "color": "black",
       "lessons": [
         {
           "id": "l68",
-          "title": "Power-Akkord E5",
+          "title": "Powerchord E5",
           "icon": "E5",
           "xp": 18,
           "steps": [
             {
               "type": "demo",
               "title": "E5",
-              "text": "Wurzel und Quinte: Bünde 0-2-2 auf den Saiten 6-5-4.",
+              "text": "Grundton und Quinte: Bünde 0-2-2 auf den Saiten 6-5-4.",
               "chord": "E5"
             },
             {
               "type": "quiz",
-              "prompt": "Ein Power-Akkord hat:",
+              "prompt": "Ein Powerchord hat:",
               "options": [
-                "Wurzel und Terz",
-                "Wurzel und Quinte",
-                "Nur Wurzel",
-                "Wurzel und siebte"
+                "Grundton und Terz",
+                "Grundton und Quinte",
+                "Nur den Grundton",
+                "Grundton und Septime"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "E5"
         },
         {
           "id": "l69",
-          "title": "Power-Akkord A5",
+          "title": "Powerchord A5",
           "icon": "A5",
           "xp": 18,
           "steps": [
             {
               "type": "demo",
               "title": "A5",
-              "text": "Wurzel und Quinte: x022xx.",
+              "text": "Grundton und Quinte: x022xx.",
               "chord": "A5"
             },
             {
               "type": "quiz",
-              "prompt": "A5 wird gespielt in:",
+              "prompt": "A5 spielt man auf:",
               "options": [
                 "Saiten 5-4-3",
                 "Saiten 6-5-4",
@@ -2333,96 +2333,96 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "A5"
         },
         {
           "id": "l70",
-          "title": "Riff aus Power-Akkorden",
+          "title": "Powerchord-Riff",
           "icon": "🔥",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Riff",
-              "text": "E5 - A5 - B5 (simuliert) mit Palm-Mute."
+              "text": "E5 - A5 - B5 (simuliert) mit Palm Mute."
             },
             {
               "type": "quiz",
-              "prompt": "Die Powerchords werden verwendet in:",
+              "prompt": "Powerchords nutzt man im:",
               "options": [
                 "Jazz",
                 "Rock/Metal",
-                "Klassisch",
+                "Klassik",
                 "Flamenco"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l71",
-          "title": "Bewegung am Mast",
+          "title": "Bewegung über das Griffbrett",
           "icon": "📐",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Bewegung",
-              "text": "Dieselbe Art von Powerchord bewegt sich über das Griffbrett."
+              "text": "Dieselbe Powerchord-Form wandert über das Griffbrett."
             },
             {
               "type": "quiz",
-              "prompt": "Um die Tonhöhe zu erhöhen:",
+              "prompt": "Um höher zu klingen:",
               "options": [
-                "Teller abräumen",
-                "Töpfe hochstellen",
+                "Bünde abwärts",
+                "Bünde aufwärts",
                 "Gitarre wechseln",
-                "Kapuze benutzen"
+                "Kapodaster benutzen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l72",
-          "title": "Powerchord-Übersicht",
+          "title": "Wiederholung Powerchords",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "E5 und A5 kommen zurück."
+              "title": "Wiederholung",
+              "text": "E5 und A5 kommen wieder."
             },
             {
               "type": "quiz",
               "prompt": "Was ist ein Powerchord?",
               "options": [
-                "Dur-Akkord",
-                "Wurzel+fünfte",
+                "Durakkord",
+                "Grundton+Quinte",
                 "Mollakkord",
-                "Siebte"
+                "Septime"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -2442,168 +2442,168 @@
             {
               "type": "info",
               "title": "Hammer-on",
-              "text": "Schlage mit dem Finger auf einen Bund, ohne erneut zu zupfen. Es klingt gebunden."
+              "text": "Schlage einen Bund mit dem Finger an, ohne erneut anzuschlagen. Klingt gebunden."
             },
             {
               "type": "quiz",
-              "prompt": "Hammer-on wird gemacht mit:",
+              "prompt": "Ein Hammer-on macht man mit:",
               "options": [
-                "rechte Hand",
-                "Linke Hand",
-                "Stachel",
-                "Kapodaster"
+                "Rechte Hand",
+                "Der linken Hand",
+                "Dem Plektrum",
+                "Barré"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l74",
-          "title": "Abziehen",
+          "title": "Pull-off",
           "icon": "🪝",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Abziehen",
-              "text": "Zieh am Finger, um die tiefere Note zu spielen, ohne zu schlagen."
+              "title": "Pull-off",
+              "text": "Zieh den Finger ab, damit der tiefere Ton ohne Anschlag klingt."
             },
             {
               "type": "quiz",
-              "prompt": "Pull-off ist das Gegenteil von:",
+              "prompt": "Der Pull-off ist das Gegenteil vom:",
               "options": [
-                "Biegung",
+                "Bend",
                 "Hammer-on",
-                "Folie",
-                "Handdämpfung"
+                "Slide",
+                "Palm Mute"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l75",
-          "title": "Biegung",
+          "title": "Bend",
           "icon": "↩️",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Biegung",
-              "text": "Drücken Sie die Saite nach oben, um den Ton zu erhöhen (Halbton oder Ganzton)."
+              "title": "Bend",
+              "text": "Drück die Saite nach oben, um die Tonhöhe zu erhöhen (Halbton oder Ganzton)."
             },
             {
               "type": "quiz",
-              "prompt": "Ein Bogen erhöht den Ton:",
+              "prompt": "Ein Bend erhöht die Tonhöhe um:",
               "options": [
-                "Es ändert sich nicht",
-                "Halbton oder Ton",
-                "Senke den Ton",
-                "Stille"
+                "Gar nicht",
+                "Einen Halb- oder Ganzton",
+                "Senkt die Tonhöhe",
+                "Die Pausen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l76",
-          "title": "Folie",
+          "title": "Slide",
           "icon": "➡️",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Folie",
-              "text": "Streiche mit dem Finger über die Saite, ohne ihn zu heben."
+              "title": "Slide",
+              "text": "Gleite mit dem Finger über die Saite, ohne ihn anzuheben."
             },
             {
               "type": "quiz",
               "prompt": "Slide bedeutet:",
               "options": [
-                "Schlagen",
-                "Wischen",
-                "Werfen",
-                "Dämpfen"
+                "Anschlagen",
+                "Slide",
+                "Ziehen",
+                "Abzudämpfen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l77",
-          "title": "Gebunden",
+          "title": "Legato",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Gebunden",
-              "text": "Kombiniere Hammer-On und Pull-Off, um flüssig zu spielen."
+              "title": "Legato",
+              "text": "Kombiniert Hammer-on und Pull-off für fließendes Spiel."
             },
             {
               "type": "quiz",
-              "prompt": "Legato verwendet:",
+              "prompt": "Legato nutzt:",
               "options": [
                 "Hammer-on und Pull-off",
-                "Nur Anschlag",
-                "Nur Biegungen",
-                "Handdämpfung"
+                "Nur Schlagmuster",
+                "Nur Bends",
+                "Palm Mute"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l78",
-          "title": "Übe Techniken",
+          "title": "Wiederholung Techniken",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Hammer-on, Pull-off, Bend, Slide kommen zurück."
+              "title": "Wiederholung",
+              "text": "Hammer-on, Pull-off, Bend und Slide kommen wieder."
             },
             {
               "type": "quiz",
-              "prompt": "Welche Technik hebt den Ton, indem sie die Saite drückt?",
+              "prompt": "Welche Technik erhöht die Tonhöhe durch Drücken der Saite?",
               "options": [
                 "Hammer-on",
-                "Abziehen",
-                "Biegung",
-                "Folie"
+                "Pull-off",
+                "Bend",
+                "Slide"
               ],
               "answer": 2
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -2611,23 +2611,23 @@
     },
     {
       "id": "u14",
-      "title": "Einheit 14 – Grundlegender Fingerstyle",
+      "title": "Einheit 14 – Fingerstyle-Grundlagen",
       "color": "green",
       "lessons": [
         {
           "id": "l79",
-          "title": "Position p-i-m-a",
+          "title": "Haltung p-i-m-a",
           "icon": "✋",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Finger",
-              "text": "Daumen (p) tiefe Saiten, Zeigefinger (i), Mittelfinger (m), Ringfinger (a) hohe Saiten."
+              "text": "Daumen (p) auf den Basssaiten, Zeige- (i), Mittel- (m) und Ringfinger (a) auf den Diskantsaiten."
             },
             {
               "type": "quiz",
-              "prompt": "Welcher Finger berührt die Basssaiten?",
+              "prompt": "Welcher Finger spielt die Basssaiten?",
               "options": [
                 "i",
                 "m",
@@ -2638,8 +2638,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -2652,36 +2652,36 @@
             {
               "type": "info",
               "title": "Muster",
-              "text": "p auf der 6., i auf der 3., m auf der 2., a auf der 1. Wiederholen."
+              "text": "p auf der 6., i auf der 3., m auf der 2., a auf der 1. Saite. Wiederholen."
             },
             {
               "type": "quiz",
-              "prompt": "Muster p-i-m-a verwendet:",
+              "prompt": "Das Muster p-i-m-a nutzt:",
               "options": [
                 "4 Finger",
                 "2 Finger",
                 "1 Finger",
-                "Stachel"
+                "Dem Plektrum"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l81",
-          "title": "Fingerstyle auf C",
+          "title": "Fingerstyle in C",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "demo",
               "title": "Fingerstyle C",
-              "text": "Arpegia C mit p-i-m-a.",
+              "text": "Spiele C als Arpeggio mit p-i-m-a.",
               "chord": "C"
             },
             {
@@ -2697,22 +2697,22 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "C"
         },
         {
           "id": "l82",
-          "title": "Fingerstyle auf Am",
+          "title": "Fingerstyle in Am",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "demo",
               "title": "Fingerstyle Am",
-              "text": "Arpegia Am mit p-i-m-a.",
+              "text": "Spiele Am als Arpeggio mit p-i-m-a.",
               "chord": "Am"
             },
             {
@@ -2728,38 +2728,38 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Am"
         },
         {
           "id": "l83",
-          "title": "Fingerstyle-Überprüfung",
+          "title": "Wiederholung Fingerstyle",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Der Boss p-i-m-a kehrt zurück."
+              "title": "Wiederholung",
+              "text": "Das Muster p-i-m-a kommt wieder."
             },
             {
               "type": "quiz",
-              "prompt": "Fingerstyle wird gespielt mit:",
+              "prompt": "Fingerstyle spielt man mit:",
               "options": [
-                "Stachel",
+                "Dem Plektrum",
                 "Finger",
-                "Kapodaster",
+                "Barré",
                 "Metronom"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -2772,30 +2772,30 @@
       "lessons": [
         {
           "id": "l84",
-          "title": "Mit der Pentatonik improvisieren",
+          "title": "Improvisieren mit der Pentatonik",
           "icon": "🎼",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Improvisation",
-              "text": "Verwende die Moll-Pentatonik über ein Backing in Am. Spiele Noten der Skala mit Rhythmus."
+              "text": "Nutze die Moll-Pentatonik über einer Begleitung in Am. Spiele Skalentöne rhythmisch."
             },
             {
               "type": "quiz",
-              "prompt": "Um zu improvisieren, brauchst du:",
+              "prompt": "Zum Improvisieren brauchst du:",
               "options": [
                 "Eine Skala",
-                "Ein Akkord",
-                "Stille",
-                "Nichts"
+                " Einen Akkord",
+                " Stille",
+                " Nichts"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -2808,23 +2808,23 @@
             {
               "type": "info",
               "title": "Ionisch",
-              "text": "Es ist die Dur-Tonleiter. Sie klingt hell und stabil."
+              "text": "Das ist die Dur-Tonleiter. Klingt hell und stabil."
             },
             {
               "type": "quiz",
               "prompt": "Ionisch ist:",
               "options": [
                 "Dur-Tonleiter",
-                "Molltonleiter",
-                "Pentatonisch",
+                "Moll-Tonleiter",
+                "Pentatonik",
                 "Blues"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -2836,24 +2836,24 @@
           "steps": [
             {
               "type": "info",
-              "title": "Wind-",
-              "text": "Es ist die natürliche Molltonleiter. Sie klingt traurig."
+              "title": "Äolisch",
+              "text": "Das ist die natürliche Moll-Tonleiter. Klingt traurig."
             },
             {
               "type": "quiz",
-              "prompt": "Wind-",
+              "prompt": "Äolisch ist:",
               "options": [
                 "Dur",
-                "natürliches Moll",
-                "Pentatonisch",
+                "Natürliches Moll",
+                "Pentatonik",
                 "Blues"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -2870,48 +2870,48 @@
             },
             {
               "type": "quiz",
-              "prompt": "Mixolydisch wird verwendet in:",
+              "prompt": "Mixolydisch nutzt man im:",
               "options": [
                 "Jazz/Blues",
-                "Klassisch",
-                "Extremer Metal",
+                "Klassik",
+                "Extreme Metal",
                 "Flamenco"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l88",
-          "title": "Modi wiederholen",
+          "title": "Wiederholung Modi",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Sie kehren zurück ionisch, äolisch, mixolydisch."
+              "title": "Wiederholung",
+              "text": "Ionisch, Äolisch und Mixolydisch kommen wieder."
             },
             {
               "type": "quiz",
               "prompt": "Welcher Modus ist Dur mit kleiner Septime?",
               "options": [
                 "Ionisch",
-                "Wind-",
+                "Äolisch",
                 "Mixolydisch",
-                "Doric"
+                "Dorisch"
               ],
               "answer": 2
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -2930,8 +2930,8 @@
           "steps": [
             {
               "type": "info",
-              "title": "Mischen",
-              "text": "Terzmuster: 1 2 3 mit Akzent. Verwenden Sie die Moll-Pentatonik."
+              "title": "Shuffle",
+              "text": "Ternäres Muster: 1 2 3 mit Betonung. Nutzt die Moll-Pentatonik."
             },
             {
               "type": "quiz",
@@ -2939,73 +2939,73 @@
               "options": [
                 "Binär",
                 "Ternär",
-                "Stille",
+                "Eine Pause",
                 "Nur Akkorde"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l90",
-          "title": "Rock: Power-Akkorde",
+          "title": "Rock: Powerchords",
           "icon": "🔥",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Felsen",
+              "title": "Rock",
               "text": "Powerchords mit Verzerrung und Palm Mute."
             },
             {
               "type": "quiz",
-              "prompt": "Rock verwendet viel:",
+              "prompt": "Rock nutzt viel:",
               "options": [
-                "Power-Akkorde",
+                "Powerchords",
                 "Jazz-Arpeggios",
                 "Flamenco",
-                "Klassisch"
+                "Klassik"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l91",
-          "title": "Pop: Anschlag",
+          "title": "Pop: Schlagmuster",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Pop",
-              "text": "Sanftes Abwärts-Aufwärts-Strumming mit Kapodaster."
+              "text": "Sanftes Ab-Auf-Schlagmuster mit Kapodaster."
             },
             {
               "type": "quiz",
-              "prompt": "Pop verwendet Progressionen:",
+              "prompt": "Pop nutzt Progressionen:",
               "options": [
                 "I-V-vi-IV",
-                "Nur dissonant",
+                "Nur dissonante",
                 "Nur Moll",
-                "Keine"
+                "Keiner"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -3018,42 +3018,42 @@
             {
               "type": "info",
               "title": "Rumba",
-              "text": "Rumba-catalana-Muster mit Schlagzeug auf der Snare."
+              "text": "Katalanisches Rumba-Muster mit Perkussion auf dem Korpus."
             },
             {
               "type": "quiz",
-              "prompt": "Die Rumba ist typisch für:",
+              "prompt": "Rumba ist typisch für:",
               "options": [
                 "Jazz",
-                "Hispano-Pop",
-                "Metall",
-                "Klassisch"
+                "Hispanischen Pop",
+                "Metal",
+                "Klassik"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l93",
-          "title": "Metall: Galopp",
+          "title": "Metal: Gallop",
           "icon": "🔥",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Galopp",
-              "text": "Schnelle Triolen mit Palm-Mute."
+              "title": "Gallop",
+              "text": "Schnelle Triolen mit Palm Mute."
             },
             {
               "type": "quiz",
-              "prompt": "Der Galopp ist typisch für:",
+              "prompt": "Gallop ist typisch für:",
               "options": [
-                "Metall",
+                "Metal",
                 "Jazz",
                 "Blues",
                 "Pop"
@@ -3062,28 +3062,28 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l94",
-          "title": "Jazz: Walking-Bass",
+          "title": "Jazz: Walking Bass",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Laufender Bass",
-              "text": "Unter dem, der die Noten der Skala entlanggeht."
+              "title": "Walking bass",
+              "text": "Ein Bass, der durch die Skalentöne läuft."
             },
             {
               "type": "quiz",
-              "prompt": "Walking-Bass wird verwendet in:",
+              "prompt": "Walking Bass nutzt man im:",
               "options": [
                 "Jazz",
-                "Metall",
+                "Metal",
                 "Punk",
                 "Reggae"
               ],
@@ -3091,37 +3091,37 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l95",
-          "title": "Klassisch: Arpeggio",
+          "title": "Klassik: Arpeggio",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Klassisch",
-              "text": "Arpeggios mit p-i-m-a und korrekter Position."
+              "title": "Klassik",
+              "text": "Arpeggios mit p-i-m-a und korrekter Haltung."
             },
             {
               "type": "quiz",
-              "prompt": "Die klassische Gitarre wird gespielt mit:",
+              "prompt": "Klassische Gitarre spielt man mit:",
               "options": [
-                "Stachel",
+                "Dem Plektrum",
                 "Finger",
-                "Kapodaster",
+                "Barré",
                 "Bogen"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -3134,49 +3134,49 @@
       "lessons": [
         {
           "id": "l96",
-          "title": "Tippen",
+          "title": "Tapping",
           "icon": "👆",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Tippen",
-              "text": "Schlage das Bundbrett mit der rechten Hand für schnelle Noten."
+              "title": "Tapping",
+              "text": "Tippe den Bund mit der rechten Hand an für schnelle Töne."
             },
             {
               "type": "quiz",
-              "prompt": "Tapping wird gemacht mit:",
+              "prompt": "Tapping macht man mit:",
               "options": [
-                "rechte Hand",
-                "Linke Hand",
-                "Stachel",
-                "Fuß"
+                "Rechte Hand",
+                "Der linken Hand",
+                "Dem Plektrum",
+                "Dem Fuß"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l97",
-          "title": "Sweep-Picking",
+          "title": "Sweep picking",
           "icon": "🧹",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Fegen",
-              "text": "Kontrolliertes Anschlagen über mehrere Saiten für schnelle Arpeggios."
+              "title": "Sweep",
+              "text": "Kontrollierter Anschlag über mehrere Saiten für schnelle Arpeggios."
             },
             {
               "type": "quiz",
               "prompt": "Sweep ist typisch für:",
               "options": [
-                "Zerkleinern",
+                "Shred",
                 "Jazz",
                 "Blues",
                 "Flamenco"
@@ -3185,8 +3185,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -3198,24 +3198,24 @@
           "steps": [
             {
               "type": "info",
-              "title": "Gebunden",
-              "text": "Kombiniere Hammer/Pull für flüssige Sätze bei hoher Geschwindigkeit."
+              "title": "Legato",
+              "text": "Kombiniert Hammer/Pull für fließende Phrasen bei hohem Tempo."
             },
             {
               "type": "quiz",
-              "prompt": "Verwendet fortgeschrittenes Legato:",
+              "prompt": "Fortgeschrittenes Legato nutzt:",
               "options": [
-                "Hammer/Ziehen",
-                "Nur Anschlag",
-                "Nur Biegungen",
-                "Handdämpfung"
+                "Hammer/pull",
+                "Nur Schlagmuster",
+                "Nur Bends",
+                "Palm Mute"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -3227,12 +3227,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Wirtschaft",
-              "text": "Minimiere die Bewegung der Hände, um Geschwindigkeit zu gewinnen."
+              "title": "Ökonomie",
+              "text": "Minimiere die Handbewegung, um schneller zu werden."
             },
             {
               "type": "quiz",
-              "prompt": "Um Geschwindigkeit zu gewinnen:",
+              "prompt": "Um schneller zu werden:",
               "options": [
                 "Mehr bewegen",
                 "Weniger bewegen",
@@ -3243,37 +3243,37 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l100",
-          "title": "Fortgeschrittene Wiederholung",
+          "title": "Wiederholung Fortgeschritten",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Sie kehren zurück mit Tapping, Sweep, Legato."
+              "title": "Wiederholung",
+              "text": "Zurück zu Tapping, Sweep und Legato."
             },
             {
               "type": "quiz",
-              "prompt": "Welche Technik schlägt mit der rechten Hand?",
+              "prompt": "Bei welcher Technik tippt die rechte Hand?",
               "options": [
                 "Hammer-on",
-                "Tippen",
-                "Biegung",
-                "Folie"
+                "Tapping",
+                "Bend",
+                "Slide"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -3281,23 +3281,23 @@
     },
     {
       "id": "u18",
-      "title": "Einheit 18 – Wiederholung und abschließende Herausforderung",
+      "title": "Einheit 18 – Wiederholung und Abschluss-Challenge",
       "color": "gold",
       "lessons": [
         {
           "id": "l101",
-          "title": "Allgemeine Gitarrenwiederholung",
+          "title": "Gitarre: Gesamtwiederholung",
           "icon": "🔁",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Akkorde, Rhythmen und Tonleitern kehren zurück."
+              "title": "Wiederholung",
+              "text": "Zurück zu Akkorden, Rhythmen und Skalen."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten hat die Gitarre?",
+              "prompt": "Wie viele Saiten hat eine Gitarre?",
               "options": [
                 "4",
                 "5",
@@ -3308,28 +3308,28 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l102",
-          "title": "Veränderungsherausforderung (1 Minute)",
+          "title": "Wechsel-Challenge (1 Minute)",
           "icon": "⏱️",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Herausforderung",
-              "text": "Übertreffe deinen Rekord für saubere Wechsel in 60 s."
+              "title": "Challenge",
+              "text": "Brich deinen Rekord an sauberen Wechseln in 60 s."
             },
             {
               "type": "quiz",
               "prompt": "Ziel:",
               "options": [
                 "Persönlicher Rekord",
-                "0 Änderungen",
+                "0 Wechsel",
                 "Laut spielen",
                 "Nicht üben"
               ],
@@ -3337,14 +3337,14 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l103",
-          "title": "Aufnahme Tag 1 vs 30",
+          "title": "Aufnahme Tag 1 vs. 30",
           "icon": "🎙️",
           "xp": 15,
           "steps": [
@@ -3355,10 +3355,10 @@
             },
             {
               "type": "quiz",
-              "prompt": "Wozu aufnehmen?",
+              "prompt": "Warum aufnehmen?",
               "options": [
                 "Motivation",
-                "Bestrafung",
+                "Strafe",
                 "Nichts",
                 "Verkaufen"
               ],
@@ -3366,8 +3366,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -3380,42 +3380,42 @@
             {
               "type": "info",
               "title": "Plan",
-              "text": "10 Minuten täglich: 3 Minuten Akkorde, 3 Minuten Wechsel, 4 Minuten Lied."
+              "text": "10 Min. täglich: 3 Min. Akkorde, 3 Min. Wechsel, 4 Min. Song."
             },
             {
               "type": "quiz",
               "prompt": "Ideale Häufigkeit:",
               "options": [
-                "1 Mal pro Woche",
-                "10 Minuten täglich",
-                "1 Std. monatlich",
-                "Nur Wochenende"
+                "einmal pro Woche",
+                "10 Min. täglich",
+                "1 Std. im Monat",
+                "Nur am Wochenende"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "l105",
-          "title": "Abschluss Stufe 1",
+          "title": "Abschluss Level 1",
           "icon": "🎓",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "Herzlichen Glückwunsch!",
-              "text": "Du hast den Basislebenslauf abgeschlossen. Fahre mit Stilen und Fortgeschrittenem fort."
+              "title": "Glückwunsch!",
+              "text": "Du hast den Grundkurs abgeschlossen. Mach weiter mit Stilen und Fortgeschrittenem."
             },
             {
               "type": "quiz",
-              "prompt": "Was kommt als Nächstes?",
+              "prompt": "Wie geht's weiter?",
               "options": [
-                "Die Gitarre aufgeben",
+                "Mit der Gitarre aufhören",
                 "Weiter üben",
                 "Die Gitarre verkaufen",
                 "Nichts"
@@ -3424,8 +3424,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -3433,7 +3433,7 @@
     },
     {
       "id": "u19",
-      "title": "Einheit 19 - Musiktheorie",
+      "title": "Einheit 19 – Musiktheorie",
       "color": "purple",
       "lessons": [
         {
@@ -3445,7 +3445,7 @@
             {
               "type": "info",
               "title": "Was ist ein Intervall?",
-              "text": "Ein Intervall ist der Abstand in Halbtönen zwischen zwei Noten."
+              "text": "Ein Intervall ist der Abstand in Halbtönen zwischen zwei Tönen."
             },
             {
               "type": "quiz",
@@ -3462,10 +3462,10 @@
               "type": "quiz",
               "prompt": "Ein Halbton ist der Abstand zwischen:",
               "options": [
-                "Zwei gleiche Noten",
-                "Angrenzende Noten",
+                "Zwei gleichen Tönen",
+                "Benachbarten Tönen",
                 "Zwei Saiten",
-                "Ein Kompass"
+                "Einem Takt"
               ],
               "answer": 1
             },
@@ -3491,11 +3491,11 @@
             {
               "type": "info",
               "title": "Skalen",
-              "text": "Eine Skala ist eine geordnete Abfolge von Noten."
+              "text": "Eine Skala ist eine geordnete Folge von Tönen."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Noten hat eine Durtonleiter?",
+              "prompt": "Wie viele Töne hat eine Dur-Tonleiter?",
               "options": [
                 "5",
                 "6",
@@ -3506,23 +3506,23 @@
             },
             {
               "type": "quiz",
-              "prompt": "Die kleine pentatonische Skala hat:",
+              "prompt": "Die Moll-Pentatonik hat:",
               "options": [
-                "5 Noten",
-                "6 Noten",
-                "7 Noten",
-                "12 Noten"
+                "5 Töne",
+                "6 Töne",
+                "7 Töne",
+                "12 Töne"
               ],
               "answer": 0
             },
             {
               "type": "quiz",
-              "prompt": "Welche Veränderung unterscheidet den dorischen Modus?",
+              "prompt": "Welche Alteration kennzeichnet den dorischen Modus?",
               "options": [
-                "3a Moll",
-                "4a erhöht",
-                "7a Moll",
-                "2a Moll"
+                "kleine Terz",
+                "übermäßige Quarte",
+                "kleine Septime",
+                "kleine Sekunde"
               ],
               "answer": 2
             }
@@ -3536,12 +3536,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Triaden",
-              "text": "Ein Dur-Akkord: Grundton, große Terz, reine Quinte."
+              "title": "Dreiklänge",
+              "text": "Ein Durakkord: Grundton, große Terz, reine Quinte."
             },
             {
               "type": "quiz",
-              "prompt": "Welche Intervalle bilden einen Dur-Akkord?",
+              "prompt": "Welche Intervalle bilden einen Durakkord?",
               "options": [
                 "3m + 4m",
                 "4M + 3m",
@@ -3563,7 +3563,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Die Dominantseptime ist:",
+              "prompt": "Der Dominantseptakkord ist:",
               "options": [
                 "M7",
                 "m7",
@@ -3582,12 +3582,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Funktionale Harmonie",
+              "title": "Funktionsharmonik",
               "text": "Stufen: I Dur, ii Moll, iii Moll, IV Dur, V Dur, vi Moll, vii vermindert."
             },
             {
               "type": "quiz",
-              "prompt": "In der Durtonart Do ist der Akkord des fünften Grades:",
+              "prompt": "In C-Dur ist der Akkord der V. Stufe:",
               "options": [
                 "C",
                 "Dm",
@@ -3598,18 +3598,18 @@
             },
             {
               "type": "quiz",
-              "prompt": "Die I-V-vi-IV-Progression ist typisch für:",
+              "prompt": "Die Progression I-V-vi-IV ist typisch für:",
               "options": [
                 "Blues",
                 "Pop",
                 "Jazz",
-                "Metall"
+                "Metal"
               ],
               "answer": 1
             },
             {
               "type": "quiz",
-              "prompt": "Das relative Moll ist der Grad:",
+              "prompt": "Die parallele Molltonart ist die Stufe:",
               "options": [
                 "ii",
                 "iii",
@@ -3629,7 +3629,7 @@
             {
               "type": "info",
               "title": "Rhythmus",
-              "text": "Der Rhythmus organisiert die Zeit. 4/4 hat 4 Zählzeiten."
+              "text": "Rhythmus ordnet die Zeit. Der 4/4-Takt hat 4 Schläge."
             },
             {
               "type": "quiz",
@@ -3644,23 +3644,23 @@
             },
             {
               "type": "quiz",
-              "prompt": "Ein 3/4-Takt wird mit folgendem assoziiert:",
+              "prompt": "Ein 3/4-Takt wird verbunden mit:",
               "options": [
                 "Marsch",
                 "Walzer",
-                "Soße",
+                "Salsa",
                 "Reggae"
               ],
               "answer": 1
             },
             {
               "type": "quiz",
-              "prompt": "Die Achtelnote wert:",
+              "prompt": "Eine Achtelnote dauert:",
               "options": [
-                "1 Zeit",
-                "1/2 Zeit",
-                "1/4 Zeit",
-                "2 Takte"
+                "1 Schlag",
+                "1/2 Schlag",
+                "1/4 Schlag",
+                "2 Schläge"
               ],
               "answer": 1
             }
@@ -3677,14 +3677,14 @@
       "lessons": [
         {
           "id": "ul1",
-          "title": "Anatomie der Ukulele",
+          "title": "Aufbau der Ukulele",
           "icon": "🪕",
           "xp": 10,
           "steps": [
             {
               "type": "info",
               "title": "Die Ukulele",
-              "text": "Es hat 4 Saiten: Sol (G), Do (C), Mi (E), La (A) = GCEA. Standardstimmung (reentrant): die 4. Saite (Sol) ist höher gestimmt."
+              "text": "Sie hat 4 Saiten: G, C, E, A = GCEA. Standardstimmung (reentrant): Die 4. Saite (G) ist höher."
             },
             {
               "type": "quiz",
@@ -3699,8 +3699,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
@@ -3715,25 +3715,25 @@
               "string": 0,
               "note": "G4",
               "freq": 392.0,
-              "text": "Die 4. Saite stimmen (Sol)."
+              "text": "Stimme die 4. Saite (G)."
             },
             {
               "type": "tuner",
               "string": 1,
               "note": "C4",
               "freq": 261.63,
-              "text": "Die 3. Saite stimmen (Do)."
+              "text": "Stimme die 3. Saite (C)."
             },
             {
               "type": "tuner",
               "string": 2,
               "note": "E4",
               "freq": 329.63,
-              "text": "Die 2. Saite stimmen (Mi)."
+              "text": "Stimme die 2. Saite (E)."
             },
             {
               "type": "quiz",
-              "prompt": "Welche Stimmung hat die Ukulele?",
+              "prompt": "Wie ist die Ukulele gestimmt?",
               "options": [
                 "EADGBE",
                 "GCEA",
@@ -3744,7 +3744,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Welche Stimmung hat die Ukulele?",
+              "prompt": "Wie ist die Ukulele gestimmt?",
               "options": [
                 "EADGBE",
                 "GCEA",
@@ -3758,7 +3758,7 @@
               "string": 3,
               "note": "A4",
               "freq": 440.0,
-              "text": "Die 1. Saite stimmen (La)."
+              "text": "Stimme die 1. Saite (A)."
             }
           ]
         },
@@ -3771,11 +3771,11 @@
             {
               "type": "info",
               "title": "Haltung",
-              "text": "Halten Sie die Ukulele gegen die Brust, rechter Arm über dem Körper. Linke Hand hinter dem Hals."
+              "text": "Halte die Ukulele an die Brust, den rechten Arm über dem Korpus. Linke Hand hinter dem Hals."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten werden normalerweise angeschlagen?",
+              "prompt": "Wie viele Saiten schlägt man normalerweise an?",
               "options": [
                 "4",
                 "6",
@@ -3786,34 +3786,34 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "ul4",
-          "title": "Erster Ton (uke)",
+          "title": "Erster Ton (Uke)",
           "icon": "🎵",
           "xp": 10,
           "steps": [
             {
               "type": "info",
-              "title": "Luft berühren",
-              "text": "Spiele die 1. Saite (La) leer. Sie sollte klar klingen."
+              "title": "Leere Saiten spielen",
+              "text": "Spiele die leere 1. Saite (A). Sie sollte klar klingen."
             },
             {
               "type": "demo",
-              "title": "Hör zu La",
-              "text": "Referenz La.",
+              "title": "Hör dir das A an",
+              "text": "Referenz A.",
               "freq": 440.0,
               "note": "A4"
             },
             {
               "type": "quiz",
-              "prompt": "Si fummelt herum, was machst du?",
+              "prompt": "Was tust du, wenn es schnarrt?",
               "options": [
-                "Näher am Bund drücken",
+                "Näher am Bundstäbchen drücken",
                 "Lauter spielen",
                 "Saite wechseln",
                 "Höher stimmen"
@@ -3831,19 +3831,19 @@
       "lessons": [
         {
           "id": "ul5",
-          "title": "Akkord C (Ukulele)",
+          "title": "Akkord C (Uke)",
           "icon": "C",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
-              "title": "C größer (uke)",
+              "title": "C-Dur (Uke)",
               "text": "Nur ein Finger: 3. Saite, Bund 3 (Ringfinger). Schlage die 4 Saiten an.",
               "chord": "C"
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Finger werden zum C auf der Ukulele benutzt?",
+              "prompt": "Wie viele Finger braucht C auf der Ukulele?",
               "options": [
                 "0",
                 "1",
@@ -3854,27 +3854,27 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "C"
         },
         {
           "id": "ul6",
-          "title": "Akkord G (Ukulele)",
+          "title": "Akkord G (Uke)",
           "icon": "G",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
-              "title": "G größer (uke)",
-              "text": "Form 0232.",
+              "title": "G-Dur (Uke)",
+              "text": "Griff 0232.",
               "chord": "G"
             },
             {
               "type": "quiz",
-              "prompt": "G in einer Woche reißt sich mit:",
+              "prompt": "G auf der Uke spielt man mit:",
               "options": [
                 "2 Saiten",
                 "4 Saiten",
@@ -3885,27 +3885,27 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "G"
         },
         {
           "id": "ul7",
-          "title": "Akkord Am (Ukulele)",
+          "title": "Akkord Am (Uke)",
           "icon": "Am",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "Am (uke)",
-              "text": "Form 2000.",
+              "text": "Griff 2000.",
               "chord": "Am"
             },
             {
               "type": "quiz",
-              "prompt": "Am eine Woche USA:",
+              "prompt": "Am auf der Uke braucht:",
               "options": [
                 "1 Finger",
                 "2 Finger",
@@ -3916,27 +3916,27 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "Am"
         },
         {
           "id": "ul8",
-          "title": "Akkord F (Ukulele)",
+          "title": "Akkord F (Uke)",
           "icon": "F",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "F (uke)",
-              "text": "Form 2010.",
+              "text": "Griff 2010.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F eine Woche USA:",
+              "prompt": "F auf der Uke braucht:",
               "options": [
                 "1 Finger",
                 "2 Finger",
@@ -3947,27 +3947,27 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "F"
         },
         {
           "id": "ul9",
-          "title": "Akkord D (Ukulele)",
+          "title": "Akkord D (Uke)",
           "icon": "D",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "D (uke)",
-              "text": "Form 2220.",
+              "text": "Griff 2220.",
               "chord": "D"
             },
             {
               "type": "quiz",
-              "prompt": "D eine Woche USA:",
+              "prompt": "D auf der Uke braucht:",
               "options": [
                 "1 Finger",
                 "2 Finger",
@@ -3978,27 +3978,27 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "D"
         },
         {
           "id": "ul10",
-          "title": "Akkord E (Ukulele)",
+          "title": "Akkord E (Uke)",
           "icon": "E",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "E (uke)",
-              "text": "Form 4442.",
+              "text": "Griff 4442.",
               "chord": "E"
             },
             {
               "type": "quiz",
-              "prompt": "E eine Woche in den USA:",
+              "prompt": "E auf der Uke braucht:",
               "options": [
                 "1 Finger",
                 "2 Finger",
@@ -4009,27 +4009,27 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "E"
         },
         {
           "id": "ul11",
-          "title": "Akkord G7 (Ukulele)",
+          "title": "Akkord G7 (Uke)",
           "icon": "G7",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "G7 (uke)",
-              "text": "Form 0212.",
+              "text": "Griff 0212.",
               "chord": "G7"
             },
             {
               "type": "quiz",
-              "prompt": "G7 eine Woche USA:",
+              "prompt": "G7 auf der Uke braucht:",
               "options": [
                 "1 Finger",
                 "2 Finger",
@@ -4040,21 +4040,21 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ],
           "chord": "G7"
         },
         {
           "id": "ul12",
-          "title": "Änderungen C-G-Am-F (Woche)",
+          "title": "Wechsel C-G-Am-F (Uke)",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Änderungen",
+              "title": "Wechsel",
               "text": "Übe C-G-Am-F auf der Ukulele."
             },
             {
@@ -4070,8 +4070,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }
@@ -4079,77 +4079,77 @@
     },
     {
       "id": "uu3",
-      "title": "Ukulele – Lieder und Anschlag",
+      "title": "Ukulele – Songs und Schlagmuster",
       "color": "orange",
       "lessons": [
         {
           "id": "ul13",
-          "title": "Grundanschlag (Ukulele)",
+          "title": "Einfaches Schlagmuster (Uke)",
           "icon": "⬇️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Abschläge",
-              "text": "Schlage die 4 Saiten nach unten mit dem Zeigefinger."
+              "text": "Schlage die 4 Saiten mit dem Zeigefinger nach unten an."
             },
             {
               "type": "quiz",
-              "prompt": "Ein Downstroke ist:",
+              "prompt": "Ein Abschlag geht:",
               "options": [
                 "Nach oben",
                 "Nach unten",
-                "Aufzählung",
-                "Stille"
+                "Anschlag",
+                "Eine Pause"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "ul14",
-          "title": "Muster unten-oben (Uke)",
+          "title": "Ab-Auf-Muster (Uke)",
           "icon": "⬆️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Runter-rauf",
+              "title": "Ab-Auf",
               "text": "D U D U auf der Ukulele."
             },
             {
               "type": "quiz",
-              "prompt": "In D U D U, U ist:",
+              "prompt": "In D U D U ist U:",
               "options": [
-                "Runter",
-                "Up",
+                "Nach unten",
+                "Nach oben",
                 "Beide",
-                "Keine"
+                "Keiner"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "ul15",
-          "title": "Zweiklang-Lied (Ukulele)",
+          "title": "Song: zwei Akkorde (Uke)",
           "icon": "🎶",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Verwende C und G auf der Ukulele. Schlage jeden Akkord 4 Mal an."
+              "title": "Los geht's!",
+              "text": "Nimm C und G auf der Ukulele. 4 Anschläge pro Akkord."
             },
             {
               "type": "quiz",
@@ -4164,21 +4164,21 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "ul16",
-          "title": "4-Akkorde-Lied (Ukulele)",
+          "title": "Song: vier Akkorde (Uke)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
-              "title": "¡A berühren!",
-              "text": "Verwende C-G-Am-F auf der Ukulele."
+              "title": "Los geht's!",
+              "text": "Nimm C-G-Am-F auf der Ukulele."
             },
             {
               "type": "quiz",
@@ -4193,54 +4193,54 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "ul17",
-          "title": "Grundlegendes Arpeggio (Uke)",
+          "title": "Einfaches Arpeggio (Uke)",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Arpeggio",
-              "text": "Spiele die 4 Saiten nacheinander mit Daumen und Zeigefinger."
+              "text": "Spiele die 4 Saiten einzeln mit Daumen und Zeigefinger."
             },
             {
               "type": "quiz",
               "prompt": "Ein Arpeggio ist:",
               "options": [
-                "Schlaggitarre",
-                "Getrennte Noten",
-                "Stille",
-                "Handdämpfung"
+                "Ein Schlagmuster",
+                "Einzeln gespielte Töne",
+                "Eine Pause",
+                "Palm Mute"
               ],
               "answer": 1
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         },
         {
           "id": "ul18",
-          "title": "Ukulelenwiederholung",
+          "title": "Wiederholung Ukulele",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Überprüfung",
-              "text": "Sie kehren zurück C, G, Am, F, D, E, G7."
+              "title": "Wiederholung",
+              "text": "Zurück zu C, G, Am, F, D, E und G7."
             },
             {
               "type": "quiz",
-              "prompt": "Wie viele Saiten hat die Ukulele?",
+              "prompt": "Wie viele Saiten hat eine Ukulele?",
               "options": [
                 "4",
                 "6",
@@ -4251,8 +4251,8 @@
             },
             {
               "type": "info",
-              "title": "Praxis",
-              "text": "Wiederhole das Gelernte langsam. Achte auf klaren Klang, ohne Schnarren, und zähle saubere Wechsel in 60 s."
+              "title": "Übung",
+              "text": "Wiederhole das Gelernte langsam. Achte auf einen klaren Klang ohne Schnarren und zähle saubere Wechsel in 60 s."
             }
           ]
         }

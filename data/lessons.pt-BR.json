@@ -7,18 +7,18 @@
       "lessons": [
         {
           "id": "l1",
-          "title": "Anatomia da guitarra",
+          "title": "Anatomia do violão",
           "icon": "🎸",
           "xp": 10,
           "steps": [
             {
               "type": "info",
               "title": "Bem-vindo!",
-              "text": "A guitarra tem 6 cordas, um braço com trastes e um corpo que amplifica o som. As cordas são numeradas da mais fina (1ª, mi agudo) à mais grossa (6ª, mi grave)."
+              "text": "O violão tem 6 cordas, um braço com trastes e um corpo que amplifica o som. As cordas são numeradas da mais fina (1ª, Mi agudo) à mais grossa (6ª, Mi grave)."
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas tem uma guitarra padrão?",
+              "prompt": "Quantas cordas tem um violão padrão?",
               "options": [
                 "4",
                 "5",
@@ -49,21 +49,21 @@
             {
               "type": "info",
               "title": "Postura sentada",
-              "text": "Sente-se direito, apoie a guitarra sobre a perna direita (destros). O braço aponta levemente para cima. O polegar da mão esquerda vai atrás do braço."
+              "text": "Sente-se reto e apoie o violão na perna direita (destros). O braço aponta levemente para cima. O polegar da mão esquerda fica atrás do braço."
             },
             {
               "type": "info",
               "title": "Mão direita",
-              "text": "Os dedos polegar (p), indicador (i), médio (m) e anular (a) tocam as cordas. Comece tocando uma corda solta com o polegar, de cima para baixo."
+              "text": "O polegar (p), o indicador (i), o médio (m) e o anelar (a) tocam as cordas. Comece pulsando uma corda solta com o polegar, de cima para baixo."
             },
             {
               "type": "quiz",
-              "prompt": "Onde vai o polegar da mão esquerda?",
+              "prompt": "Onde fica o polegar da mão esquerda?",
               "options": [
-                "Acima do braço",
+                "Em cima do braço",
                 "Atrás do braço",
                 "Sobre as cordas",
-                "Não importa"
+                "Tanto faz"
               ],
               "answer": 1
             }
@@ -78,14 +78,14 @@
             {
               "type": "info",
               "title": "Afinação EADGBE",
-              "text": "Da corda mais grossa à mais fina: Mi (E) - Lá (A) - Ré (D) - Sol (G) - Si (B) - Mi (E). Mnemônico: 'Mi Amigo Da Grandes Bendiciones Extra'."
+              "text": "Da corda mais grossa à mais fina: Mi - Lá - Ré - Sol - Si - Mi (E - A - D - G - B - E). Dica: 'Meu Amigo Diz Ganhar Bem É' bom."
             },
             {
               "type": "tuner",
               "string": 0,
               "note": "E2",
               "freq": 82.41,
-              "text": "Afinar a 6ª corda (Mi grave). Toque a corda e ajuste a tarraxa até o afinador ficar verde."
+              "text": "Afine a 6ª corda (Mi grave). Toque a corda e ajuste a tarraxa até o afinador ficar verde."
             },
             {
               "type": "quiz",
@@ -114,7 +114,7 @@
               "string": 5,
               "note": "E4",
               "freq": 329.63,
-              "text": "Afinar a 1ª corda (Mi agudo)."
+              "text": "Afine a 1ª corda (Mi agudo)."
             }
           ]
         },
@@ -126,24 +126,24 @@
           "steps": [
             {
               "type": "info",
-              "title": "Tocar solto",
-              "text": "Toque a 1ª corda (a mais fina) com o dedo indicador da mão direita. Deve soar claro e sustentado. Se trastear, pressione mais perto do traste."
+              "title": "Tocando cordas soltas",
+              "text": "Toque a 1ª corda (a mais fina) com o indicador da mão direita. Ela deve soar limpa e sustentada. Se trastejar, pressione mais perto do traste."
             },
             {
               "type": "demo",
               "title": "Ouça",
-              "text": "Assim deve soar a 1ª corda solta (Mi).",
+              "text": "É assim que deve soar a 1ª corda solta (Mi).",
               "freq": 329.63,
               "note": "E4"
             },
             {
               "type": "quiz",
-              "prompt": "Se uma corda soar abafada ou trastear, o que você faz?",
+              "prompt": "Se uma corda soa abafada ou trasteja, o que você faz?",
               "options": [
                 "Tocar mais forte",
                 "Pressionar mais perto do traste",
                 "Trocar a corda",
-                "Afinar mais agudo"
+                "Afinar mais alto"
               ],
               "answer": 1
             }
@@ -151,18 +151,18 @@
         },
         {
           "id": "l5",
-          "title": "Notas nos primeiros trastes",
+          "title": "Notas nas primeiras casas",
           "icon": "🎼",
           "xp": 12,
           "steps": [
             {
               "type": "info",
-              "title": "Trastes",
-              "text": "Cada traste sobe um semitom. Na 1ª corda: traste 0 = Mi, 1 = Fá, 2 = Fá#, 3 = Sol."
+              "title": "Casas",
+              "text": "Cada casa sobe um semitom. Na 1ª corda: casa 0 = Mi, 1 = Fá, 2 = Fá#, 3 = Sol."
             },
             {
               "type": "quiz",
-              "prompt": "Quantos semitons sobe um traste?",
+              "prompt": "Quantos semitons sobe uma casa?",
               "options": [
                 "1",
                 "2",
@@ -173,12 +173,12 @@
             },
             {
               "type": "quiz",
-              "prompt": "Na 1ª corda, traste 3 é:",
+              "prompt": "Na 1ª corda, a casa 3 é:",
               "options": [
-                "Fá",
-                "Fá#",
-                "Sol",
-                "Lá"
+                "F",
+                "F#",
+                "G",
+                "A"
               ],
               "answer": 2
             }
@@ -200,29 +200,29 @@
             {
               "type": "demo",
               "title": "Acorde Em (Mi menor)",
-              "text": "Coloque o dedo 2 na 5ª corda traste 2 e o dedo 3 na 4ª corda traste 2. Rasgueie as 6 cordas.",
+              "text": "Coloque o dedo 2 na 5ª corda casa 2 e o dedo 3 na 4ª corda casa 2. Toque as 6 cordas.",
               "chord": "Em"
             },
             {
               "type": "playChord",
               "title": "Toque Em",
-              "text": "Toque o acorde Em. O app o detectará automaticamente.",
+              "text": "Toque o acorde Em. O app vai detectá-lo automaticamente.",
               "expected": "Em"
             },
             {
               "type": "quiz",
-              "prompt": "Quais dedos são usados para Em?",
+              "prompt": "Quais dedos são usados no Em?",
               "options": [
                 "1 e 2",
                 "2 e 3",
-                "1,2 e 3",
-                "Só o 1"
+                "1, 2 e 3",
+                "Só o 1º"
               ],
               "answer": 1
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas se rasgueiam em Em?",
+              "prompt": "Quantas cordas se tocam no Em?",
               "options": [
                 "4",
                 "5",
@@ -243,16 +243,16 @@
             {
               "type": "demo",
               "title": "Acorde Am (Lá menor)",
-              "text": "Dedo 1 na 2ª corda traste 1, dedo 2 na 4ª corda traste 2, dedo 3 na 3ª corda traste 2. Rasgueie 5 cordas (sem a 6ª).",
+              "text": "Dedo 1 na 2ª corda casa 1, dedo 2 na 4ª corda casa 2, dedo 3 na 3ª corda casa 2. Toque 5 cordas (sem a 6ª).",
               "chord": "Am"
             },
             {
               "type": "quiz",
-              "prompt": "Em Am, toca-se a 6ª corda (Mi grave)?",
+              "prompt": "No Am, a 6ª corda (Mi grave) é tocada?",
               "options": [
                 "Sim, sempre",
-                "Não, se omite",
-                "Só com capotraste",
+                "Não, fica de fora",
+                "Só com pestana",
                 "Depende"
               ],
               "answer": 1
@@ -260,7 +260,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Am"
@@ -275,7 +275,7 @@
             {
               "type": "demo",
               "title": "Acorde Dm (Ré menor)",
-              "text": "Dedo 1: 1ª corda traste 1. Dedo 2: 3ª corda traste 2. Dedo 3: 2ª corda traste 3. Rasgueie 4 cordas.",
+              "text": "Dedo 1: 1ª corda casa 1. Dedo 2: 3ª corda casa 2. Dedo 3: 2ª corda casa 3. Toque 4 cordas.",
               "chord": "Dm"
             },
             {
@@ -291,42 +291,42 @@
             },
             {
               "type": "info",
-              "title": "Pratique",
-              "text": "Repita Dm lentamente buscando som claro."
+              "title": "Prática",
+              "text": "Repita o Dm devagar, buscando um som limpo."
             }
           ]
         },
         {
           "id": "l8",
-          "title": "Mudança Em → Am",
+          "title": "Troca Em → Am",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Mudança lenta",
-              "text": "Pratique passar de Em a Am e volta. Mova os dedos juntos, não um por um. Objetivo: 30 mudanças em 1 minuto sem erros."
+              "title": "Troca lenta",
+              "text": "Pratique passar de Em para Am e voltar. Mova os dedos juntos, não um por um. Meta: 30 trocas em 1 minuto sem erros."
             },
             {
               "type": "quiz",
-              "prompt": "Qual é o segredo das mudanças rápidas de acorde?",
+              "prompt": "Qual é o segredo para trocar de acorde rápido?",
               "options": [
                 "Tocar mais forte",
                 "Mover os dedos juntos",
-                "Olhar as cordas",
-                "Usar capotraste"
+                "Olhar para as cordas",
+                "Usar pestana"
               ],
               "answer": 1
             },
             {
               "type": "demo",
-              "title": "Ouça Em",
+              "title": "Ouça o Em",
               "text": "Referência: acorde Em.",
               "chord": "Em"
             },
             {
               "type": "demo",
-              "title": "Ouça Am",
+              "title": "Ouça o Am",
               "text": "Referência: acorde Am.",
               "chord": "Am"
             }
@@ -341,12 +341,12 @@
             {
               "type": "demo",
               "title": "Acorde E (Mi maior)",
-              "text": "Dedo 2 no 5º traste 2, dedo 3 no 4º traste 2, dedo 1 no 3º traste 1. Rasgueie as 6 cordas.",
+              "text": "Dedo 2 na 5ª casa 2, dedo 3 na 4ª casa 2, dedo 1 na 3ª casa 1. Toque as 6 cordas.",
               "chord": "E"
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas se rasgueiam em E?",
+              "prompt": "Quantas cordas se tocam no E?",
               "options": [
                 "4",
                 "5",
@@ -358,7 +358,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "E"
@@ -372,12 +372,12 @@
             {
               "type": "demo",
               "title": "Acorde A (Lá maior)",
-              "text": "Dedos 1,2,3 no traste 2 das cordas 4ª,3ª,2ª. Rasgueie 5 cordas (sem a 6ª).",
+              "text": "Dedos 1,2,3 na casa 2 das cordas 4ª, 3ª e 2ª. Toque 5 cordas (sem a 6ª).",
               "chord": "A"
             },
             {
               "type": "quiz",
-              "prompt": "Em A, qual corda se omite?",
+              "prompt": "No A, qual corda fica de fora?",
               "options": [
                 "1ª",
                 "6ª",
@@ -389,30 +389,30 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "A"
         },
         {
           "id": "l11",
-          "title": "Mudança E → A",
+          "title": "Troca E → A",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Mudança E-A",
-              "text": "Use a mesma forma que Em-Am mas com um dedo a mais. Tente 20 mudanças limpas em 1 minuto."
+              "title": "Troca E-A",
+              "text": "Use o mesmo formato de Em-Am, mas com um dedo a mais. Tente 20 trocas limpas em 1 minuto."
             },
             {
               "type": "quiz",
-              "prompt": "O que ajuda a mudar mais rápido?",
+              "prompt": "O que ajuda a trocar mais rápido?",
               "options": [
-                "Olhar os dedos",
+                "Olhar para os dedos",
                 "Mover os dedos juntos",
                 "Tocar mais forte",
-                "Trocar de guitarra"
+                "Trocar de violão"
               ],
               "answer": 1
             },
@@ -439,7 +439,7 @@
             {
               "type": "info",
               "title": "Revisão espaçada",
-              "text": "Voltam Em, Am, E, A. Toque-os sem olhar o diagrama."
+              "text": "Em, Am, E e A voltam. Toque-os sem olhar o diagrama."
             },
             {
               "type": "quiz",
@@ -467,14 +467,14 @@
         },
         {
           "id": "l13",
-          "title": "Primeira canção de 2 acordes",
+          "title": "Primeira música de 2 acordes",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Use Em e Am. Rasgueie 4 vezes cada acorde e mude. Repita. Você já está tocando uma canção!"
+              "text": "Use Em e Am. Toque cada acorde 4 vezes e troque. Repita. Você já está tocando uma música!"
             },
             {
               "type": "quiz",
@@ -517,12 +517,12 @@
             {
               "type": "demo",
               "title": "Acorde C (Dó maior)",
-              "text": "Dedo 1: 2ª corda traste 1. Dedo 2: 4ª corda traste 2. Dedo 3: 5ª corda traste 3. Rasgueie 5 cordas (sem 6ª).",
+              "text": "Dedo 1: 2ª corda casa 1. Dedo 2: 4ª corda casa 2. Dedo 3: 5ª corda casa 3. Toque 5 cordas (sem a 6ª).",
               "chord": "C"
             },
             {
               "type": "quiz",
-              "prompt": "Em C, qual corda se omite?",
+              "prompt": "No C, qual corda fica de fora?",
               "options": [
                 "1ª",
                 "6ª",
@@ -534,7 +534,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "C"
@@ -548,12 +548,12 @@
             {
               "type": "demo",
               "title": "Acorde G (Sol maior)",
-              "text": "Dedo 2 no 5º traste 2, dedo 1 no 2º traste 3, dedo 3 no 6º traste 3, dedo 4 no 1º traste 3. Rasgueie 6 cordas.",
+              "text": "Dedo 2 na 5ª casa 2, dedo 1 na 2ª casa 3, dedo 3 na 6ª casa 3, dedo 4 na 1ª casa 3. Toque 6 cordas.",
               "chord": "G"
             },
             {
               "type": "quiz",
-              "prompt": "G se rasgueia com:",
+              "prompt": "O G se toca com:",
               "options": [
                 "4 cordas",
                 "5 cordas",
@@ -565,7 +565,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "G"
@@ -579,12 +579,12 @@
             {
               "type": "demo",
               "title": "Acorde D (Ré maior)",
-              "text": "Dedo 1: 3ª corda traste 2. Dedo 2: 1ª corda traste 2. Dedo 3: 2ª corda traste 3. Rasgueie as 4 cordas mais finas.",
+              "text": "Dedo 1: 3ª corda casa 2. Dedo 2: 1ª corda casa 2. Dedo 3: 2ª corda casa 3. Toque as 4 cordas mais finas.",
               "chord": "D"
             },
             {
               "type": "quiz",
-              "prompt": "Em D, quantas cordas são rasgueadas?",
+              "prompt": "No D, quantas cordas se tocam?",
               "options": [
                 "6",
                 "5",
@@ -596,25 +596,25 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "D"
         },
         {
           "id": "l17",
-          "title": "Mudanças C → G → Am",
+          "title": "Trocas C → G → Am",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Cadeia de mudanças",
-              "text": "Pratique C-G-Am-C. Mantenha o ritmo com um rasgueado por acorde."
+              "title": "Sequência de trocas",
+              "text": "Pratique C-G-Am-C. Mantenha o ritmo com uma batida por acorde."
             },
             {
               "type": "quiz",
-              "prompt": "Qual acorde segue G em C-G-Am-F?",
+              "prompt": "Qual acorde vem depois do G em C-G-Am-F?",
               "options": [
                 "C",
                 "Am",
@@ -652,7 +652,7 @@
             {
               "type": "info",
               "title": "A progressão mais usada",
-              "text": "C - G - Am - F. Toque com um rasgueado por acorde. É a base de milhares de canções pop."
+              "text": "C - G - Am - F. Toque com uma batida por acorde. É a base de milhares de músicas pop."
             },
             {
               "type": "demo",
@@ -696,7 +696,7 @@
             },
             {
               "type": "demo",
-              "title": "F (capotraste)",
+              "title": "F (pestana)",
               "text": null,
               "chord": "F"
             }
@@ -704,14 +704,14 @@
         },
         {
           "id": "l19",
-          "title": "Sua primeira canção de 3 acordes",
+          "title": "Sua primeira música de 3 acordes",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Use C, G e Am. Rasgueie 4 vezes cada acorde e mude. Repita."
+              "text": "Use C, G e Am. Toque cada acorde 4 vezes e troque. Repita."
             },
             {
               "type": "quiz",
@@ -727,24 +727,24 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l20",
-          "title": "Revisão semana 1",
+          "title": "Revisão da semana 1",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Revisão espaçada",
-              "text": "Voltam Em, Am, E, A, C, G, D. Toque-os de memória."
+              "text": "Em, Am, E, A, C, G e D voltam. Toque-os de memória."
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas se rasgueiam em D?",
+              "prompt": "No D, quantas cordas se tocam?",
               "options": [
                 "6",
                 "5",
@@ -770,28 +770,28 @@
     },
     {
       "id": "u4",
-      "title": "Unidade 4 – F e mudanças rápidas",
+      "title": "Unidade 4 – F e trocas rápidas",
       "color": "red",
       "lessons": [
         {
           "id": "l21",
-          "title": "Acorde F (capotraste)",
+          "title": "Acorde F (pestana)",
           "icon": "F",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
               "title": "Acorde F (Fá maior)",
-              "text": "Coloque o dedo 1 em capotraste no traste 1 (cordas 1ª-6ª?) e dedos 2,3,4 nos trastes 2-3. Rasgueie 6 cordas.",
+              "text": "Coloque o dedo 1 como pestana na casa 1 (cordas 1ª-6ª) e os dedos 2, 3 e 4 nas casas 2-3. Toque 6 cordas.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F requer:",
+              "prompt": "O F exige:",
               "options": [
-                "Capotraste",
+                "Pestana",
                 "Só 2 dedos",
-                "Um dedilhado",
+                "Uma nota dedilhada",
                 "Silêncio"
               ],
               "answer": 0
@@ -799,14 +799,14 @@
             {
               "type": "info",
               "title": "Dica",
-              "text": "É normal o F soar abafado no início. Pressione o capotraste com a lateral do indicador, perto do traste."
+              "text": "É normal o F soar abafado no começo. Pressione a pestana com a lateral do indicador, perto do traste."
             }
           ],
           "chord": "F"
         },
         {
           "id": "l107",
-          "title": "F simplificado (sem capotraste)",
+          "title": "F simplificado (sem pestana)",
           "icon": "F",
           "xp": 16,
           "chord": "F",
@@ -814,19 +814,19 @@
             {
               "type": "info",
               "title": "F simplificado",
-              "text": "Use só as 4 cordas mais agudas: trastes 2-1-1 (D-G-B-e) sem capotraste completo. Soa parecido com F."
+              "text": "Use só as 4 cordas mais agudas: casas 2-1-1 (Ré-Sol-Si-mi) sem pestana completa. Soa parecido com F."
             },
             {
               "type": "demo",
               "title": "F simplificado",
-              "text": "Toque a forma simplificada de F.",
+              "text": "Toque o formato de F simplificado.",
               "chord": "F"
             },
             {
               "type": "quiz",
               "prompt": "O F simplificado evita:",
               "options": [
-                "O capotraste completo",
+                "A pestana completa",
                 "Tocar cordas",
                 "Afinar",
                 "O ritmo"
@@ -835,25 +835,25 @@
             },
             {
               "type": "info",
-              "title": "Pratique",
-              "text": "Pratique a mudança C-F simplificada."
+              "title": "Prática",
+              "text": "Pratique a troca C-F simplificada."
             }
           ]
         },
         {
           "id": "l22",
-          "title": "Mudança C → F → G",
+          "title": "Troca C → F → G",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Cadeia",
+              "title": "Sequência",
               "text": "Pratique C-F-G-C. Mova os dedos juntos."
             },
             {
               "type": "quiz",
-              "prompt": "Qual acorde requer capotraste nesta progressão?",
+              "prompt": "Qual acorde exige pestana nesta progressão?",
               "options": [
                 "C",
                 "F",
@@ -884,43 +884,43 @@
         },
         {
           "id": "l23",
-          "title": "Treinamento de mudanças (1 minuto)",
+          "title": "Treino de trocas (1 minuto)",
           "icon": "⏱️",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "O desafio de JustinGuitar",
-              "text": "Conte quantas mudanças limpas Em-Am você faz em 60 s. Supere seu recorde a cada dia."
+              "title": "O desafio JustinGuitar",
+              "text": "Conte quantas trocas limpas Em-Am você faz em 60 s. Bata seu recorde todo dia."
             },
             {
               "type": "quiz",
-              "prompt": "Objetivo mínimo razoável na semana 1:",
+              "prompt": "Meta mínima razoável na semana 1:",
               "options": [
-                "5 mudanças",
-                "15 mudanças",
-                "60 mudanças",
-                "1 mudança"
+                "5 trocas",
+                "15 trocas",
+                "60 trocas",
+                "1 troca"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l24",
-          "title": "Canção de 4 acordes",
+          "title": "Música de 4 acordes",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Use C-G-Am-F. Rasgueie 4 vezes cada acorde. Repita. Isso é uma canção pop!"
+              "text": "Use C-G-Am-F. Toque cada acorde 4 vezes. Repita. Isso é uma música pop!"
             },
             {
               "type": "quiz",
@@ -936,24 +936,24 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l25",
-          "title": "Revisão semana 2",
+          "title": "Revisão da semana 2",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Revisão espaçada",
-              "text": "Voltam C, G, Am, F e as mudanças."
+              "text": "C, G, Am, F e as trocas voltam."
             },
             {
               "type": "quiz",
-              "prompt": "Em qual acorde se omite a 6ª corda?",
+              "prompt": "Em qual acorde a 6ª corda fica de fora?",
               "options": [
                 "G",
                 "C",
@@ -965,7 +965,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -973,27 +973,27 @@
     },
     {
       "id": "u5",
-      "title": "Unidade 5 – Ritmo e rasgueado",
+      "title": "Unidade 5 – Ritmo e batida",
       "color": "yellow",
       "lessons": [
         {
           "id": "l26",
-          "title": "Downstrokes",
+          "title": "Batidas para baixo",
           "icon": "⬇️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Rasgueado para baixo",
-              "text": "Rasgueie para baixo (downstroke) com o dedo indicador ou palheta, batendo em todas as cordas do acorde. Mantenha o ritmo: 1-2-3-4."
+              "title": "Batida para baixo",
+              "text": "Toque para baixo com o indicador ou a palheta, passando por todas as cordas do acorde. Mantenha o ritmo: 1-2-3-4."
             },
             {
               "type": "quiz",
-              "prompt": "Um 'downstroke' é:",
+              "prompt": "Uma 'batida para baixo' é:",
               "options": [
-                "Rasgueado para cima",
-                "Rasgueado para baixo",
-                "Dedilhado",
+                "Batida para cima",
+                "Batida para baixo",
+                "Palhetada",
                 "Silêncio"
               ],
               "answer": 1
@@ -1001,65 +1001,65 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l27",
-          "title": "Rasgueado down-up",
+          "title": "Batida para baixo e para cima",
           "icon": "⬆️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Down e up",
-              "text": "Alterne rasgueado para baixo e para cima: D U D U. Mantenha a mão em movimento mesmo quando não tocar."
+              "title": "Para baixo e para cima",
+              "text": "Alterne batidas para baixo e para cima: D U D U (D = baixo, U = cima). Mantenha a mão em movimento mesmo quando não tocar."
             },
             {
               "type": "quiz",
-              "prompt": "Em D U D U, qual letra é 'upstroke'?",
+              "prompt": "Em D U D U, qual letra é a 'batida para cima'?",
               "options": [
                 "D",
                 "U",
-                "Ambas",
-                "Nenhuma"
+                "As duas",
+                "Nenhum"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l28",
-          "title": "Síncopa básica",
+          "title": "Síncope básica",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Síncopa",
-              "text": "Acentua os tempos fracos: 1 2 3 4 com um upstroke no 'e' de cada tempo."
+              "title": "Síncope",
+              "text": "Destaque os tempos fracos: 1 2 3 4 com uma batida para cima no 'e' de cada tempo."
             },
             {
               "type": "quiz",
-              "prompt": "A síncopa acentua:",
+              "prompt": "A síncope destaca:",
               "options": [
-                "Tempos fortes",
-                "Tempos fracos",
-                "Silêncios",
-                "Só o 1"
+                "Os tempos fortes",
+                "Os tempos fracos",
+                "Os silêncios",
+                "Só o 1º"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1078,17 +1078,17 @@
               "type": "quiz",
               "prompt": "O palm mute se faz com:",
               "options": [
-                "Mão esquerda",
-                "Lateral da mão direita",
-                "Palheta",
-                "Capotraste"
+                "A mão esquerda",
+                "A lateral da mão direita",
+                "A palheta",
+                "Pestana"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1100,15 +1100,15 @@
           "steps": [
             {
               "type": "info",
-              "title": "Pratique lento",
-              "text": "Toque um acorde por tempo a 60 BPM. Suba o tempo só quando acertar 4 compassos seguidos."
+              "title": "Pratique devagar",
+              "text": "Toque um acorde por tempo a 60 BPM. Só suba o andamento quando acertar 4 compassos seguidos."
             },
             {
               "type": "quiz",
-              "prompt": "Quando subir o tempo?",
+              "prompt": "Quando subir o andamento?",
               "options": [
                 "Quando quiser",
-                "Ao acertar 4 compassos seguidos",
+                "Quando acertar 4 compassos seguidos",
                 "Nunca",
                 "Só no final"
               ],
@@ -1117,7 +1117,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1130,7 +1130,7 @@
             {
               "type": "info",
               "title": "Padrão",
-              "text": "D D U U D U com acento suave. Ideal para baladas pop."
+              "text": "D D U U D U com um acento suave. Ideal para baladas pop."
             },
             {
               "type": "quiz",
@@ -1139,14 +1139,14 @@
                 "D D D D",
                 "D U D U",
                 "D D U U D U",
-                "Só upstrokes"
+                "Só para cima"
               ],
               "answer": 2
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -1154,19 +1154,19 @@
     },
     {
       "id": "u6",
-      "title": "Unidade 6 – Primeiras canções",
+      "title": "Unidade 6 – Primeiras músicas",
       "color": "pink",
       "lessons": [
         {
           "id": "l32",
-          "title": "Canção: Em e Am",
+          "title": "Música: Em e Am",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Em-Am: 4 rasgueados por acorde, repita."
+              "text": "Em-Am: 4 batidas por acorde, repita."
             },
             {
               "type": "quiz",
@@ -1182,20 +1182,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l33",
-          "title": "Canção: C, G, Am, F",
+          "title": "Música: C, G, Am, F",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Progressão pop C-G-Am-F, 4 rasgueados por acorde."
+              "text": "Progressão pop C-G-Am-F, 4 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1211,20 +1211,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l34",
-          "title": "Canção: G, D, Em, C",
+          "title": "Música: G, D, Em, C",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "G-D-Em-C, 2 rasgueados por acorde."
+              "text": "G-D-Em-C, 2 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1240,20 +1240,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l35",
-          "title": "Canção: D, A, G",
+          "title": "Música: D, A, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "D-A-G, 4 rasgueados por acorde."
+              "text": "D-A-G, 4 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1269,20 +1269,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l36",
-          "title": "Canção: Am, F, C, G",
+          "title": "Música: Am, F, C, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Am-F-C-G, 4 rasgueados por acorde."
+              "text": "Am-F-C-G, 4 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1298,20 +1298,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l37",
-          "title": "Canção: E, A, D, G",
+          "title": "Música: E, A, D, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "E-A-D-G, 2 rasgueados por acorde."
+              "text": "E-A-D-G, 2 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1327,20 +1327,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l38",
-          "title": "Canção: Em, G, D, C",
+          "title": "Música: Em, G, D, C",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Em-G-D-C, 4 rasgueados por acorde."
+              "text": "Em-G-D-C, 4 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1356,20 +1356,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l39",
-          "title": "Canção: C, Am, F, G",
+          "title": "Música: C, Am, F, G",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "C-Am-F-G, 4 rasgueados por acorde."
+              "text": "C-Am-F-G, 4 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1385,13 +1385,13 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l40",
-          "title": "Canção: dois acordes (Em-G)",
+          "title": "Música: dois acordes (Em-G)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
@@ -1414,20 +1414,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l41",
-          "title": "Canção: três acordes (C, F, G)",
+          "title": "Música: três acordes (C, F, G)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "C-F-G, 4 rasgueados por acorde."
+              "text": "C-F-G, 4 batidas por acorde."
             },
             {
               "type": "quiz",
@@ -1443,7 +1443,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -1451,7 +1451,7 @@
     },
     {
       "id": "u7",
-      "title": "Unidade 7 – Acordes coloridos (Asus2, Dsus2, G7, Cadd9)",
+      "title": "Unidade 7 – Acordes de cor (Asus2, Dsus2, G7, Cadd9)",
       "color": "teal",
       "lessons": [
         {
@@ -1463,7 +1463,7 @@
             {
               "type": "demo",
               "title": "Asus2",
-              "text": "Asus2 soa aberto e suspenso. Forma: x02200.",
+              "text": "Asus2 soa aberto e suspenso. Formato: x02200.",
               "chord": "Asus2"
             },
             {
@@ -1480,7 +1480,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Asus2"
@@ -1494,12 +1494,12 @@
             {
               "type": "demo",
               "title": "Dsus2",
-              "text": "Dsus2 soa aberto. Forma: xx0230.",
+              "text": "Dsus2 soa aberto. Formato: xx0230.",
               "chord": "Dsus2"
             },
             {
               "type": "quiz",
-              "prompt": "Dsus2 substitui a terça por:",
+              "prompt": "Dsus2 substitui a terça pela:",
               "options": [
                 "Segunda",
                 "Quarta",
@@ -1511,7 +1511,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Dsus2"
@@ -1525,7 +1525,7 @@
             {
               "type": "demo",
               "title": "G7",
-              "text": "G7 adiciona tensão para resolver a C. Forma: 320001.",
+              "text": "G7 acrescenta tensão para resolver em C. Formato: 320001.",
               "chord": "G7"
             },
             {
@@ -1542,7 +1542,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "G7"
@@ -1556,12 +1556,12 @@
             {
               "type": "demo",
               "title": "Cadd9",
-              "text": "Cadd9 soa brilhante e moderno. Forma: x32033.",
+              "text": "Cadd9 soa brilhante e moderno. Formato: x32033.",
               "chord": "Cadd9"
             },
             {
               "type": "quiz",
-              "prompt": "Cadd9 adiciona a nota:",
+              "prompt": "Cadd9 acrescenta a nota:",
               "options": [
                 "9ª (Ré)",
                 "7ª",
@@ -1573,7 +1573,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Cadd9"
@@ -1597,7 +1597,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Quais acordes coloridos você usou?",
+              "prompt": "Quais acordes de cor você usou?",
               "options": [
                 "Cadd9 e G7",
                 "Em e Am",
@@ -1608,7 +1608,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Quais acordes coloridos você usou?",
+              "prompt": "Quais acordes de cor você usou?",
               "options": [
                 "Cadd9 e G7",
                 "Em e Am",
@@ -1641,7 +1641,7 @@
             {
               "type": "info",
               "title": "A escala do rock",
-              "text": "Posição 1 em Lá menor: trastes 5-8 nas cordas 6ª a 1ª. É a base dos solos de rock e blues."
+              "text": "Posição 1 em Lá menor: casas 5-8 nas cordas 6 a 1. É a base dos solos de rock e blues."
             },
             {
               "type": "quiz",
@@ -1657,20 +1657,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l48",
-          "title": "Riff de uma corda",
+          "title": "Riff em uma corda",
           "icon": "🎸",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Smoke on the Water",
-              "text": "Toque na 4ª corda: trastes 0-3-5, 0-3-6-5. Um riff icônico com uma única corda."
+              "text": "Toque na 4ª corda: casas 0-3-5, 0-3-6-5. Um riff icônico numa só corda."
             },
             {
               "type": "quiz",
@@ -1686,7 +1686,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1699,15 +1699,15 @@
             {
               "type": "info",
               "title": "Riff",
-              "text": "Toque na 5ª corda (A): 7-7-10-7-5-3-0 (aprox). Um riff de uma única corda."
+              "text": "Toque na 5ª corda (Lá): 7-7-10-7-5-3-0 (aprox.). Um riff de uma corda só."
             },
             {
               "type": "quiz",
-              "prompt": "Este riff se toca em:",
+              "prompt": "Este riff se toca:",
               "options": [
-                "Uma única corda",
-                "Seis cordas",
-                "Com capotraste",
+                "Numa só corda",
+                "Em seis cordas",
+                "Com pestana",
                 "Com tapping"
               ],
               "answer": 0
@@ -1715,48 +1715,48 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l50",
-          "title": "Riff de power (Smoke)",
+          "title": "Riff potente (Smoke)",
           "icon": "🔥",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Riff com duas cordas",
-              "text": "Adicione a 5ª corda para deixar o riff mais potente."
+              "text": "Acrescente a 5ª corda para deixar o riff mais potente."
             },
             {
               "type": "quiz",
-              "prompt": "Um power riff usa:",
+              "prompt": "Um riff potente usa:",
               "options": [
                 "Notas soltas",
-                "Raiz e quinta",
+                "Fundamental e quinta",
                 "Arpejos",
-                "Silêncios"
+                "Pausas"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l51",
-          "title": "Escala maior (C maior)",
+          "title": "Escala maior (Dó maior)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "C maior",
+              "title": "Dó maior",
               "text": "Dó-Ré-Mi-Fá-Sol-Lá-Si-Dó. A base da teoria."
             },
             {
@@ -1773,7 +1773,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1786,7 +1786,7 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam pentatônica menor e C maior."
+              "text": "Voltamos à pentatônica menor e a Dó maior."
             },
             {
               "type": "quiz",
@@ -1802,7 +1802,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -1822,15 +1822,15 @@
             {
               "type": "info",
               "title": "Arpejo",
-              "text": "Toque as notas do acorde uma por uma: p i m a m i (6-4-3-2-3-4)."
+              "text": "Toque as notas do acorde uma a uma: p i m a m i (6-4-3-2-3-4)."
             },
             {
               "type": "quiz",
               "prompt": "Um arpejo é:",
               "options": [
-                "Rasgueado",
-                "Notas do acorde separadamente",
-                "Silêncio",
+                "Uma batida",
+                "As notas do acorde tocadas separadamente",
+                "Uma pausa",
                 "Palm mute"
               ],
               "answer": 1
@@ -1838,7 +1838,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1868,7 +1868,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "C"
@@ -1899,7 +1899,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Am"
@@ -1913,7 +1913,7 @@
             {
               "type": "info",
               "title": "Palm mute",
-              "text": "Combine palm mute com rasgueado para som de rock."
+              "text": "Combine palm mute com batida para um som de rock."
             },
             {
               "type": "quiz",
@@ -1921,7 +1921,7 @@
               "options": [
                 "Baladas",
                 "Rock/metal",
-                "Clássica",
+                "Clássico",
                 "Flamenco"
               ],
               "answer": 1
@@ -1929,7 +1929,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -1942,15 +1942,15 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam arpejos de C e Am."
+              "text": "Voltamos aos arpejos de C e Am."
             },
             {
               "type": "quiz",
               "prompt": "Um arpejo se toca:",
               "options": [
-                "Todas de uma vez",
-                "Uma por uma",
-                "Com capotraste",
+                "Tudo de uma vez",
+                "Uma a uma",
+                "Com pestana",
                 "Em silêncio"
               ],
               "answer": 1
@@ -1958,7 +1958,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -1966,7 +1966,7 @@
     },
     {
       "id": "u10",
-      "title": "Unidade 10 – Acordes de sétima",
+      "title": "Unidade 10 – Acordes com sétima",
       "color": "indigo",
       "lessons": [
         {
@@ -1978,13 +1978,13 @@
             {
               "type": "info",
               "title": "maj7",
-              "text": "Cmaj7 soa jazzístico e suave. Adiciona a 7ª maior a C."
+              "text": "Cmaj7 soa jazzístico e suave. Acrescenta a 7ª maior ao C."
             },
             {
               "type": "quiz",
-              "prompt": "maj7 soa:",
+              "prompt": "O maj7 soa:",
               "options": [
-                "Tensão",
+                "Tenso",
                 "Suave/jazz",
                 "Triste",
                 "Agressivo"
@@ -1994,7 +1994,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2007,13 +2007,13 @@
             {
               "type": "info",
               "title": "m7",
-              "text": "Am7 soa suave e triste. Adiciona a 7ª menor a Am."
+              "text": "Am7 soa suave e triste. Acrescenta a 7ª menor ao Am."
             },
             {
               "type": "quiz",
-              "prompt": "m7 se usa em:",
+              "prompt": "O m7 é usado em:",
               "options": [
-                "Rock pesado",
+                "Hard rock",
                 "Jazz/pop",
                 "Metal",
                 "Flamenco"
@@ -2023,7 +2023,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2036,11 +2036,11 @@
             {
               "type": "info",
               "title": "dom7",
-              "text": "G7 cria tensão para resolver a C. Você já viu como G7."
+              "text": "G7 cria tensão para resolver em C. Você já o viu como G7."
             },
             {
               "type": "quiz",
-              "prompt": "dom7 resolve a:",
+              "prompt": "O dom7 resolve em:",
               "options": [
                 "Tônica",
                 "Dominante",
@@ -2052,7 +2052,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2069,7 +2069,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "ii-V-I é típico de:",
+              "prompt": "ii-V-I é típica do:",
               "options": [
                 "Jazz",
                 "Metal",
@@ -2081,20 +2081,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l62",
-          "title": "Revisão de sétimas",
+          "title": "Revisão de acordes com sétima",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam maj7, m7, dom7."
+              "text": "Voltamos a maj7, m7 e dom7."
             },
             {
               "type": "quiz",
@@ -2110,7 +2110,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -2118,50 +2118,50 @@
     },
     {
       "id": "u11",
-      "title": "Unidade 11 – Acordes com capotraste (F, Bm)",
+      "title": "Unidade 11 – Acordes com pestana (F, Bm)",
       "color": "red",
       "lessons": [
         {
           "id": "l63",
-          "title": "F com capotraste completo",
+          "title": "F com pestana completa",
           "icon": "F",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
-              "title": "F barre",
-              "text": "Capotraste no traste 1, dedos 2-4 nos trastes 2-3. Rasgueie 6 cordas.",
+              "title": "F com pestana",
+              "text": "Pestana na casa 1, dedos 2-4 nas casas 2-3. Toque 6 cordas.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F barre requer capotraste em:",
+              "prompt": "O F com pestana exige pestana na:",
               "options": [
-                "Traste 1",
-                "Traste 2",
-                "Traste 3",
-                "Traste 5"
+                "Casa 1",
+                "Casa 2",
+                "Casa 3",
+                "Casa 5"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "F"
         },
         {
           "id": "l64",
-          "title": "Bm com capotraste",
+          "title": "Bm com pestana",
           "icon": "Bm",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
               "title": "Bm",
-              "text": "Capotraste no traste 2, forma de Am deslocada.",
+              "text": "Pestana na casa 2, formato de Am deslocado.",
               "chord": "Bm"
             },
             {
@@ -2178,28 +2178,28 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Bm"
         },
         {
           "id": "l65",
-          "title": "Mudanças F → Bm",
+          "title": "Trocas F → Bm",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Mudança",
-              "text": "Pratique F-Bm. Mova o capotraste como bloco."
+              "title": "Troca",
+              "text": "Pratique F-Bm. Mova a pestana como um bloco."
             },
             {
               "type": "quiz",
-              "prompt": "O segredo da mudança com capotraste:",
+              "prompt": "O segredo para trocar com pestana:",
               "options": [
-                "Mover dedos um por um",
-                "Mover o capotraste como bloco",
+                "Mover os dedos um por um",
+                "Mover a pestana como um bloco",
                 "Tocar mais forte",
                 "Olhar"
               ],
@@ -2208,7 +2208,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2220,37 +2220,37 @@
           "steps": [
             {
               "type": "info",
-              "title": "Capo",
-              "text": "O capotraste (capo) permite tocar a mesma forma em outro tom."
+              "title": "Capotraste",
+              "text": "O capotraste permite tocar o mesmo formato em outro tom."
             },
             {
               "type": "quiz",
-              "prompt": "Um capo serve para:",
+              "prompt": "O capotraste serve para:",
               "options": [
                 "Afinar",
-                "Mudar de tom sem mudar a forma",
+                "Mudar de tom sem mudar o formato",
                 "Acelerar",
-                "Silenciar"
+                "Abafar"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l67",
-          "title": "Revisão de capotraste",
+          "title": "Revisão de pestana",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam F e Bm."
+              "text": "F e Bm voltam."
             },
             {
               "type": "quiz",
@@ -2266,7 +2266,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -2286,24 +2286,24 @@
             {
               "type": "demo",
               "title": "E5",
-              "text": "Raiz e quinta: trastes 0-2-2 nas cordas 6-5-4.",
+              "text": "Fundamental e quinta: casas 0-2-2 nas cordas 6-5-4.",
               "chord": "E5"
             },
             {
               "type": "quiz",
               "prompt": "Um power chord tem:",
               "options": [
-                "Raiz e terça",
-                "Raiz e quinta",
-                "Só raiz",
-                "Raiz e sétima"
+                "Fundamental e terça",
+                "Fundamental e quinta",
+                "Só a fundamental",
+                "Fundamental e sétima"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "E5"
@@ -2317,12 +2317,12 @@
             {
               "type": "demo",
               "title": "A5",
-              "text": "Raiz e quinta: x022xx.",
+              "text": "Fundamental e quinta: x022xx.",
               "chord": "A5"
             },
             {
               "type": "quiz",
-              "prompt": "A5 se toca em:",
+              "prompt": "O A5 se toca nas:",
               "options": [
                 "Cordas 5-4-3",
                 "Cordas 6-5-4",
@@ -2334,7 +2334,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "A5"
@@ -2352,11 +2352,11 @@
             },
             {
               "type": "quiz",
-              "prompt": "Os power chords são usados em:",
+              "prompt": "Power chords são usados em:",
               "options": [
                 "Jazz",
                 "Rock/metal",
-                "Clássica",
+                "Clássico",
                 "Flamenco"
               ],
               "answer": 1
@@ -2364,7 +2364,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2377,23 +2377,23 @@
             {
               "type": "info",
               "title": "Movimento",
-              "text": "A mesma forma de power chord se desloca pelo braço."
+              "text": "O mesmo formato de power chord se move pelo braço."
             },
             {
               "type": "quiz",
-              "prompt": "Para subir de tom:",
+              "prompt": "Para subir o tom:",
               "options": [
-                "Baixar trastes",
-                "Subir trastes",
-                "Trocar guitarra",
-                "Usar capo"
+                "Descer de casa",
+                "Subir de casa",
+                "Trocar de violão",
+                "Usar capotraste"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2406,14 +2406,14 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam E5 e A5."
+              "text": "E5 e A5 voltam."
             },
             {
               "type": "quiz",
               "prompt": "O que é um power chord?",
               "options": [
                 "Acorde maior",
-                "Raiz+quinta",
+                "Fundamental+quinta",
                 "Acorde menor",
                 "Sétima"
               ],
@@ -2422,7 +2422,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -2442,23 +2442,23 @@
             {
               "type": "info",
               "title": "Hammer-on",
-              "text": "Bata em um traste com o dedo sem rasguear de novo. Soa ligado."
+              "text": "Bata numa casa com o dedo sem tocar a corda de novo. Soa ligado."
             },
             {
               "type": "quiz",
-              "prompt": "Hammer-on se faz com:",
+              "prompt": "O hammer-on se faz com:",
               "options": [
                 "Mão direita",
-                "Mão esquerda",
-                "Palheta",
-                "Capotraste"
+                "A mão esquerda",
+                "A palheta",
+                "Pestana"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2471,11 +2471,11 @@
             {
               "type": "info",
               "title": "Pull-off",
-              "text": "Puxe o dedo para soar a nota inferior sem rasguear."
+              "text": "Puxe o dedo para soar a nota mais grave sem tocar a corda."
             },
             {
               "type": "quiz",
-              "prompt": "Pull-off é o oposto de:",
+              "prompt": "O pull-off é o contrário de:",
               "options": [
                 "Bend",
                 "Hammer-on",
@@ -2487,7 +2487,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2500,23 +2500,23 @@
             {
               "type": "info",
               "title": "Bend",
-              "text": "Empurre a corda para cima para subir o tom (meio tom ou tom)."
+              "text": "Empurre a corda para cima para subir a afinação (meio tom ou um tom)."
             },
             {
               "type": "quiz",
-              "prompt": "Um bend sobe o tom:",
+              "prompt": "O bend sobe a afinação:",
               "options": [
-                "Não muda",
-                "Meio tom ou tom",
-                "Baixa o tom",
-                "Silencia"
+                "Sem mudança",
+                "Meio tom ou um tom",
+                "Abaixa a afinação",
+                "Os silêncios"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2536,7 +2536,7 @@
               "prompt": "Slide significa:",
               "options": [
                 "Bater",
-                "Deslizar",
+                "Slide",
                 "Puxar",
                 "Abafar"
               ],
@@ -2545,7 +2545,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2558,14 +2558,14 @@
             {
               "type": "info",
               "title": "Legato",
-              "text": "Combine hammer-on e pull-off para tocar fluido."
+              "text": "Combina hammer-on e pull-off para tocar de forma fluida."
             },
             {
               "type": "quiz",
-              "prompt": "Legato usa:",
+              "prompt": "O legato usa:",
               "options": [
-                "Hammer-on y pull-off",
-                "Só rasgueado",
+                "Hammer-on e pull-off",
+                "Só batida",
                 "Só bends",
                 "Palm mute"
               ],
@@ -2574,7 +2574,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2587,11 +2587,11 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam hammer-on, pull-off, bend, slide."
+              "text": "Hammer-on, pull-off, bend e slide voltam."
             },
             {
               "type": "quiz",
-              "prompt": "Qual técnica sobe o tom empurrando a corda?",
+              "prompt": "Qual técnica sobe a afinação empurrando a corda?",
               "options": [
                 "Hammer-on",
                 "Pull-off",
@@ -2603,7 +2603,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -2623,11 +2623,11 @@
             {
               "type": "info",
               "title": "Dedos",
-              "text": "Polegar (p) cordas graves, indicador (i), médio (m), anular (a) cordas agudas."
+              "text": "Polegar (p) nos bordões, indicador (i), médio (m) e anelar (a) nas primas."
             },
             {
               "type": "quiz",
-              "prompt": "Qual dedo toca as cordas graves?",
+              "prompt": "Qual dedo toca os bordões?",
               "options": [
                 "i",
                 "m",
@@ -2639,7 +2639,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2656,19 +2656,19 @@
             },
             {
               "type": "quiz",
-              "prompt": "Padrão p-i-m-a usa:",
+              "prompt": "O padrão p-i-m-a usa:",
               "options": [
                 "4 dedos",
                 "2 dedos",
                 "1 dedo",
-                "Palheta"
+                "A palheta"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2698,7 +2698,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "C"
@@ -2729,7 +2729,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Am"
@@ -2743,15 +2743,15 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Volte o padrão p-i-m-a."
+              "text": "O padrão p-i-m-a volta."
             },
             {
               "type": "quiz",
-              "prompt": "Fingerstyle se toca com:",
+              "prompt": "O fingerstyle se toca com:",
               "options": [
-                "Palheta",
+                "A palheta",
                 "Dedos",
-                "Capotraste",
+                "Pestana",
                 "Metrônomo"
               ],
               "answer": 1
@@ -2759,7 +2759,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -2772,18 +2772,18 @@
       "lessons": [
         {
           "id": "l84",
-          "title": "Improvisar com pentatônica",
+          "title": "Improvisando com a pentatônica",
           "icon": "🎼",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Improvisação",
-              "text": "Use a pentatônica menor sobre um backing em Am. Toque notas da escala com ritmo."
+              "text": "Use a pentatônica menor sobre uma base em Am. Toque notas da escala com ritmo."
             },
             {
               "type": "quiz",
-              "prompt": "Para improvisar você precisa:",
+              "prompt": "Para improvisar você precisa de:",
               "options": [
                 "Uma escala",
                 " Um acorde",
@@ -2795,24 +2795,24 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l85",
-          "title": "Modo jônico (maior)",
+          "title": "Modo jônio (maior)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Jônico",
+              "title": "Jônio",
               "text": "É a escala maior. Soa brilhante e estável."
             },
             {
               "type": "quiz",
-              "prompt": "Jônico é:",
+              "prompt": "O jônio é:",
               "options": [
                 "Escala maior",
                 "Escala menor",
@@ -2824,24 +2824,24 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l86",
-          "title": "Modo eólico (menor natural)",
+          "title": "Modo eólio (menor natural)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Eólico",
+              "title": "Eólio",
               "text": "É a escala menor natural. Soa triste."
             },
             {
               "type": "quiz",
-              "prompt": "Eólico é:",
+              "prompt": "O eólio é:",
               "options": [
                 "Maior",
                 "Menor natural",
@@ -2853,7 +2853,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2870,10 +2870,10 @@
             },
             {
               "type": "quiz",
-              "prompt": "Mixolídio se usa em:",
+              "prompt": "O mixolídio é usado em:",
               "options": [
                 "Jazz/blues",
-                "Clássica",
+                "Clássico",
                 "Metal extremo",
                 "Flamenco"
               ],
@@ -2882,7 +2882,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2895,14 +2895,14 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam jônico, eólico, mixolídio."
+              "text": "Jônio, eólio e mixolídio voltam."
             },
             {
               "type": "quiz",
               "prompt": "Qual modo é maior com 7ª menor?",
               "options": [
-                "Jônico",
-                "Eólico",
+                "Jônio",
+                "Eólio",
                 "Mixolídio",
                 "Dórico"
               ],
@@ -2911,7 +2911,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -2919,7 +2919,7 @@
     },
     {
       "id": "u16",
-      "title": "Unidade 16 – Estilos (blues, rock, pop, flamenco, metal, jazz, clássica)",
+      "title": "Unidade 16 – Estilos (blues, rock, pop, flamenco, metal, jazz, clássico)",
       "color": "brown",
       "lessons": [
         {
@@ -2931,15 +2931,15 @@
             {
               "type": "info",
               "title": "Shuffle",
-              "text": "Padrão ternário: 1 2 3 com acento. Use pentatônica menor."
+              "text": "Padrão ternário: 1 2 3 com acento. Usa a pentatônica menor."
             },
             {
               "type": "quiz",
-              "prompt": "Shuffle é:",
+              "prompt": "O shuffle é:",
               "options": [
                 "Binário",
                 "Ternário",
-                "Silêncio",
+                "Uma pausa",
                 "Só acordes"
               ],
               "answer": 1
@@ -2947,7 +2947,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -2967,29 +2967,29 @@
               "prompt": "O rock usa muito:",
               "options": [
                 "Power chords",
-                "Arpejos jazz",
+                "Arpejos de jazz",
                 "Flamenco",
-                "Clássica"
+                "Clássico"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l91",
-          "title": "Pop: rasgueado",
+          "title": "Pop: batida",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Pop",
-              "text": "Rasgueado down-up suave com capo."
+              "text": "Batida suave para baixo e para cima com capotraste."
             },
             {
               "type": "quiz",
@@ -2998,14 +2998,14 @@
                 "I-V-vi-IV",
                 "Só dissonantes",
                 "Só menores",
-                "Nenhuma"
+                "Nenhum"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3018,23 +3018,23 @@
             {
               "type": "info",
               "title": "Rumba",
-              "text": "Padrão de rumba catalã com percussão na caixa."
+              "text": "Padrão de rumba catalã com percussão no corpo."
             },
             {
               "type": "quiz",
-              "prompt": "A rumba é típica de:",
+              "prompt": "A rumba é típica do:",
               "options": [
                 "Jazz",
                 "Pop hispânico",
                 "Metal",
-                "Clássica"
+                "Clássico"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3051,7 +3051,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "O galope é típico de:",
+              "prompt": "O galope é típico do:",
               "options": [
                 "Metal",
                 "Jazz",
@@ -3063,7 +3063,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3080,7 +3080,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Walking bass se usa em:",
+              "prompt": "O walking bass é usado no:",
               "options": [
                 "Jazz",
                 "Metal",
@@ -3092,28 +3092,28 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l95",
-          "title": "Clássica: arpejo",
+          "title": "Clássico: arpejo",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "Clássica",
+              "title": "Clássico",
               "text": "Arpejos com p-i-m-a e posição correta."
             },
             {
               "type": "quiz",
-              "prompt": "A guitarra clássica se toca com:",
+              "prompt": "O violão clássico se toca com:",
               "options": [
-                "Palheta",
+                "A palheta",
                 "Dedos",
-                "Capotraste",
+                "Pestana",
                 "Arco"
               ],
               "answer": 1
@@ -3121,7 +3121,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -3141,23 +3141,23 @@
             {
               "type": "info",
               "title": "Tapping",
-              "text": "Bata no traste com a mão direita para notas rápidas."
+              "text": "Bata na casa com a mão direita para notas rápidas."
             },
             {
               "type": "quiz",
-              "prompt": "Tapping se faz com:",
+              "prompt": "O tapping se faz com:",
               "options": [
                 "Mão direita",
-                "Mão esquerda",
-                "Palheta",
-                "Pé"
+                "A mão esquerda",
+                "A palheta",
+                "O pé"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3170,11 +3170,11 @@
             {
               "type": "info",
               "title": "Sweep",
-              "text": "Rasgueado controlado através de várias cordas para arpejos rápidos."
+              "text": "Palhetada controlada por várias cordas para arpejos rápidos."
             },
             {
               "type": "quiz",
-              "prompt": "Sweep é típico de:",
+              "prompt": "O sweep é típico do:",
               "options": [
                 "Shred",
                 "Jazz",
@@ -3186,7 +3186,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3199,14 +3199,14 @@
             {
               "type": "info",
               "title": "Legato",
-              "text": "Combine hammer/pull para frases fluidas em alta velocidade."
+              "text": "Combina hammer/pull para frases fluidas em alta velocidade."
             },
             {
               "type": "quiz",
-              "prompt": "Legato avançado usa:",
+              "prompt": "O legato avançado usa:",
               "options": [
                 "Hammer/pull",
-                "Só rasgueado",
+                "Só batida",
                 "Só bends",
                 "Palm mute"
               ],
@@ -3215,7 +3215,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3228,7 +3228,7 @@
             {
               "type": "info",
               "title": "Economia",
-              "text": "Minimize o movimento das mãos para ganhar velocidade."
+              "text": "Minimize o movimento da mão para ganhar velocidade."
             },
             {
               "type": "quiz",
@@ -3237,14 +3237,14 @@
                 "Mover mais",
                 "Mover menos",
                 "Tocar mais forte",
-                "Trocar guitarra"
+                "Trocar de violão"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3257,7 +3257,7 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam tapping, sweep, legato."
+              "text": "Voltamos a tapping, sweep e legato."
             },
             {
               "type": "quiz",
@@ -3273,7 +3273,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -3286,18 +3286,18 @@
       "lessons": [
         {
           "id": "l101",
-          "title": "Revisão geral guitarra",
+          "title": "Revisão geral de violão",
           "icon": "🔁",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam acordes, ritmos e escalas."
+              "text": "Voltamos a acordes, ritmos e escalas."
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas tem a guitarra?",
+              "prompt": "Quantas cordas tem um violão?",
               "options": [
                 "4",
                 "5",
@@ -3309,28 +3309,28 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l102",
-          "title": "Desafio de mudanças (1 minuto)",
+          "title": "Desafio de trocas (1 minuto)",
           "icon": "⏱️",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Desafio",
-              "text": "Supere seu recorde de mudanças limpas em 60 s."
+              "text": "Bata seu recorde de trocas limpas em 60 s."
             },
             {
               "type": "quiz",
-              "prompt": "Objetivo:",
+              "prompt": "Meta:",
               "options": [
                 "Recorde pessoal",
-                "0 mudanças",
-                "Tocar forte",
+                "0 trocas",
+                "Tocar alto",
                 "Não praticar"
               ],
               "answer": 0
@@ -3338,7 +3338,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3351,11 +3351,11 @@
             {
               "type": "info",
               "title": "Gravação",
-              "text": "Grave um vídeo hoje e compare com o dia 1. Você verá o progresso!"
+              "text": "Grave um vídeo hoje e compare com o do dia 1. Você vai ver o progresso!"
             },
             {
               "type": "quiz",
-              "prompt": "Para que gravar?",
+              "prompt": "Por que gravar?",
               "options": [
                 "Motivação",
                 "Castigo",
@@ -3367,7 +3367,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3380,44 +3380,44 @@
             {
               "type": "info",
               "title": "Plano",
-              "text": "10 min diários: 3 min acordes, 3 min mudanças, 4 min música."
+              "text": "10 min por dia: 3 min de acordes, 3 min de trocas, 4 min de música."
             },
             {
               "type": "quiz",
               "prompt": "Frequência ideal:",
               "options": [
-                "1 vez por semana",
-                "10 min diários",
-                "1 h mensal",
-                "Só fim de semana"
+                "uma vez por semana",
+                "10 min por dia",
+                "1 h por mês",
+                "Só nos fins de semana"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "l105",
-          "title": "Graduação nível 1",
+          "title": "Formatura nível 1",
           "icon": "🎓",
           "xp": 25,
           "steps": [
             {
               "type": "info",
               "title": "Parabéns!",
-              "text": "Você completou o currículo base. Continue com estilos e avançado."
+              "text": "Você concluiu o currículo básico. Continue com estilos e avançado."
             },
             {
               "type": "quiz",
-              "prompt": "O que vem a seguir?",
+              "prompt": "E agora?",
               "options": [
-                "Deixar a guitarra",
+                "Largar o violão",
                 "Continuar praticando",
-                "Vender a guitarra",
+                "Vender o violão",
                 "Nada"
               ],
               "answer": 1
@@ -3425,7 +3425,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -3433,7 +3433,7 @@
     },
     {
       "id": "u19",
-      "title": "Unidade 19 - Teoria musical",
+      "title": "Unidade 19 – Teoria musical",
       "color": "purple",
       "lessons": [
         {
@@ -3462,8 +3462,8 @@
               "type": "quiz",
               "prompt": "Um semitom é a distância entre:",
               "options": [
-                "Duas notas iguais",
-                "Notas adjacentes",
+                "Duas notas idênticas",
+                "Notas vizinhas",
                 "Duas cordas",
                 "Um compasso"
               ],
@@ -3517,7 +3517,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Que alteração distingue o modo dórico?",
+              "prompt": "Qual alteração distingue o modo dórico?",
               "options": [
                 "3ª menor",
                 "4ª aumentada",
@@ -3541,7 +3541,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Que intervalos formam um acorde maior?",
+              "prompt": "Quais intervalos formam um acorde maior?",
               "options": [
                 "3m + 4m",
                 "4M + 3m",
@@ -3563,7 +3563,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "A 7ª de dominante é:",
+              "prompt": "A 7ª da dominante é:",
               "options": [
                 "M7",
                 "m7",
@@ -3587,7 +3587,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Em Dó maior, o acorde do V grau é:",
+              "prompt": "Em Dó maior, o acorde V é:",
               "options": [
                 "C",
                 "Dm",
@@ -3629,7 +3629,7 @@
             {
               "type": "info",
               "title": "Ritmo",
-              "text": "O ritmo organiza o tempo. 4/4 tem 4 tempos."
+              "text": "O ritmo organiza o tempo. O 4/4 tem 4 tempos."
             },
             {
               "type": "quiz",
@@ -3644,7 +3644,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Um compasso de 3/4 se associa a:",
+              "prompt": "Um compasso 3/4 é associado à:",
               "options": [
                 "Marcha",
                 "Valsa",
@@ -3655,11 +3655,11 @@
             },
             {
               "type": "quiz",
-              "prompt": "A colcheia vale:",
+              "prompt": "Uma colcheia vale:",
               "options": [
                 "1 tempo",
                 "1/2 tempo",
-                "1/4 tempo",
+                "1/4 de tempo",
                 "2 tempos"
               ],
               "answer": 1
@@ -3684,7 +3684,7 @@
             {
               "type": "info",
               "title": "O ukulele",
-              "text": "Tem 4 cordas: Sol (G), Dó (C), Mi (E), Lá (A) = GCEA. Afinação padrão (reentrante): a 4ª corda (Sol) é mais aguda."
+              "text": "Tem 4 cordas: Sol, Dó, Mi, Lá = GCEA. Afinação padrão (reentrante): a 4ª corda (Sol) é mais aguda."
             },
             {
               "type": "quiz",
@@ -3700,7 +3700,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3715,21 +3715,21 @@
               "string": 0,
               "note": "G4",
               "freq": 392.0,
-              "text": "Afinar a 4ª corda (Sol)."
+              "text": "Afine a 4ª corda (Sol)."
             },
             {
               "type": "tuner",
               "string": 1,
               "note": "C4",
               "freq": 261.63,
-              "text": "Afinar a 3ª corda (Dó)."
+              "text": "Afine a 3ª corda (Dó)."
             },
             {
               "type": "tuner",
               "string": 2,
               "note": "E4",
               "freq": 329.63,
-              "text": "Afinar a 2ª corda (Mi)."
+              "text": "Afine a 2ª corda (Mi)."
             },
             {
               "type": "quiz",
@@ -3758,7 +3758,7 @@
               "string": 3,
               "note": "A4",
               "freq": 440.0,
-              "text": "Afinar a 1ª corda (Lá)."
+              "text": "Afine a 1ª corda (Lá)."
             }
           ]
         },
@@ -3771,11 +3771,11 @@
             {
               "type": "info",
               "title": "Postura",
-              "text": "Segure o ukulele contra o peito, braço direito sobre o corpo. Mão esquerda atrás do braço."
+              "text": "Segure o ukulele contra o peito, com o braço direito sobre o corpo. Mão esquerda atrás do braço."
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas se rasgueiam normalmente?",
+              "prompt": "Quantas cordas costumam ser tocadas?",
               "options": [
                 "4",
                 "6",
@@ -3787,7 +3787,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -3799,24 +3799,24 @@
           "steps": [
             {
               "type": "info",
-              "title": "Tocar solto",
-              "text": "Toque a 1ª corda (Lá) solta. Deve soar claro."
+              "title": "Tocando cordas soltas",
+              "text": "Toque a 1ª corda (Lá) solta. Deve soar limpa."
             },
             {
               "type": "demo",
-              "title": "Ouça Lá",
+              "title": "Ouça o Lá",
               "text": "Referência Lá.",
               "freq": 440.0,
               "note": "A4"
             },
             {
               "type": "quiz",
-              "prompt": "Se trastear, o que você faz?",
+              "prompt": "Se trastejar, o que você faz?",
               "options": [
                 "Pressionar mais perto do traste",
                 "Tocar mais forte",
-                "Trocar corda",
-                "Afinar mais agudo"
+                "Trocar a corda",
+                "Afinar mais alto"
               ],
               "answer": 0
             }
@@ -3837,13 +3837,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "C maior (uke)",
-              "text": "Só um dedo: 3ª corda traste 3 (anular). Rasgueie as 4 cordas.",
+              "title": "Dó maior (uke)",
+              "text": "Só um dedo: 3ª corda casa 3 (anelar). Toque as 4 cordas.",
               "chord": "C"
             },
             {
               "type": "quiz",
-              "prompt": "Quantos dedos são usados para C no ukulele?",
+              "prompt": "Quantos dedos se usam no C do ukulele?",
               "options": [
                 "0",
                 "1",
@@ -3855,7 +3855,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "C"
@@ -3868,13 +3868,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "G maior (uke)",
-              "text": "Forma 0232.",
+              "title": "Sol maior (uke)",
+              "text": "Formato 0232.",
               "chord": "G"
             },
             {
               "type": "quiz",
-              "prompt": "G no uke se rasgueia com:",
+              "prompt": "O G no uke se toca com:",
               "options": [
                 "2 cordas",
                 "4 cordas",
@@ -3886,7 +3886,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "G"
@@ -3900,12 +3900,12 @@
             {
               "type": "demo",
               "title": "Am (uke)",
-              "text": "Forma 2000.",
+              "text": "Formato 2000.",
               "chord": "Am"
             },
             {
               "type": "quiz",
-              "prompt": "Am no uke usa:",
+              "prompt": "O Am no uke usa:",
               "options": [
                 "1 dedo",
                 "2 dedos",
@@ -3917,7 +3917,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "Am"
@@ -3931,12 +3931,12 @@
             {
               "type": "demo",
               "title": "F (uke)",
-              "text": "Forma 2010.",
+              "text": "Formato 2010.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F no uke usa:",
+              "prompt": "O F no uke usa:",
               "options": [
                 "1 dedo",
                 "2 dedos",
@@ -3948,7 +3948,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "F"
@@ -3962,12 +3962,12 @@
             {
               "type": "demo",
               "title": "D (uke)",
-              "text": "Forma 2220.",
+              "text": "Formato 2220.",
               "chord": "D"
             },
             {
               "type": "quiz",
-              "prompt": "D no uke usa:",
+              "prompt": "O D no uke usa:",
               "options": [
                 "1 dedo",
                 "2 dedos",
@@ -3979,7 +3979,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "D"
@@ -3993,12 +3993,12 @@
             {
               "type": "demo",
               "title": "E (uke)",
-              "text": "Forma 4442.",
+              "text": "Formato 4442.",
               "chord": "E"
             },
             {
               "type": "quiz",
-              "prompt": "E no uke usa:",
+              "prompt": "O E no uke usa:",
               "options": [
                 "1 dedo",
                 "2 dedos",
@@ -4010,7 +4010,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "E"
@@ -4024,12 +4024,12 @@
             {
               "type": "demo",
               "title": "G7 (uke)",
-              "text": "Forma 0212.",
+              "text": "Formato 0212.",
               "chord": "G7"
             },
             {
               "type": "quiz",
-              "prompt": "G7 no uke usa:",
+              "prompt": "O G7 no uke usa:",
               "options": [
                 "1 dedo",
                 "2 dedos",
@@ -4041,20 +4041,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ],
           "chord": "G7"
         },
         {
           "id": "ul12",
-          "title": "Mudanças C-G-Am-F (uke)",
+          "title": "Trocas C-G-Am-F (uke)",
           "icon": "🔄",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "Mudanças",
+              "title": "Trocas",
               "text": "Pratique C-G-Am-F no ukulele."
             },
             {
@@ -4071,7 +4071,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
@@ -4079,56 +4079,56 @@
     },
     {
       "id": "uu3",
-      "title": "Ukulele – Canções e rasgueado",
+      "title": "Ukulele – Músicas e batida",
       "color": "orange",
       "lessons": [
         {
           "id": "ul13",
-          "title": "Rasgueado básico (uke)",
+          "title": "Batida básica (uke)",
           "icon": "⬇️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Downstrokes",
-              "text": "Rasgueie as 4 cordas para baixo com o indicador."
+              "title": "Batidas para baixo",
+              "text": "Toque as 4 cordas para baixo com o indicador."
             },
             {
               "type": "quiz",
-              "prompt": "Um downstroke é:",
+              "prompt": "Uma batida para baixo é:",
               "options": [
                 "Para cima",
                 "Para baixo",
-                "Dedilhado",
-                "Silêncio"
+                "Palhetada",
+                "Uma pausa"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "ul14",
-          "title": "Padrão down-up (uke)",
+          "title": "Padrão baixo-cima (uke)",
           "icon": "⬆️",
           "xp": 15,
           "steps": [
             {
               "type": "info",
-              "title": "Down-up",
+              "title": "Baixo-cima",
               "text": "D U D U no ukulele."
             },
             {
               "type": "quiz",
-              "prompt": "Em D U D U, U é:",
+              "prompt": "Em D U D U, o U é:",
               "options": [
-                "Down",
-                "Up",
-                "Ambos",
+                "Para baixo",
+                "Para cima",
+                "As duas",
                 "Nenhum"
               ],
               "answer": 1
@@ -4136,20 +4136,20 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "ul15",
-          "title": "Canção de 2 acordes (uke)",
+          "title": "Música: dois acordes (uke)",
           "icon": "🎶",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Vamos tocar!",
-              "text": "Use C e G no ukulele. Rasgueie 4 vezes cada acorde."
+              "text": "Use C e G no ukulele. Toque 4 vezes por acorde."
             },
             {
               "type": "quiz",
@@ -4165,13 +4165,13 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
         {
           "id": "ul16",
-          "title": "Canção de 4 acordes (uke)",
+          "title": "Música: quatro acordes (uke)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
@@ -4194,7 +4194,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -4207,15 +4207,15 @@
             {
               "type": "info",
               "title": "Arpejo",
-              "text": "Toque as 4 cordas uma por uma com polegar e indicador."
+              "text": "Toque as 4 cordas uma a uma com polegar e indicador."
             },
             {
               "type": "quiz",
               "prompt": "Um arpejo é:",
               "options": [
-                "Rasgueado",
-                "Notas separadamente",
-                "Silêncio",
+                "Uma batida",
+                "Notas tocadas separadamente",
+                "Uma pausa",
                 "Palm mute"
               ],
               "answer": 1
@@ -4223,7 +4223,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         },
@@ -4236,11 +4236,11 @@
             {
               "type": "info",
               "title": "Revisão",
-              "text": "Voltam C, G, Am, F, D, E, G7."
+              "text": "Voltamos a C, G, Am, F, D, E e G7."
             },
             {
               "type": "quiz",
-              "prompt": "Quantas cordas tem o ukulele?",
+              "prompt": "Quantas cordas tem um ukulele?",
               "options": [
                 "4",
                 "6",
@@ -4252,7 +4252,7 @@
             {
               "type": "info",
               "title": "Prática",
-              "text": "Repita o aprendido lentamente. Busque som claro, sem trastejos, e conte mudanças limpas em 60 s."
+              "text": "Repita o que aprendeu devagar. Busque um som limpo, sem trastejar, e conte trocas limpas em 60 s."
             }
           ]
         }
