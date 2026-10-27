@@ -1488,81 +1488,32 @@ export async function renderBackendSettings(container) {
 
   container.innerHTML = `
     <div class="card" id="authCard">
-      <h3>Cuenta</h3>
-      <p style="color:var(--muted);font-size:13px;margin:0 0 10px">Inicia sesión para sincronizar progreso, leaderboards y funciones sociales. La app también funciona 100% local sin cuenta.</p>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 10px">Inicia sesión con Google o con tu email para guardar tu progreso en todos tus dispositivos. Sin cuenta, la app funciona igual en este dispositivo.</p>
       <div id="authArea"></div>
     </div>
 
-    <div class="card">
-      <h3>Leaderboard semanal</h3>
-      <div id="lbArea"></div>
-      <button class="btn btn-secondary btn-sm" id="lbRefreshBtn" style="margin-top:8px">Actualizar</button>
-    </div>
-
-    <div class="card">
-      <h3>Amigos</h3>
-      <div id="friendsArea"></div>
-    </div>
-
-    <div class="card">
-      <h3>Actividad de amigos</h3>
-      <div id="activityArea"></div>
-    </div>
-
-    <div class="card">
-      <h3>Compartir / Retos</h3>
-      <div id="socialArea"></div>
+    <div id="socialCards" hidden>
+      <div class="card">
+        <h3>Leaderboard semanal</h3>
+        <div id="lbArea"></div>
+        <button class="btn btn-secondary btn-sm" id="lbRefreshBtn" style="margin-top:8px">Actualizar</button>
+      </div>
+      <div class="card">
+        <h3>Amigos</h3>
+        <div id="friendsArea"></div>
+      </div>
+      <div class="card">
+        <h3>Actividad de amigos</h3>
+        <div id="activityArea"></div>
+      </div>
+      <div class="card">
+        <h3>Compartir / Retos</h3>
+        <div id="socialArea"></div>
+      </div>
     </div>
   `;
 
-  const statusEl = container.querySelector("#sbStatus");
-  function setStatus(msg) { if (statusEl) statusEl.innerHTML = msg; }
-
-  const connEl = container.querySelector("#connStatus");
-  function setConnStatus() {
-    const s = getStatus();
-    const label = s.connectionStatus || (s.online ? "connected" : "offline");
-    const color = label === "connected" ? "var(--green)" : (label === "connecting" ? "var(--gold)" : "var(--muted)");
-    if (connEl) connEl.innerHTML = `Estado: <b style="color:${color}">${label}</b> · Modo: <b>${s.mode}</b> · Cola: <b>${s.queueSize}</b> · ${s.online ? "Online" : "Offline"}`;
-  }
-  setConnStatus();
-
-  const cfg2 = getBackendConfig();
-  setStatus(`Modo: <b>${backendMode}</b> ${isConfigured() ? "· Configurado" : "· Sin configurar"} · Cola: ${getQueueSize()} · ${isOnline() ? "Online" : "Offline"}`);
-
-  // save config
-  container.querySelector("#sbSaveCfg").onclick = async () => {
-    const url = container.querySelector("#sbUrl").value.trim();
-    const key = container.querySelector("#sbKey").value.trim();
-    const rt = container.querySelector("#realtimeToggle").checked;
-    setBackendConfig(url, key, rt);
-    setStatus("Guardando y conectando…");
-    await initBackend(true);
-    setStatus(`Modo: <b>${backendMode}</b> ${isConfigured() ? "· Configurado" : "· Sin configurar"} · Cola: ${getQueueSize()}`);
-    setConnStatus();
-    await renderAuthArea();
-    toast("Configuración guardada");
-  };
-  container.querySelector("#sbClearCfg").onclick = () => {
-    setBackendConfig("", "");
-    setStatus("Desconectado. Modo local.");
-    setConnStatus();
-    toast("Backend desconectado");
-  };
-
-  // realtime toggle
-  const rtToggle = container.querySelector("#realtimeToggle");
-  if (rtToggle) {
-    rtToggle.onchange = () => {
-      setRealtimeEnabled(rtToggle.checked);
-      setConnStatus();
-      toast(rtToggle.checked ? "Tiempo real activado" : "Tiempo real desactivado");
-    };
-  }
-
-  // connection status listener
-  const statusHandler = () => { setConnStatus(); };
-  window.addEventListener("strumio:status-changed", statusHandler);
+  const signedIn = () => !!(getSession().user || currentUser);
 
   async function renderAuthArea() {
     const area = container.querySelector("#authArea");
@@ -1573,10 +1524,22 @@ export async function renderBackendSettings(container) {
       if (!client) await initBackend();
     }
     if (user) {
+      const last = getLastSyncAt();
       area.innerHTML = `
         <p>Sesión: <b>${escapeHtml(user.email || user.name || "Usuario")}</b></p>
-        <button class="btn btn-secondary btn-sm" id="signOutBtn">Cerrar sesión</button>
+        <p style="color:var(--muted);font-size:13px">Última sincronización: ${last ? new Date(last).toLocaleString() : "nunca"}</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn btn-primary btn-sm" id="syncNowBtn">Sincronizar ahora</button>
+          <button class="btn btn-secondary btn-sm" id="signOutBtn">Cerrar sesión</button>
+        </div>
       `;
+      const syncBtn = area.querySelector("#syncNowBtn");
+      if (syncBtn) syncBtn.onclick = async () => {
+        syncBtn.disabled = true;
+        await syncProgress();
+        toast("Sincronizado");
+        renderAuthArea();
+      };
       const btn = area.querySelector("#signOutBtn");
       if (btn) btn.onclick = async () => {
         await signOut();
@@ -1596,7 +1559,6 @@ export async function renderBackendSettings(container) {
           <button class="btn btn-secondary" id="signupBtn" style="flex:1">Crear cuenta</button>
         </div>
         <button class="auth-link" id="magicBtn">Enviarme un enlace de acceso (sin contraseña)</button>
-        <button class="auth-guest" id="guestBtn">Probar sin cuenta · solo este dispositivo</button>
       `;
 
       const emailEl = area.querySelector("#authEmail");
@@ -1653,19 +1615,15 @@ export async function renderBackendSettings(container) {
         toast("Enlace enviado. Revisa tu correo.");
       };
 
-      area.querySelector("#guestBtn").onclick = () => {
-        enableGuestMode("Invitado");
-        toast("Modo local: el progreso no se sincroniza");
-        renderAuthArea();
-        refreshAll();
-      };
-
       async function renderProviders() {
         if (!providersBox) return;
         const s = await getAuthSettings(true);
-        const enabled = OAUTH_PROVIDERS.filter((p) => s.providers && s.providers[p.id]);
+        // Por ahora solo Google (además del email).
+        const enabled = OAUTH_PROVIDERS.filter((p) => p.id === "google" && s.providers && s.providers[p.id]);
         if (!enabled.length) {
-          providersBox.innerHTML = `<p class="auth-hint">Todavía no hay proveedores sociales activados. Puedes usar tu email o probar sin cuenta.</p>`;
+          providersBox.innerHTML = "";
+          const div = area.querySelector(".auth-divider");
+          if (div) div.remove();
           return;
         }
         providersBox.innerHTML = enabled.map((p) => `
@@ -1687,16 +1645,6 @@ export async function renderBackendSettings(container) {
 
       renderProviders();
     }
-  }
-
-  async function renderSyncArea() {
-    const area = container.querySelector("#syncArea");
-    if (!area) return;
-    area.innerHTML = `
-      <p>Última sync: <b>${lastSyncAt ? new Date(lastSyncAt).toLocaleString() : "nunca"}</b></p>
-      <p>Cola pendiente: <b>${getQueueSize()}</b></p>
-      <p>Estado: <b>${isOnline() ? "Online" : "Offline"}</b></p>
-    `;
   }
 
   async function renderLeaderboard() {
@@ -1824,27 +1772,16 @@ export async function renderBackendSettings(container) {
 
   async function refreshAll() {
     await renderAuthArea();
-    await renderSyncArea();
+    const social = container.querySelector("#socialCards");
+    if (social) social.hidden = !signedIn();
+    if (!signedIn()) return;
     await renderLeaderboard();
     await renderFriends();
     await renderActivity();
     await renderSocial();
-    setConnStatus();
   }
 
   // wire
-  container.querySelector("#syncNowBtn").onclick = async () => {
-    await syncProgress();
-    await renderSyncArea();
-    setConnStatus();
-    toast("Sincronizado");
-  };
-  container.querySelector("#pullNowBtn").onclick = async () => {
-    await pullProgress();
-    await renderSyncArea();
-    setConnStatus();
-    toast("Progreso descargado");
-  };
   container.querySelector("#lbRefreshBtn").onclick = async () => {
     await renderLeaderboard();
     toast("Actualizado");
@@ -1860,7 +1797,7 @@ export async function renderBackendSettings(container) {
   window.addEventListener("strumio:realtime", rtHandler);
 
   // onAuthStateChange update UI
-  onAuthStateChange(() => { renderAuthArea(); refreshAll(); });
+  onAuthStateChange(() => { if (container.isConnected) refreshAll(); });
 
   await refreshAll();
 }
