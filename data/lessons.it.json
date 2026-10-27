@@ -1,0 +1,4262 @@
+{
+  "units": [
+    {
+      "id": "u1",
+      "title": "Unità 1 – Primi suoni",
+      "color": "green",
+      "lessons": [
+        {
+          "id": "l1",
+          "title": "Anatomia della chitarra",
+          "icon": "🎸",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Benvenuto!",
+              "text": "La chitarra ha 6 corde, un manico con i tasti e una cassa che amplifica il suono. Le corde sono numerate dalla più sottile (1ª, Mi cantino) alla più spessa (6ª, Mi basso)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde ha una chitarra standard?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "La corda più sottile (1ª) si chiama:",
+              "options": [
+                "Mi basso",
+                "A",
+                "D",
+                "Mi cantino"
+              ],
+              "answer": 3
+            }
+          ]
+        },
+        {
+          "id": "l2",
+          "title": "Postura e impugnatura",
+          "icon": "🧍",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Postura seduta",
+              "text": "Siediti dritto e appoggia la chitarra sulla gamba destra (destrimani). Il manico punta leggermente verso l'alto. Il pollice sinistro va dietro il manico."
+            },
+            {
+              "type": "info",
+              "title": "Mano destra",
+              "text": "Pollice (p), indice (i), medio (m) e anulare (a) suonano le corde. Inizia pizzicando una corda a vuoto con il pollice, dall'alto verso il basso."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dove va il pollice sinistro?",
+              "options": [
+                "Sopra il manico",
+                "Dietro il manico",
+                "Sulle corde",
+                "Non importa"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "l3",
+          "title": "Accordatura standard",
+          "icon": "🎯",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Accordatura EADGBE",
+              "text": "Dalla corda più spessa alla più sottile: Mi - La - Re - Sol - Si - Mi (E - A - D - G - B - E). Trucco: 'Mi La Re Sol Si Mi', cantalo!"
+            },
+            {
+              "type": "tuner",
+              "string": 0,
+              "note": "E2",
+              "freq": 82.41,
+              "text": "Accorda la 6ª corda (Mi basso). Pizzica la corda e gira la meccanica finché l'accordatore diventa verde."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde hai accordato in questa lezione?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde hai accordato in questa lezione?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "tuner",
+              "string": 5,
+              "note": "E4",
+              "freq": 329.63,
+              "text": "Accorda la 1ª corda (Mi cantino)."
+            }
+          ]
+        },
+        {
+          "id": "l4",
+          "title": "Il tuo primo suono",
+          "icon": "🎵",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suonare le corde a vuoto",
+              "text": "Suona la 1ª corda (la più sottile) con l'indice destro. Deve suonare pulita e sostenuta. Se ronza, premi più vicino alla barretta."
+            },
+            {
+              "type": "demo",
+              "title": "Ascolta",
+              "text": "Ecco come deve suonare la 1ª corda a vuoto (Mi).",
+              "freq": 329.63,
+              "note": "E4"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Se una corda suona smorzata o ronza, cosa fai?",
+              "options": [
+                "Suonare più forte",
+                "Premere più vicino alla barretta",
+                "Cambiare la corda",
+                "Accordare più alto"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "l5",
+          "title": "Note sui primi tasti",
+          "icon": "🎼",
+          "xp": 12,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Tasti",
+              "text": "Ogni tasto alza di un semitono. Sulla 1ª corda: tasto 0 = Mi, 1 = Fa, 2 = Fa#, 3 = Sol."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Di quanti semitoni alza un tasto?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Sulla 1ª corda, il tasto 3 è:",
+              "options": [
+                "F",
+                "F#",
+                "G",
+                "A"
+              ],
+              "answer": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Unità 2 – Primi accordi (Em, Am, E, A)",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "l6",
+          "title": "Accordo Em",
+          "icon": "Em",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo Em (Mi minore)",
+              "text": "Metti il dito 2 sulla 5ª corda tasto 2 e il dito 3 sulla 4ª corda tasto 2. Suona tutte e 6 le corde.",
+              "chord": "Em"
+            },
+            {
+              "type": "playChord",
+              "title": "Suona Em",
+              "text": "Suona l'accordo Em. L'app lo rileverà automaticamente.",
+              "expected": "Em"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali dita si usano per Em?",
+              "options": [
+                "1 e 2",
+                "2 e 3",
+                "1, 2 e 3",
+                "Solo il 1°"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde si suonano in Em?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "3"
+              ],
+              "answer": 2
+            }
+          ],
+          "chord": "Em"
+        },
+        {
+          "id": "l7",
+          "title": "Accordo Am",
+          "icon": "Am",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo Am (La minore)",
+              "text": "Dito 1 sulla 2ª corda tasto 1, dito 2 sulla 4ª corda tasto 2, dito 3 sulla 3ª corda tasto 2. Suona 5 corde (senza la 6ª).",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "In Am si suona la 6ª corda (Mi basso)?",
+              "options": [
+                "Sì, sempre",
+                "No, si omette",
+                "Solo con il barré",
+                "Dipende"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "l106",
+          "title": "Accordo Dm",
+          "icon": "Dm",
+          "xp": 15,
+          "chord": "Dm",
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo Dm (Re minore)",
+              "text": "Dito 1: 1ª corda tasto 1. Dito 2: 3ª corda tasto 2. Dito 3: 2ª corda tasto 3. Suona 4 corde.",
+              "chord": "Dm"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dm è un accordo:",
+              "options": [
+                "Maggiore",
+                "Minore",
+                "Dominante",
+                "Diminuito"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti Dm lentamente cercando un suono pulito."
+            }
+          ]
+        },
+        {
+          "id": "l8",
+          "title": "Cambio Em → Am",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Cambio lento",
+              "text": "Esercitati a passare da Em ad Am e ritorno. Muovi le dita insieme, non una alla volta. Obiettivo: 30 cambi in 1 minuto senza errori."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Qual è il segreto per cambiare accordo velocemente?",
+              "options": [
+                "Suonare più forte",
+                "Muovere le dita insieme",
+                "Guardare le corde",
+                "Usare il barré"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "Ascolta Em",
+              "text": "Riferimento: accordo Em.",
+              "chord": "Em"
+            },
+            {
+              "type": "demo",
+              "title": "Ascolta Am",
+              "text": "Riferimento: accordo Am.",
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "id": "l9",
+          "title": "Accordo E",
+          "icon": "E",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo E (Mi maggiore)",
+              "text": "Dito 2 sulla 5ª tasto 2, dito 3 sulla 4ª tasto 2, dito 1 sulla 3ª tasto 1. Suona tutte e 6 le corde.",
+              "chord": "E"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde si suonano in E?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "3"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "E"
+        },
+        {
+          "id": "l10",
+          "title": "Accordo A",
+          "icon": "A",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo A (La maggiore)",
+              "text": "Dita 1,2,3 al tasto 2 delle corde 4ª, 3ª e 2ª. Suona 5 corde (senza la 6ª).",
+              "chord": "A"
+            },
+            {
+              "type": "quiz",
+              "prompt": "In A, quale corda si omette?",
+              "options": [
+                "1ª",
+                "6ª",
+                "3ª",
+                "5ª"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "A"
+        },
+        {
+          "id": "l11",
+          "title": "Cambio E → A",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Cambio E-A",
+              "text": "Usa la stessa forma di Em-Am ma con un dito in più. Prova 20 cambi puliti in 1 minuto."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Cosa ti aiuta a cambiare più in fretta?",
+              "options": [
+                "Guardarsi le dita",
+                "Muovere le dita insieme",
+                "Suonare più forte",
+                "Cambiare chitarra"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "E",
+              "text": null,
+              "chord": "E"
+            },
+            {
+              "type": "demo",
+              "title": "A",
+              "text": null,
+              "chord": "A"
+            }
+          ]
+        },
+        {
+          "id": "l12",
+          "title": "Ripasso accordi aperti I",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso distanziato",
+              "text": "Tornano Em, Am, E e A. Suonali senza guardare il diagramma."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo è x02210?",
+              "options": [
+                "Em",
+                "Am",
+                "E",
+                "A"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo è 022100?",
+              "options": [
+                "Em",
+                "Am",
+                "E",
+                "A"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l13",
+          "title": "Prima canzone a 2 accordi",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Usa Em e Am. Suona ogni accordo 4 volte e cambia. Ripeti. Stai già suonando una canzone!"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali accordi hai usato?",
+              "options": [
+                "C e G",
+                "Em e Am",
+                "Am e D",
+                "E e A"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "Em",
+              "text": null,
+              "chord": "Em"
+            },
+            {
+              "type": "demo",
+              "title": "Am",
+              "text": null,
+              "chord": "Am"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Unità 3 – Accordi maggiori aperti (C, G, D)",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "l14",
+          "title": "Accordo C",
+          "icon": "C",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo C (Do maggiore)",
+              "text": "Dito 1: 2ª corda tasto 1. Dito 2: 4ª corda tasto 2. Dito 3: 5ª corda tasto 3. Suona 5 corde (senza la 6ª).",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "In C, quale corda si omette?",
+              "options": [
+                "1ª",
+                "6ª",
+                "3ª",
+                "5ª"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "l15",
+          "title": "Accordo G",
+          "icon": "G",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo G (Sol maggiore)",
+              "text": "Dito 2 sulla 5ª tasto 2, dito 1 sulla 2ª tasto 3, dito 3 sulla 6ª tasto 3, dito 4 sulla 1ª tasto 3. Suona 6 corde.",
+              "chord": "G"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G si suona con:",
+              "options": [
+                "4 corde",
+                "5 corde",
+                "6 corde",
+                "3 corde"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "G"
+        },
+        {
+          "id": "l16",
+          "title": "Accordo D",
+          "icon": "D",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo D (Re maggiore)",
+              "text": "Dito 1: 3ª corda tasto 2. Dito 2: 1ª corda tasto 2. Dito 3: 2ª corda tasto 3. Suona le 4 corde più sottili.",
+              "chord": "D"
+            },
+            {
+              "type": "quiz",
+              "prompt": "In D, quante corde si suonano?",
+              "options": [
+                "6",
+                "5",
+                "4",
+                "3"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "D"
+        },
+        {
+          "id": "l17",
+          "title": "Cambi C → G → Am",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Catena di cambi",
+              "text": "Esercitati con C-G-Am-C. Mantieni il ritmo con una pennata per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo segue G in C-G-Am-F?",
+              "options": [
+                "C",
+                "Am",
+                "F",
+                "D"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "C",
+              "text": null,
+              "chord": "C"
+            },
+            {
+              "type": "demo",
+              "title": "G",
+              "text": null,
+              "chord": "G"
+            },
+            {
+              "type": "demo",
+              "title": "Am",
+              "text": null,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "id": "l18",
+          "title": "Progressione I-V-vi-IV",
+          "icon": "📐",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "La progressione più usata",
+              "text": "C - G - Am - F. Suona con una pennata per accordo. È la base di migliaia di canzoni pop."
+            },
+            {
+              "type": "demo",
+              "title": "C",
+              "text": null,
+              "chord": "C"
+            },
+            {
+              "type": "demo",
+              "title": "G",
+              "text": null,
+              "chord": "G"
+            },
+            {
+              "type": "demo",
+              "title": "Am",
+              "text": null,
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale progressione hai praticato?",
+              "options": [
+                "C-G-Am-F",
+                "Em-Am",
+                "D-A-G",
+                "E-A-D-G"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale progressione hai praticato?",
+              "options": [
+                "C-G-Am-F",
+                "Em-Am",
+                "D-A-G",
+                "E-A-D-G"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "demo",
+              "title": "F (barré)",
+              "text": null,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "id": "l19",
+          "title": "La tua prima canzone a 3 accordi",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Usa C, G e Am. Suona ogni accordo 4 volte e cambia. Ripeti."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali accordi hai usato?",
+              "options": [
+                "C, G e Am",
+                "Em e G",
+                "Am e D",
+                "E e A"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l20",
+          "title": "Ripasso settimana 1",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso distanziato",
+              "text": "Tornano Em, Am, E, A, C, G e D. Suonali a memoria."
+            },
+            {
+              "type": "quiz",
+              "prompt": "In D, quante corde si suonano?",
+              "options": [
+                "6",
+                "5",
+                "4",
+                "3"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo è 320003?",
+              "options": [
+                "G",
+                "C",
+                "D",
+                "A"
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "Unità 4 – F e cambi rapidi",
+      "color": "red",
+      "lessons": [
+        {
+          "id": "l21",
+          "title": "Accordo F (barré)",
+          "icon": "F",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accordo F (Fa maggiore)",
+              "text": "Metti il dito 1 a barré sul tasto 1 (corde 1ª-6ª) e le dita 2, 3, 4 sui tasti 2-3. Suona 6 corde.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "F richiede:",
+              "options": [
+                "Barré",
+                "Solo 2 dita",
+                "Una nota pizzicata",
+                "Silenzio"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Consiglio",
+              "text": "È normale che F suoni smorzato all'inizio. Premi il barré con il lato dell'indice, vicino alla barretta."
+            }
+          ],
+          "chord": "F"
+        },
+        {
+          "id": "l107",
+          "title": "F semplificato (senza barré)",
+          "icon": "F",
+          "xp": 16,
+          "chord": "F",
+          "steps": [
+            {
+              "type": "info",
+              "title": "F semplificato",
+              "text": "Usa solo le 4 corde più acute: tasti 2-1-1 (Re-Sol-Si-mi) senza barré completo. Suona simile a F."
+            },
+            {
+              "type": "demo",
+              "title": "F semplificato",
+              "text": "Suona la forma di F semplificato.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il F semplificato evita:",
+              "options": [
+                "Il barré completo",
+                "Suonare le corde",
+                "Accordare",
+                "Il ritmo"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Esercitati con il cambio C-F semplificato."
+            }
+          ]
+        },
+        {
+          "id": "l22",
+          "title": "Cambio C → F → G",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Catena",
+              "text": "Esercitati con C-F-G-C. Muovi le dita insieme."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo richiede il barré in questa progressione?",
+              "options": [
+                "C",
+                "F",
+                "G",
+                "Nessuno"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "C",
+              "text": null,
+              "chord": "C"
+            },
+            {
+              "type": "demo",
+              "title": "F",
+              "text": null,
+              "chord": "F"
+            },
+            {
+              "type": "demo",
+              "title": "G",
+              "text": null,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "id": "l23",
+          "title": "Allenamento cambi (1 minuto)",
+          "icon": "⏱️",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "La sfida JustinGuitar",
+              "text": "Conta quanti cambi Em-Am puliti fai in 60 s. Batti il tuo record ogni giorno."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Obiettivo minimo ragionevole nella settimana 1:",
+              "options": [
+                "5 cambi",
+                "15 cambi",
+                "60 cambi",
+                "1 cambio"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l24",
+          "title": "Canzone a 4 accordi",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Usa C-G-Am-F. Suona ogni accordo 4 volte. Ripeti. È una canzone pop!"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale progressione hai usato?",
+              "options": [
+                "I-V-vi-IV",
+                "ii-V-I",
+                "I-IV-V",
+                "vi-IV-I-V"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l25",
+          "title": "Ripasso settimana 2",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso distanziato",
+              "text": "Tornano C, G, Am, F e i cambi."
+            },
+            {
+              "type": "quiz",
+              "prompt": "In quale accordo si omette la 6ª corda?",
+              "options": [
+                "G",
+                "C",
+                "Am",
+                "F"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "Unità 5 – Ritmo e strumming",
+      "color": "yellow",
+      "lessons": [
+        {
+          "id": "l26",
+          "title": "Pennate in giù",
+          "icon": "⬇️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Pennata in giù",
+              "text": "Suona verso il basso con l'indice o il plettro, colpendo tutte le corde dell'accordo. Mantieni il ritmo: 1-2-3-4."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Una 'pennata in giù' è:",
+              "options": [
+                "Pennata in su",
+                "Pennata in giù",
+                "Plettrata",
+                "Silenzio"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l27",
+          "title": "Strumming giù-su",
+          "icon": "⬆️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Giù e su",
+              "text": "Alterna pennate in giù e in su: D U D U (D = giù, U = su). Tieni la mano in movimento anche quando non suoni."
+            },
+            {
+              "type": "quiz",
+              "prompt": "In D U D U, quale lettera è la 'pennata in su'?",
+              "options": [
+                "D",
+                "U",
+                "Entrambe",
+                "Nessuno"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l28",
+          "title": "Sincope di base",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Sincope",
+              "text": "Accentua i tempi deboli: 1 2 3 4 con una pennata in su sull''e' di ogni tempo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La sincope mette in risalto:",
+              "options": [
+                "I tempi forti",
+                "I tempi deboli",
+                "I silenzi",
+                "Solo il 1°"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l29",
+          "title": "Palm mute",
+          "icon": "🤚",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Palm mute",
+              "text": "Appoggia il taglio della mano destra vicino al ponte per smorzare. Suona percussivo e potente."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il palm mute si fa con:",
+              "options": [
+                "La mano sinistra",
+                "Il taglio della mano destra",
+                "Il plettro",
+                "Barré"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l30",
+          "title": "Metronomo lento",
+          "icon": "⏱️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Esercitati lentamente",
+              "text": "Suona un accordo per movimento a 60 BPM. Alza il tempo solo quando azzecchi 4 battute di fila."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quando alzare il tempo?",
+              "options": [
+                "Quando vuoi",
+                "Quando azzecchi 4 battute di fila",
+                "Mai",
+                "Solo alla fine"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l31",
+          "title": "Pattern da ballata",
+          "icon": "🎵",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Pattern",
+              "text": "D D U U D U con un accento morbido. Ideale per le ballate pop."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Pattern da ballata suggerito:",
+              "options": [
+                "D D D D",
+                "D U D U",
+                "D D U U D U",
+                "Solo pennate in su"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "title": "Unità 6 – Prime canzoni",
+      "color": "pink",
+      "lessons": [
+        {
+          "id": "l32",
+          "title": "Canzone: Em e Am",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Em-Am: 4 pennate per accordo, ripeti."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l33",
+          "title": "Canzone: C, G, Am, F",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Progressione pop C-G-Am-F, 4 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l34",
+          "title": "Canzone: G, D, Em, C",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "G-D-Em-C, 2 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l35",
+          "title": "Canzone: D, A, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "D-A-G, 4 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l36",
+          "title": "Canzone: Am, F, C, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Am-F-C-G, 4 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l37",
+          "title": "Canzone: E, A, D, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "E-A-D-G, 2 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l38",
+          "title": "Canzone: Em, G, D, C",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Em-G-D-C, 4 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l39",
+          "title": "Canzone: C, Am, F, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "C-Am-F-G, 4 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l40",
+          "title": "Canzone: due accordi (Em-G)",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Em-G alternati a ogni battuta."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l41",
+          "title": "Canzone: tre accordi (C, F, G)",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "C-F-G, 4 pennate per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi diversi hai usato?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "title": "Unità 7 – Accordi di colore (Asus2, Dsus2, G7, Cadd9)",
+      "color": "teal",
+      "lessons": [
+        {
+          "id": "l42",
+          "title": "Accordo Asus2",
+          "icon": "Asus2",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Asus2",
+              "text": "Asus2 suona aperto e sospeso. Forma: x02200.",
+              "chord": "Asus2"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Asus2 è un accordo:",
+              "options": [
+                "Maggiore",
+                "Minore",
+                "Sospeso",
+                "Diminuito"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Asus2"
+        },
+        {
+          "id": "l43",
+          "title": "Accordo Dsus2",
+          "icon": "Dsus2",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Dsus2",
+              "text": "Dsus2 suona aperto. Forma: xx0230.",
+              "chord": "Dsus2"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dsus2 sostituisce la terza con la:",
+              "options": [
+                "Seconda",
+                "Quarta",
+                "Quinta",
+                "Settima"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Dsus2"
+        },
+        {
+          "id": "l44",
+          "title": "Accordo G7",
+          "icon": "G7",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "G7",
+              "text": "G7 aggiunge tensione per risolvere su C. Forma: 320001.",
+              "chord": "G7"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G7 è un accordo di:",
+              "options": [
+                "Tonica",
+                "Dominante",
+                "Sottodominante",
+                "Diminuito"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "G7"
+        },
+        {
+          "id": "l45",
+          "title": "Accordo Cadd9",
+          "icon": "Cadd9",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Cadd9",
+              "text": "Cadd9 suona brillante e moderno. Forma: x32033.",
+              "chord": "Cadd9"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Cadd9 aggiunge la nota:",
+              "options": [
+                "9ª (Re)",
+                "7ª",
+                "6ª",
+                "4ª"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Cadd9"
+        },
+        {
+          "id": "l46",
+          "title": "Progressione con colore",
+          "icon": "🎨",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Progressione",
+              "text": "C - G - Am - F con Cadd9 e G7 per dare colore."
+            },
+            {
+              "type": "demo",
+              "title": "Cadd9",
+              "text": null,
+              "chord": "Cadd9"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali accordi di colore hai usato?",
+              "options": [
+                "Cadd9 e G7",
+                "Em e Am",
+                "Dm e Bm",
+                "E5 e A5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali accordi di colore hai usato?",
+              "options": [
+                "Cadd9 e G7",
+                "Em e Am",
+                "Dm e Bm",
+                "E5 e A5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "demo",
+              "title": "G7",
+              "text": null,
+              "chord": "G7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "title": "Unità 8 – Scale e riff",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "l47",
+          "title": "Scala pentatonica minore",
+          "icon": "🎼",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "La scala del rock",
+              "text": "Posizione 1 in La minore: tasti 5-8 sulle corde dalla 6 alla 1. È la base degli assoli rock e blues."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La pentatonica minore ha:",
+              "options": [
+                "5 note",
+                "7 note",
+                "8 note",
+                "12 note"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l48",
+          "title": "Riff su una corda",
+          "icon": "🎸",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Smoke on the Water",
+              "text": "Suona sulla 4ª corda: tasti 0-3-5, 0-3-6-5. Un riff iconico su una sola corda."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Su quale corda si suona questo riff?",
+              "options": [
+                "6ª",
+                "4ª",
+                "2ª",
+                "1ª"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l49",
+          "title": "Seven Nation Army",
+          "icon": "🎸",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Riff",
+              "text": "Suona sulla 5ª corda (La): 7-7-10-7-5-3-0 (circa). Un riff su una sola corda."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Questo riff si suona:",
+              "options": [
+                "Su una sola corda",
+                "Su sei corde",
+                "Con il barré",
+                "Con il tapping"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l50",
+          "title": "Riff potente (Smoke)",
+          "icon": "🔥",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Riff con due corde",
+              "text": "Aggiungi la 5ª corda per rendere il riff più potente."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un riff potente usa:",
+              "options": [
+                "Note singole",
+                "Fondamentale e quinta",
+                "Arpeggi",
+                "Pause"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l51",
+          "title": "Scala maggiore (Do maggiore)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Do maggiore",
+              "text": "Do-Re-Mi-Fa-Sol-La-Si-Do. La base della teoria."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La scala maggiore ha:",
+              "options": [
+                "5 note",
+                "7 note",
+                "8 note",
+                "12 note"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l52",
+          "title": "Ripasso delle scale",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torniamo alla pentatonica minore e a Do maggiore."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante note ha la pentatonica?",
+              "options": [
+                "5",
+                "7",
+                "8",
+                "12"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "title": "Unità 9 – Arpeggi e palm mute",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "l53",
+          "title": "Arpeggio di base",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Arpeggio",
+              "text": "Suona le note dell'accordo una alla volta: p i m a m i (6-4-3-2-3-4)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un arpeggio è:",
+              "options": [
+                "Uno strumming",
+                "Le note dell'accordo suonate separatamente",
+                "Una pausa",
+                "Palm mute"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l54",
+          "title": "Arpeggio di C",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Arpeggio C",
+              "text": "Suona C arpeggiando le corde 5-4-3-2-1.",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo hai arpeggiato?",
+              "options": [
+                "C",
+                "G",
+                "Am",
+                "F"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "l55",
+          "title": "Arpeggio di Am",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Arpeggio Am",
+              "text": "Suona Am arpeggiando.",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo hai arpeggiato?",
+              "options": [
+                "C",
+                "G",
+                "Am",
+                "F"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "l56",
+          "title": "Palm mute avanzato",
+          "icon": "🤚",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Palm mute",
+              "text": "Combina palm mute e strumming per un suono rock."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il palm mute si usa molto nel:",
+              "options": [
+                "Ballate",
+                "Rock/metal",
+                "Classica",
+                "Flamenco"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l57",
+          "title": "Ripasso degli arpeggi",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torniamo agli arpeggi di C e Am."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un arpeggio si suona:",
+              "options": [
+                "Tutto insieme",
+                "Una alla volta",
+                "Con il barré",
+                "In silenzio"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "title": "Unità 10 – Accordi di settima",
+      "color": "indigo",
+      "lessons": [
+        {
+          "id": "l58",
+          "title": "Accordo maj7 (Cmaj7)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "maj7",
+              "text": "Cmaj7 suona jazzistico e morbido. Aggiunge la 7ª maggiore a C."
+            },
+            {
+              "type": "quiz",
+              "prompt": "maj7 suona:",
+              "options": [
+                "Teso",
+                "Morbido/jazz",
+                "Triste",
+                "Aggressivo"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l59",
+          "title": "Accordo m7 (Am7)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "m7",
+              "text": "Am7 suona morbido e triste. Aggiunge la 7ª minore ad Am."
+            },
+            {
+              "type": "quiz",
+              "prompt": "m7 si usa nel:",
+              "options": [
+                "Hard rock",
+                "Jazz/pop",
+                "Metal",
+                "Flamenco"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l60",
+          "title": "Accordo dom7 (G7)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "dom7",
+              "text": "G7 crea tensione per risolvere su C. L'hai già visto come G7."
+            },
+            {
+              "type": "quiz",
+              "prompt": "dom7 risolve su:",
+              "options": [
+                "Tonica",
+                "Dominante",
+                "Sottodominante",
+                "Niente"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l61",
+          "title": "Progressione ii-V-I",
+          "icon": "📐",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "ii-V-I",
+              "text": "Dm7 - G7 - Cmaj7. La progressione jazz per eccellenza."
+            },
+            {
+              "type": "quiz",
+              "prompt": "ii-V-I è tipica del:",
+              "options": [
+                "Jazz",
+                "Metal",
+                "Punk",
+                "Reggae"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l62",
+          "title": "Ripasso accordi di settima",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torniamo a maj7, m7 e dom7."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo è dom7?",
+              "options": [
+                "Cmaj7",
+                "Am7",
+                "G7",
+                "Em"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "title": "Unità 11 – Accordi con barré (F, Bm)",
+      "color": "red",
+      "lessons": [
+        {
+          "id": "l63",
+          "title": "F con barré completo",
+          "icon": "F",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "F con barré",
+              "text": "Barré al tasto 1, dita 2-4 sui tasti 2-3. Suona 6 corde.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "F con barré richiede il barré al:",
+              "options": [
+                "Tasto 1",
+                "Tasto 2",
+                "Tasto 3",
+                "Tasto 5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "F"
+        },
+        {
+          "id": "l64",
+          "title": "Bm con barré",
+          "icon": "Bm",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Bm",
+              "text": "Barré al tasto 2, forma di Am spostata.",
+              "chord": "Bm"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Bm è un accordo:",
+              "options": [
+                "Maggiore",
+                "Minore",
+                "Dominante",
+                "Diminuito"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Bm"
+        },
+        {
+          "id": "l65",
+          "title": "Cambi F → Bm",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Cambio",
+              "text": "Esercitati con F-Bm. Sposta il barré come un blocco."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il segreto per cambiare con il barré:",
+              "options": [
+                "Muovere le dita una alla volta",
+                "Spostare il barré come un blocco",
+                "Suonare più forte",
+                "Guardare"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l66",
+          "title": "Trasposizione con capotasto",
+          "icon": "📐",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Capotasto",
+              "text": "Il capotasto permette di suonare la stessa forma in un'altra tonalità."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il capotasto serve a:",
+              "options": [
+                "Accordare",
+                "Cambiare tonalità senza cambiare forma",
+                "Accelerare",
+                "Smorzare"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l67",
+          "title": "Ripasso del barré",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Tornano F e Bm."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo è 224432?",
+              "options": [
+                "F",
+                "Bm",
+                "Em",
+                "Am"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "title": "Unità 12 – Power chord",
+      "color": "black",
+      "lessons": [
+        {
+          "id": "l68",
+          "title": "Power chord E5",
+          "icon": "E5",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "E5",
+              "text": "Fondamentale e quinta: tasti 0-2-2 sulle corde 6-5-4.",
+              "chord": "E5"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un power chord ha:",
+              "options": [
+                "Fondamentale e terza",
+                "Fondamentale e quinta",
+                "Solo la fondamentale",
+                "Fondamentale e settima"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "E5"
+        },
+        {
+          "id": "l69",
+          "title": "Power chord A5",
+          "icon": "A5",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "A5",
+              "text": "Fondamentale e quinta: x022xx.",
+              "chord": "A5"
+            },
+            {
+              "type": "quiz",
+              "prompt": "A5 si suona sulle:",
+              "options": [
+                "Corde 5-4-3",
+                "Corde 6-5-4",
+                "Corde 4-3-2",
+                "Corde 1-2-3"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "A5"
+        },
+        {
+          "id": "l70",
+          "title": "Riff di power chord",
+          "icon": "🔥",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Riff",
+              "text": "E5 - A5 - B5 (simulato) con palm mute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "I power chord si usano nel:",
+              "options": [
+                "Jazz",
+                "Rock/metal",
+                "Classica",
+                "Flamenco"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l71",
+          "title": "Movimento lungo il manico",
+          "icon": "📐",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Movimento",
+              "text": "La stessa forma di power chord si sposta lungo il manico."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Per alzare l'altezza:",
+              "options": [
+                "Scendere di tasto",
+                "Salire di tasto",
+                "Cambiare chitarra",
+                "Usare il capotasto"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l72",
+          "title": "Ripasso dei power chord",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Tornano E5 e A5."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Cos'è un power chord?",
+              "options": [
+                "Accordo maggiore",
+                "Fondamentale+quinta",
+                "Accordo minore",
+                "Settima"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u13",
+      "title": "Unità 13 – Tecniche (hammer-on, pull-off, bending, slide)",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "l73",
+          "title": "Hammer-on",
+          "icon": "🔨",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Hammer-on",
+              "text": "Colpisci un tasto con il dito senza suonare di nuovo. Suona legato."
+            },
+            {
+              "type": "quiz",
+              "prompt": "L'hammer-on si fa con:",
+              "options": [
+                "Mano destra",
+                "La mano sinistra",
+                "Il plettro",
+                "Barré"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l74",
+          "title": "Pull-off",
+          "icon": "🪝",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Pull-off",
+              "text": "Tira il dito per far suonare la nota più bassa senza pizzicare."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il pull-off è il contrario del:",
+              "options": [
+                "Bend",
+                "Hammer-on",
+                "Slide",
+                "Palm mute"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l75",
+          "title": "Bend",
+          "icon": "↩️",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Bend",
+              "text": "Spingi la corda verso l'alto per alzare l'intonazione (semitono o tono)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il bending alza l'intonazione:",
+              "options": [
+                "Nessun cambiamento",
+                "Di un semitono o un tono",
+                "Abbassa l'intonazione",
+                "I silenzi"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l76",
+          "title": "Slide",
+          "icon": "➡️",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Slide",
+              "text": "Fai scivolare il dito sulla corda senza sollevarlo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Slide significa:",
+              "options": [
+                "Colpire",
+                "Slide",
+                "Tirare",
+                "Smorzare"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l77",
+          "title": "Legato",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Legato",
+              "text": "Combina hammer-on e pull-off per suonare in modo fluido."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il legato usa:",
+              "options": [
+                "Hammer-on e pull-off",
+                "Solo strumming",
+                "Solo bending",
+                "Palm mute"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l78",
+          "title": "Ripasso delle tecniche",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Tornano hammer-on, pull-off, bending e slide."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale tecnica alza l'intonazione spingendo la corda?",
+              "options": [
+                "Hammer-on",
+                "Pull-off",
+                "Bend",
+                "Slide"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u14",
+      "title": "Unità 14 – Fingerstyle di base",
+      "color": "green",
+      "lessons": [
+        {
+          "id": "l79",
+          "title": "Posizione p-i-m-a",
+          "icon": "✋",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Dita",
+              "text": "Pollice (p) sui bassi, indice (i), medio (m) e anulare (a) sui cantini."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale dito suona i bassi?",
+              "options": [
+                "i",
+                "m",
+                "a",
+                "p"
+              ],
+              "answer": 3
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l80",
+          "title": "Pattern di base (p-i-m-a)",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Pattern",
+              "text": "p sulla 6ª, i sulla 3ª, m sulla 2ª, a sulla 1ª. Ripeti."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il pattern p-i-m-a usa:",
+              "options": [
+                "4 dita",
+                "2 dita",
+                "1 dito",
+                "Il plettro"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l81",
+          "title": "Fingerstyle in C",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Fingerstyle C",
+              "text": "Arpeggia C con p-i-m-a.",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo?",
+              "options": [
+                "C",
+                "G",
+                "Am",
+                "F"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "l82",
+          "title": "Fingerstyle in Am",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Fingerstyle Am",
+              "text": "Arpeggia Am con p-i-m-a.",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale accordo?",
+              "options": [
+                "C",
+                "G",
+                "Am",
+                "F"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "l83",
+          "title": "Ripasso del fingerstyle",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torna il pattern p-i-m-a."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il fingerstyle si suona con:",
+              "options": [
+                "Il plettro",
+                "Dita",
+                "Barré",
+                "Metronomo"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u15",
+      "title": "Unità 15 – Improvvisazione e modi",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "l84",
+          "title": "Improvvisare con la pentatonica",
+          "icon": "🎼",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Improvvisazione",
+              "text": "Usa la pentatonica minore su una base in Am. Suona le note della scala con ritmo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Per improvvisare ti serve:",
+              "options": [
+                "Una scala",
+                " Un accordo",
+                " Silenzio",
+                " Niente"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l85",
+          "title": "Modo ionico (maggiore)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ionico",
+              "text": "È la scala maggiore. Suona brillante e stabile."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Lo ionico è:",
+              "options": [
+                "Scala maggiore",
+                "Scala minore",
+                "Pentatonica",
+                "Blues"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l86",
+          "title": "Modo eolio (minore naturale)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Eolio",
+              "text": "È la scala minore naturale. Suona triste."
+            },
+            {
+              "type": "quiz",
+              "prompt": "L'eolio è:",
+              "options": [
+                "Maggiore",
+                "Minore naturale",
+                "Pentatonica",
+                "Blues"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l87",
+          "title": "Modo misolidio",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Misolidio",
+              "text": "Maggiore con 7ª minore. Suona rock/blues."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il misolidio si usa nel:",
+              "options": [
+                "Jazz/blues",
+                "Classica",
+                "Metal estremo",
+                "Flamenco"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l88",
+          "title": "Ripasso dei modi",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Tornano ionico, eolio e misolidio."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale modo è maggiore con 7ª minore?",
+              "options": [
+                "Ionico",
+                "Eolio",
+                "Misolidio",
+                "Dorico"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u16",
+      "title": "Unità 16 – Stili (blues, rock, pop, flamenco, metal, jazz, classica)",
+      "color": "brown",
+      "lessons": [
+        {
+          "id": "l89",
+          "title": "Blues: shuffle",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Shuffle",
+              "text": "Pattern ternario: 1 2 3 con accento. Usa la pentatonica minore."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Lo shuffle è:",
+              "options": [
+                "Binario",
+                "Ternario",
+                "Una pausa",
+                "Solo accordi"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l90",
+          "title": "Rock: power chord",
+          "icon": "🔥",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Rock",
+              "text": "Power chord con distorsione e palm mute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il rock usa molto:",
+              "options": [
+                "Power chord",
+                "Arpeggi jazz",
+                "Flamenco",
+                "Classica"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l91",
+          "title": "Pop: strumming",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Pop",
+              "text": "Strumming morbido giù-su con capotasto."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il pop usa progressioni:",
+              "options": [
+                "I-V-vi-IV",
+                "Solo dissonanti",
+                "Solo minori",
+                "Nessuno"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l92",
+          "title": "Flamenco/rumba",
+          "icon": "💃",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Rumba",
+              "text": "Pattern di rumba catalana con percussione sulla cassa."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La rumba è tipica del:",
+              "options": [
+                "Jazz",
+                "Pop ispanico",
+                "Metal",
+                "Classica"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l93",
+          "title": "Metal: galoppo",
+          "icon": "🔥",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Galoppo",
+              "text": "Terzine veloci con palm mute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il galoppo è tipico del:",
+              "options": [
+                "Metal",
+                "Jazz",
+                "Blues",
+                "Pop"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l94",
+          "title": "Jazz: walking bass",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Walking bass",
+              "text": "Basso che cammina sulle note della scala."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il walking bass si usa nel:",
+              "options": [
+                "Jazz",
+                "Metal",
+                "Punk",
+                "Reggae"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l95",
+          "title": "Classica: arpeggio",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Classica",
+              "text": "Arpeggi con p-i-m-a e posizione corretta."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La chitarra classica si suona con:",
+              "options": [
+                "Il plettro",
+                "Dita",
+                "Barré",
+                "Archetto"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u17",
+      "title": "Unità 17 – Avanzato (tapping, sweep, legato)",
+      "color": "black",
+      "lessons": [
+        {
+          "id": "l96",
+          "title": "Tapping",
+          "icon": "👆",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Tapping",
+              "text": "Percuoti il tasto con la mano destra per note veloci."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il tapping si fa con:",
+              "options": [
+                "Mano destra",
+                "La mano sinistra",
+                "Il plettro",
+                "Il piede"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l97",
+          "title": "Sweep picking",
+          "icon": "🧹",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Sweep",
+              "text": "Plettrata controllata su più corde per arpeggi veloci."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Lo sweep è tipico dello:",
+              "options": [
+                "Shred",
+                "Jazz",
+                "Blues",
+                "Flamenco"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l98",
+          "title": "Legato avanzato",
+          "icon": "🎵",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Legato",
+              "text": "Combina hammer/pull per frasi fluide ad alta velocità."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Il legato avanzato usa:",
+              "options": [
+                "Hammer/pull",
+                "Solo strumming",
+                "Solo bending",
+                "Palm mute"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l99",
+          "title": "Economia di movimento",
+          "icon": "📐",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Economia",
+              "text": "Riduci al minimo il movimento della mano per guadagnare velocità."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Per guadagnare velocità:",
+              "options": [
+                "Muoversi di più",
+                "Muoversi di meno",
+                "Suonare più forte",
+                "Cambiare chitarra"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l100",
+          "title": "Ripasso avanzato",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torniamo a tapping, sweep e legato."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale tecnica percuote con la mano destra?",
+              "options": [
+                "Hammer-on",
+                "Tapping",
+                "Bend",
+                "Slide"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u18",
+      "title": "Unità 18 – Ripasso e sfida finale",
+      "color": "gold",
+      "lessons": [
+        {
+          "id": "l101",
+          "title": "Ripasso generale di chitarra",
+          "icon": "🔁",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torniamo ad accordi, ritmi e scale."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde ha una chitarra?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l102",
+          "title": "Sfida dei cambi (1 minuto)",
+          "icon": "⏱️",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Sfida",
+              "text": "Batti il tuo record di cambi puliti in 60 s."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Obiettivo:",
+              "options": [
+                "Record personale",
+                "0 cambi",
+                "Suonare forte",
+                "Non esercitarsi"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l103",
+          "title": "Registrazione giorno 1 vs 30",
+          "icon": "🎙️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Registrazione",
+              "text": "Registra un video oggi e confrontalo con quello del giorno 1. Vedrai i progressi!"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Perché registrarsi?",
+              "options": [
+                "Motivazione",
+                "Punizione",
+                "Niente",
+                "Vendere"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l104",
+          "title": "Piano di pratica quotidiana",
+          "icon": "📅",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Piano",
+              "text": "10 min al giorno: 3 min di accordi, 3 min di cambi, 4 min di canzone."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Frequenza ideale:",
+              "options": [
+                "una volta a settimana",
+                "10 min al giorno",
+                "1 ora al mese",
+                "Solo nel fine settimana"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "l105",
+          "title": "Diploma livello 1",
+          "icon": "🎓",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Congratulazioni!",
+              "text": "Hai completato il programma di base. Continua con gli stili e il livello avanzato."
+            },
+            {
+              "type": "quiz",
+              "prompt": "E adesso?",
+              "options": [
+                "Lasciare la chitarra",
+                "Continuare a esercitarsi",
+                "Vendere la chitarra",
+                "Niente"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u19",
+      "title": "Unità 19 – Teoria musicale",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "l19_1",
+          "title": "Intervalli",
+          "icon": "music",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Cos'è un intervallo?",
+              "text": "Un intervallo è la distanza in semitoni tra due note."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti semitoni ha una 5ª giusta?",
+              "options": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un semitono è la distanza tra:",
+              "options": [
+                "Due note identiche",
+                "Note vicine",
+                "Due corde",
+                "Una battuta"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti semitoni ha un'ottava?",
+              "options": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l19_2",
+          "title": "Scale",
+          "icon": "music",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Scale",
+              "text": "Una scala è una successione ordinata di note."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante note ha una scala maggiore?",
+              "options": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "La scala pentatonica minore ha:",
+              "options": [
+                "5 note",
+                "6 note",
+                "7 note",
+                "12 note"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale alterazione distingue il modo dorico?",
+              "options": [
+                "3ª minore",
+                "4ª aumentata",
+                "7ª minore",
+                "2ª minore"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l19_3",
+          "title": "Accordi",
+          "icon": "guitar",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Triadi",
+              "text": "Un accordo maggiore: fondamentale, 3ª maggiore, 5ª giusta."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali intervalli formano un accordo maggiore?",
+              "options": [
+                "3m + 4m",
+                "4M + 3m",
+                "3M + 4J",
+                "5J + 4M"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un accordo diminuito ha:",
+              "options": [
+                "3m + 3m",
+                "4M + 3m",
+                "3M + 4J",
+                "5J + 5J"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "La settima di dominante è:",
+              "options": [
+                "M7",
+                "m7",
+                "3M",
+                "5J"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "l19_4",
+          "title": "Armonia",
+          "icon": "piano",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Armonia funzionale",
+              "text": "Gradi: I maggiore, ii minore, iii minore, IV maggiore, V maggiore, vi minore, vii diminuito."
+            },
+            {
+              "type": "quiz",
+              "prompt": "In Do maggiore, l'accordo V è:",
+              "options": [
+                "C",
+                "Dm",
+                "G",
+                "Am"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "La progressione I-V-vi-IV è tipica del:",
+              "options": [
+                "Blues",
+                "Pop",
+                "Jazz",
+                "Metal"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "La relativa minore è il grado:",
+              "options": [
+                "ii",
+                "iii",
+                "vi",
+                "vii"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l19_5",
+          "title": "Ritmo",
+          "icon": "drum",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ritmo",
+              "text": "Il ritmo organizza il tempo. Il 4/4 ha 4 movimenti."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti movimenti vale una semibreve?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un tempo in 3/4 è associato al:",
+              "options": [
+                "Marcia",
+                "Valzer",
+                "Salsa",
+                "Reggae"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Una croma vale:",
+              "options": [
+                "1 movimento",
+                "1/2 movimento",
+                "1/4 di movimento",
+                "2 movimenti"
+              ],
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ukulele": [
+    {
+      "id": "uu1",
+      "title": "Ukulele – Primi passi",
+      "color": "green",
+      "lessons": [
+        {
+          "id": "ul1",
+          "title": "Anatomia dell'ukulele",
+          "icon": "🪕",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "L'ukulele",
+              "text": "Ha 4 corde: Sol, Do, Mi, La = GCEA. Accordatura standard (rientrante): la 4ª corda (Sol) è più acuta."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde ha un ukulele?",
+              "options": [
+                "4",
+                "6",
+                "8",
+                "12"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul2",
+          "title": "Accordatura GCEA",
+          "icon": "🎯",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "tuner",
+              "string": 0,
+              "note": "G4",
+              "freq": 392.0,
+              "text": "Accorda la 4ª corda (Sol)."
+            },
+            {
+              "type": "tuner",
+              "string": 1,
+              "note": "C4",
+              "freq": 261.63,
+              "text": "Accorda la 3ª corda (Do)."
+            },
+            {
+              "type": "tuner",
+              "string": 2,
+              "note": "E4",
+              "freq": 329.63,
+              "text": "Accorda la 2ª corda (Mi)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Qual è l'accordatura dell'ukulele?",
+              "options": [
+                "EADGBE",
+                "GCEA",
+                "DGBE",
+                "CGDA"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Qual è l'accordatura dell'ukulele?",
+              "options": [
+                "EADGBE",
+                "GCEA",
+                "DGBE",
+                "CGDA"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "tuner",
+              "string": 3,
+              "note": "A4",
+              "freq": 440.0,
+              "text": "Accorda la 1ª corda (La)."
+            }
+          ]
+        },
+        {
+          "id": "ul3",
+          "title": "Postura e impugnatura (uke)",
+          "icon": "🧍",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Postura",
+              "text": "Tieni l'ukulele contro il petto, con il braccio destro sopra la cassa. Mano sinistra dietro il manico."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde si suonano di solito?",
+              "options": [
+                "4",
+                "6",
+                "3",
+                "2"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul4",
+          "title": "Primo suono (uke)",
+          "icon": "🎵",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suonare le corde a vuoto",
+              "text": "Suona la 1ª corda (La) a vuoto. Deve suonare pulita."
+            },
+            {
+              "type": "demo",
+              "title": "Ascolta il La",
+              "text": "Riferimento La.",
+              "freq": 440.0,
+              "note": "A4"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Se ronza, cosa fai?",
+              "options": [
+                "Premere più vicino alla barretta",
+                "Suonare più forte",
+                "Cambiare la corda",
+                "Accordare più alto"
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uu2",
+      "title": "Ukulele – Accordi di base",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "ul5",
+          "title": "Accordo C (uke)",
+          "icon": "C",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Do maggiore (uke)",
+              "text": "Un solo dito: 3ª corda tasto 3 (anulare). Suona le 4 corde.",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante dita si usano per C sull'ukulele?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "ul6",
+          "title": "Accordo G (uke)",
+          "icon": "G",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Sol maggiore (uke)",
+              "text": "Forma 0232.",
+              "chord": "G"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G sull'uke si suona con:",
+              "options": [
+                "2 corde",
+                "4 corde",
+                "3 corde",
+                "1 corda"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "G"
+        },
+        {
+          "id": "ul7",
+          "title": "Accordo Am (uke)",
+          "icon": "Am",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Am (uke)",
+              "text": "Forma 2000.",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Am sull'uke usa:",
+              "options": [
+                "1 dito",
+                "2 dita",
+                "3 dita",
+                "4 dita"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "ul8",
+          "title": "Accordo F (uke)",
+          "icon": "F",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "F (uke)",
+              "text": "Forma 2010.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "F sull'uke usa:",
+              "options": [
+                "1 dito",
+                "2 dita",
+                "3 dita",
+                "4 dita"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "F"
+        },
+        {
+          "id": "ul9",
+          "title": "Accordo D (uke)",
+          "icon": "D",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "D (uke)",
+              "text": "Forma 2220.",
+              "chord": "D"
+            },
+            {
+              "type": "quiz",
+              "prompt": "D sull'uke usa:",
+              "options": [
+                "1 dito",
+                "2 dita",
+                "3 dita",
+                "4 dita"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "D"
+        },
+        {
+          "id": "ul10",
+          "title": "Accordo E (uke)",
+          "icon": "E",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "E (uke)",
+              "text": "Forma 4442.",
+              "chord": "E"
+            },
+            {
+              "type": "quiz",
+              "prompt": "E sull'uke usa:",
+              "options": [
+                "1 dito",
+                "2 dita",
+                "3 dita",
+                "4 dita"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "E"
+        },
+        {
+          "id": "ul11",
+          "title": "Accordo G7 (uke)",
+          "icon": "G7",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "G7 (uke)",
+              "text": "Forma 0212.",
+              "chord": "G7"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G7 sull'uke usa:",
+              "options": [
+                "1 dito",
+                "2 dita",
+                "3 dita",
+                "4 dita"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ],
+          "chord": "G7"
+        },
+        {
+          "id": "ul12",
+          "title": "Cambi C-G-Am-F (uke)",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Cambi",
+              "text": "Esercitati con C-G-Am-F sull'ukulele."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quanti accordi?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uu3",
+      "title": "Ukulele – Canzoni e strumming",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "ul13",
+          "title": "Strumming di base (uke)",
+          "icon": "⬇️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Pennate in giù",
+              "text": "Suona le 4 corde verso il basso con l'indice."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Una pennata in giù è:",
+              "options": [
+                "In su",
+                "In giù",
+                "Plettrata",
+                "Una pausa"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul14",
+          "title": "Pattern giù-su (uke)",
+          "icon": "⬆️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Giù-su",
+              "text": "D U D U sull'ukulele."
+            },
+            {
+              "type": "quiz",
+              "prompt": "In D U D U, U è:",
+              "options": [
+                "In giù",
+                "In su",
+                "Entrambe",
+                "Nessuno"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul15",
+          "title": "Canzone: due accordi (uke)",
+          "icon": "🎶",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Usa C e G sull'ukulele. Suona 4 volte per accordo."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quali accordi?",
+              "options": [
+                "C e G",
+                "Am e F",
+                "D e E",
+                "G7 e C"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul16",
+          "title": "Canzone: quattro accordi (uke)",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Suoniamo!",
+              "text": "Usa C-G-Am-F sull'ukulele."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quale progressione?",
+              "options": [
+                "I-V-vi-IV",
+                "ii-V-I",
+                "I-IV-V",
+                "vi-IV-I-V"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul17",
+          "title": "Arpeggio di base (uke)",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Arpeggio",
+              "text": "Suona le 4 corde una alla volta con pollice e indice."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un arpeggio è:",
+              "options": [
+                "Uno strumming",
+                "Note suonate separatamente",
+                "Una pausa",
+                "Palm mute"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        },
+        {
+          "id": "ul18",
+          "title": "Ripasso ukulele",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ripasso",
+              "text": "Torniamo a C, G, Am, F, D, E e G7."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quante corde ha un ukulele?",
+              "options": [
+                "4",
+                "6",
+                "8",
+                "12"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratica",
+              "text": "Ripeti lentamente ciò che hai imparato. Cerca un suono pulito, senza ronzii, e conta i cambi puliti in 60 s."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
