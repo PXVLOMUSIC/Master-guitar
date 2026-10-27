@@ -14,7 +14,7 @@
             {
               "type": "info",
               "title": "Welcome!",
-              "text": "The guitar has 6 strings, a neck with frets, and a body that amplifies the sound. Strings are numbered from the thinnest (1st, high E) to the thickest (6th, low E)."
+              "text": "The guitar has 6 strings, a fretted neck and a body that amplifies the sound. The strings are numbered from the thinnest (1st, high E) to the thickest (6th, low E)."
             },
             {
               "type": "quiz",
@@ -48,22 +48,22 @@
           "steps": [
             {
               "type": "info",
-              "title": "Seated posture",
-              "text": "Sit up straight, rest the guitar on your right leg (right-handed). The neck points slightly upward. Your left-hand thumb goes behind the neck."
+              "title": "Sitting posture",
+              "text": "Sit up straight, rest the guitar on your right leg (right-handed). The neck points slightly upward. The thumb of the left hand goes behind the neck."
             },
             {
               "type": "info",
               "title": "Right hand",
-              "text": "The thumb (p), index (i), middle (m), and ring (a) fingers play the strings. Start by plucking an open string with the thumb, top to bottom."
+              "text": "The thumb (p), index (i), middle (m) and ring (a) fingers play the strings. Start by playing an open string with your thumb, from top to bottom."
             },
             {
               "type": "quiz",
-              "prompt": "Where does the left-hand thumb go?",
+              "prompt": "Where does the thumb of the left hand go?",
               "options": [
-                "On top of the neck",
+                "Above the neck",
                 "Behind the neck",
                 "On the strings",
-                "Doesn't matter"
+                "It doesn't matter"
               ],
               "answer": 1
             }
@@ -77,15 +77,15 @@
           "steps": [
             {
               "type": "info",
-              "title": "Tuning EADGBE",
-              "text": "From thickest to thinnest string: E - A - D - G - B - E. Mnemonic: 'My Friend Gives Great Extra Blessings'."
+              "title": "EADGBE tuning",
+              "text": "From the thickest string to the thinnest: E - A - D - G - B - E. Mnemonic: 'Eddie Ate Dynamite, Good Bye Eddie'."
             },
             {
               "type": "tuner",
               "string": 0,
               "note": "E2",
               "freq": 82.41,
-              "text": "Tune the 6th string (low E). Pluck the string and adjust the tuning peg until the tuner turns green."
+              "text": "Tune the 6th string (low E). Play the string and adjust the tuner until the tuner reads green."
             },
             {
               "type": "quiz",
@@ -126,19 +126,19 @@
           "steps": [
             {
               "type": "info",
-              "title": "Playing open strings",
-              "text": "Play the 1st string (the thinnest) with your right-hand index finger. It should sound clear and sustained. If it buzzes, press closer to the fret."
+              "title": "Play open",
+              "text": "Play the 1st string (the thinnest) with the index finger of your right hand. It should sound clear and sustained. If you fret, press closer to the fret."
             },
             {
               "type": "demo",
               "title": "Listen",
-              "text": "This is how the open 1st string (E) should sound.",
+              "text": "This is how the 1st open string (E) should sound.",
               "freq": 329.63,
               "note": "E4"
             },
             {
               "type": "quiz",
-              "prompt": "If a string sounds muted or buzzes, what do you do?",
+              "prompt": "If a string sounds dull or frets, what do you do?",
               "options": [
                 "Play louder",
                 "Press closer to the fret",
@@ -158,11 +158,11 @@
             {
               "type": "info",
               "title": "Frets",
-              "text": "Each fret raises a semitone. On the 1st string: fret 0 = E, 1 = F, 2 = F#, 3 = G."
+              "text": "Each fret goes up a semitone. On the 1st string: fret 0 = E, 1 = F, 2 = F#, 3 = G."
             },
             {
               "type": "quiz",
-              "prompt": "How many semitones does one fret raise?",
+              "prompt": "How many semitones does a fret go up?",
               "options": [
                 "1",
                 "2",
@@ -193,13 +193,13 @@
       "lessons": [
         {
           "id": "l6",
-          "title": "Chord Em",
+          "title": "Em Chord",
           "icon": "Em",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
-              "title": "Chord Em (E minor)",
+              "title": "Em Chord (E minor)",
               "text": "Place finger 2 on the 5th string fret 2 and finger 3 on the 4th string fret 2. Strum all 6 strings.",
               "chord": "Em"
             },
@@ -211,12 +211,12 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which fingers are used for Em?",
+              "prompt": "What fingers are used for Em?",
               "options": [
-                "1 and 2",
-                "2 and 3",
-                "1, 2 and 3",
-                "Only the 1st"
+                "1 And 2",
+                "2 And 3",
+                "1,2 And 3",
+                "Only the 1"
               ],
               "answer": 1
             },
@@ -236,14 +236,14 @@
         },
         {
           "id": "l7",
-          "title": "Chord Am",
+          "title": "Am Chord",
           "icon": "Am",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
-              "title": "Chord Am (A minor)",
-              "text": "Finger 1 on 2nd string fret 1, finger 2 on 4th string fret 2, finger 3 on 3rd string fret 2. Strum 5 strings (omit the 6th).",
+              "title": "Am Chord (A minor)",
+              "text": "Finger 1 on 2nd string fret 1, finger 2 on 4th string fret 2, finger 3 on 3rd string fret 2. Strum 5 strings (without the 6th).",
               "chord": "Am"
             },
             {
@@ -251,8 +251,8 @@
               "prompt": "In Am, is the 6th string (low E) played?",
               "options": [
                 "Yes, always",
-                "No, it's omitted",
-                "Only with barre",
+                "No, it is omitted",
+                "Only with capo",
                 "Depends"
               ],
               "answer": 1
@@ -260,21 +260,21 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Am"
         },
         {
           "id": "l106",
-          "title": "Chord Dm",
+          "title": "Dm Chord",
           "icon": "Dm",
           "xp": 15,
           "chord": "Dm",
           "steps": [
             {
               "type": "demo",
-              "title": "Chord Dm (D minor)",
+              "title": "Dm Chord (D minor)",
               "text": "Finger 1: 1st string fret 1. Finger 2: 3rd string fret 2. Finger 3: 2nd string fret 3. Strum 4 strings.",
               "chord": "Dm"
             },
@@ -292,7 +292,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat Dm slowly, aiming for a clear sound."
+              "text": "Repeat Dm slowly looking for clear sound."
             }
           ]
         },
@@ -305,16 +305,16 @@
             {
               "type": "info",
               "title": "Slow change",
-              "text": "Practice switching from Em to Am and back. Move your fingers together, not one by one. Goal: 30 changes in 1 minute without mistakes."
+              "text": "Practice going from Em to Am and back again. Move your fingers together, not one by one. Goal: 30 changes in 1 minute without errors."
             },
             {
               "type": "quiz",
-              "prompt": "What's the secret to fast chord changes?",
+              "prompt": "What is the secret to fast chord changes?",
               "options": [
                 "Play louder",
                 "Move fingers together",
                 "Look at the strings",
-                "Use barre"
+                "Use capo"
               ],
               "answer": 1
             },
@@ -346,7 +346,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "How many strings are strummed in E?",
+              "prompt": "How many strings are strummed on E?",
               "options": [
                 "4",
                 "5",
@@ -358,7 +358,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "E"
@@ -372,24 +372,24 @@
             {
               "type": "demo",
               "title": "Chord A (A major)",
-              "text": "Fingers 1,2,3 on fret 2 of strings 4th,3rd,2nd. Strum 5 strings (omit the 6th).",
+              "text": "Fingers 1,2,3 on fret 2 of the 4th,3rd,2nd strings. Strum 5 strings (without the 6th).",
               "chord": "A"
             },
             {
               "type": "quiz",
               "prompt": "In A, which string is omitted?",
               "options": [
-                "1st",
-                "6th",
-                "3rd",
-                "5th"
+                "1St",
+                "6Th",
+                "3Rd",
+                "5Th"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "A"
@@ -402,14 +402,14 @@
           "steps": [
             {
               "type": "info",
-              "title": "Change E-A",
-              "text": "Use the same shape as Em-Am but with one more finger. Try 20 clean changes in 1 minute."
+              "title": "E-A Change",
+              "text": "It uses the same shape as Em-Am but with one more finger. Try 20 clean swings in 1 minute."
             },
             {
               "type": "quiz",
-              "prompt": "What helps you change faster?",
+              "prompt": "What helps to change faster?",
               "options": [
-                "Look at your fingers",
+                "Look at the fingers",
                 "Move fingers together",
                 "Play louder",
                 "Change guitar"
@@ -438,12 +438,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Spaced review",
-              "text": "Em, Am, E, A return. Play them without looking at the diagram."
+              "title": "Spaced Review",
+              "text": "Em, Am, E, A come back. Touch them without looking at the diagram."
             },
             {
               "type": "quiz",
-              "prompt": "Which chord is x02210?",
+              "prompt": "What chord is x02210?",
               "options": [
                 "Em",
                 "Am",
@@ -454,7 +454,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chord is 022100?",
+              "prompt": "What chord is 022100?",
               "options": [
                 "Em",
                 "Am",
@@ -467,7 +467,7 @@
         },
         {
           "id": "l13",
-          "title": "First 2-chord song",
+          "title": "First 2 chord song",
           "icon": "🎶",
           "xp": 25,
           "steps": [
@@ -478,7 +478,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chords did you use?",
+              "prompt": "What chords did you use?",
               "options": [
                 "C and G",
                 "Em and Am",
@@ -505,7 +505,7 @@
     },
     {
       "id": "u3",
-      "title": "Unit 3 – Open major chords (C, G, D)",
+      "title": "Unit 3 – Open Major Chords (C, G, D)",
       "color": "orange",
       "lessons": [
         {
@@ -517,24 +517,24 @@
             {
               "type": "demo",
               "title": "Chord C (C major)",
-              "text": "Finger 1: 2nd string fret 1. Finger 2: 4th string fret 2. Finger 3: 5th string fret 3. Strum 5 strings (omit 6th).",
+              "text": "Finger 1: 2nd string fret 1. Finger 2: 4th string fret 2. Finger 3: 5th string fret 3. Strum 5 strings (without 6th).",
               "chord": "C"
             },
             {
               "type": "quiz",
               "prompt": "In C, which string is omitted?",
               "options": [
-                "1st",
-                "6th",
-                "3rd",
-                "5th"
+                "1St",
+                "6Th",
+                "3Rd",
+                "5Th"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "C"
@@ -555,17 +555,17 @@
               "type": "quiz",
               "prompt": "G is strummed with:",
               "options": [
-                "4 strings",
-                "5 strings",
-                "6 strings",
-                "3 strings"
+                "4 Strings",
+                "5 Strings",
+                "6 Strings",
+                "3 Strings"
               ],
               "answer": 2
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "G"
@@ -584,7 +584,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "In D, how many strings are strummed?",
+              "prompt": "On D, how many strings are strummed?",
               "options": [
                 "6",
                 "5",
@@ -596,7 +596,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "D"
@@ -609,12 +609,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Chain of changes",
+              "title": "Gear chain",
               "text": "Practice C-G-Am-C. Keep the rhythm with one strum per chord."
             },
             {
               "type": "quiz",
-              "prompt": "Which chord follows G in C-G-Am-F?",
+              "prompt": "What chord follows G in C-G-Am-F?",
               "options": [
                 "C",
                 "Am",
@@ -652,7 +652,7 @@
             {
               "type": "info",
               "title": "The most used progression",
-              "text": "C - G - Am - F. Play with one strum per chord. It's the basis of thousands of pop songs."
+              "text": "C - G - Am - F. Play it with one strum per chord. It is the basis of thousands of pop songs."
             },
             {
               "type": "demo",
@@ -674,7 +674,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which progression did you practice?",
+              "prompt": "What progression did you practice?",
               "options": [
                 "C-G-Am-F",
                 "Em-Am",
@@ -685,7 +685,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which progression did you practice?",
+              "prompt": "What progression did you practice?",
               "options": [
                 "C-G-Am-F",
                 "Em-Am",
@@ -704,7 +704,7 @@
         },
         {
           "id": "l19",
-          "title": "Your first 3-chord song",
+          "title": "Your first 3 chord song",
           "icon": "🎶",
           "xp": 25,
           "steps": [
@@ -715,7 +715,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chords did you use?",
+              "prompt": "What chords did you use?",
               "options": [
                 "C, G and Am",
                 "Em and G",
@@ -727,7 +727,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -739,8 +739,8 @@
           "steps": [
             {
               "type": "info",
-              "title": "Spaced review",
-              "text": "Em, Am, E, A, C, G, D return. Play them from memory."
+              "title": "Spaced Review",
+              "text": "Em, Am, E, A, C, G, D come back. Play them from memory."
             },
             {
               "type": "quiz",
@@ -755,7 +755,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chord is 320003?",
+              "prompt": "What chord is 320003?",
               "options": [
                 "G",
                 "C",
@@ -770,36 +770,36 @@
     },
     {
       "id": "u4",
-      "title": "Unit 4 – F and fast changes",
+      "title": "Unit 4 – F and quick changes",
       "color": "red",
       "lessons": [
         {
           "id": "l21",
-          "title": "Chord F (barre)",
+          "title": "F chord (barre)",
           "icon": "F",
           "xp": 20,
           "steps": [
             {
               "type": "demo",
               "title": "Chord F (F major)",
-              "text": "Place finger 1 as a barre on fret 1 (strings 1st-6th?) and fingers 2,3,4 on frets 2-3. Strum 6 strings.",
+              "text": "Place finger 1 in a barre at fret 1 (1st-6th strings?) and fingers 2,3,4 on frets 2-3. Strum 6 strings.",
               "chord": "F"
             },
             {
               "type": "quiz",
               "prompt": "F requires:",
               "options": [
-                "Barre",
+                "Capo",
                 "Only 2 fingers",
-                "A plucked note",
+                "A point",
                 "Silence"
               ],
               "answer": 0
             },
             {
               "type": "info",
-              "title": "Tip",
-              "text": "It's normal for F to sound muted at first. Press the barre with the side of your index finger, close to the fret."
+              "title": "Advice",
+              "text": "It is normal for F to sound dull at first. Press the barre with the side of your index finger, near the fret."
             }
           ],
           "chord": "F"
@@ -814,20 +814,20 @@
             {
               "type": "info",
               "title": "Simplified F",
-              "text": "Use only the 4 highest strings: frets 2-1-1 (D-G-B-e) without a full barre. Sounds similar to F."
+              "text": "Use only the 4 highest strings: 2-1-1 frets (D-G-B-e) without a full barre. It sounds similar to F."
             },
             {
               "type": "demo",
               "title": "Simplified F",
-              "text": "Play the simplified F shape.",
+              "text": "Play the simplified form of F.",
               "chord": "F"
             },
             {
               "type": "quiz",
               "prompt": "The simplified F avoids:",
               "options": [
-                "Full barre",
-                "Playing strings",
+                "The complete capo",
+                "Play strings",
                 "Tune",
                 "The rhythm"
               ],
@@ -853,7 +853,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chord requires a barre in this progression?",
+              "prompt": "What chord requires a barre in this progression?",
               "options": [
                 "C",
                 "F",
@@ -890,30 +890,30 @@
           "steps": [
             {
               "type": "info",
-              "title": "The JustinGuitar challenge",
-              "text": "Count how many clean Em-Am changes you do in 60 s. Beat your record every day."
+              "title": "JustinGuitar's challenge",
+              "text": "Count how many Em-Am clean changes you make in 60 seconds. Beat your record every day."
             },
             {
               "type": "quiz",
-              "prompt": "Reasonable minimum goal in week 1:",
+              "prompt": "Minimum reasonable goal in week 1:",
               "options": [
-                "5 changes",
-                "15 changes",
-                "60 changes",
-                "1 change"
+                "5 Changes",
+                "15 Changes",
+                "60 Changes",
+                "1 Change"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l24",
-          "title": "4-chord song",
+          "title": "4 Chord song",
           "icon": "🎶",
           "xp": 25,
           "steps": [
@@ -924,19 +924,19 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which progression did you use?",
+              "prompt": "What progression did you use?",
               "options": [
                 "I-V-vi-IV",
-                "ii-V-I",
+                "Ii-V-I",
                 "I-IV-V",
-                "vi-IV-I-V"
+                "Vi-IV-I-V"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -948,8 +948,8 @@
           "steps": [
             {
               "type": "info",
-              "title": "Spaced review",
-              "text": "C, G, Am, F and the changes return."
+              "title": "Spaced Review",
+              "text": "C, G, Am, F and the changes are back."
             },
             {
               "type": "quiz",
@@ -965,7 +965,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -984,16 +984,16 @@
           "steps": [
             {
               "type": "info",
-              "title": "Downstroke",
-              "text": "Strum downward (downstroke) with your index finger or pick, hitting all the chord's strings. Keep the rhythm: 1-2-3-4."
+              "title": "Strum down",
+              "text": "Strum down (downstroke) with your index finger or pick, hitting all the strings of the chord. Maintain the rhythm: 1-2-3-4."
             },
             {
               "type": "quiz",
               "prompt": "A 'downstroke' is:",
               "options": [
-                "Upstroke",
-                "Downstroke",
-                "Picking",
+                "Strum up",
+                "Strum down",
+                "Plucking",
                 "Silence"
               ],
               "answer": 1
@@ -1001,7 +1001,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1014,11 +1014,11 @@
             {
               "type": "info",
               "title": "Down and up",
-              "text": "Alternate downstrokes and upstrokes: D U D U. Keep your hand moving even when you don't strum."
+              "text": "Alternate strumming down and up: D U D U. Keep your hand moving even if you don't play."
             },
             {
               "type": "quiz",
-              "prompt": "In D U D U, which letter is 'upstroke'?",
+              "prompt": "In D U D U, what letter is 'upstroke'?",
               "options": [
                 "D",
                 "U",
@@ -1030,7 +1030,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1043,23 +1043,23 @@
             {
               "type": "info",
               "title": "Syncopation",
-              "text": "Emphasize the weak beats: 1 2 3 4 with an upstroke on the 'and' of each beat."
+              "text": "Accentuate the weak beats: 1 2 3 4 with an upstroke on the 'and' of each beat."
             },
             {
               "type": "quiz",
-              "prompt": "Syncopation emphasizes:",
+              "prompt": "Syncopation accentuates:",
               "options": [
-                "Strong beats",
-                "Weak beats",
+                "Strong times",
+                "Weak times",
                 "Silences",
-                "Only the 1st"
+                "Only the 1"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1072,23 +1072,23 @@
             {
               "type": "info",
               "title": "Palm mute",
-              "text": "Rest the edge of your right hand near the bridge to mute. Sounds percussive and powerful."
+              "text": "Place the side of your right hand near the bridge for cushioning. It sounds percussive and powerful."
             },
             {
               "type": "quiz",
-              "prompt": "Palm mute is done with:",
+              "prompt": "The palm mute is done with:",
               "options": [
                 "Left hand",
-                "Right hand edge",
-                "Pick",
-                "Barre"
+                "Right hand side",
+                "Plectrum",
+                "Capo"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1100,24 +1100,24 @@
           "steps": [
             {
               "type": "info",
-              "title": "Practice slowly",
-              "text": "Play one chord per beat at 60 BPM. Raise the tempo only when you get 4 bars right in a row."
+              "title": "Practice slow",
+              "text": "Play one chord per beat at 60 BPM. Increase the tempo only when you hit 4 bars in a row."
             },
             {
               "type": "quiz",
-              "prompt": "When to raise the tempo?",
+              "prompt": "When to increase the tempo?",
               "options": [
                 "Whenever you want",
-                "When you get 4 bars right in a row",
+                "By hitting 4 bars in a row",
                 "Never",
-                "Only at the end"
+                "Only in the end"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1139,14 +1139,14 @@
                 "D D D D",
                 "D U D U",
                 "D D U U D U",
-                "Only upstrokes"
+                "Just upstrokes"
               ],
               "answer": 2
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -1182,7 +1182,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1211,7 +1211,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1240,7 +1240,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1269,7 +1269,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1298,7 +1298,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1327,7 +1327,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1356,7 +1356,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1385,7 +1385,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1398,7 +1398,7 @@
             {
               "type": "info",
               "title": "Let's play!",
-              "text": "Em-G alternating every bar."
+              "text": "Em-G alternating each measure."
             },
             {
               "type": "quiz",
@@ -1414,7 +1414,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1443,7 +1443,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -1451,12 +1451,12 @@
     },
     {
       "id": "u7",
-      "title": "Unit 7 – Color chords (Asus2, Dsus2, G7, Cadd9)",
+      "title": "Unit 7 – Color Chords (Asus2, Dsus2, G7, Cadd9)",
       "color": "teal",
       "lessons": [
         {
           "id": "l42",
-          "title": "Chord Asus2",
+          "title": "Asus2 Chord",
           "icon": "Asus2",
           "xp": 15,
           "steps": [
@@ -1480,14 +1480,14 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Asus2"
         },
         {
           "id": "l43",
-          "title": "Chord Dsus2",
+          "title": "Dsus2 Chord",
           "icon": "Dsus2",
           "xp": 15,
           "steps": [
@@ -1511,14 +1511,14 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Dsus2"
         },
         {
           "id": "l44",
-          "title": "Chord G7",
+          "title": "G7 chord",
           "icon": "G7",
           "xp": 15,
           "steps": [
@@ -1542,14 +1542,14 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "G7"
         },
         {
           "id": "l45",
-          "title": "Chord Cadd9",
+          "title": "Cadd9 Chord",
           "icon": "Cadd9",
           "xp": 15,
           "steps": [
@@ -1563,17 +1563,17 @@
               "type": "quiz",
               "prompt": "Cadd9 adds the note:",
               "options": [
-                "9th (D)",
-                "7th",
-                "6th",
-                "4th"
+                "9Th (D)",
+                "7Th",
+                "6Th",
+                "4Th"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Cadd9"
@@ -1587,7 +1587,7 @@
             {
               "type": "info",
               "title": "Progression",
-              "text": "C - G - Am - F with Cadd9 and G7 to add color."
+              "text": "C - G - Am - F with Cadd9 and G7 for color."
             },
             {
               "type": "demo",
@@ -1597,7 +1597,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which color chords did you use?",
+              "prompt": "What color chords did you use?",
               "options": [
                 "Cadd9 and G7",
                 "Em and Am",
@@ -1608,7 +1608,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which color chords did you use?",
+              "prompt": "What color chords did you use?",
               "options": [
                 "Cadd9 and G7",
                 "Em and Am",
@@ -1641,52 +1641,52 @@
             {
               "type": "info",
               "title": "The rock scale",
-              "text": "Position 1 in A minor: frets 5-8 on strings 6 to 1. It's the basis of rock and blues solos."
+              "text": "Position 1 in A minor: frets 5-8 on the 6th to 1st strings. It is the basis of rock and blues solos."
             },
             {
               "type": "quiz",
               "prompt": "The minor pentatonic has:",
               "options": [
-                "5 notes",
-                "7 notes",
-                "8 notes",
-                "12 notes"
+                "5 Notes",
+                "7 Notes",
+                "8 Notes",
+                "12 Notes"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l48",
-          "title": "One-string riff",
+          "title": "Riff of a string",
           "icon": "🎸",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Smoke on the Water",
-              "text": "Play on the 4th string: frets 0-3-5, 0-3-6-5. An iconic riff on a single string."
+              "text": "Play on the 4th string: frets 0-3-5, 0-3-6-5. An iconic one-string riff."
             },
             {
               "type": "quiz",
-              "prompt": "On which string is this riff played?",
+              "prompt": "What string is this riff played on?",
               "options": [
-                "6th",
-                "4th",
-                "2nd",
-                "1st"
+                "6Th",
+                "4Th",
+                "2Nd",
+                "1St"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1699,7 +1699,7 @@
             {
               "type": "info",
               "title": "Riff",
-              "text": "Play on the 5th string (A): 7-7-10-7-5-3-0 (approx). A single-string riff."
+              "text": "Play on the 5th string (A): 7-7-10-7-5-3-0 (approx.). A single string riff."
             },
             {
               "type": "quiz",
@@ -1707,7 +1707,7 @@
               "options": [
                 "A single string",
                 "Six strings",
-                "With a barre",
+                "With capo",
                 "With tapping"
               ],
               "answer": 0
@@ -1715,13 +1715,13 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l50",
-          "title": "Power riff (Smoke)",
+          "title": "Power Riff (Smoke)",
           "icon": "🔥",
           "xp": 18,
           "steps": [
@@ -1737,14 +1737,14 @@
                 "Single notes",
                 "Root and fifth",
                 "Arpeggios",
-                "Rests"
+                "Silences"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1757,36 +1757,36 @@
             {
               "type": "info",
               "title": "C major",
-              "text": "C-D-E-F-G-A-B-C. The basis of theory."
+              "text": "Do-Re-Mi-Fa-Sol-La-Si-Do. The basis of the theory."
             },
             {
               "type": "quiz",
               "prompt": "The major scale has:",
               "options": [
-                "5 notes",
-                "7 notes",
-                "8 notes",
-                "12 notes"
+                "5 Notes",
+                "7 Notes",
+                "8 Notes",
+                "12 Notes"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l52",
-          "title": "Scale review",
+          "title": "Scales review",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Review",
-              "text": "Back to the minor pentatonic and C major."
+              "text": "Minor pentatonic and C major return."
             },
             {
               "type": "quiz",
@@ -1802,7 +1802,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -1822,15 +1822,15 @@
             {
               "type": "info",
               "title": "Arpeggio",
-              "text": "Play the chord notes one by one: p i m a m i (6-4-3-2-3-4)."
+              "text": "Play the notes of the chord one by one: p i m a m i (6-4-3-2-3-4)."
             },
             {
               "type": "quiz",
               "prompt": "An arpeggio is:",
               "options": [
-                "Strumming",
-                "Chord notes played separately",
-                "Rest",
+                "Strum",
+                "Separate Chord Notes",
+                "Silence",
                 "Palm mute"
               ],
               "answer": 1
@@ -1838,7 +1838,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -1851,12 +1851,12 @@
             {
               "type": "demo",
               "title": "Arpeggio C",
-              "text": "Play C arpeggiating strings 5-4-3-2-1.",
+              "text": "Play C arpeggiating the 5-4-3-2-1 strings.",
               "chord": "C"
             },
             {
               "type": "quiz",
-              "prompt": "Which chord did you arpeggiate?",
+              "prompt": "What chord did you arpeggiate?",
               "options": [
                 "C",
                 "G",
@@ -1868,7 +1868,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "C"
@@ -1881,13 +1881,13 @@
           "steps": [
             {
               "type": "demo",
-              "title": "Arpeggio Am",
+              "title": "Am Arpeggio",
               "text": "Play Am arpeggiating.",
               "chord": "Am"
             },
             {
               "type": "quiz",
-              "prompt": "Which chord did you arpeggiate?",
+              "prompt": "What chord did you arpeggiate?",
               "options": [
                 "C",
                 "G",
@@ -1899,7 +1899,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Am"
@@ -1913,11 +1913,11 @@
             {
               "type": "info",
               "title": "Palm mute",
-              "text": "Combine palm mute with strumming for a rock sound."
+              "text": "Combine palm mute with strumming for rock sound."
             },
             {
               "type": "quiz",
-              "prompt": "Palm mute is used a lot in:",
+              "prompt": "The palm mute is widely used in:",
               "options": [
                 "Ballads",
                 "Rock/metal",
@@ -1929,28 +1929,28 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l57",
-          "title": "Arpeggio review",
+          "title": "Arpeggios review",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Review",
-              "text": "Back to the arpeggios of C and Am."
+              "text": "C and Am arpeggios return."
             },
             {
               "type": "quiz",
               "prompt": "An arpeggio is played:",
               "options": [
-                "All at once",
+                "All at the same time",
                 "One by one",
-                "With a barre",
+                "With capo",
                 "In silence"
               ],
               "answer": 1
@@ -1958,7 +1958,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -1966,26 +1966,26 @@
     },
     {
       "id": "u10",
-      "title": "Unit 10 – Seventh chords",
+      "title": "Unit 10 – Seventh Chords",
       "color": "indigo",
       "lessons": [
         {
           "id": "l58",
-          "title": "Chord maj7 (Cmaj7)",
+          "title": "Maj7 chord (Cmaj7)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
-              "title": "maj7",
-              "text": "Cmaj7 sounds jazzy and smooth. Adds the major 7th to C."
+              "title": "Maj7",
+              "text": "Cmaj7 sounds jazzy and smooth. Add the major 7th to C."
             },
             {
               "type": "quiz",
-              "prompt": "maj7 sounds:",
+              "prompt": "Maj7 sounds:",
               "options": [
                 "Tension",
-                "Smooth/jazz",
+                "Soft/jazz",
                 "Sad",
                 "Aggressive"
               ],
@@ -1994,7 +1994,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2007,11 +2007,11 @@
             {
               "type": "info",
               "title": "m7",
-              "text": "Am7 sounds smooth and sad. Adds the minor 7th to Am."
+              "text": "Am7 sounds soft and sad. Add the minor 7th to Am."
             },
             {
               "type": "quiz",
-              "prompt": "m7 is used in:",
+              "prompt": "M7 is used in:",
               "options": [
                 "Hard rock",
                 "Jazz/pop",
@@ -2023,24 +2023,24 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l60",
-          "title": "Chord dom7 (G7)",
+          "title": "Dom7 chord (G7)",
           "icon": "🎼",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "dom7",
-              "text": "G7 creates tension to resolve to C. You've seen it as G7."
+              "text": "G7 creates tension to resolve C. You already saw it as G7."
             },
             {
               "type": "quiz",
-              "prompt": "dom7 resolves to:",
+              "prompt": "Dom7 resolves to:",
               "options": [
                 "Tonic",
                 "Dominant",
@@ -2052,24 +2052,24 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l61",
-          "title": "Progression ii-V-I",
+          "title": "ii-V-I progression",
           "icon": "📐",
           "xp": 20,
           "steps": [
             {
               "type": "info",
-              "title": "ii-V-I",
+              "title": "Ii-V-I",
               "text": "Dm7 - G7 - Cmaj7. The quintessential jazz progression."
             },
             {
               "type": "quiz",
-              "prompt": "ii-V-I is typical of:",
+              "prompt": "Ii-V-I is typical of:",
               "options": [
                 "Jazz",
                 "Metal",
@@ -2081,24 +2081,24 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l62",
-          "title": "Seventh chord review",
+          "title": "Review of sevenths",
           "icon": "🔁",
           "xp": 15,
           "steps": [
             {
               "type": "info",
               "title": "Review",
-              "text": "Back to maj7, m7, dom7."
+              "text": "Maj7, m7, dom7 return."
             },
             {
               "type": "quiz",
-              "prompt": "Which chord is dom7?",
+              "prompt": "What chord is dom7?",
               "options": [
                 "Cmaj7",
                 "Am7",
@@ -2110,7 +2110,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -2130,12 +2130,12 @@
             {
               "type": "demo",
               "title": "F barre",
-              "text": "Barre at fret 1, fingers 2-4 on frets 2-3. Strum 6 strings.",
+              "text": "Barre on fret 1, fingers 2-4 on frets 2-3. Strum 6 strings.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F barre requires barre at:",
+              "prompt": "F barre requires barre on:",
               "options": [
                 "Fret 1",
                 "Fret 2",
@@ -2147,7 +2147,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "F"
@@ -2161,7 +2161,7 @@
             {
               "type": "demo",
               "title": "Bm",
-              "text": "Barre at fret 2, Am shape shifted.",
+              "text": "Barre at fret 2, offset Am shape.",
               "chord": "Bm"
             },
             {
@@ -2178,7 +2178,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Bm"
@@ -2196,7 +2196,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "The secret to changing with a barre:",
+              "prompt": "The secret of changing with a barre:",
               "options": [
                 "Move fingers one by one",
                 "Move the barre as a block",
@@ -2208,7 +2208,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2221,15 +2221,15 @@
             {
               "type": "info",
               "title": "Capo",
-              "text": "The capo lets you play the same shape in another key."
+              "text": "The capo (capo) allows you to play the same shape in another tone."
             },
             {
               "type": "quiz",
               "prompt": "A capo is used to:",
               "options": [
                 "Tune",
-                "Change key without changing shape",
-                "Speed up",
+                "Change tone without changing shape",
+                "Accelerate",
                 "Mute"
               ],
               "answer": 1
@@ -2237,7 +2237,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2254,7 +2254,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chord is 224432?",
+              "prompt": "What chord is 224432?",
               "options": [
                 "F",
                 "Bm",
@@ -2266,7 +2266,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -2286,7 +2286,7 @@
             {
               "type": "demo",
               "title": "E5",
-              "text": "Root and fifth: frets 0-2-2 on strings 6-5-4.",
+              "text": "Root and fifth: 0-2-2 frets on 6-5-4 strings.",
               "chord": "E5"
             },
             {
@@ -2303,7 +2303,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "E5"
@@ -2334,14 +2334,14 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "A5"
         },
         {
           "id": "l70",
-          "title": "Power chord riff",
+          "title": "Power chords riff",
           "icon": "🔥",
           "xp": 20,
           "steps": [
@@ -2364,7 +2364,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2376,8 +2376,8 @@
           "steps": [
             {
               "type": "info",
-              "title": "Movement",
-              "text": "The same power chord shape moves along the neck."
+              "title": "Motion",
+              "text": "The same power chord shape moves down the neck."
             },
             {
               "type": "quiz",
@@ -2393,13 +2393,13 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l72",
-          "title": "Power chord review",
+          "title": "Power chords review",
           "icon": "🔁",
           "xp": 15,
           "steps": [
@@ -2413,7 +2413,7 @@
               "prompt": "What is a power chord?",
               "options": [
                 "Major chord",
-                "Root+fifth",
+                "Root + fifth",
                 "Minor chord",
                 "Seventh"
               ],
@@ -2422,7 +2422,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -2442,23 +2442,23 @@
             {
               "type": "info",
               "title": "Hammer-on",
-              "text": "Strike a fret with the finger without strumming again. Sounds legato."
+              "text": "Strike a fret with your finger without strumming again. It sounds linked."
             },
             {
               "type": "quiz",
-              "prompt": "Hammer-on is done with:",
+              "prompt": "Hammer-on is made with:",
               "options": [
                 "Right hand",
                 "Left hand",
-                "Pick",
-                "Barre"
+                "Plectrum",
+                "Capo"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2471,7 +2471,7 @@
             {
               "type": "info",
               "title": "Pull-off",
-              "text": "Pull the finger to sound the lower note without strumming."
+              "text": "Pull your finger to sound the bottom note without strumming."
             },
             {
               "type": "quiz",
@@ -2487,7 +2487,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2500,23 +2500,23 @@
             {
               "type": "info",
               "title": "Bend",
-              "text": "Push the string upward to raise the pitch (half step or whole step)."
+              "text": "Push the string up to raise the pitch (half step or step)."
             },
             {
               "type": "quiz",
               "prompt": "A bend raises the pitch:",
               "options": [
-                "No change",
+                "Doesn't change",
                 "Half step or whole step",
-                "Lowers the pitch",
-                "Silences"
+                "Lower your tone",
+                "Silence"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2529,23 +2529,23 @@
             {
               "type": "info",
               "title": "Slide",
-              "text": "Slide the finger along the string without lifting it."
+              "text": "Slide your finger along the string without lifting it."
             },
             {
               "type": "quiz",
               "prompt": "Slide means:",
               "options": [
-                "Strike",
+                "Hit",
                 "Slide",
                 "Pull",
-                "Mute"
+                "Cushion"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2558,7 +2558,7 @@
             {
               "type": "info",
               "title": "Legato",
-              "text": "Combines hammer-on and pull-off to play smoothly."
+              "text": "Combines hammer-on and pull-off for fluid playing."
             },
             {
               "type": "quiz",
@@ -2566,7 +2566,7 @@
               "options": [
                 "Hammer-on and pull-off",
                 "Strumming only",
-                "Bends only",
+                "Only bends",
                 "Palm mute"
               ],
               "answer": 0
@@ -2574,7 +2574,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2587,11 +2587,11 @@
             {
               "type": "info",
               "title": "Review",
-              "text": "Hammer-on, pull-off, bend and slide return."
+              "text": "Hammer-on, pull-off, bend, slide are back."
             },
             {
               "type": "quiz",
-              "prompt": "Which technique raises the pitch by pushing the string?",
+              "prompt": "What technique raises the pitch by pushing the string?",
               "options": [
                 "Hammer-on",
                 "Pull-off",
@@ -2603,7 +2603,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -2611,12 +2611,12 @@
     },
     {
       "id": "u14",
-      "title": "Unit 14 – Basic fingerstyle",
+      "title": "Unit 14 – Basic Fingerstyle",
       "color": "green",
       "lessons": [
         {
           "id": "l79",
-          "title": "p-i-m-a position",
+          "title": "P-i-m-a position",
           "icon": "✋",
           "xp": 18,
           "steps": [
@@ -2627,19 +2627,19 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which finger plays the bass strings?",
+              "prompt": "Which finger plays the low strings?",
               "options": [
                 "i",
                 "m",
                 "a",
-                "p"
+                "P"
               ],
               "answer": 3
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2652,23 +2652,23 @@
             {
               "type": "info",
               "title": "Pattern",
-              "text": "p on 6th, i on 3rd, m on 2nd, a on 1st. Repeat."
+              "text": "P in 6th, i in 3rd, m in 2nd, a in 1st. Repeat."
             },
             {
               "type": "quiz",
-              "prompt": "Pattern p-i-m-a uses:",
+              "prompt": "P-i-m-a pattern uses:",
               "options": [
-                "4 fingers",
-                "2 fingers",
-                "1 finger",
-                "Pick"
+                "4 Fingers",
+                "2 Fingers",
+                "1 Finger",
+                "Plectrum"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2686,7 +2686,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chord?",
+              "prompt": "What chord?",
               "options": [
                 "C",
                 "G",
@@ -2698,7 +2698,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "C"
@@ -2717,7 +2717,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which chord?",
+              "prompt": "What chord?",
               "options": [
                 "C",
                 "G",
@@ -2729,7 +2729,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Am"
@@ -2749,9 +2749,9 @@
               "type": "quiz",
               "prompt": "Fingerstyle is played with:",
               "options": [
-                "Pick",
+                "Plectrum",
                 "Fingers",
-                "Barre",
+                "Capo",
                 "Metronome"
               ],
               "answer": 1
@@ -2759,7 +2759,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -2772,14 +2772,14 @@
       "lessons": [
         {
           "id": "l84",
-          "title": "Improvising with pentatonic",
+          "title": "Improvise with pentatonic",
           "icon": "🎼",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Improvisation",
-              "text": "Use the minor pentatonic over a backing in Am. Play scale notes with rhythm."
+              "text": "Use the minor pentatonic over an Am backing. Play notes of the scale with rhythm."
             },
             {
               "type": "quiz",
@@ -2795,7 +2795,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2808,7 +2808,7 @@
             {
               "type": "info",
               "title": "Ionian",
-              "text": "It is the major scale. Sounds bright and stable."
+              "text": "It is the major scale. It sounds bright and stable."
             },
             {
               "type": "quiz",
@@ -2824,7 +2824,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2837,7 +2837,7 @@
             {
               "type": "info",
               "title": "Aeolian",
-              "text": "It is the natural minor scale. Sounds sad."
+              "text": "It is the natural minor scale. It sounds sad."
             },
             {
               "type": "quiz",
@@ -2853,7 +2853,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2866,7 +2866,7 @@
             {
               "type": "info",
               "title": "Mixolydian",
-              "text": "Major with minor 7th. Sounds rock/blues."
+              "text": "Major with minor 7th. It sounds rock/blues."
             },
             {
               "type": "quiz",
@@ -2882,7 +2882,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2895,11 +2895,11 @@
             {
               "type": "info",
               "title": "Review",
-              "text": "Ionian, Aeolian and Mixolydian return."
+              "text": "Ionian, Aeolian, Mixolydian return."
             },
             {
               "type": "quiz",
-              "prompt": "Which mode is major with minor 7th?",
+              "prompt": "What mode is major with a minor 7th?",
               "options": [
                 "Ionian",
                 "Aeolian",
@@ -2911,7 +2911,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -2931,7 +2931,7 @@
             {
               "type": "info",
               "title": "Shuffle",
-              "text": "Ternary pattern: 1 2 3 with accent. Uses minor pentatonic."
+              "text": "Ternary pattern: 1 2 3 with accent. Use minor pentatonic."
             },
             {
               "type": "quiz",
@@ -2939,7 +2939,7 @@
               "options": [
                 "Binary",
                 "Ternary",
-                "Rest",
+                "Silence",
                 "Chords only"
               ],
               "answer": 1
@@ -2947,7 +2947,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -2964,7 +2964,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Rock uses a lot of:",
+              "prompt": "Rock uses a lot:",
               "options": [
                 "Power chords",
                 "Jazz arpeggios",
@@ -2976,28 +2976,28 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l91",
-          "title": "Pop: strumming",
+          "title": "Pop: strum",
           "icon": "🎵",
           "xp": 18,
           "steps": [
             {
               "type": "info",
               "title": "Pop",
-              "text": "Soft down-up strumming with capo."
+              "text": "Smooth down-up strumming with capo."
             },
             {
               "type": "quiz",
               "prompt": "Pop uses progressions:",
               "options": [
                 "I-V-vi-IV",
-                "Dissonant only",
-                "Minor only",
+                "Only dissonant",
+                "Minors only",
                 "None"
               ],
               "answer": 0
@@ -3005,7 +3005,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3018,11 +3018,11 @@
             {
               "type": "info",
               "title": "Rumba",
-              "text": "Catalan rumba pattern with percussion on the body."
+              "text": "Catalan rumba pattern with percussion on the snare drum."
             },
             {
               "type": "quiz",
-              "prompt": "Rumba is typical of:",
+              "prompt": "The rumba is typical of:",
               "options": [
                 "Jazz",
                 "Hispanic pop",
@@ -3034,7 +3034,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3051,7 +3051,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "Gallop is typical of:",
+              "prompt": "The gallop is typical of:",
               "options": [
                 "Metal",
                 "Jazz",
@@ -3063,7 +3063,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3076,7 +3076,7 @@
             {
               "type": "info",
               "title": "Walking bass",
-              "text": "Bass that walks through the scale notes."
+              "text": "Bass that walks through the notes of the scale."
             },
             {
               "type": "quiz",
@@ -3092,7 +3092,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3109,11 +3109,11 @@
             },
             {
               "type": "quiz",
-              "prompt": "Classical guitar is played with:",
+              "prompt": "The classical guitar is played with:",
               "options": [
-                "Pick",
+                "Plectrum",
                 "Fingers",
-                "Barre",
+                "Capo",
                 "Bow"
               ],
               "answer": 1
@@ -3121,7 +3121,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -3141,7 +3141,7 @@
             {
               "type": "info",
               "title": "Tapping",
-              "text": "Tap the fret with the right hand for fast notes."
+              "text": "Hit the fret with your right hand for fast notes."
             },
             {
               "type": "quiz",
@@ -3149,7 +3149,7 @@
               "options": [
                 "Right hand",
                 "Left hand",
-                "Pick",
+                "Plectrum",
                 "Foot"
               ],
               "answer": 0
@@ -3157,7 +3157,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3170,7 +3170,7 @@
             {
               "type": "info",
               "title": "Sweep",
-              "text": "Controlled strum across several strings for fast arpeggios."
+              "text": "Controlled strumming across multiple strings for fast arpeggios."
             },
             {
               "type": "quiz",
@@ -3186,7 +3186,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3199,7 +3199,7 @@
             {
               "type": "info",
               "title": "Legato",
-              "text": "Combines hammer/pull for fluid phrases at high speed."
+              "text": "Combine hammer/pull for fluid phrases at high speed."
             },
             {
               "type": "quiz",
@@ -3207,7 +3207,7 @@
               "options": [
                 "Hammer/pull",
                 "Strumming only",
-                "Bends only",
+                "Only bends",
                 "Palm mute"
               ],
               "answer": 0
@@ -3215,13 +3215,13 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l99",
-          "title": "Economy of motion",
+          "title": "Economy of movement",
           "icon": "📐",
           "xp": 18,
           "steps": [
@@ -3244,7 +3244,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3257,11 +3257,11 @@
             {
               "type": "info",
               "title": "Review",
-              "text": "Back to tapping, sweep, legato."
+              "text": "Tapping, sweep, legato return."
             },
             {
               "type": "quiz",
-              "prompt": "Which technique taps with the right hand?",
+              "prompt": "What technique does he hit with his right hand?",
               "options": [
                 "Hammer-on",
                 "Tapping",
@@ -3273,7 +3273,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -3293,11 +3293,11 @@
             {
               "type": "info",
               "title": "Review",
-              "text": "Back to chords, rhythms and scales."
+              "text": "Chords, rhythms and scales return."
             },
             {
               "type": "quiz",
-              "prompt": "How many strings does a guitar have?",
+              "prompt": "How many strings does the guitar have?",
               "options": [
                 "4",
                 "5",
@@ -3309,27 +3309,27 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "l102",
-          "title": "Challenge of changes (1 minute)",
+          "title": "Change Challenge (1 minute)",
           "icon": "⏱️",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Challenge",
-              "text": "Beat your record of clean changes in 60 s."
+              "text": "Beat your clean changing record in 60 seconds."
             },
             {
               "type": "quiz",
-              "prompt": "Goal:",
+              "prompt": "Aim:",
               "options": [
                 "Personal record",
-                "0 changes",
+                "0 Changes",
                 "Play loud",
                 "Don't practice"
               ],
@@ -3338,7 +3338,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3351,7 +3351,7 @@
             {
               "type": "info",
               "title": "Recording",
-              "text": "Record a video today and compare it with day 1. You'll see the progress!"
+              "text": "Record a video today and compare it to day 1. You will see the progress!"
             },
             {
               "type": "quiz",
@@ -3367,7 +3367,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3380,23 +3380,23 @@
             {
               "type": "info",
               "title": "Plan",
-              "text": "10 min daily: 3 min chords, 3 min changes, 4 min song."
+              "text": "10 Min daily: 3 min chords, 3 min changes, 4 min song."
             },
             {
               "type": "quiz",
               "prompt": "Ideal frequency:",
               "options": [
-                "once a week",
-                "10 min daily",
-                "1 h monthly",
-                "Weekends only"
+                "1 Time a week",
+                "10 Min daily",
+                "1 Hour monthly",
+                "Weekend only"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3415,7 +3415,7 @@
               "type": "quiz",
               "prompt": "What's next?",
               "options": [
-                "Quit guitar",
+                "Leave the guitar",
                 "Keep practicing",
                 "Sell the guitar",
                 "Nothing"
@@ -3425,7 +3425,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -3433,7 +3433,7 @@
     },
     {
       "id": "u19",
-      "title": "Unit 19 – Music theory",
+      "title": "Unit 19 - Musical theory",
       "color": "purple",
       "lessons": [
         {
@@ -3449,7 +3449,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "How many semitones in a perfect 5th?",
+              "prompt": "How many semitones is a perfect 5th?",
               "options": [
                 "5",
                 "6",
@@ -3465,13 +3465,13 @@
                 "Two identical notes",
                 "Adjacent notes",
                 "Two strings",
-                "A measure"
+                "A compa"
               ],
               "answer": 1
             },
             {
               "type": "quiz",
-              "prompt": "How many semitones in an octave?",
+              "prompt": "How many semitones are in an octave?",
               "options": [
                 "10",
                 "11",
@@ -3495,7 +3495,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "How many notes in a major scale?",
+              "prompt": "How many notes does a major scale have?",
               "options": [
                 "5",
                 "6",
@@ -3508,21 +3508,21 @@
               "type": "quiz",
               "prompt": "The minor pentatonic scale has:",
               "options": [
-                "5 notes",
-                "6 notes",
-                "7 notes",
-                "12 notes"
+                "5 Notes",
+                "6 Notes",
+                "7 Notes",
+                "12 Notes"
               ],
               "answer": 0
             },
             {
               "type": "quiz",
-              "prompt": "Which alteration distinguishes the Dorian mode?",
+              "prompt": "What alteration distinguishes the Doric mode?",
               "options": [
-                "minor 3rd",
-                "augmented 4th",
-                "minor 7th",
-                "minor 2nd"
+                "Minor 3rd",
+                "4Th augmented",
+                "Minor 7th",
+                "2Nd minor"
               ],
               "answer": 2
             }
@@ -3537,13 +3537,13 @@
             {
               "type": "info",
               "title": "Triads",
-              "text": "A major chord: root, major 3rd, perfect 5th."
+              "text": "A major chord: fundamental, major 3rd, perfect 5th."
             },
             {
               "type": "quiz",
-              "prompt": "Which intervals form a major chord?",
+              "prompt": "What intervals form a major chord?",
               "options": [
-                "3m + 4m",
+                "3M + 4m",
                 "4M + 3m",
                 "3M + 4J",
                 "5J + 4M"
@@ -3554,7 +3554,7 @@
               "type": "quiz",
               "prompt": "A diminished chord has:",
               "options": [
-                "3m + 3m",
+                "3M + 3m",
                 "4M + 3m",
                 "3M + 4J",
                 "5J + 5J"
@@ -3565,7 +3565,7 @@
               "type": "quiz",
               "prompt": "The dominant 7th is:",
               "options": [
-                "M7",
+                "m7",
                 "m7",
                 "3M",
                 "5J"
@@ -3587,7 +3587,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "In C major, the V chord is:",
+              "prompt": "In C major, the V degree chord is:",
               "options": [
                 "C",
                 "Dm",
@@ -3609,7 +3609,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "The relative minor is degree:",
+              "prompt": "The relative minor is the degree:",
               "options": [
                 "ii",
                 "iii",
@@ -3633,7 +3633,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "How many beats in a whole note?",
+              "prompt": "How many beats does a whole note have?",
               "options": [
                 "2",
                 "3",
@@ -3655,12 +3655,12 @@
             },
             {
               "type": "quiz",
-              "prompt": "An eighth note is worth:",
+              "prompt": "The eighth note is worth:",
               "options": [
-                "1 beat",
-                "1/2 beat",
-                "1/4 beat",
-                "2 beats"
+                "1 Time",
+                "1/2 Time",
+                "1/4 Time",
+                "2 Times"
               ],
               "answer": 1
             }
@@ -3672,19 +3672,19 @@
   "ukulele": [
     {
       "id": "uu1",
-      "title": "Ukulele – First steps",
+      "title": "Ukulele – Getting started",
       "color": "green",
       "lessons": [
         {
           "id": "ul1",
-          "title": "Ukulele anatomy",
+          "title": "Ukulele Anatomy",
           "icon": "🪕",
           "xp": 10,
           "steps": [
             {
               "type": "info",
               "title": "The ukulele",
-              "text": "It has 4 strings: G, C, E, A = GCEA. Standard (reentrant) tuning: the 4th string (G) is higher."
+              "text": "It has 4 strings: G (G), C (C), E (E), A (A) = GCEA. Standard tuning (reentrant): the 4th string (G) is higher."
             },
             {
               "type": "quiz",
@@ -3700,7 +3700,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3733,7 +3733,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "What is the ukulele tuning?",
+              "prompt": "What is the tuning of the ukulele?",
               "options": [
                 "EADGBE",
                 "GCEA",
@@ -3744,7 +3744,7 @@
             },
             {
               "type": "quiz",
-              "prompt": "What is the ukulele tuning?",
+              "prompt": "What is the tuning of the ukulele?",
               "options": [
                 "EADGBE",
                 "GCEA",
@@ -3770,12 +3770,12 @@
           "steps": [
             {
               "type": "info",
-              "title": "Posture",
-              "text": "Hold the ukulele against your chest, right arm over the body. Left hand behind the neck."
+              "title": "Position",
+              "text": "Hold the ukulele against your chest, right arm over your body. Left hand behind the neck."
             },
             {
               "type": "quiz",
-              "prompt": "How many strings are usually strummed?",
+              "prompt": "How many strings are normally strummed?",
               "options": [
                 "4",
                 "6",
@@ -3787,7 +3787,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -3799,7 +3799,7 @@
           "steps": [
             {
               "type": "info",
-              "title": "Playing open strings",
+              "title": "Play open",
               "text": "Play the 1st string (A) open. It should sound clear."
             },
             {
@@ -3826,7 +3826,7 @@
     },
     {
       "id": "uu2",
-      "title": "Ukulele – Basic chords",
+      "title": "Ukulele – Basic Chords",
       "color": "blue",
       "lessons": [
         {
@@ -3838,7 +3838,7 @@
             {
               "type": "demo",
               "title": "C major (uke)",
-              "text": "Only one finger: 3rd string fret 3 (ring). Strum the 4 strings.",
+              "text": "Only one finger: 3rd string fret 3 (ring). Strum all 4 strings.",
               "chord": "C"
             },
             {
@@ -3855,69 +3855,69 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "C"
         },
         {
           "id": "ul6",
-          "title": "Chord G (uke)",
+          "title": "G chord (uke)",
           "icon": "G",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "G major (uke)",
-              "text": "Shape 0232.",
+              "text": "Form 0232.",
               "chord": "G"
             },
             {
               "type": "quiz",
-              "prompt": "G on uke is strummed with:",
+              "prompt": "G in uke is strummed with:",
               "options": [
-                "2 strings",
-                "4 strings",
-                "3 strings",
-                "1 string"
+                "2 Strings",
+                "4 Strings",
+                "3 Strings",
+                "1 String"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "G"
         },
         {
           "id": "ul7",
-          "title": "Chord Am (uke)",
+          "title": "Am Chord (uke)",
           "icon": "Am",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "Am (uke)",
-              "text": "Shape 2000.",
+              "text": "Form 2000.",
               "chord": "Am"
             },
             {
               "type": "quiz",
-              "prompt": "Am on uke uses:",
+              "prompt": "Am in uke uses:",
               "options": [
-                "1 finger",
-                "2 fingers",
-                "3 fingers",
-                "4 fingers"
+                "1 Finger",
+                "2 Fingers",
+                "3 Fingers",
+                "4 Fingers"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "Am"
@@ -3931,117 +3931,117 @@
             {
               "type": "demo",
               "title": "F (uke)",
-              "text": "Shape 2010.",
+              "text": "Form 2010.",
               "chord": "F"
             },
             {
               "type": "quiz",
-              "prompt": "F on uke uses:",
+              "prompt": "F in uke uses:",
               "options": [
-                "1 finger",
-                "2 fingers",
-                "3 fingers",
-                "4 fingers"
+                "1 Finger",
+                "2 Fingers",
+                "3 Fingers",
+                "4 Fingers"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "F"
         },
         {
           "id": "ul9",
-          "title": "Chord D (uke)",
+          "title": "D chord (uke)",
           "icon": "D",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "D (uke)",
-              "text": "Shape 2220.",
+              "text": "Form 2220.",
               "chord": "D"
             },
             {
               "type": "quiz",
-              "prompt": "D on uke uses:",
+              "prompt": "D in uke uses:",
               "options": [
-                "1 finger",
-                "2 fingers",
-                "3 fingers",
-                "4 fingers"
+                "1 Finger",
+                "2 Fingers",
+                "3 Fingers",
+                "4 Fingers"
               ],
               "answer": 2
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "D"
         },
         {
           "id": "ul10",
-          "title": "Chord E (uke)",
+          "title": "E chord (uke)",
           "icon": "E",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "E (uke)",
-              "text": "Shape 4442.",
+              "text": "Form 4442.",
               "chord": "E"
             },
             {
               "type": "quiz",
-              "prompt": "E on uke uses:",
+              "prompt": "E in uke uses:",
               "options": [
-                "1 finger",
-                "2 fingers",
-                "3 fingers",
-                "4 fingers"
+                "1 Finger",
+                "2 Fingers",
+                "3 Fingers",
+                "4 Fingers"
               ],
               "answer": 2
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "E"
         },
         {
           "id": "ul11",
-          "title": "Chord G7 (uke)",
+          "title": "G7 chord (uke)",
           "icon": "G7",
           "xp": 15,
           "steps": [
             {
               "type": "demo",
               "title": "G7 (uke)",
-              "text": "Shape 0212.",
+              "text": "Form 0212.",
               "chord": "G7"
             },
             {
               "type": "quiz",
               "prompt": "G7 on uke uses:",
               "options": [
-                "1 finger",
-                "2 fingers",
-                "3 fingers",
-                "4 fingers"
+                "1 Finger",
+                "2 Fingers",
+                "3 Fingers",
+                "4 Fingers"
               ],
               "answer": 2
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ],
           "chord": "G7"
@@ -4071,7 +4071,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }
@@ -4091,7 +4091,7 @@
             {
               "type": "info",
               "title": "Downstrokes",
-              "text": "Strum the 4 strings downward with the index finger."
+              "text": "Strum the 4 strings down with your index finger."
             },
             {
               "type": "quiz",
@@ -4099,15 +4099,15 @@
               "options": [
                 "Up",
                 "Down",
-                "Picking",
-                "Rest"
+                "Plucking",
+                "Silence"
               ],
               "answer": 1
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -4136,24 +4136,24 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "ul15",
-          "title": "Song: two chords (uke)",
+          "title": "2 Chord song (uke)",
           "icon": "🎶",
           "xp": 20,
           "steps": [
             {
               "type": "info",
               "title": "Let's play!",
-              "text": "Use C and G on ukulele. Strum 4 times per chord."
+              "text": "Use C and G on ukulele. Strum each chord 4 times."
             },
             {
               "type": "quiz",
-              "prompt": "Which chords?",
+              "prompt": "What chords?",
               "options": [
                 "C and G",
                 "Am and F",
@@ -4165,13 +4165,13 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
         {
           "id": "ul16",
-          "title": "Song: four chords (uke)",
+          "title": "4 Chord song (uke)",
           "icon": "🎶",
           "xp": 25,
           "steps": [
@@ -4182,19 +4182,19 @@
             },
             {
               "type": "quiz",
-              "prompt": "Which progression?",
+              "prompt": "What progression?",
               "options": [
                 "I-V-vi-IV",
-                "ii-V-I",
+                "Ii-V-I",
                 "I-IV-V",
-                "vi-IV-I-V"
+                "Vi-IV-I-V"
               ],
               "answer": 0
             },
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -4207,15 +4207,15 @@
             {
               "type": "info",
               "title": "Arpeggio",
-              "text": "Play the 4 strings one by one with thumb and index."
+              "text": "Play the 4 strings one by one with thumb and index finger."
             },
             {
               "type": "quiz",
               "prompt": "An arpeggio is:",
               "options": [
-                "Strumming",
-                "Notes played separately",
-                "Rest",
+                "Strum",
+                "Separate notes",
+                "Silence",
                 "Palm mute"
               ],
               "answer": 1
@@ -4223,7 +4223,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         },
@@ -4236,11 +4236,11 @@
             {
               "type": "info",
               "title": "Review",
-              "text": "Back to C, G, Am, F, D, E, G7."
+              "text": "C, G, Am, F, D, E, G7 return."
             },
             {
               "type": "quiz",
-              "prompt": "How many strings does a ukulele have?",
+              "prompt": "How many strings does the ukulele have?",
               "options": [
                 "4",
                 "6",
@@ -4252,7 +4252,7 @@
             {
               "type": "info",
               "title": "Practice",
-              "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+              "text": "Repeat what you learned slowly. Look for clear sound, without frets, and count clean changes in 60 seconds."
             }
           ]
         }

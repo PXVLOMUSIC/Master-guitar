@@ -1,0 +1,809 @@
+ Nada
+ Silencio
+ Un acorde
+0
+0 cambios
+1
+1 cambio
+1 cuerda
+1 dedo
+1 h mensual
+1 tiempo
+1 vez por semana
+1 y 2
+1,2 y 3
+1/2 tiempo
+1/4 tiempo
+10
+10 min diarios
+10 min diarios: 3 min acordes, 3 min cambios, 4 min canción.
+11
+12
+12 notas
+13
+15 cambios
+1ª
+2
+2 cuerdas
+2 dedos
+2 tiempos
+2 y 3
+2a menor
+2ª
+3
+3 cuerdas
+3 dedos
+3M
+3M + 4J
+3a menor
+3m + 3m
+3m + 4m
+3ª
+4
+4 cuerdas
+4 dedos
+4M + 3m
+4a aumentada
+4ª
+5
+5 cambios
+5 cuerdas
+5 notas
+5J
+5J + 4M
+5J + 5J
+5ª
+6
+6 cuerdas
+6 notas
+60 cambios
+6ª
+7
+7 notas
+7a menor
+7ª
+8
+8 notas
+9ª (Re)
+A
+A5
+A5 se toca en:
+Acelerar
+Acentúa los tiempos débiles: 1 2 3 4 con un upstroke en el 'y' de cada tiempo.
+Acorde A
+Acorde A (La mayor)
+Acorde Am
+Acorde Am (La menor)
+Acorde Am (uke)
+Acorde Asus2
+Acorde C
+Acorde C (Do mayor)
+Acorde C (uke)
+Acorde Cadd9
+Acorde D
+Acorde D (Re mayor)
+Acorde D (uke)
+Acorde Dm
+Acorde Dm (Re menor)
+Acorde Dsus2
+Acorde E
+Acorde E (Mi mayor)
+Acorde E (uke)
+Acorde Em
+Acorde Em (Mi menor)
+Acorde F (Fa mayor)
+Acorde F (cejilla)
+Acorde F (uke)
+Acorde G
+Acorde G (Sol mayor)
+Acorde G (uke)
+Acorde G7
+Acorde G7 (uke)
+Acorde dom7 (G7)
+Acorde m7 (Am7)
+Acorde maj7 (Cmaj7)
+Acorde mayor
+Acorde menor
+Acordes
+Afinación EADGBE
+Afinación GCEA
+Afinación estándar
+Afinar
+Afinar la 1ª cuerda (La).
+Afinar la 1ª cuerda (Mi agudo).
+Afinar la 2ª cuerda (Mi).
+Afinar la 3ª cuerda (Do).
+Afinar la 4ª cuerda (Sol).
+Afinar la 6ª cuerda (Mi grave). Toca la cuerda y ajusta la clavija hasta que el afinador marque verde.
+Afinar más alto
+Agresivo
+Al acertar 4 compases seguidos
+Alterna rasgueo hacia abajo y hacia arriba: D U D U. Mantén la mano en movimiento aunque no toques.
+Am
+Am (uke)
+Am en uke usa:
+Am y D
+Am y F
+Am-F-C-G, 4 rasgueos por acorde.
+Am7
+Am7 suena suave y triste. Añade la 7ª menor a Am.
+Ambas
+Ambos
+Amortiguar
+Anatomía de la guitarra
+Anatomía del ukelele
+Apoya el lateral de la mano derecha cerca del puente para amortiguar. Suena percusivo y potente.
+Arco
+Armonia
+Armonia funcional
+Arpegia Am con p-i-m-a.
+Arpegia C con p-i-m-a.
+Arpegio
+Arpegio Am
+Arpegio C
+Arpegio básico
+Arpegio básico (uke)
+Arpegio de Am
+Arpegio de C
+Arpegios
+Arpegios con p-i-m-a y posición correcta.
+Arpegios jazz
+Asus2
+Asus2 es un acorde:
+Asus2 suena abierto y suspendido. Forma: x02200.
+Así debe sonar la 1ª cuerda al aire (Mi).
+Añade la 5ª cuerda para hacer el riff más potente.
+Baja el tono
+Bajar trastes
+Bajo que camina por las notas de la escala.
+Baladas
+Bend
+Binario
+Blues
+Blues: shuffle
+Bm
+Bm con cejilla
+Bm es un acorde:
+C
+C - G - Am - F con Cadd9 y G7 para dar color.
+C - G - Am - F. Tócala con un rasgueo por acorde. Es la base de miles de canciones pop.
+C mayor
+C mayor (uke)
+C y G
+C, G y Am
+C-Am-F-G, 4 rasgueos por acorde.
+C-F-G, 4 rasgueos por acorde.
+C-G-Am-F
+CGDA
+Cada traste sube un semitono. En la 1ª cuerda: traste 0 = Mi, 1 = Fa, 2 = Fa#, 3 = Sol.
+Cadd9
+Cadd9 añade la nota:
+Cadd9 suena brillante y moderno. Forma: x32033.
+Cadd9 y G7
+Cadena
+Cadena de cambios
+Cambiar cuerda
+Cambiar de guitarra
+Cambiar de tono sin cambiar forma
+Cambiar guitarra
+Cambiar la cuerda
+Cambio
+Cambio C → F → G
+Cambio E → A
+Cambio E-A
+Cambio Em → Am
+Cambio lento
+Cambios
+Cambios C → G → Am
+Cambios C-G-Am-F (uke)
+Cambios F → Bm
+Canción de 2 acordes (uke)
+Canción de 4 acordes
+Canción de 4 acordes (uke)
+Canción: Am, F, C, G
+Canción: C, Am, F, G
+Canción: C, G, Am, F
+Canción: D, A, G
+Canción: E, A, D, G
+Canción: Em y Am
+Canción: Em, G, D, C
+Canción: G, D, Em, C
+Canción: dos acordes (Em-G)
+Canción: tres acordes (C, F, G)
+Capo
+Castigo
+Cejilla
+Cejilla en traste 1, dedos 2-4 en trastes 2-3. Rasguea 6 cuerdas.
+Cejilla en traste 2, forma de Am desplazada.
+Clásica
+Clásica: arpegio
+Cmaj7
+Cmaj7 suena jazzero y suave. Añade la 7ª mayor a C.
+Coloca el dedo 1 en cejilla en el traste 1 (cuerdas 1ª-6ª?) y dedos 2,3,4 en trastes 2-3. Rasguea 6 cuerdas.
+Coloca el dedo 2 en la 5ª cuerda traste 2 y el dedo 3 en la 4ª cuerda traste 2. Rasguea las 6 cuerdas.
+Combina hammer-on y pull-off para tocar fluido.
+Combina hammer/pull para frases fluidas a alta velocidad.
+Combina palm mute con rasgueo para sonido de rock.
+Completaste el currículo base. Sigue con estilos y avanzado.
+Con cejilla
+Con tapping
+Consejo
+Cuando quieras
+Cuantas notas tiene una escala mayor?
+Cuantos semitonos tiene una 5a justa?
+Cuantos semitonos tiene una octava?
+Cuantos tiempos tiene una redonda?
+Cuarta
+Cuenta cuántos cambios limpios Em-Am haces en 60 s. Supera tu récord cada día.
+Cuerdas 1-2-3
+Cuerdas 4-3-2
+Cuerdas 5-4-3
+Cuerdas 6-5-4
+D
+D (uke)
+D D D D
+D D U U D U
+D D U U D U con acento suave. Ideal para baladas pop.
+D U D U
+D U D U en ukelele.
+D en uke usa:
+D y E
+D-A-G
+D-A-G, 4 rasgueos por acorde.
+DGBE
+De la cuerda más gruesa a la más fina: Mi (E) - La (A) - Re (D) - Sol (G) - Si (B) - Mi (E). Mnemotecnia: 'Mi Amigo Da Grandes Bendiciones Extra'.
+Dedo 1 en 2ª cuerda traste 1, dedo 2 en 4ª cuerda traste 2, dedo 3 en 3ª cuerda traste 2. Rasguea 5 cuerdas (sin la 6ª).
+Dedo 1: 1ª cuerda traste 1. Dedo 2: 3ª cuerda traste 2. Dedo 3: 2ª cuerda traste 3. Rasguea 4 cuerdas.
+Dedo 1: 2ª cuerda traste 1. Dedo 2: 4ª cuerda traste 2. Dedo 3: 5ª cuerda traste 3. Rasguea 5 cuerdas (sin 6ª).
+Dedo 1: 3ª cuerda traste 2. Dedo 2: 1ª cuerda traste 2. Dedo 3: 2ª cuerda traste 3. Rasguea las 4 cuerdas más finas.
+Dedo 2 en 5ª traste 2, dedo 1 en 2ª traste 3, dedo 3 en 6ª traste 3, dedo 4 en 1ª traste 3. Rasguea 6 cuerdas.
+Dedo 2 en 5ª traste 2, dedo 3 en 4ª traste 2, dedo 1 en 3ª traste 1. Rasguea las 6 cuerdas.
+Dedos
+Dedos 1,2,3 en traste 2 de las cuerdas 4ª,3ª,2ª. Rasguea 5 cuerdas (sin la 6ª).
+Dejar la guitarra
+Depende
+Desafío
+Desafío de cambios (1 minuto)
+Desliza el dedo por la cuerda sin levantarlo.
+Deslizar
+Detrás del mástil
+Disminuido
+Dm
+Dm es un acorde:
+Dm y Bm
+Dm7 - G7 - Cmaj7. La progresión de jazz por excelencia.
+Do-Re-Mi-Fa-Sol-La-Si-Do. La base de la teoría.
+Dominante
+Dos cuerdas
+Dos notas iguales
+Down
+Down y up
+Down-up
+Downstrokes
+Dsus2
+Dsus2 reemplaza la tercera por:
+Dsus2 suena abierto. Forma: xx0230.
+Dórico
+E
+E (uke)
+E en uke usa:
+E y A
+E-A-D-G
+E-A-D-G, 2 rasgueos por acorde.
+E5
+E5 - A5 - B5 (simulado) con palm mute.
+E5 y A5
+EADGBE
+Economía
+Economía de movimiento
+El F simplificado evita:
+El galope es típico de:
+El palm mute se hace con:
+El palm mute se usa mucho en:
+El pop usa progresiones:
+El relativo menor es el grado:
+El reto de JustinGuitar
+El ritmo
+El ritmo organiza el tiempo. 4/4 tiene 4 tiempos.
+El rock usa mucho:
+El secreto del cambio con cejilla:
+El ukelele
+Em
+Em y Am
+Em y G
+Em-Am
+Em-Am: 4 rasgueos por acorde, repite.
+Em-G alternando cada compás.
+Em-G-D-C, 4 rasgueos por acorde.
+Empuja la cuerda hacia arriba para subir el tono (medio tono o tono).
+En A, ¿qué cuerda se omite?
+En Am, ¿se toca la 6ª cuerda (Mi grave)?
+En C, ¿qué cuerda se omite?
+En D U D U, U es:
+En D U D U, ¿qué letra es 'upstroke'?
+En D, ¿cuántas cuerdas se rasguean?
+En Do mayor, el acorde del V grado es:
+En la 1ª cuerda, traste 3 es:
+En silencio
+Encima del mástil
+Entrenamiento de cambios (1 minuto)
+Es la escala mayor. Suena brillante y estable.
+Es la escala menor natural. Suena triste.
+Es normal que F suene apagado al principio. Presiona la cejilla con el lateral del índice, cerca del traste.
+Escala mayor
+Escala mayor (C mayor)
+Escala menor
+Escala pentatónica menor
+Escalas
+Escucha
+Escucha Am
+Escucha Em
+Escucha La
+Este riff se toca en:
+Eólico
+Eólico es:
+F
+F (cejilla)
+F (uke)
+F barre
+F barre requiere cejilla en:
+F con cejilla completa
+F en uke usa:
+F requiere:
+F simplificado
+F simplificado (sin cejilla)
+Fa
+Fa#
+Fingerstyle Am
+Fingerstyle C
+Fingerstyle en Am
+Fingerstyle en C
+Fingerstyle se toca con:
+Flamenco
+Flamenco/rumba
+Forma 0212.
+Forma 0232.
+Forma 2000.
+Forma 2010.
+Forma 2220.
+Forma 4442.
+Frecuencia ideal:
+G
+G en uke se rasguea con:
+G mayor (uke)
+G se rasguea con:
+G-D-Em-C, 2 rasgueos por acorde.
+G7
+G7 (uke)
+G7 añade tensión para resolver a C. Forma: 320001.
+G7 crea tensión para resolver a C. Ya lo viste como G7.
+G7 en uke usa:
+G7 es un acorde de:
+G7 y C
+GCEA
+Galope
+Golpea el traste con la mano derecha para notas rápidas.
+Golpea un traste con el dedo sin rasguear de nuevo. Suena ligado.
+Golpear
+Graba un video hoy y compáralo con el día 1. ¡Verás el progreso!
+Grabación
+Grabación día 1 vs 30
+Grados: I mayor, ii menor, iii menor, IV mayor, V mayor, vi menor, vii disminuido.
+Graduación nivel 1
+Hacia abajo
+Hacia arriba
+Hammer-on
+Hammer-on se hace con:
+Hammer-on y pull-off
+Hammer/pull
+I-IV-V
+I-V-vi-IV
+Improvisación
+Improvisar con pentatónica
+Intervalos
+Jazz
+Jazz/blues
+Jazz/pop
+Jazz: walking bass
+Jónico
+Jónico es:
+La
+La 7a de dominante es:
+La cejilla (capo) permite tocar la misma forma en otro tono.
+La cejilla completa
+La corchea vale:
+La cuerda más fina (1ª) se llama:
+La escala del rock
+La escala mayor tiene:
+La escala pentatonica menor tiene:
+La guitarra clásica se toca con:
+La guitarra tiene 6 cuerdas, un mástil con trastes y un cuerpo que amplifica el sonido. Las cuerdas se numeran de la más fina (1ª, mi agudo) a la más gruesa (6ª, mi grave).
+La misma forma de power chord se desplaza por el mástil.
+La pentatónica menor tiene:
+La progresion I-V-vi-IV es tipica del:
+La progresión más usada
+La rumba es típica de:
+La síncopa acentúa:
+Lateral de la mano derecha
+Legato
+Legato avanzado
+Legato avanzado usa:
+Legato usa:
+Los dedos pulgar (p), índice (i), medio (m) y anular (a) tocan las cuerdas. Empieza tocando una cuerda al aire con el pulgar, de arriba a abajo.
+Los power chords se usan en:
+M7
+Mano derecha
+Mano izquierda
+Marcha
+Mayor
+Mayor con 7ª menor. Suena rock/blues.
+Medio tono o tono
+Menor
+Menor natural
+Metal
+Metal extremo
+Metal: galope
+Metrónomo
+Metrónomo lento
+Mi agudo
+Mi grave
+Minimiza el movimiento de las manos para ganar velocidad.
+Mirar
+Mirar las cuerdas
+Mirar los dedos
+Mixolidio
+Mixolidio se usa en:
+Modo eólico (menor natural)
+Modo jónico (mayor)
+Modo mixolidio
+Motivación
+Mover dedos uno por uno
+Mover la cejilla como bloque
+Mover los dedos juntos
+Mover menos
+Mover más
+Movimiento
+Movimiento por el mástil
+Nada
+Ninguna
+Ninguno
+No cambia
+No importa
+No practicar
+No, se omite
+Notas adyacentes
+Notas del acorde por separado
+Notas en los primeros trastes
+Notas por separado
+Notas sueltas
+Nunca
+Objetivo mínimo razonable en semana 1:
+Objetivo:
+Palm mute
+Palm mute avanzado
+Para ganar velocidad:
+Para improvisar necesitas:
+Para subir de tono:
+Patrón
+Patrón básico (p-i-m-a)
+Patrón de balada
+Patrón de balada sugerido:
+Patrón de rumba catalana con percusión en la caja.
+Patrón down-up (uke)
+Patrón p-i-m-a usa:
+Patrón ternario: 1 2 3 con acento. Usa pentatónica menor.
+Pentatónica
+Pie
+Plan
+Plan de práctica diaria
+Pop
+Pop hispano
+Pop: rasgueo
+Posición 1 en La menor: trastes 5-8 en las cuerdas 6ª a 1ª. Es la base de los solos de rock y blues.
+Posición p-i-m-a
+Postura
+Postura sentada
+Postura y agarre
+Postura y agarre (uke)
+Power chord A5
+Power chord E5
+Power chords
+Power chords con distorsión y palm mute.
+Practica
+Practica C-F-G-C. Mueve los dedos juntos.
+Practica C-G-Am-C. Mantén el ritmo con un rasgueo por acorde.
+Practica C-G-Am-F en ukelele.
+Practica F-Bm. Mueve la cejilla como bloque.
+Practica el cambio C-F simplificado.
+Practica lento
+Practica pasar de Em a Am y vuelta. Mueve los dedos juntos, no uno por uno. Objetivo: 30 cambios en 1 minuto sin errores.
+Presionar más cerca del traste
+Primer sonido (uke)
+Primera canción de 2 acordes
+Progresión
+Progresión I-V-vi-IV
+Progresión con color
+Progresión ii-V-I
+Progresión pop C-G-Am-F, 4 rasgueos por acorde.
+Práctica
+Pulgar (p) cuerdas graves, índice (i), medio (m), anular (a) cuerdas agudas.
+Pull-off
+Pull-off es lo opuesto a:
+Punk
+Punteo
+Púa
+Que alteracion distingue al modo dorico?
+Que es un intervalo?
+Que intervalos forman un acorde mayor?
+Quinta
+Rasguea hacia abajo (downstroke) con el dedo índice o púa, golpeando todas las cuerdas del acorde. Mantén el ritmo: 1-2-3-4.
+Rasguea las 4 cuerdas hacia abajo con el índice.
+Rasgueo
+Rasgueo básico (uke)
+Rasgueo controlado a través de varias cuerdas para arpegios rápidos.
+Rasgueo down-up
+Rasgueo down-up suave con capo.
+Rasgueo hacia abajo
+Rasgueo hacia arriba
+Raíz y quinta
+Raíz y quinta: trastes 0-2-2 en cuerdas 6-5-4.
+Raíz y quinta: x022xx.
+Raíz y séptima
+Raíz y tercera
+Raíz+quinta
+Re
+Referencia La.
+Referencia: acorde Am.
+Referencia: acorde Em.
+Reggae
+Repaso
+Repaso acordes abiertos I
+Repaso arpegios
+Repaso avanzado
+Repaso cejilla
+Repaso escalas
+Repaso espaciado
+Repaso fingerstyle
+Repaso general guitarra
+Repaso modos
+Repaso power chords
+Repaso semana 1
+Repaso semana 2
+Repaso séptimas
+Repaso técnicas
+Repaso ukelele
+Repite Dm lentamente buscando sonido claro.
+Repite lo aprendido lentamente. Busca sonido claro, sin trasteos, y cuenta cambios limpios en 60 s.
+Riff
+Riff con dos cuerdas
+Riff de power (Smoke)
+Riff de power chords
+Riff de una cuerda
+Ritmo
+Rock
+Rock duro
+Rock/metal
+Rock: power chords
+Rumba
+Récord personal
+Salsa
+Seguir practicando
+Segunda
+Seis cuerdas
+Seven Nation Army
+Shred
+Shuffle
+Shuffle es:
+Si trastea, ¿qué haces?
+Si una cuerda suena apagada o trastea, ¿qué haces?
+Silencia
+Silenciar
+Silencio
+Silencios
+Siéntate derecho, apoya la guitarra sobre la pierna derecha (diestros). El mástil apunta ligeramente hacia arriba. El pulgar de la mano izquierda va detrás del mástil.
+Slide
+Slide significa:
+Smoke on the Water
+Sobre las cuerdas
+Sol
+Solo 2 dedos
+Solo acordes
+Solo al final
+Solo bends
+Solo con cejilla
+Solo disonantes
+Solo el 1
+Solo fin de semana
+Solo menores
+Solo rasgueo
+Solo raíz
+Solo un dedo: 3ª cuerda traste 3 (anular). Rasguea las 4 cuerdas.
+Solo upstrokes
+Suave/jazz
+Subdominante
+Subir trastes
+Sujeta el ukelele contra el pecho, brazo derecho sobre el cuerpo. Mano izquierda detrás del mástil.
+Supera tu récord de cambios limpios en 60 s.
+Suspendido
+Sweep
+Sweep es típico de:
+Sweep picking
+Séptima
+Sí, siempre
+Síncopa
+Síncopa básica
+Tapping
+Tapping se hace con:
+Tensión
+Ternario
+Tiempos débiles
+Tiempos fuertes
+Tiene 4 cuerdas: Sol (G), Do (C), Mi (E), La (A) = GCEA. Afinación estándar (reentrante): la 4ª cuerda (Sol) es más aguda.
+Tira del dedo para sonar la nota inferior sin rasguear.
+Tirar
+Toca Am arpegiando.
+Toca C arpegiando las cuerdas 5-4-3-2-1.
+Toca Em
+Toca el acorde Em. La app lo detectará automáticamente.
+Toca en la 4ª cuerda: trastes 0-3-5, 0-3-6-5. Un riff icónico con una sola cuerda.
+Toca en la 5ª cuerda (A): 7-7-10-7-5-3-0 (aprox). Un riff de una sola cuerda.
+Toca la 1ª cuerda (La) al aire. Debe sonar claro.
+Toca la 1ª cuerda (la más fina) con el dedo índice de la mano derecha. Debe sonar claro y sostenido. Si trastea, presiona más cerca del traste.
+Toca la forma simplificada de F.
+Toca las 4 cuerdas una por una con pulgar e índice.
+Toca las notas del acorde una por una: p i m a m i (6-4-3-2-3-4).
+Toca un acorde por tiempo a 60 BPM. Sube el tempo solo cuando aciertes 4 compases seguidos.
+Tocar al aire
+Tocar cuerdas
+Tocar fuerte
+Tocar más fuerte
+Todas a la vez
+Transposición con cejilla
+Traste 1
+Traste 2
+Traste 3
+Traste 5
+Trastes
+Tresillos rápidos con palm mute.
+Triadas
+Triste
+Tu primer sonido
+Tu primera canción de 3 acordes
+Tónica
+U
+Ukelele – Acordes básicos
+Ukelele – Canciones y rasgueo
+Ukelele – Primeros pasos
+Un 'downstroke' es:
+Un acorde disminuido tiene:
+Un acorde mayor: fundamental, 3a mayor, 5a justa.
+Un arpegio es:
+Un arpegio se toca:
+Un bend sube el tono:
+Un capo sirve para:
+Un compas
+Un compas de 3/4 se asocia con:
+Un downstroke es:
+Un intervalo es la distancia en semitonos entre dos notas.
+Un power chord tiene:
+Un power riff usa:
+Un punteo
+Un semitono es la distancia entre:
+Una escala
+Una escala es una sucesion ordenada de notas.
+Una por una
+Una sola cuerda
+Unidad 1 – Primeros sonidos
+Unidad 10 – Acordes de séptima
+Unidad 11 – Acordes con cejilla (F, Bm)
+Unidad 12 – Power chords
+Unidad 13 – Técnicas (hammer-on, pull-off, bends, slides)
+Unidad 14 – Fingerstyle básico
+Unidad 15 – Improvisación y modos
+Unidad 16 – Estilos (blues, rock, pop, flamenco, metal, jazz, clásica)
+Unidad 17 – Avanzado (tapping, sweep, legato)
+Unidad 18 – Repaso y desafío final
+Unidad 19 - Teoria musical
+Unidad 2 – Primeros acordes (Em, Am, E, A)
+Unidad 3 – Acordes mayores abiertos (C, G, D)
+Unidad 4 – F y cambios rápidos
+Unidad 5 – Ritmo y rasgueo
+Unidad 6 – Primeras canciones
+Unidad 7 – Acordes de color (Asus2, Dsus2, G7, Cadd9)
+Unidad 8 – Escalas y riffs
+Unidad 9 – Arpegios y palm mute
+Up
+Usa C y G en ukelele. Rasguea 4 veces cada acorde.
+Usa C, G y Am. Rasguea 4 veces cada acorde y cambia. Repite.
+Usa C-G-Am-F en ukelele.
+Usa C-G-Am-F. Rasguea 4 veces cada acorde. Repite. ¡Eso es una canción pop!
+Usa Em y Am. Rasguea 4 veces cada acorde y cambia. Repite. ¡Ya estás tocando una canción!
+Usa la misma forma que Em-Am pero con un dedo más. Intenta 20 cambios limpios en 1 minuto.
+Usa la pentatónica menor sobre un backing en Am. Toca notas de la escala con ritmo.
+Usa solo las 4 cuerdas más agudas: trastes 2-1-1 (D-G-B-e) sin cejilla completa. Suena parecido a F.
+Usar capo
+Usar cejilla
+Vals
+Vender
+Vender la guitarra
+Vuelve el patrón p-i-m-a.
+Vuelven C, G, Am, F y los cambios.
+Vuelven C, G, Am, F, D, E, G7.
+Vuelven E5 y A5.
+Vuelven Em, Am, E, A, C, G, D. Tócalos de memoria.
+Vuelven Em, Am, E, A. Tócalos sin mirar el diagrama.
+Vuelven F y Bm.
+Vuelven acordes, ritmos y escalas.
+Vuelven arpegios de C y Am.
+Vuelven hammer-on, pull-off, bend, slide.
+Vuelven jónico, eólico, mixolidio.
+Vuelven maj7, m7, dom7.
+Vuelven pentatónica menor y C mayor.
+Vuelven tapping, sweep, legato.
+Walking bass
+Walking bass se usa en:
+a
+dom7
+dom7 resuelve a:
+i
+ii
+ii-V-I
+ii-V-I es típico de:
+iii
+m
+m7
+m7 se usa en:
+maj7
+maj7 suena:
+p
+p en 6ª, i en 3ª, m en 2ª, a en 1ª. Repite.
+vi
+vi-IV-I-V
+vii
+¡A tocar!
+¡Bienvenido!
+¡Felicidades!
+¿Cuál es el secreto de los cambios rápidos de acorde?
+¿Cuál es la afinación del ukelele?
+¿Cuándo subir el tempo?
+¿Cuántas cuerdas afinaste en esta lección?
+¿Cuántas cuerdas se rasguean en D?
+¿Cuántas cuerdas se rasguean en E?
+¿Cuántas cuerdas se rasguean en Em?
+¿Cuántas cuerdas se rasguean normalmente?
+¿Cuántas cuerdas tiene el ukelele?
+¿Cuántas cuerdas tiene la guitarra?
+¿Cuántas cuerdas tiene un ukelele?
+¿Cuántas cuerdas tiene una guitarra estándar?
+¿Cuántas notas tiene la pentatónica?
+¿Cuántos acordes distintos usaste?
+¿Cuántos acordes?
+¿Cuántos dedos se usan para C en ukelele?
+¿Cuántos semitonos sube un traste?
+¿Dónde va el pulgar de la mano izquierda?
+¿En qué acorde se omite la 6ª cuerda?
+¿En qué cuerda se toca este riff?
+¿Para qué grabar?
+¿Qué acorde arpegiaste?
+¿Qué acorde es 022100?
+¿Qué acorde es 224432?
+¿Qué acorde es 320003?
+¿Qué acorde es dom7?
+¿Qué acorde es x02210?
+¿Qué acorde requiere cejilla en esta progresión?
+¿Qué acorde sigue a G en C-G-Am-F?
+¿Qué acorde?
+¿Qué acordes de color usaste?
+¿Qué acordes usaste?
+¿Qué acordes?
+¿Qué ayuda a cambiar más rápido?
+¿Qué dedo toca las cuerdas graves?
+¿Qué dedos se usan para Em?
+¿Qué es un power chord?
+¿Qué modo es mayor con 7ª menor?
+¿Qué progresión practicaste?
+¿Qué progresión usaste?
+¿Qué progresión?
+¿Qué sigue?
+¿Qué técnica golpea con la mano derecha?
+¿Qué técnica sube el tono empujando la cuerda?

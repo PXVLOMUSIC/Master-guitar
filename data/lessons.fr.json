@@ -1,0 +1,4262 @@
+{
+  "units": [
+    {
+      "id": "u1",
+      "title": "Unité 1 – Premiers sons",
+      "color": "green",
+      "lessons": [
+        {
+          "id": "l1",
+          "title": "anatomie de la guitare",
+          "icon": "🎸",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Accueillir!",
+              "text": "La guitare possède 6 cordes, un manche fretté et un corps qui amplifie le son. Les cordes sont numérotées de la plus fine (1ère, mi aigu) à la plus épaisse (6ème, mi grave)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes possède une guitare standard ?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "La corde la plus fine (1ère) s'appelle :",
+              "options": [
+                "mon sérieux",
+                "Le",
+                "Concernant",
+                "Mon tranchant"
+              ],
+              "answer": 3
+            }
+          ]
+        },
+        {
+          "id": "l2",
+          "title": "Posture et préhension",
+          "icon": "🧍",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "position assise",
+              "text": "Asseyez-vous droit, posez la guitare sur votre jambe droite (droitier). Le mât pointe légèrement vers le haut. Le pouce de la main gauche passe derrière le cou."
+            },
+            {
+              "type": "info",
+              "title": "Main droite",
+              "text": "Le pouce (p), l’index (i), le majeur (m) et l’annulaire (a) jouent des cordes. Commencez par jouer une corde à vide avec votre pouce, de haut en bas."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Où va le pouce de la main gauche ?",
+              "options": [
+                "Au dessus du mât",
+                "Derrière le mât",
+                "Sur les cordes",
+                "Cela n'a pas d'importance"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "l3",
+          "title": "Accordage standard",
+          "icon": "🎯",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Réglage EADGBE",
+              "text": "De la corde la plus épaisse à la plus fine : E (E) - A (A) - D (D) - G (G) - B (B) - E (E). Mnémonique : « Mon ami donne de très grandes bénédictions »."
+            },
+            {
+              "type": "tuner",
+              "string": 0,
+              "note": "E2",
+              "freq": 82.41,
+              "text": "Accordez la 6ème corde (mi grave). Jouez la corde et ajustez l’accordeur jusqu’à ce que l’accordeur soit vert."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes avez-vous accordé dans cette leçon ?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes avez-vous accordé dans cette leçon ?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "6"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "tuner",
+              "string": 5,
+              "note": "E4",
+              "freq": 329.63,
+              "text": "Accordez la 1ère corde (mi aigu)."
+            }
+          ]
+        },
+        {
+          "id": "l4",
+          "title": "ton premier son",
+          "icon": "🎵",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "toucher l'air",
+              "text": "Jouez la 1ère corde (la plus fine) avec l'index de votre main droite. Cela doit paraître clair et soutenu. Si vous vous inquiétez, appuyez plus près de la frette."
+            },
+            {
+              "type": "demo",
+              "title": "Écouter",
+              "text": "C'est ainsi que devrait sonner la 1ère corde à vide (E).",
+              "freq": 329.63,
+              "note": "E4"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Si une corde semble émoussée ou frette, que faites-vous ?",
+              "options": [
+                "Jouez plus fort",
+                "Appuyez plus près de la frette",
+                "Changer la corde",
+                "Accordez plus haut"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "l5",
+          "title": "Notes sur les premières frettes",
+          "icon": "🎼",
+          "xp": 12,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Frettes",
+              "text": "Chaque case monte d'un demi-ton. Sur la 1ère corde : frette 0 = E, 1 = F, 2 = F#, 3 = G."
+            },
+            {
+              "type": "quiz",
+              "prompt": "De combien de demi-tons une case monte-t-elle ?",
+              "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Sur la 1ère corde, la case 3 est :",
+              "options": [
+                "Fa",
+                "Fa#",
+                "Soleil",
+                "Le"
+              ],
+              "answer": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u2",
+      "title": "Unité 2 – Premiers accords (Em, Am, E, A)",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "l6",
+          "title": "Accord Em",
+          "icon": "Em",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord Em (mi mineur)",
+              "text": "Placez le doigt 2 sur la 5ème case de corde 2 et le doigt 3 sur la 4ème case de corde 2. Grattez les 6 cordes.",
+              "chord": "Em"
+            },
+            {
+              "type": "playChord",
+              "title": "Appuyez sur Em",
+              "text": "Jouez l’accord Em. L'application le détectera automatiquement.",
+              "expected": "Em"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels doigts sont utilisés pour Em ?",
+              "options": [
+                "1 et 2",
+                "2 et 3",
+                "1,2 et 3",
+                "Seulement le 1"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes sont grattées en Em ?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "3"
+              ],
+              "answer": 2
+            }
+          ],
+          "chord": "Em"
+        },
+        {
+          "id": "l7",
+          "title": "Accord Suis",
+          "icon": "Am",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord Am (la mineur)",
+              "text": "Doigt 1 sur la 2ème case de corde 1, doigt 2 sur la 4ème case de corde 2, doigt 3 sur la 3ème case de corde 2. Gratter 5 cordes (sans la 6ème).",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "En Am, la 6ème corde (mi grave) est-elle jouée ?",
+              "options": [
+                "Oui, toujours",
+                "Non, c'est omis",
+                "Seulement avec capodastre",
+                "Cela dépend"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "l106",
+          "title": "Accord Dm",
+          "icon": "Dm",
+          "xp": 15,
+          "chord": "Dm",
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord Dm (ré mineur)",
+              "text": "Doigt 1 : 1ère frette de corde 1. Doigt 2 : 3ème frette de corde 2. Doigt 3 : 2ème frette de corde 3. Gratter 4 cordes.",
+              "chord": "Dm"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dm est un accord :",
+              "options": [
+                "Âgé",
+                "Mineure",
+                "Dominant",
+                "Diminué"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez Dm lentement en recherchant un son clair."
+            }
+          ]
+        },
+        {
+          "id": "l8",
+          "title": "Changer Em → Am",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Changement lent",
+              "text": "Entraînez-vous à passer d'Em à Am et vice-versa. Rapprochez vos doigts, pas un par un. Objectif : 30 changements en 1 minute sans erreurs."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel est le secret des changements d’accords rapides ?",
+              "options": [
+                "Jouez plus fort",
+                "Rapprochez les doigts",
+                "Regarde les cordes",
+                "Utiliser un capodastre"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "Écoute-les",
+              "text": "Référence : accord Em.",
+              "chord": "Em"
+            },
+            {
+              "type": "demo",
+              "title": "Écoute, je suis",
+              "text": "Référence : accord Am.",
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "id": "l9",
+          "title": "Accord E",
+          "icon": "E",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord E (mi majeur)",
+              "text": "Doigt 2 sur la 5ème case 2, doigt 3 sur la 4ème case 2, doigt 1 sur la 3ème case 1. Grattez les 6 cordes.",
+              "chord": "E"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes sont grattées sur E ?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "3"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "E"
+        },
+        {
+          "id": "l10",
+          "title": "Accord A",
+          "icon": "A",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord A (La majeur)",
+              "text": "Doigts 1,2,3 sur la case 2 des 4ème,3ème,2ème cordes. Grattez 5 cordes (sans la 6ème).",
+              "chord": "A"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dans A, quelle chaîne est omise ?",
+              "options": [
+                "1er",
+                "6ème",
+                "3ème",
+                "5ème"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "A"
+        },
+        {
+          "id": "l11",
+          "title": "Changer E → A",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Changement E-A",
+              "text": "Il utilise la même forme que l'Em-Am mais avec un doigt en plus. Essayez 20 swings nets en 1 minute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Qu’est-ce qui aide à changer plus rapidement ?",
+              "options": [
+                "regarde les doigts",
+                "Rapprochez les doigts",
+                "Jouez plus fort",
+                "changer de guitare"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "E",
+              "text": null,
+              "chord": "E"
+            },
+            {
+              "type": "demo",
+              "title": "A",
+              "text": null,
+              "chord": "A"
+            }
+          ]
+        },
+        {
+          "id": "l12",
+          "title": "Revue des accords ouverts I",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revue espacée",
+              "text": "Em, Am, E, A reviennent. Touchez-les sans regarder le schéma."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord est x02210 ?",
+              "options": [
+                "Em",
+                "SUIS",
+                "E",
+                "A"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord est 022100 ?",
+              "options": [
+                "Em",
+                "SUIS",
+                "E",
+                "A"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l13",
+          "title": "Chanson à 2 premiers accords",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Utilisez Em et Am. Grattez chaque accord 4 fois et changez. Répéter. Vous jouez déjà une chanson !"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels accords as-tu utilisés ?",
+              "options": [
+                "C et G",
+                "Em et Am",
+                "Am et D",
+                "E et A"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "Em",
+              "text": null,
+              "chord": "Em"
+            },
+            {
+              "type": "demo",
+              "title": "SUIS",
+              "text": null,
+              "chord": "Am"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "Unité 3 – Accords majeurs ouverts (C, G, D)",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "l14",
+          "title": "Accord C",
+          "icon": "C",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord de do (do majeur)",
+              "text": "Doigt 1 : 2e frette de corde 1. Doigt 2 : 4e frette de corde 2. Doigt 3 : 5e frette de corde 3. Gratter 5 cordes (sans la 6e).",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "En C, quelle chaîne est omise ?",
+              "options": [
+                "1er",
+                "6ème",
+                "3ème",
+                "5ème"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "l15",
+          "title": "Accord G",
+          "icon": "G",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord G (sol majeur)",
+              "text": "Doigt 2 sur la 5ème case 2, doigt 1 sur la 2ème case 3, doigt 3 sur la 6ème case 3, doigt 4 sur la 1ère case 3. Grattez 6 cordes.",
+              "chord": "G"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G est gratté avec :",
+              "options": [
+                "4 cordes",
+                "5 cordes",
+                "6 cordes",
+                "3 cordes"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "G"
+        },
+        {
+          "id": "l16",
+          "title": "Accord D",
+          "icon": "D",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord D (Ré majeur)",
+              "text": "Doigt 1 : 3ème frette de corde 2. Doigt 2 : 1ère frette de corde 2. Doigt 3 : 2ème frette de corde 3. Grattez les 4 cordes les plus fines.",
+              "chord": "D"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Sur D, combien de cordes sont grattées ?",
+              "options": [
+                "6",
+                "5",
+                "4",
+                "3"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "D"
+        },
+        {
+          "id": "l17",
+          "title": "Modifications C → G → Am",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "chaîne de vitesse",
+              "text": "Pratiquez C-G-Am-C. Gardez le rythme avec un grattement par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord suit G en C-G-Am-F ?",
+              "options": [
+                "C",
+                "SUIS",
+                "F",
+                "D"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "C",
+              "text": null,
+              "chord": "C"
+            },
+            {
+              "type": "demo",
+              "title": "G",
+              "text": null,
+              "chord": "G"
+            },
+            {
+              "type": "demo",
+              "title": "SUIS",
+              "text": null,
+              "chord": "Am"
+            }
+          ]
+        },
+        {
+          "id": "l18",
+          "title": "Progression IV-VI-IV",
+          "icon": "📐",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "La progression la plus utilisée",
+              "text": "C - G - Am - F. Jouez-le avec un grattement par accord. C'est la base de milliers de chansons pop."
+            },
+            {
+              "type": "demo",
+              "title": "C",
+              "text": null,
+              "chord": "C"
+            },
+            {
+              "type": "demo",
+              "title": "G",
+              "text": null,
+              "chord": "G"
+            },
+            {
+              "type": "demo",
+              "title": "SUIS",
+              "text": null,
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle progression as-tu pratiqué ?",
+              "options": [
+                "C-G-Am-F",
+                "Em-Am",
+                "D-A-G",
+                "E-A-D-G"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle progression as-tu pratiqué ?",
+              "options": [
+                "C-G-Am-F",
+                "Em-Am",
+                "D-A-G",
+                "E-A-D-G"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "demo",
+              "title": "F (capodastre)",
+              "text": null,
+              "chord": "F"
+            }
+          ]
+        },
+        {
+          "id": "l19",
+          "title": "Votre première chanson à 3 accords",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Utilisez C, G et Am. Grattez chaque accord 4 fois et changez. Répéter."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels accords as-tu utilisés ?",
+              "options": [
+                "C, G et Am",
+                "Em et G",
+                "Am et D",
+                "E et A"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l20",
+          "title": "Bilan de la semaine 1",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revue espacée",
+              "text": "Em, Am, E, A, C, G, D reviennent. Jouez-les de mémoire."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes sont grattées en ré ?",
+              "options": [
+                "6",
+                "5",
+                "4",
+                "3"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord est 320003 ?",
+              "options": [
+                "G",
+                "C",
+                "D",
+                "A"
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "Unité 4 – F et changements rapides",
+      "color": "red",
+      "lessons": [
+        {
+          "id": "l21",
+          "title": "Accord de fa (capodastre)",
+          "icon": "F",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Accord Fa (fa majeur)",
+              "text": "Placez le doigt 1 sur le capodastre sur la case 1 (1ère à 6ème cordes ?) et les doigts 2,3,4 sur les cases 2-3. Grattez 6 cordes.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "F nécessite :",
+              "options": [
+                "capodastre",
+                "Seulement 2 doigts",
+                "un point",
+                "Silence"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Conseil",
+              "text": "Il est normal que F semble terne au début. Appuyez sur le capodastre avec le côté de votre index, près de la frette."
+            }
+          ],
+          "chord": "F"
+        },
+        {
+          "id": "l107",
+          "title": "Fa simplifié (pas de capodastre)",
+          "icon": "F",
+          "xp": 16,
+          "chord": "F",
+          "steps": [
+            {
+              "type": "info",
+              "title": "simplifié",
+              "text": "Utilisez uniquement les 4 cordes les plus hautes : 2-1-1 frettes (D-G-B-e) sans capodastre complet. Cela ressemble à F."
+            },
+            {
+              "type": "demo",
+              "title": "simplifié",
+              "text": "Jouez la forme simplifiée de F.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le F simplifié évite :",
+              "options": [
+                "Le capodastre complet",
+                "Jouer des cordes",
+                "Régler",
+                "Le rythme"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Pratiquez le changement C-F simplifié."
+            }
+          ]
+        },
+        {
+          "id": "l22",
+          "title": "Changer C → F → G",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Chaîne",
+              "text": "Pratiquez C-F-G-C. Rapprochez vos doigts."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord nécessite un capodastre dans cette progression ?",
+              "options": [
+                "C",
+                "F",
+                "G",
+                "Aucun"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "demo",
+              "title": "C",
+              "text": null,
+              "chord": "C"
+            },
+            {
+              "type": "demo",
+              "title": "F",
+              "text": null,
+              "chord": "F"
+            },
+            {
+              "type": "demo",
+              "title": "G",
+              "text": null,
+              "chord": "G"
+            }
+          ]
+        },
+        {
+          "id": "l23",
+          "title": "Formation postée (1 minute)",
+          "icon": "⏱️",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Le défi de JustinGuitar",
+              "text": "Comptez le nombre de changements de vitesse Em-Am que vous effectuez en 60 secondes. Battez votre record chaque jour."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Objectif minimum raisonnable au cours de la semaine 1 :",
+              "options": [
+                "5 changements",
+                "15 changements",
+                "60 changements",
+                "1 changement"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l24",
+          "title": "chanson à 4 accords",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Utilisez C-G-Am-F. Grattez chaque accord 4 fois. Répéter. C'est une chanson pop !"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle progression as-tu utilisé ?",
+              "options": [
+                "IV-vi-IV",
+                "ii-V-I",
+                "I-IV-V",
+                "vi-IV-IV"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l25",
+          "title": "Bilan de la semaine 2",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revue espacée",
+              "text": "C, G, Am, F et les changements sont de retour."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dans quel accord la 6ème corde est-elle omise ?",
+              "options": [
+                "G",
+                "C",
+                "SUIS",
+                "F"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "Unité 5 – Rythme et grattement",
+      "color": "yellow",
+      "lessons": [
+        {
+          "id": "l26",
+          "title": "Coups descendants",
+          "icon": "⬇️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "je gratte",
+              "text": "Grattez vers le bas (coup descendant) avec votre index ou votre médiator, en frappant toutes les cordes de l'accord. Maintenir le rythme : 1-2-3-4."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un « coup descendant » est :",
+              "options": [
+                "je gratte",
+                "je gratte",
+                "Cueillir",
+                "Silence"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l27",
+          "title": "Gratter de bas en haut",
+          "icon": "⬆️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "De bas en haut",
+              "text": "Gratter alternativement de haut en bas : D U D U. Gardez votre main en mouvement même si vous ne jouez pas."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dans D U D U, quelle lettre signifie « vers le haut » ?",
+              "options": [
+                "D",
+                "U",
+                "Les deux",
+                "Aucun"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l28",
+          "title": "syncope de base",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Syncope",
+              "text": "Accentuez les temps forts : 1 2 3 4 avec un trait ascendant sur le « y » de chaque temps."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La syncope accentue :",
+              "options": [
+                "des moments forts",
+                "Des temps faibles",
+                "Silence",
+                "Seulement le 1"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l29",
+          "title": "palme muette",
+          "icon": "🤚",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "palme muette",
+              "text": "Placez le côté de votre main droite près du pont pour un amorti. Cela semble percutant et puissant."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le palm mute se fait avec :",
+              "options": [
+                "main gauche",
+                "Côté droit",
+                "Plectre",
+                "capodastre"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l30",
+          "title": "métronome lent",
+          "icon": "⏱️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Entraînez-vous lentement",
+              "text": "Jouez un accord par temps à 60 BPM. Augmentez le tempo uniquement lorsque vous frappez 4 mesures d'affilée."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quand augmenter le tempo ?",
+              "options": [
+                "Quand tu veux",
+                "En frappant 4 mesures d'affilée",
+                "Jamais",
+                "seulement à la fin"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l31",
+          "title": "modèle de ballade",
+          "icon": "🎵",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Modèle",
+              "text": "D D U U D U avec un accent doux. Idéal pour les ballades pop."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Modèle de ballade suggéré :",
+              "options": [
+                "D D D D",
+                "D U D U",
+                "D D U U D U",
+                "juste des coups ascendants"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "title": "Unité 6 – Premières chansons",
+      "color": "pink",
+      "lessons": [
+        {
+          "id": "l32",
+          "title": "Chanson : Em et Am",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Em-Am : 4 grattements par accord, répétez."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l33",
+          "title": "Chanson : C, G, Am, F",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Progression pop C-G-Am-F, 4 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l34",
+          "title": "Chanson : G, D, Em, C",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "G-D-Em-C, 2 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l35",
+          "title": "Chanson : D, A, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "D-A-G, 4 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l36",
+          "title": "Chanson : Am, F, C, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Am-F-C-G, 4 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l37",
+          "title": "Chanson : E, A, D, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "E-A-D-G, 2 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l38",
+          "title": "Chanson : Em, G, D, C",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Em-G-D-C, 4 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l39",
+          "title": "Chanson : C, Am, F, G",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "C-Am-F-G, 4 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l40",
+          "title": "Chanson : deux accords (Em-G)",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Em-G en alternant chaque mesure."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l41",
+          "title": "Chanson : trois accords (C, F, G)",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "C-F-G, 4 grattements par accord."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d’accords différents avez-vous utilisés ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "title": "Unité 7 – Accords de couleurs (Asus2, Dsus2, G7, Cadd9)",
+      "color": "teal",
+      "lessons": [
+        {
+          "id": "l42",
+          "title": "Accord Asus2",
+          "icon": "Asus2",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Asus2",
+              "text": "Asus2 semble ouvert et suspendu. Forme : x02200.",
+              "chord": "Asus2"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Asus2 est un accord :",
+              "options": [
+                "Âgé",
+                "Mineure",
+                "Suspendu",
+                "Diminué"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Asus2"
+        },
+        {
+          "id": "l43",
+          "title": "Accord Dsus2",
+          "icon": "Dsus2",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Dsus2",
+              "text": "Dsus2 semble ouvert. Forme : xx0230.",
+              "chord": "Dsus2"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dsus2 remplace le troisième par :",
+              "options": [
+                "Deuxième",
+                "Quart",
+                "Cinquième",
+                "Septième"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Dsus2"
+        },
+        {
+          "id": "l44",
+          "title": "Accord G7",
+          "icon": "G7",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "G7",
+              "text": "G7 ajoute de la tension pour se résoudre en C. Forme : 320001.",
+              "chord": "G7"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G7 est un accord de :",
+              "options": [
+                "Tonique",
+                "Dominant",
+                "Sous-dominante",
+                "Diminué"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "G7"
+        },
+        {
+          "id": "l45",
+          "title": "Accord Cadd9",
+          "icon": "Cadd9",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Cadd9",
+              "text": "Cadd9 semble brillant et moderne. Forme : x32033.",
+              "chord": "Cadd9"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Cadd9 ajoute la note :",
+              "options": [
+                "9e (D)",
+                "7ème",
+                "6ème",
+                "4ème"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Cadd9"
+        },
+        {
+          "id": "l46",
+          "title": "Progression avec la couleur",
+          "icon": "🎨",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Progression",
+              "text": "C - G - Am - F avec Cadd9 et G7 pour la couleur."
+            },
+            {
+              "type": "demo",
+              "title": "Cadd9",
+              "text": null,
+              "chord": "Cadd9"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels accords de couleurs avez-vous utilisés ?",
+              "options": [
+                "Cadd9 et G7",
+                "Em et Am",
+                "Dm et Bm",
+                "E5 et A5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels accords de couleurs avez-vous utilisés ?",
+              "options": [
+                "Cadd9 et G7",
+                "Em et Am",
+                "Dm et Bm",
+                "E5 et A5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "demo",
+              "title": "G7",
+              "text": null,
+              "chord": "G7"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u8",
+      "title": "Unité 8 – Gammes et riffs",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "l47",
+          "title": "gamme pentatonique mineure",
+          "icon": "🎼",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "L'échelle du rocher",
+              "text": "Position 1 en la mineur : frettes 5-8 de la 6ème à la 1ère corde. C'est la base des solos de rock et de blues."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La pentatonique mineure a :",
+              "options": [
+                "5 remarques",
+                "7 notes",
+                "8 notes",
+                "12 notes"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l48",
+          "title": "Riff de corde",
+          "icon": "🎸",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Fumer sur l'eau",
+              "text": "Jouez sur la 4ème corde : frettes 0-3-5, 0-3-6-5. Un riff emblématique à une corde."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Sur quelle corde est joué ce riff ?",
+              "options": [
+                "6ème",
+                "4ème",
+                "2ème",
+                "1er"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l49",
+          "title": "Armée des Sept Nations",
+          "icon": "🎸",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Riff",
+              "text": "Jouez sur la 5ème corde (A) : 7-7-10-7-5-3-0 (environ). Un riff à une seule corde."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Ce riff se joue sur :",
+              "options": [
+                "une seule corde",
+                "six cordes",
+                "Avec capodastre",
+                "Avec tapotement"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l50",
+          "title": "Power Riff (Fumée)",
+          "icon": "🔥",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Riff à deux cordes",
+              "text": "Ajoutez la 5ème corde pour rendre le riff plus puissant."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un power riff utilise :",
+              "options": [
+                "notes volantes",
+                "racine et cinquième",
+                "Arpèges",
+                "Silence"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l51",
+          "title": "Gamme majeure (do majeur)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "do majeur",
+              "text": "Do-Re-Mi-Fa-Sol-La-Si-Do. La base de la théorie."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La gamme majeure a :",
+              "options": [
+                "5 remarques",
+                "7 notes",
+                "8 notes",
+                "12 notes"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l52",
+          "title": "Examen des balances",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Pentatonique mineur et retour en do majeur."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de notes possède la pentatonique ?",
+              "options": [
+                "5",
+                "7",
+                "8",
+                "12"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u9",
+      "title": "Unité 9 – Arpèges et palm mute",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "l53",
+          "title": "arpège de base",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Arpège",
+              "text": "Jouez les notes de l'accord une à une : p i m a m i (6-4-3-2-3-4)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un arpège c'est :",
+              "options": [
+                "gratter",
+                "Notes d'accord séparées",
+                "Silence",
+                "palme muette"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l54",
+          "title": "Arpège de C",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Arpège C",
+              "text": "Jouez C en arpégeant les cordes 5-4-3-2-1.",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord as-tu arpégé ?",
+              "options": [
+                "C",
+                "G",
+                "SUIS",
+                "F"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "l55",
+          "title": "Arpège de Am",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Suis Arpège",
+              "text": "Jouez en arpégeant.",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord as-tu arpégé ?",
+              "options": [
+                "C",
+                "G",
+                "SUIS",
+                "F"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "l56",
+          "title": "Palm Mute avancé",
+          "icon": "🤚",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "palme muette",
+              "text": "Combinez le palm mute avec le strumming pour un son rock."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La palm mute est largement utilisée dans :",
+              "options": [
+                "Ballades",
+                "rock/métal",
+                "Classique",
+                "Flamenco"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l57",
+          "title": "Revue des arpèges",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Les arpèges C et Am reviennent."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un arpège est joué :",
+              "options": [
+                "tout en même temps",
+                "un par un",
+                "Avec capodastre",
+                "en silence"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u10",
+      "title": "Unité 10 – Accords de septième",
+      "color": "indigo",
+      "lessons": [
+        {
+          "id": "l58",
+          "title": "Accord Maj7 (Cmaj7)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "maj7",
+              "text": "Cmaj7 sonne jazzy et doux. Ajoutez la septième majeure à C."
+            },
+            {
+              "type": "quiz",
+              "prompt": "les sons maj7 :",
+              "options": [
+                "Souche",
+                "doux/jazz",
+                "Triste",
+                "Agressif"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l59",
+          "title": "Accord m7 (Am7)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "m7",
+              "text": "Am7 semble doux et triste. Ajoutez la septième mineure à Am."
+            },
+            {
+              "type": "quiz",
+              "prompt": "m7 est utilisé dans :",
+              "options": [
+                "roche dure",
+                "jazz/pop",
+                "Métal",
+                "Flamenco"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l60",
+          "title": "Accord Dom7 (G7)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "soleil7",
+              "text": "Le G7 crée des tensions pour résoudre C. Vous l’avez déjà vu comme le G7."
+            },
+            {
+              "type": "quiz",
+              "prompt": "dom7 résout :",
+              "options": [
+                "Tonique",
+                "Dominant",
+                "Sous-dominante",
+                "Rien"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l61",
+          "title": "progression ii-V-I",
+          "icon": "📐",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "ii-V-I",
+              "text": "Dm7 - G7 - Cmaj7. La progression par excellence du jazz."
+            },
+            {
+              "type": "quiz",
+              "prompt": "ii-V-I est typique de :",
+              "options": [
+                "Jazz",
+                "Métal",
+                "Punk",
+                "Reggae"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l62",
+          "title": "Revue des septièmes",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Maj7, m7, dom7 reviennent."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord est dom7 ?",
+              "options": [
+                "Cmaj7",
+                "Am7",
+                "G7",
+                "Em"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u11",
+      "title": "Unité 11 – Accords barrés (F, Bm)",
+      "color": "red",
+      "lessons": [
+        {
+          "id": "l63",
+          "title": "Fa avec capodastre complet",
+          "icon": "F",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "F balayages",
+              "text": "Capodastre sur la case 1, doigts 2-4 sur les cases 2-3. Grattez 6 cordes.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Fa barre nécessite un capodastre dans :",
+              "options": [
+                "Frette 1",
+                "Frette 2",
+                "Frette 3",
+                "Frette 5"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "F"
+        },
+        {
+          "id": "l64",
+          "title": "Bm avec capodastre",
+          "icon": "Bm",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Bm",
+              "text": "Capodastre à la frette 2, forme Am décalée.",
+              "chord": "Bm"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Bm est un accord :",
+              "options": [
+                "Âgé",
+                "Mineure",
+                "Dominant",
+                "Diminué"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Bm"
+        },
+        {
+          "id": "l65",
+          "title": "Modifications F → Bm",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Changement",
+              "text": "Pratiquez F-Bm. Déplacez le capo comme un bloc."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le secret du déplacement avec un capodastre :",
+              "options": [
+                "Déplacez les doigts un par un",
+                "Déplacez le capo comme un bloc",
+                "Jouez plus fort",
+                "Regarder"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l66",
+          "title": "Transposition avec capodastre",
+          "icon": "📐",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Capot",
+              "text": "Le capodastre (capodastre) permet de jouer la même forme dans un autre ton."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un capodastre sert à :",
+              "options": [
+                "Régler",
+                "Changer de ton sans changer de forme",
+                "Accélérer",
+                "Muet"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l67",
+          "title": "Revue de capodastre",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "F et Bm reviennent."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord est 224432 ?",
+              "options": [
+                "F",
+                "Bm",
+                "Em",
+                "SUIS"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u12",
+      "title": "Unité 12 – Accords de puissance",
+      "color": "black",
+      "lessons": [
+        {
+          "id": "l68",
+          "title": "Accord de puissance E5",
+          "icon": "E5",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "E5",
+              "text": "Root et cinquième : 0-2-2 frettes sur 6-5-4 cordes.",
+              "chord": "E5"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un accord de puissance a :",
+              "options": [
+                "Racine et troisième",
+                "racine et cinquième",
+                "racine uniquement",
+                "racine et septième"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "E5"
+        },
+        {
+          "id": "l69",
+          "title": "Accord de puissance A5",
+          "icon": "A5",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "A5",
+              "text": "Racine et cinquième : x022xx.",
+              "chord": "A5"
+            },
+            {
+              "type": "quiz",
+              "prompt": "A5 se joue sur :",
+              "options": [
+                "Cordes 5-4-3",
+                "Cordes 6-5-4",
+                "Cordes 4-3-2",
+                "Cordes 1-2-3"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "A5"
+        },
+        {
+          "id": "l70",
+          "title": "riff d'accords de puissance",
+          "icon": "🔥",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Riff",
+              "text": "E5 - A5 - B5 (simulé) avec palm mute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Les accords de puissance sont utilisés dans :",
+              "options": [
+                "Jazz",
+                "rock/métal",
+                "Classique",
+                "Flamenco"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l71",
+          "title": "Mouvement le long du mât",
+          "icon": "📐",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Mouvement",
+              "text": "La même forme d’accord de puissance descend le long du cou."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Pour le tonifier :",
+              "options": [
+                "Frettes inférieures",
+                "Soulevez les frettes",
+                "changer de guitare",
+                "utiliser un capodastre"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l72",
+          "title": "Examen des accords de puissance",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "E5 et A5 reviennent."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Qu'est-ce qu'un accord de puissance ?",
+              "options": [
+                "accord majeur",
+                "Racine + cinquième",
+                "accord mineur",
+                "Septième"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u13",
+      "title": "Unité 13 – Techniques (martelage, arrachage, pliages, glissades)",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "l73",
+          "title": "Marteau-sur",
+          "icon": "🔨",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Marteau-sur",
+              "text": "Frappez une case avec votre doigt sans gratter à nouveau. Cela semble lié."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le Hammer-on est réalisé avec :",
+              "options": [
+                "Main droite",
+                "main gauche",
+                "Plectre",
+                "capodastre"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l74",
+          "title": "Retrait",
+          "icon": "🪝",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Retrait",
+              "text": "Tirez votre doigt pour faire entendre la note du bas sans gratter."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le pull-off est l’opposé de :",
+              "options": [
+                "Plier",
+                "Marteau-sur",
+                "Glisser",
+                "palme muette"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l75",
+          "title": "Plier",
+          "icon": "↩️",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Plier",
+              "text": "Poussez la corde vers le haut pour augmenter la hauteur (demi-ton ou ton)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un virage élève le ton :",
+              "options": [
+                "Ne change pas",
+                "Demi-teinte ou ton",
+                "Baissez le ton",
+                "Silence"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l76",
+          "title": "Glisser",
+          "icon": "➡️",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Glisser",
+              "text": "Faites glisser votre doigt le long de la corde sans la soulever."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Diapositive signifie :",
+              "options": [
+                "Frapper",
+                "Glisser",
+                "Lancer",
+                "Coussin"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l77",
+          "title": "Legato",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Legato",
+              "text": "Combine le marteau et le pull-off pour un jeu fluide."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Legato utilise :",
+              "options": [
+                "Martelage et retrait",
+                "je viens de gratter",
+                "bénis juste",
+                "palme muette"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l78",
+          "title": "Revue des techniques",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Le martelage, le retrait, le pliage et le glissement sont de retour."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle technique fait monter la hauteur en poussant la corde ?",
+              "options": [
+                "Marteau-sur",
+                "Retrait",
+                "Plier",
+                "Glisser"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u14",
+      "title": "Unité 14 – Fingerstyle de base",
+      "color": "green",
+      "lessons": [
+        {
+          "id": "l79",
+          "title": "p-je-m-une position",
+          "icon": "✋",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Doigts",
+              "text": "Pouce (p) cordes graves, index (i), milieu (m), anneau (a) cordes aiguës."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel doigt joue des cordes graves ?",
+              "options": [
+                "Yo",
+                "m",
+                "à",
+                "p"
+              ],
+              "answer": 3
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l80",
+          "title": "Patron de base (p-i-m-a)",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Modèle",
+              "text": "p en 6ème, i en 3ème, m en 2ème, a en 1ère. Répéter."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le modèle P-i-m-a utilise :",
+              "options": [
+                "4 doigts",
+                "2 doigts",
+                "1 doigt",
+                "Plectre"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l81",
+          "title": "Style de doigt en C",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Style de doigt C",
+              "text": "Arpège C avec p-i-m-a.",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord ?",
+              "options": [
+                "C",
+                "G",
+                "SUIS",
+                "F"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "l82",
+          "title": "Fingerstyle en Am",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Fingerstyle Am",
+              "text": "Arpegy Am avec p-i-m-a.",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel accord ?",
+              "options": [
+                "C",
+                "G",
+                "SUIS",
+                "F"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "l83",
+          "title": "Examen du style des doigts",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Le modèle p-i-m-a revient."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le Fingerstyle se joue avec :",
+              "options": [
+                "Plectre",
+                "Doigts",
+                "capodastre",
+                "Métronome"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u15",
+      "title": "Unité 15 – Improvisation et modes",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "l84",
+          "title": "Improviser avec le pentatonique",
+          "icon": "🎼",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Improvisation",
+              "text": "Utilisez le pentatonique mineur sur un support Am. Jouez les notes de la gamme avec du rythme."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Pour improviser, il vous faut :",
+              "options": [
+                "une balance",
+                "un accord",
+                "Silence",
+                "Rien"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l85",
+          "title": "Mode ionien (majeur)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Ionien",
+              "text": "C'est la gamme majeure. Cela semble brillant et stable."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Ionien est :",
+              "options": [
+                "Gamme majeure",
+                "gamme mineure",
+                "Pentatonique",
+                "Bleus"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l86",
+          "title": "Mode vent (naturel mineur)",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Vent",
+              "text": "C'est la gamme mineure naturelle. Cela semble triste."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le vent est :",
+              "options": [
+                "Âgé",
+                "mineur naturel",
+                "Pentatonique",
+                "Bleus"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l87",
+          "title": "Mode mixolydien",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Mixolydien",
+              "text": "Majeur avec mineur 7ème. Ça sonne rock/blues."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le mixolydien est utilisé dans :",
+              "options": [
+                "jazz/blues",
+                "Classique",
+                "métal extrême",
+                "Flamenco"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l88",
+          "title": "Révision des modes",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Retour ionien, éolien, mixolydien."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel mode est majeur avec une septième mineure ?",
+              "options": [
+                "Ionien",
+                "Vent",
+                "Mixolydien",
+                "dorique"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u16",
+      "title": "Unité 16 – Styles (blues, rock, pop, flamenco, métal, jazz, classique)",
+      "color": "brown",
+      "lessons": [
+        {
+          "id": "l89",
+          "title": "Blues : mélanger",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Mélanger",
+              "text": "Modèle ternaire : 1 2 3 avec accent. Utilisez des pentatoniques mineurs."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La lecture aléatoire est :",
+              "options": [
+                "Binaire",
+                "Ternaire",
+                "Silence",
+                "accords seulement"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l90",
+          "title": "Rock : accords de puissance",
+          "icon": "🔥",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Rocher",
+              "text": "Accords de puissance avec distorsion et palm mute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Rock utilise beaucoup :",
+              "options": [
+                "Accords de puissance",
+                "arpèges de jazz",
+                "Flamenco",
+                "Classique"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l91",
+          "title": "Pop : gratter",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Populaire",
+              "text": "Gratter doucement de bas en haut avec le capodastre."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Pop utilise des progressions :",
+              "options": [
+                "IV-vi-IV",
+                "Seulement dissonant",
+                "Mineurs uniquement",
+                "Aucun"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l92",
+          "title": "Flamenco/rumba",
+          "icon": "💃",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Rumba",
+              "text": "Modèle de rumba catalane avec percussions sur la caisse claire."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La rumba est typique de :",
+              "options": [
+                "Jazz",
+                "pop hispanique",
+                "Métal",
+                "Classique"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l93",
+          "title": "Métal : galop",
+          "icon": "🔥",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Galop",
+              "text": "Triolets rapides avec palm mute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le galop est typique de :",
+              "options": [
+                "Métal",
+                "Jazz",
+                "Bleus",
+                "Populaire"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l94",
+          "title": "Jazz : walking bass",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "bar ambulant",
+              "text": "Des basses qui parcourent les notes de la gamme."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le walking bass est utilisé dans :",
+              "options": [
+                "Jazz",
+                "Métal",
+                "Punk",
+                "Reggae"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l95",
+          "title": "Classique : arpège",
+          "icon": "🎼",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Classique",
+              "text": "Arpèges avec p-i-m-a et position correcte."
+            },
+            {
+              "type": "quiz",
+              "prompt": "La guitare classique se joue avec :",
+              "options": [
+                "Plectre",
+                "Doigts",
+                "capodastre",
+                "Arc"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u17",
+      "title": "Unité 17 – Avancé (tapotement, balayage, legato)",
+      "color": "black",
+      "lessons": [
+        {
+          "id": "l96",
+          "title": "Tapotement",
+          "icon": "👆",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Tapotement",
+              "text": "Frappez la case avec votre main droite pour des notes rapides."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le tapotement se fait avec :",
+              "options": [
+                "Main droite",
+                "main gauche",
+                "Plectre",
+                "Pied"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l97",
+          "title": "Cueillette par balayage",
+          "icon": "🧹",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Balayer",
+              "text": "Grattement contrôlé sur plusieurs cordes pour des arpèges rapides."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le balayage est typique de :",
+              "options": [
+                "Déchiqueter",
+                "Jazz",
+                "Bleus",
+                "Flamenco"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l98",
+          "title": "legato avancé",
+          "icon": "🎵",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Legato",
+              "text": "Combinez marteau/traction pour des phrases fluides à grande vitesse."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Utilisations avancées du legato :",
+              "options": [
+                "Marteau/tirer",
+                "je viens de gratter",
+                "bénis juste",
+                "palme muette"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l99",
+          "title": "Économie de mouvement",
+          "icon": "📐",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Économie",
+              "text": "Minimisez les mouvements de la main pour gagner en vitesse."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Pour gagner en vitesse :",
+              "options": [
+                "Bougez davantage",
+                "Bougez moins",
+                "Jouez plus fort",
+                "changer de guitare"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l100",
+          "title": "Examen avancé",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Ils reviennent en tapant, balayant, legato."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle technique frappe-t-il avec sa main droite ?",
+              "options": [
+                "Marteau-sur",
+                "Tapotement",
+                "Plier",
+                "Glisser"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u18",
+      "title": "Unité 18 – Bilan et défi final",
+      "color": "gold",
+      "lessons": [
+        {
+          "id": "l101",
+          "title": "Revue générale de la guitare",
+          "icon": "🔁",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "Les accords, rythmes et gammes reviennent."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes possède la guitare ?",
+              "options": [
+                "4",
+                "5",
+                "6",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l102",
+          "title": "Défi du changement (1 minute)",
+          "icon": "⏱️",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Défi",
+              "text": "Battez votre record de changement de vitesse en 60 secondes."
+            },
+            {
+              "type": "quiz",
+              "prompt": "But:",
+              "options": [
+                "Dossier personnel",
+                "0 changement",
+                "jouer fort",
+                "Ne pratiquez pas"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l103",
+          "title": "Jour d'enregistrement 1 vs 30",
+          "icon": "🎙️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Enregistrement",
+              "text": "Enregistrez une vidéo aujourd'hui et comparez-la au jour 1. Vous verrez la progression !"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Pourquoi enregistrer ?",
+              "options": [
+                "Motivation",
+                "Punition",
+                "Rien",
+                "Vendre"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l104",
+          "title": "Plan de pratique quotidien",
+          "icon": "📅",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Plan",
+              "text": "10 min par jour : 3 min d'accords, 3 min de changements, 4 min de chanson."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Fréquence idéale :",
+              "options": [
+                "1 fois par semaine",
+                "10 minutes par jour",
+                "1 heure par mois",
+                "week-end seulement"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "l105",
+          "title": "Diplôme niveau 1",
+          "icon": "🎓",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Félicitations!",
+              "text": "Vous avez terminé le programme de base. Continuez avec les styles et avancés."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle est la prochaine étape ?",
+              "options": [
+                "laisse la guitare",
+                "Continuez à pratiquer",
+                "vendre la guitare",
+                "Rien"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "u19",
+      "title": "Unité 19 - Théorie musicale",
+      "color": "purple",
+      "lessons": [
+        {
+          "id": "l19_1",
+          "title": "Intervalles",
+          "icon": "music",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Qu'est-ce qu'un intervalle ?",
+              "text": "Un intervalle est la distance en demi-tons entre deux notes."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de demi-tons fait une quinte parfaite ?",
+              "options": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un demi-ton est la distance entre :",
+              "options": [
+                "Deux notes identiques",
+                "Notes adjacentes",
+                "deux cordes",
+                "une compa"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien y a-t-il de demi-tons dans une octave ?",
+              "options": [
+                "10",
+                "11",
+                "12",
+                "13"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l19_2",
+          "title": "Balance",
+          "icon": "music",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Balance",
+              "text": "Une gamme est une succession ordonnée de notes."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de notes comporte une gamme majeure ?",
+              "options": [
+                "5",
+                "6",
+                "7",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "La gamme pentatonique mineure a :",
+              "options": [
+                "5 remarques",
+                "6 notes",
+                "7 notes",
+                "12 notes"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle altération distingue le mode dorique ?",
+              "options": [
+                "tierce mineure",
+                "4ème augmenté",
+                "mineur 7ème",
+                "2ème mineur"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l19_3",
+          "title": "Accords",
+          "icon": "guitar",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Triades",
+              "text": "Un accord majeur : fondamental, tierce majeure, quinte juste."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels intervalles forment un accord majeur ?",
+              "options": [
+                "3m+4m",
+                "4M+3m",
+                "3M + 4J",
+                "5J + 4M"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un accord diminué a :",
+              "options": [
+                "3m + 3m",
+                "4M+3m",
+                "3M + 4J",
+                "5J + 5J"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "quiz",
+              "prompt": "La septième dominante est :",
+              "options": [
+                "M7",
+                "m7",
+                "3M",
+                "5J"
+              ],
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "id": "l19_4",
+          "title": "Harmonie",
+          "icon": "piano",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Harmonie fonctionnelle",
+              "text": "Degrés : I majeur, ii mineur, iii mineur, IV majeur, V majeur, vi mineur, vii diminué."
+            },
+            {
+              "type": "quiz",
+              "prompt": "En do majeur, l'accord du degré V est :",
+              "options": [
+                "C",
+                "DM",
+                "G",
+                "SUIS"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "La progression I-V-vi-IV est typique de :",
+              "options": [
+                "Bleus",
+                "Populaire",
+                "Jazz",
+                "Métal"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le mineur relatif est le diplôme :",
+              "options": [
+                "ii",
+                "iii",
+                "J'ai vu",
+                "viii"
+              ],
+              "answer": 2
+            }
+          ]
+        },
+        {
+          "id": "l19_5",
+          "title": "Rythme",
+          "icon": "drum",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Rythme",
+              "text": "Le rythme organise le temps. 4/4 a 4 temps."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de fois compte un tour ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "8"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "quiz",
+              "prompt": "Une signature rythmique 3/4 est associée à :",
+              "options": [
+                "Mars",
+                "Valse",
+                "Tremper",
+                "Reggae"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "La croche vaut :",
+              "options": [
+                "1 fois",
+                "1/2 fois",
+                "1/4 de temps",
+                "2 fois"
+              ],
+              "answer": 1
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ukulele": [
+    {
+      "id": "uu1",
+      "title": "Ukulélé – Pour commencer",
+      "color": "green",
+      "lessons": [
+        {
+          "id": "ul1",
+          "title": "Anatomie du ukulélé",
+          "icon": "🪕",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Le ukulélé",
+              "text": "Il comporte 4 cordes : G (G), C (C), E (E), A (A) = GCEA. Accordage standard (réentrant) : la 4ème corde (G) est plus haute."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes possède un ukulélé ?",
+              "options": [
+                "4",
+                "6",
+                "8",
+                "12"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul2",
+          "title": "Réglage GCEA",
+          "icon": "🎯",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "tuner",
+              "string": 0,
+              "note": "G4",
+              "freq": 392.0,
+              "text": "Accordez la 4ème corde (G)."
+            },
+            {
+              "type": "tuner",
+              "string": 1,
+              "note": "C4",
+              "freq": 261.63,
+              "text": "Accordez la 3ème corde (C)."
+            },
+            {
+              "type": "tuner",
+              "string": 2,
+              "note": "E4",
+              "freq": 329.63,
+              "text": "Accordez la 2ème corde (E)."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel est l'accordage du ukulélé ?",
+              "options": [
+                "EADGBE",
+                "GCEA",
+                "DGBE",
+                "CGDA"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quel est l'accordage du ukulélé ?",
+              "options": [
+                "EADGBE",
+                "GCEA",
+                "DGBE",
+                "CGDA"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "tuner",
+              "string": 3,
+              "note": "A4",
+              "freq": 440.0,
+              "text": "Accordez la 1ère corde (A)."
+            }
+          ]
+        },
+        {
+          "id": "ul3",
+          "title": "Posture et préhension (uke)",
+          "icon": "🧍",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Position",
+              "text": "Tenez le ukulélé contre votre poitrine, le bras droit sur votre corps. Main gauche derrière le cou."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes sont normalement grattées ?",
+              "options": [
+                "4",
+                "6",
+                "3",
+                "2"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul4",
+          "title": "Premier son (uke)",
+          "icon": "🎵",
+          "xp": 10,
+          "steps": [
+            {
+              "type": "info",
+              "title": "toucher l'air",
+              "text": "Jouez la 1ère corde (A) ouverte. Cela devrait paraître clair."
+            },
+            {
+              "type": "demo",
+              "title": "Écoutez le",
+              "text": "Référence Le.",
+              "freq": 440.0,
+              "note": "A4"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Si ça rate, que faites-vous ?",
+              "options": [
+                "Appuyez plus près de la frette",
+                "Jouez plus fort",
+                "Changer la chaîne",
+                "Accordez plus haut"
+              ],
+              "answer": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uu2",
+      "title": "Ukulélé – Accords de base",
+      "color": "blue",
+      "lessons": [
+        {
+          "id": "ul5",
+          "title": "Accord C (uke)",
+          "icon": "C",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "do majeur (uke)",
+              "text": "Un seul doigt : 3ème corde frette 3 (anneau). Grattez les 4 cordes.",
+              "chord": "C"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de doigts sont utilisés pour le C au ukulélé ?",
+              "options": [
+                "0",
+                "1",
+                "2",
+                "3"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "C"
+        },
+        {
+          "id": "ul6",
+          "title": "Accord G (uke)",
+          "icon": "G",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Sol majeur (uke)",
+              "text": "Formulaire 0232.",
+              "chord": "G"
+            },
+            {
+              "type": "quiz",
+              "prompt": "G en uke est gratté avec :",
+              "options": [
+                "2 cordes",
+                "4 cordes",
+                "3 cordes",
+                "1 corde"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "G"
+        },
+        {
+          "id": "ul7",
+          "title": "Accord Am (uke)",
+          "icon": "Am",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "Suis (uke)",
+              "text": "Formulaire 2000.",
+              "chord": "Am"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Je suis à Uke USA :",
+              "options": [
+                "1 doigt",
+                "2 doigts",
+                "3 doigts",
+                "4 doigts"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "Am"
+        },
+        {
+          "id": "ul8",
+          "title": "Accord Fa (uke)",
+          "icon": "F",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "F (uke)",
+              "text": "Formulaire 2010.",
+              "chord": "F"
+            },
+            {
+              "type": "quiz",
+              "prompt": "F in uke utilise :",
+              "options": [
+                "1 doigt",
+                "2 doigts",
+                "3 doigts",
+                "4 doigts"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "F"
+        },
+        {
+          "id": "ul9",
+          "title": "Accord de ré (uke)",
+          "icon": "D",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "D (uke)",
+              "text": "Formulaire 2220.",
+              "chord": "D"
+            },
+            {
+              "type": "quiz",
+              "prompt": "D dans uke utilise :",
+              "options": [
+                "1 doigt",
+                "2 doigts",
+                "3 doigts",
+                "4 doigts"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "D"
+        },
+        {
+          "id": "ul10",
+          "title": "Accord de Mi (uke)",
+          "icon": "E",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "E (uké)",
+              "text": "Formulaire 4442.",
+              "chord": "E"
+            },
+            {
+              "type": "quiz",
+              "prompt": "E en uke utilise :",
+              "options": [
+                "1 doigt",
+                "2 doigts",
+                "3 doigts",
+                "4 doigts"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "E"
+        },
+        {
+          "id": "ul11",
+          "title": "Accord G7 (uke)",
+          "icon": "G7",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "demo",
+              "title": "G7 (uké)",
+              "text": "Formulaire 0212.",
+              "chord": "G7"
+            },
+            {
+              "type": "quiz",
+              "prompt": "Le G7 sur uke utilise :",
+              "options": [
+                "1 doigt",
+                "2 doigts",
+                "3 doigts",
+                "4 doigts"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ],
+          "chord": "G7"
+        },
+        {
+          "id": "ul12",
+          "title": "Modifications C-G-Am-F (uke)",
+          "icon": "🔄",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Changements",
+              "text": "Pratiquez C-G-Am-F au ukulélé."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien d'accords ?",
+              "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "answer": 2
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uu3",
+      "title": "Ukulélé – Chansons et grattage",
+      "color": "orange",
+      "lessons": [
+        {
+          "id": "ul13",
+          "title": "Gratter de base (uke)",
+          "icon": "⬇️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Coups descendants",
+              "text": "Grattez les 4 cordes avec votre index."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Une course vers le bas est :",
+              "options": [
+                "En haut",
+                "Vers le bas",
+                "Cueillir",
+                "Silence"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul14",
+          "title": "Modèle descendant (uke)",
+          "icon": "⬆️",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "De bas en haut",
+              "text": "D U D U au ukulélé."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Dans D U D U, U est :",
+              "options": [
+                "vers le bas",
+                "En haut",
+                "Les deux",
+                "Aucun"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul15",
+          "title": "Chanson à 2 accords (uke)",
+          "icon": "🎶",
+          "xp": 20,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Utilisez C et G sur le ukulélé. Grattez chaque accord 4 fois."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quels accords ?",
+              "options": [
+                "C et G",
+                "Suis et F",
+                "D et E",
+                "G7 et C"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul16",
+          "title": "Chanson à 4 accords (uke)",
+          "icon": "🎶",
+          "xp": 25,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Jouons!",
+              "text": "Utilisez C-G-Am-F sur le ukulélé."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Quelle progression ?",
+              "options": [
+                "IV-vi-IV",
+                "ii-V-I",
+                "I-IV-V",
+                "vi-IV-IV"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul17",
+          "title": "Arpège de base (uke)",
+          "icon": "🎵",
+          "xp": 18,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Arpège",
+              "text": "Jouez les 4 cordes une à une avec le pouce et l'index."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Un arpège c'est :",
+              "options": [
+                "gratter",
+                "Notes séparées",
+                "Silence",
+                "palme muette"
+              ],
+              "answer": 1
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        },
+        {
+          "id": "ul18",
+          "title": "Critique du ukulélé",
+          "icon": "🔁",
+          "xp": 15,
+          "steps": [
+            {
+              "type": "info",
+              "title": "Revoir",
+              "text": "C, G, Am, F, D, E, G7 reviennent."
+            },
+            {
+              "type": "quiz",
+              "prompt": "Combien de cordes possède le ukulélé ?",
+              "options": [
+                "4",
+                "6",
+                "8",
+                "12"
+              ],
+              "answer": 0
+            },
+            {
+              "type": "info",
+              "title": "Pratique",
+              "text": "Répétez lentement ce que vous avez appris. Recherchez un son clair, sans frettes, et comptez les changements nets en 60 secondes."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
