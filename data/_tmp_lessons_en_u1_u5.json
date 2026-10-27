@@ -1,0 +1,1154 @@
+[
+  {
+    "id": "u1",
+    "title": "Unit 1 – First sounds",
+    "color": "green",
+    "lessons": [
+      {
+        "id": "l1",
+        "title": "Guitar anatomy",
+        "icon": "🎸",
+        "xp": 10,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Welcome!",
+            "text": "The guitar has 6 strings, a neck with frets, and a body that amplifies the sound. Strings are numbered from the thinnest (1st, high E) to the thickest (6th, low E)."
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many strings does a standard guitar have?",
+            "options": [
+              "4",
+              "5",
+              "6",
+              "8"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "quiz",
+            "prompt": "The thinnest string (1st) is called:",
+            "options": [
+              "Low E",
+              "A",
+              "D",
+              "High E"
+            ],
+            "answer": 3
+          }
+        ]
+      },
+      {
+        "id": "l2",
+        "title": "Posture and grip",
+        "icon": "🧍",
+        "xp": 10,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Seated posture",
+            "text": "Sit up straight, rest the guitar on your right leg (right-handed). The neck points slightly upward. Your left-hand thumb goes behind the neck."
+          },
+          {
+            "type": "info",
+            "title": "Right hand",
+            "text": "The thumb (p), index (i), middle (m), and ring (a) fingers play the strings. Start by plucking an open string with the thumb, top to bottom."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Where does the left-hand thumb go?",
+            "options": [
+              "On top of the neck",
+              "Behind the neck",
+              "On the strings",
+              "Doesn't matter"
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "id": "l3",
+        "title": "Standard tuning",
+        "icon": "🎯",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Tuning EADGBE",
+            "text": "From thickest to thinnest string: E - A - D - G - B - E. Mnemonic: 'My Friend Gives Great Extra Blessings'."
+          },
+          {
+            "type": "tuner",
+            "string": 0,
+            "note": "E2",
+            "freq": 82.41,
+            "text": "Tune the 6th string (low E). Pluck the string and adjust the tuning peg until the tuner turns green."
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many strings did you tune in this lesson?",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "6"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many strings did you tune in this lesson?",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "6"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "tuner",
+            "string": 5,
+            "note": "E4",
+            "freq": 329.63,
+            "text": "Tune the 1st string (high E)."
+          }
+        ]
+      },
+      {
+        "id": "l4",
+        "title": "Your first sound",
+        "icon": "🎵",
+        "xp": 10,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Playing open strings",
+            "text": "Play the 1st string (the thinnest) with your right-hand index finger. It should sound clear and sustained. If it buzzes, press closer to the fret."
+          },
+          {
+            "type": "demo",
+            "title": "Listen",
+            "text": "This is how the open 1st string (E) should sound.",
+            "freq": 329.63,
+            "note": "E4"
+          },
+          {
+            "type": "quiz",
+            "prompt": "If a string sounds muted or buzzes, what do you do?",
+            "options": [
+              "Play louder",
+              "Press closer to the fret",
+              "Change the string",
+              "Tune higher"
+            ],
+            "answer": 1
+          }
+        ]
+      },
+      {
+        "id": "l5",
+        "title": "Notes on the first frets",
+        "icon": "🎼",
+        "xp": 12,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Frets",
+            "text": "Each fret raises a semitone. On the 1st string: fret 0 = E, 1 = F, 2 = F#, 3 = G."
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many semitones does one fret raise?",
+            "options": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "quiz",
+            "prompt": "On the 1st string, fret 3 is:",
+            "options": [
+              "F",
+              "F#",
+              "G",
+              "A"
+            ],
+            "answer": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u2",
+    "title": "Unit 2 – First chords (Em, Am, E, A)",
+    "color": "blue",
+    "lessons": [
+      {
+        "id": "l6",
+        "title": "Chord Em",
+        "icon": "Em",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord Em (E minor)",
+            "text": "Place finger 2 on the 5th string fret 2 and finger 3 on the 4th string fret 2. Strum all 6 strings.",
+            "chord": "Em"
+          },
+          {
+            "type": "playChord",
+            "title": "Play Em",
+            "text": "Play the Em chord. The app will detect it automatically.",
+            "expected": "Em"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which fingers are used for Em?",
+            "options": [
+              "1 and 2",
+              "2 and 3",
+              "1, 2 and 3",
+              "Only the 1st"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many strings are strummed in Em?",
+            "options": [
+              "4",
+              "5",
+              "6",
+              "3"
+            ],
+            "answer": 2
+          }
+        ],
+        "chord": "Em"
+      },
+      {
+        "id": "l7",
+        "title": "Chord Am",
+        "icon": "Am",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord Am (A minor)",
+            "text": "Finger 1 on 2nd string fret 1, finger 2 on 4th string fret 2, finger 3 on 3rd string fret 2. Strum 5 strings (omit the 6th).",
+            "chord": "Am"
+          },
+          {
+            "type": "quiz",
+            "prompt": "In Am, is the 6th string (low E) played?",
+            "options": [
+              "Yes, always",
+              "No, it's omitted",
+              "Only with barre",
+              "Depends"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "Am"
+      },
+      {
+        "id": "l106",
+        "title": "Chord Dm",
+        "icon": "Dm",
+        "xp": 15,
+        "chord": "Dm",
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord Dm (D minor)",
+            "text": "Finger 1: 1st string fret 1. Finger 2: 3rd string fret 2. Finger 3: 2nd string fret 3. Strum 4 strings.",
+            "chord": "Dm"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Dm is a chord:",
+            "options": [
+              "Major",
+              "Minor",
+              "Dominant",
+              "Diminished"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat Dm slowly, aiming for a clear sound."
+          }
+        ]
+      },
+      {
+        "id": "l8",
+        "title": "Change Em → Am",
+        "icon": "🔄",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Slow change",
+            "text": "Practice switching from Em to Am and back. Move your fingers together, not one by one. Goal: 30 changes in 1 minute without mistakes."
+          },
+          {
+            "type": "quiz",
+            "prompt": "What's the secret to fast chord changes?",
+            "options": [
+              "Play louder",
+              "Move fingers together",
+              "Look at the strings",
+              "Use barre"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "demo",
+            "title": "Listen to Em",
+            "text": "Reference: Em chord.",
+            "chord": "Em"
+          },
+          {
+            "type": "demo",
+            "title": "Listen to Am",
+            "text": "Reference: Am chord.",
+            "chord": "Am"
+          }
+        ]
+      },
+      {
+        "id": "l9",
+        "title": "Chord E",
+        "icon": "E",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord E (E major)",
+            "text": "Finger 2 on 5th fret 2, finger 3 on 4th fret 2, finger 1 on 3rd fret 1. Strum all 6 strings.",
+            "chord": "E"
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many strings are strummed in E?",
+            "options": [
+              "4",
+              "5",
+              "6",
+              "3"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "E"
+      },
+      {
+        "id": "l10",
+        "title": "Chord A",
+        "icon": "A",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord A (A major)",
+            "text": "Fingers 1,2,3 on fret 2 of strings 4th,3rd,2nd. Strum 5 strings (omit the 6th).",
+            "chord": "A"
+          },
+          {
+            "type": "quiz",
+            "prompt": "In A, which string is omitted?",
+            "options": [
+              "1st",
+              "6th",
+              "3rd",
+              "5th"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "A"
+      },
+      {
+        "id": "l11",
+        "title": "Change E → A",
+        "icon": "🔄",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Change E-A",
+            "text": "Use the same shape as Em-Am but with one more finger. Try 20 clean changes in 1 minute."
+          },
+          {
+            "type": "quiz",
+            "prompt": "What helps you change faster?",
+            "options": [
+              "Look at your fingers",
+              "Move fingers together",
+              "Play louder",
+              "Change guitar"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "demo",
+            "title": "E",
+            "text": null,
+            "chord": "E"
+          },
+          {
+            "type": "demo",
+            "title": "A",
+            "text": null,
+            "chord": "A"
+          }
+        ]
+      },
+      {
+        "id": "l12",
+        "title": "Open chords review I",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Spaced review",
+            "text": "Em, Am, E, A return. Play them without looking at the diagram."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord is x02210?",
+            "options": [
+              "Em",
+              "Am",
+              "E",
+              "A"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord is 022100?",
+            "options": [
+              "Em",
+              "Am",
+              "E",
+              "A"
+            ],
+            "answer": 2
+          }
+        ]
+      },
+      {
+        "id": "l13",
+        "title": "First 2-chord song",
+        "icon": "🎶",
+        "xp": 25,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Let's play!",
+            "text": "Use Em and Am. Strum each chord 4 times and change. Repeat. You're already playing a song!"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chords did you use?",
+            "options": [
+              "C and G",
+              "Em and Am",
+              "Am and D",
+              "E and A"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "demo",
+            "title": "Em",
+            "text": null,
+            "chord": "Em"
+          },
+          {
+            "type": "demo",
+            "title": "Am",
+            "text": null,
+            "chord": "Am"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u3",
+    "title": "Unit 3 – Open major chords (C, G, D)",
+    "color": "orange",
+    "lessons": [
+      {
+        "id": "l14",
+        "title": "Chord C",
+        "icon": "C",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord C (C major)",
+            "text": "Finger 1: 2nd string fret 1. Finger 2: 4th string fret 2. Finger 3: 5th string fret 3. Strum 5 strings (omit 6th).",
+            "chord": "C"
+          },
+          {
+            "type": "quiz",
+            "prompt": "In C, which string is omitted?",
+            "options": [
+              "1st",
+              "6th",
+              "3rd",
+              "5th"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "C"
+      },
+      {
+        "id": "l15",
+        "title": "Chord G",
+        "icon": "G",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord G (G major)",
+            "text": "Finger 2 on 5th fret 2, finger 1 on 2nd fret 3, finger 3 on 6th fret 3, finger 4 on 1st fret 3. Strum 6 strings.",
+            "chord": "G"
+          },
+          {
+            "type": "quiz",
+            "prompt": "G is strummed with:",
+            "options": [
+              "4 strings",
+              "5 strings",
+              "6 strings",
+              "3 strings"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "G"
+      },
+      {
+        "id": "l16",
+        "title": "Chord D",
+        "icon": "D",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord D (D major)",
+            "text": "Finger 1: 3rd string fret 2. Finger 2: 1st string fret 2. Finger 3: 2nd string fret 3. Strum the 4 thinnest strings.",
+            "chord": "D"
+          },
+          {
+            "type": "quiz",
+            "prompt": "In D, how many strings are strummed?",
+            "options": [
+              "6",
+              "5",
+              "4",
+              "3"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "D"
+      },
+      {
+        "id": "l17",
+        "title": "Changes C → G → Am",
+        "icon": "🔄",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Chain of changes",
+            "text": "Practice C-G-Am-C. Keep the rhythm with one strum per chord."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord follows G in C-G-Am-F?",
+            "options": [
+              "C",
+              "Am",
+              "F",
+              "D"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "demo",
+            "title": "C",
+            "text": null,
+            "chord": "C"
+          },
+          {
+            "type": "demo",
+            "title": "G",
+            "text": null,
+            "chord": "G"
+          },
+          {
+            "type": "demo",
+            "title": "Am",
+            "text": null,
+            "chord": "Am"
+          }
+        ]
+      },
+      {
+        "id": "l18",
+        "title": "Progression I-V-vi-IV",
+        "icon": "📐",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "The most used progression",
+            "text": "C - G - Am - F. Play with one strum per chord. It's the basis of thousands of pop songs."
+          },
+          {
+            "type": "demo",
+            "title": "C",
+            "text": null,
+            "chord": "C"
+          },
+          {
+            "type": "demo",
+            "title": "G",
+            "text": null,
+            "chord": "G"
+          },
+          {
+            "type": "demo",
+            "title": "Am",
+            "text": null,
+            "chord": "Am"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which progression did you practice?",
+            "options": [
+              "C-G-Am-F",
+              "Em-Am",
+              "D-A-G",
+              "E-A-D-G"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which progression did you practice?",
+            "options": [
+              "C-G-Am-F",
+              "Em-Am",
+              "D-A-G",
+              "E-A-D-G"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "demo",
+            "title": "F (barre)",
+            "text": null,
+            "chord": "F"
+          }
+        ]
+      },
+      {
+        "id": "l19",
+        "title": "Your first 3-chord song",
+        "icon": "🎶",
+        "xp": 25,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Let's play!",
+            "text": "Use C, G and Am. Strum each chord 4 times and change. Repeat."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chords did you use?",
+            "options": [
+              "C, G and Am",
+              "Em and G",
+              "Am and D",
+              "E and A"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l20",
+        "title": "Week 1 review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Spaced review",
+            "text": "Em, Am, E, A, C, G, D return. Play them from memory."
+          },
+          {
+            "type": "quiz",
+            "prompt": "How many strings are strummed in D?",
+            "options": [
+              "6",
+              "5",
+              "4",
+              "3"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord is 320003?",
+            "options": [
+              "G",
+              "C",
+              "D",
+              "A"
+            ],
+            "answer": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u4",
+    "title": "Unit 4 – F and fast changes",
+    "color": "red",
+    "lessons": [
+      {
+        "id": "l21",
+        "title": "Chord F (barre)",
+        "icon": "F",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Chord F (F major)",
+            "text": "Place finger 1 as a barre on fret 1 (strings 1st-6th?) and fingers 2,3,4 on frets 2-3. Strum 6 strings.",
+            "chord": "F"
+          },
+          {
+            "type": "quiz",
+            "prompt": "F requires:",
+            "options": [
+              "Barre",
+              "Only 2 fingers",
+              "A plucked note",
+              "Silence"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Tip",
+            "text": "It's normal for F to sound muted at first. Press the barre with the side of your index finger, close to the fret."
+          }
+        ],
+        "chord": "F"
+      },
+      {
+        "id": "l107",
+        "title": "Simplified F (no barre)",
+        "icon": "F",
+        "xp": 16,
+        "chord": "F",
+        "steps": [
+          {
+            "type": "info",
+            "title": "Simplified F",
+            "text": "Use only the 4 highest strings: frets 2-1-1 (D-G-B-e) without a full barre. Sounds similar to F."
+          },
+          {
+            "type": "demo",
+            "title": "Simplified F",
+            "text": "Play the simplified F shape.",
+            "chord": "F"
+          },
+          {
+            "type": "quiz",
+            "prompt": "The simplified F avoids:",
+            "options": [
+              "Full barre",
+              "Playing strings",
+              "Tune",
+              "The rhythm"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Practice the simplified C-F change."
+          }
+        ]
+      },
+      {
+        "id": "l22",
+        "title": "Change C → F → G",
+        "icon": "🔄",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Chain",
+            "text": "Practice C-F-G-C. Move your fingers together."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord requires a barre in this progression?",
+            "options": [
+              "C",
+              "F",
+              "G",
+              "None"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "demo",
+            "title": "C",
+            "text": null,
+            "chord": "C"
+          },
+          {
+            "type": "demo",
+            "title": "F",
+            "text": null,
+            "chord": "F"
+          },
+          {
+            "type": "demo",
+            "title": "G",
+            "text": null,
+            "chord": "G"
+          }
+        ]
+      },
+      {
+        "id": "l23",
+        "title": "Change training (1 minute)",
+        "icon": "⏱️",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "The JustinGuitar challenge",
+            "text": "Count how many clean Em-Am changes you do in 60 s. Beat your record every day."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Reasonable minimum goal in week 1:",
+            "options": [
+              "5 changes",
+              "15 changes",
+              "60 changes",
+              "1 change"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l24",
+        "title": "4-chord song",
+        "icon": "🎶",
+        "xp": 25,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Let's play!",
+            "text": "Use C-G-Am-F. Strum each chord 4 times. Repeat. That's a pop song!"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which progression did you use?",
+            "options": [
+              "I-V-vi-IV",
+              "ii-V-I",
+              "I-IV-V",
+              "vi-IV-I-V"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l25",
+        "title": "Week 2 review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Spaced review",
+            "text": "C, G, Am, F and the changes return."
+          },
+          {
+            "type": "quiz",
+            "prompt": "In which chord is the 6th string omitted?",
+            "options": [
+              "G",
+              "C",
+              "Am",
+              "F"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u5",
+    "title": "Unit 5 – Rhythm and strumming",
+    "color": "yellow",
+    "lessons": [
+      {
+        "id": "l26",
+        "title": "Downstrokes",
+        "icon": "⬇️",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Downstroke",
+            "text": "Strum downward (downstroke) with your index finger or pick, hitting all the chord's strings. Keep the rhythm: 1-2-3-4."
+          },
+          {
+            "type": "quiz",
+            "prompt": "A 'downstroke' is:",
+            "options": [
+              "Upstroke",
+              "Downstroke",
+              "Picking",
+              "Silence"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l27",
+        "title": "Down-up strumming",
+        "icon": "⬆️",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Down and up",
+            "text": "Alternate downstrokes and upstrokes: D U D U. Keep your hand moving even when you don't strum."
+          },
+          {
+            "type": "quiz",
+            "prompt": "In D U D U, which letter is 'upstroke'?",
+            "options": [
+              "D",
+              "U",
+              "Both",
+              "None"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l28",
+        "title": "Basic syncopation",
+        "icon": "🎵",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Syncopation",
+            "text": "Emphasize the weak beats: 1 2 3 4 with an upstroke on the 'and' of each beat."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Syncopation emphasizes:",
+            "options": [
+              "Strong beats",
+              "Weak beats",
+              "Silences",
+              "Only the 1st"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l29",
+        "title": "Palm mute",
+        "icon": "🤚",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Palm mute",
+            "text": "Rest the edge of your right hand near the bridge to mute. Sounds percussive and powerful."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Palm mute is done with:",
+            "options": [
+              "Left hand",
+              "Right hand edge",
+              "Pick",
+              "Barre"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l30",
+        "title": "Slow metronome",
+        "icon": "⏱️",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Practice slowly",
+            "text": "Play one chord per beat at 60 BPM. Raise the tempo only when you get 4 bars right in a row."
+          },
+          {
+            "type": "quiz",
+            "prompt": "When to raise the tempo?",
+            "options": [
+              "Whenever you want",
+              "When you get 4 bars right in a row",
+              "Never",
+              "Only at the end"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l31",
+        "title": "Ballad pattern",
+        "icon": "🎵",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Pattern",
+            "text": "D D U U D U with a soft accent. Ideal for pop ballads."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Suggested ballad pattern:",
+            "options": [
+              "D D D D",
+              "D U D U",
+              "D D U U D U",
+              "Only upstrokes"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for a clear sound, no fret buzz, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,803 @@
+[
+  {
+    "id": "u11",
+    "title": "Unit 11 – Barre chords (F, Bm)",
+    "color": "red",
+    "lessons": [
+      {
+        "id": "l63",
+        "title": "F with full barre",
+        "icon": "F",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "F barre",
+            "text": "Barre at fret 1, fingers 2-4 on frets 2-3. Strum 6 strings.",
+            "chord": "F"
+          },
+          {
+            "type": "quiz",
+            "prompt": "F barre requires barre at:",
+            "options": [
+              "Fret 1",
+              "Fret 2",
+              "Fret 3",
+              "Fret 5"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "F"
+      },
+      {
+        "id": "l64",
+        "title": "Bm with barre",
+        "icon": "Bm",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Bm",
+            "text": "Barre at fret 2, Am shape shifted.",
+            "chord": "Bm"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Bm is a chord:",
+            "options": [
+              "Major",
+              "Minor",
+              "Dominant",
+              "Diminished"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "Bm"
+      },
+      {
+        "id": "l65",
+        "title": "Changes F → Bm",
+        "icon": "🔄",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Change",
+            "text": "Practice F-Bm. Move the barre as a block."
+          },
+          {
+            "type": "quiz",
+            "prompt": "The secret to changing with a barre:",
+            "options": [
+              "Move fingers one by one",
+              "Move the barre as a block",
+              "Play louder",
+              "Look"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l66",
+        "title": "Transposition with capo",
+        "icon": "📐",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Capo",
+            "text": "The capo lets you play the same shape in another key."
+          },
+          {
+            "type": "quiz",
+            "prompt": "A capo is used to:",
+            "options": [
+              "Tune",
+              "Change key without changing shape",
+              "Speed up",
+              "Mute"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l67",
+        "title": "Barre review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Review",
+            "text": "F and Bm return."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord is 224432?",
+            "options": [
+              "F",
+              "Bm",
+              "Em",
+              "Am"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u12",
+    "title": "Unit 12 – Power chords",
+    "color": "black",
+    "lessons": [
+      {
+        "id": "l68",
+        "title": "Power chord E5",
+        "icon": "E5",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "E5",
+            "text": "Root and fifth: frets 0-2-2 on strings 6-5-4.",
+            "chord": "E5"
+          },
+          {
+            "type": "quiz",
+            "prompt": "A power chord has:",
+            "options": [
+              "Root and third",
+              "Root and fifth",
+              "Root only",
+              "Root and seventh"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "E5"
+      },
+      {
+        "id": "l69",
+        "title": "Power chord A5",
+        "icon": "A5",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "A5",
+            "text": "Root and fifth: x022xx.",
+            "chord": "A5"
+          },
+          {
+            "type": "quiz",
+            "prompt": "A5 is played on:",
+            "options": [
+              "Strings 5-4-3",
+              "Strings 6-5-4",
+              "Strings 4-3-2",
+              "Strings 1-2-3"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "A5"
+      },
+      {
+        "id": "l70",
+        "title": "Power chord riff",
+        "icon": "🔥",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Riff",
+            "text": "E5 - A5 - B5 (simulated) with palm mute."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Power chords are used in:",
+            "options": [
+              "Jazz",
+              "Rock/metal",
+              "Classical",
+              "Flamenco"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l71",
+        "title": "Movement along the neck",
+        "icon": "📐",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Movement",
+            "text": "The same power chord shape moves along the neck."
+          },
+          {
+            "type": "quiz",
+            "prompt": "To raise the pitch:",
+            "options": [
+              "Lower frets",
+              "Raise frets",
+              "Change guitar",
+              "Use capo"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l72",
+        "title": "Power chord review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Review",
+            "text": "E5 and A5 return."
+          },
+          {
+            "type": "quiz",
+            "prompt": "What is a power chord?",
+            "options": [
+              "Major chord",
+              "Root+fifth",
+              "Minor chord",
+              "Seventh"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u13",
+    "title": "Unit 13 – Techniques (hammer-on, pull-off, bends, slides)",
+    "color": "orange",
+    "lessons": [
+      {
+        "id": "l73",
+        "title": "Hammer-on",
+        "icon": "🔨",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Hammer-on",
+            "text": "Strike a fret with the finger without strumming again. Sounds legato."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Hammer-on is done with:",
+            "options": [
+              "Right hand",
+              "Left hand",
+              "Pick",
+              "Barre"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l74",
+        "title": "Pull-off",
+        "icon": "🪝",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Pull-off",
+            "text": "Pull the finger to sound the lower note without strumming."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Pull-off is the opposite of:",
+            "options": [
+              "Bend",
+              "Hammer-on",
+              "Slide",
+              "Palm mute"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l75",
+        "title": "Bend",
+        "icon": "↩️",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Bend",
+            "text": "Push the string upward to raise the pitch (half step or whole step)."
+          },
+          {
+            "type": "quiz",
+            "prompt": "A bend raises the pitch:",
+            "options": [
+              "No change",
+              "Half step or whole step",
+              "Lowers the pitch",
+              "Silences"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l76",
+        "title": "Slide",
+        "icon": "➡️",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Slide",
+            "text": "Slide the finger along the string without lifting it."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Slide means:",
+            "options": [
+              "Strike",
+              "Slide",
+              "Pull",
+              "Mute"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l77",
+        "title": "Legato",
+        "icon": "🎵",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Legato",
+            "text": "Combines hammer-on and pull-off to play smoothly."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Legato uses:",
+            "options": [
+              "Hammer-on and pull-off",
+              "Strumming only",
+              "Bends only",
+              "Palm mute"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l78",
+        "title": "Techniques review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Review",
+            "text": "Hammer-on, pull-off, bend and slide return."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which technique raises the pitch by pushing the string?",
+            "options": [
+              "Hammer-on",
+              "Pull-off",
+              "Bend",
+              "Slide"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u14",
+    "title": "Unit 14 – Basic fingerstyle",
+    "color": "green",
+    "lessons": [
+      {
+        "id": "l79",
+        "title": "p-i-m-a position",
+        "icon": "✋",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Fingers",
+            "text": "Thumb (p) bass strings, index (i), middle (m), ring (a) treble strings."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which finger plays the bass strings?",
+            "options": [
+              "i",
+              "m",
+              "a",
+              "p"
+            ],
+            "answer": 3
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l80",
+        "title": "Basic pattern (p-i-m-a)",
+        "icon": "🎵",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Pattern",
+            "text": "p on 6th, i on 3rd, m on 2nd, a on 1st. Repeat."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Pattern p-i-m-a uses:",
+            "options": [
+              "4 fingers",
+              "2 fingers",
+              "1 finger",
+              "Pick"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l81",
+        "title": "Fingerstyle in C",
+        "icon": "🎵",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Fingerstyle C",
+            "text": "Arpeggiate C with p-i-m-a.",
+            "chord": "C"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord?",
+            "options": [
+              "C",
+              "G",
+              "Am",
+              "F"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "C"
+      },
+      {
+        "id": "l82",
+        "title": "Fingerstyle in Am",
+        "icon": "🎵",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "demo",
+            "title": "Fingerstyle Am",
+            "text": "Arpeggiate Am with p-i-m-a.",
+            "chord": "Am"
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which chord?",
+            "options": [
+              "C",
+              "G",
+              "Am",
+              "F"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ],
+        "chord": "Am"
+      },
+      {
+        "id": "l83",
+        "title": "Fingerstyle review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Review",
+            "text": "The p-i-m-a pattern returns."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Fingerstyle is played with:",
+            "options": [
+              "Pick",
+              "Fingers",
+              "Barre",
+              "Metronome"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "u15",
+    "title": "Unit 15 – Improvisation and modes",
+    "color": "purple",
+    "lessons": [
+      {
+        "id": "l84",
+        "title": "Improvising with pentatonic",
+        "icon": "🎼",
+        "xp": 20,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Improvisation",
+            "text": "Use the minor pentatonic over a backing in Am. Play scale notes with rhythm."
+          },
+          {
+            "type": "quiz",
+            "prompt": "To improvise you need:",
+            "options": [
+              "A scale",
+              " A chord",
+              " Silence",
+              " Nothing"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l85",
+        "title": "Ionian mode (major)",
+        "icon": "🎼",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Ionian",
+            "text": "It is the major scale. Sounds bright and stable."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Ionian is:",
+            "options": [
+              "Major scale",
+              "Minor scale",
+              "Pentatonic",
+              "Blues"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l86",
+        "title": "Aeolian mode (natural minor)",
+        "icon": "🎼",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Aeolian",
+            "text": "It is the natural minor scale. Sounds sad."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Aeolian is:",
+            "options": [
+              "Major",
+              "Natural minor",
+              "Pentatonic",
+              "Blues"
+            ],
+            "answer": 1
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l87",
+        "title": "Mixolydian mode",
+        "icon": "🎼",
+        "xp": 18,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Mixolydian",
+            "text": "Major with minor 7th. Sounds rock/blues."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Mixolydian is used in:",
+            "options": [
+              "Jazz/blues",
+              "Classical",
+              "Extreme metal",
+              "Flamenco"
+            ],
+            "answer": 0
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      },
+      {
+        "id": "l88",
+        "title": "Modes review",
+        "icon": "🔁",
+        "xp": 15,
+        "steps": [
+          {
+            "type": "info",
+            "title": "Review",
+            "text": "Ionian, Aeolian and Mixolydian return."
+          },
+          {
+            "type": "quiz",
+            "prompt": "Which mode is major with minor 7th?",
+            "options": [
+              "Ionian",
+              "Aeolian",
+              "Mixolydian",
+              "Dorian"
+            ],
+            "answer": 2
+          },
+          {
+            "type": "info",
+            "title": "Practice",
+            "text": "Repeat what you learned slowly. Aim for clear sound, no buzzing, and count clean changes in 60 s."
+          }
+        ]
+      }
+    ]
+  }
+]
