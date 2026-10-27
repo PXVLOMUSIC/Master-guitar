@@ -17,7 +17,8 @@ function compile(dict) {
   exact = new Map();
   patterns = [];
   for (const [src, dst] of Object.entries(dict)) {
-    if (!dst || src === dst) continue;
+    // Un patrón idéntico ("{0} · {1}") sigue sirviendo: traduce sus partes.
+    if (!dst || (src === dst && !/\{\d+\}/.test(src))) continue;
     const key = src.replace(/\s+/g, " ").trim();
     if (/\{\d+\}/.test(key)) {
       const parts = key.split(/(\{\d+\})/);
