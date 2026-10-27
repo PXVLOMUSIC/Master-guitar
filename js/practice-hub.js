@@ -148,7 +148,7 @@ export function openSection(section, tools, toolId, onLeave) {
       .catch((err) => {
         console.error("Tool error", err);
         if (token !== mountToken) return;
-        body.innerHTML = `<div class="tool-error"><h3>${t("practice.errorOpen")}</h3><p>${escapeHtml(err && err.message ? err.message : "${t("practice.errorUnexpected")}")}</p></div>`;
+        body.innerHTML = `<div class="tool-error"><h3>${t("practice.errorOpen")}</h3><p>${escapeHtml(err && err.message ? err.message : t("practice.errorUnexpected"))}</p></div>`;
       });
   }
 
