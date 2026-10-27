@@ -1,4 +1,5 @@
 import { state, saveState } from "./storage.js";
+import { startPhraseTranslator } from "./i18n-phrases.js";
 
 export const SUPPORTED_LANGUAGES = [
   { code: "es", label: "Español" },
@@ -91,6 +92,7 @@ export async function initI18n() {
   await loadLocale(currentLanguage);
   if (currentLanguage !== FALLBACK_LANGUAGE) await loadLocale(FALLBACK_LANGUAGE);
   applyDocumentLanguage();
+  try { await startPhraseTranslator(currentLanguage); } catch (e) { console.warn("phrases", e); }
 }
 
 export async function setLanguage(setting) {
