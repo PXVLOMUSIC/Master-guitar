@@ -1418,17 +1418,30 @@ input, select, textarea {
   transition: opacity 0.3s ease;
   border-radius: 50%;
 }
+
+
+/* ---------- Tuner circular arc ---------- */
+.tuner-arc {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 8px auto 0;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(88,204,2,0.25));
+}
+
 .tuner-display .note-big {
   text-shadow: 0 0 20px currentColor;
   transition: color 0.3s, text-shadow 0.3s;
 }
 .tune-pulse {
-  animation: tunePulse 0.5s ease;
+  animation: tunePulse 0.7s ease;
+  color: var(--green) !important;
 }
 @keyframes tunePulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1); text-shadow: 0 0 20px var(--green); }
+  50% { transform: scale(1.35); text-shadow: 0 0 40px var(--green), 0 0 80px rgba(88,204,2,0.4); }
+  100% { transform: scale(1); text-shadow: 0 0 20px var(--green); }
 }
 .meter .needle {
   box-shadow: 0 0 8px currentColor;

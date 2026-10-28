@@ -792,6 +792,12 @@ function renderTunerStep(qc, ctrl, step) {
     <div class="prompt">${step.text}</div>
     <div class="sub">Toca la cuerda indicada. El afinador detectará la nota.</div>
     <div class="note-big" id="tNote">—</div>
+        <svg class="tuner-arc" viewBox="0 0 200 120" aria-hidden="true">
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--border)" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--green)" stroke-width="10" stroke-linecap="round" id="arcZone" stroke-dasharray="0 252" opacity="0.3"/>
+          <line id="arcNeedle" x1="100" y1="100" x2="100" y2="28" stroke="var(--green)" stroke-width="4" stroke-linecap="round" transform="rotate(0,100,100)"/>
+          <circle cx="100" cy="100" r="6" fill="var(--green)"/>
+        </svg>
     <div class="cents" id="tCents">Esperando sonido...</div>
   `;
   ctrl.innerHTML = `<button class="btn btn-secondary btn-block" id="startMicBtn">🎤 Activar micrófono</button>
@@ -993,6 +999,12 @@ function renderTuner(v) {
       <div class="tuner-display">
         <div id="strobe" class="strobe" aria-hidden="true"><div class="strobe-pattern"></div></div>
         <div class="note-big" id="tNote">—</div>
+        <svg class="tuner-arc" viewBox="0 0 200 120" aria-hidden="true">
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--border)" stroke-width="10" stroke-linecap="round"/>
+          <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="var(--green)" stroke-width="10" stroke-linecap="round" id="arcZone" stroke-dasharray="0 252" opacity="0.3"/>
+          <line id="arcNeedle" x1="100" y1="100" x2="100" y2="28" stroke="var(--green)" stroke-width="4" stroke-linecap="round" transform="rotate(0,100,100)"/>
+          <circle cx="100" cy="100" r="6" fill="var(--green)"/>
+        </svg>
         <div class="tuner-sub" id="tNoteFull">${t("tuner.playString")}</div>
         <div class="tuner-meter">
           <div class="meter">
@@ -1202,6 +1214,16 @@ function renderTuner(v) {
         needle.style.left = smoothedNeedlePos + "%";
         needle.style.background = Math.abs(cents) < 5 ? "var(--green)" : (Math.abs(cents) < 25 ? "var(--gold)" : "var(--red)");
       }
+      // Circular arc needle
+      const arcNeedle = $("#arcNeedle");
+      if (arcNeedle) {
+        const ang = Math.max(-60, Math.min(60, (cents / 50) * 60));
+        arcNeedle.setAttribute("transform", `rotate(${ang},100,100)`);
+        const col = Math.abs(cents) < 5 ? "var(--green)" : (Math.abs(cents) < 25 ? "var(--gold)" : "var(--red)");
+        arcNeedle.setAttribute("stroke", col);
+        const arcCircle = document.querySelector("#arcNeedle") && document.querySelector("#arcNeedle").parentElement && document.querySelector("#arcNeedle").parentElement.querySelector("circle");
+        if (arcCircle) arcCircle.setAttribute("fill", col);
+      }
       $("#tNote").style.color = Math.abs(cents) < 5 ? "var(--green)" : (Math.abs(cents) < 25 ? "var(--gold)" : "var(--red)");
       // Strobe
       const strobePat = document.querySelector("#strobe .strobe-pattern");
@@ -1227,6 +1249,7 @@ function renderTuner(v) {
             if (sv) { sv.style.opacity = "1"; sv.style.background = "radial-gradient(ellipse, rgba(88,204,2,0.6), transparent)"; setTimeout(() => { if (sv) sv.style.opacity = "0"; }, 300); }
           }
           if (inTuneFrames === 5) {
+            if (state.settings && state.settings.haptic && navigator.vibrate) { try { navigator.vibrate(60); } catch (e) {} }
             if (!tunerState.muteChime) {
               playTone(targetFreq, 0.15, { gain: 0.12, waveform: "sine" });
               setTimeout(() => playTone(targetFreq * 1.25, 0.25, { gain: 0.12, waveform: "sine" }), 120);
