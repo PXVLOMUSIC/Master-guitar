@@ -10,15 +10,15 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
-      - name: Setup Node 22
-        uses: actions/setup-node@v4
+      - name: Setup Node
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
 
       - name: Setup Java
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'temurin'
           java-version: '21'
@@ -61,10 +61,7 @@ jobs:
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO
-          echo "--- Finding App.app ---"
-          find build -name "App.app" -type d
           APP_PATH=$(find build -name "App.app" -type d | head -1)
-          echo "APP_PATH=$APP_PATH"
           if [ -z "$APP_PATH" ]; then
             echo "Build failed - no App.app found"
             exit 1
@@ -74,11 +71,9 @@ jobs:
           mkdir -p Payload
           cp -r App.app Payload/
           zip -r App.ipa Payload
-          echo "--- IPA created ---"
-          ls -la App.ipa
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: strumio-ios-ipa
           path: ios/App/build/**/App.ipa
