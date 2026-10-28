@@ -252,19 +252,7 @@ export function playLayered(group, id, when, destination, opts = {}) {
   gain.gain.value = level;
   const src = ctx.createBufferSource();
   src.buffer = buf;
-  if (instrument === "electric") {
-    try {
-      const hp = ctx.createBiquadFilter();
-      hp.type = "highpass";
-      hp.frequency.value = 220;
-      hp.Q.value = 0.7;
-      src.connect(gain).connect(hp).connect(destination);
-    } catch (e) {
-      src.connect(gain).connect(destination);
-    }
-  } else {
-    src.connect(gain).connect(destination);
-  }
+  src.connect(gain).connect(destination);
   try { src.start(when); } catch (e) { return false; }
   src.onended = () => { try { src.disconnect(); gain.disconnect(); } catch (e) {} };
   return true;
@@ -293,19 +281,7 @@ export function playPerc(id, when, destination, opts = {}) {
   gain.gain.value = (opts.gain != null ? opts.gain : 0.7);
   const src = ctx.createBufferSource();
   src.buffer = buf;
-  if (instrument === "electric") {
-    try {
-      const hp = ctx.createBiquadFilter();
-      hp.type = "highpass";
-      hp.frequency.value = 220;
-      hp.Q.value = 0.7;
-      src.connect(gain).connect(hp).connect(destination);
-    } catch (e) {
-      src.connect(gain).connect(destination);
-    }
-  } else {
-    src.connect(gain).connect(destination);
-  }
+  src.connect(gain).connect(destination);
   try { src.start(when); } catch (e) { return false; }
   src.onended = () => { try { src.disconnect(); gain.disconnect(); } catch (e) {} };
   return true;
