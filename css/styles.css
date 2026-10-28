@@ -2588,7 +2588,7 @@ body.has-bg-image::after {
   bottom: 0;
   width: 50%;
   z-index: -1;
-  background: url("../assets/bg-guitar.jpg?v=3") center / auto 100% no-repeat;
+  background: url("../assets/bg-guitar.jpg?v=3") center / cover no-repeat;
   opacity: var(--bg-image-opacity, 0.15);
   filter: brightness(0.35) saturate(0.7) blur(0.5px);
   pointer-events: none;
@@ -2604,9 +2604,3 @@ body.has-bg-image::after {
 }
 
 
-/* ---------- Background image responsive ---------- */
-@media (min-aspect-ratio: 1/1) {
-  body.has-bg-image::before {
-    background-size: cover;
-  }
-}
