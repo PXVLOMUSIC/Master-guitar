@@ -51,6 +51,9 @@ jobs:
           fi
           node ./node_modules/.bin/cap sync ios
 
+      - name: Generate app icons
+        run: python3 scripts/gen-icons.py assets/icon-1024.png
+
       - name: Patch iOS Info.plist
         run: |
           PLIST=$(find ios -name "Info.plist" | head -1)

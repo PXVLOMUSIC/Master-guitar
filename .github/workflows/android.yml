@@ -45,6 +45,9 @@ jobs:
           npx cap add android || true
           npx cap sync android
 
+      - name: Generate app icons
+        run: python scripts/gen-icons.py assets/icon-1024.png
+
       - name: Patch AndroidManifest
         run: python scripts/patch-android.py android/app/src/main/AndroidManifest.xml
 
