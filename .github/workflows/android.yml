@@ -30,7 +30,7 @@ jobs:
         run: npm ci || npm install
 
       - name: Install Capacitor plugins
-        run: npm install @capacitor/core @capacitor/cli @capacitor/android @capacitor/app
+        run: npm install @capacitor/core @capacitor/cli @capacitor/android @capacitor/app @capacitor/local-notifications
 
       - name: Prepare web assets
         run: |

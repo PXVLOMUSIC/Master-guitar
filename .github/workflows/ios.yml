@@ -34,7 +34,7 @@ jobs:
           xcodebuild -version
 
       - name: Install dependencies
-        run: npm install @capacitor/core @capacitor/cli @capacitor/ios @capacitor/app
+        run: npm install @capacitor/core @capacitor/cli @capacitor/ios @capacitor/app @capacitor/local-notifications
 
       - name: Prepare web assets
         run: |
