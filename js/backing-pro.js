@@ -2,6 +2,7 @@
 import { getAudioContext, resumeContext } from "./audio.js";
 import { midiToFreq } from "./instruments.js";
 import { preloadGroup, isGroupReady, getSampleState, playDrum, playHand, playPitched } from "./sample-engine.js";
+import { t } from "./i18n.js";
 
 /* ----------------------------- Instrument list ----------------------------- */
 const INSTRUMENTS = [
@@ -1065,7 +1066,7 @@ async function exportTrack() {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  toast("Exportado: backing track (WAV)");
+  toast(t("backing.exported"));
 }
 
 /* ----------------------------- UI ----------------------------- */

@@ -1,3 +1,4 @@
+import { t } from "./i18n.js";
 // art.js — ilustraciones propias en SVG: la mascota "Púa" y las portadas de
 // cada unidad. Todo vectorial, sin imágenes externas, y se adapta al tema.
 
@@ -26,7 +27,7 @@ export function mascot(mood = "happy", size = 120) {
   const eyes = mood === "cheer"
     ? `<path d="M41 56q5-6 10 0M69 56q5-6 10 0" fill="none" stroke="#14301a" stroke-width="4" stroke-linecap="round"/>`
     : `<circle cx="46" cy="56" r="6" fill="#14301a"/><circle cx="74" cy="56" r="6" fill="#14301a"/><circle cx="48" cy="54" r="2" fill="#fff"/><circle cx="76" cy="54" r="2" fill="#fff"/>`;
-  return `<svg class="mascot mascot--${mood}" width="${size}" height="${size}" viewBox="0 0 120 120" role="img" aria-label="Púa, la mascota de Strumio">
+  return `<svg class="mascot mascot--${mood}" width="${size}" height="${size}" viewBox="0 0 120 120" role="img" aria-label="${t('art.mascotAriaLabel')}">
     <defs>
       <linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8ee000"/><stop offset="1" stop-color="#3fa000"/></linearGradient>
     </defs>

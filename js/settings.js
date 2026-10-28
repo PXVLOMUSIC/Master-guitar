@@ -1,5 +1,6 @@
 // settings.js — settings panel, progress dashboard, theme manager, notifications
 import { state, saveState, defaultState, resetState } from "./storage.js";
+import { t } from "./i18n.js";
 import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
 import { renderBackendSettings } from "./backend.js";
@@ -90,10 +91,10 @@ export function toggleTheme() {
 // está abierta, y al abrirla si ya pasó la hora y aún no has practicado.
 const REMINDER_ID = 1901;
 const REMINDER_TEXTS = [
-  "Hora de practicar. ¡Quince minutos y listo! 🎸",
-  "Tu rutina de hoy te espera 🔥",
-  "Un poco cada día: así se aprende de verdad 🎶",
-  "¿Unos acordes antes de cenar? 🎸",
+  t("settings.notif1"),
+  t("settings.notif2"),
+  t("settings.notif3"),
+  t("settings.notif4"),
 ];
 
 function nativeNotifications() {
@@ -354,13 +355,13 @@ export function renderSettings(container) {
     saveState(state);
     applyTheme();
     haptic(10);
-    toast("Tema actualizado");
+    toast(t("settings.themeUpdated"));
   };
   container.querySelector("#langSel").onchange = async (e) => {
     const { setLanguage } = await import("./i18n.js");
     await setLanguage(e.target.value);
     haptic(10);
-    toast("Idioma actualizado");
+    toast(t("settings.languageUpdated"));
     window.location.reload();
   };
 
@@ -376,11 +377,11 @@ export function renderSettings(container) {
         saveState(state);
         const cb = container.querySelector("#notifToggle");
         if (cb) cb.checked = false;
-        toast("Permiso denegado");
+        toast(t("settings.permissionDenied"));
         return;
       }
       scheduleReminder(state.settings.reminderHour);
-      toast("Recordatorio programado");
+      toast(t("settings.reminderScheduled"));
     } else {
       cancelReminder();
     }
@@ -417,7 +418,7 @@ export function renderSettings(container) {
       state.settings.dailyGoal = parseInt(b.dataset.min);
       saveState(state);
       haptic(10);
-      toast("Meta: " + b.dataset.min + " min");
+      toast(t("settings.goalLabel") + b.dataset.min + " min");
       renderSettings(container);
     };
   });
@@ -428,7 +429,7 @@ export function renderSettings(container) {
     if (state.user) state.user.instrument = e.target.value;
     saveState(state);
     haptic(10);
-    toast("Instrumento actualizado");
+    toast(t("settings.instrumentUpdated"));
   };
 
   // tuner pitch
@@ -437,7 +438,7 @@ export function renderSettings(container) {
       state.settings.tunerPitch = parseInt(b.dataset.pitch);
       saveState(state);
       haptic(10);
-      toast("Referencia: " + b.dataset.pitch + " Hz");
+      toast(t("settings.referenceLabel") + b.dataset.pitch + " Hz");
       renderSettings(container);
     };
   });
@@ -456,14 +457,14 @@ export function renderSettings(container) {
   container.querySelector("#permBtn").onclick = async () => {
     const granted = await requestNotificationPermission();
     if (granted) {
-      toast("Permiso concedido");
+      toast(t("settings.permissionGranted"));
       scheduleReminder(state.settings.reminderHour);
       const cb = container.querySelector("#notifToggle");
       if (cb) cb.checked = true;
       state.settings.notifications = true;
       saveState(state);
     } else {
-      toast("Permiso denegado o no soportado");
+      toast(t("settings.permissionDeniedOrUnsupported"));
     }
   };
 
@@ -508,10 +509,10 @@ function exportProgress() {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
-    toast("Progreso exportado");
+    toast(t("settings.progressExported"));
   } catch (e) {
     console.warn("export", e);
-    toast("No se pudo exportar");
+    toast(t("settings.exportFailed"));
   }
 }
 
@@ -568,7 +569,7 @@ function normalizeImportedState(raw) {
 async function importProgressFile(file) {
   if (!file) return;
   if (file.size > 2 * 1024 * 1024) {
-    toast("Archivo demasiado grande");
+    toast(t("settings.fileTooLarge"));
     return;
   }
   try {
@@ -577,18 +578,16 @@ async function importProgressFile(file) {
     for (const key of Object.keys(state)) delete state[key];
     Object.assign(state, merged);
     saveState(state);
-    toast("Progreso importado. Recargando…");
+    toast(t("settings.progressImported"));
     setTimeout(() => location.reload(), 800);
   } catch (e) {
     console.warn("import", e);
-    toast("Archivo no válido");
+    toast(t("settings.invalidFile"));
   }
 }
 
 function resetLocalProgress() {
-  const ok = window.confirm(
-    "¿Restablecer el progreso de este dispositivo?\n\nSe borrarán XP, lecciones, racha y ajustes locales. Si tienes cuenta, la nube puede restaurarlo al volver a iniciar sesión."
-  );
+  const ok = window.confirm(t("settings.resetConfirm"));
   if (!ok) return;
   for (const key of ["bestChanges", "strumio_tools_v1", "strumio_video_progress", "strumio_video_watched"]) {
     try { localStorage.removeItem(key); } catch (e) {}
