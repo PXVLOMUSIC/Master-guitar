@@ -353,7 +353,7 @@ function renderWelcomeSetup() {
     const btn = $("#notifYes"); btn.disabled = true;
     const m = await loadSettings();
     const ok = await m.requestNotificationPermission();
-    if (ok) { m.scheduleReminder(parseInt($("#hourSel").value)); toast("Recordatorio activado 🔔"); }
+    if (ok) { m.scheduleReminder(parseInt($("#hourSel").value)); toast(t("app.reminderActivated")); }
     else toast(t("app.adjustLater"));
     next();
   };
@@ -770,13 +770,13 @@ function renderQuiz(qc, ctrl, step) {
       if (i === step.answer) {
         b.classList.add("correct");
         lessonState.xpEarned += 5;
-        toast("¡Correcto! +5 XP");
+        toast(t("app.correctPlus5"));
         setTimeout(() => nextStep(view()), 700);
       } else {
         b.classList.add("wrong");
         loseHeart();
         renderTopbar();
-        toast("Incorrecto. -1 ❤️");
+        toast(t("app.incorrectMinus1"));
         // show correct
         $$(".opt", opts)[step.answer].classList.add("correct");
         setTimeout(() => nextStep(view()), 1200);
@@ -810,7 +810,7 @@ function renderTunerStep(qc, ctrl, step) {
       if (Math.abs(cents) < 25 && !detected) {
         detected = true;
         lessonState.xpEarned += 8;
-        toast("¡Afinado! +8 XP");
+        toast(t("app.tunedPlus8"));
         setTimeout(() => { stopMic(); nextStep(view()); }, 900);
       }
     });
@@ -839,7 +839,7 @@ function renderPlayStep(qc, ctrl, step) {
       if (Math.abs(cents) < 25) {
         done = true;
         lessonState.xpEarned += 8;
-        toast("¡Correcto! +8 XP");
+        toast(t("app.correctPlus8"));
         setTimeout(() => { stopMic(); nextStep(view()); }, 900);
       }
     });
@@ -874,9 +874,9 @@ function renderPlayChordStep(qc, ctrl, step) {
       $("#pcChord").textContent = res.chord;
       $("#pcConf").textContent = "Confianza: " + Math.round(res.confidence * 100) + "%";
       if (res.chord === step.expected) {
-        if (!done) { done = true; lessonState.xpEarned += 10; toast("¡Acorde correcto! +10 XP"); setTimeout(() => nextStep(view()), 900); }
+        if (!done) { done = true; lessonState.xpEarned += 10; toast(t("app.chordCorrectPlus10")); setTimeout(() => nextStep(view()), 900); }
       } else {
-        toast("Ese era " + res.chord + ", intenta de nuevo");
+        toast(t("app.thatWas") + res.chord + ", intenta de nuevo");
       }
     } else {
       $("#pcChord").textContent = "?";
@@ -1083,7 +1083,7 @@ function renderTuner(v) {
     if (!isRunning()) {
       $("#micBtn").click();
     }
-    toast("Afinando todas: " + ins.strings[0]);
+    toast(t("app.tuningAll") + ins.strings[0]);
     renderTuner(view());
   };
   // Continuous tone helpers
@@ -1250,7 +1250,7 @@ function renderTuner(v) {
                 tunerState.autoTune = false;
                 toast("✅ Todas las cuerdas afinadas");
               } else {
-                toast("Siguiente: " + ins.strings[tunerState.autoTuneIdx]);
+                toast(t("app.nextLabel") + ins.strings[tunerState.autoTuneIdx]);
               }
             }
           }
@@ -1584,8 +1584,8 @@ function renderOneMinuteChanges(area) {
         $("#incBtn", area).disabled = true;
         $("#startChanges", area).textContent = "▶ Empezar";
         const best = Math.max(parseInt(localStorage.getItem('bestChanges')||0), state.stats.bestChordChanges || 0);
-        if (count > best) { localStorage.setItem('bestChanges', count); state.stats.bestChordChanges = count; saveState(state); $("#best", area).textContent = "Récord: " + count; toast("¡Nuevo récord! 🏆"); }
-        else toast("Resultado: " + count);
+        if (count > best) { localStorage.setItem('bestChanges', count); state.stats.bestChordChanges = count; saveState(state); $("#best", area).textContent = "Récord: " + count; toast(t("app.newRecord")); }
+        else toast(t("app.resultLabel") + count);
       }
     }, 1000);
     $("#startChanges", area).textContent = "Corriendo...";
@@ -1624,8 +1624,8 @@ function renderEarTrainer(area) {
   };
   function answer(same) {
     total++;
-    if (same === currentSame) { score++; toast("¡Correcto!"); }
-    else toast("Incorrecto");
+    if (same === currentSame) { score++; toast(t("app.correct")); }
+    else toast(t("app.incorrect"));
     $("#earScore", area).textContent = `Aciertos: ${score}/${total}`;
     newPair();
   }
@@ -1679,7 +1679,7 @@ function renderChordDetect(area) {
     if (res && res.chord) {
       $("#detectedChord", area).textContent = res.chord;
       $("#detConf", area).textContent = "Confianza: " + Math.round(res.confidence * 100) + "%";
-      toast("Acorde: " + res.chord);
+      toast(t("app.chordLabel") + res.chord);
     } else {
       $("#detectedChord", area).textContent = "?";
       $("#detConf", area).textContent = "No se detectó acorde";

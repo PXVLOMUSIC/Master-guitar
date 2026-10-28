@@ -274,5 +274,17 @@
   "app.noChordDetected": "Kein Akkord erkannt, versuchen Sie es erneut",
   "app.hearTonePrompt": "Hast du den Ton gehört? Wenn nicht, überprüfen Sie die Browserlautstärke.",
   "app.appInstalled": "Installierte Anwendung",
-  "app.resetProgressConfirm": "Alle Fortschritte zurücksetzen?"
+  "app.resetProgressConfirm": "Alle Fortschritte zurücksetzen?",
+  "app.reminderActivated": "Erinnerung aktiviert 🔔",
+  "app.correct": "Richtig!",
+  "app.incorrect": "Falsch",
+  "app.tunedPlus8": "Melodie! +8 XP",
+  "app.correctPlus8": "Richtig! +8 XP",
+  "app.chordCorrectPlus10": "Richtiger Akkord! +10 EP",
+  "app.newRecord": "Neuer Rekord! 🏆",
+  "app.chordLabel": "Akkord:",
+  "app.resultLabel": "Ergebnis:",
+  "app.nextLabel": "Folgendes:",
+  "app.thatWas": "Das war",
+  "app.tuningAll": "Tunen Sie sie alle:"
 }

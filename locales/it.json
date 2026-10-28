@@ -274,5 +274,17 @@
   "app.noChordDetected": "Nessun accordo rilevato, riprova",
   "app.hearTonePrompt": "Hai sentito il tono? In caso contrario, controlla il volume del browser.",
   "app.appInstalled": "Applicazione installata",
-  "app.resetProgressConfirm": "Resettare tutti i progressi?"
+  "app.resetProgressConfirm": "Resettare tutti i progressi?",
+  "app.reminderActivated": "Promemoria attivato 🔔",
+  "app.correct": "Corretto!",
+  "app.incorrect": "Errato",
+  "app.tunedPlus8": "Sintonizzati! +8 XP",
+  "app.correctPlus8": "Corretto! +8 XP",
+  "app.chordCorrectPlus10": "Accordo corretto! +10 XP",
+  "app.newRecord": "Nuovo record! 🏆",
+  "app.chordLabel": "Accordo:",
+  "app.resultLabel": "Risultato:",
+  "app.nextLabel": "Seguente:",
+  "app.thatWas": "Questo era",
+  "app.tuningAll": "Sintonizzarli tutti:"
 }

@@ -274,5 +274,17 @@
   "app.noChordDetected": "Nenhum acorde detectado, tente novamente",
   "app.hearTonePrompt": "Você ouviu o tom? Caso contrário, verifique o volume do navegador.",
   "app.appInstalled": "Aplicativo instalado",
-  "app.resetProgressConfirm": "Redefinir todo o progresso?"
+  "app.resetProgressConfirm": "Redefinir todo o progresso?",
+  "app.reminderActivated": "Lembrete ativado 🔔",
+  "app.correct": "Correto!",
+  "app.incorrect": "Incorreto",
+  "app.tunedPlus8": "Sintonia! +8 XP",
+  "app.correctPlus8": "Correto! +8 XP",
+  "app.chordCorrectPlus10": "Acorde correto! +10 XP",
+  "app.newRecord": "Novo recorde! 🏆",
+  "app.chordLabel": "Acorde:",
+  "app.resultLabel": "Resultado:",
+  "app.nextLabel": "Seguindo:",
+  "app.thatWas": "Isso foi",
+  "app.tuningAll": "Ajustando todos eles:"
 }

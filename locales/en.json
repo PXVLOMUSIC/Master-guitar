@@ -274,5 +274,17 @@
   "app.noChordDetected": "No chord detected, try again",
   "app.hearTonePrompt": "Did you hear the tone? If not, check the browser volume.",
   "app.appInstalled": "Installed application",
-  "app.resetProgressConfirm": "Reset all progress?"
+  "app.resetProgressConfirm": "Reset all progress?",
+  "app.reminderActivated": "Reminder activated 🔔",
+  "app.correct": "Correct!",
+  "app.incorrect": "Incorrect",
+  "app.tunedPlus8": "Tune! +8 XP",
+  "app.correctPlus8": "Correct! +8 XP",
+  "app.chordCorrectPlus10": "Correct chord! +10 XP",
+  "app.newRecord": "New record! 🏆",
+  "app.chordLabel": "Chord:",
+  "app.resultLabel": "Result:",
+  "app.nextLabel": "Following:",
+  "app.thatWas": "That was",
+  "app.tuningAll": "Tuning them all:"
 }
