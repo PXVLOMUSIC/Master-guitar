@@ -25,3 +25,12 @@ __pycache__/
 # Secretos y entorno
 .env
 .env.*
+
+# Node / Capacitor
+node_modules/
+package-lock.json
+www/
+android/
+*.jks
+*.apk
+*.aab
