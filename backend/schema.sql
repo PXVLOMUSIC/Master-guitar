@@ -16,10 +16,15 @@ create table if not exists public.users (
   id          uuid primary key references auth.users(id) on delete cascade,
   email       text unique not null,
   name        text,
+  username    text unique,
   avatar_url  text,
   created_at  timestamptz not null default now(),
   updated_at  timestamptz not null default now()
 );
+
+-- Migración suave para bases ya creadas: añade la columna username si falta.
+alter table public.users add column if not exists username text;
+create unique index if not exists users_username_idx on public.users (username);
 
 -- Auto-create a profile row when a new auth user signs up.
 create or replace function public.handle_new_user()
@@ -28,12 +33,26 @@ language plpgsql
 security definer
 set search_path = public
 as $$
+declare
+  base_name text;
+  base      text;
+  candidate text;
+  n         integer := 0;
 begin
-  insert into public.users (id, email, name)
+  base_name := coalesce(new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'name', split_part(new.email, '@', 1));
+  base := lower(regexp_replace(base_name, '[^a-zA-Z0-9_]', '', 'g'));
+  if base = '' then base := 'user'; end if;
+  candidate := base;
+  while exists (select 1 from public.users where username = candidate) loop
+    n := n + 1;
+    candidate := base || n::text;
+  end loop;
+  insert into public.users (id, email, name, username)
   values (
     new.id,
     new.email,
-    coalesce(new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'name', split_part(new.email, '@', 1))
+    base_name,
+    candidate
   )
   on conflict (id) do nothing;
   return new;
@@ -44,6 +63,11 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- Migración: asigna username a perfiles creados antes de esta columna.
+update public.users
+set username = lower(regexp_replace(coalesce(name, split_part(email, '@', 1)), '[^a-zA-Z0-9_]', '', 'g')) || '_' || substr(id::text, 1, 6)
+where username is null or username = '';
 
 -- ---------------------------------------------------------------------------
 -- progress (one row per user, last-write-wins via updated_at)

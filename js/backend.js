@@ -826,17 +826,58 @@ export function enableGuestMode(name) {
   return state.user;
 }
 
+async function generateUsernameCandidate(user, nameOverride) {
+  const meta = (user.user_metadata || {});
+  const baseName = nameOverride || meta.full_name || meta.name || meta.display_name || (user.email ? user.email.split("@")[0] : "usuario");
+  let base = String(baseName || "usuario").toLowerCase().replace(/[^a-z0-9_]/g, "");
+  if (!base) base = "usuario";
+  let candidate = base;
+  try {
+    const { data } = await client.from("users").select("id").eq("username", candidate).maybeSingle();
+    if (data && data.id && data.id !== user.id) {
+      candidate = base + Math.floor(Math.random() * 9000 + 1000);
+    }
+  } catch (e) {}
+  return candidate;
+}
+
 async function upsertUserProfile(user, nameOverride) {
   if (!client || !user) return;
   const meta = (user.user_metadata || {});
   const name = nameOverride || meta.full_name || meta.name || meta.display_name || (user.email ? user.email.split("@")[0] : "Usuario");
   try {
-    await withRetry(() => client.from("users").upsert({
-      id: user.id,
-      email: user.email || "",
-      name,
-      updated_at: getNowISO()
-    }, { onConflict: "id" }));
+    // Conserva el username existente si ya tiene uno.
+    let username = null;
+    try {
+      const { data: existing } = await client.from("users").select("username").eq("id", user.id).maybeSingle();
+      username = existing && existing.username ? existing.username : null;
+    } catch (e) {}
+    if (!username) username = await generateUsernameCandidate(user, nameOverride);
+
+    const doUpsert = async (uname) => {
+      const { error } = await client.from("users").upsert({
+        id: user.id,
+        email: user.email || "",
+        name,
+        username: uname,
+        updated_at: getNowISO()
+      }, { onConflict: "id" });
+      if (error) throw error;
+    };
+    try {
+      await withRetry(() => doUpsert(username));
+    } catch (e) {
+      // Conflicto de unicidad: reintenta con sufijo aleatorio.
+      const retry = username + Math.floor(Math.random() * 9000 + 1000);
+      await withRetry(() => doUpsert(retry));
+      username = retry;
+    }
+    try {
+      if (!state.user) state.user = { name, email: user.email || "", guest: false };
+      state.user.username = username;
+      if (user.email) state.user.email = user.email;
+      saveState(state);
+    } catch (e) {}
   } catch (e) {
     console.warn("upsertUserProfile error", e);
   }
@@ -945,6 +986,36 @@ function getWeeklyXp() {
   return total;
 }
 
+export async function resetRemoteProgress() {
+  ensureStateDefaults();
+  if (!client || !currentUser) {
+    if (isConfigured()) {
+      enqueue({ type: "resetProgress", payload: {} });
+      scheduleBatchSync();
+      return { queued: true };
+    }
+    return { ok: true };
+  }
+  if (!isOnline()) {
+    enqueue({ type: "resetProgress", payload: {} });
+    scheduleBatchSync();
+    return { queued: true };
+  }
+  try {
+    await withRetry(async () => {
+      const { error } = await client.from("progress").delete().eq("user_id", currentUser.id);
+      if (error) throw error;
+    });
+    await withRetry(async () => {
+      const { error } = await client.from("weekly_scores").delete().eq("user_id", currentUser.id);
+      if (error) throw error;
+    }).catch(() => {});
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, error: e };
+  }
+}
+
 // queue flushing handler
 async function flushQueue() {
   const res = await flush(async (op) => {
@@ -972,6 +1043,10 @@ async function flushQueue() {
       }
       case "activity": {
         return await flushActivity(op.payload);
+      }
+      case "resetProgress": {
+        const r = await resetRemoteProgress();
+        return !(r && r.error);
       }
       default:
         return true;
@@ -1093,14 +1168,14 @@ export async function getFriends() {
       const uid = currentUser.id;
       const { data, error } = await client
         .from("friendships")
-        .select("id, requester_id, addressee_id, status, created_at, requester:users!requester_id(id,name,email), addressee:users!addressee_id(id,name,email)")
+        .select("id, requester_id, addressee_id, status, created_at, requester:users!requester_id(id,name,email,username), addressee:users!addressee_id(id,name,email,username)")
         .or(`requester_id.eq.${uid},addressee_id.eq.${uid}`);
       if (error) throw error;
       const out = [];
       for (const f of (data || [])) {
         if (f.status !== "accepted") continue;
         const other = f.requester_id === uid ? f.addressee : f.requester;
-        if (other) out.push({ friendshipId: f.id, id: other.id, name: other.name, email: other.email, status: f.status });
+        if (other) out.push({ friendshipId: f.id, id: other.id, name: other.name, email: other.email, username: other.username, status: f.status });
       }
       return out;
     });
@@ -1118,7 +1193,7 @@ export async function getFriendRequests() {
       const uid = currentUser.id;
       const { data, error } = await client
         .from("friendships")
-        .select("id, requester_id, addressee_id, status, created_at, requester:users!requester_id(id,name,email)")
+        .select("id, requester_id, addressee_id, status, created_at, requester:users!requester_id(id,name,email,username)")
         .eq("addressee_id", uid)
         .eq("status", "pending");
       if (error) throw error;
@@ -1153,6 +1228,60 @@ export async function addFriendByEmail(email) {
     });
     if (!target) return { ok: false, error: new Error("Usuario no encontrado") };
     if (target.id === currentUser.id) return { ok: false, error: new Error("No puedes agregarte a ti mismo") };
+    // Deduplicar solicitudes existentes en cualquier dirección.
+    const existing = await withRetry(async () => {
+      const uid = currentUser.id;
+      const { data, error } = await client.from("friendships").select("id,status").or(`and(requester_id.eq.${uid},addressee_id.eq.${target.id}),and(requester_id.eq.${target.id},addressee_id.eq.${uid})`);
+      if (error) throw error;
+      return data || [];
+    });
+    if (existing.some(f => f.status === "accepted")) return { ok: false, error: new Error("Ya son amigos") };
+    if (existing.some(f => f.status === "pending")) return { ok: false, error: new Error("Ya hay una solicitud pendiente") };
+    await withRetry(async () => {
+      const { error } = await client.from("friendships").insert({
+        requester_id: currentUser.id,
+        addressee_id: target.id,
+        status: "pending"
+      });
+      if (error) throw error;
+    });
+    await postActivity("friend_request", { to: target.id, name: target.name }).catch(() => {});
+    return { ok: true, friend: target };
+  } catch (e) {
+    return { ok: false, error: e };
+  }
+}
+
+export async function addFriendByUsername(username) {
+  ensureStateDefaults();
+  const uname = String(username || "").trim().toLowerCase().replace(/^@/, "");
+  if (!uname) return { ok: false, error: new Error("Username vacío") };
+  if (!client || !currentUser) {
+    enqueue({ type: "addFriend", payload: { username: uname } });
+    scheduleBatchSync();
+    return { queued: true };
+  }
+  if (!isOnline()) {
+    enqueue({ type: "addFriend", payload: { username: uname } });
+    scheduleBatchSync();
+    return { queued: true };
+  }
+  try {
+    const target = await withRetry(async () => {
+      const { data, error } = await client.from("users").select("id,name,email,username").eq("username", uname).maybeSingle();
+      if (error) throw error;
+      return data;
+    });
+    if (!target) return { ok: false, error: new Error("Usuario no encontrado") };
+    if (target.id === currentUser.id) return { ok: false, error: new Error("No puedes agregarte a ti mismo") };
+    const existing = await withRetry(async () => {
+      const uid = currentUser.id;
+      const { data, error } = await client.from("friendships").select("id,status").or(`and(requester_id.eq.${uid},addressee_id.eq.${target.id}),and(requester_id.eq.${target.id},addressee_id.eq.${uid})`);
+      if (error) throw error;
+      return data || [];
+    });
+    if (existing.some(f => f.status === "accepted")) return { ok: false, error: new Error("Ya son amigos") };
+    if (existing.some(f => f.status === "pending")) return { ok: false, error: new Error("Ya hay una solicitud pendiente") };
     await withRetry(async () => {
       const { error } = await client.from("friendships").insert({
         requester_id: currentUser.id,
@@ -1170,6 +1299,10 @@ export async function addFriendByEmail(email) {
 
 async function flushAddFriend(payload) {
   if (!client || !currentUser) return false;
+  if (payload && payload.username) {
+    const r = await addFriendByUsername(payload.username);
+    return !!r.ok;
+  }
   const r = await addFriendByEmail(payload.email);
   return !!r.ok;
 }
@@ -1673,12 +1806,16 @@ export async function renderBackendSettings(container) {
     const requests = await getFriendRequests();
     area.innerHTML = `
       <div style="display:flex;gap:8px;margin-bottom:8px">
+        <input id="friendUsername" type="text" placeholder="@username del amigo" style="flex:1;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text)">
+        <button class="btn btn-primary btn-sm" id="addFriendByUsernameBtn">Agregar</button>
+      </div>
+      <div style="display:flex;gap:8px;margin-bottom:8px">
         <input id="friendEmail" type="email" placeholder="Email del amigo" style="flex:1;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text)">
-        <button class="btn btn-primary btn-sm" id="addFriendBtn">Agregar</button>
+        <button class="btn btn-secondary btn-sm" id="addFriendBtn">Por email</button>
       </div>
       ${requests.length ? `<div style="margin-bottom:8px"><b>Solicitudes:</b>${requests.map(r => `
         <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
-          <span>${escapeHtml(r.from && r.from.name || r.from && r.from.email || "Usuario")}</span>
+          <span>${escapeHtml(r.from && r.from.name || r.from && r.from.email || "Usuario")}${r.from && r.from.username ? ` <span style="color:var(--muted);font-size:11px">@${escapeHtml(r.from.username)}</span>` : ""}</span>
           <div style="display:flex;gap:6px">
             <button class="btn btn-primary btn-sm" data-acc="${r.id}">Aceptar</button>
             <button class="btn btn-secondary btn-sm" data-rej="${r.id}">Rechazar</button>
@@ -1686,11 +1823,21 @@ export async function renderBackendSettings(container) {
         </div>`).join("")}</div>` : ""}
       <div><b>Amigos:</b> ${friends.length ? friends.map(f => `
         <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
-          <span>${escapeHtml(f.name || f.email)}</span>
+          <span>${escapeHtml(f.name || f.email)}${f.username ? ` <span style="color:var(--muted);font-size:11px">@${escapeHtml(f.username)}</span>` : ""}</span>
           <button class="btn btn-secondary btn-sm" data-ch="${f.id}">Reto</button>
         </div>`).join("") : "<p style='color:var(--muted)'>Sin amigos aún.</p>"}
       </div>
     `;
+    const addUserBtn = area.querySelector("#addFriendByUsernameBtn");
+    if (addUserBtn) addUserBtn.onclick = async () => {
+      const username = area.querySelector("#friendUsername").value.trim();
+      if (!username) { toast("Ingresa un username"); return; }
+      const r = await addFriendByUsername(username);
+      if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
+      if (r.queued) { toast("Encolado (offline)"); return; }
+      toast("Solicitud enviada");
+      renderFriends();
+    };
     const addBtn = area.querySelector("#addFriendBtn");
     if (addBtn) addBtn.onclick = async () => {
       const email = area.querySelector("#friendEmail").value.trim();
@@ -1831,6 +1978,8 @@ export default {
   getFriends,
   getFriendRequests,
   addFriendByEmail,
+  addFriendByUsername,
+  resetRemoteProgress,
   acceptFriend,
   rejectFriend,
   removeFriend,

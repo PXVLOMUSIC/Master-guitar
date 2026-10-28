@@ -3,7 +3,8 @@ import { initI18n, applyDocumentLanguage, t, getCurrentLanguage } from "./i18n.j
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
 import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments, setGuitarTone, setEarInstrument, earInstrument } from "./audio.js";
-import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider } from "./backend.js";
+import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider, resetRemoteProgress } from "./backend.js";
+import { clearQueue } from "./sync.js";
 import { renderPracticeHub, openFromHash, closeSection } from "./practice-hub.js";
 import { icon } from "./icons.js";
 import { mascot, unitCover } from "./art.js";
@@ -973,79 +974,70 @@ function renderTuner(v) {
   const numStrings = tuningFreqs.length;
   if (tunerState.targetString >= numStrings) tunerState.targetString = 0;
   if (tunerState.autoTuneIdx >= numStrings) tunerState.autoTuneIdx = 0;
+  const insShort = (k) => INSTRUMENTS[k].name.replace(/\s*\(.*\)\s*$/, "");
+  const tunerTitle = t("tuner.title").replace(/^[^\p{L}]+/u, "");
+  const offLabel = (s) => String(s).replace(/^[^\p{L}]+/u, "");
   v.innerHTML = `
-    <div class="tuner" style="padding:16px">
-      <h2 style="margin:0 0 12px;text-align:center">${t("tuner.title")}</h2>
-      <!-- Instrument selector -->
-      <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
-        ${Object.keys(INSTRUMENTS).map(k => `<button class="btn btn-secondary" data-ins="${k}" style="padding:8px 14px;font-size:13px;${k===tunerState.instrument?'border-color:var(--green);background:#2d4a2d':''}">${INSTRUMENTS[k].emoji} ${k}</button>`).join("")}
+    <div class="tuner tuner--v2">
+      <div class="tuner-head">
+        <h2>${tunerTitle}</h2>
+        <select id="tuningSel" class="tuner-select" aria-label="Afinación">
+          ${Object.keys(tuningNames).map(k => `<option value="${k}" ${k===tunerState.tuning?'selected':''}>${tuningNames[k]}</option>`).join("")}
+        </select>
       </div>
-      <!-- Tuning selector -->
-      <select id="tuningSel" style="width:100%;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card2);color:var(--text);font-weight:700;margin-bottom:16px">
-        ${Object.keys(tuningNames).map(k => `<option value="${k}" ${k===tunerState.tuning?'selected':''}>${tuningNames[k]}</option>`).join("")}
-      </select>
-      <!-- Mode toggles -->
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;justify-content:center">
-        <button class="btn btn-secondary" id="chromaticBtn" style="padding:8px 14px;font-size:13px;${tunerState.chromatic?'border-color:var(--green);background:#2d4a2d':''}">${tunerState.chromatic?t('tuner.chromatic'):t('tuner.byString')}</button>
-        <button class="btn btn-secondary" id="muteBtn" style="padding:8px 14px;font-size:13px">${tunerState.muteChime?t('tuner.muted'):t('tuner.sound')}</button>
-        <button class="btn btn-secondary" id="continuousBtn" style="padding:8px 14px;font-size:13px;${tunerState.continuous?'border-color:var(--green);background:#2d4a2d':''}">${tunerState.continuous?t('tuner.stopTone'):t('tuner.continuousTone')}</button>
-        <button class="btn btn-secondary" id="autoTuneBtn" style="padding:8px 14px;font-size:13px;${tunerState.autoTune?'border-color:var(--green);background:#2d4a2d':''}">${t("tuner.tuneAll")}</button>
+      <div class="tuner-ins" role="radiogroup" aria-label="Instrumento">
+        ${Object.keys(INSTRUMENTS).map(k => `<button class="tuner-chip ${k===tunerState.instrument?'on':''}" data-ins="${k}" role="radio" aria-checked="${k===tunerState.instrument}">${insShort(k)}</button>`).join("")}
       </div>
-      <!-- Guitar visual -->
-      <div id="guitarVisual" style="background:linear-gradient(180deg,#2a1f14,#1a1208);border-radius:16px;padding:20px 16px;margin-bottom:16px;position:relative;overflow:hidden;border:2px solid #3a2a1a">
-        <div style="position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent,transparent 40px,rgba(255,255,255,0.03) 40px,rgba(255,255,255,0.03) 41px);pointer-events:none"></div>
-        <div id="stringsContainer" style="position:relative;z-index:1;display:flex;flex-direction:column;gap:${numStrings>4?8:12}px">
+      <!-- Lectura principal -->
+      <div class="tuner-display">
+        <div id="strobe" class="strobe" aria-hidden="true"><div class="strobe-pattern"></div></div>
+        <div class="note-big" id="tNote">—</div>
+        <div class="tuner-sub" id="tNoteFull">${t("tuner.playString")}</div>
+        <div class="tuner-meter">
+          <div class="meter">
+            <div class="meter-ticks"></div>
+            <div class="zone"></div>
+            <div id="needle"></div>
+          </div>
+          <div class="meter-labels">
+            <span>${t("tuner.low")}</span>
+            <span class="ok">${t("tuner.inTune")}</span>
+            <span>♯ Alto</span>
+          </div>
+        </div>
+        <div class="cents" id="tCents">—</div>
+        <div id="fineTune"></div>
+        <div id="tuneStatus">—</div>
+      </div>
+      <button class="btn btn-primary btn-block tuner-mic" id="micBtn">${icon("mic", 20)}<span>Activar micrófono</span></button>
+      <div class="tuner-modes">
+        <button class="tuner-pill ${tunerState.chromatic?'on':''}" id="chromaticBtn">${icon("tuner", 16)}<span>${tunerState.chromatic?t('tuner.chromatic'):t('tuner.byString')}</span></button>
+        <button class="tuner-pill ${tunerState.autoTune?'on':''}" id="autoTuneBtn">${icon("check", 16)}<span>${offLabel(t("tuner.tuneAll"))}</span></button>
+        <button class="tuner-pill ${tunerState.continuous?'on':''}" id="continuousBtn">${icon("volume", 16)}<span>${offLabel(tunerState.continuous?t('tuner.stopTone'):t('tuner.continuousTone'))}</span></button>
+        <button class="tuner-pill ${tunerState.muteChime?'':'on'}" id="muteBtn">${icon("bell", 16)}<span>${offLabel(tunerState.muteChime?t('tuner.muted'):t('tuner.sound'))}</span></button>
+      </div>
+      <!-- Cuerdas: toca una para oír la referencia -->
+      <div class="section-title tuner-strings-title">Cuerdas · toca una para oírla</div>
+      <div id="guitarVisual" class="tuner-strings">
+        <div id="stringsContainer" style="gap:${numStrings>4?6:10}px">
           ${tuningFreqs.map((f, i) => {
             const strName = ins.strings[i];
             const isActive = i === tunerState.targetString;
             const badgeCount = (tunerState.history[tunerState.instrument+":"+tunerState.tuning+":"+i] || 0);
-            return `<div class="guitar-string" data-string="${i}" onclick="window.__tunerSetString(${i})" style="display:flex;align-items:center;gap:12px;cursor:pointer;padding:8px 4px;border-radius:8px;transition:background 0.2s;${isActive?'background:rgba(88,204,2,0.15)':''}">
-              <div style="width:24px;text-align:center;font-weight:900;font-size:14px;color:${isActive?'var(--green)':'var(--muted)'}">${strName}</div>
-              <div style="flex:1;height:3px;background:linear-gradient(90deg,#888,#ccc,#888);border-radius:2px;position:relative">
-                <div class="string-vibrate" data-sv="${i}" style="position:absolute;inset:-4px 0;pointer-events:none;opacity:0"></div>
+            return `<div class="guitar-string" data-string="${i}" onclick="window.__tunerSetString(${i})" style="${isActive?'background:rgba(88,204,2,0.15)':''}">
+              <div class="gs-name" style="color:${isActive?'var(--green)':'var(--muted)'}">${strName}</div>
+              <div class="gs-line" style="height:${1.5 + (numStrings - i) * 0.5}px">
+                <div class="string-vibrate" data-sv="${i}"></div>
               </div>
-              <div style="display:flex;align-items:center;gap:6px">
-                <span data-badge="${i}" style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:2px 8px;font-size:11px;font-weight:700;color:var(--muted)">${badgeCount}</span>
-                <div style="width:60px;text-align:right;font-size:12px;color:var(--muted)" id="strFreq${i}">${f.toFixed(1)} Hz</div>
-              </div>
+              <span class="gs-badge" data-badge="${i}" title="Veces afinada">${badgeCount}</span>
+              <div class="gs-freq" id="strFreq${i}">${f.toFixed(1)} Hz</div>
             </div>`;
           }).join("")}
         </div>
       </div>
-      <!-- Strobe tuner -->
-      <div style="display:flex;justify-content:center;margin-bottom:16px">
-        <div id="strobe" class="strobe" style="width:80px;height:80px;border-radius:50%;border:3px solid var(--border);position:relative;overflow:hidden;background:var(--card2)">
-          <div class="strobe-pattern" style="position:absolute;inset:0;background:repeating-conic-gradient(var(--green) 0deg 10deg, transparent 10deg 20deg);opacity:0.8"></div>
-        </div>
-      </div>
-      <!-- Note display -->
-      <div class="tuner-display" style="text-align:center;padding:24px;background:var(--card);border-radius:16px;margin-bottom:16px;border:2px solid var(--border)">
-        <div class="note-big" id="tNote" style="font-size:80px;font-weight:900;line-height:1;transition:color 0.3s">—</div>
-        <div style="font-size:16px;color:var(--muted);margin-top:4px" id="tNoteFull">${t("tuner.playString")}</div>
-        <div class="cents" id="tCents" style="font-size:18px;margin-top:8px;font-weight:700">—</div>
-        <div id="fineTune" style="font-size:13px;color:var(--green);margin-top:4px;min-height:18px"></div>
-        <!-- Meter bar -->
-        <div style="margin:16px 0;position:relative">
-          <div class="meter" style="height:20px;background:var(--border);border-radius:10px;position:relative;overflow:hidden">
-            <div class="zone" style="position:absolute;top:0;height:100%;background:rgba(88,204,2,0.2);left:42%;width:16%;border-left:2px solid var(--green);border-right:2px solid var(--green)"></div>
-            <div id="needle" style="position:absolute;top:0;width:4px;height:100%;background:var(--red);left:50%;transform:translateX(-50%);transition:left 0.1s,bbackground 0.3s;border-radius:2px"></div>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
-            <span>${t("tuner.low")}</span>
-            <span style="color:var(--green);font-weight:800">${t("tuner.inTune")}</span>
-            <span>♯ Alto</span>
-          </div>
-        </div>
-        <!-- Status indicator -->
-        <div id="tuneStatus" style="font-size:24px;font-weight:900;margin-top:8px;transition:all 0.3s">—</div>
-      </div>
-      <!-- Mic button -->
-      <button class="btn btn-primary btn-block" id="micBtn" style="margin-bottom:16px">🎤 Activar micrófono</button>
-      <button class="btn btn-secondary btn-block" id="testAudioBtn" style="margin-bottom:16px">🔊 Probar audio (deberías oír un tono)</button>
-      <!-- String selector -->
-      <div class="section-title" style="margin-left:0;margin-bottom:8px">Cuerdas</div>
-      <div class="strings-list" id="stringsList" style="display:grid;gap:6px"></div>
+      <button class="btn btn-ghost btn-block" id="testAudioBtn">${icon("volume", 18)}<span>Probar audio</span></button>
     </div>`;
+  const setMicBtn = (on) => { const b = $("#micBtn"); if (b) b.innerHTML = on ? `${icon("stop", 20)}<span>Detener</span>` : `${icon("mic", 20)}<span>Activar micrófono</span>`; };
   // Global handler for guitar string clicks
   window.__tunerSetString = (i) => {
     tunerState.targetString = i;
@@ -1057,7 +1049,6 @@ function renderTuner(v) {
     });
     $$(".string-btn").forEach((b, idx) => b.classList.toggle("active", idx === i));
     playTone(tuningFreqs[i], 1.0, { gain: 0.2 });
-    toast("Cuerda " + ins.strings[i] + " seleccionada");
     if (tunerState.continuous) startContinuousTone(tuningFreqs[i]);
   };
   // instrument buttons
@@ -1071,22 +1062,6 @@ function renderTuner(v) {
     renderTuner(view());
   });
   $("#tuningSel").onchange = (e) => { tunerState.tuning = e.target.value; tunerState.autoTune = false; renderTuner(view()); };
-  // strings list
-  const sl = $("#stringsList");
-  tuningFreqs.forEach((f, i) => {
-    const btn = document.createElement("div");
-    btn.className = "string-btn" + (i === tunerState.targetString ? " active" : "");
-    const badgeCount = (tunerState.history[tunerState.instrument+":"+tunerState.tuning+":"+i] || 0);
-    btn.innerHTML = `<span>${ins.strings[i]}</span><span data-badge2="${i}" style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:2px 8px;font-size:11px;font-weight:700;color:var(--muted);margin-left:8px">${badgeCount}</span><span class="freq">${f.toFixed(2)} Hz</span>`;
-    btn.onclick = () => { tunerState.targetString = i; tunerState.autoTune = false; $$(".string-btn").forEach(x=>x.classList.remove("active")); btn.classList.add("active");
-      $$(".guitar-string").forEach((el, idx) => {
-        el.style.background = idx === i ? "rgba(88,204,2,0.15)" : "transparent";
-      });
-      playTone(tuningFreqs[i], 1.0, { gain: 0.2 });
-      if (tunerState.continuous) startContinuousTone(tuningFreqs[i]);
-    };
-    sl.appendChild(btn);
-  });
   // Mode buttons handlers
   $("#chromaticBtn").onclick = () => { tunerState.chromatic = !tunerState.chromatic; tunerState.autoTune = false; renderTuner(view()); };
   $("#muteBtn").onclick = () => { tunerState.muteChime = !tunerState.muteChime; renderTuner(view()); };
@@ -1138,7 +1113,7 @@ function renderTuner(v) {
   let inTuneFrames = 0;
   let smoothedNeedlePos = 50;
   $("#micBtn").onclick = async () => {
-    if (isRunning()) { stopMic(); stopContinuousTone(); tunerState.continuous=false; $("#micBtn").textContent = "🎤 Activar micrófono"; $("#tuneStatus").textContent = "—"; return; }
+    if (isRunning()) { stopMic(); stopContinuousTone(); tunerState.continuous=false; setMicBtn(false); $("#tuneStatus").textContent = "—"; return; }
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       toast("Tu navegador no soporta acceso al micrófono");
       return;
@@ -1147,11 +1122,11 @@ function renderTuner(v) {
       if (!window.__audioCtx) window.__audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       if (window.__audioCtx.state === 'suspended') await window.__audioCtx.resume();
     } catch (e) {}
-    $("#micBtn").textContent = "⏳ Solicitando permiso...";
+    $("#micBtn").textContent = "Solicitando permiso…";
     const ok = await startMic((pitch) => {
       if (!pitch) {
         $("#tCents").textContent = "Sin señal... Toca una cuerda más fuerte o acerca el micrófono";
-        $("#tuneStatus").textContent = "🎤 Escuchando...";
+        $("#tuneStatus").textContent = "Escuchando…";
         $("#tuneStatus").style.color = "var(--muted)";
         $("#tNote").textContent = "—";
         $("#tNoteFull").textContent = "Toca una cuerda cerca del micrófono";
@@ -1209,7 +1184,7 @@ function renderTuner(v) {
         $("#tCents").textContent = `${centsStr} cents — ${cents > 0 ? "Baja la cuerda" : "Sube la cuerda"}`;
         $("#tCents").style.color = "var(--red)";
       }
-      $("#fineTune").textContent = Math.abs(cents) <= 1 ? "🎯 Afinación fina (±1 cent)" : "";
+      $("#fineTune").textContent = Math.abs(cents) <= 1 ? "Afinación fina (±1 cent)" : "";
       // Needle
       const targetPos = 50 + Math.max(-50, Math.min(50, cents));
       smoothedNeedlePos += (targetPos - smoothedNeedlePos) * 0.15;
@@ -1292,17 +1267,17 @@ function renderTuner(v) {
       }
     });
     if (ok) {
-      $("#micBtn").textContent = "⏹ Detener";
-      $("#tuneStatus").textContent = "🎤 Escuchando...";
+      setMicBtn(true);
+      $("#tuneStatus").textContent = "Escuchando…";
       toast("Micrófono activado. Toca una cuerda.");
     } else {
-      $("#micBtn").textContent = "🎤 Activar micrófono";
+      setMicBtn(false);
       toast("No se pudo acceder al micrófono.");
       const helpDiv = document.createElement("div");
       helpDiv.style.cssText = "background:var(--card2);padding:12px;border-radius:8px;margin-top:8px;font-size:12px;color:var(--muted)";
       helpDiv.innerHTML = `
         <b style="color:var(--text)">¿No funciona el micrófono?</b><br>
-        1. Haz clic en el icono de candado 🔒 en la barra de direcciones<br>
+        1. Haz clic en el icono de candado en la barra de direcciones<br>
         2. Busca "Micrófono" y cámbialo a "Permitir"<br>
         3. Recarga la página (F5) y vuelve a intentar`;
       $("#micBtn").parentElement.appendChild(helpDiv);
@@ -1981,8 +1956,10 @@ function renderProfile(v) {
       }
     }, 5000);
   };
-  $("#resetBtn").onclick = () => {
+  $("#resetBtn").onclick = async () => {
     if (confirm("¿Reiniciar todo el progreso?")) {
+      try { clearQueue(); } catch (e) {}
+      try { await resetRemoteProgress(); } catch (e) { console.warn(e); }
       const ns = resetState(); Object.assign(state, ns); navigate("onboard");
     }
   };
