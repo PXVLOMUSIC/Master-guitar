@@ -384,4 +384,217 @@ export const SAMPLE_TABS = [
     ]
   }
 
+  ,{
+    title: "Ama, ama, ama y ensancha el alma (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:2,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 2, notes: [{fret:2,duration:2},{fret:1,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:2,duration:2}] },
+      { string: 4, notes: [{fret:0,duration:2}] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Standby (riff)",
+    bpm: 110,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:3,duration:2},{fret:5,duration:2},{fret:7,duration:2}] },
+      { string: 1, notes: [{fret:3,duration:2},{fret:3,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:4,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Puta (riff)",
+    bpm: 130,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 4, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2}] },
+      { string: 5, notes: [{fret:0,duration:4}] }
+    ]
+  },
+  {
+    title: "Demonios (riff)",
+    bpm: 115,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:4,duration:2}] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:4,duration:2}] },
+      { string: 4, notes: [{fret:2,duration:2}] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Soldadito marinero (intro)",
+    bpm: 100,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:3,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [{fret:0,duration:2},{fret:1,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [{fret:0,duration:4}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "La primavera trompetera (riff)",
+    bpm: 115,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 4, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2}] },
+      { string: 5, notes: [{fret:0,duration:2}] }
+    ]
+  }
+
+
+
+
+  ,{
+    title: "Maldito duende (riff)",
+    bpm: 124,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 4, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2}] },
+      { string: 5, notes: [{fret:0,duration:4}] }
+    ]
+  },
+  {
+    title: "Sin ti no soy nada (riff)",
+    bpm: 112,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:1,duration:2},{fret:3,duration:2}] },
+      { string: 1, notes: [{fret:1,duration:2},{fret:3,duration:2}] },
+      { string: 2, notes: [{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 3, notes: [{fret:2,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Deseos de cosas imposibles (riff)",
+    bpm: 112,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [{fret:3,duration:2},{fret:1,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Copenhague (riff)",
+    bpm: 118,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:4,duration:2}] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:4,duration:2}] },
+      { string: 4, notes: [{fret:2,duration:2}] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Que bien (riff)",
+    bpm: 132,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:3,duration:2},{fret:5,duration:2},{fret:3,duration:2}] },
+      { string: 1, notes: [{fret:3,duration:2},{fret:3,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Terriblemente cruel (riff)",
+    bpm: 116,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 4, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2}] },
+      { string: 5, notes: [{fret:0,duration:4}] }
+    ]
+  },
+  {
+    title: "16 anitos (riff)",
+    bpm: 136,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:5,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Moriaria por vos (riff)",
+    bpm: 104,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [{fret:0,duration:2},{fret:1,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [{fret:0,duration:4}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Copacabana (riff)",
+    bpm: 128,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:5,duration:2}] },
+      { string: 1, notes: [{fret:1,duration:2},{fret:3,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Muneca de trapo (riff)",
+    bpm: 124,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:5,duration:2},{fret:3,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  }
+
 ];
