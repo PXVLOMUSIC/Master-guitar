@@ -12,10 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node 22
         uses: actions/setup-node@v4
         with:
-          node-version: '22'
+          node-version: '22.x'
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -28,8 +28,11 @@ jobs:
 
       - name: Verify tools
         run: |
+          which node
           node --version
-          java -version
+          npm --version
+          npx --version
+          java -version 2>&1
           xcodebuild -version
 
       - name: Install dependencies
@@ -45,6 +48,7 @@ jobs:
 
       - name: Add iOS platform
         run: |
+          export PATH="$(npm config get prefix)/bin:$PATH"
           if [ ! -d "ios" ]; then npx cap add ios; fi
           npx cap sync ios
 
@@ -58,7 +62,7 @@ jobs:
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
-            2>&1 | tail -30
+            2>&1 | tail -40
           cd build/Products/Release-iphoneos
           mkdir -p Payload
           cp -r App.app Payload/
