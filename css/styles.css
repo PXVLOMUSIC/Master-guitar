@@ -2580,27 +2580,15 @@ body.section-open { overflow: hidden; }
 
 /* ---------- Optional guitar background image ---------- */
 /* To enable: add class "has-bg-image" to <body> and place image at assets/bg-guitar.jpg */
-body.has-bg-image::before,
-body.has-bg-image::after {
+body.has-bg-image::before {
   content: "";
   position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 50%;
+  inset: 0;
   z-index: -1;
   background: url("../assets/bg-guitar.jpg?v=3") center / cover no-repeat;
   opacity: var(--bg-image-opacity, 0.15);
   filter: brightness(0.35) saturate(0.7) blur(0.5px);
   pointer-events: none;
-}
-body.has-bg-image::before {
-  left: 0;
-  transform: scaleX(-1);
-  background-position: right center;
-}
-body.has-bg-image::after {
-  right: 0;
-  background-position: right center;
 }
 
 
