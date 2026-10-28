@@ -313,5 +313,7 @@
   "settings.notif3": "Jeden Tag ein bisschen: So lernt man wirklich 🎯",
   "settings.notif4": "Ein paar Akkorde vor dem Abendessen? 🎸",
   "settings.invalidFormat": "Ungültiges Format",
-  "settings.resetConfirm": "Fortschritt für dieses Gerät zurücksetzen?\n\nXP, Lektionen, Streak und lokale Einstellungen werden gelöscht. Wenn Sie über ein Konto verfügen, kann die Cloud dieses wiederherstellen, wenn Sie sich erneut anmelden."
+  "settings.resetConfirm": "Fortschritt für dieses Gerät zurücksetzen?\n\nXP, Lektionen, Streak und lokale Einstellungen werden gelöscht. Wenn Sie über ein Konto verfügen, kann die Cloud dieses wiederherstellen, wenn Sie sich erneut anmelden.",
+  "app.correctPlus5": "Richtig! +5 EP",
+  "app.incorrectMinus1": "Falsch. -1 ❤️"
 }

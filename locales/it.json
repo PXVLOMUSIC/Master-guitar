@@ -313,5 +313,7 @@
   "settings.notif3": "Un po' ogni giorno: così si impara davvero 🎯",
   "settings.notif4": "Qualche accordo prima di cena? 🎸",
   "settings.invalidFormat": "Formato non valido",
-  "settings.resetConfirm": "Reimpostare l'avanzamento per questo dispositivo?\n\nXP, lezioni, serie e impostazioni locali verranno cancellati. Se hai un account, il cloud può ripristinarlo quando accedi nuovamente."
+  "settings.resetConfirm": "Reimpostare l'avanzamento per questo dispositivo?\n\nXP, lezioni, serie e impostazioni locali verranno cancellati. Se hai un account, il cloud può ripristinarlo quando accedi nuovamente.",
+  "app.correctPlus5": "Corretto! +5 XP",
+  "app.incorrectMinus1": "Errato. -1❤️"
 }

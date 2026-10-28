@@ -313,5 +313,7 @@
   "settings.notif3": "A little every day: this is how you really learn 🎯",
   "settings.notif4": "Some chords before dinner? 🎸",
   "settings.invalidFormat": "Invalid format",
-  "settings.resetConfirm": "Reset progress for this device?\n\nXP, lessons, streak, and local settings will be erased. If you have an account, the cloud can restore it when you log in again."
+  "settings.resetConfirm": "Reset progress for this device?\n\nXP, lessons, streak, and local settings will be erased. If you have an account, the cloud can restore it when you log in again.",
+  "app.correctPlus5": "Correct! +5 XP",
+  "app.incorrectMinus1": "Incorrect. -1 ❤️"
 }

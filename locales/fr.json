@@ -313,5 +313,7 @@
   "settings.notif3": "Un peu chaque jour : c'est comme ça qu'on apprend vraiment 🎯",
   "settings.notif4": "Quelques accords avant le dîner ? 🎸",
   "settings.invalidFormat": "Format invalide",
-  "settings.resetConfirm": "Réinitialiser la progression pour cet appareil ?\n\nL'XP, les leçons, la séquence et les paramètres locaux seront effacés. Si vous avez un compte, le cloud peut le restaurer lorsque vous vous reconnectez."
+  "settings.resetConfirm": "Réinitialiser la progression pour cet appareil ?\n\nL'XP, les leçons, la séquence et les paramètres locaux seront effacés. Si vous avez un compte, le cloud peut le restaurer lorsque vous vous reconnectez.",
+  "app.correctPlus5": "Correct! +5 XP",
+  "app.incorrectMinus1": "Incorrect. -1 ❤️"
 }

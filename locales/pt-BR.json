@@ -313,5 +313,7 @@
   "settings.notif3": "Um pouco todos os dias: é assim que você aprende de verdade 🎯",
   "settings.notif4": "Alguns acordes antes do jantar? 🎸",
   "settings.invalidFormat": "Formato inválido",
-  "settings.resetConfirm": "Redefinir o progresso deste dispositivo?\n\nXP, lições, sequência e configurações locais serão apagadas. Se você tiver uma conta, a nuvem poderá restaurá-la quando você fizer login novamente."
+  "settings.resetConfirm": "Redefinir o progresso deste dispositivo?\n\nXP, lições, sequência e configurações locais serão apagadas. Se você tiver uma conta, a nuvem poderá restaurá-la quando você fizer login novamente.",
+  "app.correctPlus5": "Correto! +5 XP",
+  "app.incorrectMinus1": "Incorreto. -1 ❤️"
 }
