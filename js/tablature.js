@@ -211,5 +211,70 @@ export const SAMPLE_TABS = [
       { string: 4, notes: [] },
       { string: 5, notes: [] }
     ]
+  },
+  {
+    title: "Enter Sandman (riff)",
+    bpm: 123,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:0,duration:2},{fret:3,duration:2},{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2}] }
+    ]
+  },
+  {
+    title: "Sunshine of Your Love (riff)",
+    bpm: 115,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:3},{fret:3,duration:2},{fret:0,duration:3},{fret:3,duration:2},{fret:5,duration:3}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:3},{fret:0,duration:3},{fret:0,duration:3}] }
+    ]
+  },
+  {
+    title: "Day Tripper (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:4,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "La Grange (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:3,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:3,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2}] }
+    ]
+  },
+  {
+    title: "Purple Haze (riff)",
+    bpm: 108,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:7,duration:2},{fret:7,duration:2},{fret:5,duration:2},{fret:7,duration:2},{fret:7,duration:2},{fret:5,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
   }
 ];
