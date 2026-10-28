@@ -23,6 +23,15 @@
   --border-2: #34465a;
   --border-strong: #3e5368;
 
+  /* Gradients (soft, modern) */
+  --grad-bg: linear-gradient(160deg, #0b1218 0%, #121c24 50%, #0f1a22 100%);
+  --grad-card: linear-gradient(145deg, rgba(28,42,54,0.95) 0%, rgba(22,32,42,0.98) 100%);
+  --grad-green: linear-gradient(135deg, #58cc02 0%, #46a302 100%);
+  --grad-orange: linear-gradient(135deg, #ff9600 0%, #e08600 100%);
+  --grad-red: linear-gradient(135deg, #ff4b4b 0%, #d63a3a 100%);
+  --grad-blue: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --grad-glass: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+
   --green: #58cc02;
   --green-2: #46a302;
   --green-soft: rgba(88, 204, 2, 0.14);
@@ -219,7 +228,7 @@ body {
   font-size: var(--text-base);
   line-height: var(--leading-normal);
   font-weight: var(--weight-regular);
-  background: var(--bg);
+  background: var(--grad-bg);
   color: var(--text);
   min-height: 100vh;
   min-height: 100dvh;
@@ -428,6 +437,7 @@ input, select, textarea {
 
 .bottomnav button.active {
   color: var(--green);
+  text-shadow: 0 0 8px rgba(88, 204, 2, 0.4);
 }
 
 .bottomnav button.active .ico {
@@ -440,11 +450,11 @@ input, select, textarea {
   bottom: 2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green);
+  background: var(--grad-green);
+  box-shadow: 0 0 10px rgba(88, 204, 2, 0.7);
 }
 
 .bottomnav button:hover:not(.active) {
@@ -458,7 +468,7 @@ input, select, textarea {
 
 /* ---------- Cards ---------- */
 .card {
-  background: var(--card);
+  background: var(--grad-card);
   border: 1px solid var(--border);
   border-radius: var(--r-lg);
   padding: var(--space-4);
@@ -471,7 +481,7 @@ input, select, textarea {
 
 .card:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-lg), var(--shadow-3d-card);
+  box-shadow: var(--shadow-lg), var(--shadow-3d-card), 0 0 20px rgba(88, 204, 2, 0.08);
   border-color: var(--border-2);
 }
 
@@ -531,7 +541,7 @@ input, select, textarea {
 }
 
 .btn-primary {
-  background: var(--green);
+  background: var(--grad-green);
   color: #fff;
   box-shadow: var(--shadow-3d-green);
 }
