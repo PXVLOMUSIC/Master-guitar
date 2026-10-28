@@ -27,7 +27,16 @@ const groupState = {
 const nearestCache = new Map();
 
 function abs(file) {
-  return new URL(file, BASE).href;
+  const url = new URL(file, BASE).href;
+  // En app nativa, intentar convertir la ruta para el WebView de Capacitor.
+  try {
+    const cap = window.Capacitor;
+    if (cap && typeof cap.convertFileSrc === "function" && cap.isNativePlatform && cap.isNativePlatform()) {
+      // Si la URL es capacitor:// o http://localhost, devolverla tal cual.
+      if (url.startsWith("capacitor://") || url.startsWith("http://localhost")) return url;
+    }
+  } catch (e) {}
+  return url;
 }
 
 export function getSamplesManifest() {
@@ -52,11 +61,33 @@ export function getSampleState() {
 export async function loadManifest() {
   if (manifest) return manifest;
   if (manifestPromise) return manifestPromise;
-  manifestPromise = fetch(MANIFEST_URL)
-    .then((r) => {
-      if (!r.ok) throw new Error("No se pudo cargar el manifiesto de audio");
-      return r.json();
-    })
+  manifestPromise = (async () => {
+    const urls = [MANIFEST_URL];
+    // En app nativa, intentar rutas alternativas.
+    try {
+      if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) {
+        urls.push("assets/audio/manifest.json");
+        urls.push("/assets/audio/manifest.json");
+      }
+    } catch (e) {}
+    for (const u of urls) {
+      try {
+        const r = await fetch(u);
+        if (r.ok) {
+          const m = await r.json();
+          manifest = m;
+          return m;
+        }
+      } catch (e) {
+        console.warn("[samples] fetch failed for", u, e);
+      }
+    }
+    throw new Error("No se pudo cargar el manifiesto de audio");
+  })().catch((e) => {
+    console.warn("[samples]", e);
+    manifestPromise = null;
+    throw e;
+  })
     .then((m) => {
       manifest = m;
       return m;
@@ -73,12 +104,27 @@ async function loadBuffer(ctx, file) {
   if (buffers.has(file)) return buffers.get(file);
   if (failed.has(file)) return null;
   try {
-    const res = await fetch(abs(file));
-    if (!res.ok) throw new Error("HTTP " + res.status);
-    const arr = await res.arrayBuffer();
-    const buf = await ctx.decodeAudioData(arr);
-    buffers.set(file, buf);
-    return buf;
+    const urls = [abs(file)];
+    try {
+      if (window.Capacitor && window.Capacitor.isNativePlatform && window.Capacitor.isNativePlatform()) {
+        urls.push(file);
+        urls.push("/assets/audio/" + file);
+      }
+    } catch (e) {}
+    for (const u of urls) {
+      try {
+        const res = await fetch(u);
+        if (!res.ok) continue;
+        const arr = await res.arrayBuffer();
+        const buf = await ctx.decodeAudioData(arr);
+        buffers.set(file, buf);
+        return buf;
+      } catch (e) {
+        console.warn("[samples] fetch failed for", u, e);
+      }
+    }
+    failed.add(file);
+    return null;
   } catch (e) {
     failed.add(file);
     return null;
