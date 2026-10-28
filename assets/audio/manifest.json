@@ -41,6 +41,18 @@
       "license": "CC-BY-3.0",
       "url": "https://github.com/nbrosowsky/tonejs-instruments",
       "details": "Fuentes originales: Karoryfer (guitarra eléctrica), quartertone/Freesound (guitarra de nylon) y Versilian VSO2 (piano). Atribución obligatoria; ver licenses.html."
+    },
+    {
+      "name": "Salamander Grand Piano V3",
+      "author": "Alexander Holm",
+      "license": "CC-BY-3.0",
+      "url": "https://freepats.zenvoid.org/Piano/acoustic-grand-piano.html"
+    },
+    {
+      "name": "Philharmonia Sound Samples",
+      "author": "Philharmonia Orchestra",
+      "license": "Free for commercial use (not sold as samples)",
+      "url": "https://philharmonia.co.uk/resources/sound-samples/"
     }
   ],
   "drums": {
@@ -1433,6 +1445,149 @@
       "midi": 96,
       "vel": "mf",
       "file": "piano/c7.mp3"
+    }
+  ],
+  "piano_salamander": [
+    {
+      "file": "piano/piano_c2.flac",
+      "midi": 36,
+      "note": "c2"
+    },
+    {
+      "file": "piano/piano_ds2.flac",
+      "midi": 39,
+      "note": "ds2"
+    },
+    {
+      "file": "piano/piano_fs2.flac",
+      "midi": 42,
+      "note": "fs2"
+    },
+    {
+      "file": "piano/piano_a2.flac",
+      "midi": 45,
+      "note": "a2"
+    },
+    {
+      "file": "piano/piano_c3.flac",
+      "midi": 48,
+      "note": "c3"
+    },
+    {
+      "file": "piano/piano_ds3.flac",
+      "midi": 51,
+      "note": "ds3"
+    },
+    {
+      "file": "piano/piano_fs3.flac",
+      "midi": 54,
+      "note": "fs3"
+    },
+    {
+      "file": "piano/piano_a3.flac",
+      "midi": 57,
+      "note": "a3"
+    },
+    {
+      "file": "piano/piano_c4.flac",
+      "midi": 60,
+      "note": "c4"
+    },
+    {
+      "file": "piano/piano_ds4.flac",
+      "midi": 63,
+      "note": "ds4"
+    },
+    {
+      "file": "piano/piano_fs4.flac",
+      "midi": 66,
+      "note": "fs4"
+    },
+    {
+      "file": "piano/piano_a4.flac",
+      "midi": 69,
+      "note": "a4"
+    },
+    {
+      "file": "piano/piano_c5.flac",
+      "midi": 72,
+      "note": "c5"
+    },
+    {
+      "file": "piano/piano_ds5.flac",
+      "midi": 75,
+      "note": "ds5"
+    },
+    {
+      "file": "piano/piano_fs5.flac",
+      "midi": 78,
+      "note": "fs5"
+    },
+    {
+      "file": "piano/piano_a5.flac",
+      "midi": 81,
+      "note": "a5"
+    },
+    {
+      "file": "piano/piano_c6.flac",
+      "midi": 84,
+      "note": "c6"
+    }
+  ],
+  "violin": [
+    {
+      "file": "strings/violin_a4.flac",
+      "midi": 69,
+      "note": "a4"
+    }
+  ],
+  "viola": [
+    {
+      "file": "strings/viola_a4.flac",
+      "midi": 69,
+      "note": "a4"
+    }
+  ],
+  "cello": [
+    {
+      "file": "strings/cello_a3.flac",
+      "midi": 57,
+      "note": "a3"
+    }
+  ],
+  "contrabass": [
+    {
+      "file": "strings/contrabass_a2.flac",
+      "midi": 45,
+      "note": "a2"
+    }
+  ],
+  "flute": [
+    {
+      "file": "winds/flute_a4.flac",
+      "midi": 69,
+      "note": "a4"
+    }
+  ],
+  "clarinet": [
+    {
+      "file": "winds/clarinet_a4.flac",
+      "midi": 69,
+      "note": "a4"
+    }
+  ],
+  "trumpet": [
+    {
+      "file": "brass/trumpet_a4.flac",
+      "midi": 69,
+      "note": "a4"
+    }
+  ],
+  "trombone": [
+    {
+      "file": "brass/trombone_a3.flac",
+      "midi": 57,
+      "note": "a3"
     }
   ]
 }

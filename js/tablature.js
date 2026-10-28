@@ -595,6 +595,135 @@ export const SAMPLE_TABS = [
       { string: 4, notes: [] },
       { string: 5, notes: [] }
     ]
+  },
+  {
+    title: "House of the Rising Sun (melodía completa)",
+    bpm: 84,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:9,duration:2}, {fret:5,duration:2}, {fret:7,duration:2}, {fret:9,duration:2}, {fret:10,duration:2}, {fret:9,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:4,duration:2}, {fret:2,duration:2}, {fret:0,duration:2}, {fret:2,duration:2}, {fret:4,duration:2}, {fret:5,duration:2}, {fret:7,duration:2}, {fret:9,duration:2}, {fret:9,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:4,duration:2}, {fret:2,duration:2}, {fret:0,duration:2}, {fret:2,duration:2}, {fret:4,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] },
+      { string: 5, notes: [{fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}] }
+    ]
+  },
+  {
+    title: "Smoke on the Water (riff completo)",
+    bpm: 112,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:0,duration:2}, {fret:3,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:0,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:0,duration:2}, {fret:3,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:0,duration:2}] },
+      { string: 4, notes: [{fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}] },
+      { string: 5, notes: [{fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] }
+    ]
+  },
+  {
+    title: "Seven Nation Army (riff completo)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:7,duration:2}, {fret:7,duration:2}, {fret:10,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:7,duration:2}, {fret:7,duration:2}, {fret:10,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}] },
+      { string: 5, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}] }
+    ]
+  },
+  {
+    title: "Ode to Joy (melodía)",
+    bpm: 108,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:5,duration:2}, {fret:5,duration:2}, {fret:6,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] },
+      { string: 5, notes: [{fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}] }
+    ]
+  },
+  {
+    title: "Twinkle Twinkle Little Star (melodía)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:1,duration:2}, {fret:1,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}] },
+      { string: 5, notes: [{fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}] }
+    ]
+  },
+  {
+    title: "Mary Had a Little Lamb (melodía)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] },
+      { string: 5, notes: [{fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}] }
+    ]
+  },
+  {
+    title: "La Cucaracha (melodía)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:1,duration:2}, {fret:1,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:5,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:10,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:1,duration:2}, {fret:5,duration:2}, {fret:8,duration:2}] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}, {fret:10,duration:2}] },
+      { string: 5, notes: [{fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] }
+    ]
+  },
+  {
+    title: "Greensleeves (melodía)",
+    bpm: 96,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:9,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:4,duration:2}, {fret:2,duration:2}, {fret:4,duration:2}, {fret:5,duration:2}, {fret:7,duration:2}, {fret:9,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:4,duration:2}, {fret:2,duration:2}, {fret:0,duration:2}, {fret:2,duration:2}, {fret:4,duration:2}, {fret:5,duration:2}, {fret:7,duration:2}, {fret:9,duration:2}, {fret:7,duration:2}, {fret:5,duration:2}, {fret:4,duration:2}, {fret:2,duration:2}, {fret:0,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}] },
+      { string: 5, notes: [{fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}] }
+    ]
+  },
+  {
+    title: "Scarborough Fair (melodía)",
+    bpm: 100,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [{fret:10,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:10,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:8,duration:2}, {fret:6,duration:2}, {fret:5,duration:2}, {fret:3,duration:2}, {fret:1,duration:2}, {fret:3,duration:2}, {fret:5,duration:2}, {fret:6,duration:2}] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}, {fret:3,duration:2}] },
+      { string: 5, notes: [{fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:5,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}, {fret:8,duration:2}] }
+    ]
+  },
+  {
+    title: "So payaso (riff de Extremoduro)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2}, {fret:2,duration:2}, {fret:3,duration:2}, {fret:0,duration:2}, {fret:2,duration:2}, {fret:3,duration:2}, {fret:0,duration:2}, {fret:2,duration:2}, {fret:3,duration:2}, {fret:0,duration:2}, {fret:2,duration:2}, {fret:3,duration:2}] },
+      { string: 4, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}] },
+      { string: 5, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}] }
+    ]
   }
-
 ];
