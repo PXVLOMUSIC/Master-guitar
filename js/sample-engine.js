@@ -259,8 +259,19 @@ export function playLayered(group, id, when, destination, opts = {}) {
 }
 
 /** Golpe de batería real. */
+let drumKit = "original";
+export function setDrumKit(kit) { drumKit = kit || "original"; }
+export function getDrumKit() { return drumKit; }
+
 export function playDrum(id, when, destination, opts = {}) {
   if (!groupState.drums.ready) return false;
+  // Si hay un kit variante disponible, usarlo.
+  if (drumKit && drumKit !== "original") {
+    const variant = id + "_" + drumKit;
+    if (manifest && manifest.drums && manifest.drums[variant]) {
+      return playLayered("drums", variant, when, destination, opts);
+    }
+  }
   return playLayered("drums", id, when, destination, opts);
 }
 

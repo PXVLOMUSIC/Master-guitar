@@ -2,7 +2,7 @@
 import { getAudioContext, resumeContext, setFxChorus, setFxDelay, setFxDistortion, setFxReverb } from "./audio.js";
 import { midiToFreq } from "./instruments.js";
 import { state as appState, saveState } from "./storage.js";
-import { preloadGroup, isGroupReady, getSampleState, playDrum, playHand, playPitched } from "./sample-engine.js";
+import { preloadGroup, isGroupReady, getSampleState, playDrum, playHand, playPitched, setDrumKit } from "./sample-engine.js";
 import { t } from "./i18n.js";
 
 /* ----------------------------- Instrument list ----------------------------- */
@@ -252,6 +252,8 @@ const state = {
   metronome: { enabled: false, volume: 0.5 },
   loopBars: 4,
   bassType: "electric",
+  guitarTone: "acoustic",
+  drumKit: "original",
   tapTimes: [],
   progression: null,
   // Piano roll: notas propias por pista ({ step, midi, len } en semicorcheas).
@@ -1084,9 +1086,9 @@ function injectStyles() {
   .bp-badge.ready { background: rgba(34,197,94,.16); color:#7ee038; border-color: rgba(34,197,94,.4); }
   .bp-transport { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
   .bp-transport button { padding: 8px 14px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; transition: box-shadow 0.2s, transform 0.1s; }
-  .bp-transport button:hover { box-shadow: 0 0 12px rgba(255,255,255,0.15); transform: translateY(-1px); }
-  .bp-transport .primary { background: #22c55e; color: #fff; box-shadow: 0 0 12px rgba(34, 197, 94, 0.4); transition: box-shadow 0.2s, transform 0.1s; }
-  .bp-transport .primary:hover { box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); transform: translateY(-1px); }
+  .bp-transport button:hover { box-shadow: 0 0 18px rgba(255,255,255,0.1); transform: translateY(-1px); }
+  .bp-transport .primary { background: #22c55e; color: #fff; box-shadow: 0 0 18px rgba(34, 197, 94, 0.25); transition: box-shadow 0.2s, transform 0.1s; }
+  .bp-transport .primary:hover { box-shadow: 0 0 24px rgba(34, 197, 94, 0.35); transform: translateY(-1px); }
   .bp-transport select, .bp-transport input { padding: 6px; border-radius: 8px; border: 1px solid var(--border,#444); background: var(--card2,#2a2a3a); color: var(--text,#fff); }
   .bp-slider-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
   .bp-slider-row label { min-width: 60px; font-size: 12px; color: var(--muted,#aaa); }
@@ -1097,12 +1099,16 @@ function injectStyles() {
   .vu-wrap { height: 60px; width: 12px; margin: 0 auto 6px; background: #111; border-radius: 4px; position: relative; overflow: hidden; }
   .vu-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 0%; background: linear-gradient(to top, #22c55e, #f1c40f, #e74c3c); transition: height 0.05s; }
   .mix-btn { width: 28px; height: 24px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff; font-size: 11px; font-weight: 800; cursor: pointer; margin: 2px; transition: box-shadow 0.2s, transform 0.1s; }
-  .mix-btn:hover { box-shadow: 0 0 8px rgba(255,255,255,0.2); transform: scale(1.05); }
-  .mix-btn.active.mute { background: #e74c3c; box-shadow: 0 0 10px rgba(231,76,60,0.5); }
-  .mix-btn.active.solo { background: #f1c40f; color: #000; box-shadow: 0 0 10px rgba(241,196,15,0.5); }
-  .mix-btn.fx.on { background: #3498db; border-color: #3498db; box-shadow: 0 0 10px rgba(52,152,219,0.5); }
+  .mix-btn:hover { box-shadow: 0 0 14px rgba(255,255,255,0.12); transform: scale(1.05); }
+  .mix-btn.active.mute { background: #e74c3c; box-shadow: 0 0 16px rgba(231,76,60,0.3); }
+  .mix-btn.active.solo { background: #f1c40f; color: #000; box-shadow: 0 0 16px rgba(241,196,15,0.3); }
+  .mix-btn.fx.on { background: #3498db; border-color: #3498db; box-shadow: 0 0 16px rgba(52,152,219,0.3); }
   
-  .mixer-strip input[type=range] { width: 100%; margin: 2px 0; }
+  .mixer-strip input[type=range] { width: 100%; margin: 2px 0; -webkit-appearance: none; appearance: none; height: 6px; border-radius: 999px; background: var(--card-3, #333); }
+  .mixer-strip input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; border-radius: 50%; background: var(--grad-green, #22c55e); border: 2px solid var(--card, #1e1e2e); box-shadow: 0 0 8px rgba(34, 197, 94, 0.35); cursor: pointer; }
+  .mixer-strip input[type=range]::-moz-range-thumb { width: 16px; height: 16px; border-radius: 50%; background: var(--grad-green, #22c55e); border: 2px solid var(--card, #1e1e2e); box-shadow: 0 0 8px rgba(34, 197, 94, 0.35); cursor: pointer; }
+  .mixer-strip input[type=range]::-moz-range-track { height: 6px; border-radius: 999px; background: var(--card-3, #333); }
+  .mixer-strip input[type=range]::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--grad-green, #22c55e); box-shadow: 0 0 6px rgba(34, 197, 94, 0.25); }
   .mixer-strip label { font-size: 10px; color: var(--muted,#aaa); }
   .seq-grid { overflow-x: auto; }
   .seq-row { display: grid; grid-template-columns: 90px repeat(16, 1fr); gap: 2px; margin-bottom: 2px; }
@@ -1181,6 +1187,8 @@ function warmRealSamples(container) {
 function renderBackingMixer(container) {
   injectStyles();
   ensureGrid();
+  try { setDrumKit(state.drumKit || "original"); } catch (e) {}
+  try { setGuitarTone(state.guitarTone || "acoustic"); } catch (e) {}
   try {
     const _fx0 = (appState.settings && appState.settings.fx) || {};
     setFxReverb(_fx0.reverb !== false);
@@ -1217,6 +1225,22 @@ function renderBackingMixer(container) {
             <option value="sub" ${state.bassType === "sub" ? "selected" : ""}>Sub</option>
             <option value="electric" ${state.bassType === "electric" ? "selected" : ""}>Electric</option>
             <option value="upright" ${state.bassType === "upright" ? "selected" : ""}>Upright</option>
+          </select>
+        </div>
+        <div class="bp-slider-row">
+          <label>Guitarra</label>
+          <select id="guitarToneSel">
+            <option value="acoustic" ${state.guitarTone === "acoustic" ? "selected" : ""}>Acústica</option>
+            <option value="electric" ${state.guitarTone === "electric" ? "selected" : ""}>Eléctrica</option>
+            <option value="nylon" ${state.guitarTone === "nylon" ? "selected" : ""}>Nylon</option>
+          </select>
+        </div>
+        <div class="bp-slider-row">
+          <label>Batería</label>
+          <select id="drumKitSel">
+            <option value="original" ${state.drumKit === "original" ? "selected" : ""}>Original</option>
+            <option value="tight" ${state.drumKit === "tight" ? "selected" : ""}>Tight (+2st)</option>
+            <option value="deep" ${state.drumKit === "deep" ? "selected" : ""}>Deep (-2st)</option>
           </select>
         </div>
         <div class="bp-slider-row">
@@ -1329,6 +1353,18 @@ function renderBackingMixer(container) {
 
   container.querySelector("#bassTypeSel").onchange = (e) => {
     state.bassType = e.target.value;
+  };
+
+  const guitarToneSel = container.querySelector("#guitarToneSel");
+  if (guitarToneSel) guitarToneSel.onchange = (e) => {
+    state.guitarTone = e.target.value;
+    try { setGuitarTone(state.guitarTone); } catch (ex) {}
+  };
+
+  const drumKitSel = container.querySelector("#drumKitSel");
+  if (drumKitSel) drumKitSel.onchange = (e) => {
+    state.drumKit = e.target.value;
+    try { setDrumKit(state.drumKit); } catch (ex) {}
   };
 
   const metroToggle = container.querySelector("#metroToggle");
