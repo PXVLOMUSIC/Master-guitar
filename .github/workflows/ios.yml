@@ -1,0 +1,56 @@
+name: Build iOS IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Prepare web assets
+        run: |
+          rm -rf www
+          mkdir www
+          cp index.html www/
+          cp -r css js data assets locales backend www/
+          rm -rf www/data/_tmp* 2>/dev/null || true
+
+      - name: Add iOS platform
+        run: |
+          npx cap add ios || true
+          npx cap sync ios
+
+      - name: Build IPA (unsigned)
+        run: |
+          cd ios/App
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+          cd build/Products/Release-iphoneos
+          mkdir -p Payload
+          cp -r App.app Payload/
+          zip -r ../../../App.ipa Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: strumio-ios-ipa
+          path: ios/App/build/App.ipa
+          retention-days: 7

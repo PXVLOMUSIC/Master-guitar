@@ -1,0 +1,68 @@
+name: Build Android APK/AAB
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Prepare web assets
+        run: |
+          rm -rf www
+          mkdir www
+          cp index.html www/
+          cp -r css js data assets locales backend www/
+          rm -rf www/data/_tmp* 2>/dev/null || true
+
+      - name: Add Android platform
+        run: |
+          npx cap add android || true
+          npx cap sync android
+
+      - name: Build APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: strumio-android-apk
+          path: android/app/build/outputs/apk/release/*.apk
+          retention-days: 7
+
+      - name: Build AAB
+        run: |
+          cd android
+          ./gradlew bundleRelease
+
+      - name: Upload AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: strumio-android-aab
+          path: android/app/build/outputs/bundle/release/*.aab
+          retention-days: 7
