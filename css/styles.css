@@ -944,10 +944,11 @@ input, select, textarea {
 }
 
 .note-big {
-  font-size: var(--text-4xl);
+  font-size: clamp(72px, 18vw, 120px);
   font-weight: var(--weight-black);
   line-height: 1;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -2px;
   background: linear-gradient(180deg, var(--text), var(--muted));
   -webkit-background-clip: text;
   background-clip: text;
