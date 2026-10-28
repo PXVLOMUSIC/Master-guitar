@@ -1,6 +1,6 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
 import { initI18n, applyDocumentLanguage, t, getCurrentLanguage } from "./i18n.js";
-import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
+import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote, getReferencePitch } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
 import { startMic, stopMic, playTone, isRunning, playChord, startMetronome, stopMetronome, isMetronomeRunning, detectChord, isRecordingSupported, startRecording, stopRecording, noteToFrequency, setSoundBank, loadInstrumentSamples, warmRealInstruments, setGuitarTone, setEarInstrument, earInstrument } from "./audio.js";
 import { initBackend, syncProgress, getSession, getAuthSettings, signInWithProvider, resetRemoteProgress } from "./backend.js";
@@ -13,6 +13,7 @@ import { mascot, unitCover } from "./art.js";
 const loadPracticeAdvanced = () => import("./practice-advanced.js");
 const loadFretboard = () => import("./fretboard.js");
 const loadBacking = () => import("./backing-pro.js");
+const loadLooper = () => import("./looper.js");
 const loadTablature = () => import("./tablature.js");
 const loadSettings = () => import("./settings.js");
 const loadTheory = () => import("./theory.js");
@@ -979,7 +980,9 @@ function renderTuner(v) {
   if (!tunerState.instrument) tunerState.instrument = state.settings.instrument || "guitar";
   if (!tunerState.history) tunerState.history = state.tunerHistory || {};
   const ins = INSTRUMENTS[tunerState.instrument];
-  const tuningFreqs = ins.tunings[tunerState.tuning];
+  const _ref = getReferencePitch();
+  const _scale = _ref / 440;
+  const tuningFreqs = (ins.tunings[tunerState.tuning] || []).map((f) => f * _scale);
   const tuningNames = ins.tuningNames;
   const numStrings = tuningFreqs.length;
   if (tunerState.targetString >= numStrings) tunerState.targetString = 0;
@@ -993,6 +996,9 @@ function renderTuner(v) {
         <h2>${tunerTitle}</h2>
         <select id="tuningSel" class="tuner-select" aria-label="Afinación">
           ${Object.keys(tuningNames).map(k => `<option value="${k}" ${k===tunerState.tuning?'selected':''}>${tuningNames[k]}</option>`).join("")}
+        </select>
+        <select id="tunerPitchSel" class="tuner-select" aria-label="Referencia A4" style="margin-left:8px">
+          ${[432,440,442].map(p => `<option value="${p}" ${p===_ref?'selected':''}>${p} Hz</option>`).join("")}
         </select>
       </div>
       <div class="tuner-ins" role="radiogroup" aria-label="Instrumento">
@@ -1078,6 +1084,12 @@ function renderTuner(v) {
     renderTuner(view());
   });
   $("#tuningSel").onchange = (e) => { tunerState.tuning = e.target.value; tunerState.autoTune = false; renderTuner(view()); };
+  const tunerPitchSel = $("#tunerPitchSel");
+  if (tunerPitchSel) tunerPitchSel.onchange = (e) => {
+    state.settings.tunerPitch = parseInt(e.target.value, 10);
+    saveState(state);
+    renderTuner(view());
+  };
   // Mode buttons handlers
   $("#chromaticBtn").onclick = () => { tunerState.chromatic = !tunerState.chromatic; tunerState.autoTune = false; renderTuner(view()); };
   $("#muteBtn").onclick = () => { tunerState.muteChime = !tunerState.muteChime; renderTuner(view()); };
@@ -1321,7 +1333,7 @@ function renderTuner(v) {
   const testBtn = $("#testAudioBtn");
   if (testBtn) {
     testBtn.onclick = () => {
-      playTone(440, 0.5, { gain: 0.3 });
+      playTone(getReferencePitch(), 0.5, { gain: 0.3 });
       setTimeout(() => playTone(550, 0.5, { gain: 0.3 }), 300);
       toast(t("app.hearTonePrompt"));
     };
@@ -1344,6 +1356,7 @@ const PRACTICE_TOOLS = [
   { id: "strumming", cat: "rhythm", icon: "🥁", title: "Entrenador de rasgueo", desc: "24 patrones (D/U/–/✕) con guía visual y metrónomo.", tags: ["24 patrones"], keywords: "strumming ritmo mano", mount: async (el) => { const m = await loadChordVoicings(); m.renderStrummingTrainer(el); } },
   { id: "rhythm", cat: "rhythm", icon: "🎯", title: "Entrenador de ritmo", desc: "Mide tu precisión con ejercicios progresivos.", tags: ["Precisión"], keywords: "sincronia tempo", mount: async (el) => { const m = await loadPracticeAdvanced(); m.renderRhythmTrainer(el); } },
   { id: "backing", cat: "rhythm", icon: "🎛", title: "Backing Tracks Pro", desc: "Batería, bajo y guitarra reales. Mezclador, secuenciador y exportación WAV.", tags: ["Samples reales", "Mixer"], keywords: "improvisar pista base drums", mount: async (el) => { const m = await loadBacking(); m.renderBackingMixer(el); } },
+  { id: "looper", cat: "looper", icon: "??", title: "Looper multipista", desc: "Graba y superpone hasta 8 pistas con metrónomo y exportación WAV.", tags: ["Multitrack", "Overdub"], keywords: "looper grabar pistas overdub", mount: async (el) => { const m = await loadLooper(); m.renderLooper(el); } },
 
   // --- Oído ---
   { id: "ear", cat: "ear", icon: "👂", title: "Entrenador de oído", desc: "Reconoce intervalos, acordes y progresiones de oído.", tags: ["Oído"], keywords: "escuchar reconocer", mount: (el) => renderEarTrainer(el) },
@@ -1380,6 +1393,7 @@ function stopPracticeAudio() {
   if (isRunning()) stopMic();
   loadBacking().then((m) => { if (m.isBackingRunning()) m.stopBackingTrack(); }).catch(() => {});
   loadSongPlayer().then((m) => m.stopSongPlayer()).catch(() => {});
+  loadLooper().then((m) => { if (m.isLooperRunning()) m.stopLooper(); }).catch(() => {});
 }
 
 function renderPractice(v) {

@@ -4,7 +4,8 @@
 // Las notas de guitarra y bajo suenan con muestras reales (CC0 y CC BY 3.0, sample-engine.js);
 // mientras cargan, o para ukelele, se usa síntesis Karplus-Strong.
 
-import { midiToNote, midiToFreq, NOTE_NAMES } from "./instruments.js";
+import { midiToNote, midiToFreq, NOTE_NAMES, getReferencePitch } from "./instruments.js";
+import { state } from "./storage.js";
 import { preloadGroup, preloadIds, isGroupReady, playPitched, playHand } from "./sample-engine.js";
 
 /* ------------------------------------------------------------------ */
@@ -191,7 +192,7 @@ function loop() {
         const id = ++pitchWorkerSeq;
         pitchWorkerPending = { id, callback: onPitch, ts: performance.now() };
         try {
-          w.postMessage({ type: "detect", id, buffer: buf, sampleRate: audioCtx.sampleRate }, [buf.buffer]);
+          w.postMessage({ type: "detect", id, buffer: buf, sampleRate: audioCtx.sampleRate, refA4: getReferencePitch() }, [buf.buffer]);
         } catch (e) {
           // Transfer failed -> fall back to main thread.
           pitchWorkerPending = null;
@@ -292,7 +293,8 @@ export function yinPitch(buffer, sampleRate, threshold = 0.12) {
   if (!isFinite(freq) || freq < 50 || freq > 1300) return null;
 
   const confidence = Math.max(0, Math.min(1, 1 - cmnd[t]));
-  const midi = 69 + 12 * Math.log2(freq / 440);
+  const ref = getReferencePitch();
+  const midi = 69 + 12 * Math.log2(freq / ref);
   const note = midiToNote(midi);
   return { freq, midi, note, confidence };
 }
@@ -347,7 +349,8 @@ export function autocorrPitch(buffer, sampleRate) {
   const freq = sampleRate / refinedLag;
   if (freq < 60 || freq > 1200) return null;
 
-  const midi = 69 + 12 * Math.log2(freq / 440);
+  const ref = getReferencePitch();
+  const midi = 69 + 12 * Math.log2(freq / ref);
   const note = midiToNote(midi);
   return { freq, midi, note, confidence: bestCorr };
 }
@@ -365,7 +368,8 @@ export function detectPitch(buffer, sampleRate) {
 /* ------------------------------------------------------------------ */
 export function frequencyToNote(freq) {
   if (!freq || freq <= 0) return null;
-  const midi = 69 + 12 * Math.log2(freq / 440);
+  const ref = getReferencePitch();
+  const midi = 69 + 12 * Math.log2(freq / ref);
   const note = midiToNote(midi);
   return { ...note, midi, freq, cents: (midi - Math.round(midi)) * 100 };
 }
@@ -862,7 +866,8 @@ export function warmRealInstruments(instrument = "guitar") {
 }
 
 function freqToMidi(freq) {
-  return 69 + 12 * Math.log2(freq / 440);
+  const ref = getReferencePitch();
+  return 69 + 12 * Math.log2(freq / ref);
 }
 
 /** Intenta tocar la nota con una muestra real. false => usar síntesis. */

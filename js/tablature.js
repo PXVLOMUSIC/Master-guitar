@@ -277,4 +277,111 @@ export const SAMPLE_TABS = [
       { string: 5, notes: [] }
     ]
   }
+
+  ,
+  {
+    title: "House of the Rising Sun (intro)",
+    bpm: 84,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:3,duration:2},{fret:0,duration:2},{fret:3,duration:2}] },
+      { string: 1, notes: [{fret:1,duration:2},{fret:1,duration:2},{fret:1,duration:2},{fret:1,duration:2}] },
+      { string: 2, notes: [{fret:2,duration:2},{fret:2,duration:2},{fret:2,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Wonderwall (intro)",
+    bpm: 87,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:3,duration:2},{fret:3,duration:2},{fret:1,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [{fret:3,duration:2},{fret:3,duration:2},{fret:3,duration:2},{fret:1,duration:2}] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:2,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Stairway to Heaven (intro)",
+    bpm: 82,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:5,duration:2},{fret:7,duration:2},{fret:8,duration:2}] },
+      { string: 1, notes: [{fret:5,duration:2},{fret:7,duration:2},{fret:5,duration:2}] },
+      { string: 2, notes: [{fret:5,duration:2},{fret:7,duration:2},{fret:5,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Nothing Else Matters (intro)",
+    bpm: 72,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:3},{fret:3,duration:3},{fret:0,duration:3}] },
+      { string: 1, notes: [{fret:0,duration:3},{fret:0,duration:3},{fret:0,duration:3}] },
+      { string: 2, notes: [{fret:0,duration:3},{fret:0,duration:3},{fret:0,duration:3}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:3},{fret:0,duration:3},{fret:0,duration:3}] }
+    ]
+  },
+  {
+    title: "Hotel California (intro)",
+    bpm: 75,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:7,duration:2},{fret:5,duration:2},{fret:3,duration:2},{fret:2,duration:2}] },
+      { string: 1, notes: [{fret:7,duration:2},{fret:5,duration:2},{fret:3,duration:2},{fret:2,duration:2}] },
+      { string: 2, notes: [{fret:7,duration:2},{fret:6,duration:2},{fret:4,duration:2},{fret:2,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Entre dos tierras (riff)",
+    bpm: 128,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:5,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2}] }
+    ]
+  },
+  {
+    title: "Rosas (riff)",
+    bpm: 126,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:5,duration:2},{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Yesterday (riff)",
+    bpm: 98,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:1,duration:2},{fret:3,duration:2},{fret:1,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  }
+
 ];

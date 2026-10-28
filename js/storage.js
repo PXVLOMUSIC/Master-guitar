@@ -23,7 +23,11 @@ export function loadState() {
     const raw = localStorage.getItem(KEY);
     if (!raw) return defaultState();
     const s = JSON.parse(raw);
-    return { ...defaultState(), ...s };
+    const d = defaultState();
+    if (s && s.settings && typeof s.settings === "object") {
+      s.settings = { ...d.settings, ...s.settings };
+    }
+    return { ...d, ...s };
   } catch (e) {
     return defaultState();
   }

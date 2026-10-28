@@ -2591,4 +2591,29 @@ body.has-bg-image::before {
   pointer-events: none;
 }
 
+/* ---------- Looper multipista ---------- */
+.looper { padding: 12px; }
+.looper__head { margin-bottom: 12px; }
+.looper__head h2 { margin: 0 0 8px; }
+.looper__global { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+.looper__global .btn { padding: 8px 14px; font-size: 14px; }
+.looper__metro { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 8px; }
+.looper__metro label { display: flex; align-items: center; gap: 8px; }
+.looper__beat { font-size: 22px; letter-spacing: 4px; }
+.looper__rec-indicator { color: #ff4b4b; font-weight: 700; animation: looper-pulse 1s infinite; }
+@keyframes looper-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+.looper__tracks { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.looper-track { background: var(--card, #1e1e2e); border: 1px solid var(--border, #333); border-radius: 12px; padding: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.looper-track.is-rec { border-color: #ff4b4b; box-shadow: 0 0 0 2px rgba(255,75,75,0.3); }
+.looper-track__name { font-weight: 700; min-width: 80px; }
+.looper-track__wave { color: var(--muted, #888); min-width: 60px; }
+.looper-track__btns { display: flex; flex-wrap: wrap; gap: 6px; }
+.lp-btn { min-width: 44px; min-height: 44px; border-radius: 10px; border: 1px solid var(--border, #333); background: var(--card2, #2a2a3e); color: inherit; font-size: 16px; cursor: pointer; }
+.lp-btn.active { background: #22c55e; color: #fff; }
+.lp-btn.lp-rec.active { background: #ff4b4b; }
+.lp-btn.lp-play.active { background: #22c55e; }
+@media (min-width: 768px) {
+  .looper__tracks { grid-template-columns: repeat(2, 1fr); }
+}
+
 

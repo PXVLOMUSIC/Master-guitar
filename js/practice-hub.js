@@ -13,6 +13,7 @@ export const SECTIONS = [
   { id: "acordes", name: "Acordes", icon: "chords", color: "#22c55e", desc: "Aprende, cambia y detecta acordes", tools: ["chords", "voicings", "transitions", "changes", "chordDetect"] },
   { id: "ritmo", name: "Ritmo", icon: "rhythm", color: "#ff9600", desc: "Metrónomo y rasgueo", tools: ["metronome", "strumming", "rhythm"] },
   { id: "banda", name: "Tocar con banda", icon: "band", color: "#ff4b4b", desc: "Bases con batería y bajo reales", tools: ["backing", "practiceMode"] },
+  { id: "looper", name: "Looper", icon: "loop", color: "#9b59b6", desc: "Graba y superpone pistas con metrónomo", tools: ["looper"] },
   { id: "canciones", name: "Canciones", icon: "songs", color: "#ff6b9d", desc: "Canciones, riffs y tablaturas", tools: ["songs", "songLibrary", "tabs", "tabPlayer"] },
   { id: "mastil", name: "Mástil y escalas", icon: "fretboard", color: "#ce82ff", desc: "Escalas, técnica e improvisación", tools: ["scales", "fretboard", "fingerExercises", "techniques", "improvisation"] },
   { id: "oido", name: "Oído", icon: "ear", color: "#1cb0f6", desc: "Intervalos y tipos de acorde", tools: ["ear", "interval", "chordType", "voicingQuiz"] },

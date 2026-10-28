@@ -64,13 +64,27 @@ export const INSTRUMENTS = {
   }
 };
 
+import { state } from "./storage.js";
+
 export const NOTE_NAMES = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
 
-export function freqToMidi(freq) {
-  return 69 + 12 * Math.log2(freq / 440);
+// Frecuencia de referencia (A4) configurable: 432 / 440 / 442 Hz.
+export function getReferencePitch() {
+  try {
+    const p = Number(state && state.settings && state.settings.tunerPitch);
+    return (p === 432 || p === 440 || p === 442) ? p : 440;
+  } catch (e) {
+    return 440;
+  }
 }
-export function midiToFreq(midi) {
-  return 440 * Math.pow(2, (midi - 69) / 12);
+
+export function freqToMidi(freq, ref) {
+  const r = (ref == null) ? getReferencePitch() : ref;
+  return 69 + 12 * Math.log2(freq / r);
+}
+export function midiToFreq(midi, ref) {
+  const r = (ref == null) ? getReferencePitch() : ref;
+  return r * Math.pow(2, (midi - 69) / 12);
 }
 export function midiToNote(midi) {
   const n = Math.round(midi);

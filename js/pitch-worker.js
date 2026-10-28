@@ -83,7 +83,8 @@ function yinPitch(buffer, sampleRate, threshold) {
   if (!isFinite(freq) || freq < 50 || freq > 1300) return null;
 
   const confidence = Math.max(0, Math.min(1, 1 - cmnd[t]));
-  const midi = 69 + 12 * Math.log2(freq / 440);
+  const ref = (typeof self.__refA4 === "number" && self.__refA4 > 0) ? self.__refA4 : 440;
+  const midi = 69 + 12 * Math.log2(freq / ref);
   const note = midiToNote(midi);
   return { freq, midi, note, confidence };
 }
@@ -138,7 +139,8 @@ function autocorrPitch(buffer, sampleRate) {
   const freq = sampleRate / refinedLag;
   if (freq < 60 || freq > 1200) return null;
 
-  const midi = 69 + 12 * Math.log2(freq / 440);
+  const ref = (typeof self.__refA4 === "number" && self.__refA4 > 0) ? self.__refA4 : 440;
+  const midi = 69 + 12 * Math.log2(freq / ref);
   const note = midiToNote(midi);
   return { freq, midi, note, confidence: bestCorr };
 }
@@ -152,6 +154,7 @@ function detectPitch(buffer, sampleRate) {
 self.onmessage = (e) => {
   const data = e.data || {};
   if (data.type !== "detect") return;
+  if (typeof data.refA4 === "number" && data.refA4 > 0) self.__refA4 = data.refA4;
   try {
     const buf = data.buffer instanceof Float32Array
       ? data.buffer

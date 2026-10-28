@@ -1,6 +1,7 @@
 // backing-pro.js - professional backing track system with mixer controls
-import { getAudioContext, resumeContext } from "./audio.js";
+import { getAudioContext, resumeContext, setFxChorus, setFxDelay, setFxDistortion, setFxReverb } from "./audio.js";
 import { midiToFreq } from "./instruments.js";
+import { state as appState, saveState } from "./storage.js";
 import { preloadGroup, isGroupReady, getSampleState, playDrum, playHand, playPitched } from "./sample-engine.js";
 import { t } from "./i18n.js";
 
@@ -1175,6 +1176,14 @@ function warmRealSamples(container) {
 function renderBackingMixer(container) {
   injectStyles();
   ensureGrid();
+  try {
+    const _fx0 = (appState.settings && appState.settings.fx) || {};
+    setFxReverb(_fx0.reverb !== false);
+    setFxChorus(!!_fx0.chorus);
+    setFxDelay(!!_fx0.delay);
+    setFxDistortion(!!_fx0.distortion);
+  } catch (e) {}
+  const _fx = (appState.settings && appState.settings.fx) || {};
   container.innerHTML = `
     <div class="backing-pro">
       <div class="bp-card">
@@ -1218,6 +1227,17 @@ function renderBackingMixer(container) {
         <p style="color:var(--muted,#aaa);font-size:12px;margin:0 0 8px">Pulsa <b>FX</b> en un canal para darle reverb, delay y ecualización solo a esa pista.</p>
         <div class="mixer-grid" id="mixerPanel"></div>
         <div id="fxPanel"></div>
+      </div>
+
+      <div class="bp-card">
+        <h3>🎛 Efectos de audio</h3>
+        <p style="color:var(--muted,#aaa);font-size:12px;margin:0 0 8px">Activa o desactiva efectos globales (se aplican al sonido de las pistas).</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <label style="display:flex;align-items:center;gap:6px;font-weight:700"><input type="checkbox" id="bfxReverb" ${_fx.reverb !== false ? "checked" : ""}> Reverb</label>
+          <label style="display:flex;align-items:center;gap:6px;font-weight:700"><input type="checkbox" id="bfxChorus" ${_fx.chorus ? "checked" : ""}> Chorus</label>
+          <label style="display:flex;align-items:center;gap:6px;font-weight:700"><input type="checkbox" id="bfxDelay" ${_fx.delay ? "checked" : ""}> Delay</label>
+          <label style="display:flex;align-items:center;gap:6px;font-weight:700"><input type="checkbox" id="bfxDistortion" ${_fx.distortion ? "checked" : ""}> Distorsión</label>
+        </div>
       </div>
 
       <div class="bp-card">
@@ -1321,6 +1341,22 @@ function renderBackingMixer(container) {
 
   // mixer binds
   bindMixer(container);
+  // Global FX toggles
+  function bindBfx(id, key, setter) {
+    const cb = container.querySelector("#" + id);
+    if (!cb) return;
+    cb.onchange = () => {
+      const val = cb.checked;
+      if (!appState.settings.fx) appState.settings.fx = {};
+      appState.settings.fx[key] = val;
+      saveState(appState);
+      try { setter(val); } catch (e) {}
+    };
+  }
+  bindBfx("bfxReverb", "reverb", setFxReverb);
+  bindBfx("bfxChorus", "chorus", setFxChorus);
+  bindBfx("bfxDelay", "delay", setFxDelay);
+  bindBfx("bfxDistortion", "distortion", setFxDistortion);
   warmRealSamples(container);
 }
 
