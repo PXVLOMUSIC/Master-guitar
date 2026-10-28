@@ -252,7 +252,19 @@ export function playLayered(group, id, when, destination, opts = {}) {
   gain.gain.value = level;
   const src = ctx.createBufferSource();
   src.buffer = buf;
-  src.connect(gain).connect(destination);
+  if (instrument === "electric") {
+    try {
+      const hp = ctx.createBiquadFilter();
+      hp.type = "highpass";
+      hp.frequency.value = 220;
+      hp.Q.value = 0.7;
+      src.connect(gain).connect(hp).connect(destination);
+    } catch (e) {
+      src.connect(gain).connect(destination);
+    }
+  } else {
+    src.connect(gain).connect(destination);
+  }
   try { src.start(when); } catch (e) { return false; }
   src.onended = () => { try { src.disconnect(); gain.disconnect(); } catch (e) {} };
   return true;
@@ -281,7 +293,19 @@ export function playPerc(id, when, destination, opts = {}) {
   gain.gain.value = (opts.gain != null ? opts.gain : 0.7);
   const src = ctx.createBufferSource();
   src.buffer = buf;
-  src.connect(gain).connect(destination);
+  if (instrument === "electric") {
+    try {
+      const hp = ctx.createBiquadFilter();
+      hp.type = "highpass";
+      hp.frequency.value = 220;
+      hp.Q.value = 0.7;
+      src.connect(gain).connect(hp).connect(destination);
+    } catch (e) {
+      src.connect(gain).connect(destination);
+    }
+  } else {
+    src.connect(gain).connect(destination);
+  }
   try { src.start(when); } catch (e) { return false; }
   src.onended = () => { try { src.disconnect(); gain.disconnect(); } catch (e) {} };
   return true;
@@ -326,7 +350,19 @@ export function playPitched(instrument, midi, when, destination, opts = {}) {
   const vel = opts.velocity != null ? opts.velocity : 0.75;
   const comp = Math.pow(1 / rate, 0.35);
   gain.gain.value = base * (0.45 + vel * 0.55) * comp;
-  src.connect(gain).connect(destination);
+  if (instrument === "electric") {
+    try {
+      const hp = ctx.createBiquadFilter();
+      hp.type = "highpass";
+      hp.frequency.value = 220;
+      hp.Q.value = 0.7;
+      src.connect(gain).connect(hp).connect(destination);
+    } catch (e) {
+      src.connect(gain).connect(destination);
+    }
+  } else {
+    src.connect(gain).connect(destination);
+  }
   try { src.start(when); } catch (e) { return false; }
   const dur = opts.duration;
   if (dur && dur > 0.05) {

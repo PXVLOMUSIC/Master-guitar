@@ -94,5 +94,70 @@ export const SAMPLE_TABS = [
       { string: 4, notes: [{fret:7,duration:2},{fret:7,duration:2},{fret:10,duration:2},{fret:7,duration:2},{fret:5,duration:2},{fret:3,duration:2},{fret:5,duration:2}] },
       { string: 5, notes: [] }
     ]
+  },
+  {
+    title: "Iron Man (riff)",
+    bpm: 140,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:5,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:4}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Come As You Are (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2},{fret:0,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Eye of the Tiger (riff)",
+    bpm: 109,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:2,duration:2},{fret:2,duration:2},{fret:4,duration:2},{fret:2,duration:2},{fret:2,duration:2},{fret:4,duration:2},{fret:2,duration:2},{fret:4,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Back in Black (riff)",
+    bpm: 93,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:2,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2}] }
+    ]
+  },
+  {
+    title: "Sweet Child O Mine (intro)",
+    bpm: 125,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:12,duration:2},{fret:15,duration:2},{fret:14,duration:2},{fret:12,duration:2},{fret:15,duration:2},{fret:14,duration:2},{fret:12,duration:2},{fret:15,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
   }
 ];
