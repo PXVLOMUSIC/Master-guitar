@@ -286,5 +286,10 @@
   "app.resultLabel": "Résultat:",
   "app.nextLabel": "Suivant:",
   "app.thatWas": "C'était",
-  "app.tuningAll": "Les régler tous :"
+  "app.tuningAll": "Les régler tous :",
+  "backend.oauthGoogle": "Continuer avec Google",
+  "backend.oauthApple": "Continuer avec Apple",
+  "backend.oauthFacebook": "Continuer avec Facebook",
+  "backend.oauthGithub": "Continuer avec GitHub",
+  "backend.oauthDiscord": "Continuer avec Discord"
 }

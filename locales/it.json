@@ -286,5 +286,10 @@
   "app.resultLabel": "Risultato:",
   "app.nextLabel": "Seguente:",
   "app.thatWas": "Questo era",
-  "app.tuningAll": "Sintonizzarli tutti:"
+  "app.tuningAll": "Sintonizzarli tutti:",
+  "backend.oauthGoogle": "Continua con Google",
+  "backend.oauthApple": "Continua con Apple",
+  "backend.oauthFacebook": "Continua con Facebook",
+  "backend.oauthGithub": "Continua con GitHub",
+  "backend.oauthDiscord": "Continua con Discordia"
 }
