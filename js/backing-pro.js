@@ -1384,8 +1384,52 @@ function renderMixerPanel(container) {
     `;
     panel.appendChild(strip);
   });
+  // Master strip
+  const masterStrip = document.createElement("div");
+  masterStrip.className = "mixer-strip mixer-master";
+  masterStrip.style.setProperty("--c", "#ffffff");
+  const _fx = (appState.settings && appState.settings.fx) || {};
+  masterStrip.innerHTML = `
+    <div class="mixer-name" style="color:#fff">Master</div>
+    <div class="vu-wrap"><div class="vu-bar" id="vu-master"></div></div>
+    <div>
+      <button class="mix-btn mute ${_fx.muted ? "active" : ""}" data-id="master" data-type="mute">M</button>
+    </div>
+    <label>Vol</label>
+    <input type="range" min="0" max="100" value="${Math.round((_fx.volume != null ? _fx.volume : 1) * 100)}" class="vol" data-id="master">
+    <div style="display:flex;gap:4px;flex-wrap:wrap;margin-top:6px;justify-content:center">
+      <label style="font-size:10px"><input type="checkbox" class="mfx" data-fx="reverb" ${_fx.reverb !== false ? "checked" : ""}> Rev</label>
+      <label style="font-size:10px"><input type="checkbox" class="mfx" data-fx="chorus" ${_fx.chorus ? "checked" : ""}> Cho</label>
+      <label style="font-size:10px"><input type="checkbox" class="mfx" data-fx="delay" ${_fx.delay ? "checked" : ""}> Dly</label>
+      <label style="font-size:10px"><input type="checkbox" class="mfx" data-fx="distortion" ${_fx.distortion ? "checked" : ""}> Dist</label>
+    </div>
+  `;
+  panel.appendChild(masterStrip);
   bindMixer(container);
   renderFxPanel(container);
+  // Bind master FX toggles
+  masterStrip.querySelectorAll(".mfx").forEach((cb) => {
+    cb.onchange = () => {
+      if (!appState.settings.fx) appState.settings.fx = {};
+      const key = cb.dataset.fx;
+      const val = cb.checked;
+      appState.settings.fx[key] = val;
+      saveState(appState);
+      if (key === "reverb") setFxReverb(val);
+      if (key === "chorus") setFxChorus(val);
+      if (key === "delay") setFxDelay(val);
+      if (key === "distortion") setFxDistortion(val);
+    };
+  });
+  // Bind master volume
+  const masterVol = masterStrip.querySelector(".vol");
+  if (masterVol) {
+    masterVol.oninput = () => {
+      if (!appState.settings.fx) appState.settings.fx = {};
+      appState.settings.fx.volume = masterVol.value / 100;
+      saveState(appState);
+    };
+  }
 }
 
 function hasFx(id) {

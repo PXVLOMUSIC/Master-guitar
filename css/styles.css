@@ -2617,3 +2617,68 @@ body.has-bg-image::before {
 }
 
 
+
+
+/* ---------- Modern range sliders (replaces Windows 95 default) ---------- */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--card-3);
+  outline: none;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease-out);
+}
+input[type="range"]:hover {
+  background: var(--border-2);
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--grad-green);
+  border: 2px solid var(--card);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4), 0 0 0 4px var(--green-soft);
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast) var(--ease-out);
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 2px 12px rgba(34, 197, 94, 0.6), 0 0 0 6px var(--green-soft);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 4px rgba(34, 197, 94, 0.4), 0 0 0 3px var(--green-soft);
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--grad-green);
+  border: 2px solid var(--card);
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+  cursor: pointer;
+  transition: transform var(--dur-fast) var(--ease-spring);
+}
+input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.15);
+}
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--card-3);
+  border: none;
+}
+input[type="range"]::-moz-range-progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--grad-green);
+}
+input[type="range"]:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 4px;
+}
