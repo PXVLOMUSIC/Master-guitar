@@ -1083,8 +1083,10 @@ function injectStyles() {
     background: rgba(255,150,0,.16); color:#ffb347; border:1px solid rgba(255,150,0,.35); }
   .bp-badge.ready { background: rgba(34,197,94,.16); color:#7ee038; border-color: rgba(34,197,94,.4); }
   .bp-transport { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
-  .bp-transport button { padding: 8px 14px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; }
-  .bp-transport .primary { background: #22c55e; color: #fff; }
+  .bp-transport button { padding: 8px 14px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; transition: box-shadow 0.2s, transform 0.1s; }
+  .bp-transport button:hover { box-shadow: 0 0 12px rgba(255,255,255,0.15); transform: translateY(-1px); }
+  .bp-transport .primary { background: #22c55e; color: #fff; box-shadow: 0 0 12px rgba(34, 197, 94, 0.4); transition: box-shadow 0.2s, transform 0.1s; }
+  .bp-transport .primary:hover { box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); transform: translateY(-1px); }
   .bp-transport select, .bp-transport input { padding: 6px; border-radius: 8px; border: 1px solid var(--border,#444); background: var(--card2,#2a2a3a); color: var(--text,#fff); }
   .bp-slider-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
   .bp-slider-row label { min-width: 60px; font-size: 12px; color: var(--muted,#aaa); }
@@ -1094,9 +1096,12 @@ function injectStyles() {
   .mixer-name { font-size: 12px; font-weight: 800; margin-bottom: 6px; }
   .vu-wrap { height: 60px; width: 12px; margin: 0 auto 6px; background: #111; border-radius: 4px; position: relative; overflow: hidden; }
   .vu-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 0%; background: linear-gradient(to top, #22c55e, #f1c40f, #e74c3c); transition: height 0.05s; }
-  .mix-btn { width: 28px; height: 24px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff; font-size: 11px; font-weight: 800; cursor: pointer; margin: 2px; }
-  .mix-btn.active.mute { background: #e74c3c; }
-  .mix-btn.active.solo { background: #f1c40f; color: #000; }
+  .mix-btn { width: 28px; height: 24px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff; font-size: 11px; font-weight: 800; cursor: pointer; margin: 2px; transition: box-shadow 0.2s, transform 0.1s; }
+  .mix-btn:hover { box-shadow: 0 0 8px rgba(255,255,255,0.2); transform: scale(1.05); }
+  .mix-btn.active.mute { background: #e74c3c; box-shadow: 0 0 10px rgba(231,76,60,0.5); }
+  .mix-btn.active.solo { background: #f1c40f; color: #000; box-shadow: 0 0 10px rgba(241,196,15,0.5); }
+  .mix-btn.fx.on { background: #3498db; border-color: #3498db; box-shadow: 0 0 10px rgba(52,152,219,0.5); }
+  
   .mixer-strip input[type=range] { width: 100%; margin: 2px 0; }
   .mixer-strip label { font-size: 10px; color: var(--muted,#aaa); }
   .seq-grid { overflow-x: auto; }
