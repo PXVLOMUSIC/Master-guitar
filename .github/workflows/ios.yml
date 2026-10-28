@@ -30,13 +30,11 @@ jobs:
         run: |
           echo "Node: $(node --version)"
           echo "NPM: $(npm --version)"
-          echo "Java:"
           java -version 2>&1
-          echo "Xcode:"
           xcodebuild -version
 
       - name: Install dependencies
-        run: npm install
+        run: npm install @capacitor/core @capacitor/cli @capacitor/ios
 
       - name: Prepare web assets
         run: |
@@ -48,7 +46,6 @@ jobs:
 
       - name: Add iOS platform
         run: |
-          node --version
           if [ ! -d "ios" ]; then
             node ./node_modules/.bin/cap add ios
           fi
