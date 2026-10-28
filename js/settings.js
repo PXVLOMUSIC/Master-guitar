@@ -4,7 +4,6 @@ import { t } from "./i18n.js";
 import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
 import { renderBackendSettings } from "./backend.js";
-import { t } from "./i18n.js";
 import { clearQueue } from "./sync.js";
 import { setGuitarTone, setEarInstrument, playChord, earInstrument } from "./audio.js";
 

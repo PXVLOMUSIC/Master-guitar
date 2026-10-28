@@ -1,5 +1,4 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
-import { t } from "./i18n.js";
 import { initI18n, applyDocumentLanguage, t, getCurrentLanguage } from "./i18n.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
@@ -1181,16 +1180,16 @@ function renderTuner(v) {
         targetFreq = tuningFreqs[detectedStr];
         strName = ins.strings[detectedStr];
       }
-      const cents = centsOff(pitch.freq, targetFreq);
-      // Update note display
-      $("#tNote").textContent = tunerState.chromatic ? (chromaticNote ? chromaticNote.full : pitch.note.full) : pitch.note.full;
-      $("      // Smoothing: median of last 5 pitch readings to reduce jitter.
+      // Smoothing: median of last 5 pitch readings to reduce jitter.
       if (!window.__tunerPitchHist) window.__tunerPitchHist = [];
       window.__tunerPitchHist.push(pitch.freq);
       if (window.__tunerPitchHist.length > 5) window.__tunerPitchHist.shift();
       const _sorted = [...window.__tunerPitchHist].sort((a,b) => a-b);
       const smoothedFreq = _sorted[Math.floor(_sorted.length/2)];
+      // Update note display
+      $("#tNote").textContent = tunerState.chromatic ? (chromaticNote ? chromaticNote.full : pitch.note.full) : pitch.note.full;
       $("#tNoteFull").textContent = `${pitch.note.full} · ${smoothedFreq.toFixed(2)} Hz`;
+      const cents = centsOff(smoothedFreq, targetFreq);
 
       // cents text
       const centsStr = (cents > 0 ? "+" : "") + cents.toFixed(1);
