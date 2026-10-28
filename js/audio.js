@@ -453,13 +453,9 @@ const prewarmed = new Set();
 function prewarmCommonNotes(instrument) {
   if (prewarmed.has(instrument)) return;
   prewarmed.add(instrument);
-  setTimeout(() => {
-    try {
-      for (const f of COMMON_FREQS) {
-        generatePluckedString(f, 2.0, { instrument });
-      }
-    } catch (e) { /* ignore */ }
-  }, 0);
+  // Precargar muestras reales en lugar de síntesis.
+  try { warmRealInstruments(instrument === "bass" ? "bass" : "guitar"); } catch (e) {}
+  try { if (instrument !== "bass") setGuitarTone((state && state.settings && state.settings.guitarTone) || "acoustic"); } catch (e) {}
 }
 
 // Biquad peaking filter coefficients.
@@ -926,7 +922,15 @@ export function playTone(freq, duration = 1.2, options = {}) {
     return;
   }
 
-  // Synth (Karplus-Strong) path.
+  // Último recurso: intentar con samples de piano (reales) pitched a la nota.
+  const pianoGroup = "piano";
+  if (isGroupReady(pianoGroup)) {
+    const midi = 69 + 12 * Math.log2(freq / getReferencePitch());
+    if (playPitched(pianoGroup, midi, start, getRealBus(ctx), { gain: gainLevel, velocity: 0.7 })) return;
+  }
+  // Si no hay samples disponibles, intentar cargar y reintentar.
+  warmRealInstruments(instrument);
+  // Último fallback: síntesis (solo si no hay samples).
   const buffer = generatePluckedString(freq, dur, synthOpts(opts));
   playBufferSource(ctx, buffer, start, dur, gainLevel, pan, 1);
 }
@@ -959,6 +963,13 @@ export function playChord(freqsArray, duration = 1.2, options = {}) {
       playBufferSource(ctx, sampleBankBuffer, start, dur, stringGain, pan, f / sampleBaseFreq);
       return;
     }
+    // Intentar con samples de piano (reales).
+    const pianoGroup = "piano";
+    if (isGroupReady(pianoGroup)) {
+      const midi = 69 + 12 * Math.log2(f / getReferencePitch());
+      if (playPitched(pianoGroup, midi, start, getRealBus(ctx), { gain: stringGain, velocity: 0.7 })) return;
+    }
+    warmRealInstruments("guitar");
     const buffer = generatePluckedString(f, dur, synthOpts(o));
     playBufferSource(ctx, buffer, start, dur, stringGain, pan, 1);
   });

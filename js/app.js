@@ -1319,14 +1319,18 @@ function renderTuner(v) {
     } else {
       setMicBtn(false);
       toast(t("app.micAccessError2"));
-      const helpDiv = document.createElement("div");
-      helpDiv.style.cssText = "background:var(--card2);padding:12px;border-radius:8px;margin-top:8px;font-size:12px;color:var(--muted)";
-      helpDiv.innerHTML = `
-        <b style="color:var(--text)">¿No funciona el micrófono?</b><br>
-        1. Haz clic en el icono de candado en la barra de direcciones<br>
-        2. Busca "Micrófono" y cámbialo a "Permitir"<br>
-        3. Recarga la página (F5) y vuelve a intentar`;
-      $("#micBtn").parentElement.appendChild(helpDiv);
+      // Evitar duplicar el mensaje de ayuda si ya existe.
+      if (!document.getElementById("micHelpMsg")) {
+        const helpDiv = document.createElement("div");
+        helpDiv.id = "micHelpMsg";
+        helpDiv.style.cssText = "background:var(--card2);padding:12px;border-radius:8px;margin-top:8px;font-size:12px;color:var(--muted)";
+        helpDiv.innerHTML = `
+          <b style="color:var(--text)">¿No funciona el micrófono?</b><br>
+          1. Haz clic en el icono de candado en la barra de direcciones<br>
+          2. Busca "Micrófono" y cámbialo a "Permitir"<br>
+          3. Recarga la página (F5) y vuelve a intentar`;
+        $("#micBtn").parentElement.appendChild(helpDiv);
+      }
     }
   };
   // Test audio button
@@ -2050,10 +2054,11 @@ async function boot() {
   } catch (e) {}
   try { await initI18n(); applyDocumentLanguage(); } catch (e) { console.warn("i18n", e); }
   await loadContent();
-  // Try to load real instrument samples
-  // Skip sample loading on boot (requires user gesture for AudioContext)
-  // Samples will be loaded lazily when user first plays a sound
-  setSoundBank("synth");
+  // Usar samples reales por defecto (no síntesis).
+  setSoundBank("samples");
+  // Precargar samples de guitarra y bajo en segundo plano.
+  try { warmRealInstruments(state.settings.instrument === "bass" ? "bass" : "guitar"); } catch (e) {}
+  try { setGuitarTone(state.settings.guitarTone || "acoustic"); } catch (e) {}
   if (!state.user) {
     showNav(false);
     await navigate("onboard");
