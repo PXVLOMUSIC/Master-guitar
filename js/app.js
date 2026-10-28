@@ -412,6 +412,11 @@ function renderHome(v) {
       <p>${t("home.level", {level: state.level, title: levelTitle(state.level), xp: state.xp, next: state.level*100})}</p>
       <button class="btn btn-primary btn-block" id="continueBtn">${t("home.continue")}</button>
     </div>
+    <div class="challenge-card">
+      <h3>${t("home.challengeTitle")}</h3>
+      <p style="color:var(--muted);font-size:14px;margin:0 0 10px">${dailyDone ? t("home.challengeDone") : t("home.challengeDesc")}</p>
+      <button class="btn btn-secondary btn-block" id="dailyBtn" ${dailyDone?"disabled":""}>${dailyDone?t("home.challengeCompleted"):t("home.challengeStart")}</button>
+    </div>
     <div id="routineCard"></div>
     ${!state.settingsVisited ? `<div class="card setup-card" id="setupCard">
       <div><b>${t("home.setupTitle")}</b><p>${t("home.setupDesc")}</p></div>
@@ -427,11 +432,6 @@ function renderHome(v) {
       <p>${t("home.reviewDesc")}</p>
       ${getReviewLessons().map(l=>`<button class="btn btn-secondary btn-block" style="margin-top:6px" data-rev="${l.id}">📖 ${l.title}</button>`).join("")}
     </div>` : ""}
-    <div class="challenge-card">
-      <h3>${t("home.challengeTitle")}</h3>
-      <p style="color:var(--muted);font-size:14px;margin:0 0 10px">${dailyDone ? t("home.challengeDone") : t("home.challengeDesc")}</p>
-      <button class="btn btn-secondary btn-block" id="dailyBtn" ${dailyDone?"disabled":""}>${dailyDone?t("home.challengeCompleted"):t("home.challengeStart")}</button>
-    </div>
     <div class="section-title">${t("home.progressTitle")}</div>
     <div class="card">
       <p>${t("home.lessonsCompleted", {count: state.stats.lessonsCompleted})}</p>
