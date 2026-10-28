@@ -15,7 +15,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -23,26 +23,42 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Verify tools
+        run: |
+          node --version
+          java -version
+          xcodebuild -version
+
       - name: Install dependencies
         run: npm ci || npm install
 
       - name: Prepare web assets
         run: |
           rm -rf www
-          mkdir www
+          mkdir -p www
           cp index.html www/
           cp -r css js data assets locales backend www/
-          rm -rf www/data/_tmp* 2>/dev/null || true
+          rm -f www/data/_tmp* 2>/dev/null || true
 
       - name: Add iOS platform
         run: |
-          npx cap add ios || true
+          if [ ! -d "ios" ]; then npx cap add ios; fi
           npx cap sync ios
 
       - name: Build IPA (unsigned)
         run: |
           cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+          xcodebuild -workspace App.xcworkspace \
+            -scheme App \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            2>&1 | tail -30
           cd build/Products/Release-iphoneos
           mkdir -p Payload
           cp -r App.app Payload/
