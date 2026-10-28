@@ -315,5 +315,14 @@
   "settings.invalidFormat": "Ungültiges Format",
   "settings.resetConfirm": "Fortschritt für dieses Gerät zurücksetzen?\n\nXP, Lektionen, Streak und lokale Einstellungen werden gelöscht. Wenn Sie über ein Konto verfügen, kann die Cloud dieses wiederherstellen, wenn Sie sich erneut anmelden.",
   "app.correctPlus5": "Richtig! +5 EP",
-  "app.incorrectMinus1": "Falsch. -1 ❤️"
+  "app.incorrectMinus1": "Falsch. -1 ❤️",
+  "settings.audioEffects": "Audioeffekte",
+  "settings.fxReverb": "Hall",
+  "settings.fxReverbHint": "Verleiht dem Klang Raum und Tiefe.",
+  "settings.fxChorus": "Chor",
+  "settings.fxChorusHint": "Verdickt den Klang (ideal für E-Gitarre).",
+  "settings.fxDelay": "Verzögerung",
+  "settings.fxDelayHint": "Rhythmisches Echo.",
+  "settings.fxDistortion": "Verzerrung",
+  "settings.fxDistortionHint": "Crunch/Overdrive-Sound."
 }

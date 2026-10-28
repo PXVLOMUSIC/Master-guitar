@@ -5,7 +5,7 @@ import { INSTRUMENTS } from "./instruments.js";
 import { ACHIEVEMENTS, levelTitle } from "./gamification.js";
 import { renderBackendSettings } from "./backend.js";
 import { clearQueue } from "./sync.js";
-import { setGuitarTone, setEarInstrument, playChord, earInstrument } from "./audio.js";
+import { setGuitarTone, setEarInstrument, playChord, earInstrument, setFxChorus, setFxDelay, setFxDistortion, setFxReverb } from "./audio.js";
 
 // ---------- helpers ----------
 function ensureDefaults() {
@@ -212,6 +212,14 @@ function lastNDays(n) {
 // ---------- Render Settings ----------
 export function renderSettings(container) {
   ensureDefaults();
+  // Apply persisted FX state
+  try {
+    const fx = (state.settings.fx || {});
+    setFxReverb(fx.reverb !== false);
+    setFxChorus(!!fx.chorus);
+    setFxDelay(!!fx.delay);
+    setFxDistortion(!!fx.distortion);
+  } catch (e) {}
   const s = state.settings;
   const instruments = Object.entries(INSTRUMENTS);
 
@@ -305,6 +313,13 @@ export function renderSettings(container) {
           ${Array.from({ length: 24 }, (_, i) => `<option value="${i}" ${s.reminderHour === i ? "selected" : ""}>${String(i).padStart(2, "0")}:00</option>`).join("")}
         </select>
       </div>
+      <div style="margin-top:12px;border-top:1px solid var(--border);padding-top:12px">
+        <div style="font-weight:800;margin-bottom:8px">${t("settings.audioEffects")}</div>
+        ${renderToggle("fxReverbToggle", t("settings.fxReverb"), t("settings.fxReverbHint"), (state.settings.fx||{}).reverb !== false)}
+        ${renderToggle("fxChorusToggle", t("settings.fxChorus"), t("settings.fxChorusHint"), !!(state.settings.fx||{}).chorus)}
+        ${renderToggle("fxDelayToggle", t("settings.fxDelay"), t("settings.fxDelayHint"), !!(state.settings.fx||{}).delay)}
+        ${renderToggle("fxDistortionToggle", t("settings.fxDistortion"), t("settings.fxDistortionHint"), !!(state.settings.fx||{}).distortion)}
+      </div>
       <button class="btn btn-secondary btn-block" id="permBtn" style="margin-top:8px">${t("settings.permBtn")}</button>
       <p style="color:var(--muted);font-size:12px;margin:8px 0 0">${t("settings.permHint")}</p>
     </div>
@@ -368,6 +383,36 @@ export function renderSettings(container) {
   bindToggle(container, "soundToggle", "sound");
   bindToggle(container, "metroSoundToggle", "metronomeSound");
   bindToggle(container, "hapticToggle", "haptic");
+
+  // Efectos de audio (FX)
+  function bindFxToggle(container, id, key, setter) {
+    const cb = container.querySelector("#" + id);
+    if (!cb) return;
+    ensureDefaults();
+    if (!state.settings.fx) state.settings.fx = {};
+    const sync = (val) => {
+      const span = cb.parentElement.querySelector("span");
+      const knob = span.querySelector("span");
+      span.style.background = val ? "var(--green)" : "var(--card-3)";
+      knob.style.left = val ? "23px" : "3px";
+    };
+    cb.onchange = async () => {
+      const val = cb.checked;
+      if (!state.settings.fx) state.settings.fx = {};
+      state.settings.fx[key] = val;
+      saveState(state);
+      sync(val);
+      try { setter(val); } catch (e) {}
+      if (state.settings.haptic) haptic(8);
+    };
+    const span = cb.parentElement.querySelector("span");
+    span.onclick = () => { cb.checked = !cb.checked; cb.onchange(); };
+    sync(cb.checked);
+  }
+  bindFxToggle(container, "fxReverbToggle", "reverb", setFxReverb);
+  bindFxToggle(container, "fxChorusToggle", "chorus", setFxChorus);
+  bindFxToggle(container, "fxDelayToggle", "delay", setFxDelay);
+  bindFxToggle(container, "fxDistortionToggle", "distortion", setFxDistortion);
   bindToggle(container, "notifToggle", "notifications", async (val) => {
     if (val) {
       const granted = await requestNotificationPermission();

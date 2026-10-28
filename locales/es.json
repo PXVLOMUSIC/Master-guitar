@@ -315,5 +315,14 @@
   "settings.invalidFormat": "Formato no válido",
   "settings.resetConfirm": "¿Restablecer el progreso de este dispositivo?\n\nSe borrarán XP, lecciones, racha y ajustes locales. Si tienes cuenta, la nube puede restaurarlo al volver a iniciar sesión.",
   "app.correctPlus5": "¡Correcto! +5 XP",
-  "app.incorrectMinus1": "Incorrecto. -1 ❤️"
+  "app.incorrectMinus1": "Incorrecto. -1 ❤️",
+  "settings.audioEffects": "Efectos de audio",
+  "settings.fxReverb": "Reverb",
+  "settings.fxReverbHint": "Añade espacio y profundidad al sonido.",
+  "settings.fxChorus": "Chorus",
+  "settings.fxChorusHint": "Engrosa el sonido (ideal para guitarra eléctrica).",
+  "settings.fxDelay": "Delay",
+  "settings.fxDelayHint": "Eco rítmico.",
+  "settings.fxDistortion": "Distorsión",
+  "settings.fxDistortionHint": "Sonido crunch/overdrive."
 }

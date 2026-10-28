@@ -754,6 +754,18 @@ const GROUP_GAIN = { guitar: 1, electric: 1.3, nylon: 0.95, piano: 0.75, bass: 1
 let guitarTone = "guitar";
 let earInstrumentId = "guitar";
 
+// Efectos de audio (chorus, delay, distorsión).
+let fxChorus = false;
+let fxDelay = false;
+let fxDistortion = false;
+let fxReverb = true;
+
+export function setFxChorus(on) { fxChorus = !!on; realBus = null; }
+export function setFxDelay(on) { fxDelay = !!on; realBus = null; }
+export function setFxDistortion(on) { fxDistortion = !!on; realBus = null; }
+export function setFxReverb(on) { fxReverb = !!on; realBus = null; }
+export function getFxState() { return { chorus: fxChorus, delay: fxDelay, distortion: fxDistortion, reverb: fxReverb }; }
+
 /** Timbre de guitarra: "acoustic" | "electric" | "nylon". */
 export function setGuitarTone(tone) {
   guitarTone = { electric: "electric", nylon: "nylon" }[tone] || "guitar";
@@ -784,14 +796,59 @@ let realBus = null;
 function getRealBus(ctx) {
   if (realBus && realBus.context === ctx) return realBus.input;
   const input = ctx.createGain();
-  const send = ctx.createGain();
-  send.gain.value = 0.22;
-  const convolver = ctx.createConvolver();
-  convolver.buffer = getReverbIR(ctx);
-  const wet = ctx.createGain();
-  wet.gain.value = 0.14;
+  // Reverb (convolver) — opcional
+  if (fxReverb) {
+    const send = ctx.createGain();
+    send.gain.value = 0.22;
+    const convolver = ctx.createConvolver();
+    convolver.buffer = getReverbIR(ctx);
+    const wet = ctx.createGain();
+    wet.gain.value = 0.14;
+    input.connect(send).connect(convolver).connect(wet).connect(ctx.destination);
+  }
+  // Delay
+  if (fxDelay) {
+    const delay = ctx.createDelay(0.5);
+    delay.delayTime.value = 0.3;
+    const delayGain = ctx.createGain();
+    delayGain.gain.value = 0.35;
+    const feedback = ctx.createGain();
+    feedback.gain.value = 0.4;
+    input.connect(delay);
+    delay.connect(delayGain).connect(ctx.destination);
+    delay.connect(feedback).connect(delay);
+  }
+  // Chorus (modulated delay)
+  if (fxChorus) {
+    const chorusDelay = ctx.createDelay(0.05);
+    chorusDelay.delayTime.value = 0.02;
+    const lfo = ctx.createOscillator();
+    lfo.type = "sine";
+    lfo.frequency.value = 1.5;
+    const lfoGain = ctx.createGain();
+    lfoGain.gain.value = 0.002;
+    lfo.connect(lfoGain).connect(chorusDelay.delayTime);
+    lfo.start();
+    const chorusGain = ctx.createGain();
+    chorusGain.gain.value = 0.5;
+    input.connect(chorusDelay).connect(chorusGain).connect(ctx.destination);
+  }
+  // Distortion (waveshaper)
+  if (fxDistortion) {
+    const shaper = ctx.createWaveShaper();
+    const curve = new Float32Array(256);
+    for (let i = 0; i < 256; i++) {
+      const x = (i / 128) - 1;
+      curve[i] = (Math.PI + 2) * x / (Math.PI + 2 * Math.abs(x));
+    }
+    shaper.curve = curve;
+    shaper.oversample = "2x";
+    const distGain = ctx.createGain();
+    distGain.gain.value = 0.6;
+    input.connect(shaper).connect(distGain).connect(ctx.destination);
+  }
+  // Dry signal
   input.connect(ctx.destination);
-  input.connect(send).connect(convolver).connect(wet).connect(ctx.destination);
   realBus = { context: ctx, input };
   return input;
 }

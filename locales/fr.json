@@ -315,5 +315,14 @@
   "settings.invalidFormat": "Format invalide",
   "settings.resetConfirm": "Réinitialiser la progression pour cet appareil ?\n\nL'XP, les leçons, la séquence et les paramètres locaux seront effacés. Si vous avez un compte, le cloud peut le restaurer lorsque vous vous reconnectez.",
   "app.correctPlus5": "Correct! +5 XP",
-  "app.incorrectMinus1": "Incorrect. -1 ❤️"
+  "app.incorrectMinus1": "Incorrect. -1 ❤️",
+  "settings.audioEffects": "Effets audio",
+  "settings.fxReverb": "Réverbération",
+  "settings.fxReverbHint": "Ajoute de l'espace et de la profondeur au son.",
+  "settings.fxChorus": "Chœur",
+  "settings.fxChorusHint": "Épaissit le son (idéal pour guitare électrique).",
+  "settings.fxDelay": "retard",
+  "settings.fxDelayHint": "Écho rythmique.",
+  "settings.fxDistortion": "Distorsion",
+  "settings.fxDistortionHint": "Son crunch/overdrive."
 }
