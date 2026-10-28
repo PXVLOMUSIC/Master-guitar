@@ -25,6 +25,8 @@
 
   /* Gradients (soft, modern) */
   --grad-bg: linear-gradient(160deg, #0b1218 0%, #121c24 50%, #0f1a22 100%);
+  /* Texture: subtle noise for depth */
+  --texture-opacity: 0.035;
   --grad-card: linear-gradient(145deg, rgba(28,42,54,0.95) 0%, rgba(22,32,42,0.98) 100%);
   --grad-green: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
   --grad-orange: linear-gradient(135deg, #ff9600 0%, #e08600 100%);
@@ -183,6 +185,7 @@
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 
   --grad-bg: linear-gradient(160deg, #f8fafc 0%, #f1f5f9 50%, #e8eef5 100%);
+  --texture-opacity: 0.02;
   --grad-card: linear-gradient(145deg, rgba(255,255,255,0.98) 0%, rgba(248,250,252,0.98) 100%);
   --grad-green: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
 }
@@ -212,6 +215,9 @@ body {
   line-height: var(--leading-normal);
   font-weight: var(--weight-regular);
   background: var(--grad-bg);
+  background-image: var(--grad-bg), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+  background-blend-mode: normal, overlay;
+  background-size: cover, 200px 200px;
   color: var(--text);
   min-height: 100vh;
   min-height: 100dvh;
@@ -2569,4 +2575,18 @@ body.section-open { overflow: hidden; }
   outline: 3px solid var(--green);
   outline-offset: 3px;
   border-radius: var(--r-sm);
+}
+
+
+/* ---------- Optional guitar background image ---------- */
+/* To enable: add class "has-bg-image" to <body> and place image at assets/bg-guitar.jpg */
+body.has-bg-image::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("../assets/bg-guitar.jpg") center / cover no-repeat;
+  opacity: var(--bg-image-opacity, 0.06);
+  filter: brightness(0.25) saturate(0.6) blur(1px);
+  pointer-events: none;
 }
