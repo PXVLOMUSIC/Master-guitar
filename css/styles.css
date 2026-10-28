@@ -2585,7 +2585,7 @@ body.has-bg-image::before {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: url("../assets/bg-guitar.jpg") center / cover no-repeat;
+  background: url("../assets/bg-guitar.jpg?v=2") center / cover no-repeat;
   opacity: var(--bg-image-opacity, 0.06);
   filter: brightness(0.25) saturate(0.6) blur(1px);
   pointer-events: none;
