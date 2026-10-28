@@ -60,20 +60,21 @@ jobs:
             -sdk iphoneos \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
-            CODE_SIGNING_REQUIRED=NO \
-            2>&1 | tail -40
-          if [ ! -d "build/Products/Release-iphoneos" ]; then
-            echo "Build failed - no output dir"
+            CODE_SIGNING_REQUIRED=NO
+          APP_PATH="build/Build/Products/Release-iphoneos/App.app"
+          if [ ! -d "$APP_PATH" ]; then
+            echo "Build failed - no output dir at $APP_PATH"
+            find build -name "App.app" -type d 2>/dev/null
             exit 1
           fi
-          cd build/Products/Release-iphoneos
           mkdir -p Payload
-          cp -r App.app Payload/
-          zip -r ../../../App.ipa Payload
+          cp -r "$APP_PATH" Payload/
+          zip -r App.ipa Payload
+          mv App.ipa ../../App.ipa
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
           name: strumio-ios-ipa
-          path: ios/App/build/App.ipa
+          path: ios/App/App.ipa
           retention-days: 7
