@@ -1080,10 +1080,10 @@ function injectStyles() {
   .bp-card { background: var(--card, #1e1e2e); border: 1px solid var(--border, #333); border-radius: 12px; padding: 12px; margin-bottom: 12px; }
   .bp-badge { display:inline-block; margin-left:6px; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:800;
     background: rgba(255,150,0,.16); color:#ffb347; border:1px solid rgba(255,150,0,.35); }
-  .bp-badge.ready { background: rgba(88,204,2,.16); color:#7ee038; border-color: rgba(88,204,2,.4); }
+  .bp-badge.ready { background: rgba(34,197,94,.16); color:#7ee038; border-color: rgba(34,197,94,.4); }
   .bp-transport { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 10px; }
   .bp-transport button { padding: 8px 14px; border-radius: 8px; border: none; cursor: pointer; font-weight: 700; }
-  .bp-transport .primary { background: #58cc02; color: #fff; }
+  .bp-transport .primary { background: #22c55e; color: #fff; }
   .bp-transport select, .bp-transport input { padding: 6px; border-radius: 8px; border: 1px solid var(--border,#444); background: var(--card2,#2a2a3a); color: var(--text,#fff); }
   .bp-slider-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
   .bp-slider-row label { min-width: 60px; font-size: 12px; color: var(--muted,#aaa); }
@@ -1092,7 +1092,7 @@ function injectStyles() {
   .mixer-strip { background: var(--card2,#2a2a3a); border-radius: 10px; padding: 8px 6px; text-align: center; }
   .mixer-name { font-size: 12px; font-weight: 800; margin-bottom: 6px; }
   .vu-wrap { height: 60px; width: 12px; margin: 0 auto 6px; background: #111; border-radius: 4px; position: relative; overflow: hidden; }
-  .vu-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 0%; background: linear-gradient(to top, #58cc02, #f1c40f, #e74c3c); transition: height 0.05s; }
+  .vu-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 0%; background: linear-gradient(to top, #22c55e, #f1c40f, #e74c3c); transition: height 0.05s; }
   .mix-btn { width: 28px; height: 24px; border-radius: 4px; border: 1px solid #555; background: #333; color: #fff; font-size: 11px; font-weight: 800; cursor: pointer; margin: 2px; }
   .mix-btn.active.mute { background: #e74c3c; }
   .mix-btn.active.solo { background: #f1c40f; color: #000; }
@@ -1103,7 +1103,7 @@ function injectStyles() {
   .seq-header .seq-stepnum { text-align: center; font-size: 10px; color: var(--muted,#aaa); }
   .seq-label { font-size: 11px; font-weight: 700; display: flex; align-items: center; padding-left: 4px; }
   .seq-cell { height: 22px; border-radius: 3px; background: #2a2a3a; cursor: pointer; border: 1px solid #333; transition: background 0.1s; }
-  .seq-cell.on { background: var(--c, #58cc02); }
+  .seq-cell.on { background: var(--c, #22c55e); }
   .seq-cell.current { outline: 2px solid #fff; }
   .mix-btn.fx { width: 32px; }
   .mix-btn.fx.on { background: #3498db; border-color: #3498db; }

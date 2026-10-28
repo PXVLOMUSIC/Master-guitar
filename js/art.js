@@ -12,10 +12,10 @@ export function mascot(mood = "happy", size = 120) {
   const id = "pua" + (++uid);
   const arms = {
     happy: "",
-    wave: `<path d="M98 62c10-4 16-14 15-24" class="pua-arm pua-wave"/><circle cx="113" cy="36" r="6" fill="#58cc02"/>`,
-    cheer: `<path d="M24 58c-10-6-14-16-12-26" class="pua-arm"/><path d="M96 58c10-6 14-16 12-26" class="pua-arm"/><circle cx="12" cy="30" r="6" fill="#58cc02"/><circle cx="108" cy="30" r="6" fill="#58cc02"/>
+    wave: `<path d="M98 62c10-4 16-14 15-24" class="pua-arm pua-wave"/><circle cx="113" cy="36" r="6" fill="#22c55e"/>`,
+    cheer: `<path d="M24 58c-10-6-14-16-12-26" class="pua-arm"/><path d="M96 58c10-6 14-16 12-26" class="pua-arm"/><circle cx="12" cy="30" r="6" fill="#22c55e"/><circle cx="108" cy="30" r="6" fill="#22c55e"/>
             <g class="pua-spark"><path d="M14 10l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#ffc800"/><path d="M104 6l1.5 4.5 4.5 1.5-4.5 1.5-1.5 4.5-1.5-4.5-4.5-1.5 4.5-1.5z" fill="#ff9600"/></g>`,
-    think: `<path d="M92 72c8 2 12-4 10-10" class="pua-arm"/><circle cx="101" cy="60" r="5" fill="#58cc02"/>
+    think: `<path d="M92 72c8 2 12-4 10-10" class="pua-arm"/><circle cx="101" cy="60" r="5" fill="#22c55e"/>
             <g fill="var(--muted)"><circle cx="100" cy="24" r="3"/><circle cx="108" cy="14" r="4.5"/></g>`,
   }[mood] || "";
   const mouth = {
@@ -45,7 +45,7 @@ export function mascot(mood = "happy", size = 120) {
 
 /* ---------------- portadas de unidad ---------------- */
 const PALETTES = [
-  ["#58cc02", "#2b7a00"], ["#1cb0f6", "#0b5f8a"], ["#ff9600", "#b34d00"], ["#ce82ff", "#6b2aa3"],
+  ["#22c55e", "#2b7a00"], ["#1cb0f6", "#0b5f8a"], ["#ff9600", "#b34d00"], ["#ce82ff", "#6b2aa3"],
   ["#ff4b4b", "#9e1b1b"], ["#ffc800", "#a87700"], ["#2bd9a5", "#0d7a5a"], ["#ff6b9d", "#a3204f"],
 ];
 const COLOR_INDEX = { green: 0, blue: 1, orange: 2, purple: 3, red: 4, gold: 5, yellow: 5, teal: 6, pink: 7 };

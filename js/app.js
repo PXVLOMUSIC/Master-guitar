@@ -100,6 +100,10 @@ async function render(route, params={}) {
   const v = view();
   if (!v) return;
   v.innerHTML = "";
+  v.classList.remove("page-enter");
+  // trigger reflow to restart animation
+  void v.offsetWidth;
+  v.classList.add("page-enter");
   switch (route) {
     case "onboard": renderOnboard(v); break;
     case "home": renderHome(v); break;
@@ -1036,7 +1040,7 @@ function renderTuner(v) {
             const strName = ins.strings[i];
             const isActive = i === tunerState.targetString;
             const badgeCount = (tunerState.history[tunerState.instrument+":"+tunerState.tuning+":"+i] || 0);
-            return `<div class="guitar-string" data-string="${i}" onclick="window.__tunerSetString(${i})" style="${isActive?'background:rgba(88,204,2,0.15)':''}">
+            return `<div class="guitar-string" data-string="${i}" onclick="window.__tunerSetString(${i})" style="${isActive?'background:rgba(34,197,94,0.15)':''}">
               <div class="gs-name" style="color:${isActive?'var(--green)':'var(--muted)'}">${strName}</div>
               <div class="gs-line" style="height:${1.5 + (numStrings - i) * 0.5}px">
                 <div class="string-vibrate" data-sv="${i}"></div>
@@ -1055,7 +1059,7 @@ function renderTuner(v) {
     tunerState.targetString = i;
     tunerState.autoTune = false;
     $$(".guitar-string").forEach((el, idx) => {
-      el.style.background = idx === i ? "rgba(88,204,2,0.15)" : "transparent";
+      el.style.background = idx === i ? "rgba(34,197,94,0.15)" : "transparent";
       const nameEl = el.querySelector('div:first-child');
       if (nameEl) nameEl.style.color = idx === i ? "var(--green)" : "var(--muted)";
     });
@@ -1160,7 +1164,7 @@ function renderTuner(v) {
         targetFreq = tuningFreqs[detectedStr];
         strName = ins.strings[detectedStr];
         // highlight
-        $$(".guitar-string").forEach((el, i) => { el.style.background = i === detectedStr ? "rgba(88,204,2,0.15)" : "transparent"; });
+        $$(".guitar-string").forEach((el, i) => { el.style.background = i === detectedStr ? "rgba(34,197,94,0.15)" : "transparent"; });
         $$(".string-btn").forEach((b, i) => b.classList.toggle("active", i === detectedStr));
       } else if (tunerState.chromatic) {
         const roundedMidi = Math.round(pitch.midi);
@@ -1173,7 +1177,7 @@ function renderTuner(v) {
         detectedStr = auto.index;
         if (detectedStr !== lastDetectedString) {
           lastDetectedString = detectedStr;
-          $$(".guitar-string").forEach((el, i) => { el.style.background = i === detectedStr ? "rgba(88,204,2,0.15)" : "transparent"; });
+          $$(".guitar-string").forEach((el, i) => { el.style.background = i === detectedStr ? "rgba(34,197,94,0.15)" : "transparent"; });
           tunerState.targetString = detectedStr;
           $$(".string-btn").forEach((b, i) => b.classList.toggle("active", i === detectedStr));
         }
@@ -1245,7 +1249,7 @@ function renderTuner(v) {
           // vibrate
           if (detectedStr >= 0) {
             const sv = document.querySelector(`[data-sv="${detectedStr}"]`);
-            if (sv) { sv.style.opacity = "1"; sv.style.background = "radial-gradient(ellipse, rgba(88,204,2,0.6), transparent)"; setTimeout(() => { if (sv) sv.style.opacity = "0"; }, 300); }
+            if (sv) { sv.style.opacity = "1"; sv.style.background = "radial-gradient(ellipse, rgba(34,197,94,0.6), transparent)"; setTimeout(() => { if (sv) sv.style.opacity = "0"; }, 300); }
           }
           if (inTuneFrames === 5) {
             if (state.settings && state.settings.haptic && navigator.vibrate) { try { navigator.vibrate(60); } catch (e) {} }
@@ -1994,6 +1998,26 @@ function renderProfile(v) {
     }
   };
 }
+
+// ---- topbar hide on scroll down ----
+let _lastScrollY = 0;
+function setupTopbarScroll() {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) return;
+  const scroller = document.querySelector("#view") || window;
+  const getY = () => (scroller === window ? window.scrollY : scroller.scrollTop);
+  const onScroll = () => {
+    const y = getY();
+    if (y > _lastScrollY && y > 60) {
+      topbar.classList.add("topbar--hidden");
+    } else {
+      topbar.classList.remove("topbar--hidden");
+    }
+    _lastScrollY = y;
+  };
+  scroller.addEventListener("scroll", onScroll, { passive: true });
+}
+window.addEventListener("load", setupTopbarScroll);
 
 // ---- boot ----
 async function boot() {

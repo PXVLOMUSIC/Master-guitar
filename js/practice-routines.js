@@ -599,7 +599,7 @@ const FINGER_EXERCISES = [
     tempo: 50,
     highlights: (function () {
       const out = [];
-      for (let f = 5; f <= 9; f++) out.push({ string: 2, fret: f, color: f % 2 === 0 ? "#ffc800" : "#58cc02" });
+      for (let f = 5; f <= 9; f++) out.push({ string: 2, fret: f, color: f % 2 === 0 ? "#ffc800" : "#22c55e" });
       return out;
     })()
   }

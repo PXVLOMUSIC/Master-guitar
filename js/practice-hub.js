@@ -9,8 +9,8 @@ import { t } from "./i18n.js";
 const META_KEY = "strumio_tools_v1";
 
 export const SECTIONS = [
-  { id: "hoy", name: "Rutina de hoy", icon: "today", color: "#58cc02", desc: "Sesión guiada de 15 minutos", tools: ["routines"] },
-  { id: "acordes", name: "Acordes", icon: "chords", color: "#58cc02", desc: "Aprende, cambia y detecta acordes", tools: ["chords", "voicings", "transitions", "changes", "chordDetect"] },
+  { id: "hoy", name: "Rutina de hoy", icon: "today", color: "#22c55e", desc: "Sesión guiada de 15 minutos", tools: ["routines"] },
+  { id: "acordes", name: "Acordes", icon: "chords", color: "#22c55e", desc: "Aprende, cambia y detecta acordes", tools: ["chords", "voicings", "transitions", "changes", "chordDetect"] },
   { id: "ritmo", name: "Ritmo", icon: "rhythm", color: "#ff9600", desc: "Metrónomo y rasgueo", tools: ["metronome", "strumming", "rhythm"] },
   { id: "banda", name: "Tocar con banda", icon: "band", color: "#ff4b4b", desc: "Bases con batería y bajo reales", tools: ["backing", "practiceMode"] },
   { id: "canciones", name: "Canciones", icon: "songs", color: "#ff6b9d", desc: "Canciones, riffs y tablaturas", tools: ["songs", "songLibrary", "tabs", "tabPlayer"] },
@@ -228,7 +228,7 @@ export function renderPracticeHub(root, tools, onLeave) {
           <h2 class="hub-title">${t("practice.favorites")}</h2>
           <div class="fav-row">${favTools.map((t) => {
             const s = sectionOf(t.id);
-            return `<button class="fav-chip" data-tool="${t.id}" style="--sec:${s ? s.color : "#58cc02"}">${icon(s ? s.icon : "guitar", 16)}<span>${escapeHtml(t.title)}</span></button>`;
+            return `<button class="fav-chip" data-tool="${t.id}" style="--sec:${s ? s.color : "#22c55e"}">${icon(s ? s.icon : "guitar", 16)}<span>${escapeHtml(t.title)}</span></button>`;
           }).join("")}</div>` : ""}
 
         <h2 class="hub-title">${t("practice.sections")}</h2>
@@ -257,7 +257,7 @@ export function renderPracticeHub(root, tools, onLeave) {
     results.innerHTML = found.length
       ? found.map((t) => {
           const s = sectionOf(t.id);
-          return `<button class="result-row" data-tool="${t.id}" style="--sec:${s ? s.color : "#58cc02"}">
+          return `<button class="result-row" data-tool="${t.id}" style="--sec:${s ? s.color : "#22c55e"}">
             <span class="result-row__icon">${icon(s ? s.icon : "guitar", 18)}</span>
             <span class="result-row__text"><strong>${escapeHtml(t.title)}</strong><span>${escapeHtml(s ? s.name : "")}</span></span>
             ${icon("arrow", 18)}

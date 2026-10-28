@@ -195,7 +195,7 @@ export function renderFretboard(container, options) {
 
   const rootColor = "#ffc800";
   const scaleColor = "#1cb0f6";
-  const highlightColor = "#58cc02";
+  const highlightColor = "#22c55e";
 
   // Layout
   const width = 920;

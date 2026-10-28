@@ -708,7 +708,7 @@ export function renderDashboard(container) {
     const cell = document.createElement("div");
     cell.style.aspectRatio = "1";
     cell.style.borderRadius = "6px";
-    cell.style.background = practiced ? (cssVar("--green") || "#58cc02") : (cssVar("--card-2") || "#243444");
+    cell.style.background = practiced ? (cssVar("--green") || "#22c55e") : (cssVar("--card-2") || "#243444");
     cell.style.display = "flex";
     cell.style.alignItems = "center";
     cell.style.justifyContent = "center";
@@ -752,7 +752,7 @@ function drawXPChart(canvas, n) {
   ctx.stroke();
 
   // bars
-  const green = cssVar("--green") || "#58cc02";
+  const green = cssVar("--green") || "#22c55e";
   vals.forEach((v, i) => {
     const h = (v / max) * plotH;
     const x = padL + i * barW + 2;

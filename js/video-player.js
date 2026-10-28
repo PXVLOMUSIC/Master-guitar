@@ -22,7 +22,7 @@ function injectStyles() {
   .vp-time { color:#fff; font-size:12px; font-variant-numeric:tabular-nums; min-width:90px; }
   .vp-vol { width:80px; }
   .vp-rate { background:rgba(255,255,255,.15); color:#fff; border:none; border-radius:8px; padding:6px; }
-  .vp-cc.active { background:var(--green,#58cc02); color:#000; }
+  .vp-cc.active { background:var(--green,#22c55e); color:#000; }
   .vp-sr { position:absolute; left:-10000px; width:1px; height:1px; overflow:hidden; }
   .vp-lib-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; padding:0 16px; }
   .vp-lib-card { background:var(--card,#1c2a36); border-radius:12px; overflow:hidden; cursor:pointer; border:1px solid var(--border,#2a3a4a); transition:transform .15s; }
