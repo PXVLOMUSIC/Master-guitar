@@ -6,6 +6,7 @@
 import { state, saveState } from "./storage.js";
 import { enqueue, flush, isOnline, onOnline, onOffline, getQueueSize, clearQueue, onQueueChange, getQueue, remove } from "./sync.js";
 import { SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_REALTIME } from "./supabase-config.js";
+import { t } from "./i18n.js";
 
 // ---------------------------------------------------------------------------
 // Configuration
@@ -1226,8 +1227,8 @@ export async function addFriendByEmail(email) {
       if (error) throw error;
       return data;
     });
-    if (!target) return { ok: false, error: new Error("Usuario no encontrado") };
-    if (target.id === currentUser.id) return { ok: false, error: new Error("No puedes agregarte a ti mismo") };
+    if (!target) return { ok: false, error: new Error(t("backend.userNotFound")) };
+    if (target.id === currentUser.id) return { ok: false, error: new Error(t("backend.cannotAddSelf")) };
     // Deduplicar solicitudes existentes en cualquier dirección.
     const existing = await withRetry(async () => {
       const uid = currentUser.id;
@@ -1235,8 +1236,8 @@ export async function addFriendByEmail(email) {
       if (error) throw error;
       return data || [];
     });
-    if (existing.some(f => f.status === "accepted")) return { ok: false, error: new Error("Ya son amigos") };
-    if (existing.some(f => f.status === "pending")) return { ok: false, error: new Error("Ya hay una solicitud pendiente") };
+    if (existing.some(f => f.status === "accepted")) return { ok: false, error: new Error(t("backend.alreadyFriends")) };
+    if (existing.some(f => f.status === "pending")) return { ok: false, error: new Error(t("backend.pendingRequestExists")) };
     await withRetry(async () => {
       const { error } = await client.from("friendships").insert({
         requester_id: currentUser.id,
@@ -1255,7 +1256,7 @@ export async function addFriendByEmail(email) {
 export async function addFriendByUsername(username) {
   ensureStateDefaults();
   const uname = String(username || "").trim().toLowerCase().replace(/^@/, "");
-  if (!uname) return { ok: false, error: new Error("Username vacío") };
+  if (!uname) return { ok: false, error: new Error(t("backend.usernameEmpty")) };
   if (!client || !currentUser) {
     enqueue({ type: "addFriend", payload: { username: uname } });
     scheduleBatchSync();
@@ -1272,16 +1273,16 @@ export async function addFriendByUsername(username) {
       if (error) throw error;
       return data;
     });
-    if (!target) return { ok: false, error: new Error("Usuario no encontrado") };
-    if (target.id === currentUser.id) return { ok: false, error: new Error("No puedes agregarte a ti mismo") };
+    if (!target) return { ok: false, error: new Error(t("backend.userNotFound")) };
+    if (target.id === currentUser.id) return { ok: false, error: new Error(t("backend.cannotAddSelf")) };
     const existing = await withRetry(async () => {
       const uid = currentUser.id;
       const { data, error } = await client.from("friendships").select("id,status").or(`and(requester_id.eq.${uid},addressee_id.eq.${target.id}),and(requester_id.eq.${target.id},addressee_id.eq.${uid})`);
       if (error) throw error;
       return data || [];
     });
-    if (existing.some(f => f.status === "accepted")) return { ok: false, error: new Error("Ya son amigos") };
-    if (existing.some(f => f.status === "pending")) return { ok: false, error: new Error("Ya hay una solicitud pendiente") };
+    if (existing.some(f => f.status === "accepted")) return { ok: false, error: new Error(t("backend.alreadyFriends")) };
+    if (existing.some(f => f.status === "pending")) return { ok: false, error: new Error(t("backend.pendingRequestExists")) };
     await withRetry(async () => {
       const { error } = await client.from("friendships").insert({
         requester_id: currentUser.id,
@@ -1621,26 +1622,26 @@ export async function renderBackendSettings(container) {
 
   container.innerHTML = `
     <div class="card" id="authCard">
-      <p style="color:var(--muted);font-size:13px;margin:0 0 10px">Inicia sesión con Google o con tu email para guardar tu progreso en todos tus dispositivos. Sin cuenta, la app funciona igual en este dispositivo.</p>
+      <p style="color:var(--muted);font-size:13px;margin:0 0 10px">${t("backend.authIntro")}</p>
       <div id="authArea"></div>
     </div>
 
     <div id="socialCards" hidden>
       <div class="card">
-        <h3>Leaderboard semanal</h3>
+        <h3>${t("backend.leaderboardWeekly")}</h3>
         <div id="lbArea"></div>
-        <button class="btn btn-secondary btn-sm" id="lbRefreshBtn" style="margin-top:8px">Actualizar</button>
+        <button class="btn btn-secondary btn-sm" id="lbRefreshBtn" style="margin-top:8px">${t("backend.refresh")}</button>
       </div>
       <div class="card">
-        <h3>Amigos</h3>
+        <h3>${t("backend.friends")}</h3>
         <div id="friendsArea"></div>
       </div>
       <div class="card">
-        <h3>Actividad de amigos</h3>
+        <h3>${t("backend.friendsActivity")}</h3>
         <div id="activityArea"></div>
       </div>
       <div class="card">
-        <h3>Compartir / Retos</h3>
+        <h3>${t("backend.shareChallenges")}</h3>
         <div id="socialArea"></div>
       </div>
     </div>
@@ -1659,39 +1660,39 @@ export async function renderBackendSettings(container) {
     if (user) {
       const last = getLastSyncAt();
       area.innerHTML = `
-        <p>Sesión: <b>${escapeHtml(user.email || user.name || "Usuario")}</b></p>
-        <p style="color:var(--muted);font-size:13px">Última sincronización: ${last ? new Date(last).toLocaleString() : "nunca"}</p>
+        <p>${t("backend.sessionLabel")}: <b>${escapeHtml(user.email || user.name || t("backend.user"))}</b></p>
+        <p style="color:var(--muted);font-size:13px">${t("backend.lastSync")}: ${last ? new Date(last).toLocaleString() : t("backend.never")}</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
-          <button class="btn btn-primary btn-sm" id="syncNowBtn">Sincronizar ahora</button>
-          <button class="btn btn-secondary btn-sm" id="signOutBtn">Cerrar sesión</button>
+          <button class="btn btn-primary btn-sm" id="syncNowBtn">${t("backend.syncNow")}</button>
+          <button class="btn btn-secondary btn-sm" id="signOutBtn">${t("backend.signOut")}</button>
         </div>
       `;
       const syncBtn = area.querySelector("#syncNowBtn");
       if (syncBtn) syncBtn.onclick = async () => {
         syncBtn.disabled = true;
         await syncProgress();
-        toast("Sincronizado");
+        toast(t("backend.synced"));
         renderAuthArea();
       };
       const btn = area.querySelector("#signOutBtn");
       if (btn) btn.onclick = async () => {
         await signOut();
-        toast("Sesión cerrada");
+        toast(t("backend.signedOut"));
         renderAuthArea();
       };
     } else {
       area.innerHTML = `
         <div class="auth-providers" id="authProviders">
-          <div class="auth-loading"><span class="spinner"></span> Comprobando métodos de acceso…</div>
+          <div class="auth-loading"><span class="spinner"></span> ${t("backend.checkingAccessMethods")}</div>
         </div>
-        <div class="auth-divider"><span>o con tu email</span></div>
-        <input id="authEmail" class="auth-input" type="email" placeholder="tu@email.com" autocomplete="email" inputmode="email">
-        <input id="authPass" class="auth-input" type="password" placeholder="Contraseña (mínimo 6 caracteres)" autocomplete="current-password">
+        <div class="auth-divider"><span>${t("backend.orWithEmail")}</span></div>
+        <input id="authEmail" class="auth-input" type="email" placeholder="${t("backend.emailPlaceholder")}" autocomplete="email" inputmode="email">
+        <input id="authPass" class="auth-input" type="password" placeholder="${t("backend.passwordPlaceholder")}" autocomplete="current-password">
         <div style="display:flex;gap:8px">
           <button class="btn btn-primary" id="loginBtn" style="flex:1">Entrar</button>
           <button class="btn btn-secondary" id="signupBtn" style="flex:1">Crear cuenta</button>
         </div>
-        <button class="auth-link" id="magicBtn">Enviarme un enlace de acceso (sin contraseña)</button>
+        <button class="auth-link" id="magicBtn">${t("backend.magicLinkButton")}</button>
       `;
 
       const emailEl = area.querySelector("#authEmail");
@@ -1705,8 +1706,8 @@ export async function renderBackendSettings(container) {
       function needCreds() {
         const email = emailEl.value.trim();
         const pass = passEl.value;
-        if (!email) { toast("Escribe tu email"); emailEl.focus(); return null; }
-        if (!pass || pass.length < 6) { toast("La contraseña debe tener al menos 6 caracteres"); passEl.focus(); return null; }
+        if (!email) { toast(t("backend.enterEmail")); emailEl.focus(); return null; }
+        if (!pass || pass.length < 6) { toast(t("backend.passwordMin")); passEl.focus(); return null; }
         return { email, pass };
       }
 
@@ -1716,8 +1717,8 @@ export async function renderBackendSettings(container) {
         busy(true);
         const r = await signIn(c.email, c.pass);
         busy(false);
-        if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
-        toast("Bienvenido de nuevo");
+        if (r.error) { toast(t("backend.errorPrefix") + " " + friendlyError(r.error)); return; }
+        toast(t("backend.welcomeBack"));
         renderAuthArea();
         refreshAll();
       };
@@ -1728,24 +1729,24 @@ export async function renderBackendSettings(container) {
         busy(true);
         const r = await signUp(c.email, c.pass, "");
         busy(false);
-        if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
+        if (r.error) { toast(t("backend.errorPrefix") + " " + friendlyError(r.error)); return; }
         if (r.session) {
-          toast("Cuenta creada");
+          toast(t("backend.accountCreated"));
           renderAuthArea();
           refreshAll();
         } else {
-          toast("Cuenta creada. Revisa tu correo para confirmarla.");
+          toast(t("backend.accountCreatedConfirm"));
         }
       };
 
       area.querySelector("#magicBtn").onclick = async () => {
         const email = emailEl.value.trim();
-        if (!email) { toast("Escribe tu email primero"); emailEl.focus(); return; }
+        if (!email) { toast(t("backend.enterEmailFirst")); emailEl.focus(); return; }
         busy(true);
         const r = await signInWithMagicLink(email);
         busy(false);
-        if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
-        toast("Enlace enviado. Revisa tu correo.");
+        if (r.error) { toast(t("backend.errorPrefix") + " " + friendlyError(r.error)); return; }
+        toast(t("backend.magicLinkSent"));
       };
 
       async function renderProviders() {
@@ -1769,7 +1770,7 @@ export async function renderBackendSettings(container) {
             btn.disabled = true;
             const r = await signInWithProvider(btn.dataset.provider);
             if (r && r.error) {
-              toast("Error: " + friendlyError(r.error));
+              toast(t("backend.errorPrefix") + " " + friendlyError(r.error));
               btn.disabled = false;
             }
           };
@@ -1786,7 +1787,7 @@ export async function renderBackendSettings(container) {
     area.innerHTML = "<p>Cargando…</p>";
     const rows = await getWeeklyLeaderboard(50);
     if (!rows.length) {
-      area.innerHTML = "<p style='color:var(--muted)'>Sin datos aún.</p>";
+      area.innerHTML = "<p style='color:var(--muted)'>" + t("backend.noDataYet") + ".</p>";
       return;
     }
     area.innerHTML = `
@@ -1806,59 +1807,59 @@ export async function renderBackendSettings(container) {
     const requests = await getFriendRequests();
     area.innerHTML = `
       <div style="display:flex;gap:8px;margin-bottom:8px">
-        <input id="friendUsername" type="text" placeholder="@username del amigo" style="flex:1;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text)">
-        <button class="btn btn-primary btn-sm" id="addFriendByUsernameBtn">Agregar</button>
+        <input id="friendUsername" type="text" placeholder="${t("backend.usernamePlaceholder")}" style="flex:1;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text)">
+        <button class="btn btn-primary btn-sm" id="addFriendByUsernameBtn">${t("backend.add")}</button>
       </div>
       <div style="display:flex;gap:8px;margin-bottom:8px">
-        <input id="friendEmail" type="email" placeholder="Email del amigo" style="flex:1;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text)">
-        <button class="btn btn-secondary btn-sm" id="addFriendBtn">Por email</button>
+        <input id="friendEmail" type="email" placeholder="${t("backend.emailPlaceholder")}" style="flex:1;padding:10px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text)">
+        <button class="btn btn-secondary btn-sm" id="addFriendBtn">${t("backend.byEmail")}</button>
       </div>
-      ${requests.length ? `<div style="margin-bottom:8px"><b>Solicitudes:</b>${requests.map(r => `
+      ${requests.length ? `<div style="margin-bottom:8px"><b>${t("backend.requests")}:</b>${requests.map(r => `
         <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
           <span>${escapeHtml(r.from && r.from.name || r.from && r.from.email || "Usuario")}${r.from && r.from.username ? ` <span style="color:var(--muted);font-size:11px">@${escapeHtml(r.from.username)}</span>` : ""}</span>
           <div style="display:flex;gap:6px">
-            <button class="btn btn-primary btn-sm" data-acc="${r.id}">Aceptar</button>
-            <button class="btn btn-secondary btn-sm" data-rej="${r.id}">Rechazar</button>
+            <button class="btn btn-primary btn-sm" data-acc="${r.id}">${t("backend.accept")}</button>
+            <button class="btn btn-secondary btn-sm" data-rej="${r.id}">${t("backend.reject")}</button>
           </div>
         </div>`).join("")}</div>` : ""}
-      <div><b>Amigos:</b> ${friends.length ? friends.map(f => `
+      <div><b>${t("backend.friends")}:</b> ${friends.length ? friends.map(f => `
         <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
           <span>${escapeHtml(f.name || f.email)}${f.username ? ` <span style="color:var(--muted);font-size:11px">@${escapeHtml(f.username)}</span>` : ""}</span>
-          <button class="btn btn-secondary btn-sm" data-ch="${f.id}">Reto</button>
-        </div>`).join("") : "<p style='color:var(--muted)'>Sin amigos aún.</p>"}
+          <button class="btn btn-secondary btn-sm" data-ch="${f.id}">${t("backend.challenge")}</button>
+        </div>`).join("") : "<p style='color:var(--muted)'>" + t("backend.noFriendsYet") + ".</p>"}
       </div>
     `;
     const addUserBtn = area.querySelector("#addFriendByUsernameBtn");
     if (addUserBtn) addUserBtn.onclick = async () => {
       const username = area.querySelector("#friendUsername").value.trim();
-      if (!username) { toast("Ingresa un username"); return; }
+      if (!username) { toast(t("backend.enterFriendUsername")); return; }
       const r = await addFriendByUsername(username);
-      if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
-      if (r.queued) { toast("Encolado (offline)"); return; }
-      toast("Solicitud enviada");
+      if (r.error) { toast(t("backend.errorPrefix") + " " + friendlyError(r.error)); return; }
+      if (r.queued) { toast(t("backend.queuedOffline")); return; }
+      toast(t("backend.friendRequestSent"));
       renderFriends();
     };
     const addBtn = area.querySelector("#addFriendBtn");
     if (addBtn) addBtn.onclick = async () => {
       const email = area.querySelector("#friendEmail").value.trim();
-      if (!email) { toast("Ingresa un email"); return; }
+      if (!email) { toast(t("backend.enterFriendEmail")); return; }
       const r = await addFriendByEmail(email);
-      if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
-      if (r.queued) { toast("Encolado (offline)"); return; }
-      toast("Solicitud enviada");
+      if (r.error) { toast(t("backend.errorPrefix") + " " + friendlyError(r.error)); return; }
+      if (r.queued) { toast(t("backend.queuedOffline")); return; }
+      toast(t("backend.friendRequestSent"));
       renderFriends();
     };
     area.querySelectorAll("[data-acc]").forEach(b => {
       b.onclick = async () => {
         await acceptFriend(b.dataset.acc);
-        toast("Aceptado");
+        toast(t("backend.accepted"));
         renderFriends();
       };
     });
     area.querySelectorAll("[data-rej]").forEach(b => {
       b.onclick = async () => {
         await rejectFriend(b.dataset.rej);
-        toast("Rechazado");
+        toast(t("backend.rejected"));
         renderFriends();
       };
     });
@@ -1866,8 +1867,8 @@ export async function renderBackendSettings(container) {
       b.onclick = async () => {
         const friendId = b.dataset.ch;
         const r = await challengeFriend(friendId, null);
-        if (r.error) { toast("Error: " + friendlyError(r.error)); return; }
-        toast(r.queued ? "Reto encolado" : "Reto enviado");
+        if (r.error) { toast(t("backend.errorPrefix") + " " + friendlyError(r.error)); return; }
+        toast(r.queued ? t("backend.challengeQueued") : t("backend.challengeSent"));
       };
     });
   }
@@ -1878,7 +1879,7 @@ export async function renderBackendSettings(container) {
     area.innerHTML = "<p>Cargando…</p>";
     const rows = await getActivityFeed(20);
     if (!rows.length) {
-      area.innerHTML = "<p style='color:var(--muted)'>Sin actividad reciente.</p>";
+      area.innerHTML = "<p style='color:var(--muted)'>" + t("backend.noRecentActivity") + ".</p>";
       return;
     }
     area.innerHTML = rows.map(r => {
@@ -1897,22 +1898,22 @@ export async function renderBackendSettings(container) {
     const link = generateShareLink();
     area.innerHTML = `
       <div style="margin-bottom:8px">
-        <button class="btn btn-primary btn-sm" id="shareBtn">Generar link de progreso</button>
+        <button class="btn btn-primary btn-sm" id="shareBtn">${t("backend.generateProgressLink")}</button>
         <input id="shareLink" type="text" readonly value="${escapeHtml(link)}" style="width:100%;padding:8px;border-radius:10px;border:2px solid var(--border);background:var(--card-2);color:var(--text);margin-top:8px;font-size:12px">
       </div>
       <div style="margin-top:8px">
-        <button class="btn btn-secondary btn-sm" id="postAchievementBtn">Publicar logro reciente</button>
+        <button class="btn btn-secondary btn-sm" id="postAchievementBtn">${t("backend.publishAchievement")}</button>
       </div>
     `;
     area.querySelector("#shareBtn").onclick = async () => {
       const l = await shareProgress();
       const inp = area.querySelector("#shareLink");
       if (inp) inp.value = l;
-      try { await navigator.clipboard.writeText(l); toast("Link copiado"); } catch (e) { toast("Link generado"); }
+      try { await navigator.clipboard.writeText(l); toast(t("backend.linkCopied")); } catch (e) { toast(t("backend.linkGenerated")); }
     };
     area.querySelector("#postAchievementBtn").onclick = async () => {
       await postActivity("achievement", { level: state.level, xp: state.xp });
-      toast("Publicado");
+      toast(t("backend.published"));
       renderActivity();
     };
   }
@@ -1931,7 +1932,7 @@ export async function renderBackendSettings(container) {
   // wire
   container.querySelector("#lbRefreshBtn").onclick = async () => {
     await renderLeaderboard();
-    toast("Actualizado");
+    toast(t("backend.updated"));
   };
 
   // realtime updates -> refresh UI

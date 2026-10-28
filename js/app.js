@@ -1,4 +1,5 @@
 ﻿import { state, saveState, resetState } from "./storage.js";
+import { t } from "./i18n.js";
 import { initI18n, applyDocumentLanguage, t, getCurrentLanguage } from "./i18n.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
@@ -353,7 +354,7 @@ function renderWelcomeSetup() {
     const m = await loadSettings();
     const ok = await m.requestNotificationPermission();
     if (ok) { m.scheduleReminder(parseInt($("#hourSel").value)); toast("Recordatorio activado 🔔"); }
-    else toast("Puedes activarlos luego en Ajustes");
+    else toast(t("app.adjustLater"));
     next();
   };
   $("#notifNo").onclick = next;
@@ -524,7 +525,7 @@ async function hydrateCloudCard() {
   if (g) g.onclick = async () => {
     g.disabled = true;
     const r = await signInWithProvider("google");
-    if (r && r.error) { toast("No se pudo abrir Google"); g.disabled = false; }
+    if (r && r.error) { toast(t("app.googleOpenError")); g.disabled = false; }
   };
   const o = box.querySelector("#cloudOpen");
   if (o) o.onclick = () => navigate("settings");
@@ -813,7 +814,7 @@ function renderTunerStep(qc, ctrl, step) {
         setTimeout(() => { stopMic(); nextStep(view()); }, 900);
       }
     });
-    if (!ok) toast("No se pudo acceder al micrófono");
+    if (!ok) toast(t("app.micAccessError"));
   };
   $("#skipBtn").onclick = () => { stopMic(); nextStep(view()); };
 }
@@ -842,7 +843,7 @@ function renderPlayStep(qc, ctrl, step) {
         setTimeout(() => { stopMic(); nextStep(view()); }, 900);
       }
     });
-    if (!ok) toast("No se pudo acceder al micrófono");
+    if (!ok) toast(t("app.micAccessError"));
   };
   $("#playSkipBtn").onclick = () => { stopMic(); nextStep(view()); };
 }
@@ -880,7 +881,7 @@ function renderPlayChordStep(qc, ctrl, step) {
     } else {
       $("#pcChord").textContent = "?";
       $("#pcConf").textContent = "No se detectó";
-      toast("No se detectó acorde, intenta de nuevo");
+      toast(t("app.noChordDetected"));
     }
   };
   $("#pcSkipBtn").onclick = () => { stopMic(); nextStep(view()); };
@@ -1115,7 +1116,7 @@ function renderTuner(v) {
   $("#micBtn").onclick = async () => {
     if (isRunning()) { stopMic(); stopContinuousTone(); tunerState.continuous=false; setMicBtn(false); $("#tuneStatus").textContent = "—"; return; }
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      toast("Tu navegador no soporta acceso al micrófono");
+      toast(t("app.micNotSupported"));
       return;
     }
     try {
@@ -1269,10 +1270,10 @@ function renderTuner(v) {
     if (ok) {
       setMicBtn(true);
       $("#tuneStatus").textContent = "Escuchando…";
-      toast("Micrófono activado. Toca una cuerda.");
+      toast(t("app.micActivated"));
     } else {
       setMicBtn(false);
-      toast("No se pudo acceder al micrófono.");
+      toast(t("app.micAccessError2"));
       const helpDiv = document.createElement("div");
       helpDiv.style.cssText = "background:var(--card2);padding:12px;border-radius:8px;margin-top:8px;font-size:12px;color:var(--muted)";
       helpDiv.innerHTML = `
@@ -1289,7 +1290,7 @@ function renderTuner(v) {
     testBtn.onclick = () => {
       playTone(440, 0.5, { gain: 0.3 });
       setTimeout(() => playTone(550, 0.5, { gain: 0.3 }), 300);
-      toast("¿Oíste el tono? Si no, verifica el volumen del navegador.");
+      toast(t("app.hearTonePrompt"));
     };
   }
   // stop continuous on unload? not needed
@@ -1909,7 +1910,7 @@ function renderProfile(v) {
   if (avatarRemove) avatarRemove.onclick = () => {
     delete state.user.avatar;
     saveState(state);
-    toast("Foto eliminada");
+    toast(t("app.photoRemoved"));
     renderProfile(view());
   };
   if (avatarInput) avatarInput.onchange = async () => {
@@ -1921,7 +1922,7 @@ function renderProfile(v) {
     try {
       state.user.avatar = await makeAvatarDataUrl(file);
       saveState(state);
-      toast("Foto actualizada");
+      toast(t("app.photoUpdated"));
       renderProfile(view());
     } catch (e) {
       console.warn("avatar", e);
@@ -1935,16 +1936,16 @@ function renderProfile(v) {
 
   $("#dashboardBtn").onclick = () => navigate("dashboard");
   $("#refillBtn").onclick = () => {
-    if (spendGems(50)) { refillHearts(); toast("Corazones rellenados"); renderProfile(view()); renderTopbar(); }
-    else toast("Gemas insuficientes");
+    if (spendGems(50)) { refillHearts(); toast(t("app.heartsRefilled")); renderProfile(view()); renderTopbar(); }
+    else toast(t("app.insufficientGems"));
   };
   $("#freezeBtn").onclick = () => {
-    if (spendGems(30)) toast("Congelador comprado (simulado)");
-    else toast("Gemas insuficientes");
+    if (spendGems(30)) toast(t("app.freezeSimulated"));
+    else toast(t("app.insufficientGems"));
   };
   $("#recordBtn").onclick = async () => {
-    if (!isRecordingSupported()) { toast("Grabación no soportada"); return; }
-    toast("Grabando 5 s...");
+    if (!isRecordingSupported()) { toast(t("app.recordingNotSupported")); return; }
+    toast(t("app.recordingStarted"));
     await startRecording();
     setTimeout(async () => {
       const blob = await stopRecording();
@@ -1952,12 +1953,12 @@ function renderProfile(v) {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url; a.download = "progreso.webm"; a.click();
-        toast("Grabación guardada");
+        toast(t("app.recordingSaved"));
       }
     }, 5000);
   };
   $("#resetBtn").onclick = async () => {
-    if (confirm("¿Reiniciar todo el progreso?")) {
+    if (confirm(t("app.resetProgressConfirm"))) {
       try { clearQueue(); } catch (e) {}
       try { await resetRemoteProgress(); } catch (e) { console.warn(e); }
       const ns = resetState(); Object.assign(state, ns); navigate("onboard");
@@ -2049,7 +2050,7 @@ function showInstallButton() {
     deferredInstallPrompt.prompt();
     try {
       const choice = await deferredInstallPrompt.userChoice;
-      if (choice && choice.outcome === "accepted") toast("Aplicación instalada");
+      if (choice && choice.outcome === "accepted") toast(t("app.appInstalled"));
     } catch (e) {}
     deferredInstallPrompt = null;
     hideInstallButton();
