@@ -806,7 +806,7 @@ function renderTunerStep(qc, ctrl, step) {
       if (centsEl) centsEl.textContent = `${pitch.freq.toFixed(1)} Hz · ${pitch.note.full}`;
       // check if close to target
       const targetFreq = step.freq;
-      const cents = centsOff(pitch.freq, targetFreq);
+      const cents = centsOff(smoothedFreq, targetFreq);
       if (Math.abs(cents) < 25 && !detected) {
         detected = true;
         lessonState.xpEarned += 8;
@@ -1114,7 +1114,7 @@ function renderTuner(v) {
   let inTuneFrames = 0;
   let smoothedNeedlePos = 50;
   $("#micBtn").onclick = async () => {
-    if (isRunning()) { stopMic(); stopContinuousTone(); tunerState.continuous=false; setMicBtn(false); $("#tuneStatus").textContent = "—"; return; }
+    if (isRunning()) { stopMic(); stopContinuousTone(); tunerState.continuous=false; setMicBtn(false); window.__tunerPitchHist = []; $("#tuneStatus").textContent = "—"; return; }
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       toast(t("app.micNotSupported"));
       return;
@@ -1172,7 +1172,14 @@ function renderTuner(v) {
       const cents = centsOff(pitch.freq, targetFreq);
       // Update note display
       $("#tNote").textContent = tunerState.chromatic ? (chromaticNote ? chromaticNote.full : pitch.note.full) : pitch.note.full;
-      $("#tNoteFull").textContent = `${pitch.note.full} · ${pitch.freq.toFixed(2)} Hz`;
+      $("      // Smoothing: median of last 5 pitch readings to reduce jitter.
+      if (!window.__tunerPitchHist) window.__tunerPitchHist = [];
+      window.__tunerPitchHist.push(pitch.freq);
+      if (window.__tunerPitchHist.length > 5) window.__tunerPitchHist.shift();
+      const _sorted = [...window.__tunerPitchHist].sort((a,b) => a-b);
+      const smoothedFreq = _sorted[Math.floor(_sorted.length/2)];
+      $("#tNoteFull").textContent = `${pitch.note.full} · ${smoothedFreq.toFixed(2)} Hz`;
+
       // cents text
       const centsStr = (cents > 0 ? "+" : "") + cents.toFixed(1);
       if (Math.abs(cents) < 5) {

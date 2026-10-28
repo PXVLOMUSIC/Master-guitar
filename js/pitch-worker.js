@@ -20,16 +20,26 @@ function rms(buffer) {
 }
 
 function yinPitch(buffer, sampleRate, threshold) {
-  threshold = (threshold == null) ? 0.2 : threshold;
+  threshold = (threshold == null) ? 0.12 : threshold;
   const SIZE = buffer.length;
   const half = Math.floor(SIZE / 2);
-  if (rms(buffer) < 0.003) return null;
+  let mean = 0;
+  for (let i = 0; i < SIZE; i++) mean += buffer[i];
+  mean /= SIZE;
+  const w = new Float64Array(SIZE);
+  for (let i = 0; i < SIZE; i++) w[i] = 0.5 * (1 - Math.cos(2 * Math.PI * i / (SIZE - 1)));
+  const buf = new Float64Array(SIZE);
+  for (let i = 0; i < SIZE; i++) buf[i] = (buffer[i] - mean) * w[i];
+  let rmsVal = 0;
+  for (let i = 0; i < SIZE; i++) rmsVal += buf[i] * buf[i];
+  rmsVal = Math.sqrt(rmsVal / SIZE);
+  if (rmsVal < 0.002) return null;
 
   const d = new Float64Array(half);
   for (let tau = 0; tau < half; tau++) {
     let sum = 0;
     for (let i = 0; i < half; i++) {
-      const delta = buffer[i] - buffer[i + tau];
+      const delta = buf[i] - buf[i + tau];
       sum += delta * delta;
     }
     d[tau] = sum;
@@ -57,7 +67,7 @@ function yinPitch(buffer, sampleRate, threshold) {
     for (let tau = 2; tau < half; tau++) {
       if (cmnd[tau] < minVal) { minVal = cmnd[tau]; minTau = tau; }
     }
-    if (minTau === -1 || minVal > 0.8) return null;
+    if (minTau === -1 || minVal > 0.35) return null;
     tauEstimate = minTau;
   }
 
@@ -80,10 +90,17 @@ function yinPitch(buffer, sampleRate, threshold) {
 
 function autocorrPitch(buffer, sampleRate) {
   const SIZE = buffer.length;
+  let mean = 0;
+  for (let i = 0; i < SIZE; i++) mean += buffer[i];
+  mean /= SIZE;
+  const w = new Float64Array(SIZE);
+  for (let i = 0; i < SIZE; i++) w[i] = 0.5 * (1 - Math.cos(2 * Math.PI * i / (SIZE - 1)));
+  const buf = new Float64Array(SIZE);
+  for (let i = 0; i < SIZE; i++) buf[i] = (buffer[i] - mean) * w[i];
   let rmsVal = 0;
-  for (let i = 0; i < SIZE; i++) rmsVal += buffer[i] * buffer[i];
+  for (let i = 0; i < SIZE; i++) rmsVal += buf[i] * buf[i];
   rmsVal = Math.sqrt(rmsVal / SIZE);
-  if (rmsVal < 0.008) return null;
+  if (rmsVal < 0.002) return null;
 
   let bestLag = -1;
   let bestCorr = 0;
@@ -93,23 +110,23 @@ function autocorrPitch(buffer, sampleRate) {
   for (let lag = minLag; lag <= maxLag; lag++) {
     let corr = 0, n1 = 0, n2 = 0;
     for (let i = 0; i < SIZE - lag; i++) {
-      corr += buffer[i] * buffer[i + lag];
-      n1 += buffer[i] * buffer[i];
-      n2 += buffer[i + lag] * buffer[i + lag];
+      corr += buf[i] * buf[i + lag];
+      n1 += buf[i] * buf[i];
+      n2 += buf[i + lag] * buf[i + lag];
     }
     const denom = Math.sqrt(n1 * n2);
     const r = denom > 0 ? corr / denom : 0;
     if (r > bestCorr) { bestCorr = r; bestLag = lag; }
   }
-  if (bestLag === -1 || bestCorr < 0.7) return null;
+  if (bestLag === -1 || bestCorr < 0.55) return null;
 
   const lags = [bestLag - 1, bestLag, bestLag + 1];
   const corrs = lags.map((lag) => {
     let corr = 0, n1 = 0, n2 = 0;
     for (let i = 0; i < SIZE - lag; i++) {
-      corr += buffer[i] * buffer[i + lag];
-      n1 += buffer[i] * buffer[i];
-      n2 += buffer[i + lag] * buffer[i + lag];
+      corr += buf[i] * buf[i + lag];
+      n1 += buf[i] * buf[i];
+      n2 += buf[i + lag] * buf[i + lag];
     }
     const d = Math.sqrt(n1 * n2);
     return d > 0 ? corr / d : 0;
