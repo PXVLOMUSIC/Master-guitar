@@ -12,7 +12,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
 
-      - name: Setup Node
+      - name: Setup Node 22
         uses: actions/setup-node@v5
         with:
           node-version: '22'
@@ -34,7 +34,7 @@ jobs:
           xcodebuild -version
 
       - name: Install dependencies
-        run: npm install @capacitor/core @capacitor/cli @capacitor/ios
+        run: npm install @capacitor/core @capacitor/cli @capacitor/ios @capacitor/app
 
       - name: Prepare web assets
         run: |
@@ -50,6 +50,12 @@ jobs:
             node ./node_modules/.bin/cap add ios
           fi
           node ./node_modules/.bin/cap sync ios
+
+      - name: Patch iOS Info.plist
+        run: |
+          PLIST=$(find ios -name "Info.plist" | head -1)
+          echo "Patching $PLIST"
+          python3 scripts/patch-ios.py "$PLIST"
 
       - name: Build IPA (unsigned)
         run: |

@@ -29,6 +29,9 @@ jobs:
       - name: Install dependencies
         run: npm ci || npm install
 
+      - name: Install Capacitor plugins
+        run: npm install @capacitor/core @capacitor/cli @capacitor/android @capacitor/app
+
       - name: Prepare web assets
         run: |
           rm -rf www
@@ -41,6 +44,9 @@ jobs:
         run: |
           npx cap add android || true
           npx cap sync android
+
+      - name: Patch AndroidManifest
+        run: python scripts/patch-android.py android/app/src/main/AndroidManifest.xml
 
       - name: Build APK
         run: |

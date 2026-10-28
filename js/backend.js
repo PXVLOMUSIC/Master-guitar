@@ -562,6 +562,27 @@ export async function initBackend(force = false) {
     return getStatus();
   }
   client = createClientFromConfig(cfg);
+// Deep link handler para OAuth en app nativa (Capacitor).
+try {
+  if (window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform()) {
+    const AppPlugin = window.Capacitor.Plugins && window.Capacitor.Plugins.App;
+    if (AppPlugin && typeof AppPlugin.addListener === "function") {
+      AppPlugin.addListener("appUrlOpen", async (event) => {
+        const url = event && event.url ? event.url : "";
+        if (!url || !url.includes("strumio://callback")) return;
+        const hash = url.includes("#") ? url.split("#")[1] : "";
+        const params = new URLSearchParams(hash);
+        const accessToken = params.get("access_token");
+        const refreshToken = params.get("refresh_token");
+        if (accessToken && refreshToken && client) {
+          try {
+            await client.auth.setSession({ access_token: accessToken, refresh_token: refreshToken });
+          } catch (e) { console.warn("setSession from deep link error", e); }
+        }
+      });
+    }
+  }
+} catch (e) { console.warn("deep link handler error", e); }
   if (!client) {
     backendMode = "error";
     connectionStatus = "offline";
@@ -702,6 +723,12 @@ export async function signIn(email, password) {
    Acceso simplificado: OAuth (Google, Apple, GitHub…) y enlace por email
    --------------------------------------------------------------------------- */
 export function getAuthRedirectUrl() {
+  // En app nativa (Capacitor), usar deep link para que el OAuth redirija a la app.
+  try {
+    if (window.Capacitor && typeof window.Capacitor.isNativePlatform === "function" && window.Capacitor.isNativePlatform()) {
+      return "strumio://callback";
+    }
+  } catch (e) {}
   return window.location.origin + window.location.pathname;
 }
 
