@@ -1238,5 +1238,339 @@
     "difficulty": 3,
     "style": "folk-rock",
     "description": "Clasico folk-rock; progression de 4 acordes en Am."
+  },
+  {
+    "name": "So payaso",
+    "artist": "Extremoduro",
+    "bpm": 120,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 3,
+    "style": "rock-espanol",
+    "description": "Clasico de Extremoduro; progression en Am con rasgueo rock."
+  },
+  {
+    "name": "La vereda de la puerta de atras",
+    "artist": "Extremoduro",
+    "bpm": 110,
+    "key": "Em",
+    "progression": [
+      "Em",
+      "D",
+      "C",
+      "B",
+      "Em",
+      "D",
+      "C",
+      "B"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 3,
+    "style": "rock-espanol",
+    "description": "Balada rock de Extremoduro; progression en Em."
+  },
+  {
+    "name": "Salir",
+    "artist": "Extremoduro",
+    "bpm": 130,
+    "key": "E",
+    "progression": [
+      "E",
+      "A",
+      "B",
+      "E",
+      "A",
+      "B"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rock-espanol",
+    "description": "Rock energetico; progression I-IV-V en E."
+  },
+  {
+    "name": "Como Camaron",
+    "artist": "Estopa",
+    "bpm": 120,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca de Estopa; progression en Am."
+  },
+  {
+    "name": "El run run",
+    "artist": "Estopa",
+    "bpm": 110,
+    "key": "Em",
+    "progression": [
+      "Em",
+      "D",
+      "C",
+      "B",
+      "Em",
+      "D",
+      "C",
+      "B"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca; progression en Em."
+  },
+  {
+    "name": "Vino tinto",
+    "artist": "Estopa",
+    "bpm": 115,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca; progression en Am."
+  },
+  {
+    "name": "Tu calorro",
+    "artist": "Estopa",
+    "bpm": 120,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca; progression en Am."
+  },
+  {
+    "name": "Soldadito marinero",
+    "artist": "Fito y Fitipaldis",
+    "bpm": 100,
+    "key": "G",
+    "progression": [
+      "G",
+      "D",
+      "Em",
+      "C",
+      "G",
+      "D",
+      "Em",
+      "C"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rock-espanol",
+    "description": "Balada rock de Fito; progression G-D-Em-C."
+  },
+  {
+    "name": "Por la boca vive el pez",
+    "artist": "Fito y Fitipaldis",
+    "bpm": 110,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 3,
+    "style": "rock-espanol",
+    "description": "Rock de Fito; progression en Am."
+  },
+  {
+    "name": "Me equivocaria otra vez",
+    "artist": "Fito y Fitipaldis",
+    "bpm": 95,
+    "key": "G",
+    "progression": [
+      "G",
+      "D",
+      "Em",
+      "C",
+      "G",
+      "D",
+      "Em",
+      "C"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rock-espanol",
+    "description": "Balada rock; progression G-D-Em-C."
+  },
+  {
+    "name": "Caminando por la vida",
+    "artist": "Melendi",
+    "bpm": 120,
+    "key": "C",
+    "progression": [
+      "C",
+      "G",
+      "Am",
+      "F",
+      "C",
+      "G",
+      "Am",
+      "F"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "pop-espanol",
+    "description": "Pop rock de Melendi; progression C-G-Am-F."
+  },
+  {
+    "name": "Con la luna llena",
+    "artist": "Melendi",
+    "bpm": 110,
+    "key": "G",
+    "progression": [
+      "G",
+      "D",
+      "Em",
+      "C",
+      "G",
+      "D",
+      "Em",
+      "C"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "pop-espanol",
+    "description": "Pop rock de Melendi; progression G-D-Em-C."
+  },
+  {
+    "name": "Sin noticias de Holanda",
+    "artist": "Melendi",
+    "bpm": 120,
+    "key": "C",
+    "progression": [
+      "C",
+      "G",
+      "Am",
+      "F",
+      "C",
+      "G",
+      "Am",
+      "F"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "pop-espanol",
+    "description": "Pop rock de Melendi; progression C-G-Am-F."
+  },
+  {
+    "name": "El aire de la calle",
+    "artist": "Los Delinquentes",
+    "bpm": 110,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca de Los Delinquentes; progression en Am."
+  },
+  {
+    "name": "Nube de pegatina",
+    "artist": "Los Delinquentes",
+    "bpm": 115,
+    "key": "Em",
+    "progression": [
+      "Em",
+      "D",
+      "C",
+      "B",
+      "Em",
+      "D",
+      "C",
+      "B"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca; progression en Em."
+  },
+  {
+    "name": "Chiclanera",
+    "artist": "Los Delinquentes",
+    "bpm": 120,
+    "key": "Am",
+    "progression": [
+      "Am",
+      "G",
+      "F",
+      "E",
+      "Am",
+      "G",
+      "F",
+      "E"
+    ],
+    "strumming": "D D D U",
+    "strummingPattern": "D D D U",
+    "difficulty": 2,
+    "style": "rumba-flamenca",
+    "description": "Rumba flamenca; progression en Am."
   }
 ]

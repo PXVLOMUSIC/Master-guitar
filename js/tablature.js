@@ -159,5 +159,57 @@ export const SAMPLE_TABS = [
       { string: 4, notes: [] },
       { string: 5, notes: [] }
     ]
+  },
+  {
+    title: "So payaso (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2}] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2},{fret:0,duration:2}] }
+    ]
+  },
+  {
+    title: "Como Camaron (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Soldadito marinero (riff)",
+    bpm: 100,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:2},{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2}] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
+  },
+  {
+    title: "Caminando por la vida (riff)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [] },
+      { string: 1, notes: [] },
+      { string: 2, notes: [{fret:0,duration:2},{fret:2,duration:2},{fret:3,duration:2},{fret:2,duration:2},{fret:0,duration:2},{fret:0,duration:2}] },
+      { string: 3, notes: [] },
+      { string: 4, notes: [] },
+      { string: 5, notes: [] }
+    ]
   }
 ];
