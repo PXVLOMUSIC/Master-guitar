@@ -32,6 +32,7 @@ jobs:
           echo "NPM: $(npm --version)"
           java -version 2>&1
           xcodebuild -version
+          pod --version
 
       - name: Install dependencies
         run: npm install @capacitor/core @capacitor/cli @capacitor/ios
@@ -50,10 +51,16 @@ jobs:
             node ./node_modules/.bin/cap add ios
           fi
           node ./node_modules/.bin/cap sync ios
+          echo "--- ios dir contents ---"
+          ls -la ios/ 2>/dev/null || echo "NO ios dir"
+          ls -la ios/App/ 2>/dev/null || echo "NO ios/App dir"
+          find ios -name "*.xcworkspace" 2>/dev/null || echo "NO xcworkspace"
 
       - name: Build IPA (unsigned)
         run: |
+          if [ ! -d "ios/App" ]; then echo "ERROR: ios/App not found"; exit 1; fi
           cd ios/App
+          ls -la
           xcodebuild -workspace App.xcworkspace \
             -scheme App \
             -configuration Release \
@@ -62,6 +69,10 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             2>&1 | tail -40
+          if [ ! -d "build/Products/Release-iphoneos" ]; then
+            echo "Build failed - no output dir"
+            exit 1
+          fi
           cd build/Products/Release-iphoneos
           mkdir -p Payload
           cp -r App.app Payload/
