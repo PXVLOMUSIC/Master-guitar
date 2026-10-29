@@ -1,4 +1,4 @@
-﻿import { state, saveState, resetState } from "./storage.js";
+import { state, saveState, resetState } from "./storage.js";
 import { initI18n, applyDocumentLanguage, t, getCurrentLanguage } from "./i18n.js";
 import { INSTRUMENTS, midiToFreq, closestString, centsOff, midiToNote, getReferencePitch } from "./instruments.js";
 import { addXP, updateStreak, checkAchievements, ACHIEVEMENTS, levelTitle, refillHearts, loseHeart, spendGems } from "./gamification.js";
@@ -2106,7 +2106,6 @@ async function boot() {
   idle(() => {
     // Descarga en segundo plano la guitarra real y el click del metrónomo.
     try {
-      setGuitarTone(state.settings.guitarTone || "acoustic");
       setEarInstrument(state.settings.earInstrument || "guitar");
       warmRealInstruments(state.settings.instrument === "bass" ? "bass" : "guitar");
     } catch (e) {}

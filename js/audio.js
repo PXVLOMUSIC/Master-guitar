@@ -454,8 +454,8 @@ function prewarmCommonNotes(instrument) {
   if (prewarmed.has(instrument)) return;
   prewarmed.add(instrument);
   // Precargar muestras reales en lugar de síntesis.
+  // NO sobrescribir el timbre elegido por el usuario.
   try { warmRealInstruments(instrument === "bass" ? "bass" : "guitar"); } catch (e) {}
-  try { if (instrument !== "bass") setGuitarTone((state && state.settings && state.settings.guitarTone) || "acoustic"); } catch (e) {}
 }
 
 // Biquad peaking filter coefficients.

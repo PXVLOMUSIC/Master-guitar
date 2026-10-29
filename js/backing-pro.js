@@ -365,7 +365,7 @@ const state = {
   metronome: { enabled: false, volume: 0.5 },
   loopBars: 4,
   bassType: "electric",
-  guitarTone: "acoustic",
+  guitarTone: null,
   drumKit: "original",
   tapTimes: [],
   progression: null,
@@ -1351,7 +1351,9 @@ function applySavedPattern(container, p) {
   state.progression = JSON.parse(JSON.stringify(p.progression || null));
   state.loopBars = p.loopBars;
   try { setDrumKit(state.drumKit || "original"); } catch (e) {}
-  try { setGuitarTone(state.guitarTone || "acoustic"); } catch (e) {}
+  // Sincronizar con la configuracion global sin sobrescribir la seleccion del usuario.
+  if (!state.guitarTone) state.guitarTone = (appState.settings && appState.settings.guitarTone) || "acoustic";
+  try { setGuitarTone(state.guitarTone); } catch (e) {}
   const bpmSlider = container.querySelector("#bpmSlider");
   const bpmVal = container.querySelector("#bpmVal");
   if (bpmSlider) bpmSlider.value = state.bpm;
@@ -1426,7 +1428,8 @@ function renderBackingMixer(container) {
   injectStyles();
   ensureGrid();
   try { setDrumKit(state.drumKit || "original"); } catch (e) {}
-  try { setGuitarTone(state.guitarTone || "acoustic"); } catch (e) {}
+  if (!state.guitarTone) state.guitarTone = (appState.settings && appState.settings.guitarTone) || "acoustic";
+  try { setGuitarTone(state.guitarTone); } catch (e) {}
   try {
     const _fx0 = (appState.settings && appState.settings.fx) || {};
     setFxReverb(_fx0.reverb !== false);

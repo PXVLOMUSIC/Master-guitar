@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    Strumio — Motor de samples reales (CC0 y CC BY 3.0)
    Batería acústica, bajo eléctrico, guitarra acústica y
    percusión corporal grabados de verdad, con capas de

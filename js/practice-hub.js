@@ -1,7 +1,7 @@
-﻿/* ============================================================
-   Strumio â€” Practicar
-   8 secciones. Cada secciÃ³n abre su propia pantalla a pantalla
-   completa, con pestaÃ±as para sus herramientas.
+/* ============================================================
+   Strumio — Practicar
+   8 secciones. Cada sección abre su propia pantalla a pantalla
+   completa, con pestañas para sus herramientas.
    ============================================================ */
 import { icon } from "./icons.js";
 import { t } from "./i18n.js";
@@ -9,16 +9,16 @@ import { t } from "./i18n.js";
 const META_KEY = "strumio_tools_v1";
 
 export const SECTIONS = [
-  { id: "hoy", name: "Rutina de hoy", icon: "today", color: "#22c55e", desc: "SesiÃ³n guiada de 15 minutos", tools: ["routines"] },
+  { id: "hoy", name: "Rutina de hoy", icon: "today", color: "#22c55e", desc: "Sesión guiada de 15 minutos", tools: ["routines"] },
   { id: "acordes", name: "Acordes", icon: "chords", color: "#22c55e", desc: "Aprende, cambia y detecta acordes", tools: ["chords", "voicings", "transitions", "changes", "chordDetect"] },
-  { id: "ritmo", name: "Ritmo", icon: "rhythm", color: "#ff9600", desc: "MetrÃ³nomo y rasgueo", tools: ["metronome", "strumming", "rhythm"] },
-  { id: "banda", name: "Tocar con banda", icon: "band", color: "#ff4b4b", desc: "Bases con baterÃ­a y bajo reales", tools: ["backing", "practiceMode"] },
-  { id: "looper", name: "Looper", icon: "loop", color: "#9b59b6", desc: "Graba y superpone pistas con metrÃ³nomo", tools: ["looper"] },
+  { id: "ritmo", name: "Ritmo", icon: "rhythm", color: "#ff9600", desc: "Metrónomo y rasgueo", tools: ["metronome", "strumming", "rhythm"] },
+  { id: "banda", name: "Tocar con banda", icon: "band", color: "#ff4b4b", desc: "Bases con batería y bajo reales", tools: ["backing", "practiceMode"] },
+  { id: "looper", name: "Looper", icon: "loop", color: "#9b59b6", desc: "Graba y superpone pistas con metrónomo", tools: ["looper"] },
   { id: "canciones", name: "Canciones", icon: "songs", color: "#ff6b9d", desc: "Canciones, riffs y tablaturas", tools: ["songs", "songLibrary", "tabs", "tabPlayer"] },
-  { id: "mastil", name: "MÃ¡stil y escalas", icon: "fretboard", color: "#ce82ff", desc: "Escalas, tÃ©cnica e improvisaciÃ³n", tools: ["scales", "fretboard", "fingerExercises", "techniques", "improvisation"] },
+  { id: "mastil", name: "Mástil y escalas", icon: "fretboard", color: "#ce82ff", desc: "Escalas, técnica e improvisación", tools: ["scales", "fretboard", "fingerExercises", "techniques", "improvisation"] },
   { id: "ejercicios", name: "Ejercicios", icon: "guitar", color: "#22c55e", desc: "Ejercicios eficientes por categorías", tools: ["exercises"] },
-  { id: "oido", name: "OÃ­do", icon: "ear", color: "#1cb0f6", desc: "Intervalos y tipos de acorde", tools: ["ear", "interval", "chordType", "voicingQuiz"] },
-  { id: "teoria", name: "TeorÃ­a y utilidades", icon: "theory", color: "#ffc800", desc: "TeorÃ­a, estilos, cejilla y vÃ­deos", tools: ["theory", "styles", "capo", "transposition", "videos"] },
+  { id: "oido", name: "Oído", icon: "ear", color: "#1cb0f6", desc: "Intervalos y tipos de acorde", tools: ["ear", "interval", "chordType", "voicingQuiz"] },
+  { id: "teoria", name: "Teoría y utilidades", icon: "theory", color: "#ffc800", desc: "Teoría, estilos, cejilla y vídeos", tools: ["theory", "styles", "capo", "transposition", "videos"] },
   { id: "rueda", name: "Rueda de acordes", icon: "theory", color: "#ffc800", desc: "Circle of Fifths interactivo", tools: ["chordWheel"] },
 ];
 
@@ -51,7 +51,7 @@ function escapeHtml(s) {
 }
 
 /* ------------------------------------------------------------
-   Pantalla de secciÃ³n
+   Pantalla de sección
    ------------------------------------------------------------ */
 let activePage = null;
 
@@ -68,17 +68,17 @@ export function closeSection({ fromHistory = false } = {}) {
   else if (location.hash.startsWith("#practicar/")) history.replaceState(null, "", location.pathname + location.search);
 }
 
-// BotÃ³n "atrÃ¡s" del mÃ³vil o del navegador: cierra la secciÃ³n.
+// Botón "atrás" del móvil o del navegador: cierra la sección.
 window.addEventListener("popstate", () => {
   if (activePage) closeSection({ fromHistory: true });
 });
 
 /**
- * Abre una secciÃ³n a pantalla completa.
+ * Abre una sección a pantalla completa.
  * @param section  elemento de SECTIONS
  * @param tools    registro de herramientas (id, title, desc, mount)
- * @param toolId   pestaÃ±a inicial (opcional)
- * @param onLeave  se llama al cambiar de pestaÃ±a o cerrar, para parar el audio
+ * @param toolId   pestaña inicial (opcional)
+ * @param onLeave  se llama al cambiar de pestaña o cerrar, para parar el audio
  */
 export function openSection(section, tools, toolId, onLeave) {
   if (activePage) closeSection({ fromHistory: true });
@@ -181,7 +181,7 @@ export function openFromHash(tools, onLeave) {
   return true;
 }
 
-/** Abre una herramienta concreta en su secciÃ³n. */
+/** Abre una herramienta concreta en su sección. */
 export function openTool(toolId, tools, onLeave) {
   const s = sectionOf(toolId);
   if (s) openSection(s, tools, toolId, onLeave);
