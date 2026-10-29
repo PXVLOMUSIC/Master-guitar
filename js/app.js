@@ -55,14 +55,22 @@ async function fetchJsonWithFallback(primary, fallback) {
 async function loadContent() {
   try {
     const lessonsPath = await localizedDataPath("lessons", "json");
-    const rLessons = await fetch(lessonsPath);
+    const ctrl1 = new AbortController();
+    const t1 = setTimeout(() => ctrl1.abort(), 5000);
+    const rLessons = await fetch(lessonsPath, { signal: ctrl1.signal });
+    clearTimeout(t1);
     LESSONS = await rLessons.json();
-    const r2 = await fetch("data/chords.json");
+    const ctrl2 = new AbortController();
+    const t2 = setTimeout(() => ctrl2.abort(), 5000);
+    const r2 = await fetch("data/chords.json", { signal: ctrl2.signal });
+    clearTimeout(t2);
     CHORDS = await r2.json();
   } catch (e) {
     console.error("content load error", e);
   }
-  try { await initBackend(); } catch (e) { console.warn("backend init error", e); }
+  try {
+    await Promise.race([initBackend(), new Promise((_, reject) => setTimeout(() => reject(new Error("initBackend timeout")), 8000))]);
+  } catch (e) { console.warn("backend init error", e); }
 }
 
 // ---- helpers ----
