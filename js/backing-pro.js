@@ -1,5 +1,5 @@
 // backing-pro.js - professional backing track system with mixer controls
-import { getAudioContext, resumeContext, setFxChorus, setFxDelay, setFxDistortion, setFxReverb } from "./audio.js";
+import { getAudioContext, resumeContext, setFxChorus, setFxDelay, setFxDistortion, setFxReverb, setGuitarTone, guitarGroup } from "./audio.js";
 import { midiToFreq } from "./instruments.js";
 import { state as appState, saveState } from "./storage.js";
 import { preloadGroup, isGroupReady, getSampleState, playDrum, playHand, playPitched, setDrumKit } from "./sample-engine.js";
@@ -40,6 +40,8 @@ const PATTERNS = {
       crash:  [1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,1,0,1, 0,1,0,1, 0,1,0,1, 0,1,0,1],
       bass:   [1,0,0,0, 0,0,1,0, 1,0,0,0, 0,0,1,0],
       piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       guitar: [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
@@ -57,6 +59,8 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       bass:   [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
       piano:  [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
       guitar: [1,0,1,0, 0,0,1,0, 1,0,1,0, 0,0,1,0],
@@ -74,6 +78,8 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
       bass:   [1,0,1,0, 0,1,0,0, 1,0,0,1, 0,0,1,0],
       piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       guitar: [1,0,0,1, 0,1,0,0, 1,0,0,1, 0,1,0,0],
@@ -91,6 +97,8 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       bass:   [1,0,0,0, 0,0,1,0, 0,0,1,0, 0,0,0,0],
       piano:  [1,0,0,1, 0,1,0,0, 1,0,0,1, 0,1,0,0],
       guitar: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
@@ -103,14 +111,15 @@ const PATTERNS = {
     progression: [{ root: 48, q: "min" }, { root: 53, q: "maj" }, { root: 48, q: "min" }, { root: 55, q: "maj" }],
     steps: {
       kick:   [1,0,0,0, 0,0,0,1, 0,0,1,0, 0,0,0,0],
-      snare:  [0,0,1,0, 0,0,0,0, 0,0,1,0, 0,0,0,0],
-      hihat:  [1,1,0,1, 1,1,0,1, 1,1,0,1, 1,1,0,1],
+      snare:  [0,0,1,0, 0,0,0,0, 0,0,1,0, 0,0,1,0],
+      hihat:  [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 1,0,0,0],
+      cajon:  [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
       shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
       bass:   [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
-      piano:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
+      piano:  [1,0,1,0, 0,1,0,0, 1,0,1,0, 0,1,0,0],
       guitar: [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
       strings:[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       synth:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
@@ -126,6 +135,8 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,1,0,1, 0,1,0,1, 0,1,0,1, 0,1,0,1],
       bass:   [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
       piano:  [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
       guitar: [0,0,0,0, 1,0,0,1, 0,0,0,0, 1,0,0,1],
@@ -137,12 +148,14 @@ const PATTERNS = {
     name: "Metal", bpm: 160, bassType: "electric",
     progression: [{ root: 40, q: "min" }, { root: 40, q: "min" }, { root: 43, q: "min" }, { root: 45, q: "min" }],
     steps: {
-      kick:   [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0],
+      kick:   [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
       snare:  [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
       hihat:  [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
       crash:  [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,1,1],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       bass:   [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
       piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       guitar: [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
@@ -160,6 +173,8 @@ const PATTERNS = {
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       bass:   [1,0,0,0, 0,0,1,0, 1,0,0,0, 0,0,1,0],
       piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       guitar: [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,0],
@@ -171,12 +186,13 @@ const PATTERNS = {
     name: "Bossa Nova", bpm: 130, bassType: "upright",
     progression: [{ root: 48, q: "maj7" }, { root: 53, q: "dom7" }, { root: 51, q: "maj7" }, { root: 58, q: "min7" }],
     steps: {
-      kick:   [1,0,0,0, 0,0,0,0, 0,0,1,0, 0,0,0,0],
+      kick:   [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
       snare:  [0,0,0,0, 0,0,1,0, 0,0,0,0, 0,0,1,0],
-      hihat:  [0,0,1,0, 0,1,0,0, 0,0,1,0, 0,1,0,0],
+      hihat:  [1,0,1,0, 0,1,0,0, 1,0,1,0, 0,1,0,0],
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
       bass:   [1,0,0,0, 0,0,1,0, 0,0,1,0, 0,0,0,0],
       piano:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
@@ -227,17 +243,114 @@ const PATTERNS = {
     name: "Hip-Hop", bpm: 90, bassType: "sub",
     progression: [{ root: 43, q: "min" }, { root: 43, q: "min" }, { root: 48, q: "min" }, { root: 46, q: "min" }],
     steps: {
-      kick:   [1,0,0,0, 0,0,0,0, 0,0,0,0, 1,0,0,0],
-      snare:  [0,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
+      kick:   [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,1,0],
+      snare:  [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,1],
       hihat:  [1,0,1,0, 1,0,1,1, 1,0,1,0, 1,0,1,1],
       crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
-      bass:   [1,0,0,0, 0,0,0,0, 0,0,1,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,1,0,1, 0,1,0,1, 0,1,0,1, 0,1,0,1],
+      bass:   [1,0,0,0, 0,0,1,0, 1,0,0,1, 0,0,0,0],
+      piano:  [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
+      guitar: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      strings:[1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0]
+    }
+  },
+  trap: {
+    name: "Trap", bpm: 140, bassType: "sub",
+    progression: [{ root: 43, q: "min" }, { root: 43, q: "min" }, { root: 48, q: "min" }, { root: 46, q: "min" }],
+    steps: {
+      kick:   [1,0,0,0, 0,0,1,0, 0,0,0,0, 0,0,0,0],
+      snare:  [0,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
+      hihat:  [1,0,1,1, 1,0,1,1, 1,0,1,1, 1,0,1,1],
+      crash:  [1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,1,0,1, 0,1,0,1, 0,1,0,1, 0,1,0,1],
+      bass:   [1,0,0,0, 0,0,1,0, 0,0,0,0, 0,0,1,0],
       piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       guitar: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
       strings:[1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
-      synth:  [1,0,0,0, 0,0,1,0, 1,0,0,0, 0,0,1,0]
+      synth:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0]
+    }
+  },
+  ska: {
+    name: "Ska", bpm: 150, bassType: "electric",
+    progression: [{ root: 48, q: "maj" }, { root: 53, q: "maj" }, { root: 55, q: "maj" }, { root: 48, q: "maj" }],
+    steps: {
+      kick:   [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
+      snare:  [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
+      hihat:  [0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0],
+      crash:  [1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,1,0,1, 0,1,0,1, 0,1,0,1, 0,1,0,1],
+      bass:   [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
+      piano:  [0,0,1,0, 0,0,1,1, 0,0,1,0, 0,0,1,1],
+      guitar: [0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0],
+      strings:[1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+    }
+  },
+  disco: {
+    name: "Disco", bpm: 120, bassType: "electric",
+    progression: [{ root: 48, q: "min" }, { root: 51, q: "maj" }, { root: 53, q: "maj" }, { root: 48, q: "min" }],
+    steps: {
+      kick:   [1,0,0,0, 1,0,0,0, 1,0,0,0, 1,0,0,0],
+      snare:  [0,0,0,0, 1,0,0,0, 0,0,0,0, 1,0,0,0],
+      hihat:  [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,1],
+      crash:  [1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [1,1,1,1, 1,1,1,1, 1,1,1,1, 1,1,1,1],
+      bass:   [1,0,1,0, 0,1,0,0, 1,0,1,0, 0,1,0,1],
+      piano:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
+      guitar: [1,0,1,0, 1,0,1,0, 1,0,1,0, 1,0,1,1],
+      strings:[1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0]
+    }
+  },
+  ballad: {
+    name: "Balada", bpm: 70, bassType: "upright",
+    progression: [{ root: 48, q: "maj" }, { root: 53, q: "maj" }, { root: 55, q: "min" }, { root: 48, q: "maj" }],
+    steps: {
+      kick:   [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
+      snare:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 1,0,0,0],
+      hihat:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      crash:  [1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [1,0,0,0, 0,0,1,0, 1,0,0,0, 0,0,1,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      shaker: [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      bass:   [1,0,0,0, 0,0,0,0, 0,0,1,0, 0,0,0,0],
+      piano:  [1,0,0,1, 0,0,1,0, 1,0,0,1, 0,0,1,0],
+      guitar: [1,0,1,0, 0,1,0,0, 1,0,1,0, 0,1,0,0],
+      strings:[1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [1,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
+    }
+  },
+  flamenco: {
+    name: "Flamenco", bpm: 120, bassType: "electric",
+    progression: [{ root: 45, q: "min" }, { root: 43, q: "maj" }, { root: 41, q: "maj" }, { root: 40, q: "maj" }],
+    steps: {
+      kick:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      snare:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      hihat:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      crash:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      ride:   [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      tom:    [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      cajon:  [1,0,0,1, 1,0,1,0, 1,0,0,1, 1,0,1,1],
+      shaker: [1,0,1,0, 1,1,0,1, 1,0,1,0, 1,1,0,1],
+      bass:   [1,0,0,0, 0,0,0,0, 1,0,0,0, 0,0,0,0],
+      piano:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      guitar: [1,1,0,1, 1,0,1,0, 1,1,0,1, 1,0,1,0],
+      strings:[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0],
+      synth:  [0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0]
     }
   }
 };
@@ -731,18 +844,26 @@ function karplusBuffer(ctx, freq, dur) {
   return buf;
 }
 
+function guitarSampleGroup() {
+  try { if (typeof guitarGroup === "function") return guitarGroup(); } catch (e) {}
+  const t = state.guitarTone || "acoustic";
+  return t === "electric" ? "electric" : t === "nylon" ? "nylon" : "guitar";
+}
 function scheduleGuitar(ctx, ch, time, barIndex, stepIndex) {
   const chord = chordForBar(barIndex);
   const notes = chordNotes(chord, 1);
   const dur = 0.55;
-  if (isGroupReady("guitar")) {
+  const group = guitarSampleGroup();
+  if (isGroupReady(group)) {
     notes.forEach((midi, i) => {
-      playPitched("guitar", midi, time + i * 0.018, ch.gain, {
+      playPitched(group, midi, time + i * 0.018, ch.gain, {
         gain: 0.72, velocity: 0.82, duration: dur
       });
     });
     return;
   }
+  // Intenta cargar el grupo del timbre elegido (sin bloquear el scheduler).
+  try { preloadGroup(group, ctx); } catch (e) {}
   notes.forEach((midi, i) => {
     const freq = midiToFreq(midi);
     const buf = karplusBuffer(ctx, freq, dur);
@@ -815,7 +936,8 @@ function scheduleSynth(ctx, ch, time, barIndex, stepIndex) {
 function voiceNote(ctx, ch, id, time, midi, dur) {
   if (!ch) return;
   dur = Math.max(0.1, dur);
-  const group = { bass: "bass", guitar: "guitar", piano: "piano" }[id];
+  const groupMap = { bass: "bass", guitar: guitarSampleGroup(), piano: "piano" };
+  const group = groupMap[id];
   if (group && playPitched(group, midi, time, ch.gain, {
     gain: id === "piano" ? 0.6 : 0.8, velocity: 0.85, duration: dur + 0.1
   })) return;
@@ -1162,25 +1284,21 @@ function warmRealSamples(container) {
     const ctx = getAudioContext();
     resumeContext(ctx);
     const badge = container && container.querySelector("#sampleBadge");
+    const groupsToLoad = ["drums", "bass", "guitar", "electric", "nylon", "hand"];
     const update = () => {
       if (!badge) return;
       const s = getSampleState();
-      const g = s.groups;
-      const total = g.drums.total + g.bass.total + g.guitar.total + g.hand.total;
-      const loaded = g.drums.loaded + g.bass.loaded + g.guitar.loaded + g.hand.loaded;
-      if (g.drums.ready && g.bass.ready && g.guitar.ready && g.hand.ready) {
+      const g = s.groups || {};
+      const total = groupsToLoad.reduce((a, k) => a + ((g[k] && g[k].total) || 0), 0);
+      const loaded = groupsToLoad.reduce((a, k) => a + ((g[k] && g[k].loaded) || 0), 0);
+      if (g.drums && g.drums.ready && g.bass && g.bass.ready && g.guitar && g.guitar.ready && g.hand && g.hand.ready) {
         badge.textContent = "● Muestras reales";
         badge.classList.add("ready");
       } else {
         badge.textContent = `Cargando sonidos ${total ? Math.round((loaded / total) * 100) : 0}%`;
       }
     };
-    Promise.all([
-      preloadGroup("drums", ctx, update),
-      preloadGroup("bass", ctx, update),
-      preloadGroup("guitar", ctx, update),
-      preloadGroup("hand", ctx, update),
-    ]).then(update);
+    Promise.all(groupsToLoad.map((grp) => preloadGroup(grp, ctx, update))).then(update);
   } catch (e) { /* se mantiene la sintesis */ }
 }
 
@@ -1359,6 +1477,14 @@ function renderBackingMixer(container) {
   if (guitarToneSel) guitarToneSel.onchange = (e) => {
     state.guitarTone = e.target.value;
     try { setGuitarTone(state.guitarTone); } catch (ex) {}
+    const group = guitarSampleGroup();
+    const ctx = getAudioContext();
+    try { resumeContext(ctx); } catch (ex) {}
+    // Precarga el grupo del nuevo timbre y espera (con timeout) antes de refrescar.
+    try {
+      Promise.race([preloadGroup(group, ctx), new Promise((r) => setTimeout(r, 4000))])
+        .then(() => { try { warmRealSamples(container); } catch (ex2) {} });
+    } catch (ex) {}
   };
 
   const drumKitSel = container.querySelector("#drumKitSel");

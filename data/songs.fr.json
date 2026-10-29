@@ -17,7 +17,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Hymne écossais du Nouvel An ; progression simple pour débutants."
+    "description": "Hymne écossais du Nouvel An ; progression simple pour débutants.",
+    "year": 1850
   },
   {
     "name": "Greensleeves (traditionnel)",
@@ -38,7 +39,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Mélodie anglaise classique avec cadence andalouse."
+    "description": "Mélodie anglaise classique avec cadence andalouse.",
+    "year": 1850
   },
   {
     "name": "House of the Rising Sun (folk)",
@@ -59,7 +61,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Ballade folk en arpège ; motif en 6/8."
+    "description": "Ballade folk en arpège ; motif en 6/8.",
+    "year": 1850
   },
   {
     "name": "Amazing Grace (traditionnel)",
@@ -81,7 +84,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "gospel",
-    "description": "Hymne spirituel classique."
+    "description": "Hymne spirituel classique.",
+    "year": 1850
   },
   {
     "name": "When the Saints Go Marching In",
@@ -100,7 +104,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 1,
     "style": "jazz",
-    "description": "Standard de jazz traditionnel de La Nouvelle-Orléans."
+    "description": "Standard de jazz traditionnel de La Nouvelle-Orléans.",
+    "year": 1750
   },
   {
     "name": "Camptown Races",
@@ -122,7 +127,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Chanson populaire du XIXe siècle."
+    "description": "Chanson populaire du XIXe siècle.",
+    "year": 1850
   },
   {
     "name": "Oh! Susanna",
@@ -142,7 +148,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Classique du folk américain."
+    "description": "Classique du folk américain.",
+    "year": 1850
   },
   {
     "name": "Scarborough Fair (traditionnel)",
@@ -163,7 +170,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Ballade anglaise médiévale."
+    "description": "Ballade anglaise médiévale.",
+    "year": 1850
   },
   {
     "name": "Danny Boy (Londonderry Air)",
@@ -185,7 +193,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "folk",
-    "description": "Mélodie irlandaise classique."
+    "description": "Mélodie irlandaise classique.",
+    "year": 1850
   },
   {
     "name": "Molly Malone (Cockles and Mussels)",
@@ -206,7 +215,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Chanson populaire de Dublin."
+    "description": "Chanson populaire de Dublin.",
+    "year": 1850
   },
   {
     "name": "Spanish Romance (anonyme)",
@@ -227,7 +237,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 3,
     "style": "classical",
-    "description": "Étude classique pour guitare."
+    "description": "Étude classique pour guitare.",
+    "year": 1750
   },
   {
     "name": "Romanza (Jeux interdits)",
@@ -248,7 +259,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 3,
     "style": "classical",
-    "description": "Pièce classique populaire pour guitare."
+    "description": "Pièce classique populaire pour guitare.",
+    "year": 1750
   },
   {
     "name": "Ode to Joy (Beethoven)",
@@ -276,7 +288,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "classical",
-    "description": "Thème de la Neuvième Symphonie."
+    "description": "Thème de la Neuvième Symphonie.",
+    "year": 1750
   },
   {
     "name": "Eine kleine Nachtmusik (Mozart)",
@@ -296,7 +309,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "classical",
-    "description": "Sérénade classique en Sol majeur."
+    "description": "Sérénade classique en Sol majeur.",
+    "year": 1750
   },
   {
     "name": "Canon in D (Pachelbel)",
@@ -317,7 +331,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "classical",
-    "description": "Progression canonique très utilisée."
+    "description": "Progression canonique très utilisée.",
+    "year": 1750
   },
   {
     "name": "Asturias (Leyenda)",
@@ -338,7 +353,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 4,
     "style": "flamenco",
-    "description": "Étude flamenco avec arpèges rapides."
+    "description": "Étude flamenco avec arpèges rapides.",
+    "year": 1750
   },
   {
     "name": "Malaguena (traditionnel)",
@@ -359,7 +375,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 3,
     "style": "flamenco",
-    "description": "Forme flamenca classique."
+    "description": "Forme flamenca classique.",
+    "year": 1750
   },
   {
     "name": "Sevillanas (traditionnel)",
@@ -380,7 +397,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "flamenco",
-    "description": "Danse traditionnelle de Séville."
+    "description": "Danse traditionnelle de Séville.",
+    "year": 1750
   },
   {
     "name": "Rumba flamenca (original)",
@@ -401,7 +419,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 2,
     "style": "flamenco",
-    "description": "Rumba avec rasgueado flamenco."
+    "description": "Rumba avec rasgueado flamenco.",
+    "year": 2020
   },
   {
     "name": "Flamenco por arriba (original)",
@@ -420,7 +439,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 3,
     "style": "flamenco",
-    "description": "Mode flamenco por arriba."
+    "description": "Mode flamenco por arriba.",
+    "year": 2020
   },
   {
     "name": "Rumba catalana (original)",
@@ -441,7 +461,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 2,
     "style": "rumba",
-    "description": "Rumba catalane avec rasgueado joyeux."
+    "description": "Rumba catalane avec rasgueado joyeux.",
+    "year": 2020
   },
   {
     "name": "Rumba douce (original)",
@@ -462,7 +483,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 2,
     "style": "rumba",
-    "description": "Rumba douce pour s'entraîner."
+    "description": "Rumba douce pour s'entraîner.",
+    "year": 2020
   },
   {
     "name": "Blues en La mineur (12 mesures)",
@@ -487,7 +509,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "blues",
-    "description": "Blues de 12 mesures en La mineur."
+    "description": "Blues de 12 mesures en La mineur.",
+    "year": 1750
   },
   {
     "name": "Blues en Mi (shuffle)",
@@ -512,7 +535,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 3,
     "style": "blues",
-    "description": "Blues shuffle avec septièmes."
+    "description": "Blues shuffle avec septièmes.",
+    "year": 2020
   },
   {
     "name": "Blues boogie (original)",
@@ -533,7 +557,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "blues",
-    "description": "Boogie-woogie simple."
+    "description": "Boogie-woogie simple.",
+    "year": 2020
   },
   {
     "name": "Bossa nova en Do (original)",
@@ -554,7 +579,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 3,
     "style": "bossa nova",
-    "description": "Bossa nova avec accords de septième."
+    "description": "Bossa nova avec accords de septième.",
+    "year": 2020
   },
   {
     "name": "Bossa douce (original)",
@@ -575,7 +601,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 3,
     "style": "bossa nova",
-    "description": "Bossa douce en Fa."
+    "description": "Bossa douce en Fa.",
+    "year": 2020
   },
   {
     "name": "Samba (original)",
@@ -596,7 +623,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 2,
     "style": "bossa nova",
-    "description": "Motif de samba."
+    "description": "Motif de samba.",
+    "year": 2020
   },
   {
     "name": "Reggae en Sol (original)",
@@ -617,7 +645,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 2,
     "style": "reggae",
-    "description": "Reggae avec contretemps."
+    "description": "Reggae avec contretemps.",
+    "year": 2020
   },
   {
     "name": "Reggae skank (original)",
@@ -638,7 +667,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 2,
     "style": "reggae",
-    "description": "Skank reggae en La mineur."
+    "description": "Skank reggae en La mineur.",
+    "year": 2020
   },
   {
     "name": "Dub (original)",
@@ -659,7 +689,8 @@
     "strummingPattern": "D (pausa) U",
     "difficulty": 3,
     "style": "reggae",
-    "description": "Dub avec espaces."
+    "description": "Dub avec espaces.",
+    "year": 2020
   },
   {
     "name": "Country en Ré (original)",
@@ -680,7 +711,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "country",
-    "description": "Country simple en Ré."
+    "description": "Country simple en Ré.",
+    "year": 2020
   },
   {
     "name": "Country ballad (original)",
@@ -701,7 +733,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "country",
-    "description": "Ballade country."
+    "description": "Ballade country.",
+    "year": 2020
   },
   {
     "name": "Bluegrass (original)",
@@ -722,7 +755,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "country",
-    "description": "Bluegrass rapide."
+    "description": "Bluegrass rapide.",
+    "year": 2020
   },
   {
     "name": "Pop I-V-vi-IV en Do",
@@ -739,7 +773,8 @@
     "strummingPattern": "D DU UDU",
     "difficulty": 1,
     "style": "pop",
-    "description": "Progression pop classique."
+    "description": "Progression pop classique.",
+    "year": 2020
   },
   {
     "name": "Pop I-V-vi-IV en Sol",
@@ -756,7 +791,8 @@
     "strummingPattern": "D DU UDU",
     "difficulty": 1,
     "style": "pop",
-    "description": "Progression pop en Sol."
+    "description": "Progression pop en Sol.",
+    "year": 2020
   },
   {
     "name": "Ballade acoustique",
@@ -777,7 +813,8 @@
     "strummingPattern": "D D U U D U",
     "difficulty": 1,
     "style": "pop",
-    "description": "Ballade acoustique douce."
+    "description": "Ballade acoustique douce.",
+    "year": 2020
   },
   {
     "name": "Rockabilly en La",
@@ -798,7 +835,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "rock",
-    "description": "Rockabilly énergique."
+    "description": "Rockabilly énergique.",
+    "year": 2020
   },
   {
     "name": "Metal power chords",
@@ -819,7 +857,8 @@
     "strummingPattern": "D (palm mute) D",
     "difficulty": 2,
     "style": "metal",
-    "description": "Power chords pour metal."
+    "description": "Power chords pour metal.",
+    "year": 2020
   },
   {
     "name": "Jazz ii-V-I en Do",
@@ -835,7 +874,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 4,
     "style": "jazz",
-    "description": "Progression ii-V-I classique."
+    "description": "Progression ii-V-I classique.",
+    "year": 2020
   },
   {
     "name": "Jazz blues en Si bémol",
@@ -856,7 +896,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 4,
     "style": "jazz",
-    "description": "Jazz blues avec septièmes."
+    "description": "Jazz blues avec septièmes.",
+    "year": 2020
   },
   {
     "name": "Bebop (original)",
@@ -877,7 +918,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 5,
     "style": "jazz",
-    "description": "Bebop rapide."
+    "description": "Bebop rapide.",
+    "year": 2020
   },
   {
     "name": "Valse classique en Do",
@@ -897,7 +939,8 @@
     "strummingPattern": "D (3/4) D D",
     "difficulty": 2,
     "style": "classical",
-    "description": "Valse en mesure à 3/4."
+    "description": "Valse en mesure à 3/4.",
+    "year": 2020
   },
   {
     "name": "Tango (original)",
@@ -917,7 +960,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "latin",
-    "description": "Tango avec rythme marqué."
+    "description": "Tango avec rythme marqué.",
+    "year": 2020
   },
   {
     "name": "Cumbia en Ré",
@@ -938,7 +982,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 1,
     "style": "latin",
-    "description": "Cumbia simple."
+    "description": "Cumbia simple.",
+    "year": 2020
   },
   {
     "name": "Boléro latin",
@@ -959,7 +1004,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "latin",
-    "description": "Boléro romantique."
+    "description": "Boléro romantique.",
+    "year": 2020
   },
   {
     "name": "Salsa en La mineur",
@@ -980,7 +1026,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 4,
     "style": "latin",
-    "description": "Salsa avec accords étendus."
+    "description": "Salsa avec accords étendus.",
+    "year": 2020
   },
   {
     "name": "Ska (original)",
@@ -1001,7 +1048,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 2,
     "style": "ska",
-    "description": "Ska avec contretemps."
+    "description": "Ska avec contretemps.",
+    "year": 2020
   },
   {
     "name": "Funk (original)",
@@ -1022,7 +1070,8 @@
     "strummingPattern": "D (mute) U D",
     "difficulty": 3,
     "style": "funk",
-    "description": "Funk avec mute."
+    "description": "Funk avec mute.",
+    "year": 2020
   },
   {
     "name": "Gospel (original)",
@@ -1043,6 +1092,7 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "gospel",
-    "description": "Gospel avec accords de base."
+    "description": "Gospel avec accords de base.",
+    "year": 2020
   }
 ]

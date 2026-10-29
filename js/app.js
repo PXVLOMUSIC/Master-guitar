@@ -40,16 +40,23 @@ async function localizedDataPath(base, ext) {
 async function fetchJsonWithFallback(primary, fallback) {
   try {
     const r = await fetch(primary, { cache: "no-cache" });
-    if (r.ok) return await r.json();
-  } catch (e) {}
+    if (r.ok) {
+      const j = await r.json();
+      return j;
+    }
+  } catch (e) {
+    console.error("fetchJsonWithFallback: error", e);
+  }
   const r2 = await fetch(fallback, { cache: "no-cache" });
-  return await r2.json();
+  const j2 = await r2.json();
+  return j2;
 }
 
 async function loadContent() {
   try {
     const lessonsPath = await localizedDataPath("lessons", "json");
-    LESSONS = await fetchJsonWithFallback(lessonsPath, "data/lessons.json");
+    const rLessons = await fetch(lessonsPath);
+    LESSONS = await rLessons.json();
     const r2 = await fetch("data/chords.json");
     CHORDS = await r2.json();
   } catch (e) {
@@ -2039,20 +2046,22 @@ window.addEventListener("load", setupTopbarScroll);
 
 // ---- boot ----
 async function boot() {
-  // Accessibility: screen reader announcer
-  if (!document.getElementById("sr-announcer")) {
-    const r = document.createElement("div");
-    r.id = "sr-announcer";
-    r.setAttribute("aria-live", "polite");
-    r.setAttribute("aria-atomic", "true");
-    r.style.cssText = "position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;";
-    document.body.appendChild(r);
-  }
+  // Accessibility: screen reader announcer (wrapped in try-catch)
+  try {
+    if (!document.getElementById("sr-announcer")) {
+      const r = document.createElement("div");
+      r.id = "sr-announcer";
+      r.setAttribute("aria-live", "polite");
+      r.setAttribute("aria-atomic", "true");
+      r.style.cssText = "position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;";
+      if (document.body) document.body.appendChild(r);
+    }
+  } catch (e) { console.warn("announcer error", e); }
   try {
     const sm = await loadSettings();
-    try { sm.applyTheme(); } catch (e) {}
-  } catch (e) {}
-  try { await initI18n(); applyDocumentLanguage(); } catch (e) { console.warn("i18n", e); }
+    try { sm.applyTheme(); } catch (e) { console.warn("applyTheme error", e); }
+  } catch (e) { console.warn("loadSettings error", e); }
+  try { await Promise.race([initI18n(), new Promise((_, reject) => setTimeout(() => reject(new Error("initI18n timeout")), 8000))]); applyDocumentLanguage(); } catch (e) { console.warn("i18n", e); console.error("i18n error", e); }
   await loadContent();
   // Usar samples reales por defecto (no síntesis).
   setSoundBank("samples");
@@ -2137,6 +2146,13 @@ function hideInstallButton() {
 // ---- service worker: offline + aviso de actualización ----
 function setupServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
+  // En desarrollo (localhost), desregistrar SWs existentes y no registrar nuevos.
+  if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+    navigator.serviceWorker.getRegistrations().then((regs) => {
+      for (const r of regs) r.unregister();
+    }).catch(() => {});
+    return;
+  }
   const secure =
     location.protocol === "https:" ||
     location.hostname === "localhost" ||

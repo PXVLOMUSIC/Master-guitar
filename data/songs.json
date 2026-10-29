@@ -17,7 +17,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Himno de ano nuevo escoces; progression sencilla para principiantes."
+    "description": "Himno de ano nuevo escoces; progression sencilla para principiantes.",
+    "year": 1850
   },
   {
     "name": "Greensleeves (tradicional)",
@@ -38,7 +39,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Melodia inglesa clasica con cadencia andaluza."
+    "description": "Melodia inglesa clasica con cadencia andaluza.",
+    "year": 1850
   },
   {
     "name": "House of the Rising Sun (folk)",
@@ -59,7 +61,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Balada folk en arpegio; patron de 6/8."
+    "description": "Balada folk en arpegio; patron de 6/8.",
+    "year": 1850
   },
   {
     "name": "Amazing Grace (tradicional)",
@@ -81,7 +84,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "gospel",
-    "description": "Himno espiritual clasico."
+    "description": "Himno espiritual clasico.",
+    "year": 1850
   },
   {
     "name": "When the Saints Go Marching In",
@@ -100,7 +104,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 1,
     "style": "jazz",
-    "description": "Standard de jazz tradicional en New Orleans."
+    "description": "Standard de jazz tradicional en New Orleans.",
+    "year": 1750
   },
   {
     "name": "Camptown Races",
@@ -122,7 +127,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Cancion popular del siglo XIX."
+    "description": "Cancion popular del siglo XIX.",
+    "year": 1850
   },
   {
     "name": "Oh! Susanna",
@@ -142,7 +148,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Clasico del folk americano."
+    "description": "Clasico del folk americano.",
+    "year": 1850
   },
   {
     "name": "Scarborough Fair (tradicional)",
@@ -163,7 +170,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Balada inglesa medieval."
+    "description": "Balada inglesa medieval.",
+    "year": 1850
   },
   {
     "name": "Danny Boy (Londonderry Air)",
@@ -185,7 +193,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "folk",
-    "description": "Melodia irlandesa clasica."
+    "description": "Melodia irlandesa clasica.",
+    "year": 1850
   },
   {
     "name": "Molly Malone (Cockles and Mussels)",
@@ -206,7 +215,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Cancion popular de Dublin."
+    "description": "Cancion popular de Dublin.",
+    "year": 1850
   },
   {
     "name": "Spanish Romance (anonimo)",
@@ -227,7 +237,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 3,
     "style": "classical",
-    "description": "Estudio clasico para guitarra."
+    "description": "Estudio clasico para guitarra.",
+    "year": 1750
   },
   {
     "name": "Romanza (Jeux interdits)",
@@ -248,7 +259,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 3,
     "style": "classical",
-    "description": "Pieza clasica popular para guitarra."
+    "description": "Pieza clasica popular para guitarra.",
+    "year": 1750
   },
   {
     "name": "Ode to Joy (Beethoven)",
@@ -276,7 +288,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "classical",
-    "description": "Tema de la Novena Sinfonia."
+    "description": "Tema de la Novena Sinfonia.",
+    "year": 1750
   },
   {
     "name": "Eine kleine Nachtmusik (Mozart)",
@@ -296,7 +309,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "classical",
-    "description": "Serenata clasica en Sol mayor."
+    "description": "Serenata clasica en Sol mayor.",
+    "year": 1750
   },
   {
     "name": "Canon in D (Pachelbel)",
@@ -317,7 +331,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "classical",
-    "description": "Progresion canonica muy usada."
+    "description": "Progresion canonica muy usada.",
+    "year": 1750
   },
   {
     "name": "Asturias (Leyenda)",
@@ -338,7 +353,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 4,
     "style": "flamenco",
-    "description": "Estudio flamenco con arpegios rapidos."
+    "description": "Estudio flamenco con arpegios rapidos.",
+    "year": 1750
   },
   {
     "name": "Malaguena (tradicional)",
@@ -359,7 +375,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 3,
     "style": "flamenco",
-    "description": "Forma flamenca clasica."
+    "description": "Forma flamenca clasica.",
+    "year": 1750
   },
   {
     "name": "Sevillanas (tradicional)",
@@ -380,7 +397,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "flamenco",
-    "description": "Baile tradicional de Sevilla."
+    "description": "Baile tradicional de Sevilla.",
+    "year": 1750
   },
   {
     "name": "Rumba flamenca (original)",
@@ -401,7 +419,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 2,
     "style": "flamenco",
-    "description": "Rumba con rasgueo flamenco."
+    "description": "Rumba con rasgueo flamenco.",
+    "year": 2020
   },
   {
     "name": "Flamenco por arriba (original)",
@@ -420,7 +439,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 3,
     "style": "flamenco",
-    "description": "Modo flamenco por arriba."
+    "description": "Modo flamenco por arriba.",
+    "year": 2020
   },
   {
     "name": "Rumba catalana (original)",
@@ -441,7 +461,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 2,
     "style": "rumba",
-    "description": "Rumba catalana con rasgueo alegre."
+    "description": "Rumba catalana con rasgueo alegre.",
+    "year": 2020
   },
   {
     "name": "Rumba suave (original)",
@@ -462,7 +483,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 2,
     "style": "rumba",
-    "description": "Rumba suave para practicar."
+    "description": "Rumba suave para practicar.",
+    "year": 2020
   },
   {
     "name": "Blues en La menor (12 compases)",
@@ -487,7 +509,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "blues",
-    "description": "Blues de 12 compases en La menor."
+    "description": "Blues de 12 compases en La menor.",
+    "year": 1750
   },
   {
     "name": "Blues en Mi (shuffle)",
@@ -512,7 +535,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 3,
     "style": "blues",
-    "description": "Blues shuffle con septimas."
+    "description": "Blues shuffle con septimas.",
+    "year": 2020
   },
   {
     "name": "Blues boogie (original)",
@@ -533,7 +557,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "blues",
-    "description": "Boogie woogie sencillo."
+    "description": "Boogie woogie sencillo.",
+    "year": 2020
   },
   {
     "name": "Bossa nova en Do (original)",
@@ -554,7 +579,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 3,
     "style": "bossa nova",
-    "description": "Bossa nova con acordes con septima."
+    "description": "Bossa nova con acordes con septima.",
+    "year": 2020
   },
   {
     "name": "Bossa suave (original)",
@@ -575,7 +601,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 3,
     "style": "bossa nova",
-    "description": "Bossa suave en Fa."
+    "description": "Bossa suave en Fa.",
+    "year": 2020
   },
   {
     "name": "Samba (original)",
@@ -596,7 +623,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 2,
     "style": "bossa nova",
-    "description": "Patron de samba."
+    "description": "Patron de samba.",
+    "year": 2020
   },
   {
     "name": "Reggae en Sol (original)",
@@ -617,7 +645,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 2,
     "style": "reggae",
-    "description": "Reggae con contratiempo."
+    "description": "Reggae con contratiempo.",
+    "year": 2020
   },
   {
     "name": "Reggae skank (original)",
@@ -638,7 +667,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 2,
     "style": "reggae",
-    "description": "Skank reggae en La menor."
+    "description": "Skank reggae en La menor.",
+    "year": 2020
   },
   {
     "name": "Dub (original)",
@@ -659,7 +689,8 @@
     "strummingPattern": "D (pausa) U",
     "difficulty": 3,
     "style": "reggae",
-    "description": "Dub con espacios."
+    "description": "Dub con espacios.",
+    "year": 2020
   },
   {
     "name": "Country en Re (original)",
@@ -680,7 +711,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "country",
-    "description": "Country sencillo en Re."
+    "description": "Country sencillo en Re.",
+    "year": 2020
   },
   {
     "name": "Country ballad (original)",
@@ -701,7 +733,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "country",
-    "description": "Balada country."
+    "description": "Balada country.",
+    "year": 2020
   },
   {
     "name": "Bluegrass (original)",
@@ -722,7 +755,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "country",
-    "description": "Bluegrass rapido."
+    "description": "Bluegrass rapido.",
+    "year": 2020
   },
   {
     "name": "Pop I-V-vi-IV en Do",
@@ -739,7 +773,8 @@
     "strummingPattern": "D DU UDU",
     "difficulty": 1,
     "style": "pop",
-    "description": "Progresion pop clasica."
+    "description": "Progresion pop clasica.",
+    "year": 2020
   },
   {
     "name": "Pop I-V-vi-IV en Sol",
@@ -756,7 +791,8 @@
     "strummingPattern": "D DU UDU",
     "difficulty": 1,
     "style": "pop",
-    "description": "Progresion pop en Sol."
+    "description": "Progresion pop en Sol.",
+    "year": 2020
   },
   {
     "name": "Balada acustica",
@@ -777,7 +813,8 @@
     "strummingPattern": "D D U U D U",
     "difficulty": 1,
     "style": "pop",
-    "description": "Balada acustica suave."
+    "description": "Balada acustica suave.",
+    "year": 2020
   },
   {
     "name": "Rockabilly en La",
@@ -798,7 +835,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "rock",
-    "description": "Rockabilly energetico."
+    "description": "Rockabilly energetico.",
+    "year": 2020
   },
   {
     "name": "Metal power chords",
@@ -819,7 +857,8 @@
     "strummingPattern": "D (palm mute) D",
     "difficulty": 2,
     "style": "metal",
-    "description": "Power chords para metal."
+    "description": "Power chords para metal.",
+    "year": 2020
   },
   {
     "name": "Jazz ii-V-I en Do",
@@ -835,7 +874,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 4,
     "style": "jazz",
-    "description": "Progresion ii-V-I clasica."
+    "description": "Progresion ii-V-I clasica.",
+    "year": 2020
   },
   {
     "name": "Jazz blues en Si bemol",
@@ -856,7 +896,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 4,
     "style": "jazz",
-    "description": "Jazz blues con septimas."
+    "description": "Jazz blues con septimas.",
+    "year": 2020
   },
   {
     "name": "Bebop (original)",
@@ -877,7 +918,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 5,
     "style": "jazz",
-    "description": "Bebop rapido."
+    "description": "Bebop rapido.",
+    "year": 2020
   },
   {
     "name": "Vals clasico en Do",
@@ -897,7 +939,8 @@
     "strummingPattern": "D (3/4) D D",
     "difficulty": 2,
     "style": "classical",
-    "description": "Vals en compas de 3/4."
+    "description": "Vals en compas de 3/4.",
+    "year": 2020
   },
   {
     "name": "Tango (original)",
@@ -917,7 +960,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "latin",
-    "description": "Tango con ritmo marcado."
+    "description": "Tango con ritmo marcado.",
+    "year": 2020
   },
   {
     "name": "Cumbia en Re",
@@ -938,7 +982,8 @@
     "strummingPattern": "D U D U",
     "difficulty": 1,
     "style": "latin",
-    "description": "Cumbia sencilla."
+    "description": "Cumbia sencilla.",
+    "year": 2020
   },
   {
     "name": "Bolero latino",
@@ -959,7 +1004,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "latin",
-    "description": "Bolero romantico."
+    "description": "Bolero romantico.",
+    "year": 2020
   },
   {
     "name": "Salsa en La menor",
@@ -980,7 +1026,8 @@
     "strummingPattern": "D U D U D U",
     "difficulty": 4,
     "style": "latin",
-    "description": "Salsa con acordes extendidos."
+    "description": "Salsa con acordes extendidos.",
+    "year": 2020
   },
   {
     "name": "Ska (original)",
@@ -1001,7 +1048,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 2,
     "style": "ska",
-    "description": "Ska con contratiempo."
+    "description": "Ska con contratiempo.",
+    "year": 2020
   },
   {
     "name": "Funk (original)",
@@ -1022,7 +1070,8 @@
     "strummingPattern": "D (mute) U D",
     "difficulty": 3,
     "style": "funk",
-    "description": "Funk con mute."
+    "description": "Funk con mute.",
+    "year": 2020
   },
   {
     "name": "Gospel (original)",
@@ -1043,7 +1092,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "gospel",
-    "description": "Gospel con acordes basicos."
+    "description": "Gospel con acordes basicos.",
+    "year": 2020
   },
   {
     "name": "La Cucaracha (tradicional)",
@@ -1063,7 +1113,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Cancion popular mexicana; progression sencilla para principiantes."
+    "description": "Cancion popular mexicana; progression sencilla para principiantes.",
+    "year": 1850
   },
   {
     "name": "Twinkle Twinkle Little Star",
@@ -1090,7 +1141,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Cancion infantil clasica; acordes basicos."
+    "description": "Cancion infantil clasica; acordes basicos.",
+    "year": 1850
   },
   {
     "name": "Mary Had a Little Lamb",
@@ -1110,7 +1162,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Cancion infantil; progression sencilla."
+    "description": "Cancion infantil; progression sencilla.",
+    "year": 1850
   },
   {
     "name": "Oh Susanna",
@@ -1130,7 +1183,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "folk",
-    "description": "Clasico americano; acordes I-IV-V."
+    "description": "Clasico americano; acordes I-IV-V.",
+    "year": 1850
   },
   {
     "name": "Yankee Doodle",
@@ -1148,7 +1202,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Himno patriotico americano."
+    "description": "Himno patriotico americano.",
+    "year": 1850
   },
   {
     "name": "Frere Jacques",
@@ -1166,7 +1221,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "folk",
-    "description": "Cancion infantil francesa."
+    "description": "Cancion infantil francesa.",
+    "year": 1850
   },
   {
     "name": "Greensleeves",
@@ -1187,7 +1243,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "folk",
-    "description": "Melodia inglesa del siglo XVI; acordes en tonalidad menor."
+    "description": "Melodia inglesa del siglo XVI; acordes en tonalidad menor.",
+    "year": 1850
   },
   {
     "name": "Scarborough Fair",
@@ -1208,7 +1265,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "folk",
-    "description": "Balada folk inglesa; progression en tonalidad menor."
+    "description": "Balada folk inglesa; progression en tonalidad menor.",
+    "year": 1850
   },
   {
     "name": "House of the Rising Sun",
@@ -1237,7 +1295,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "folk-rock",
-    "description": "Clasico folk-rock; progression de 4 acordes en Am."
+    "description": "Clasico folk-rock; progression de 4 acordes en Am.",
+    "year": 1850
   },
   {
     "name": "So payaso",
@@ -1258,7 +1317,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Clasico de Extremoduro; progression en Am con rasgueo rock."
+    "description": "Clasico de Extremoduro; progression en Am con rasgueo rock.",
+    "year": 1996
   },
   {
     "name": "La vereda de la puerta de atras",
@@ -1279,7 +1339,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Balada rock de Extremoduro; progression en Em."
+    "description": "Balada rock de Extremoduro; progression en Em.",
+    "year": 1996
   },
   {
     "name": "Salir",
@@ -1298,7 +1359,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock energetico; progression I-IV-V en E."
+    "description": "Rock energetico; progression I-IV-V en E.",
+    "year": 1996
   },
   {
     "name": "Como Camaron",
@@ -1319,7 +1381,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca de Estopa; progression en Am."
+    "description": "Rumba flamenca de Estopa; progression en Am.",
+    "year": 2000
   },
   {
     "name": "El run run",
@@ -1340,7 +1403,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca; progression en Em."
+    "description": "Rumba flamenca; progression en Em.",
+    "year": 2000
   },
   {
     "name": "Vino tinto",
@@ -1361,7 +1425,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca; progression en Am."
+    "description": "Rumba flamenca; progression en Am.",
+    "year": 2000
   },
   {
     "name": "Tu calorro",
@@ -1382,7 +1447,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca; progression en Am."
+    "description": "Rumba flamenca; progression en Am.",
+    "year": 2000
   },
   {
     "name": "Soldadito marinero",
@@ -1403,7 +1469,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Balada rock de Fito; progression G-D-Em-C."
+    "description": "Balada rock de Fito; progression G-D-Em-C.",
+    "year": 2003
   },
   {
     "name": "Por la boca vive el pez",
@@ -1424,7 +1491,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Rock de Fito; progression en Am."
+    "description": "Rock de Fito; progression en Am.",
+    "year": 2003
   },
   {
     "name": "Me equivocaria otra vez",
@@ -1445,7 +1513,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Balada rock; progression G-D-Em-C."
+    "description": "Balada rock; progression G-D-Em-C.",
+    "year": 2003
   },
   {
     "name": "Caminando por la vida",
@@ -1466,7 +1535,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Melendi; progression C-G-Am-F."
+    "description": "Pop rock de Melendi; progression C-G-Am-F.",
+    "year": 2004
   },
   {
     "name": "Con la luna llena",
@@ -1487,7 +1557,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Melendi; progression G-D-Em-C."
+    "description": "Pop rock de Melendi; progression G-D-Em-C.",
+    "year": 2004
   },
   {
     "name": "Sin noticias de Holanda",
@@ -1508,7 +1579,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Melendi; progression C-G-Am-F."
+    "description": "Pop rock de Melendi; progression C-G-Am-F.",
+    "year": 2004
   },
   {
     "name": "El aire de la calle",
@@ -1529,7 +1601,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca de Los Delinquentes; progression en Am."
+    "description": "Rumba flamenca de Los Delinquentes; progression en Am.",
+    "year": 2003
   },
   {
     "name": "Nube de pegatina",
@@ -1550,7 +1623,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca; progression en Em."
+    "description": "Rumba flamenca; progression en Em.",
+    "year": 2003
   },
   {
     "name": "Chiclanera",
@@ -1571,7 +1645,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca; progression en Am."
+    "description": "Rumba flamenca; progression en Am.",
+    "year": 2003
   },
   {
     "name": "Entre dos tierras",
@@ -1592,7 +1667,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Clasico de Heroes del Silencio; progression en Bm."
+    "description": "Clasico de Heroes del Silencio; progression en Bm.",
+    "year": 1990
   },
   {
     "name": "Maldito duende",
@@ -1613,7 +1689,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Rock gotico de Heroes del Silencio; progression en Am."
+    "description": "Rock gotico de Heroes del Silencio; progression en Am.",
+    "year": 1990
   },
   {
     "name": "La herida",
@@ -1634,7 +1711,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Balada rock de Heroes del Silencio; progression en Em."
+    "description": "Balada rock de Heroes del Silencio; progression en Em.",
+    "year": 1990
   },
   {
     "name": "Mar adentro",
@@ -1653,7 +1731,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock energetico; progression I-IV-V en E."
+    "description": "Rock energetico; progression I-IV-V en E.",
+    "year": 1990
   },
   {
     "name": "Rosas",
@@ -1674,7 +1753,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop de La Oreja de Van Gogh; progression G-D-Em-C."
+    "description": "Pop de La Oreja de Van Gogh; progression G-D-Em-C.",
+    "year": 2000
   },
   {
     "name": "Puedes contar conmigo",
@@ -1695,7 +1775,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop de La Oreja de Van Gogh; progression C-G-Am-F."
+    "description": "Pop de La Oreja de Van Gogh; progression C-G-Am-F.",
+    "year": 2000
   },
   {
     "name": "Sin ti no soy nada",
@@ -1716,7 +1797,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Balada rock de Amaral; progression en Am."
+    "description": "Balada rock de Amaral; progression en Am.",
+    "year": 2002
   },
   {
     "name": "Dias de verano",
@@ -1737,7 +1819,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Amaral; progression G-D-Em-C."
+    "description": "Pop rock de Amaral; progression G-D-Em-C.",
+    "year": 2002
   },
   {
     "name": "Yesterday",
@@ -1746,22 +1829,19 @@
     "key": "F",
     "progression": [
       "F",
-      "Em",
+      "Em7",
       "A7",
       "Dm",
       "Bb",
-      "C",
-      "F",
-      "Bb",
-      "F",
-      "C",
+      "C7",
       "F"
     ],
     "strumming": "D D U D",
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "pop",
-    "description": "Balada clasica de The Beatles; progression en F."
+    "description": "Balada clasica de The Beatles; progression en F.",
+    "year": 1965
   },
   {
     "name": "Let It Be",
@@ -1782,7 +1862,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "pop",
-    "description": "Balada de The Beatles; progression C-G-Am-F."
+    "description": "Balada de The Beatles; progression C-G-Am-F.",
+    "year": 1970
   },
   {
     "name": "Wonderwall",
@@ -1803,7 +1884,8 @@
     "strummingPattern": "D DU UDU",
     "difficulty": 2,
     "style": "rock",
-    "description": "Britpop clasico; progression Em-G-D-A."
+    "description": "Britpop clasico; progression Em-G-D-A.",
+    "year": 1995
   },
   {
     "name": "Hotel California",
@@ -1824,7 +1906,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "rock",
-    "description": "Clasico de Eagles; progression en Bm."
+    "description": "Clasico de Eagles; progression en Bm.",
+    "year": 1976
   },
   {
     "name": "Stairway to Heaven (intro)",
@@ -1845,7 +1928,8 @@
     "strummingPattern": "A D U D U",
     "difficulty": 3,
     "style": "rock",
-    "description": "Intro de Stairway to Heaven; arpegio en Am."
+    "description": "Intro de Stairway to Heaven; arpegio en Am.",
+    "year": 1971
   },
   {
     "name": "Smoke on the Water",
@@ -1866,7 +1950,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 2,
     "style": "rock",
-    "description": "Riff clasico de Deep Purple; progression en G."
+    "description": "Riff clasico de Deep Purple; progression en G.",
+    "year": 1972
   },
   {
     "name": "Sweet Child O Mine",
@@ -1887,7 +1972,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 3,
     "style": "rock",
-    "description": "Clasico de Guns N Roses; progression D-C-G-D."
+    "description": "Clasico de Guns N Roses; progression D-C-G-D.",
+    "year": 1987
   },
   {
     "name": "Country Roads",
@@ -1908,7 +1994,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "country",
-    "description": "Country clasico; progression A-E-F#m-D."
+    "description": "Country clasico; progression A-E-F#m-D.",
+    "year": 1971
   },
   {
     "name": "Take Five",
@@ -1929,7 +2016,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 3,
     "style": "jazz",
-    "description": "Jazz en 5/4; progression en Ebm."
+    "description": "Jazz en 5/4; progression en Ebm.",
+    "year": 1959
   },
   {
     "name": "The Girl from Ipanema",
@@ -1950,7 +2038,8 @@
     "strummingPattern": "D (pausa) U D",
     "difficulty": 3,
     "style": "bossa nova",
-    "description": "Bossa nova clasica; acordes con septima."
+    "description": "Bossa nova clasica; acordes con septima.",
+    "year": 1962
   },
   {
     "name": "Cross Road Blues",
@@ -1971,7 +2060,8 @@
     "strummingPattern": "D D U D",
     "difficulty": 2,
     "style": "blues",
-    "description": "Blues clasico; progression de 12 compases en A."
+    "description": "Blues clasico; progression de 12 compases en A.",
+    "year": 1936
   },
   {
     "name": "Blue Suede Shoes",
@@ -1992,7 +2082,8 @@
     "strummingPattern": "D D D D",
     "difficulty": 1,
     "style": "rockabilly",
-    "description": "Rockabilly clasico; progression I-IV-V en A."
+    "description": "Rockabilly clasico; progression I-IV-V en A.",
+    "year": 1956
   },
   {
     "name": "Ama, ama, ama y ensancha el alma",
@@ -2015,7 +2106,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Himno de Extremoduro; progression A-E-F#m-C#m-D."
+    "description": "Himno de Extremoduro; progression A-E-F#m-C#m-D.",
+    "year": 1996
   },
   {
     "name": "Jesucristo Garcia",
@@ -2036,7 +2128,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Clasico de Extremoduro; progression Am-C-F-E."
+    "description": "Clasico de Extremoduro; progression Am-C-F-E.",
+    "year": 1996
   },
   {
     "name": "Puta",
@@ -2055,7 +2148,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock transgresivo de Extremoduro; progression Am-F-G."
+    "description": "Rock transgresivo de Extremoduro; progression Am-F-G.",
+    "year": 1996
   },
   {
     "name": "Standby",
@@ -2078,7 +2172,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Balada rock de Extremoduro; progression C-D-Em-D y estribillo G-D-G-C-D-E."
+    "description": "Balada rock de Extremoduro; progression C-D-Em-D y estribillo G-D-G-C-D-E.",
+    "year": 1996
   },
   {
     "name": "Sucede",
@@ -2099,7 +2194,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Rock potente de Extremoduro; progression E-G-D-A."
+    "description": "Rock potente de Extremoduro; progression E-G-D-A.",
+    "year": 1996
   },
   {
     "name": "Golfa",
@@ -2118,7 +2214,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock de Extremoduro; progression C-G-D."
+    "description": "Rock de Extremoduro; progression C-G-D.",
+    "year": 1996
   },
   {
     "name": "Pedra",
@@ -2139,7 +2236,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Obra experimental de Extremoduro; progression E-G-D-A."
+    "description": "Obra experimental de Extremoduro; progression E-G-D-A.",
+    "year": 1996
   },
   {
     "name": "Demonios",
@@ -2162,7 +2260,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba de Estopa; progression Bm-Em-G-A-F#."
+    "description": "Rumba de Estopa; progression Bm-Em-G-A-F#.",
+    "year": 2000
   },
   {
     "name": "Pastillas para dormir",
@@ -2183,7 +2282,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Balada de Estopa; progression E-C#m-D-B."
+    "description": "Balada de Estopa; progression E-C#m-D-B.",
+    "year": 2000
   },
   {
     "name": "Tragicomedia",
@@ -2204,7 +2304,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca de Estopa; progression Am-G-F-E."
+    "description": "Rumba flamenca de Estopa; progression Am-G-F-E.",
+    "year": 2000
   },
   {
     "name": "Bossanova",
@@ -2229,7 +2330,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba de Estopa; progression C-F-G-D-Am-E."
+    "description": "Rumba de Estopa; progression C-F-G-D-Am-E.",
+    "year": 2000
   },
   {
     "name": "Acabo de llegar",
@@ -2252,7 +2354,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock de Fito; progression F-C-G-Am-Dm."
+    "description": "Rock de Fito; progression F-C-G-Am-Dm.",
+    "year": 2003
   },
   {
     "name": "A la luna se le ve el ombligo",
@@ -2273,7 +2376,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Balada rock de Fito; progression Am-Dm-Em-C."
+    "description": "Balada rock de Fito; progression Am-Dm-Em-C.",
+    "year": 2003
   },
   {
     "name": "Rojitas las orejas",
@@ -2294,7 +2398,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock de Fito; progression Em-C-D-Am."
+    "description": "Rock de Fito; progression Em-C-D-Am.",
+    "year": 2003
   },
   {
     "name": "Un violinista en tu tejado",
@@ -2315,7 +2420,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Melendi antiguo; progression C#m-A-E-B."
+    "description": "Pop rock de Melendi antiguo; progression C#m-A-E-B.",
+    "year": 2004
   },
   {
     "name": "Piratas del Bar Caribe",
@@ -2340,7 +2446,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Melendi; progression F-C-G-Dm-Am-E."
+    "description": "Pop rock de Melendi; progression F-C-G-Dm-Am-E.",
+    "year": 2004
   },
   {
     "name": "Septiembre",
@@ -2363,7 +2470,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "pop-espanol",
-    "description": "Balada pop de Melendi; progression Eb-Ab-Bb-Cm-Gm."
+    "description": "Balada pop de Melendi; progression Eb-Ab-Bb-Cm-Gm.",
+    "year": 2004
   },
   {
     "name": "La primavera trompetera",
@@ -2386,7 +2494,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca de Los Delinquentes; progression Am-G-F-C-E."
+    "description": "Rumba flamenca de Los Delinquentes; progression Am-G-F-C-E.",
+    "year": 2003
   },
   {
     "name": "Pirata del estrecho",
@@ -2413,7 +2522,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rumba-flamenca",
-    "description": "Rumba flamenca de Los Delinquentes; progression Em-F-G-Am-Bm-C-D."
+    "description": "Rumba flamenca de Los Delinquentes; progression Em-F-G-Am-Bm-C-D.",
+    "year": 2003
   },
   {
     "name": "Apuesta por el rock and roll",
@@ -2432,7 +2542,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock clasico de Heroes del Silencio; progression I-IV-V en E."
+    "description": "Rock clasico de Heroes del Silencio; progression I-IV-V en E.",
+    "year": 1990
   },
   {
     "name": "Avalancha",
@@ -2453,7 +2564,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Energico riff de Heroes del Silencio en Am."
+    "description": "Energico riff de Heroes del Silencio en Am.",
+    "year": 1990
   },
   {
     "name": "La sirena varada",
@@ -2474,7 +2586,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Balada rock de Heroes del Silencio en Dm."
+    "description": "Balada rock de Heroes del Silencio en Dm.",
+    "year": 1990
   },
   {
     "name": "Con nombre de guerra",
@@ -2495,7 +2608,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Rock oscuro de Heroes del Silencio en Em."
+    "description": "Rock oscuro de Heroes del Silencio en Em.",
+    "year": 1990
   },
   {
     "name": "Moriaria por vos",
@@ -2516,7 +2630,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Balada pop de Amaral en G."
+    "description": "Balada pop de Amaral en G.",
+    "year": 2002
   },
   {
     "name": "El universo sobre mi",
@@ -2537,7 +2652,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Amaral con energia en G."
+    "description": "Pop rock de Amaral con energia en G.",
+    "year": 2002
   },
   {
     "name": "Cuando necesitas",
@@ -2558,7 +2674,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 1,
     "style": "pop-espanol",
-    "description": "Balada sencilla de Amaral en C."
+    "description": "Balada sencilla de Amaral en C.",
+    "year": 2002
   },
   {
     "name": "Revolucion",
@@ -2579,7 +2696,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "rock-espanol",
-    "description": "Rock enÃ©rgico de Amaral en Am."
+    "description": "Rock enÃ©rgico de Amaral en Am.",
+    "year": 2002
   },
   {
     "name": "Muneca de trapo",
@@ -2600,7 +2718,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop de LOVG con progression I-V-vi-IV en C."
+    "description": "Pop de LOVG con progression I-V-vi-IV en C.",
+    "year": 2000
   },
   {
     "name": "Deseos de cosas imposibles",
@@ -2621,7 +2740,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Balada pop de LOVG en G."
+    "description": "Balada pop de LOVG en G.",
+    "year": 2000
   },
   {
     "name": "La playa",
@@ -2642,7 +2762,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Balada de LOVG en C."
+    "description": "Balada de LOVG en C.",
+    "year": 2000
   },
   {
     "name": "Cuidate",
@@ -2663,7 +2784,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de LOVG en Em."
+    "description": "Pop rock de LOVG en Em.",
+    "year": 2000
   },
   {
     "name": "Copenhague",
@@ -2684,7 +2806,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "indie",
-    "description": "Indie rock de Vetusta Morla en Em."
+    "description": "Indie rock de Vetusta Morla en Em.",
+    "year": 2011
   },
   {
     "name": "Lo que te hace grande",
@@ -2705,7 +2828,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "indie",
-    "description": "Himno indie de Vetusta Morla en G."
+    "description": "Himno indie de Vetusta Morla en G.",
+    "year": 2011
   },
   {
     "name": "El hombre del saco",
@@ -2726,7 +2850,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 3,
     "style": "indie",
-    "description": "Rock indie de Vetusta Morla en Am."
+    "description": "Rock indie de Vetusta Morla en Am.",
+    "year": 2011
   },
   {
     "name": "Salvese quien pueda",
@@ -2747,7 +2872,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "indie",
-    "description": "Pop indie de Vetusta Morla en C."
+    "description": "Pop indie de Vetusta Morla en C.",
+    "year": 2011
   },
   {
     "name": "Que bien",
@@ -2768,7 +2894,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "indie",
-    "description": "Indie pop de Izal en G."
+    "description": "Indie pop de Izal en G.",
+    "year": 2015
   },
   {
     "name": "Copacabana",
@@ -2789,7 +2916,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "indie",
-    "description": "Indie pop bailable de Izal en C."
+    "description": "Indie pop bailable de Izal en C.",
+    "year": 2015
   },
   {
     "name": "Terriblemente cruel",
@@ -2810,7 +2938,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Rock de Leiva en Am."
+    "description": "Rock de Leiva en Am.",
+    "year": 2012
   },
   {
     "name": "Mirada perdida",
@@ -2831,7 +2960,8 @@
     "strummingPattern": "D D U D U",
     "difficulty": 2,
     "style": "rock-espanol",
-    "description": "Balada rock de Leiva en Em."
+    "description": "Balada rock de Leiva en Em.",
+    "year": 2012
   },
   {
     "name": "16 anitos",
@@ -2852,7 +2982,8 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Dani Martin en C."
+    "description": "Pop rock de Dani Martin en C.",
+    "year": 2014
   },
   {
     "name": "Cero",
@@ -2873,6 +3004,7 @@
     "strummingPattern": "D D D U",
     "difficulty": 2,
     "style": "pop-espanol",
-    "description": "Pop rock de Dani Martin en Am."
+    "description": "Pop rock de Dani Martin en Am.",
+    "year": 2014
   }
 ]
