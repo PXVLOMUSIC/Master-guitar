@@ -51,6 +51,11 @@ jobs:
           fi
           node ./node_modules/.bin/cap sync ios
 
+      - name: Install Python dependencies (Pillow)
+        run: |
+          python3 -m pip install --upgrade pip
+          pip install Pillow
+
       - name: Generate app icons
         run: python3 scripts/gen-icons.py assets/icon-1024.png
 
