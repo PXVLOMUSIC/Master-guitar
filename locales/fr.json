@@ -1,4 +1,4 @@
-{
+﻿{
   "app.title": "Strumio — Apprendre la guitare",
   "nav.home": "Accueil",
   "nav.learn": "Apprendre",
@@ -349,5 +349,21 @@
   "looper.decodeError": "Erreur de décodage audio",
   "tuner.refPitch": "Référence A4 (Hz)",
   "backing.globalFx": "Effets audio",
-  "backing.globalFxHint": "Activez ou désactivez les effets globaux (appliqués au son des pistes)."
+  "backing.globalFxHint": "Activez ou désactivez les effets globaux (appliqués au son des pistes).",
+  "exercises.title": "Des exercices efficaces",
+  "exercises.subtitle": "Pratique délibérée : 3 à 6 minutes par exercice. Choisissez une catégorie et commencez.",
+  "exercises.all": "Tous",
+  "exercises.difficulty": "Difficulté",
+  "exercises.steps": "Mesures",
+  "exercises.tips": "Conseils",
+  "exercises.start": "Commencer",
+  "exercises.pause": "Pause",
+  "exercises.reset": "Redémarrer",
+  "chordWheel.title": "roue d'accords",
+  "chordWheel.subtitle": "Cercle interactif des quintes : tonalités, accords diatoniques et progressions",
+  "chordWheel.key": "Tonalité",
+  "chordWheel.relativeMinor": "Parent mineur",
+  "chordWheel.diatonic": "accords diatoniques",
+  "chordWheel.progressions": "Progressions recommandées",
+  "chordWheel.play": "Reproduire"
 }

@@ -1,4 +1,4 @@
-{
+﻿{
   "app.title": "Strumio — Learn guitar",
   "nav.home": "Home",
   "nav.learn": "Learn",
@@ -349,5 +349,21 @@
   "looper.decodeError": "Error decoding audio",
   "tuner.refPitch": "Reference A4 (Hz)",
   "backing.globalFx": "Audio effects",
-  "backing.globalFxHint": "Turn global effects on or off (applied to the sound of the tracks)."
+  "backing.globalFxHint": "Turn global effects on or off (applied to the sound of the tracks).",
+  "exercises.title": "Efficient exercises",
+  "exercises.subtitle": "Deliberate practice: 3-6 minutes per exercise. Choose a category and start.",
+  "exercises.all": "All",
+  "exercises.difficulty": "Difficulty",
+  "exercises.steps": "Steps",
+  "exercises.tips": "Tips",
+  "exercises.start": "Start",
+  "exercises.pause": "Pause",
+  "exercises.reset": "Reboot",
+  "chordWheel.title": "chord wheel",
+  "chordWheel.subtitle": "Interactive Circle of Fifths: Keys, Diatonic Chords and Progressions",
+  "chordWheel.key": "Tonality",
+  "chordWheel.relativeMinor": "Relative minor",
+  "chordWheel.diatonic": "diatonic chords",
+  "chordWheel.progressions": "Recommended progressions",
+  "chordWheel.play": "Reproduce"
 }

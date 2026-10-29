@@ -24,6 +24,7 @@ const loadPracticeRoutines = () => import("./practice-routines.js");
 const loadSongPlayer = () => import("./song-player.js");
 const loadChordVoicings = () => import("./chord-voicings.js");
 const loadImprovisation = () => import("./improvisation.js");
+const loadChordWheel = () => import("./chord-wheel.js");
 
 let LESSONS = { units: [], ukulele: [] };
 let CHORDS = { guitar: {}, ukulele: {} };
@@ -1404,6 +1405,7 @@ const PRACTICE_TOOLS = [
   { id: "styles", cat: "theory", icon: "🧭", title: "Rutas por estilo", desc: "Aprende por estilo: rock, blues, funk, jazz y más.", tags: ["Rutas"], keywords: "estilo genero", mount: (el) => renderStyles(el) },
   { id: "capo", cat: "theory", icon: "🧮", title: "Calculadora de cejilla", desc: "Calcula el cejillo y los acordes transportados.", tags: ["Cejilla"], keywords: "capo transporte", mount: async (el) => { const m = await loadImprovisation(); m.renderCapoCalculator(el); } },
   { id: "transposition", cat: "theory", icon: "🔄", title: "Transposición", desc: "Transporta cualquier progresión a otra tonalidad.", tags: ["Transporte"], keywords: "cambiar tono", mount: async (el) => { const m = await loadImprovisation(); m.renderTranspositionTool(el); } },
+  { id: "chordWheel", cat: "theory", icon: "⭕", title: "Rueda de acordes", desc: "Circle of Fifths interactivo: tonalidades, acordes diatónicos y progresiones.", tags: ["Circle of Fifths"], keywords: "circulo quintas progresiones tonalidad", mount: async (el) => { const m = await loadChordWheel(); m.renderChordWheel(el); } },
 ];
 
 // Al cambiar de herramienta o cerrar una sección se para todo lo que suene.

@@ -1,4 +1,4 @@
-{
+﻿{
   "app.title": "Strumio — Impara la chitarra",
   "nav.home": "Home",
   "nav.learn": "Impara",
@@ -349,5 +349,21 @@
   "looper.decodeError": "Errore nella decodifica dell'audio",
   "tuner.refPitch": "Riferimento A4 (Hz)",
   "backing.globalFx": "Effetti audio",
-  "backing.globalFxHint": "Attiva o disattiva gli effetti globali (applicati al suono delle tracce)."
+  "backing.globalFxHint": "Attiva o disattiva gli effetti globali (applicati al suono delle tracce).",
+  "exercises.title": "Esercizi efficienti",
+  "exercises.subtitle": "Pratica deliberata: 3-6 minuti per esercizio. Scegli una categoria e inizia.",
+  "exercises.all": "Tutto",
+  "exercises.difficulty": "Difficoltà",
+  "exercises.steps": "Passi",
+  "exercises.tips": "Suggerimenti",
+  "exercises.start": "Inizio",
+  "exercises.pause": "Pausa",
+  "exercises.reset": "Riavviare",
+  "chordWheel.title": "ruota degli accordi",
+  "chordWheel.subtitle": "Circolo interattivo delle quinte: tonalità, accordi diatonici e progressioni",
+  "chordWheel.key": "Tonalità",
+  "chordWheel.relativeMinor": "Minore relativo",
+  "chordWheel.diatonic": "accordi diatonici",
+  "chordWheel.progressions": "Progressioni consigliate",
+  "chordWheel.play": "Riprodurre"
 }

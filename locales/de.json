@@ -1,4 +1,4 @@
-{
+﻿{
   "app.title": "Strumio — Gitarre lernen",
   "nav.home": "Start",
   "nav.learn": "Lernen",
@@ -349,5 +349,21 @@
   "looper.decodeError": "Fehler bei der Audiodecodierung",
   "tuner.refPitch": "Referenz A4 (Hz)",
   "backing.globalFx": "Audioeffekte",
-  "backing.globalFxHint": "Schalten Sie globale Effekte ein oder aus (angewendet auf den Sound der Tracks)."
+  "backing.globalFxHint": "Schalten Sie globale Effekte ein oder aus (angewendet auf den Sound der Tracks).",
+  "exercises.title": "Effiziente Übungen",
+  "exercises.subtitle": "Bewusstes Üben: 3-6 Minuten pro Übung. Wählen Sie eine Kategorie und beginnen Sie.",
+  "exercises.all": "Alle",
+  "exercises.difficulty": "Schwierigkeit",
+  "exercises.steps": "Schritte",
+  "exercises.tips": "Tipps",
+  "exercises.start": "Start",
+  "exercises.pause": "Pause",
+  "exercises.reset": "Neustart",
+  "chordWheel.title": "Akkordrad",
+  "chordWheel.subtitle": "Interaktiver Quintenzirkel: Tonarten, diatonische Akkorde und Progressionen",
+  "chordWheel.key": "Tonalität",
+  "chordWheel.relativeMinor": "Relatives Moll",
+  "chordWheel.diatonic": "diatonische Akkorde",
+  "chordWheel.progressions": "Empfohlene Fortschritte",
+  "chordWheel.play": "Reproduzieren"
 }

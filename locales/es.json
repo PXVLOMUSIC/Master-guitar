@@ -358,5 +358,12 @@
   "looper.decodeError": "Error decodificando audio",
   "tuner.refPitch": "Referencia A4 (Hz)",
   "backing.globalFx": "Efectos de audio",
-  "backing.globalFxHint": "Activa o desactiva efectos globales (se aplican al sonido de las pistas)."
+  "backing.globalFxHint": "Activa o desactiva efectos globales (se aplican al sonido de las pistas).",
+  "chordWheel.title": "Rueda de acordes",
+  "chordWheel.subtitle": "Circle of Fifths interactivo: tonalidades, acordes diatónicos y progresiones",
+  "chordWheel.key": "Tonalidad",
+  "chordWheel.relativeMinor": "Relativa menor",
+  "chordWheel.diatonic": "Acordes diatónicos",
+  "chordWheel.progressions": "Progresiones recomendadas",
+  "chordWheel.play": "Reproducir"
 }

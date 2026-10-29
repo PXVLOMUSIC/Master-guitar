@@ -1,4 +1,4 @@
-{
+﻿{
   "app.title": "Strumio — Aprenda violão",
   "nav.home": "Início",
   "nav.learn": "Aprender",
@@ -349,5 +349,21 @@
   "looper.decodeError": "Erro ao decodificar áudio",
   "tuner.refPitch": "Referência A4 (Hz)",
   "backing.globalFx": "Efeitos de áudio",
-  "backing.globalFxHint": "Ativa ou desativa efeitos globais (aplicados ao som das faixas)."
+  "backing.globalFxHint": "Ativa ou desativa efeitos globais (aplicados ao som das faixas).",
+  "exercises.title": "Exercícios eficientes",
+  "exercises.subtitle": "Prática deliberada: 3-6 minutos por exercício. Escolha uma categoria e comece.",
+  "exercises.all": "Todos",
+  "exercises.difficulty": "Dificuldade",
+  "exercises.steps": "Passos",
+  "exercises.tips": "Pontas",
+  "exercises.start": "Começar",
+  "exercises.pause": "Pausa",
+  "exercises.reset": "Reinício",
+  "chordWheel.title": "roda de acordes",
+  "chordWheel.subtitle": "Círculo interativo de quintas: tonalidades, acordes diatônicos e progressões",
+  "chordWheel.key": "Tonalidade",
+  "chordWheel.relativeMinor": "Relativamente menor",
+  "chordWheel.diatonic": "acordes diatônicos",
+  "chordWheel.progressions": "Progressões recomendadas",
+  "chordWheel.play": "Reproduzir"
 }

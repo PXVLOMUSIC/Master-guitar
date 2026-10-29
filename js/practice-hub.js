@@ -19,6 +19,7 @@ export const SECTIONS = [
   { id: "ejercicios", name: "Ejercicios", icon: "guitar", color: "#22c55e", desc: "Ejercicios eficientes por categorías", tools: ["exercises"] },
   { id: "oido", name: "OÃ­do", icon: "ear", color: "#1cb0f6", desc: "Intervalos y tipos de acorde", tools: ["ear", "interval", "chordType", "voicingQuiz"] },
   { id: "teoria", name: "TeorÃ­a y utilidades", icon: "theory", color: "#ffc800", desc: "TeorÃ­a, estilos, cejilla y vÃ­deos", tools: ["theory", "styles", "capo", "transposition", "videos"] },
+  { id: "rueda", name: "Rueda de acordes", icon: "theory", color: "#ffc800", desc: "Circle of Fifths interactivo", tools: ["chordWheel"] },
 ];
 
 function loadMeta() {
