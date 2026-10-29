@@ -51,16 +51,21 @@ jobs:
           fi
           node ./node_modules/.bin/cap sync ios
 
-      - name: Install Python dependencies (Pillow)
+      - name: Set up Python Virtual Environment and Install Pillow
         run: |
+          python3 -m venv venv
+          source venv/bin/activate
           python3 -m pip install --upgrade pip
           pip install Pillow
 
       - name: Generate app icons
-        run: python3 scripts/gen-icons.py assets/icon-1024.png
+        run: |
+          source venv/bin/activate
+          python3 scripts/gen-icons.py assets/icon-1024.png
 
       - name: Patch iOS Info.plist
         run: |
+          source venv/bin/activate
           PLIST=$(find ios -name "Info.plist" | head -1)
           echo "Patching $PLIST"
           python3 scripts/patch-ios.py "$PLIST"
