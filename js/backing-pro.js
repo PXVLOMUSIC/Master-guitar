@@ -1302,6 +1302,126 @@ function warmRealSamples(container) {
   } catch (e) { /* se mantiene la sintesis */ }
 }
 
+/* ----------------------------- Saved patterns ----------------------------- */
+const SAVED_PATTERNS_KEY = "strumio_backing_patterns";
+const SAVED_CATEGORIES = ["rock", "blues", "jazz", "pop", "latin", "custom"];
+let savedFilterCategory = "all";
+let savedFavOnly = false;
+
+function escapeHtmlBp(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function loadSavedPatterns() {
+  try {
+    const raw = localStorage.getItem(SAVED_PATTERNS_KEY);
+    const arr = raw ? JSON.parse(raw) : [];
+    return Array.isArray(arr) ? arr : [];
+  } catch (e) { return []; }
+}
+function saveSavedPatterns(list) {
+  try { localStorage.setItem(SAVED_PATTERNS_KEY, JSON.stringify(list || [])); } catch (e) {}
+}
+
+function captureCurrentPattern(name, category) {
+  ensureGrid();
+  return {
+    id: "bp_" + Date.now() + "_" + Math.random().toString(36).slice(2, 8),
+    name: name || "Patrón",
+    category: SAVED_CATEGORIES.includes(category) ? category : "custom",
+    favorite: false,
+    bpm: state.bpm,
+    bassType: state.bassType,
+    guitarTone: state.guitarTone,
+    drumKit: state.drumKit,
+    userGrid: JSON.parse(JSON.stringify(state.userGrid || {})),
+    progression: JSON.parse(JSON.stringify(state.progression || null)),
+    loopBars: state.loopBars,
+    createdAt: Date.now()
+  };
+}
+
+function applySavedPattern(container, p) {
+  if (!p) return;
+  state.bpm = p.bpm;
+  state.bassType = p.bassType;
+  state.guitarTone = p.guitarTone;
+  state.drumKit = p.drumKit;
+  state.userGrid = JSON.parse(JSON.stringify(p.userGrid || {}));
+  state.progression = JSON.parse(JSON.stringify(p.progression || null));
+  state.loopBars = p.loopBars;
+  try { setDrumKit(state.drumKit || "original"); } catch (e) {}
+  try { setGuitarTone(state.guitarTone || "acoustic"); } catch (e) {}
+  const bpmSlider = container.querySelector("#bpmSlider");
+  const bpmVal = container.querySelector("#bpmVal");
+  if (bpmSlider) bpmSlider.value = state.bpm;
+  if (bpmVal) bpmVal.textContent = state.bpm;
+  const bassTypeSel = container.querySelector("#bassTypeSel");
+  if (bassTypeSel) bassTypeSel.value = state.bassType;
+  const guitarToneSel = container.querySelector("#guitarToneSel");
+  if (guitarToneSel) guitarToneSel.value = state.guitarTone;
+  const drumKitSel = container.querySelector("#drumKitSel");
+  if (drumKitSel) drumKitSel.value = state.drumKit;
+  const loopSel = container.querySelector("#loopSel");
+  if (loopSel) loopSel.value = state.loopBars;
+  renderMixerPanel(container);
+  renderSequencer();
+  applyMixerGains();
+  toast("Patrón cargado: " + p.name);
+}
+
+function renderSavedPatternsList(container) {
+  const box = container.querySelector("#savedPatternsList");
+  if (!box) return;
+  let list = loadSavedPatterns();
+  if (savedFilterCategory && savedFilterCategory !== "all") {
+    list = list.filter((p) => p.category === savedFilterCategory);
+  }
+  if (savedFavOnly) list = list.filter((p) => p.favorite);
+  if (!list.length) {
+    box.innerHTML = `<p style="color:var(--muted,#aaa);font-size:13px;margin:8px 0">No hay patrones guardados.</p>`;
+    return;
+  }
+  box.innerHTML = list.map((p) => `
+    <div class="bp-saved-item" data-id="${escapeHtmlBp(p.id)}" style="display:flex;align-items:center;gap:8px;padding:8px;border:1px solid var(--border,#333);border-radius:8px;margin-bottom:6px;background:var(--card2,#2a2a3a)">
+      <button class="bp-star" data-id="${escapeHtmlBp(p.id)}" title="Favorito" style="background:none;border:none;cursor:pointer;font-size:18px;color:${p.favorite ? "#f1c40f" : "#666"}">${p.favorite ? "★" : "☆"}</button>
+      <div style="flex:1;min-width:0">
+        <div style="font-weight:700;font-size:13px">${escapeHtmlBp(p.name)}</div>
+        <div style="font-size:11px;color:var(--muted,#aaa)">${escapeHtmlBp(p.category)} · ${p.bpm} BPM · ${p.loopBars} compases</div>
+      </div>
+      <button class="bp-load" data-id="${escapeHtmlBp(p.id)}" style="padding:6px 10px;border-radius:6px;border:1px solid #555;background:#333;color:#fff;cursor:pointer;font-weight:700;font-size:12px">Cargar</button>
+      <button class="bp-del" data-id="${escapeHtmlBp(p.id)}" style="padding:6px 10px;border-radius:6px;border:1px solid #555;background:#333;color:#e74c3c;cursor:pointer;font-weight:700;font-size:12px">Eliminar</button>
+    </div>
+  `).join("");
+
+  box.querySelectorAll(".bp-star").forEach((btn) => {
+    btn.onclick = () => {
+      const id = btn.dataset.id;
+      const arr = loadSavedPatterns();
+      const item = arr.find((x) => x.id === id);
+      if (item) { item.favorite = !item.favorite; saveSavedPatterns(arr); renderSavedPatternsList(container); }
+    };
+  });
+  box.querySelectorAll(".bp-load").forEach((btn) => {
+    btn.onclick = () => {
+      const id = btn.dataset.id;
+      const arr = loadSavedPatterns();
+      const item = arr.find((x) => x.id === id);
+      if (item) applySavedPattern(container, item);
+    };
+  });
+  box.querySelectorAll(".bp-del").forEach((btn) => {
+    btn.onclick = () => {
+      const id = btn.dataset.id;
+      if (!confirm("¿Eliminar este patrón guardado?")) return;
+      const arr = loadSavedPatterns().filter((x) => x.id !== id);
+      saveSavedPatterns(arr);
+      renderSavedPatternsList(container);
+      toast("Patrón eliminado");
+    };
+  });
+}
+
 function renderBackingMixer(container) {
   injectStyles();
   ensureGrid();
@@ -1388,6 +1508,31 @@ function renderBackingMixer(container) {
       </div>
 
       <div class="bp-card">
+        <h3 style="margin:0 0 8px">💾 Mis patrones</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+          <button id="savePatternBtn" type="button">💾 Guardar patrón</button>
+          <div id="savePatternForm" style="display:none;gap:8px;align-items:center;flex-wrap:wrap">
+            <input id="savePatternName" type="text" placeholder="Nombre del patrón" style="padding:6px;border-radius:8px;border:1px solid var(--border,#444);background:var(--card2,#2a2a3a);color:var(--text,#fff)">
+            <select id="savePatternCat" style="padding:6px;border-radius:8px;border:1px solid var(--border,#444);background:var(--card2,#2a2a3a);color:var(--text,#fff)">
+              ${SAVED_CATEGORIES.map((c) => `<option value="${c}">${c}</option>`).join("")}
+            </select>
+            <button id="savePatternConfirm" type="button">Guardar</button>
+            <button id="savePatternCancel" type="button">Cancelar</button>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:8px">
+          <label style="font-size:12px;color:var(--muted,#aaa)">Categoría
+            <select id="savedCatFilter" style="padding:6px;border-radius:8px;border:1px solid var(--border,#444);background:var(--card2,#2a2a3a);color:var(--text,#fff)">
+              <option value="all">Todas</option>
+              ${SAVED_CATEGORIES.map((c) => `<option value="${c}">${c}</option>`).join("")}
+            </select>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted,#aaa)"><input type="checkbox" id="savedFavOnly"> Solo favoritos</label>
+        </div>
+        <div id="savedPatternsList"></div>
+      </div>
+
+      <div class="bp-card">
         <h3 style="margin:0 0 8px">🎼 Secuenciador (16 pasos)</h3>
         <div class="seq-grid" id="seqGrid"></div>
       </div>
@@ -1410,6 +1555,48 @@ function renderBackingMixer(container) {
   renderMixerPanel(container);
   renderSequencer();
   bindPianoRoll(container);
+
+  // Saved patterns bindings
+  const savedCatFilter = container.querySelector("#savedCatFilter");
+  if (savedCatFilter) {
+    savedCatFilter.value = savedFilterCategory;
+    savedCatFilter.onchange = () => { savedFilterCategory = savedCatFilter.value; renderSavedPatternsList(container); };
+  }
+  const savedFavOnlyCb = container.querySelector("#savedFavOnly");
+  if (savedFavOnlyCb) {
+    savedFavOnlyCb.checked = savedFavOnly;
+    savedFavOnlyCb.onchange = () => { savedFavOnly = savedFavOnlyCb.checked; renderSavedPatternsList(container); };
+  }
+  const savePatternBtn = container.querySelector("#savePatternBtn");
+  const savePatternForm = container.querySelector("#savePatternForm");
+  const savePatternName = container.querySelector("#savePatternName");
+  const savePatternCat = container.querySelector("#savePatternCat");
+  const savePatternConfirm = container.querySelector("#savePatternConfirm");
+  const savePatternCancel = container.querySelector("#savePatternCancel");
+  if (savePatternBtn && savePatternForm) {
+    savePatternBtn.onclick = () => {
+      savePatternForm.style.display = savePatternForm.style.display === "none" ? "flex" : "none";
+      if (savePatternForm.style.display !== "none" && savePatternName) { savePatternName.value = ""; savePatternName.focus(); }
+    };
+  }
+  if (savePatternCancel) {
+    savePatternCancel.onclick = () => { if (savePatternForm) savePatternForm.style.display = "none"; };
+  }
+  if (savePatternConfirm) {
+    savePatternConfirm.onclick = () => {
+      const name = (savePatternName && savePatternName.value || "").trim();
+      if (!name) { toast("Introduce un nombre"); return; }
+      const cat = savePatternCat ? savePatternCat.value : "custom";
+      const entry = captureCurrentPattern(name, cat);
+      const arr = loadSavedPatterns();
+      arr.unshift(entry);
+      saveSavedPatterns(arr);
+      if (savePatternForm) savePatternForm.style.display = "none";
+      renderSavedPatternsList(container);
+      toast("Patrón guardado");
+    };
+  }
+  renderSavedPatternsList(container);
 
   // Bind transport
   const patSel = container.querySelector("#patSel");
