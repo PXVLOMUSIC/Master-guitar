@@ -656,7 +656,12 @@ class Looper {
 
     let stream;
     try {
-      stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+      // On iOS, autoGainControl helps with low mic volume
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const constraints = isIOS
+        ? { audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: true } }
+        : { audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } };
+      stream = await navigator.mediaDevices.getUserMedia(constraints);
     } catch (e) {
       toast("Micrófono no disponible");
       this.recordState = "idle";
@@ -827,7 +832,10 @@ class Looper {
             for (let i = 0; i < monoLen; i++) {
               let sum = 0;
               for (let c = 0; c < ab.numberOfChannels; c++) sum += ab.getChannelData(c)[i];
-              monoData[i] = sum / ab.numberOfChannels;
+              // Boost gain for iOS low mic volume (1.5x boost with soft clip)
+              const raw = sum / ab.numberOfChannels;
+              const boosted = raw * 1.5;
+              monoData[i] = Math.max(-0.95, Math.min(0.95, boosted));
             }
             // Detect and trim leading silence (latency compensation)
             const threshold = 0.005;

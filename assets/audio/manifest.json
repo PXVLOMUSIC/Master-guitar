@@ -58,542 +58,542 @@
   "drums": {
     "kick": [
       [
-        "drums/kick_v0_r1.flac"
+        "drums/kick_v0_r1.mp3"
       ],
       [
-        "drums/kick_v1_r1.flac",
-        "drums/kick_v1_r2.flac"
+        "drums/kick_v1_r1.mp3",
+        "drums/kick_v1_r2.mp3"
       ],
       [
-        "drums/kick_v2_r1.flac",
-        "drums/kick_v2_r2.flac"
+        "drums/kick_v2_r1.mp3",
+        "drums/kick_v2_r2.mp3"
       ],
       [
-        "drums/kick_v3_r1.flac",
-        "drums/kick_v3_r2.flac"
+        "drums/kick_v3_r1.mp3",
+        "drums/kick_v3_r2.mp3"
       ]
     ],
     "snare": [
       [
-        "drums/snare_v0_r1.flac"
+        "drums/snare_v0_r1.mp3"
       ],
       [
-        "drums/snare_v1_r1.flac",
-        "drums/snare_v1_r2.flac"
+        "drums/snare_v1_r1.mp3",
+        "drums/snare_v1_r2.mp3"
       ],
       [
-        "drums/snare_v2_r1.flac",
-        "drums/snare_v2_r2.flac"
+        "drums/snare_v2_r1.mp3",
+        "drums/snare_v2_r2.mp3"
       ],
       [
-        "drums/snare_v3_r1.flac",
-        "drums/snare_v3_r2.flac"
+        "drums/snare_v3_r1.mp3",
+        "drums/snare_v3_r2.mp3"
       ]
     ],
     "snare_rim": [
       [
-        "drums/snare_rim_v0_r1.flac"
+        "drums/snare_rim_v0_r1.mp3"
       ],
       [
-        "drums/snare_rim_v1_r1.flac",
-        "drums/snare_rim_v1_r2.flac"
+        "drums/snare_rim_v1_r1.mp3",
+        "drums/snare_rim_v1_r2.mp3"
       ],
       [
-        "drums/snare_rim_v2_r1.flac",
-        "drums/snare_rim_v2_r2.flac"
+        "drums/snare_rim_v2_r1.mp3",
+        "drums/snare_rim_v2_r2.mp3"
       ],
       [
-        "drums/snare_rim_v3_r1.flac",
-        "drums/snare_rim_v3_r2.flac"
+        "drums/snare_rim_v3_r1.mp3",
+        "drums/snare_rim_v3_r2.mp3"
       ]
     ],
     "hihat": [
       [
-        "drums/hihat_v0_r1.flac"
+        "drums/hihat_v0_r1.mp3"
       ],
       [
-        "drums/hihat_v1_r1.flac",
-        "drums/hihat_v1_r2.flac"
+        "drums/hihat_v1_r1.mp3",
+        "drums/hihat_v1_r2.mp3"
       ],
       [
-        "drums/hihat_v2_r1.flac",
-        "drums/hihat_v2_r2.flac"
+        "drums/hihat_v2_r1.mp3",
+        "drums/hihat_v2_r2.mp3"
       ],
       [
-        "drums/hihat_v3_r1.flac",
-        "drums/hihat_v3_r2.flac"
+        "drums/hihat_v3_r1.mp3",
+        "drums/hihat_v3_r2.mp3"
       ]
     ],
     "hihat_open": [
       [
-        "drums/hihat_open_v0_r1.flac"
+        "drums/hihat_open_v0_r1.mp3"
       ],
       [
-        "drums/hihat_open_v1_r1.flac",
-        "drums/hihat_open_v1_r2.flac"
+        "drums/hihat_open_v1_r1.mp3",
+        "drums/hihat_open_v1_r2.mp3"
       ],
       [
-        "drums/hihat_open_v2_r1.flac",
-        "drums/hihat_open_v2_r2.flac"
+        "drums/hihat_open_v2_r1.mp3",
+        "drums/hihat_open_v2_r2.mp3"
       ],
       [
-        "drums/hihat_open_v3_r1.flac",
-        "drums/hihat_open_v3_r2.flac"
+        "drums/hihat_open_v3_r1.mp3",
+        "drums/hihat_open_v3_r2.mp3"
       ]
     ],
     "hihat_pedal": [
       [
-        "drums/hihat_pedal_v0_r1.flac"
+        "drums/hihat_pedal_v0_r1.mp3"
       ],
       [
-        "drums/hihat_pedal_v1_r1.flac",
-        "drums/hihat_pedal_v1_r2.flac"
+        "drums/hihat_pedal_v1_r1.mp3",
+        "drums/hihat_pedal_v1_r2.mp3"
       ],
       [
-        "drums/hihat_pedal_v2_r1.flac",
-        "drums/hihat_pedal_v2_r2.flac"
+        "drums/hihat_pedal_v2_r1.mp3",
+        "drums/hihat_pedal_v2_r2.mp3"
       ],
       [
-        "drums/hihat_pedal_v3_r1.flac",
-        "drums/hihat_pedal_v3_r2.flac"
+        "drums/hihat_pedal_v3_r1.mp3",
+        "drums/hihat_pedal_v3_r2.mp3"
       ]
     ],
     "ride": [
       [
-        "drums/ride_v0_r1.flac"
+        "drums/ride_v0_r1.mp3"
       ],
       [
-        "drums/ride_v1_r1.flac",
-        "drums/ride_v1_r2.flac"
+        "drums/ride_v1_r1.mp3",
+        "drums/ride_v1_r2.mp3"
       ],
       [
-        "drums/ride_v2_r1.flac",
-        "drums/ride_v2_r2.flac"
+        "drums/ride_v2_r1.mp3",
+        "drums/ride_v2_r2.mp3"
       ],
       [
-        "drums/ride_v3_r1.flac",
-        "drums/ride_v3_r2.flac"
+        "drums/ride_v3_r1.mp3",
+        "drums/ride_v3_r2.mp3"
       ]
     ],
     "ride_bell": [
       [
-        "drums/ride_bell_v0_r1.flac"
+        "drums/ride_bell_v0_r1.mp3"
       ],
       [
-        "drums/ride_bell_v1_r1.flac",
-        "drums/ride_bell_v1_r2.flac"
+        "drums/ride_bell_v1_r1.mp3",
+        "drums/ride_bell_v1_r2.mp3"
       ],
       [
-        "drums/ride_bell_v2_r1.flac",
-        "drums/ride_bell_v2_r2.flac"
+        "drums/ride_bell_v2_r1.mp3",
+        "drums/ride_bell_v2_r2.mp3"
       ],
       [
-        "drums/ride_bell_v3_r1.flac",
-        "drums/ride_bell_v3_r2.flac"
+        "drums/ride_bell_v3_r1.mp3",
+        "drums/ride_bell_v3_r2.mp3"
       ]
     ],
     "crash": [
       [
-        "drums/crash_v0_r1.flac"
+        "drums/crash_v0_r1.mp3"
       ],
       [
-        "drums/crash_v1_r1.flac",
-        "drums/crash_v1_r2.flac"
+        "drums/crash_v1_r1.mp3",
+        "drums/crash_v1_r2.mp3"
       ],
       [
-        "drums/crash_v2_r1.flac",
-        "drums/crash_v2_r2.flac"
+        "drums/crash_v2_r1.mp3",
+        "drums/crash_v2_r2.mp3"
       ],
       [
-        "drums/crash_v3_r1.flac",
-        "drums/crash_v3_r2.flac"
+        "drums/crash_v3_r1.mp3",
+        "drums/crash_v3_r2.mp3"
       ]
     ],
     "tom_high": [
       [
-        "drums/tom_high_v0_r1.flac"
+        "drums/tom_high_v0_r1.mp3"
       ],
       [
-        "drums/tom_high_v1_r1.flac",
-        "drums/tom_high_v1_r2.flac"
+        "drums/tom_high_v1_r1.mp3",
+        "drums/tom_high_v1_r2.mp3"
       ],
       [
-        "drums/tom_high_v2_r1.flac",
-        "drums/tom_high_v2_r2.flac"
+        "drums/tom_high_v2_r1.mp3",
+        "drums/tom_high_v2_r2.mp3"
       ],
       [
-        "drums/tom_high_v3_r1.flac",
-        "drums/tom_high_v3_r2.flac"
+        "drums/tom_high_v3_r1.mp3",
+        "drums/tom_high_v3_r2.mp3"
       ]
     ],
     "tom_mid": [
       [
-        "drums/tom_mid_v0_r1.flac"
+        "drums/tom_mid_v0_r1.mp3"
       ],
       [
-        "drums/tom_mid_v1_r1.flac",
-        "drums/tom_mid_v1_r2.flac"
+        "drums/tom_mid_v1_r1.mp3",
+        "drums/tom_mid_v1_r2.mp3"
       ],
       [
-        "drums/tom_mid_v2_r1.flac",
-        "drums/tom_mid_v2_r2.flac"
+        "drums/tom_mid_v2_r1.mp3",
+        "drums/tom_mid_v2_r2.mp3"
       ],
       [
-        "drums/tom_mid_v3_r1.flac",
-        "drums/tom_mid_v3_r2.flac"
+        "drums/tom_mid_v3_r1.mp3",
+        "drums/tom_mid_v3_r2.mp3"
       ]
     ],
     "tom_low": [
       [
-        "drums/tom_low_v0_r1.flac"
+        "drums/tom_low_v0_r1.mp3"
       ],
       [
-        "drums/tom_low_v1_r1.flac",
-        "drums/tom_low_v1_r2.flac"
+        "drums/tom_low_v1_r1.mp3",
+        "drums/tom_low_v1_r2.mp3"
       ],
       [
-        "drums/tom_low_v2_r1.flac",
-        "drums/tom_low_v2_r2.flac"
+        "drums/tom_low_v2_r1.mp3",
+        "drums/tom_low_v2_r2.mp3"
       ],
       [
-        "drums/tom_low_v3_r1.flac",
-        "drums/tom_low_v3_r2.flac"
+        "drums/tom_low_v3_r1.mp3",
+        "drums/tom_low_v3_r2.mp3"
       ]
     ],
     "kick_tight": [
       [
-        "drums/kick_tight_v0.flac"
+        "drums/kick_tight_v0.mp3"
       ],
       [
-        "drums/kick_tight_v1.flac"
+        "drums/kick_tight_v1.mp3"
       ],
       [
-        "drums/kick_tight_v2.flac"
+        "drums/kick_tight_v2.mp3"
       ],
       [
-        "drums/kick_tight_v3.flac"
+        "drums/kick_tight_v3.mp3"
       ]
     ],
     "kick_deep": [
       [
-        "drums/kick_deep_v0.flac"
+        "drums/kick_deep_v0.mp3"
       ],
       [
-        "drums/kick_deep_v1.flac"
+        "drums/kick_deep_v1.mp3"
       ],
       [
-        "drums/kick_deep_v2.flac"
+        "drums/kick_deep_v2.mp3"
       ],
       [
-        "drums/kick_deep_v3.flac"
+        "drums/kick_deep_v3.mp3"
       ]
     ],
     "snare_tight": [
       [
-        "drums/snare_tight_v0.flac"
+        "drums/snare_tight_v0.mp3"
       ],
       [
-        "drums/snare_tight_v1.flac"
+        "drums/snare_tight_v1.mp3"
       ],
       [
-        "drums/snare_tight_v2.flac"
+        "drums/snare_tight_v2.mp3"
       ],
       [
-        "drums/snare_tight_v3.flac"
+        "drums/snare_tight_v3.mp3"
       ]
     ],
     "snare_deep": [
       [
-        "drums/snare_deep_v0.flac"
+        "drums/snare_deep_v0.mp3"
       ],
       [
-        "drums/snare_deep_v1.flac"
+        "drums/snare_deep_v1.mp3"
       ],
       [
-        "drums/snare_deep_v2.flac"
+        "drums/snare_deep_v2.mp3"
       ],
       [
-        "drums/snare_deep_v3.flac"
+        "drums/snare_deep_v3.mp3"
       ]
     ],
     "snare_rim_tight": [
       [
-        "drums/snare_rim_tight_v0.flac"
+        "drums/snare_rim_tight_v0.mp3"
       ],
       [
-        "drums/snare_rim_tight_v1.flac"
+        "drums/snare_rim_tight_v1.mp3"
       ],
       [
-        "drums/snare_rim_tight_v2.flac"
+        "drums/snare_rim_tight_v2.mp3"
       ],
       [
-        "drums/snare_rim_tight_v3.flac"
+        "drums/snare_rim_tight_v3.mp3"
       ]
     ],
     "snare_rim_deep": [
       [
-        "drums/snare_rim_deep_v0.flac"
+        "drums/snare_rim_deep_v0.mp3"
       ],
       [
-        "drums/snare_rim_deep_v1.flac"
+        "drums/snare_rim_deep_v1.mp3"
       ],
       [
-        "drums/snare_rim_deep_v2.flac"
+        "drums/snare_rim_deep_v2.mp3"
       ],
       [
-        "drums/snare_rim_deep_v3.flac"
+        "drums/snare_rim_deep_v3.mp3"
       ]
     ],
     "hihat_tight": [
       [
-        "drums/hihat_tight_v0.flac"
+        "drums/hihat_tight_v0.mp3"
       ],
       [
-        "drums/hihat_tight_v1.flac"
+        "drums/hihat_tight_v1.mp3"
       ],
       [
-        "drums/hihat_tight_v2.flac"
+        "drums/hihat_tight_v2.mp3"
       ],
       [
-        "drums/hihat_tight_v3.flac"
+        "drums/hihat_tight_v3.mp3"
       ]
     ],
     "hihat_deep": [
       [
-        "drums/hihat_deep_v0.flac"
+        "drums/hihat_deep_v0.mp3"
       ],
       [
-        "drums/hihat_deep_v1.flac"
+        "drums/hihat_deep_v1.mp3"
       ],
       [
-        "drums/hihat_deep_v2.flac"
+        "drums/hihat_deep_v2.mp3"
       ],
       [
-        "drums/hihat_deep_v3.flac"
+        "drums/hihat_deep_v3.mp3"
       ]
     ],
     "hihat_open_tight": [
       [
-        "drums/hihat_open_tight_v0.flac"
+        "drums/hihat_open_tight_v0.mp3"
       ],
       [
-        "drums/hihat_open_tight_v1.flac"
+        "drums/hihat_open_tight_v1.mp3"
       ],
       [
-        "drums/hihat_open_tight_v2.flac"
+        "drums/hihat_open_tight_v2.mp3"
       ],
       [
-        "drums/hihat_open_tight_v3.flac"
+        "drums/hihat_open_tight_v3.mp3"
       ]
     ],
     "hihat_open_deep": [
       [
-        "drums/hihat_open_deep_v0.flac"
+        "drums/hihat_open_deep_v0.mp3"
       ],
       [
-        "drums/hihat_open_deep_v1.flac"
+        "drums/hihat_open_deep_v1.mp3"
       ],
       [
-        "drums/hihat_open_deep_v2.flac"
+        "drums/hihat_open_deep_v2.mp3"
       ],
       [
-        "drums/hihat_open_deep_v3.flac"
+        "drums/hihat_open_deep_v3.mp3"
       ]
     ],
     "hihat_pedal_tight": [
       [
-        "drums/hihat_pedal_tight_v0.flac"
+        "drums/hihat_pedal_tight_v0.mp3"
       ],
       [
-        "drums/hihat_pedal_tight_v1.flac"
+        "drums/hihat_pedal_tight_v1.mp3"
       ],
       [
-        "drums/hihat_pedal_tight_v2.flac"
+        "drums/hihat_pedal_tight_v2.mp3"
       ],
       [
-        "drums/hihat_pedal_tight_v3.flac"
+        "drums/hihat_pedal_tight_v3.mp3"
       ]
     ],
     "hihat_pedal_deep": [
       [
-        "drums/hihat_pedal_deep_v0.flac"
+        "drums/hihat_pedal_deep_v0.mp3"
       ],
       [
-        "drums/hihat_pedal_deep_v1.flac"
+        "drums/hihat_pedal_deep_v1.mp3"
       ],
       [
-        "drums/hihat_pedal_deep_v2.flac"
+        "drums/hihat_pedal_deep_v2.mp3"
       ],
       [
-        "drums/hihat_pedal_deep_v3.flac"
+        "drums/hihat_pedal_deep_v3.mp3"
       ]
     ],
     "ride_tight": [
       [
-        "drums/ride_tight_v0.flac"
+        "drums/ride_tight_v0.mp3"
       ],
       [
-        "drums/ride_tight_v1.flac"
+        "drums/ride_tight_v1.mp3"
       ],
       [
-        "drums/ride_tight_v2.flac"
+        "drums/ride_tight_v2.mp3"
       ],
       [
-        "drums/ride_tight_v3.flac"
+        "drums/ride_tight_v3.mp3"
       ]
     ],
     "ride_deep": [
       [
-        "drums/ride_deep_v0.flac"
+        "drums/ride_deep_v0.mp3"
       ],
       [
-        "drums/ride_deep_v1.flac"
+        "drums/ride_deep_v1.mp3"
       ],
       [
-        "drums/ride_deep_v2.flac"
+        "drums/ride_deep_v2.mp3"
       ],
       [
-        "drums/ride_deep_v3.flac"
+        "drums/ride_deep_v3.mp3"
       ]
     ],
     "ride_bell_tight": [
       [
-        "drums/ride_bell_tight_v0.flac"
+        "drums/ride_bell_tight_v0.mp3"
       ],
       [
-        "drums/ride_bell_tight_v1.flac"
+        "drums/ride_bell_tight_v1.mp3"
       ],
       [
-        "drums/ride_bell_tight_v2.flac"
+        "drums/ride_bell_tight_v2.mp3"
       ],
       [
-        "drums/ride_bell_tight_v3.flac"
+        "drums/ride_bell_tight_v3.mp3"
       ]
     ],
     "ride_bell_deep": [
       [
-        "drums/ride_bell_deep_v0.flac"
+        "drums/ride_bell_deep_v0.mp3"
       ],
       [
-        "drums/ride_bell_deep_v1.flac"
+        "drums/ride_bell_deep_v1.mp3"
       ],
       [
-        "drums/ride_bell_deep_v2.flac"
+        "drums/ride_bell_deep_v2.mp3"
       ],
       [
-        "drums/ride_bell_deep_v3.flac"
+        "drums/ride_bell_deep_v3.mp3"
       ]
     ],
     "crash_tight": [
       [
-        "drums/crash_tight_v0.flac"
+        "drums/crash_tight_v0.mp3"
       ],
       [
-        "drums/crash_tight_v1.flac"
+        "drums/crash_tight_v1.mp3"
       ],
       [
-        "drums/crash_tight_v2.flac"
+        "drums/crash_tight_v2.mp3"
       ],
       [
-        "drums/crash_tight_v3.flac"
+        "drums/crash_tight_v3.mp3"
       ]
     ],
     "crash_deep": [
       [
-        "drums/crash_deep_v0.flac"
+        "drums/crash_deep_v0.mp3"
       ],
       [
-        "drums/crash_deep_v1.flac"
+        "drums/crash_deep_v1.mp3"
       ],
       [
-        "drums/crash_deep_v2.flac"
+        "drums/crash_deep_v2.mp3"
       ],
       [
-        "drums/crash_deep_v3.flac"
+        "drums/crash_deep_v3.mp3"
       ]
     ],
     "tom_high_tight": [
       [
-        "drums/tom_high_tight_v0.flac"
+        "drums/tom_high_tight_v0.mp3"
       ],
       [
-        "drums/tom_high_tight_v1.flac"
+        "drums/tom_high_tight_v1.mp3"
       ],
       [
-        "drums/tom_high_tight_v2.flac"
+        "drums/tom_high_tight_v2.mp3"
       ],
       [
-        "drums/tom_high_tight_v3.flac"
+        "drums/tom_high_tight_v3.mp3"
       ]
     ],
     "tom_high_deep": [
       [
-        "drums/tom_high_deep_v0.flac"
+        "drums/tom_high_deep_v0.mp3"
       ],
       [
-        "drums/tom_high_deep_v1.flac"
+        "drums/tom_high_deep_v1.mp3"
       ],
       [
-        "drums/tom_high_deep_v2.flac"
+        "drums/tom_high_deep_v2.mp3"
       ],
       [
-        "drums/tom_high_deep_v3.flac"
+        "drums/tom_high_deep_v3.mp3"
       ]
     ],
     "tom_mid_tight": [
       [
-        "drums/tom_mid_tight_v0.flac"
+        "drums/tom_mid_tight_v0.mp3"
       ],
       [
-        "drums/tom_mid_tight_v1.flac"
+        "drums/tom_mid_tight_v1.mp3"
       ],
       [
-        "drums/tom_mid_tight_v2.flac"
+        "drums/tom_mid_tight_v2.mp3"
       ],
       [
-        "drums/tom_mid_tight_v3.flac"
+        "drums/tom_mid_tight_v3.mp3"
       ]
     ],
     "tom_mid_deep": [
       [
-        "drums/tom_mid_deep_v0.flac"
+        "drums/tom_mid_deep_v0.mp3"
       ],
       [
-        "drums/tom_mid_deep_v1.flac"
+        "drums/tom_mid_deep_v1.mp3"
       ],
       [
-        "drums/tom_mid_deep_v2.flac"
+        "drums/tom_mid_deep_v2.mp3"
       ],
       [
-        "drums/tom_mid_deep_v3.flac"
+        "drums/tom_mid_deep_v3.mp3"
       ]
     ],
     "tom_low_tight": [
       [
-        "drums/tom_low_tight_v0.flac"
+        "drums/tom_low_tight_v0.mp3"
       ],
       [
-        "drums/tom_low_tight_v1.flac"
+        "drums/tom_low_tight_v1.mp3"
       ],
       [
-        "drums/tom_low_tight_v2.flac"
+        "drums/tom_low_tight_v2.mp3"
       ],
       [
-        "drums/tom_low_tight_v3.flac"
+        "drums/tom_low_tight_v3.mp3"
       ]
     ],
     "tom_low_deep": [
       [
-        "drums/tom_low_deep_v0.flac"
+        "drums/tom_low_deep_v0.mp3"
       ],
       [
-        "drums/tom_low_deep_v1.flac"
+        "drums/tom_low_deep_v1.mp3"
       ],
       [
-        "drums/tom_low_deep_v2.flac"
+        "drums/tom_low_deep_v2.mp3"
       ],
       [
-        "drums/tom_low_deep_v3.flac"
+        "drums/tom_low_deep_v3.mp3"
       ]
     ]
   },
@@ -602,193 +602,193 @@
       "note": "bb2",
       "midi": 46,
       "vel": "vl3",
-      "file": "bass/bb2_vl3_r1.flac"
+      "file": "bass/bb2_vl3_r1.mp3"
     },
     {
       "note": "bb2",
       "midi": 46,
       "vel": "vl3",
-      "file": "bass/bb2_vl3_r2.flac"
+      "file": "bass/bb2_vl3_r2.mp3"
     },
     {
       "note": "bb3",
       "midi": 58,
       "vel": "vl3",
-      "file": "bass/bb3_vl3_r1.flac"
+      "file": "bass/bb3_vl3_r1.mp3"
     },
     {
       "note": "bb3",
       "midi": 58,
       "vel": "vl3",
-      "file": "bass/bb3_vl3_r2.flac"
+      "file": "bass/bb3_vl3_r2.mp3"
     },
     {
       "note": "bb4",
       "midi": 70,
       "vel": "vl3",
-      "file": "bass/bb4_vl3_r1.flac"
+      "file": "bass/bb4_vl3_r1.mp3"
     },
     {
       "note": "bb4",
       "midi": 70,
       "vel": "vl3",
-      "file": "bass/bb4_vl3_r2.flac"
+      "file": "bass/bb4_vl3_r2.mp3"
     },
     {
       "note": "bb5",
       "midi": 82,
       "vel": "vl3",
-      "file": "bass/bb5_vl3_r1.flac"
+      "file": "bass/bb5_vl3_r1.mp3"
     },
     {
       "note": "bb5",
       "midi": 82,
       "vel": "vl3",
-      "file": "bass/bb5_vl3_r2.flac"
+      "file": "bass/bb5_vl3_r2.mp3"
     },
     {
       "note": "db3",
       "midi": 49,
       "vel": "vl3",
-      "file": "bass/db3_vl3_r1.flac"
+      "file": "bass/db3_vl3_r1.mp3"
     },
     {
       "note": "db3",
       "midi": 49,
       "vel": "vl3",
-      "file": "bass/db3_vl3_r2.flac"
+      "file": "bass/db3_vl3_r2.mp3"
     },
     {
       "note": "db4",
       "midi": 61,
       "vel": "vl3",
-      "file": "bass/db4_vl3_r1.flac"
+      "file": "bass/db4_vl3_r1.mp3"
     },
     {
       "note": "db4",
       "midi": 61,
       "vel": "vl3",
-      "file": "bass/db4_vl3_r2.flac"
+      "file": "bass/db4_vl3_r2.mp3"
     },
     {
       "note": "db5",
       "midi": 73,
       "vel": "vl3",
-      "file": "bass/db5_vl3_r1.flac"
+      "file": "bass/db5_vl3_r1.mp3"
     },
     {
       "note": "db5",
       "midi": 73,
       "vel": "vl3",
-      "file": "bass/db5_vl3_r2.flac"
+      "file": "bass/db5_vl3_r2.mp3"
     },
     {
       "note": "db6",
       "midi": 85,
       "vel": "vl3",
-      "file": "bass/db6_vl3_r1.flac"
+      "file": "bass/db6_vl3_r1.mp3"
     },
     {
       "note": "db6",
       "midi": 85,
       "vel": "vl3",
-      "file": "bass/db6_vl3_r2.flac"
+      "file": "bass/db6_vl3_r2.mp3"
     },
     {
       "note": "e2",
       "midi": 40,
       "vel": "vl3",
-      "file": "bass/e2_vl3_r1.flac"
+      "file": "bass/e2_vl3_r1.mp3"
     },
     {
       "note": "e2",
       "midi": 40,
       "vel": "vl3",
-      "file": "bass/e2_vl3_r2.flac"
+      "file": "bass/e2_vl3_r2.mp3"
     },
     {
       "note": "e3",
       "midi": 52,
       "vel": "vl3",
-      "file": "bass/e3_vl3_r1.flac"
+      "file": "bass/e3_vl3_r1.mp3"
     },
     {
       "note": "e3",
       "midi": 52,
       "vel": "vl3",
-      "file": "bass/e3_vl3_r2.flac"
+      "file": "bass/e3_vl3_r2.mp3"
     },
     {
       "note": "e4",
       "midi": 64,
       "vel": "vl3",
-      "file": "bass/e4_vl3_r1.flac"
+      "file": "bass/e4_vl3_r1.mp3"
     },
     {
       "note": "e4",
       "midi": 64,
       "vel": "vl3",
-      "file": "bass/e4_vl3_r2.flac"
+      "file": "bass/e4_vl3_r2.mp3"
     },
     {
       "note": "e5",
       "midi": 76,
       "vel": "vl3",
-      "file": "bass/e5_vl3_r1.flac"
+      "file": "bass/e5_vl3_r1.mp3"
     },
     {
       "note": "e5",
       "midi": 76,
       "vel": "vl3",
-      "file": "bass/e5_vl3_r2.flac"
+      "file": "bass/e5_vl3_r2.mp3"
     },
     {
       "note": "g2",
       "midi": 43,
       "vel": "vl3",
-      "file": "bass/g2_vl3_r1.flac"
+      "file": "bass/g2_vl3_r1.mp3"
     },
     {
       "note": "g2",
       "midi": 43,
       "vel": "vl3",
-      "file": "bass/g2_vl3_r2.flac"
+      "file": "bass/g2_vl3_r2.mp3"
     },
     {
       "note": "g3",
       "midi": 55,
       "vel": "vl3",
-      "file": "bass/g3_vl3_r1.flac"
+      "file": "bass/g3_vl3_r1.mp3"
     },
     {
       "note": "g3",
       "midi": 55,
       "vel": "vl3",
-      "file": "bass/g3_vl3_r2.flac"
+      "file": "bass/g3_vl3_r2.mp3"
     },
     {
       "note": "g4",
       "midi": 67,
       "vel": "vl3",
-      "file": "bass/g4_vl3_r1.flac"
+      "file": "bass/g4_vl3_r1.mp3"
     },
     {
       "note": "g4",
       "midi": 67,
       "vel": "vl3",
-      "file": "bass/g4_vl3_r2.flac"
+      "file": "bass/g4_vl3_r2.mp3"
     },
     {
       "note": "g5",
       "midi": 79,
       "vel": "vl3",
-      "file": "bass/g5_vl3_r1.flac"
+      "file": "bass/g5_vl3_r1.mp3"
     },
     {
       "note": "g5",
       "midi": 79,
       "vel": "vl3",
-      "file": "bass/g5_vl3_r2.flac"
+      "file": "bass/g5_vl3_r2.mp3"
     }
   ],
   "guitar": [
@@ -796,354 +796,354 @@
       "note": "a2",
       "midi": 45,
       "vel": "mf",
-      "file": "guitar/a2_mf_r1.flac"
+      "file": "guitar/a2_mf_r1.mp3"
     },
     {
       "note": "a2",
       "midi": 45,
       "vel": "mf",
-      "file": "guitar/a2_mf_r2.flac"
+      "file": "guitar/a2_mf_r2.mp3"
     },
     {
       "note": "a3",
       "midi": 57,
       "vel": "mf",
-      "file": "guitar/a3_mf_r1.flac"
+      "file": "guitar/a3_mf_r1.mp3"
     },
     {
       "note": "a3",
       "midi": 57,
       "vel": "mf",
-      "file": "guitar/a3_mf_r2.flac"
+      "file": "guitar/a3_mf_r2.mp3"
     },
     {
       "note": "a4",
       "midi": 69,
       "vel": "mf",
-      "file": "guitar/a4_mf_r1.flac"
+      "file": "guitar/a4_mf_r1.mp3"
     },
     {
       "note": "a4",
       "midi": 69,
       "vel": "mf",
-      "file": "guitar/a4_mf_r2.flac"
+      "file": "guitar/a4_mf_r2.mp3"
     },
     {
       "note": "a5",
       "midi": 81,
       "vel": "mf",
-      "file": "guitar/a5_mf_r1.flac"
+      "file": "guitar/a5_mf_r1.mp3"
     },
     {
       "note": "a5",
       "midi": 81,
       "vel": "mf",
-      "file": "guitar/a5_mf_r2.flac"
+      "file": "guitar/a5_mf_r2.mp3"
     },
     {
       "note": "c3",
       "midi": 48,
       "vel": "mf",
-      "file": "guitar/c3_mf_r1.flac"
+      "file": "guitar/c3_mf_r1.mp3"
     },
     {
       "note": "c3",
       "midi": 48,
       "vel": "mf",
-      "file": "guitar/c3_mf_r2.flac"
+      "file": "guitar/c3_mf_r2.mp3"
     },
     {
       "note": "c4",
       "midi": 60,
       "vel": "mf",
-      "file": "guitar/c4_mf_r1.flac"
+      "file": "guitar/c4_mf_r1.mp3"
     },
     {
       "note": "c4",
       "midi": 60,
       "vel": "mf",
-      "file": "guitar/c4_mf_r2.flac"
+      "file": "guitar/c4_mf_r2.mp3"
     },
     {
       "note": "c5",
       "midi": 72,
       "vel": "mf",
-      "file": "guitar/c5_mf_r1.flac"
+      "file": "guitar/c5_mf_r1.mp3"
     },
     {
       "note": "c5",
       "midi": 72,
       "vel": "mf",
-      "file": "guitar/c5_mf_r2.flac"
+      "file": "guitar/c5_mf_r2.mp3"
     },
     {
       "note": "c6",
       "midi": 84,
       "vel": "mf",
-      "file": "guitar/c6_mf_r1.flac"
+      "file": "guitar/c6_mf_r1.mp3"
     },
     {
       "note": "c6",
       "midi": 84,
       "vel": "mf",
-      "file": "guitar/c6_mf_r2.flac"
+      "file": "guitar/c6_mf_r2.mp3"
     },
     {
       "note": "d6",
       "midi": 86,
       "vel": "mf",
-      "file": "guitar/d6_mf_r1.flac"
+      "file": "guitar/d6_mf_r1.mp3"
     },
     {
       "note": "d6",
       "midi": 86,
       "vel": "mf",
-      "file": "guitar/d6_mf_r2.flac"
+      "file": "guitar/d6_mf_r2.mp3"
     },
     {
       "note": "db2",
       "midi": 37,
       "vel": "mf",
-      "file": "guitar/db2_mf_r1.flac"
+      "file": "guitar/db2_mf_r1.mp3"
     },
     {
       "note": "db2",
       "midi": 37,
       "vel": "mf",
-      "file": "guitar/db2_mf_r2.flac"
+      "file": "guitar/db2_mf_r2.mp3"
     },
     {
       "note": "e2",
       "midi": 40,
       "vel": "mf",
-      "file": "guitar/e2_mf_r1.flac"
+      "file": "guitar/e2_mf_r1.mp3"
     },
     {
       "note": "e2",
       "midi": 40,
       "vel": "mf",
-      "file": "guitar/e2_mf_r2.flac"
+      "file": "guitar/e2_mf_r2.mp3"
     },
     {
       "note": "eb3",
       "midi": 51,
       "vel": "mf",
-      "file": "guitar/eb3_mf_r1.flac"
+      "file": "guitar/eb3_mf_r1.mp3"
     },
     {
       "note": "eb3",
       "midi": 51,
       "vel": "mf",
-      "file": "guitar/eb3_mf_r2.flac"
+      "file": "guitar/eb3_mf_r2.mp3"
     },
     {
       "note": "eb4",
       "midi": 63,
       "vel": "mf",
-      "file": "guitar/eb4_mf_r1.flac"
+      "file": "guitar/eb4_mf_r1.mp3"
     },
     {
       "note": "eb4",
       "midi": 63,
       "vel": "mf",
-      "file": "guitar/eb4_mf_r2.flac"
+      "file": "guitar/eb4_mf_r2.mp3"
     },
     {
       "note": "eb5",
       "midi": 75,
       "vel": "mf",
-      "file": "guitar/eb5_mf_r1.flac"
+      "file": "guitar/eb5_mf_r1.mp3"
     },
     {
       "note": "eb5",
       "midi": 75,
       "vel": "mf",
-      "file": "guitar/eb5_mf_r2.flac"
+      "file": "guitar/eb5_mf_r2.mp3"
     },
     {
       "note": "gb2",
       "midi": 42,
       "vel": "mf",
-      "file": "guitar/gb2_mf_r1.flac"
+      "file": "guitar/gb2_mf_r1.mp3"
     },
     {
       "note": "gb2",
       "midi": 42,
       "vel": "mf",
-      "file": "guitar/gb2_mf_r2.flac"
+      "file": "guitar/gb2_mf_r2.mp3"
     },
     {
       "note": "gb3",
       "midi": 54,
       "vel": "mf",
-      "file": "guitar/gb3_mf_r1.flac"
+      "file": "guitar/gb3_mf_r1.mp3"
     },
     {
       "note": "gb3",
       "midi": 54,
       "vel": "mf",
-      "file": "guitar/gb3_mf_r2.flac"
+      "file": "guitar/gb3_mf_r2.mp3"
     },
     {
       "note": "gb4",
       "midi": 66,
       "vel": "mf",
-      "file": "guitar/gb4_mf_r1.flac"
+      "file": "guitar/gb4_mf_r1.mp3"
     },
     {
       "note": "gb4",
       "midi": 66,
       "vel": "mf",
-      "file": "guitar/gb4_mf_r2.flac"
+      "file": "guitar/gb4_mf_r2.mp3"
     },
     {
       "note": "gb5",
       "midi": 78,
       "vel": "mf",
-      "file": "guitar/gb5_mf_r1.flac"
+      "file": "guitar/gb5_mf_r1.mp3"
     },
     {
       "note": "gb5",
       "midi": 78,
       "vel": "mf",
-      "file": "guitar/gb5_mf_r2.flac"
+      "file": "guitar/gb5_mf_r2.mp3"
     }
   ],
   "perc": {
     "clap": [
-      "perc/clap_r1.flac",
-      "perc/clap_r2.flac"
+      "perc/clap_r1.mp3",
+      "perc/clap_r2.mp3"
     ],
     "finger_snap": [
-      "perc/finger_snap_r1.flac",
-      "perc/finger_snap_r2.flac"
+      "perc/finger_snap_r1.mp3",
+      "perc/finger_snap_r2.mp3"
     ],
     "stomp": [
-      "perc/stomp_r1.flac",
-      "perc/stomp_r2.flac"
+      "perc/stomp_r1.mp3",
+      "perc/stomp_r2.mp3"
     ]
   },
   "hand": {
     "cajon_bass": [
       [
-        "hand/cajon_bass_v0_r1.flac",
-        "hand/cajon_bass_v0_r2.flac"
+        "hand/cajon_bass_v0_r1.mp3",
+        "hand/cajon_bass_v0_r2.mp3"
       ],
       [
-        "hand/cajon_bass_v1_r1.flac",
-        "hand/cajon_bass_v1_r2.flac"
+        "hand/cajon_bass_v1_r1.mp3",
+        "hand/cajon_bass_v1_r2.mp3"
       ],
       [
-        "hand/cajon_bass_v2_r1.flac",
-        "hand/cajon_bass_v2_r2.flac"
+        "hand/cajon_bass_v2_r1.mp3",
+        "hand/cajon_bass_v2_r2.mp3"
       ]
     ],
     "cajon_slap": [
       [
-        "hand/cajon_slap_v0_r1.flac",
-        "hand/cajon_slap_v0_r2.flac"
+        "hand/cajon_slap_v0_r1.mp3",
+        "hand/cajon_slap_v0_r2.mp3"
       ],
       [
-        "hand/cajon_slap_v1_r1.flac",
-        "hand/cajon_slap_v1_r2.flac"
+        "hand/cajon_slap_v1_r1.mp3",
+        "hand/cajon_slap_v1_r2.mp3"
       ],
       [
-        "hand/cajon_slap_v2_r1.flac",
-        "hand/cajon_slap_v2_r2.flac"
+        "hand/cajon_slap_v2_r1.mp3",
+        "hand/cajon_slap_v2_r2.mp3"
       ]
     ],
     "shaker": [
       [
-        "hand/shaker_v0_r1.flac",
-        "hand/shaker_v0_r2.flac"
+        "hand/shaker_v0_r1.mp3",
+        "hand/shaker_v0_r2.mp3"
       ],
       [
-        "hand/shaker_v1_r1.flac",
-        "hand/shaker_v1_r2.flac"
+        "hand/shaker_v1_r1.mp3",
+        "hand/shaker_v1_r2.mp3"
       ]
     ],
     "tambourine": [
       [
-        "hand/tambourine_v0_r1.flac"
+        "hand/tambourine_v0_r1.mp3"
       ],
       [
-        "hand/tambourine_v1_r1.flac"
+        "hand/tambourine_v1_r1.mp3"
       ]
     ],
     "conga_high": [
       [
-        "hand/conga_high_v0_r1.flac",
-        "hand/conga_high_v0_r2.flac"
+        "hand/conga_high_v0_r1.mp3",
+        "hand/conga_high_v0_r2.mp3"
       ],
       [
-        "hand/conga_high_v1_r1.flac",
-        "hand/conga_high_v1_r2.flac"
+        "hand/conga_high_v1_r1.mp3",
+        "hand/conga_high_v1_r2.mp3"
       ],
       [
-        "hand/conga_high_v2_r1.flac",
-        "hand/conga_high_v2_r2.flac"
+        "hand/conga_high_v2_r1.mp3",
+        "hand/conga_high_v2_r2.mp3"
       ]
     ],
     "conga_low": [
       [
-        "hand/conga_low_v0_r1.flac",
-        "hand/conga_low_v0_r2.flac"
+        "hand/conga_low_v0_r1.mp3",
+        "hand/conga_low_v0_r2.mp3"
       ],
       [
-        "hand/conga_low_v1_r1.flac",
-        "hand/conga_low_v1_r2.flac"
+        "hand/conga_low_v1_r1.mp3",
+        "hand/conga_low_v1_r2.mp3"
       ],
       [
-        "hand/conga_low_v2_r1.flac",
-        "hand/conga_low_v2_r2.flac"
+        "hand/conga_low_v2_r1.mp3",
+        "hand/conga_low_v2_r2.mp3"
       ]
     ],
     "bongo_high": [
       [
-        "hand/bongo_high_v0_r1.flac",
-        "hand/bongo_high_v0_r2.flac"
+        "hand/bongo_high_v0_r1.mp3",
+        "hand/bongo_high_v0_r2.mp3"
       ],
       [
-        "hand/bongo_high_v1_r1.flac",
-        "hand/bongo_high_v1_r2.flac"
+        "hand/bongo_high_v1_r1.mp3",
+        "hand/bongo_high_v1_r2.mp3"
       ],
       [
-        "hand/bongo_high_v2_r1.flac",
-        "hand/bongo_high_v2_r2.flac"
+        "hand/bongo_high_v2_r1.mp3",
+        "hand/bongo_high_v2_r2.mp3"
       ]
     ],
     "bongo_low": [
       [
-        "hand/bongo_low_v0_r1.flac",
-        "hand/bongo_low_v0_r2.flac"
+        "hand/bongo_low_v0_r1.mp3",
+        "hand/bongo_low_v0_r2.mp3"
       ],
       [
-        "hand/bongo_low_v1_r1.flac",
-        "hand/bongo_low_v1_r2.flac"
+        "hand/bongo_low_v1_r1.mp3",
+        "hand/bongo_low_v1_r2.mp3"
       ],
       [
-        "hand/bongo_low_v2_r1.flac",
-        "hand/bongo_low_v2_r2.flac"
+        "hand/bongo_low_v2_r1.mp3",
+        "hand/bongo_low_v2_r2.mp3"
       ]
     ],
     "claves": [
       [
-        "hand/claves_v0_r1.flac"
+        "hand/claves_v0_r1.mp3"
       ],
       [
-        "hand/claves_v1_r1.flac"
+        "hand/claves_v1_r1.mp3"
       ],
       [
-        "hand/claves_v2_r1.flac"
+        "hand/claves_v2_r1.mp3"
       ]
     ],
     "woodblock": [
       [
-        "hand/woodblock_v0_r1.flac"
+        "hand/woodblock_v0_r1.mp3"
       ],
       [
-        "hand/woodblock_v1_r1.flac",
-        "hand/woodblock_v1_r2.flac"
+        "hand/woodblock_v1_r1.mp3",
+        "hand/woodblock_v1_r2.mp3"
       ]
     ]
   },
@@ -1449,143 +1449,143 @@
   ],
   "piano_salamander": [
     {
-      "file": "piano/piano_c2.flac",
+      "file": "piano/piano_c2.mp3",
       "midi": 36,
       "note": "c2"
     },
     {
-      "file": "piano/piano_ds2.flac",
+      "file": "piano/piano_ds2.mp3",
       "midi": 39,
       "note": "ds2"
     },
     {
-      "file": "piano/piano_fs2.flac",
+      "file": "piano/piano_fs2.mp3",
       "midi": 42,
       "note": "fs2"
     },
     {
-      "file": "piano/piano_a2.flac",
+      "file": "piano/piano_a2.mp3",
       "midi": 45,
       "note": "a2"
     },
     {
-      "file": "piano/piano_c3.flac",
+      "file": "piano/piano_c3.mp3",
       "midi": 48,
       "note": "c3"
     },
     {
-      "file": "piano/piano_ds3.flac",
+      "file": "piano/piano_ds3.mp3",
       "midi": 51,
       "note": "ds3"
     },
     {
-      "file": "piano/piano_fs3.flac",
+      "file": "piano/piano_fs3.mp3",
       "midi": 54,
       "note": "fs3"
     },
     {
-      "file": "piano/piano_a3.flac",
+      "file": "piano/piano_a3.mp3",
       "midi": 57,
       "note": "a3"
     },
     {
-      "file": "piano/piano_c4.flac",
+      "file": "piano/piano_c4.mp3",
       "midi": 60,
       "note": "c4"
     },
     {
-      "file": "piano/piano_ds4.flac",
+      "file": "piano/piano_ds4.mp3",
       "midi": 63,
       "note": "ds4"
     },
     {
-      "file": "piano/piano_fs4.flac",
+      "file": "piano/piano_fs4.mp3",
       "midi": 66,
       "note": "fs4"
     },
     {
-      "file": "piano/piano_a4.flac",
+      "file": "piano/piano_a4.mp3",
       "midi": 69,
       "note": "a4"
     },
     {
-      "file": "piano/piano_c5.flac",
+      "file": "piano/piano_c5.mp3",
       "midi": 72,
       "note": "c5"
     },
     {
-      "file": "piano/piano_ds5.flac",
+      "file": "piano/piano_ds5.mp3",
       "midi": 75,
       "note": "ds5"
     },
     {
-      "file": "piano/piano_fs5.flac",
+      "file": "piano/piano_fs5.mp3",
       "midi": 78,
       "note": "fs5"
     },
     {
-      "file": "piano/piano_a5.flac",
+      "file": "piano/piano_a5.mp3",
       "midi": 81,
       "note": "a5"
     },
     {
-      "file": "piano/piano_c6.flac",
+      "file": "piano/piano_c6.mp3",
       "midi": 84,
       "note": "c6"
     }
   ],
   "violin": [
     {
-      "file": "strings/violin_a4.flac",
+      "file": "strings/violin_a4.mp3",
       "midi": 69,
       "note": "a4"
     }
   ],
   "viola": [
     {
-      "file": "strings/viola_a4.flac",
+      "file": "strings/viola_a4.mp3",
       "midi": 69,
       "note": "a4"
     }
   ],
   "cello": [
     {
-      "file": "strings/cello_a3.flac",
+      "file": "strings/cello_a3.mp3",
       "midi": 57,
       "note": "a3"
     }
   ],
   "contrabass": [
     {
-      "file": "strings/contrabass_a2.flac",
+      "file": "strings/contrabass_a2.mp3",
       "midi": 45,
       "note": "a2"
     }
   ],
   "flute": [
     {
-      "file": "winds/flute_a4.flac",
+      "file": "winds/flute_a4.mp3",
       "midi": 69,
       "note": "a4"
     }
   ],
   "clarinet": [
     {
-      "file": "winds/clarinet_a4.flac",
+      "file": "winds/clarinet_a4.mp3",
       "midi": 69,
       "note": "a4"
     }
   ],
   "trumpet": [
     {
-      "file": "brass/trumpet_a4.flac",
+      "file": "brass/trumpet_a4.mp3",
       "midi": 69,
       "note": "a4"
     }
   ],
   "trombone": [
     {
-      "file": "brass/trombone_a3.flac",
+      "file": "brass/trombone_a3.mp3",
       "midi": 57,
       "note": "a3"
     }

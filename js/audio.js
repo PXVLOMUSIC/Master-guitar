@@ -127,9 +127,10 @@ export async function startMic(callback) {
     try { await audioCtx.resume(); } catch (e) { console.warn('resume failed:', e); }
   }
   let stream = null;
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   try {
     stream = await navigator.mediaDevices.getUserMedia({
-      audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false }
+      audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: isIOS }
     });
   } catch (e) {
     console.warn("mic error with constraints, trying basic:", e);
