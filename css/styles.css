@@ -2591,6 +2591,25 @@ body.has-bg-image::before {
   pointer-events: none;
 }
 
+/* ---------- Friends & Challenges ---------- */
+.friends { display: flex; flex-direction: column; gap: 12px; }
+.friends-section { background: var(--card, #1e1e2e); border: 1px solid var(--border, #333); border-radius: 12px; padding: 12px; }
+.friends-section h3 { margin: 0 0 8px; font-size: 14px; }
+.friend-row, .challenge-row, .lb-row { display: flex; align-items: center; gap: 8px; padding: 8px; background: var(--card2, #2a2a3e); border-radius: 8px; margin-bottom: 6px; }
+.friend-name { flex: 1; font-weight: 700; font-size: 13px; }
+.challenge-info { flex: 1; font-size: 12px; }
+.challenge-status { font-size: 10px; text-transform: uppercase; font-weight: 700; padding: 2px 6px; border-radius: 4px; background: var(--card, #1e1e2e); }
+.challenge-row.pending .challenge-status { color: #fbbf24; }
+.challenge-row.accepted .challenge-status { color: #22c55e; }
+.challenge-row.completed .challenge-status { color: #888; }
+.add-friend { display: flex; gap: 8px; }
+.add-friend input { flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border, #333); background: var(--card2, #2a2a3e); color: var(--text, #fff); font-size: 13px; }
+.lb-row { gap: 10px; }
+.lb-rank { font-weight: 800; font-size: 14px; color: var(--accent, #22c55e); min-width: 24px; }
+.lb-name { flex: 1; font-weight: 600; font-size: 13px; }
+.lb-score { font-size: 12px; font-weight: 700; color: var(--gold, #fbbf24); }
+.muted { color: var(--muted, #888); font-size: 13px; }
+
 /* ---------- Style Routes ---------- */
 .style-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
 .style-card { background: var(--card, #1e1e2e); border: 1px solid var(--border, #333); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 8px; transition: transform .15s, box-shadow .15s; border-left: 4px solid var(--sc, #22c55e); }

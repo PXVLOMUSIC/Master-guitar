@@ -30,10 +30,24 @@ export async function renderFriends(container) {
   let friends = [];
   let requests = [];
   let challenges = [];
+  let leaderboard = [];
   try {
     friends = await backend.getFriends() || [];
     requests = await backend.getFriendRequests() || [];
     challenges = await backend.getChallenges() || [];
+    // Weekly leaderboard
+    try {
+      const lb = await backend.getWeeklyLeaderboard();
+      if (lb) leaderboard = lb;
+    } catch (e) {}
+    // Notify about pending challenges
+    const pendingChallenges = challenges.filter((c) => c.status === "pending" && c.challenged_id === (backend.getSession() && backend.getSession().user && backend.getSession().user.id));
+    if (pendingChallenges.length > 0) {
+      toast(`Tienes ${pendingChallenges.length} desafío(s) pendiente(s)`);
+    }
+    if (requests.length > 0) {
+      toast(`Tienes ${requests.length} solicitud(es) de amistad`);
+    }
   } catch (e) { console.warn("friends load", e); }
 
   const friendsHtml = friends.length
@@ -64,6 +78,15 @@ export async function renderFriends(container) {
         </div>`).join("")
     : "<p class='muted'>No hay desafíos.</p>";
 
+  const leaderboardHtml = leaderboard.length
+    ? leaderboard.map((entry, idx) => `
+        <div class="lb-row">
+          <span class="lb-rank">${idx + 1}</span>
+          <span class="lb-name">${escapeHtml(entry.username || entry.name || entry.id)}</span>
+          <span class="lb-score">${entry.score || entry.xp || 0} XP</span>
+        </div>`).join("")
+    : "<p class='muted'>Sin datos esta semana.</p>";
+
   container.innerHTML = `
     <div class="friends">
       <h2>Amigos y desafíos</h2>
@@ -82,6 +105,10 @@ export async function renderFriends(container) {
       <div class="friends-section">
         <h3>Desafíos</h3>
         ${challengesHtml}
+      </div>
+      <div class="friends-section">
+        <h3>🏆 Leaderboard semanal</h3>
+        ${leaderboardHtml}
       </div>
     </div>
   `;
@@ -123,7 +150,13 @@ export async function renderFriends(container) {
           toast("Desafío aceptado");
         } else if (act === "complete-challenge") {
           await backend.completeChallenge(id);
-          toast("Desafío completado");
+          // Give rewards
+          if (window.state) {
+            window.state.xp = (window.state.xp || 0) + 50;
+            window.state.gems = (window.state.gems || 0) + 5;
+            if (window.saveState) window.saveState(window.state);
+          }
+          toast("Desafío completado! +50 XP, +5 gemas");
         }
         await renderFriends(container);
       } catch (e) { toast("Error"); console.error(e); }
