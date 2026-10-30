@@ -2084,18 +2084,10 @@ async function boot() {
   // PWA install prompt handling
   setupInstallPrompt();
   // Expose navigate and tools globally for search
-  window.navigate = navigate;
-  window.PRACTICE_TOOLS = PRACTICE_TOOLS;
+  window.appNavigate = navigate;
+  window.PRACTICE_TOOLS = (typeof PRACTICE_TOOLS !== "undefined") ? PRACTICE_TOOLS : [];
   window.openPracticeTool = (id) => {
-    const tool = PRACTICE_TOOLS.find((t) => t.id === id);
-    if (tool && tool.mount) {
-      navigate("practice");
-      // open the section
-      import("./practice-hub.js").then((m) => {
-        const section = m.SECTIONS.find((s) => s.tools.includes(id));
-        if (section) m.openSection(section, PRACTICE_TOOLS, id, () => {});
-      });
-    }
+    if (window.appNavigate) window.appNavigate("practice");
   };
   // Global search shortcut (Ctrl+K / Cmd+K)
   document.addEventListener("keydown", async (e) => {

@@ -42,7 +42,7 @@ async function buildIndex() {
             tags: (l.tags || []).concat(l.keywords || []),
             icon: "📚",
             route: "learn",
-            action: () => { if (window.navigate) window.navigate("learn"); }
+            action: () => { if (window.appNavigate) window.appNavigate("learn"); }
           });
         });
       }
