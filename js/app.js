@@ -962,6 +962,7 @@ function finishLesson(v) {
   if (!wasCompleted) {
     state.completed[lesson.id] = true;
     state.stats.lessonsCompleted += 1;
+    import("./practice-history.js").then((m) => { try { m.logPractice("lesson", { id: lesson.id, title: lesson.title }); } catch (e) {} }).catch(() => {});
   }
   const dailyBonus = lessonState.daily ? 2 : 1;
   const totalXp = Math.max(10, xpEarned + (lesson.xp || 10)) * dailyBonus;
@@ -1415,6 +1416,7 @@ const PRACTICE_TOOLS = [
   { id: "transposition", cat: "theory", icon: "🔄", title: "Transposición", desc: "Transporta cualquier progresión a otra tonalidad.", tags: ["Transporte"], keywords: "cambiar tono", mount: async (el) => { const m = await loadImprovisation(); m.renderTranspositionTool(el); } },
   { id: "chordWheel", cat: "theory", icon: "⭕", title: "Rueda de acordes", desc: "Circle of Fifths interactivo: tonalidades, acordes diatónicos y progresiones.", tags: ["Circle of Fifths"], keywords: "circulo quintas progresiones tonalidad", mount: async (el) => { const m = await loadChordWheel(); m.renderChordWheel(el); } },
   { id: "friends", cat: "social", icon: "👥", title: "Amigos", desc: "Amigos y desafíos", tags: ["Social", "Amigos", "Desafíos"], keywords: "amigo social desafio challenge", mount: async (el) => { const m = await import("./friends.js"); m.renderFriends(el); } },
+  { id: "history", cat: "progress", icon: "📊", title: "Historial", desc: "Tu progreso y actividad", tags: ["Historial", "Progreso", "Estadísticas"], keywords: "historial progreso estadisticas activity", mount: async (el) => { const m = await import("./practice-history.js"); m.renderHistory(el); } },
 ];
 
 // Al cambiar de herramienta o cerrar una sección se para todo lo que suene.
@@ -2083,6 +2085,8 @@ async function boot() {
 
   // PWA install prompt handling
   setupInstallPrompt();
+  // Init notifications
+  import("./notifications.js").then((m) => { try { m.initNotifications(); } catch (e) {} }).catch(() => {});
   // Expose navigate and tools globally for search
   window.appNavigate = navigate;
   window.PRACTICE_TOOLS = (typeof PRACTICE_TOOLS !== "undefined") ? PRACTICE_TOOLS : [];

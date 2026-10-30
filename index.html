@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="has-bg-image">
+<a href="#view" class="skip-link">Saltar al contenido</a>
 <div class="app" id="app">
   <div class="topbar" id="topbar" style="display:none">
     <div class="stat streak"><span>🔥</span><span id="streak">0</span></div>
@@ -27,15 +28,15 @@
     <button id="globalSearchBtn" class="gs-topbar-btn" title="Buscar (Ctrl+K)">🔍</button>
     <div class="stat heart"><span>❤️</span><span id="hearts">5</span></div>
   </div>
-  <div id="view"></div>
+  <div id="view" role="main" aria-live="polite"></div>
 </div>
-<nav class="bottomnav" id="bottomnav" style="display:none">
-  <button data-route="home" class="active" data-i18n="nav.home">🏠 Inicio</button>
-  <button data-route="learn" data-i18n="nav.learn">📚 Aprender</button>
-  <button data-route="tuner" data-i18n="nav.tuner">🎯 Afinador</button>
-  <button data-route="practice" data-i18n="nav.practice">🎸 Practicar</button>
-  <button data-route="profile" data-i18n="nav.profile">👤 Perfil</button>
-  <button data-route="settings" data-i18n="nav.settings">⚙️ Ajustes</button>
+<nav class="bottomnav" id="bottomnav" style="display:none" role="navigation" aria-label="Navegación principal">
+  <button data-route="home" class="active" data-i18n="nav.home" aria-label="Inicio">🏠 Inicio</button>
+  <button data-route="learn" data-i18n="nav.learn" aria-label="Aprender">📚 Aprender</button>
+  <button data-route="tuner" data-i18n="nav.tuner" aria-label="Afinador">🎯 Afinador</button>
+  <button data-route="practice" data-i18n="nav.practice" aria-label="Practicar">🎸 Practicar</button>
+  <button data-route="profile" data-i18n="nav.profile" aria-label="Perfil">👤 Perfil</button>
+  <button data-route="settings" data-i18n="nav.settings" aria-label="Ajustes">⚙️ Ajustes</button>
 </nav>
 <script type="module" src="js/app.js"></script>
 </body>
