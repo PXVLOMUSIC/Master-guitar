@@ -779,4 +779,59 @@ export const SAMPLE_TABS = [
       { string: 0, notes: [{fret:0,duration:1},{fret:2,duration:1},{fret:3,duration:1},{fret:5,duration:1},{fret:3,duration:1},{fret:2,duration:1},{fret:0,duration:2}] },
     ]
   },
+
+  ,
+  {
+    title: "Happy Birthday (melodia)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:0,duration:1},{fret:2,duration:1},{fret:0,duration:1},{fret:5,duration:1},{fret:4,duration:2}] },
+      { string: 2, notes: [{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:2}] },
+    ]
+  },
+  {
+    title: "Jingle Bells (melodia)",
+    bpm: 140,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:7,duration:1},{fret:7,duration:1},{fret:7,duration:2},{fret:7,duration:1},{fret:7,duration:1},{fret:7,duration:2}] },
+      { string: 1, notes: [{fret:5,duration:1},{fret:5,duration:1},{fret:5,duration:2},{fret:5,duration:1},{fret:5,duration:1},{fret:5,duration:2}] },
+    ]
+  },
+  {
+    title: "Amazing Grace (melodia)",
+    bpm: 90,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:2,duration:1},{fret:4,duration:1},{fret:2,duration:1},{fret:0,duration:2},{fret:4,duration:1},{fret:2,duration:1},{fret:0,duration:2}] },
+    ]
+  },
+  {
+    title: "Frere Jacques (melodia)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:2,duration:1},{fret:4,duration:1},{fret:0,duration:1},{fret:0,duration:1},{fret:2,duration:1},{fret:4,duration:1},{fret:0,duration:1}] },
+      { string: 2, notes: [{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:2,duration:1},{fret:2,duration:1},{fret:0,duration:1},{fret:null,duration:1}] },
+    ]
+  },
+  {
+    title: "Canon in D (melodia)",
+    bpm: 80,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:2,duration:2},{fret:0,duration:2},{fret:4,duration:2},{fret:2,duration:2}] },
+      { string: 2, notes: [{fret:2,duration:2},{fret:0,duration:2},{fret:null,duration:2},{fret:null,duration:2}] },
+    ]
+  },
+  {
+    title: "Hotel California (riff completo)",
+    bpm: 75,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:7,duration:1},{fret:5,duration:1},{fret:4,duration:1},{fret:2,duration:1},{fret:0,duration:1},{fret:2,duration:1},{fret:4,duration:1},{fret:5,duration:1}] },
+      { string: 1, notes: [{fret:5,duration:1},{fret:3,duration:1},{fret:2,duration:1},{fret:0,duration:1},{fret:null,duration:1},{fret:0,duration:1},{fret:2,duration:1},{fret:3,duration:1}] },
+    ]
+  },
 ];
