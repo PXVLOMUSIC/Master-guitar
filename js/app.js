@@ -14,6 +14,7 @@ const loadPracticeAdvanced = () => import("./practice-advanced.js");
 const loadFretboard = () => import("./fretboard.js");
 const loadBacking = () => import("./backing-pro.js");
 const loadLooper = () => import("./looper.js");
+const loadGlobalSearch = () => import("./global-search.js");
 const loadTablature = () => import("./tablature.js");
 const loadSettings = () => import("./settings.js");
 const loadTheory = () => import("./theory.js");
@@ -93,6 +94,13 @@ function renderTopbar() {
   const tb = $("#topbar");
   if (!state.user) { tb.style.display = "none"; return; }
   tb.style.display = "flex";
+  const searchBtn = $("#globalSearchBtn");
+  if (searchBtn) {
+    searchBtn.onclick = async () => {
+      const m = await loadGlobalSearch();
+      m.openGlobalSearch();
+    };
+  }
   $("#streak").textContent = state.streak;
   $("#gems").textContent = state.gems;
   $("#hearts").textContent = state.hearts;
@@ -1406,6 +1414,7 @@ const PRACTICE_TOOLS = [
   { id: "capo", cat: "theory", icon: "🧮", title: "Calculadora de cejilla", desc: "Calcula el cejillo y los acordes transportados.", tags: ["Cejilla"], keywords: "capo transporte", mount: async (el) => { const m = await loadImprovisation(); m.renderCapoCalculator(el); } },
   { id: "transposition", cat: "theory", icon: "🔄", title: "Transposición", desc: "Transporta cualquier progresión a otra tonalidad.", tags: ["Transporte"], keywords: "cambiar tono", mount: async (el) => { const m = await loadImprovisation(); m.renderTranspositionTool(el); } },
   { id: "chordWheel", cat: "theory", icon: "⭕", title: "Rueda de acordes", desc: "Circle of Fifths interactivo: tonalidades, acordes diatónicos y progresiones.", tags: ["Circle of Fifths"], keywords: "circulo quintas progresiones tonalidad", mount: async (el) => { const m = await loadChordWheel(); m.renderChordWheel(el); } },
+  { id: "friends", cat: "social", icon: "👥", title: "Amigos", desc: "Amigos y desafíos", tags: ["Social", "Amigos", "Desafíos"], keywords: "amigo social desafio challenge", mount: async (el) => { const m = await import("./friends.js"); m.renderFriends(el); } },
 ];
 
 // Al cambiar de herramienta o cerrar una sección se para todo lo que suene.
@@ -2097,6 +2106,28 @@ async function boot() {
 
   // PWA install prompt handling
   setupInstallPrompt();
+  // Expose navigate and tools globally for search
+  window.navigate = navigate;
+  window.PRACTICE_TOOLS = PRACTICE_TOOLS;
+  window.openPracticeTool = (id) => {
+    const tool = PRACTICE_TOOLS.find((t) => t.id === id);
+    if (tool && tool.mount) {
+      navigate("practice");
+      // open the section
+      import("./practice-hub.js").then((m) => {
+        const section = m.SECTIONS.find((s) => s.tools.includes(id));
+        if (section) m.openSection(section, PRACTICE_TOOLS, id, () => {});
+      });
+    }
+  };
+  // Global search shortcut (Ctrl+K / Cmd+K)
+  document.addEventListener("keydown", async (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === "k") {
+      e.preventDefault();
+      const m = await loadGlobalSearch();
+      m.openGlobalSearch();
+    }
+  });
   setupServiceWorker();
   setupOfflineBadge();
 

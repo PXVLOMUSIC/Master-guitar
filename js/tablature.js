@@ -726,4 +726,57 @@ export const SAMPLE_TABS = [
       { string: 5, notes: [{fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}, {fret:0,duration:2}] }
     ]
   }
+
+  ,
+  {
+    title: "Twinkle Twinkle (melodia completa)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:0,duration:1},{fret:7,duration:1},{fret:7,duration:1},{fret:9,duration:1},{fret:9,duration:1},{fret:7,duration:2}] },
+      { string: 2, notes: [{fret:5,duration:1},{fret:5,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:5,duration:1},{fret:5,duration:1},{fret:null,duration:2}] },
+    ]
+  },
+  {
+    title: "Mary Had a Little Lamb (melodia)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:2,duration:1},{fret:4,duration:1},{fret:2,duration:1},{fret:0,duration:1},{fret:0,duration:1},{fret:0,duration:2}] },
+    ]
+  },
+  {
+    title: "Ode to Joy (melodia completa)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:4,duration:1},{fret:4,duration:1},{fret:5,duration:1},{fret:7,duration:1},{fret:7,duration:1},{fret:5,duration:1},{fret:4,duration:1},{fret:2,duration:1}] },
+      { string: 2, notes: [{fret:2,duration:1},{fret:2,duration:1},{fret:0,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:0,duration:1},{fret:2,duration:1},{fret:4,duration:1}] },
+    ]
+  },
+  {
+    title: "La Cucaracha (melodia)",
+    bpm: 120,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:0,duration:1},{fret:0,duration:1},{fret:5,duration:1},{fret:5,duration:1},{fret:5,duration:1},{fret:9,duration:1},{fret:7,duration:2}] },
+    ]
+  },
+  {
+    title: "Greensleeves (melodia)",
+    bpm: 100,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:2,duration:1},{fret:3,duration:1},{fret:5,duration:1},{fret:3,duration:1},{fret:2,duration:1},{fret:0,duration:2}] },
+      { string: 2, notes: [{fret:2,duration:1},{fret:0,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:1},{fret:null,duration:2}] },
+    ]
+  },
+  {
+    title: "Scarborough Fair (melodia)",
+    bpm: 100,
+    tuning: ["e","B","G","D","A","E"],
+    lines: [
+      { string: 0, notes: [{fret:0,duration:1},{fret:2,duration:1},{fret:3,duration:1},{fret:5,duration:1},{fret:3,duration:1},{fret:2,duration:1},{fret:0,duration:2}] },
+    ]
+  },
 ];

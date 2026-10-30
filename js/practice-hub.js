@@ -17,6 +17,7 @@ export const SECTIONS = [
   { id: "canciones", name: "Canciones", icon: "songs", color: "#ff6b9d", desc: "Canciones, riffs y tablaturas", tools: ["songs", "songLibrary", "tabs", "tabPlayer"] },
   { id: "mastil", name: "Mástil y escalas", icon: "fretboard", color: "#ce82ff", desc: "Escalas, técnica e improvisación", tools: ["scales", "fretboard", "fingerExercises", "techniques", "improvisation"] },
   { id: "ejercicios", name: "Ejercicios", icon: "guitar", color: "#22c55e", desc: "Ejercicios eficientes por categorías", tools: ["exercises"] },
+  { id: "social", name: "Amigos", icon: "user", color: "#ec4899", desc: "Amigos y desafíos", tools: ["friends"] },
   { id: "oido", name: "Oído", icon: "ear", color: "#1cb0f6", desc: "Intervalos y tipos de acorde", tools: ["ear", "interval", "chordType", "voicingQuiz"] },
   { id: "teoria", name: "Teoría y utilidades", icon: "theory", color: "#ffc800", desc: "Teoría, estilos, cejilla y vídeos", tools: ["theory", "styles", "capo", "transposition", "videos"] },
   { id: "rueda", name: "Rueda de acordes", icon: "theory", color: "#ffc800", desc: "Circle of Fifths interactivo", tools: ["chordWheel"] },
