@@ -1710,32 +1710,9 @@ function renderEarTrainer(area) {
   $("#diffBtn", area).onclick = () => answer(false);
 }
 
-function renderStyles(area) {
-  const styles = [
-    { name: "Rock", icon: "🤘", desc: "Power chords, riffs, palm mute" },
-    { name: "Blues", icon: "🎺", desc: "Pentatónica, bends, shuffle" },
-    { name: "Pop / Acústico", icon: "🎤", desc: "Rasgueo, capo, canciones" },
-    { name: "Flamenco y rumba", icon: "💃", desc: "Rasgueo, golpe, compás" },
-    { name: "Fingerstyle", icon: "✋", desc: "Dedos, arpegios, independencia" },
-    { name: "Metal", icon: "🤘", desc: "Downpicking, alternate, tapping" },
-    { name: "Jazz", icon: "🎷", desc: "Acordes de 7ª, walking, improvisación" },
-    { name: "Clásica", icon: "🎻", desc: "Punteo, postura, repertorio" }
-  ];
-  area.innerHTML = `
-    <div class="card">
-      <h2>🎸 Rutas por estilo</h2>
-      <p>Cada estilo tiene su propia ruta con técnicas y canciones.</p>
-    </div>
-    ${styles.map(s => `
-      <div class="ach">
-        <span class="ico">${s.icon}</span>
-        <div class="info">
-          <div class="name">${s.name}</div>
-          <div class="desc">${s.desc}</div>
-        </div>
-        <span style="color:var(--muted);font-size:12px">Próximamente</span>
-      </div>`).join("")}
-  `;
+async function renderStyles(area) {
+  const m = await import("./styles-routes.js");
+  m.renderStyles(area);
 }
 
 function renderChordDetect(area) {
